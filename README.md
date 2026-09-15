@@ -6,35 +6,23 @@
 
 Noepedia is an open attempt to build a **persistent, addressable, inspectable model of knowledge outside the weights of any one language model**.
 
-The working term for this idea is **Large Semiotic Model (LSM)**.
+It is not only a store of facts.
 
-A Large Language Model is powerful because enormous cultural experience leaves a distributed trace in its parameters, from which useful meaning can often be reconstructed. Noepedia asks a different question:
+It is also a field of **many explicit evaluative networks** built over shared objects: networks of similarity, difference, hierarchy, function, evidence, chronology, causality, reliability, prototype membership, context, and other forms of relation.
 
-> Once knowledge has already been discovered, tested, distinguished, and named, why should every future intelligence have to reconstruct it again from text or from neural weights?
+A fact can be inserted as an object before we know what it means in the larger field.
 
-Noepedia tries to preserve that knowledge explicitly: as addressable objects, relations, prototypes, hierarchies, evidence, contexts, conflicts, tests, replications, revisions, and open questions.
+The harder operation is deciding **where that object belongs, under which rule, and why**.
 
-The goal is not to replace LLMs.
+That distinction is central to Noepedia.
 
-The goal is to change the division of labor between **memory, navigation, reasoning, and discovery**.
+> **Object insertion is cheap. Meaningful implantation is arguable.**
 
-```text
-known structure      → preserve it
-known relation       → address it
-known evidence       → attach it
-known uncertainty    → keep it visible
-known conflict       → do not erase it
-unknown relation     → investigate it
-new discovery        → turn it into structure
-```
-
-A language model should not need to carry the whole world in its internal memory in order to work intelligently with the world.
-
-It should be able to enter a structured field, find what is already known, inspect why it is believed, see what remains uncertain, and spend expensive reasoning only where something new must actually be understood.
+Noepedia therefore tries to preserve not only knowledge objects, but the publicly inspectable argument for where those objects belong in meaning.
 
 ---
 
-## The Core Principle
+## The Core Cycle
 
 Noepedia begins from one simple refusal:
 
@@ -85,96 +73,482 @@ experience / source / experiment
         structure again
 ```
 
-This cycle is the center of the project.
+---
+
+## Three Layers
+
+A simple working picture of Noepedia has three layers.
+
+### 1. Object field
+
+What exists or has been observed:
+
+```text
+object
+measurement
+document
+person
+board
+component
+event
+experiment
+claim
+source
+```
+
+An object may enter the field with very little interpretation.
+
+### 2. Semiotic and evaluative networks
+
+The same object may participate in many independent projections:
+
+```text
+IS-PART-OF
+IS-INSTANCE-OF
+RESEMBLES
+DIFFERS-FROM
+SUPPORTS
+CONTRADICTS
+PRECEDES
+CAUSES
+FUNCTIONS-AS
+VALID-IN-CONTEXT
+BELONGS-TO-PROTOTYPE
+RANKED-BY-RELIABILITY
+```
+
+The object does not have one final, universal shelf.
+
+It may occupy different places in different networks because the networks ask different questions.
+
+### 3. Evaluation process
+
+Why is an object placed there?
+
+Why should the relation be trusted?
+
+What would move it?
+
+Which alternative placements were considered?
+
+What evidence is missing?
+
+This third layer makes implantation inspectable instead of mystical.
 
 ---
 
-## Why “Large Semiotic Model”?
+## Every Network Has a Rule Card
 
-The phrase is intentionally different from **Large Language Model**.
+A Noepedia network is not merely a bag of links.
 
-Language is one way knowledge is carried. It is not the only one.
+It has a rule describing what the network evaluates and how objects are placed or ranked within it.
 
-A scientific result may be represented by:
-
-- a relation;
-- a hierarchy;
-- a causal structure;
-- a prototype;
-- a similarity pattern;
-- a graph;
-- a geometric form;
-- an experimental trace;
-- a table of replications;
-- a rule;
-- a counterexample;
-- a temporal history;
-- a boundary condition;
-- an unresolved contradiction.
-
-Noepedia treats these as first-class knowledge structures rather than forcing all of them to disappear into prose.
-
-The term **LSM** is a working architectural idea, not a claim that the final implementation is known.
-
-Its essential distinction is this:
+For example:
 
 ```text
-LLM:
-meaning is largely distributed inside learned parameters
-and reconstructed through generation
-
-LSM:
-meaning is also preserved outside the model
-as explicit, addressable, inspectable structure
+NETWORK: functional_similarity
+RULE: rank objects by similarity of performed function,
+      ignoring manufacturer and historical origin
 ```
 
-The two can work together.
+or:
 
-An LLM may be excellent at interpretation, synthesis, analogy, hypothesis generation, explanation, and invention.
+```text
+NETWORK: evidence_strength
+RULE: rank claims by quality, independence,
+      reproducibility, and relevance of supporting evidence
+```
 
-An LSM should make it unnecessary to repeatedly regenerate what has already become stable knowledge.
+The rule belongs to the network.
+
+It does not need to be memorized inside the navigator's neural weights.
+
+The navigator can read the rule when it enters the network.
+
+This leads to a basic invariant:
+
+> **A network must remain faithful to the rule by which it evaluates its objects.**
+
+If one object is judged by rule X and another is quietly judged by rule Y, the network is no longer internally coherent.
+
+Changing a rule is allowed.
+
+Changing it silently is not.
+
+A rule change should itself become an inspectable revision:
+
+```text
+old rule
+↓
+problem discovered
+↓
+argument
+↓
+new rule
+↓
+re-evaluation of affected placements
+```
 
 ---
 
-## The Socratic Navigator
+## Large Semiotic Model — LSM
 
-Noepedia also suggests a different kind of learned intelligence.
+**Large Semiotic Model (LSM)** is the working name for a learned system that operates over this field of explicit, rule-governed projections.
 
-Call it, for now, the **Socratic Navigator**.
-
-It does not need to know every fact.
-
-It needs to know how to relate to knowledge.
-
-Its skills are closer to:
+Noepedia and LSM are not the same thing.
 
 ```text
-What do I know?
-What do I not know?
-What is the evidence?
-What differs?
-What is similar?
-What is repeated?
-What is only an inference?
-What is contradicted?
-What is stale?
-What should be tested next?
-Where does a new result belong?
+Noepedia
+    persistent external field of objects,
+    networks, rules, evidence, history
+
+LSM
+    learned system that navigates,
+    compares, tests and coordinates that field
 ```
 
-Such a system could be much smaller than a frontier LLM because it does not need to carry the full factual content of the world in its weights.
+Our proposed Noepedia implementation of an LSM is called **Socrates**.
 
-Its competence would be **navigation, discrimination, comparison, checking, and placement**.
+So the naming is:
 
-This is only a research direction. Noepedia does not assume that the correct navigator architecture has already been found.
+> **LSM — the general class.**
+>
+> **Socrates — Noepedia's experimental LSM navigator.**
 
-But it changes the design question from:
+---
 
-> How do we make one model remember everything?
+## Socrates
 
-into:
+Socrates is not intended to be another model that memorizes the world.
 
-> How do we let many kinds of intelligence live effectively inside a shared external knowledge structure?
+Its main competence is to operate correctly among knowledge structures.
+
+It should learn skills such as:
+
+```text
+identify the relevant network
+read its rule
+apply the same rule consistently
+find candidate placements
+compare placements
+move up and down hierarchy
+find prototypes
+find analogies
+find discriminating differences
+locate supporting evidence
+locate counterevidence
+detect contradiction
+detect weak implantation
+identify missing tests
+compare alternative networks
+estimate coverage
+preserve OPEN when closure is unjustified
+```
+
+The important point is that **facts can remain outside Socrates, networks can remain outside Socrates, and even the rules of those networks can remain outside Socrates**.
+
+Socrates needs to learn how to work with them.
+
+A useful minimal formula is:
+
+```text
+Network = objects + relations + rule card + history
+
+Socrates = learned ability to move among networks
+           without letting them quietly violate their own rules
+```
+
+A working metaphor is a spider moving through many webs.
+
+The metaphor is optional; the technical idea is not.
+
+---
+
+## Socratic Argument as a Meaning-Edit Protocol
+
+Changing an object's meaning is not forbidden.
+
+But a proposed change should survive questions.
+
+If someone wants to move an object inside a network, or attach it to a different prototype, Socrates should be able to ask:
+
+```text
+Why this network?
+Which rule applies?
+Which features support this placement?
+Which features do not match?
+What alternative placements were considered?
+What evidence supports the move?
+What evidence contradicts it?
+What test would separate the alternatives?
+Does this new placement contradict an earlier placement
+under the same rule?
+```
+
+This is not authority by personality.
+
+It is an attempt to make **meaning edits auditable**.
+
+A participant may disagree with the current structure.
+
+The system should make disagreement possible without allowing silent rule changes or silent erasure of prior reasoning.
+
+---
+
+## Implantation Quality Must Be Inspectable
+
+A relation should not receive a mysterious confidence number and stop there.
+
+A proposed implantation should expose its support structure.
+
+For example:
+
+```text
+OBJECT: BOARD-742
+PROPOSED NETWORK: power_topology_family
+PROPOSED PLACEMENT: prototype P17
+
+SUPPORTING FEATURES:
+    F1, F2, F4
+
+IMPORTANT DIFFERENCES:
+    D2
+
+ALTERNATIVE PLACEMENTS:
+    P11, P23
+
+EVIDENCE:
+    E51, E63
+
+MISSING TEST:
+    T8
+
+COUNTEREVIDENCE:
+    none known
+
+STATUS:
+    PROVISIONAL
+```
+
+Anyone should be able to descend into this structure and inspect why the placement exists.
+
+The system should therefore support both:
+
+```text
+What do we currently think?
+```
+
+and:
+
+```text
+Why do we currently think it?
+```
+
+---
+
+## Meaning Can Be Reconstructed From Many Projections
+
+One network is usually a poor description of an object.
+
+A few networks may still be too weak.
+
+But the same object viewed through many independent, disciplined projections can become increasingly reconstructible.
+
+For example:
+
+```text
+network A → what it resembles
+network B → what it does
+network C → where it came from
+network D → what evidence supports it
+network E → what it contradicts
+network F → which prototype contains it
+network G → where it fails
+...
+```
+
+The working hypothesis is that **meaning can emerge from the intersection of enough well-formed projections**.
+
+How many are enough?
+
+We do not know.
+
+Perhaps a domain needs 724 useful projection types.
+
+Perhaps 3,000.
+
+Perhaps 7,823.
+
+Perhaps the number matters less than independence, quality, and coverage.
+
+These numbers are illustrative only.
+
+> **The required number and diversity of semiotic projections is an experimental question.**
+
+We do not know the answer, and Noepedia should record that ignorance rather than hide it.
+
+---
+
+## A Working Hypothesis About Intelligence
+
+Noepedia uses the following as a research hypothesis, not a settled definition:
+
+> **High intelligence may depend less on possessing many isolated facts and more on the ability to coordinate many different evaluative projections of the same world without destroying their rules, while keeping the resulting reconstruction inspectable and testable.**
+
+This does not mean forcing every network to agree.
+
+Two networks may legitimately produce different evaluations because they measure different things.
+
+For example:
+
+```text
+network A → excellent strength
+network B → poor weight efficiency
+```
+
+The intelligent operation is not to average them into "neutral".
+
+It is to know **what each network evaluates, when each matters, and how their results combine in the current context**.
+
+---
+
+## Coverage, Not Only Confidence
+
+A conclusion can look strong simply because only one relevant perspective has been consulted.
+
+Noepedia should therefore be able to record **coverage** as well as confidence or support.
+
+For example:
+
+```text
+CURRENT CONCLUSION: C17
+
+relevant networks identified: 25
+evaluated: 18
+not yet evaluated: 7
+supporting: 11
+neutral / unrelated: 5
+conflicting: 2
+
+status: PROVISIONAL
+```
+
+This allows the system to distinguish:
+
+> "The evaluated networks agree."
+
+from:
+
+> "The relevant networks have been sufficiently surveyed."
+
+Those are not the same statement.
+
+A related research hypothesis is that some apparently abrupt human changes of interpretation may resemble **serial dominance over a larger parallel set of evaluative networks**: one projection temporarily dominates before other relevant projections are brought into the active reconstruction.
+
+Noepedia does not assume that this is a complete psychological theory.
+
+It is useful here as an architectural warning:
+
+> **A partial reconstruction must not pretend to be a complete one.**
+
+---
+
+## Socrates Begins Neural
+
+Socrates should begin as a neural system because **we do not yet know the full shape of its task**.
+
+If we freeze the task too early into hand-written algorithms, we may formalize only the operations we already know how to name.
+
+The neural stage is therefore also a discovery stage.
+
+We can expose Socrates to many cases of:
+
+```text
+network selection
+rule interpretation
+object implantation
+competing placements
+analogy
+hierarchy
+contradiction
+missing evidence
+rule revision
+successful argument
+failed argument
+new test selection
+```
+
+Then we can observe which operations recur.
+
+Stable recurring patterns may later be extracted into deterministic algorithms.
+
+The intended development path is therefore:
+
+```text
+Stage 1 — Neural Socrates
+learn the still-unknown task
+
+Stage 2 — Pattern discovery
+identify recurring semiotic operations
+
+Stage 3 — Algorithmic extraction
+move stable operations into explicit software
+
+Stage 4 — Hybrid Socrates
+algorithms handle known operations
+neural components handle ambiguity and novelty
+```
+
+This mirrors the broader Noepedia principle:
+
+> **When the unknown becomes regular, it no longer needs to remain expensive intelligence.**
+
+---
+
+## LLM and Socrates Have Different Jobs
+
+Socrates is not a replacement for an LLM.
+
+The two systems solve different problems.
+
+A useful division of labor is:
+
+```text
+LLM
+    language
+    explanation
+    broad synthesis
+    hypothesis generation
+    novel semantic construction
+    interaction with humans
+
+Socrates / LSM
+    network selection
+    rule reading
+    placement
+    comparison
+    consistency checking
+    evidence routing
+    contradiction detection
+    coverage checking
+    navigation through explicit knowledge
+
+Noepedia
+    persistent external objects
+    networks
+    rules
+    evidence
+    history
+
+AISocket
+    observation
+    experiment
+    bounded action in the real world
+```
+
+A frontier LLM is especially valuable when existing structure is insufficient and something genuinely new must be proposed or understood.
+
+Socrates should help determine **when that expensive step is actually necessary**.
 
 ---
 
@@ -184,7 +558,7 @@ A central Noepedia object should not be only a statement such as:
 
 > X is true.
 
-A useful knowledge node should be able to answer two different questions:
+A useful knowledge node should answer two different questions:
 
 1. **What is the current usable conclusion?**
 2. **Why are we allowed to say it?**
@@ -221,8 +595,6 @@ The upper node allows fast use.
 
 The evidence layer allows inspection.
 
-This separation is crucial.
-
 A person or small model should not need to reread forty documents to use a settled result. But at any moment it should be possible to descend from the conclusion to the evidence that supports, limits, or contradicts it.
 
 ---
@@ -243,21 +615,13 @@ PROPOSED
 → reusable knowledge
 ```
 
-The exact thresholds should depend on domain and consequence. Three replications are not a universal law of science.
+The exact thresholds should depend on domain and consequence.
 
-But the architecture should be able to represent **independent repetition explicitly**.
+Three replications are not a universal law of science.
 
-This matters because popularity, authority, confidence, and eloquence are not substitutes for repetition.
+The architecture should simply be able to represent **independent repetition explicitly**.
 
-```text
-money can express demand
-reputation can guide attention
-confidence can guide search
-
-but evidence and replication determine support
-```
-
-This principle is especially important for integrations such as OpenPCB Commons, where a black-box result may be claimed, independently reproduced, and only then promoted into a trusted reusable node.
+Popularity, authority, confidence, and eloquence are not substitutes for repetition.
 
 ---
 
@@ -267,20 +631,13 @@ Noepedia should not be imagined as a flat database.
 
 A living knowledge field grows in at least three directions.
 
-### 1. Breadth
+### Breadth
 
 More cases, objects, domains, experiments, failures, exceptions, and observations are added.
 
-```text
-one motor
-→ many motors
-→ many controller families
-→ many machines
-```
+### Height
 
-### 2. Height
-
-Concrete cases are compared and abstracted into higher structures.
+Concrete cases are compared and abstracted into higher structures:
 
 ```text
 instance
@@ -291,11 +648,9 @@ instance
 → general relation
 ```
 
-This is where knowledge becomes more than accumulation.
+### Length
 
-### 3. Length
-
-Knowledge has a history.
+Knowledge has a history:
 
 ```text
 we believed A
@@ -305,49 +660,9 @@ we believed A
 → old result remained valid only locally
 ```
 
-Noepedia should preserve this genealogy rather than overwriting yesterday with today.
+Noepedia should preserve this genealogy rather than overwrite yesterday with today.
 
 The history of how a model changed is itself knowledge.
-
----
-
-## Hierarchy and Analogy
-
-Two relations are particularly important.
-
-### Hierarchy asks:
-
-> What is this part of?
-
-```text
-device
-→ board
-→ functional block
-→ circuit motif
-→ component
-→ physical effect
-```
-
-### Analogy asks:
-
-> What does this resemble?
-
-An unknown circuit may not be identical to any known design, but parts of it may resemble known prototypes:
-
-```text
-power stage resembles prototype P
-protection block resembles prototype Q
-connector topology resembles family R
-failure pattern resembles case S
-```
-
-Hierarchy tells us **where something belongs**.
-
-Analogy and prototype structure tell us **what it is like**.
-
-Both are necessary for useful knowledge navigation.
-
-A Noepedia implementation therefore should not be limited to ordinary subject-predicate facts. It must eventually support structural similarity, prototype membership, differences, inheritance, and competing classifications.
 
 ---
 
@@ -365,61 +680,9 @@ REPLICATION
 CURRENT KNOWLEDGE
 ```
 
-For example:
-
-```text
-OBSERVATION:
-    pad A toggles at 50 kHz
-
-INFERENCE:
-    pad A may be a clock
-
-TEST:
-    hold pad A low and observe downstream behavior
-
-RESULT:
-    downstream transfer stops
-
-REPLICATION:
-    repeated independently on three boards
-
-CURRENT KNOWLEDGE:
-    pad A functions as the transfer clock on revision B
-```
-
-The final sentence is useful.
+The final reusable conclusion is useful.
 
 The path that created it must remain inspectable.
-
----
-
-## Provenance Is Part of the Knowledge
-
-Every meaningful contribution should retain its origin.
-
-At minimum:
-
-```text
-who or what proposed it
-which session or experiment produced it
-which sources were used
-which instrument or method was used
-under what conditions
-which version of the field existed at the time
-what was changed
-how it was reviewed or tested
-what later happened to it
-```
-
-This is not paperwork added around knowledge.
-
-It is part of what makes knowledge reusable.
-
-A measurement without conditions is often not reusable.
-
-A claim without provenance may be impossible to inspect.
-
-A synthesis that erases disagreement may be easier to read but less useful for future reasoning.
 
 ---
 
@@ -459,86 +722,50 @@ HYPOTHESIS → VERIFIED
 POPULAR → TRUE
 UNKNOWN → CONFIDENT ANSWER
 ONE CONTEXT → EVERY CONTEXT
-OLD EVIDENCE → CURRENT EVIDENCE
+PARTIAL COVERAGE → COMPLETE UNDERSTANDING
 ```
-
-A complete-looking answer is not necessarily a better answer.
-
----
-
-## The Division of Labor
-
-A useful Noepedia architecture may eventually route work roughly like this:
-
-```text
-already known and validated
-        → retrieve / traverse / render
-
-routine transformation
-        → deterministic software or small model
-
-ambiguous relation
-        → stronger reasoning
-
-missing relation
-        → investigation
-
-frontier unknown
-        → human + LLM + tools + experiment
-```
-
-The principle can be summarized as:
-
-> **Use memory for what is known.**
->
-> **Use intelligence for what must be understood.**
->
-> **Use research for what is not yet known.**
-
-Large LLMs remain extremely important.
-
-Noepedia simply tries to stop using them as an expensive substitute for every other form of memory and computation.
 
 ---
 
 ## Relationship to AISocket
 
-AISocket and Noepedia operate at different boundaries of the same larger idea.
+AISocket and Noepedia operate at different boundaries of the same larger architecture.
 
-AISocket gives intelligence a constrained way to interact with real systems.
+Noepedia stores explicit reusable knowledge.
 
-Noepedia gives intelligence a persistent way to interact with accumulated knowledge.
+Socrates navigates and checks that knowledge.
+
+AISocket gives an authorized intelligence a bounded way to observe, test, and act in a local physical or software world.
 
 ```text
 Noepedia
     ↓
-validated local knowledge
+Socrates selects relevant knowledge and unresolved gaps
     ↓
 AISocket
     ↓
-bounded experiment or action
+bounded observation / experiment / action
     ↓
-real-world outcome
+real-world evidence
     ↓
 Noepedia
 ```
 
-In this loop, the world is not merely a destination for AI answers.
+AISocket therefore does not need to become a knowledge store.
 
-The world returns evidence.
-
-That evidence may revise the knowledge field.
+It should return structured traces and evidence that can later become knowledge.
 
 ---
 
 ## Relationship to OpenPCB Commons
 
-OpenPCB Commons is a natural experimental domain for Noepedia.
+OpenPCB Commons is a natural proving ground for the whole architecture.
 
-OpenPCB can preserve raw, object-specific evidence:
+OpenPCB can preserve object-specific evidence:
 
 ```text
 board photo
+geometry
 component marking
 probe position
 measurement
@@ -549,7 +776,7 @@ replication report
 repair outcome
 ```
 
-Noepedia can preserve the reusable structure extracted from that evidence:
+Noepedia can preserve reusable structure extracted from that evidence:
 
 ```text
 functional block
@@ -562,17 +789,21 @@ context limit
 reusable second-life knowledge
 ```
 
-The distinction is useful:
+Socrates can be tested on practical semiotic tasks such as:
 
 ```text
-OpenPCB asks:
-What happened on this real object?
-
-Noepedia asks:
-What reusable knowledge does this become?
+board-family recognition
+circuit-motif recognition
+prototype matching
+topology similarity
+donor-part search
+evidence reconciliation
+identifying the next discriminating measurement
 ```
 
-The boundary does not need to be rigid. The important point is that evidence should remain connected to the knowledge derived from it.
+This makes OpenPCB more than an application example.
+
+It can become an experimental domain that tells us what Socrates must actually learn to do.
 
 ---
 
@@ -582,21 +813,9 @@ Energy efficiency is an important motivation, but it is **not the definition of 
 
 If a known relation can be retrieved or traversed directly, it should usually be cheaper than asking a large generative model to reconstruct the same relation from a large context.
 
-But the true end-to-end difference depends on implementation:
+But the real difference depends on implementation and must be measured.
 
-- storage;
-- networking;
-- graph traversal;
-- validation;
-- local inference;
-- indexing;
-- rendering;
-- hardware;
-- workload.
-
-Therefore Noepedia treats energy reduction as an **experimental hypothesis and engineering target**, not a universal constant.
-
-Even if the eventual energy gain were much smaller than hoped, the deeper advantages would remain:
+Even if the eventual energy gain is smaller than hoped, the deeper advantages remain:
 
 - addressability;
 - provenance;
@@ -609,90 +828,11 @@ Even if the eventual energy gain were much smaller than hoped, the deeper advant
 
 ---
 
-## Hallucination and Transparency
-
-Noepedia does not make intelligence infallible.
-
-It tries to make error less able to hide.
-
-A fluent model answer may mix:
-
-```text
-retrieved fact
-inference
-analogy
-guess
-outdated information
-unsupported synthesis
-```
-
-Noepedia should make these separable.
-
-A strict answer should be able to expose its support path:
-
-```text
-ANSWER
-    supported-by: NODE-204
-    evidence: E-51, E-63, E-80
-    context: C-7
-    replication: 3 independent
-    conflict: NODE-311
-    inference-added: yes/no
-```
-
-If the field does not support a requested relation, the system should be able to say:
-
-```text
-OPEN
-```
-
-instead of manufacturing closure.
-
----
-
-## No Single Intelligence Owns the Field
-
-Noepedia is compatible with:
-
-- humans;
-- LLMs;
-- smaller local neural models;
-- deterministic programs;
-- laboratories;
-- sensors;
-- institutions;
-- future reasoning systems not yet designed.
-
-No central model needs to erase all differences into one final voice.
-
-Participants may disagree.
-
-They may contribute different evidence.
-
-They may use different methods.
-
-They may leave a question unresolved.
-
-The field should outlive any one session, model, laboratory, or contributor.
-
----
-
 ## Publications Are Views, Not the Ontology
 
 Noepedia may produce publications, articles, reports, or API responses.
 
 But a publication is not the fundamental unit of the system.
-
-The underlying knowledge field may also represent structures that are never naturally written as articles:
-
-- a circuit prototype family;
-- a similarity neighborhood;
-- a causal network;
-- a hierarchy;
-- a timeline;
-- an experiment tree;
-- an unresolved conflict;
-- a reusable operational package.
 
 Human-readable prose is a **projection**.
 
@@ -700,34 +840,38 @@ It is not the authority layer.
 
 Likewise, LLM weights are not the authority layer for settled Noepedia knowledge.
 
-The authority layer is the inspectable field together with its evidence and history.
+The authority layer is the inspectable field together with its network rules, evidence, placement history, revisions, and unresolved conflicts.
 
 ---
 
-## Minimal Semiotic Objects
+## Minimal Working Objects
 
-The exact grammar is still open, but the current conceptual minimum includes objects such as:
+The exact grammar remains open, but the current conceptual minimum includes objects such as:
 
 | Object | Purpose |
 |---|---|
 | `ENTITY` | An addressable thing or concept |
 | `CLAIM` | A proposed assertion or relation |
 | `RELATION` | A typed connection between objects |
+| `NETWORK` | A rule-governed evaluative projection |
+| `RULE_CARD` | The declared rule of a network |
+| `PLACEMENT` | An object's position or relation inside a network |
+| `PLACEMENT_ARGUMENT` | Why that placement is proposed or accepted |
+| `COVERAGE` | Which relevant networks have and have not been evaluated |
 | `SOURCE` | Origin of information |
-| `EVIDENCE` | Support for a claim |
-| `COUNTEREVIDENCE` | Evidence against a claim |
+| `EVIDENCE` | Support for a claim or placement |
+| `COUNTEREVIDENCE` | Evidence against it |
 | `OBSERVATION` | A recorded observation |
 | `TEST` | A verification procedure |
 | `RESULT` | Output of a test |
 | `REPLICATION` | An independent repetition of a result |
 | `CONTEXT` | Conditions under which knowledge applies |
-| `HIERARCHY` | Part-of / class / containment structure |
 | `PROTOTYPE` | A reference pattern or family center |
 | `SIMILARITY` | A qualified resemblance relation |
 | `DIFFERENCE` | A discriminating distinction |
 | `OPEN` | A registered unknown |
 | `CONFLICT` | Incompatible supported positions |
-| `REVISION` | A change in the knowledge model |
+| `REVISION` | A change in a node, placement, or network rule |
 | `AGENT` | Human, model, program, team, lab, institution |
 | `SESSION` | A bounded episode of work |
 | `OUTCOME` | Real-world feedback |
@@ -750,213 +894,127 @@ These are not frozen specifications yet.
 
 ---
 
-## A Different Kind of Safety
-
-Noepedia's strongest safety property is structural transparency.
-
-Instead of relying only on one model to be wise, calibrated, complete, and correct at the same moment, the system tries to preserve conditions in which claims can be inspected and challenged.
-
-Useful structural conditions include:
-
-- stable addresses;
-- preserved sources;
-- preserved evidence;
-- visible uncertainty;
-- visible disagreement;
-- explicit context;
-- independent replication;
-- provenance;
-- bounded application projections;
-- real-world feedback returning into the field.
-
-This does not eliminate mistakes.
-
-It makes mistakes easier to locate, attribute, test, revise, or keep open.
-
----
-
-## Implementation Should Follow the Concept, Not Freeze It
-
-Earlier Noepedia drafts described a specific stack involving publication services, validators, append-only logs, SQL projections, and renderers.
-
-Those remain plausible implementation tools.
-
-They are no longer treated as the definition of the project.
-
-The final system may use some combination of:
-
-- graphs;
-- relational databases;
-- event logs;
-- vector or geometric indexes;
-- neural similarity models;
-- deterministic validators;
-- local small models;
-- LLMs;
-- distributed storage;
-- human review;
-- experimental instruments.
-
-The architecture should be chosen to preserve the conceptual invariants, not the other way around.
-
-Those invariants are more important than any current software stack.
-
----
-
 ## First Research Prototype
 
-The first prototype should prove a **knowledge cycle**, not merely a user interface.
+The first prototype should prove a **knowledge-and-meaning cycle**, not merely a user interface.
 
-A useful test would demonstrate that the system can:
+A useful test should demonstrate that the system can:
 
-1. ingest a real question or object;
-2. preserve observations separately from inferences;
-3. create addressable claims and relations;
-4. attach evidence and context;
-5. preserve hierarchy and prototype/analogy relations;
-6. register `OPEN` and `CONFLICT` without forcing closure;
-7. accept an independent test or replication;
-8. update the current knowledge node without erasing its genealogy;
-9. answer a known question by traversing stored structure;
-10. expose the evidence path behind the answer;
-11. detect a genuine gap;
-12. send that gap to a human, LLM, laboratory, or AISocket tool for new investigation;
-13. return the new result to the field as structure.
+1. ingest a real object with minimal interpretation;
+2. place it into one or more explicit networks;
+3. expose each network's rule card;
+4. show why each placement was proposed;
+5. compare competing placements;
+6. detect a rule violation or silent rule change;
+7. preserve observation separately from inference;
+8. attach evidence, counterevidence, context, and provenance;
+9. record which relevant networks have not yet been consulted;
+10. preserve `OPEN` and `CONFLICT` without forcing closure;
+11. accept independent tests or replications;
+12. revise a placement without deleting its history;
+13. detect a genuine gap;
+14. send that gap to an LLM, human, laboratory, or AISocket tool;
+15. return the result to Noepedia as new structure.
 
-A good first domain may be one where physical evidence can be collected and repeated, such as OpenPCB Commons.
+The first version of Socrates should be neural enough to discover recurring operations rather than assuming we already know all of them.
 
-Noepedia itself can also remain a useful meta-test because the history of this concept contains successive revisions, competing formulations, and visible conceptual growth.
-
----
-
-## Success Criteria
-
-The project begins to succeed when:
-
-- knowledge survives the session that created it;
-- a later intelligence can enter without reconstructing the whole history from scratch;
-- the current conclusion and its evidence remain separately inspectable;
-- different participants can disagree without losing their work;
-- a known relation can be reused without a large-model reconstruction step;
-- a missing relation remains visibly missing rather than being silently hallucinated;
-- new evidence can revise the model without deleting its history;
-- hierarchy, analogy, prototype, and context improve navigation;
-- an independent replication can change the epistemic status of a node;
-- a small navigator can perform useful work inside a large field;
-- a frontier model is called because something is genuinely unknown, not merely because the system forgot what it already knew.
-
-Claims about energy, latency, accuracy, hallucination reduction, and model-size reduction must be measured experimentally.
+The prototype should also record those recurring operations so that later versions can test which ones can be replaced by deterministic algorithms.
 
 ---
 
-## What Noepedia Is Not
+## What We Explicitly Do Not Know Yet
 
-Noepedia is not:
+Noepedia should make its own ignorance visible.
 
-- an AI-written encyclopedia;
-- a wiki with generated prose pasted into pages;
-- a long-term chat archive;
-- a RAG index that treats every retrieved passage as equivalent;
-- a single LLM presented as an oracle;
-- a temporary multi-agent conversation producing one disposable answer;
-- a popularity-based truth system;
-- a database that deletes disagreement;
-- a system that confuses confidence with evidence;
-- a claim that language models are obsolete.
+Important open questions include:
 
-Noepedia is an attempt to make **knowledge itself** more persistent, explicit, navigable, inspectable, and reusable.
+- How many distinct network types are sufficient for useful reconstruction in a domain?
+- How should network relevance be discovered?
+- How should independence between projections be measured?
+- How much of Socrates must remain neural?
+- Which recurrent Socratic operations can become deterministic algorithms?
+- How should implantation quality be measured without collapsing it into one opaque score?
+- How should contradictory but individually valid networks be composed for a particular task?
+- When is network coverage sufficient to act?
+- How should a new network type be proposed and tested?
+
+We do not know these answers yet.
+
+That is not a defect in the project description.
+
+They are part of the research program.
 
 ---
 
 ## A Short Formula
 
 ```text
+WORLD
+    ↓
+AISocket
+    observe / test / act
+    ↓
+NOEPEDIA
+    objects + evidence + rule-governed networks + history
+    ↓
+SOCRATES / LSM
+    read rules + navigate + compare + challenge placements + check coverage
+    ↓
 LLM
-    learns language and reconstructs meaning
-
-LSM / Noepedia
-    preserves meaning as external structure
-
-Socratic Navigator
-    learns how to move through that structure
-
-Human + LLM + tools
-    create new knowledge where structure is missing
+    language + explanation + novel synthesis when existing structure is insufficient
+    ↓
+new hypothesis / new experiment / new structure
 ```
 
-And the full loop:
+And even shorter:
 
-```text
-I do not know
-→ search
-→ distinguish
-→ compare
-→ test
-→ understand
-→ structure
-→ preserve
-→ reuse
-→ detect the next unknown
-```
+> **Noepedia stores the projections.**
+>
+> **Socrates learns how to move among them.**
+>
+> **Meaning is reconstructed from their intersection.**
 
 ---
 
 ## ქართული მოკლე აღწერა
 
-**Noepedia-ს ძირითადი პრინციპია: ცოდნა ხელმეორედ მოსაპოვებელი არ უნდა იყოს.**
+**Noepedia მხოლოდ ფაქტების საცავი არ არის.**
 
-ერთხელ მოპოვებული, გარჩეული, შემოწმებული და სახელდებული ცოდნა უნდა გადაიქცეს ისეთ გარე სემიოტიკურ სტრუქტურად, რომელსაც შემდეგი ადამიანი, პროგრამა, პატარა მოდელი ან LLM პირდაპირ დაეყრდნობა.
+იგი ინახავს ობიექტებს და მათზე აშენებულ მრავალ დამოუკიდებელ შეფასებით ქსელსაც.
 
-Noepedia-ს სამუშაო ტერმინია **Large Semiotic Model — LSM**.
+ობიექტის შეტანა შეიძლება მარტივი იყოს. რთული ნაწილი არის მისი **იმპლანტირება მნიშვნელობაში** — რომელ ქსელში უნდა იდგეს, რომელი წესით, რა ნიშნებით და რა მტკიცებულებით.
 
-LLM-ში ცოდნის დიდი ნაწილი წონებში განაწილებულ კვალად არსებობს და პასუხისას მისი რეკონსტრუქცია ხდება. Noepedia ცდილობს უკვე მოპოვებული ცოდნა გარეთ შეინახოს — მისამართებად, იერარქიებად, ანალოგიებად, პროტოტიპებად, მტკიცებებად, დასტურებად, კონტექსტებად, წინააღმდეგობებად, ტესტებად, გამეორებებად და ისტორიად.
+ყოველ ქსელს აქვს თავისი `RULE_CARD` — რა თვისებას აფასებს და როგორ ალაგებს ობიექტებს.
 
-ამიტომ Noepedia მხოლოდ ცოდნის „კარადა“ არ არის. იგი ცოდნის **ჩასადებიც**, **გასაზრდელიც**, **გასარჩევიც** და **ხელახლა გამოსაყენებელი გარემოც** უნდა გახდეს.
+თუ ეს წესი შეიცვალა, ცვლილებაც ცალკე უნდა გამოჩნდეს და ძველი განლაგებები ხელახლა უნდა შემოწმდეს.
 
-ცოდნის ერთი კვანძი უნდა გვაძლევდეს ორ რამეს:
+Noepedia-ში შემოთავაზებულ LSM-ს ვარქმევთ **Socrates**.
 
-```text
-რას ვამბობთ ახლა?
-რატომ გვაქვს ამის თქმის უფლება?
-```
+Socrates-ს არ სჭირდება სამყაროს ყველა ფაქტის, ყველა ქსელის ან ყველა წესის საკუთარ წონებში ტარება. ფაქტები გარეთაა, ქსელები გარეთაა და ქსელების წესებიც გარეთაა. მისი ნეირონული კვალიფიკაციაა ამ წესების წაკითხვა, შესაბამისი ქსელის პოვნა, ობიექტის განლაგების შემოწმება, წინააღმდეგობის აღმოჩენა, ალტერნატივების შედარება და იმის დანახვა, რომელი მნიშვნელოვანი ხედვები ჯერ არ გამოგვიკითხავს.
 
-ზემოთ შეიძლება იყოს ერთიანი მიმდინარე დასკვნა, ქვემოთ კი მისი მტკიცებულებებისა და დამოუკიდებელი გამეორებების ცხრილი.
+მთავარი სამუშაო ჰიპოთეზაა:
 
-Noepedia-ს ცოდნა იზრდება:
+> **მაღალი ინტელექტი შეიძლება ნიშნავდეს ერთი და იმავე სამყაროს მრავალი განსხვავებული შეფასებითი ქსელის წესების დაურღვევლად, შეთანხმებულად და გადამოწმებადად გამოყენების უნარს.**
 
-```text
-სიგანეში — ახალი შემთხვევებით;
-სიმაღლეში — შემთხვევიდან პროტოტიპამდე და ზოგად სტრუქტურამდე;
-სიგრძეში — ცოდნის ცვლილების ისტორიით დროში.
-```
+რამდენი ასეთი ქსელია საკმარისი — 724, 3000, 7823 თუ სხვა რაოდენობა — არ ვიცით. ეს რიცხვები მხოლოდ მაგალითებია. პასუხი ექსპერიმენტულად უნდა ვიპოვოთ.
 
-იერარქია პასუხობს კითხვას — **რის ნაწილია?**
+Socrates თავიდან ნეირონული უნდა იყოს, რადგან ჯერ თვითონ მისი სრული ტექნიკური დავალებაც არ ვიცით. ნეირონულ ეტაპზე შეიძლება გამოვავლინოთ განმეორებადი ოპერაციები; რაც სტაბილურ პატერნად ჩამოყალიბდება, მოგვიანებით ჩვეულებრივ ალგორითმად გადავიტანოთ.
 
-ანალოგი და პროტოტიპი პასუხობს კითხვას — **რას ჰგავს?**
-
-`OPEN`, `CONFLICT`, `STALE` და კონტექსტური შეზღუდვა ისეთივე კანონიერი ცოდნის მდგომარეობებია, როგორც დადასტურებული მტკიცება.
-
-დიდი LLM უნდა დარჩეს იქ, სადაც მართლაც საჭიროა ახალი მნიშვნელობის, ახალი ჰიპოთეზის, ახალი სინთეზის ან ახალი ცოდნის მოპოვება.
+ამიტომ:
 
 ```text
-ცნობილი → ამოიღე
-რუტინული → პატარა მოდელი ან პროგრამა
-გაურკვეველი → იმსჯელე
-უცნობი → გამოიკვლიე
-ახალი აღმოჩენა → გადააქციე სტრუქტურად
+ობიექტი → Noepedia
+მნიშვნელობის კანდიდატი → შეფასებითი ქსელები
+ქსელის წესი → RULE_CARD
+განლაგების კამათი → Socrates
+ახალი უცნობი → LLM / ადამიანი / AISocket / ექსპერიმენტი
+შედეგი → ისევ Noepedia
 ```
 
-მოკლე ფორმულა:
+ყველაზე მოკლე ფორმულა:
 
-> **Use memory for what is known.**  
-> **Use intelligence for what must be understood.**  
-> **Use research for what is not yet known.**
-
-და ყველაზე მოკლე ფორმულა:
-
-> **Knowledge should not have to be rediscovered.**
->
-> **Discovery should become structure.**
+> **ობიექტის ჩადება იოლია.**  
+> **რას ნიშნავს და სად ეკუთვნის — ეს უნდა იყოს საკამათო, არგუმენტირებადი და გადამოწმებადი.**
 
 ---
 
