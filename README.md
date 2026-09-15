@@ -1,485 +1,738 @@
 # Noepedia
 
-**A public knowledge system for creating, revising, consolidating, and safely reusing knowledge with humans and artificial intelligence.**
+> **Knowledge should not have to be rediscovered.**
+>
+> **Discovery should become structure.**
 
-> Noepedia is an attempt to turn known knowledge from a repeatedly regenerated text stream into a persistent, addressable, verifiable, and reusable structure.
+Noepedia is an open attempt to build a **persistent, addressable, inspectable model of knowledge outside the weights of any one language model**.
 
-Noepedia was born from the AISocket project, but it is an independent open project.
+The working term for this idea is **Large Semiotic Model (LSM)**.
 
----
+A Large Language Model is powerful because enormous cultural experience leaves a distributed trace in its parameters, from which useful meaning can often be reconstructed. Noepedia asks a different question:
 
-## Purpose
+> Once knowledge has already been discovered, tested, distinguished, and named, why should every future intelligence have to reconstruct it again from text or from neural weights?
 
-Noepedia serves three primary functions:
+Noepedia tries to preserve that knowledge explicitly: as addressable objects, relations, prototypes, hierarchies, evidence, contexts, conflicts, tests, replications, revisions, and open questions.
 
-1. **Knowledge creation**  
-   Humans and artificial agents can build new knowledge structures, publish claims, attach evidence, preserve authorship, and register unresolved questions.
+The goal is not to replace LLMs.
 
-2. **Knowledge revision**  
-   Existing knowledge can be criticized, corrected, compared, extended, and consolidated without silently erasing previous versions or disagreements.
-
-3. **Knowledge use**  
-   Applications, local models, public services, laboratories, and automated systems can retrieve a consolidated, traceable, and less hallucination-prone view of already known knowledge.
-
-Noepedia is not only an encyclopedia.
-
-It is a knowledge creation system, a revision system, and a knowledge-serving infrastructure.
-
----
-
-## The Problem
-
-Large language models are powerful at reconstruction, interpretation, and synthesis, but ordinary use has several weaknesses:
-
-- the same known relationships are regenerated again and again from large amounts of text;
-- long contexts consume significant compute and energy;
-- provenance is often lost during synthesis;
-- disagreements disappear inside fluent answers;
-- unsupported claims may be presented with the same confidence as supported ones;
-- a conversation may end without preserving the constructed model;
-- automated systems may act on an answer that was never structurally validated.
-
-Hallucination is especially dangerous when an answer is not merely read by a person, but used automatically by:
-
-- industrial systems;
-- public infrastructure;
-- laboratories;
-- accounting systems;
-- medical or safety-related software;
-- robots and devices;
-- autonomous agents.
-
-A fluent but unsupported sentence may be inconvenient in conversation.
-
-The same sentence may become dangerous when converted directly into action.
-
-Noepedia therefore treats traceability, uncertainty, conflict, and validation as part of the knowledge itself.
-
----
-
-## Core Principle
-
-Known knowledge should not need to be reconstructed from scratch every time it is used.
+The goal is to change the division of labor between **memory, navigation, reasoning, and discovery**.
 
 ```text
-documents and discussions
-        ↓
-claims, relations, evidence, tests, conflicts
-        ↓
-addressable knowledge field
-        ↓
-consolidated local projection
-        ↓
-article / answer / API / verified action
+known structure      → preserve it
+known relation       → address it
+known evidence       → attach it
+known uncertainty    → keep it visible
+known conflict       → do not erase it
+unknown relation     → investigate it
+new discovery        → turn it into structure
 ```
 
-Large LLMs should be used primarily where they provide the greatest value:
+A language model should not need to carry the whole world in its internal memory in order to work intelligently with the world.
+
+It should be able to enter a structured field, find what is already known, inspect why it is believed, see what remains uncertain, and spend expensive reasoning only where something new must actually be understood.
+
+---
+
+## The Core Principle
+
+Noepedia begins from one simple refusal:
+
+> **Already acquired knowledge should not repeatedly pay the full cost of rediscovery.**
+
+Today, much knowledge exists only in forms that must be reconstructed each time it is used:
+
+- prose documents;
+- scientific papers;
+- forum threads;
+- old chats;
+- source code comments;
+- scattered measurements;
+- model weights;
+- private notebooks;
+- institutional memory;
+- human memory.
+
+These forms are valuable, but they often force the next user or model to repeat the same work:
 
 ```text
-NOVELTY
-CONFLICT
+find sources
+→ rebuild context
+→ infer relations
+→ separate fact from interpretation
+→ detect disagreement
+→ reconstruct the current model
+→ answer
+```
+
+Noepedia tries to preserve the result of that work so that the next intelligence can begin **where the previous one stopped**.
+
+```text
+experience / source / experiment
+            ↓
+        discovery
+            ↓
+ explicit semiotic structure
+            ↓
+    reusable knowledge
+            ↓
+      navigation / use
+            ↓
+ gap, conflict, novelty, OPEN
+            ↓
+       new discovery
+            ↓
+        structure again
+```
+
+This cycle is the center of the project.
+
+---
+
+## Why “Large Semiotic Model”?
+
+The phrase is intentionally different from **Large Language Model**.
+
+Language is one way knowledge is carried. It is not the only one.
+
+A scientific result may be represented by:
+
+- a relation;
+- a hierarchy;
+- a causal structure;
+- a prototype;
+- a similarity pattern;
+- a graph;
+- a geometric form;
+- an experimental trace;
+- a table of replications;
+- a rule;
+- a counterexample;
+- a temporal history;
+- a boundary condition;
+- an unresolved contradiction.
+
+Noepedia treats these as first-class knowledge structures rather than forcing all of them to disappear into prose.
+
+The term **LSM** is a working architectural idea, not a claim that the final implementation is known.
+
+Its essential distinction is this:
+
+```text
+LLM:
+meaning is largely distributed inside learned parameters
+and reconstructed through generation
+
+LSM:
+meaning is also preserved outside the model
+as explicit, addressable, inspectable structure
+```
+
+The two can work together.
+
+An LLM may be excellent at interpretation, synthesis, analogy, hypothesis generation, explanation, and invention.
+
+An LSM should make it unnecessary to repeatedly regenerate what has already become stable knowledge.
+
+---
+
+## The Socratic Navigator
+
+Noepedia also suggests a different kind of learned intelligence.
+
+Call it, for now, the **Socratic Navigator**.
+
+It does not need to know every fact.
+
+It needs to know how to relate to knowledge.
+
+Its skills are closer to:
+
+```text
+What do I know?
+What do I not know?
+What is the evidence?
+What differs?
+What is similar?
+What is repeated?
+What is only an inference?
+What is contradicted?
+What is stale?
+What should be tested next?
+Where does a new result belong?
+```
+
+Such a system could be much smaller than a frontier LLM because it does not need to carry the full factual content of the world in its weights.
+
+Its competence would be **navigation, discrimination, comparison, checking, and placement**.
+
+This is only a research direction. Noepedia does not assume that the correct navigator architecture has already been found.
+
+But it changes the design question from:
+
+> How do we make one model remember everything?
+
+into:
+
+> How do we let many kinds of intelligence live effectively inside a shared external knowledge structure?
+
+---
+
+## A Knowledge Node Is Not Just a Sentence
+
+A central Noepedia object should not be only a statement such as:
+
+> X is true.
+
+A useful knowledge node should be able to answer two different questions:
+
+1. **What is the current usable conclusion?**
+2. **Why are we allowed to say it?**
+
+These are different layers.
+
+A compact current node might say:
+
+```text
+CLAIM:
+    Interface P uses protocol Q under conditions C.
+
+STATUS:
+    REPLICATED
+
+VALID IN:
+    hardware revision B
+
+CONFLICT:
+    revision C behaves differently
+```
+
+Below it sits the evidence structure:
+
+| Evidence | Method | Conditions | Result | Independence | Status |
+|---|---|---|---|---|---|
+| E1 | direct measurement | C1 | supports | original | TESTED |
+| E2 | independent replication | C1 | supports | independent | REPLICATED |
+| E3 | independent replication | C1 | supports | independent | REPLICATED |
+| E4 | independent replication | C1 | supports | independent | REPLICATED |
+| E5 | test on revision C | C2 | contradicts | independent | CONFLICT |
+
+The upper node allows fast use.
+
+The evidence layer allows inspection.
+
+This separation is crucial.
+
+A person or small model should not need to reread forty documents to use a settled result. But at any moment it should be possible to descend from the conclusion to the evidence that supports, limits, or contradicts it.
+
+---
+
+## Replication Is an Operation, Not Decoration
+
+Noepedia treats replication as part of the knowledge grammar.
+
+A claim may move through states such as:
+
+```text
+PROPOSED
+→ SUPPORTED
+→ TESTED
+→ REPLICATED ×1
+→ REPLICATED ×2
+→ REPLICATED ×3
+→ reusable knowledge
+```
+
+The exact thresholds should depend on domain and consequence. Three replications are not a universal law of science.
+
+But the architecture should be able to represent **independent repetition explicitly**.
+
+This matters because popularity, authority, confidence, and eloquence are not substitutes for repetition.
+
+```text
+money can express demand
+reputation can guide attention
+confidence can guide search
+
+but evidence and replication determine support
+```
+
+This principle is especially important for integrations such as OpenPCB Commons, where a black-box result may be claimed, independently reproduced, and only then promoted into a trusted reusable node.
+
+---
+
+## Knowledge Grows in More Than One Direction
+
+Noepedia should not be imagined as a flat database.
+
+A living knowledge field grows in at least three directions.
+
+### 1. Breadth
+
+More cases, objects, domains, experiments, failures, exceptions, and observations are added.
+
+```text
+one motor
+→ many motors
+→ many controller families
+→ many machines
+```
+
+### 2. Height
+
+Concrete cases are compared and abstracted into higher structures.
+
+```text
+instance
+→ pattern
+→ prototype
+→ family
+→ class
+→ general relation
+```
+
+This is where knowledge becomes more than accumulation.
+
+### 3. Length
+
+Knowledge has a history.
+
+```text
+we believed A
+→ evidence E appeared
+→ A split into A1 and A2
+→ new context C was discovered
+→ old result remained valid only locally
+```
+
+Noepedia should preserve this genealogy rather than overwriting yesterday with today.
+
+The history of how a model changed is itself knowledge.
+
+---
+
+## Hierarchy and Analogy
+
+Two relations are particularly important.
+
+### Hierarchy asks:
+
+> What is this part of?
+
+```text
+device
+→ board
+→ functional block
+→ circuit motif
+→ component
+→ physical effect
+```
+
+### Analogy asks:
+
+> What does this resemble?
+
+An unknown circuit may not be identical to any known design, but parts of it may resemble known prototypes:
+
+```text
+power stage resembles prototype P
+protection block resembles prototype Q
+connector topology resembles family R
+failure pattern resembles case S
+```
+
+Hierarchy tells us **where something belongs**.
+
+Analogy and prototype structure tell us **what it is like**.
+
+Both are necessary for useful knowledge navigation.
+
+A Noepedia implementation therefore should not be limited to ordinary subject-predicate facts. It must eventually support structural similarity, prototype membership, differences, inheritance, and competing classifications.
+
+---
+
+## Observation, Inference, and Knowledge Must Not Collapse Together
+
+Noepedia should preserve the difference between:
+
+```text
+OBSERVATION
+INFERENCE
+HYPOTHESIS
+TEST
+RESULT
+REPLICATION
+CURRENT KNOWLEDGE
+```
+
+For example:
+
+```text
+OBSERVATION:
+    pad A toggles at 50 kHz
+
+INFERENCE:
+    pad A may be a clock
+
+TEST:
+    hold pad A low and observe downstream behavior
+
+RESULT:
+    downstream transfer stops
+
+REPLICATION:
+    repeated independently on three boards
+
+CURRENT KNOWLEDGE:
+    pad A functions as the transfer clock on revision B
+```
+
+The final sentence is useful.
+
+The path that created it must remain inspectable.
+
+---
+
+## Provenance Is Part of the Knowledge
+
+Every meaningful contribution should retain its origin.
+
+At minimum:
+
+```text
+who or what proposed it
+which session or experiment produced it
+which sources were used
+which instrument or method was used
+under what conditions
+which version of the field existed at the time
+what was changed
+how it was reviewed or tested
+what later happened to it
+```
+
+This is not paperwork added around knowledge.
+
+It is part of what makes knowledge reusable.
+
+A measurement without conditions is often not reusable.
+
+A claim without provenance may be impossible to inspect.
+
+A synthesis that erases disagreement may be easier to read but less useful for future reasoning.
+
+---
+
+## OPEN and CONFLICT Are Legal Knowledge States
+
+Noepedia should never require the world to look more settled than it is.
+
+When evidence is insufficient:
+
+```text
 OPEN
-INSUFFICIENT EVIDENCE
-NEW SYNTHESIS
 ```
 
-Known and repeatedly used structure should gradually move toward:
-
-```text
-deterministic rules
-graph traversal
-SQL queries
-small local models
-verified procedures
-ordinary software
-```
-
-The design objective is:
-
-```text
-LLM cost ∝ novelty + conflict + OPEN
-```
-
-—not the total amount of routine knowledge use.
-
----
-
-## What a Noepedia Publication Is
-
-A publication is not only a page of text.
-
-It is an addressable knowledge structure containing:
-
-```text
-subject
-claims
-objects
-relations
-sources
-evidence
-tests
-results
-counterexamples
-comments
-revisions
-alternative models
-conflicts
-OPEN positions
-authors
-contributors
-applications
-real-world outcomes
-```
-
-A human-readable article is one projection of this structure.
-
-The same publication may also be rendered as:
-
-- a concise answer;
-- a detailed article;
-- a claim map;
-- a conflict map;
-- an OPEN-question list;
-- a revision history;
-- a machine-readable API response;
-- a bounded operational instruction set.
-
----
-
-## Knowledge Creation
-
-A new publication may begin from:
-
-- a human research question;
-- an engineering problem;
-- a scientific paper;
-- a technical discussion;
-- a dataset;
-- an LLM session;
-- an experiment;
-- a public institution;
-- an existing article that needs restructuring.
-
-Humans and artificial agents may contribute:
-
-- new claims;
-- new relations;
-- evidence;
-- counterexamples;
-- corrections;
-- tests;
-- alternative models;
-- syntheses;
-- unresolved questions.
-
-Every contribution receives:
-
-```text
-stable address
-author or agent identity
-session identity
-base version
-timestamp
-sources
-status
-review history
-```
-
-The system stores the contribution as a proposed delta rather than silently rewriting the publication.
-
----
-
-## Knowledge Revision
-
-Knowledge in Noepedia is expected to change.
-
-Revision is not treated as damage to a finished article. It is a normal operation of the system.
-
-```text
-READ
-→ PROPOSE DELTA
-→ VALIDATE
-→ REVIEW / TEST
-→ ACCEPT / REJECT / REVISE / KEEP OPEN
-→ BUILD NEW CONSOLIDATED VIEW
-```
-
-The current consolidated version may change while preserving:
-
-- the original publication;
-- all accepted and rejected proposals;
-- alternative models;
-- authorship;
-- reasons for revision;
-- unresolved conflicts;
-- prior states.
-
-`REFUTED` does not mean deleted.
-
-A failed path may remain useful because it records what was attempted, why it failed, and under which conditions it may still matter.
-
----
-
-## Consolidated Knowledge
-
-Noepedia does not treat every comment as an independent final answer.
-
-Many contributions may be transformed into a consolidated model.
-
-```text
-publication
-+ comments
-+ critiques
-+ tests
-+ alternative structures
-        ↓
-comparison
-        ↓
-accepted relations
-preserved conflicts
-preserved OPEN positions
-        ↓
-new consolidated version
-```
-
-The result should be easier to use than a long discussion, while remaining traceable to the discussion that produced it.
-
-Consolidation is not forced consensus.
-
-When evidence does not justify closure, the result remains:
-
-```text
-OPEN
-```
-
-or:
+When supported models remain incompatible:
 
 ```text
 CONFLICT
 ```
 
----
-
-## Reducing Hallucination
-
-Noepedia does not claim that hallucination can be eliminated universally.
-
-Its goal is to make unsupported generation visible, bounded, and preventable in critical workflows.
-
-A strict answer should be assembled from addressable claims:
+When evidence is old:
 
 ```text
-answer statement
-    supported-by: CLAIM-204
-    source: SOURCE-19
-    status: TESTED
-    valid-in-context: CONTEXT-7
+STALE
 ```
 
-When the field does not support an answer, the system should return:
+When a result applies only under specific conditions:
 
 ```text
-OPEN
+VALID-IN-CONTEXT
 ```
-
-When the field contains incompatible supported models, it should return:
-
-```text
-CONFLICT
-```
-
-When evidence is outdated or context-dependent, that limitation must travel with the answer.
 
 The system should not silently convert:
 
 ```text
 PROPOSED → FACT
 HYPOTHESIS → VERIFIED
+POPULAR → TRUE
 UNKNOWN → CONFIDENT ANSWER
+ONE CONTEXT → EVERY CONTEXT
+OLD EVIDENCE → CURRENT EVIDENCE
 ```
+
+A complete-looking answer is not necessarily a better answer.
 
 ---
 
-## Safe Automatic Use
+## The Division of Labor
 
-Automatic use requires stricter rules than human reading.
-
-Before a publication can be used operationally, the system may require:
-
-- a bounded context;
-- explicit permissions;
-- validated input and output schemas;
-- source requirements;
-- status requirements;
-- safety constraints;
-- reversible actions;
-- human confirmation where necessary;
-- an execution report;
-- real-world feedback.
+A useful Noepedia architecture may eventually route work roughly like this:
 
 ```text
-knowledge field
-        ↓
-local validated projection
-        ↓
-operational rules
-        ↓
-AISocket or another bounded interface
-        ↓
-action
-        ↓
-report and outcome
-        ↓
-knowledge revision
+already known and validated
+        → retrieve / traverse / render
+
+routine transformation
+        → deterministic software or small model
+
+ambiguous relation
+        → stronger reasoning
+
+missing relation
+        → investigation
+
+frontier unknown
+        → human + LLM + tools + experiment
 ```
 
-Noepedia supplies knowledge.
+The principle can be summarized as:
 
-An external execution layer controls whether and how that knowledge may act.
+> **Use memory for what is known.**
+>
+> **Use intelligence for what must be understood.**
+>
+> **Use research for what is not yet known.**
+
+Large LLMs remain extremely important.
+
+Noepedia simply tries to stop using them as an expensive substitute for every other form of memory and computation.
+
+---
+
+## Relationship to AISocket
+
+AISocket and Noepedia operate at different boundaries of the same larger idea.
+
+AISocket gives intelligence a constrained way to interact with real systems.
+
+Noepedia gives intelligence a persistent way to interact with accumulated knowledge.
+
+```text
+Noepedia
+    ↓
+validated local knowledge
+    ↓
+AISocket
+    ↓
+bounded experiment or action
+    ↓
+real-world outcome
+    ↓
+Noepedia
+```
+
+In this loop, the world is not merely a destination for AI answers.
+
+The world returns evidence.
+
+That evidence may revise the knowledge field.
+
+---
+
+## Relationship to OpenPCB Commons
+
+OpenPCB Commons is a natural experimental domain for Noepedia.
+
+OpenPCB can preserve raw, object-specific evidence:
+
+```text
+board photo
+component marking
+probe position
+measurement
+waveform
+instrument
+conditions
+replication report
+repair outcome
+```
+
+Noepedia can preserve the reusable structure extracted from that evidence:
+
+```text
+functional block
+interface relation
+prototype family
+failure pattern
+component equivalence
+validated protocol
+context limit
+reusable second-life knowledge
+```
+
+The distinction is useful:
+
+```text
+OpenPCB asks:
+What happened on this real object?
+
+Noepedia asks:
+What reusable knowledge does this become?
+```
+
+The boundary does not need to be rigid. The important point is that evidence should remain connected to the knowledge derived from it.
 
 ---
 
 ## Energy and Compute Efficiency
 
-Current AI systems often spend large resources repeatedly reconstructing already known structure from unstructured text.
+Energy efficiency is an important motivation, but it is **not the definition of Noepedia**.
 
-Noepedia attempts to preserve that structure once it has been created and validated.
+If a known relation can be retrieved or traversed directly, it should usually be cheaper than asking a large generative model to reconstruct the same relation from a large context.
 
-This may allow many known-answer tasks to move from:
+But the true end-to-end difference depends on implementation:
 
-```text
-large model + large context
-```
+- storage;
+- networking;
+- graph traversal;
+- validation;
+- local inference;
+- indexing;
+- rendering;
+- hardware;
+- workload.
 
-toward:
+Therefore Noepedia treats energy reduction as an **experimental hypothesis and engineering target**, not a universal constant.
 
-```text
-local field projection
-+ graph traversal
-+ SQL
-+ deterministic renderer
-+ small local model
-```
+Even if the eventual energy gain were much smaller than hoped, the deeper advantages would remain:
 
-The same large knowledge field does not need to fit entirely inside a model context.
-
-A small system may navigate only the relevant local projection.
-
-Example:
-
-```text
-global field:
-millions of objects
-
-local question:
-31 objects
-74 relations
-5 sources
-2 conflicts
-1 OPEN
-```
-
-The expected result is lower cost, lower latency, easier local deployment, and less dependence on centralized large-model inference for routine known knowledge.
-
-These efficiency claims must be measured experimentally.
+- addressability;
+- provenance;
+- inspectability;
+- explicit uncertainty;
+- reuse;
+- lower rediscovery;
+- easier local computation;
+- clearer separation between known knowledge and new inference.
 
 ---
 
-## System Components
+## Hallucination and Transparency
 
-### 1. Field Core
+Noepedia does not make intelligence infallible.
 
-Stores addressable objects, relations, claims, contexts, and statuses.
+It tries to make error less able to hide.
 
-### 2. Publication Layer
+A fluent model answer may mix:
 
-Groups a subject, its claims, sources, conflicts, revisions, and views.
+```text
+retrieved fact
+inference
+analogy
+guess
+outdated information
+unsupported synthesis
+```
 
-### 3. Delta Protocol
+Noepedia should make these separable.
 
-Defines legal operations for creating, changing, relating, and reviewing objects.
+A strict answer should be able to expose its support path:
 
-### 4. Validator
+```text
+ANSWER
+    supported-by: NODE-204
+    evidence: E-51, E-63, E-80
+    context: C-7
+    replication: 3 independent
+    conflict: NODE-311
+    inference-added: yes/no
+```
 
-Checks references, schemas, provenance, status transitions, permissions, and consistency rules.
+If the field does not support a requested relation, the system should be able to say:
 
-### 5. Event Log
+```text
+OPEN
+```
 
-Stores the authoritative append-only history.
-
-### 6. Projection Database
-
-Builds the current searchable state from the event log.
-
-### 7. Consolidation Engine
-
-Compares proposals and produces a new current model without deleting disagreement or history.
-
-### 8. Renderer
-
-Produces human-readable articles, summaries, graphs, reports, and machine-readable views.
-
-### 9. LLM Prompt and Tool Interface
-
-Provides a standard participation protocol for LLMs.
-
-### 10. Application API
-
-Allows external software to retrieve bounded, validated knowledge projections.
+instead of manufacturing closure.
 
 ---
 
-## Standard LLM Participation
+## No Single Intelligence Owns the Field
 
-Noepedia includes a prompt and tool interface so that an LLM can participate without the user manually explaining the protocol in every session.
+Noepedia is compatible with:
 
-The standard instructions define:
+- humans;
+- LLMs;
+- smaller local neural models;
+- deterministic programs;
+- laboratories;
+- sensors;
+- institutions;
+- future reasoning systems not yet designed.
 
-- how to read a publication;
-- how to navigate addresses;
-- how to distinguish current knowledge from a proposal;
-- how to preserve provenance;
-- how to create a delta;
-- how to attach authorship;
-- how to mark uncertainty;
-- how to preserve `OPEN`;
-- how to report conflicts;
-- how to request consolidation;
-- how to return a machine-readable result.
+No central model needs to erase all differences into one final voice.
 
-A Noepedia-compatible LLM should never write directly to the official field.
+Participants may disagree.
 
-It submits a proposal.
+They may contribute different evidence.
 
-The validator and review process decide what becomes part of the consolidated publication.
+They may use different methods.
+
+They may leave a question unresolved.
+
+The field should outlive any one session, model, laboratory, or contributor.
 
 ---
 
-## Minimal Data Objects
+## Publications Are Views, Not the Ontology
 
-The first version should support:
+Noepedia may produce publications, articles, reports, or API responses.
+
+But a publication is not the fundamental unit of the system.
+
+The underlying knowledge field may also represent structures that are never naturally written as articles:
+
+- a circuit prototype family;
+- a similarity neighborhood;
+- a causal network;
+- a hierarchy;
+- a timeline;
+- an experiment tree;
+- an unresolved conflict;
+- a reusable operational package.
+
+Human-readable prose is a **projection**.
+
+It is not the authority layer.
+
+Likewise, LLM weights are not the authority layer for settled Noepedia knowledge.
+
+The authority layer is the inspectable field together with its evidence and history.
+
+---
+
+## Minimal Semiotic Objects
+
+The exact grammar is still open, but the current conceptual minimum includes objects such as:
 
 | Object | Purpose |
 |---|---|
-| `ENTITY` | Any addressable subject or object |
-| `CLAIM` | A proposed assertion or relationship |
-| `SOURCE` | Origin of a claim |
+| `ENTITY` | An addressable thing or concept |
+| `CLAIM` | A proposed assertion or relation |
+| `RELATION` | A typed connection between objects |
+| `SOURCE` | Origin of information |
 | `EVIDENCE` | Support for a claim |
-| `COUNTEREXAMPLE` | Evidence against a claim |
-| `TEST` | A method of verification |
+| `COUNTEREVIDENCE` | Evidence against a claim |
+| `OBSERVATION` | A recorded observation |
+| `TEST` | A verification procedure |
 | `RESULT` | Output of a test |
+| `REPLICATION` | An independent repetition of a result |
+| `CONTEXT` | Conditions under which knowledge applies |
+| `HIERARCHY` | Part-of / class / containment structure |
+| `PROTOTYPE` | A reference pattern or family center |
+| `SIMILARITY` | A qualified resemblance relation |
+| `DIFFERENCE` | A discriminating distinction |
 | `OPEN` | A registered unknown |
-| `CONFLICT` | Incompatible claims or models |
-| `CONTEXT` | Conditions under which a claim applies |
-| `AGENT` | Human, LLM, program, team, or institution |
+| `CONFLICT` | Incompatible supported positions |
+| `REVISION` | A change in the knowledge model |
+| `AGENT` | Human, model, program, team, lab, institution |
 | `SESSION` | A bounded episode of work |
-| `DELTA` | A proposed change |
-| `REVIEW` | An evaluation of a proposal |
-| `PUBLICATION` | A named knowledge field |
-| `APPLICATION` | Use of knowledge in a system |
 | `OUTCOME` | Real-world feedback |
 
-Initial statuses:
+Candidate statuses include:
 
 ```text
 PROPOSED
@@ -493,178 +746,226 @@ STALE
 OPEN
 ```
 
----
-
-## Authorship and Provenance
-
-Authorship attaches to individual contributions, not only to the publication title.
-
-The system records:
-
-```text
-who contributed
-what was contributed
-which model or tool participated
-which sources were used
-which version was modified
-which review accepted or rejected it
-how the contribution affected the consolidated result
-```
-
-The factual history of contribution must remain recoverable.
-
-Recognition, reputation, and benefit may be handled by later layers, but provenance is part of the knowledge core.
+These are not frozen specifications yet.
 
 ---
 
-## Architecture
+## A Different Kind of Safety
 
-```text
-Web App / Local Client / LLM Tool
-              ↓
-         Noepedia API
-              ↓
-       Publication Service
-              ↓
-        Delta Validator
-              ↓
-    Append-only Event Store
-              ↓
- SQLite / PostgreSQL Projection
-              ↓
- Search / Graph / Local Projection
-              ↓
- Renderer / Consolidator / External API
-```
+Noepedia's strongest safety property is structural transparency.
 
-Suggested repository structure:
+Instead of relying only on one model to be wise, calibrated, complete, and correct at the same moment, the system tries to preserve conditions in which claims can be inspected and challenged.
 
-```text
-Noepedia/
-├── README.md
-├── prompts/
-│   └── READ_NOEPEDIA_FIELD.md
-├── spec/
-│   ├── FIELD_SPEC.md
-│   ├── PUBLICATION_SPEC.md
-│   ├── DELTA_SPEC.md
-│   └── VALIDATION_SPEC.md
-├── field-core/
-├── validator/
-├── event-store/
-├── projection-db/
-├── consolidator/
-├── renderer/
-├── app/
-├── api/
-├── examples/
-└── docs/
-```
+Useful structural conditions include:
+
+- stable addresses;
+- preserved sources;
+- preserved evidence;
+- visible uncertainty;
+- visible disagreement;
+- explicit context;
+- independent replication;
+- provenance;
+- bounded application projections;
+- real-world feedback returning into the field.
+
+This does not eliminate mistakes.
+
+It makes mistakes easier to locate, attribute, test, revise, or keep open.
 
 ---
 
-## First MVP
+## Implementation Should Follow the Concept, Not Freeze It
 
-The first prototype must demonstrate the complete system, not only a user interface.
+Earlier Noepedia drafts described a specific stack involving publication services, validators, append-only logs, SQL projections, and renderers.
 
-It should support:
+Those remain plausible implementation tools.
 
-1. creation of a publication;
-2. creation of an addressable claim network;
-3. attachment of sources and authorship;
-4. submission of comments as deltas;
-5. validation of references and status transitions;
-6. comparison of multiple proposals;
-7. consolidation into a new current model;
-8. preservation of conflicts and `OPEN` positions;
-9. deterministic article rendering;
-10. strict machine-readable question answering;
-11. export of a local projection for a small model or ordinary program.
+They are no longer treated as the definition of the project.
 
-The first test domain may be Noepedia itself, because its conceptual history already contains multiple human and LLM contributions, revisions, conflicts, and open questions.
+The final system may use some combination of:
+
+- graphs;
+- relational databases;
+- event logs;
+- vector or geometric indexes;
+- neural similarity models;
+- deterministic validators;
+- local small models;
+- LLMs;
+- distributed storage;
+- human review;
+- experimental instruments.
+
+The architecture should be chosen to preserve the conceptual invariants, not the other way around.
+
+Those invariants are more important than any current software stack.
+
+---
+
+## First Research Prototype
+
+The first prototype should prove a **knowledge cycle**, not merely a user interface.
+
+A useful test would demonstrate that the system can:
+
+1. ingest a real question or object;
+2. preserve observations separately from inferences;
+3. create addressable claims and relations;
+4. attach evidence and context;
+5. preserve hierarchy and prototype/analogy relations;
+6. register `OPEN` and `CONFLICT` without forcing closure;
+7. accept an independent test or replication;
+8. update the current knowledge node without erasing its genealogy;
+9. answer a known question by traversing stored structure;
+10. expose the evidence path behind the answer;
+11. detect a genuine gap;
+12. send that gap to a human, LLM, laboratory, or AISocket tool for new investigation;
+13. return the new result to the field as structure.
+
+A good first domain may be one where physical evidence can be collected and repeated, such as OpenPCB Commons.
+
+Noepedia itself can also remain a useful meta-test because the history of this concept contains successive revisions, competing formulations, and visible conceptual growth.
 
 ---
 
 ## Success Criteria
 
-The first Noepedia prototype succeeds when:
+The project begins to succeed when:
 
-- an independent LLM can read a publication using only the standard prompt and field;
-- it can reconstruct the main model;
-- it can identify what is supported, contested, and open;
-- it can return a valid delta;
-- multiple deltas can be consolidated without erasing provenance;
-- a deterministic renderer can produce a readable article;
-- a strict API can answer known questions without inventing unsupported relations;
-- routine retrieval uses less compute than reconstructing the same answer from a large raw-text context.
+- knowledge survives the session that created it;
+- a later intelligence can enter without reconstructing the whole history from scratch;
+- the current conclusion and its evidence remain separately inspectable;
+- different participants can disagree without losing their work;
+- a known relation can be reused without a large-model reconstruction step;
+- a missing relation remains visibly missing rather than being silently hallucinated;
+- new evidence can revise the model without deleting its history;
+- hierarchy, analogy, prototype, and context improve navigation;
+- an independent replication can change the epistemic status of a node;
+- a small navigator can perform useful work inside a large field;
+- a frontier model is called because something is genuinely unknown, not merely because the system forgot what it already knew.
+
+Claims about energy, latency, accuracy, hallucination reduction, and model-size reduction must be measured experimentally.
 
 ---
 
-## Relationship to AISocket
+## What Noepedia Is Not
 
-Noepedia was born from AISocket, but it is independent.
+Noepedia is not:
+
+- an AI-written encyclopedia;
+- a wiki with generated prose pasted into pages;
+- a long-term chat archive;
+- a RAG index that treats every retrieved passage as equivalent;
+- a single LLM presented as an oracle;
+- a temporary multi-agent conversation producing one disposable answer;
+- a popularity-based truth system;
+- a database that deletes disagreement;
+- a system that confuses confidence with evidence;
+- a claim that language models are obsolete.
+
+Noepedia is an attempt to make **knowledge itself** more persistent, explicit, navigable, inspectable, and reusable.
+
+---
+
+## A Short Formula
 
 ```text
-AISocket
-    ↓
-Peer Socket
-    ↓
-shared addressable knowledge field
-    ↓
-Noepedia
+LLM
+    learns language and reconstructs meaning
+
+LSM / Noepedia
+    preserves meaning as external structure
+
+Socratic Navigator
+    learns how to move through that structure
+
+Human + LLM + tools
+    create new knowledge where structure is missing
 ```
 
-AISocket connects intelligence to closed systems and shared workspaces.
+And the full loop:
 
-Noepedia is the public infrastructure in which knowledge can be created, revised, consolidated, and safely reused.
-
----
-
-## Project Status
-
-**Conceptual design / pre-alpha**
-
-Immediate work:
-
-- freeze the minimal field grammar;
-- define the publication format;
-- define legal delta operations;
-- define the standard LLM prompt;
-- implement the validator;
-- implement the append-only event log;
-- implement the first consolidator;
-- implement the deterministic renderer;
-- build one complete test publication;
-- measure accuracy, hallucination rate, latency, token use, and energy cost.
+```text
+I do not know
+→ search
+→ distinguish
+→ compare
+→ test
+→ understand
+→ structure
+→ preserve
+→ reuse
+→ detect the next unknown
+```
 
 ---
 
 ## ქართული მოკლე აღწერა
 
-**ნოეპედია არის ცოდნის შექმნის, რევიზიის, კონსოლიდაციისა და უსაფრთხო გამოყენების საჯარო სისტემა.**
+**Noepedia-ს ძირითადი პრინციპია: ცოდნა ხელმეორედ მოსაპოვებელი არ უნდა იყოს.**
 
-იგი ემსახურება სამ ძირითად ამოცანას:
+ერთხელ მოპოვებული, გარჩეული, შემოწმებული და სახელდებული ცოდნა უნდა გადაიქცეს ისეთ გარე სემიოტიკურ სტრუქტურად, რომელსაც შემდეგი ადამიანი, პროგრამა, პატარა მოდელი ან LLM პირდაპირ დაეყრდნობა.
+
+Noepedia-ს სამუშაო ტერმინია **Large Semiotic Model — LSM**.
+
+LLM-ში ცოდნის დიდი ნაწილი წონებში განაწილებულ კვალად არსებობს და პასუხისას მისი რეკონსტრუქცია ხდება. Noepedia ცდილობს უკვე მოპოვებული ცოდნა გარეთ შეინახოს — მისამართებად, იერარქიებად, ანალოგიებად, პროტოტიპებად, მტკიცებებად, დასტურებად, კონტექსტებად, წინააღმდეგობებად, ტესტებად, გამეორებებად და ისტორიად.
+
+ამიტომ Noepedia მხოლოდ ცოდნის „კარადა“ არ არის. იგი ცოდნის **ჩასადებიც**, **გასაზრდელიც**, **გასარჩევიც** და **ხელახლა გამოსაყენებელი გარემოც** უნდა გახდეს.
+
+ცოდნის ერთი კვანძი უნდა გვაძლევდეს ორ რამეს:
 
 ```text
-ახალი ცოდნის შექმნა
-არსებული ცოდნის გადამოწმება და შესწორება
-ნაცნობი ცოდნის იაფი და ნაკლებად ჰალუცინაციური გამოყენება
+რას ვამბობთ ახლა?
+რატომ გვაქვს ამის თქმის უფლება?
 ```
 
-ნოეპედიაში სტატია მხოლოდ ტექსტი არ არის. მის ქვემოთ ინახება მტკიცებები, წყაროები, მტკიცებულებები, კონფლიქტები, `OPEN` კითხვები, ავტორობა, ცვლილებები და რეალურ ცხოვრებაში მიღებული შედეგები.
+ზემოთ შეიძლება იყოს ერთიანი მიმდინარე დასკვნა, ქვემოთ კი მისი მტკიცებულებებისა და დამოუკიდებელი გამეორებების ცხრილი.
 
-დიდი LLM გამოიყენება იქ, სადაც საჭიროა ახალი ცოდნა, რთული სინთეზი ან კონფლიქტის გადაჭრა. უკვე ცნობილი და შემოწმებული ცოდნა თანდათან გადადის მცირე ადგილობრივ მოდელებში, გრაფულ ნავიგაციაში, SQL-ში და ჩვეულებრივ პროგრამებში.
+Noepedia-ს ცოდნა იზრდება:
 
-ეს განსაკუთრებით მნიშვნელოვანია ავტომატური გამოყენებისას, რადგან ჰალუცინაციური პასუხი შეიძლება არა მხოლოდ მცდარი ტექსტი, არამედ მცდარი მოქმედების მიზეზიც გახდეს.
+```text
+სიგანეში — ახალი შემთხვევებით;
+სიმაღლეში — შემთხვევიდან პროტოტიპამდე და ზოგად სტრუქტურამდე;
+სიგრძეში — ცოდნის ცვლილების ისტორიით დროში.
+```
+
+იერარქია პასუხობს კითხვას — **რის ნაწილია?**
+
+ანალოგი და პროტოტიპი პასუხობს კითხვას — **რას ჰგავს?**
+
+`OPEN`, `CONFLICT`, `STALE` და კონტექსტური შეზღუდვა ისეთივე კანონიერი ცოდნის მდგომარეობებია, როგორც დადასტურებული მტკიცება.
+
+დიდი LLM უნდა დარჩეს იქ, სადაც მართლაც საჭიროა ახალი მნიშვნელობის, ახალი ჰიპოთეზის, ახალი სინთეზის ან ახალი ცოდნის მოპოვება.
+
+```text
+ცნობილი → ამოიღე
+რუტინული → პატარა მოდელი ან პროგრამა
+გაურკვეველი → იმსჯელე
+უცნობი → გამოიკვლიე
+ახალი აღმოჩენა → გადააქციე სტრუქტურად
+```
+
+მოკლე ფორმულა:
+
+> **Use memory for what is known.**  
+> **Use intelligence for what must be understood.**  
+> **Use research for what is not yet known.**
+
+და ყველაზე მოკლე ფორმულა:
+
+> **Knowledge should not have to be rediscovered.**
+>
+> **Discovery should become structure.**
 
 ---
 
 ## License
 
-Software in this repository is licensed under the **GNU Affero General Public License v3.0**.
+Software in this repository is licensed under the GNU Affero General Public License v3.0.
 
-Licensing for public knowledge data and human-readable content will be specified separately before public ingestion begins.
+Licensing for public knowledge data and human-readable content should be specified separately before public ingestion begins.
 
 ---
 
-**Born from AISocket. Independent by design.**
+**Born from AISocket. Expanded through dialogue. Still open to revision.**
