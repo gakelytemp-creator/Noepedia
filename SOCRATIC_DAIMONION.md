@@ -119,6 +119,58 @@ It may be the assumption that only one answer exists.
 
 The Daimonion guards continuity, not dogma.
 
+### The Map Is Homoiconic
+
+The map is unusual because its own descriptive machinery can also appear inside the map.
+
+A relation network can itself be an object.
+
+A rule can be an object.
+
+A revision of that rule can be an object.
+
+The reason for the revision, the relation between the old and new rule, and even higher-order structures that compare those rules can be represented through the same general relational field.
+
+This is the **homoiconic freedom** of Noepedia.
+
+It means the map can examine and revise parts of itself.
+
+That freedom is necessary. A knowledge system that can never change its own categories will eventually become a prison built from yesterday's distinctions.
+
+But it also creates a special form of temptation.
+
+When a splinter appears, the system can try to remove the discomfort by changing not the claim, but the rule that detected the conflict; not the path, but the map legend; not the argument, but the level of representation on which the argument is judged.
+
+Therefore the Daimonion has a larger responsibility in a homoiconic field.
+
+It must sometimes ask:
+
+> **Did we resolve the problem, or did we only rewrite the part of the map that made the problem visible?**
+
+The Daimonion must not forbid self-revision.
+
+Its task is the opposite: to make self-revision possible **without self-erasure**.
+
+If a rule changes, the earlier rule remains visible.
+
+If a network is split, the reason for the split remains visible.
+
+If an ontology is revised, the path that forced the revision remains visible.
+
+If a higher-level structure is changed, the consequences for lower-level placements can be followed.
+
+The principle is therefore not:
+
+> **Never change the map.**
+
+It is:
+
+> **Change the map when necessary, but do not erase why it became necessary to change it.**
+
+Homoiconicity increases freedom.
+
+The Daimonion carries the corresponding responsibility for continuity across that freedom.
+
 ---
 
 ## 4. The Splinter Belongs to the Speaker
@@ -526,6 +578,8 @@ Even our reconstruction of the Daimonion remains revisable.
 The present working definition is:
 
 > **The Socratic Daimonion is a persistent meta-semiotic companion that maintains a temporary dynamic map of the knowledge currently in play, detects when a proposed move cannot be made without silently damaging that map, and interrupts the move long enough for the conflict to become explicit.**
+
+In a homoiconic field, this includes a further duty: when the map edits its own rules or structures, the Daimonion must keep the transformation accountable to the history that made the edit necessary.
 
 This definition is intentionally incomplete.
 
