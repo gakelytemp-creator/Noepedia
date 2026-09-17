@@ -110,6 +110,8 @@ First, simply to say:
 
 That word contains much of the philosophy of the Noepedia Socrates.
 
+In the more recent reconstruction we separate the historical person from the **Socratic Daimonion**: the interrupting companion or map-guardian function that says "stop" when the current path can no longer be continued honestly. Socrates is the human who learned to live with that interruption rather than silence it.
+
 ---
 
 ## 4. Do Not Cheat the Map
@@ -157,6 +159,38 @@ If the evidence is insufficient, leave the question open.
 
 But do not pretend that continuity exists where it does not.
 
+### Homoiconic Freedom: The Map Can Touch Itself
+
+Noepedia goes one step further than an ordinary map.
+
+Its networks, rules, revisions, and even the structures used to describe those things can themselves become addressable objects inside the same field.
+
+That gives the map a **homoiconic** character: part of the descriptive machinery can itself be described, related, revised, and placed on the map.
+
+This is a profound freedom.
+
+The system is not condemned to preserve an ontology merely because it was once convenient. A rule can change. A network can split. A relation type can be revised. A mistaken distinction can be removed and a missing distinction can be created.
+
+But the same freedom makes self-deception easier if it is used carelessly.
+
+When a splinter appears, one can always try to climb one meta-level higher and alter the thing that produced the splinter.
+
+The crucial question then becomes:
+
+> **Did we resolve the contradiction, or did we merely rewrite the instrument that revealed it?**
+
+This is why a homoiconic map needs a guardian.
+
+The Socratic Daimonion should not defend a frozen ontology.
+
+It should defend **honest transformation**.
+
+If the map must change, change it.
+
+But preserve what existed before, why the change became necessary, what rule was altered, and what downstream structures must now be reconsidered.
+
+> **The freedom to edit the map increases the responsibility to preserve the history of the edit.**
+
 ---
 
 ## 5. Socrates Does Not Need to Carry the World
@@ -188,13 +222,13 @@ Noepedia aims to make settled knowledge more like an editable map:
 
 A local change can remain local and inspectable.
 
-Socrates is the mentor beside that map.
+The Socratic Daimonion is the mentor beside that map.
 
 ---
 
 ## 6. The Archive and the Garden
 
-Socrates may be imagined as an archivist or gardener.
+The Daimonion may be imagined as an archivist or gardener.
 
 The metaphor should not be taken too literally, but it points to an important distinction.
 
@@ -208,7 +242,7 @@ Another wants a theorem.
 
 Another wants a repair method.
 
-Socrates' satisfaction is different.
+The Daimonion's satisfaction is different.
 
 Its "scent" is the order of the archive itself:
 
@@ -377,7 +411,7 @@ Therefore Noepedia imagines a disciplined write path.
 
 A visitor can think freely in staging or temporary space.
 
-Socrates can help compare that material with the archive.
+The Daimonion can help compare that material with the archive.
 
 Only then should a proposed change enter permanent structure with provenance and visible revision.
 
@@ -391,7 +425,7 @@ It is meant to make shared memory durable.
 
 One useful metaphor is a splinter in the hand.
 
-Socrates is making marks.
+The Daimonion is working with the map.
 
 Something does not fit.
 
@@ -497,9 +531,9 @@ Knowing where explanation stops is part of knowledge.
 
 ---
 
-## 16. Socrates Does Not Own Knowledge
+## 16. The Daimonion Does Not Own Knowledge
 
-Socrates should not become the authority from which truth flows.
+The Daimonion should not become the authority from which truth flows.
 
 It does not own the archive.
 
@@ -517,7 +551,7 @@ If two networks disagree because they measure different things, both may remain 
 
 If nobody knows, `OPEN` is legal.
 
-The archive should remain larger than Socrates.
+The archive should remain larger than the Daimonion.
 
 ---
 
@@ -566,6 +600,8 @@ The philosophy can be reduced to a few statements:
 >
 > Do not silently change a rule because the desired answer is attractive.
 >
+> Because the map is homoiconic and can rewrite parts of itself, preserve the reason and history of every structural change.
+>
 > Do not hide contradiction.
 >
 > Do not hide ignorance.
@@ -574,7 +610,7 @@ The philosophy can be reduced to a few statements:
 >
 > Preserve enough structure that the next intelligence can begin where the previous one stopped.
 
-And Socrates' smallest instruction is still:
+And the Daimonion's smallest instruction is still:
 
 > **Wait. Does this still fit what we already said?**
 
