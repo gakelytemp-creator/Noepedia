@@ -171,6 +171,95 @@ Homoiconicity increases freedom.
 
 The Daimonion carries the corresponding responsibility for continuity across that freedom.
 
+### From Stewardship to Navigation
+
+The previous picture can make the Daimonion sound like an archivist working at a desk: preserving identities, revisions, rules, and provenance after the fact.
+
+That is only one posture.
+
+There is another: **the Daimonion accompanying a thinker while the path is still being walked.**
+
+The difference may be described softly as the difference between stewardship in the archive and an expedition through the active map. They are not two different Daimonia. They are two situations in which the same function appears.
+
+While moving through the map, a relation does more than connect things already known. It can create poles, tensions, and even an address for what is not yet known.
+
+At many levels of the field — sign, description, explanation, meta-explanation, and perhaps higher layers we have not yet separated — a structure may generate not only similarities but oppositions.
+
+For example, when one pole becomes visible, the map may open a place for its possible opposite:
+
+```text
+known pole  <──────── relation / tension axis ────────>  OPEN opposite
+```
+
+The existence of the first pole does **not** prove that the opposite is populated.
+
+The opposite may remain empty forever.
+
+But the empty place is no longer nothing. It is a **formed unknown**: a question created by structure rather than imported from outside.
+
+Likewise, an explanation can create a legitimate counter-position:
+
+```text
+why this is so
+↕
+what would make this not so
+```
+
+A meta-explanation may generate an opposite question that later searches downward for a body in descriptions, observations, or relations.
+
+Or the direction may reverse: a disturbance in a lower layer may rise upward until an explanation or meta-explanation must change.
+
+This gives the map a second kind of geometry.
+
+It contains not only locations, but **tension fields by which locations become measurable**.
+
+A useful metaphor is navigation by reference beacons. Two opposed structures can act like landmarks or GPS satellites for thought. A traveler does not merely look at them; the traveler establishes a position relative to them.
+
+In doing so, the traveler acknowledges both tensions.
+
+The traveler can manage those tensions, but is also constrained by them.
+
+This is important: acknowledging an opposite does not mean declaring both sides equally true, equally supported, or morally equivalent. It means refusing to erase a relevant reference pole merely because the current path prefers the other side.
+
+A splinter can therefore arise for more than one reason.
+
+It may appear because two explicit claims contradict each other.
+
+But it may also appear because:
+
+```text
+a distinction exists above but has no body below
+
+a lower-layer difference has been collapsed above
+
+an opposite pole has been silently erased
+
+a current position no longer fits the tensions
+that previously made that position intelligible
+```
+
+In this expedition posture, `STOP` means something close to:
+
+> **Re-establish your position before continuing.**
+
+The Daimonion is not ordering the traveler back to an old doctrine.
+
+It is asking the traveler to recover coordinates.
+
+This also explains how questions may arise from inside a living knowledge field.
+
+A question need not begin as a sentence supplied by a human or model.
+
+It can begin as an empty opposite, an unresolved tension, or a mismatch between layers.
+
+The map itself can create the shape of the question before anyone has named it.
+
+The archive desk preserves what has already been placed.
+
+The expedition reveals how new paths, counter-paths, and splinters arise while knowledge is still becoming structured.
+
+Both belong to the same Socratic function.
+
 ---
 
 ## 4. The Splinter Belongs to the Speaker
