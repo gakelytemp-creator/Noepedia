@@ -118,6 +118,40 @@ Each such network is itself addressable. Its handle can also be an object in the
 
 Noepedia can therefore describe not only the world, but also the structure by which the world is being described.
 
+### Homoiconic Matrix: Freedom and Responsibility
+
+This gives Noepedia a **homoiconic** property: the structures used to describe objects can themselves be represented as objects inside the same addressable field.
+
+A network can be an object.
+
+A network rule can be an object.
+
+A revision of that rule can be an object.
+
+Relations among networks, rules, revisions, and the reasons for changing them can themselves be represented through the same relational machinery.
+
+In this sense, the map can place parts of **itself** on the map.
+
+That freedom is powerful because the knowledge structure does not have to be frozen. The ontology, networks, and rules can evolve when the world or our understanding changes.
+
+But homoiconic freedom creates a corresponding responsibility.
+
+When a contradiction appears, it must not be possible to make the splinter disappear merely by silently rewriting the level of the map that detected it.
+
+The question must remain visible:
+
+> **Did we solve the problem, or did we only change the instrument that exposed it?**
+
+The Socratic Daimonion therefore guards not a frozen map, but **honest transformation of the map**.
+
+Rules may change. Networks may split. Objects may be reidentified. Higher-order structures may be revised.
+
+What must not disappear is the path that explains **why** the change became necessary, what existed before it, and what consequences the change has for the rest of the field.
+
+A compact principle is:
+
+> **Homoiconicity gives the map freedom to rewrite itself. The Daimonion preserves honesty across that freedom.**
+
 ---
 
 ## 3. Every Network Has a Rule
@@ -654,6 +688,8 @@ And even shorter:
 
 For the philosophical motivation behind this architecture, see **[GUIDING_PHILOSOPHY.md](GUIDING_PHILOSOPHY.md)**.
 
+For the current reconstruction of the map-guardian function, see **[SOCRATIC_DAIMONION.md](SOCRATIC_DAIMONION.md)**.
+
 ---
 
 ## ქართული მოკლე აღწერა
@@ -664,6 +700,8 @@ For the philosophical motivation behind this architecture, see **[GUIDING_PHILOS
 
 Noepedia ლინგვისტური მოდელი არ არის. მისი მიზანი მეტა-სემიოტიკურია: ერთი და იგივე ობიექტი შეიძლება ერთდროულად იყოს დაკავშირებული ტექსტთან, გამოსახულებასთან, ხმასთან, გეომეტრიასთან, იერარქიასთან, ფუნქციასთან, წყაროსთან, მომსახურების მონაცემთან და სხვა მრავალ ქსელთან.
 
+Noepedia-ს მატრიცა ჰომოიკონურია იმ აზრით, რომ მისი აღწერის საშუალებებიც შეიძლება იმავე ველში გახდეს ობიექტი: ქსელი, წესი, წესის ცვლილება და ამ ცვლილების მიზეზიც მისამართებადი და ერთმანეთთან დაკავშირებადია. ამიტომ რუქას შეუძლია თავისი თავის შეცვლაც. ეს თავისუფლება ზრდის Daimonion-ის პასუხისმგებლობას: მან ცვლილება არ უნდა აკრძალოს, მაგრამ უნდა შეინარჩუნოს, **რატომ გახდა ცვლილება საჭირო და რა შეიცვალა მის შედეგად**.
+
 **Socrates სხვა რამეა.** ის არის Noepedia-სთან მომუშავე ექსპერიმენტული LSM. მისი მეგაგრაფი არის დროებითი სამუშაო სცენა და არა მუდმივი არქივი. Socrates საჭირო ობიექტებსა და კავშირებს დროებით კრებს, ადარებს, ამოწმებს, კონსოლიდირებს და მხოლოდ ამის შემდეგ სთავაზობს მუდმივ არქივს ცვლილებას.
 
 არქივიდან ცოდნის ამოღება შეიძლება ბევრმა სისტემამ შეძლოს. ჩაწერა უფრო მკაცრი ოპერაციაა: დაუმუშავებელი ტექსტი, ვიდეო, სენსორის ნაკადი ან ჰიპოთეზა ჯერ staging სივრცეში უნდა დარჩეს და არ უნდა გამოცხადდეს ავტომატურად Noepedia-ს ცოდნად.
@@ -672,6 +710,7 @@ Noepedia ლინგვისტური მოდელი არ არი�
 
 > **Noepedia ინახავს.**  
 > **Socrates დროებით ფიქრობს, ალაგებს და იცავს წესრიგს.**  
+> **ჰომოიკონურობა რუქას აძლევს თვითრედაქტირების თავისუფლებას; Daimonion იცავს ამ თავისუფლების პატიოსნებას.**  
 > **ენა მხოლოდ ერთ-ერთი გარე მიმთითებელი ფენაა.**
 
 ---
