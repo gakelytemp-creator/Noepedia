@@ -7,7 +7,7 @@
 
 Noepedia needs more than an archive.
 
-It needs a way to remain difficult to deceive from inside.
+It needs a way to make self-deception harder to hide from inside.
 
 The working name for that function is **the Socratic Daimonion**.
 
@@ -170,6 +170,32 @@ It is:
 Homoiconicity increases freedom.
 
 The Daimonion carries the corresponding responsibility for continuity across that freedom.
+
+### Visibility Is Not Detection
+
+This reconstruction should not overclaim what the architecture already gives us.
+
+Noepedia can preserve an earlier rule beside a new one.
+
+It can preserve provenance, conflict, uncertainty, open positions, and the history of a revision.
+
+That makes important structure **visible**.
+
+But visibility alone does not tell the Daimonion which tension matters, when an interruption is justified, or whether a rule change is an honest improvement rather than a convenient escape.
+
+Those are problems of **detection and judgment**, and they remain part of the research program.
+
+The present claim is therefore not:
+
+> "The Daimonion guarantees epistemic honesty."
+
+It is narrower:
+
+> **Make the field explicit enough that a learned or algorithmic companion can detect tensions, show why it stopped, and be checked in return.**
+
+The Daimonion itself must remain auditable.
+
+Its splinter is a signal to inspect, not a proof delivered by an oracle.
 
 ### From Stewardship to Navigation
 
@@ -605,6 +631,21 @@ The Daimonion document belongs primarily to the first four layers.
 
 Implementation should wait until enough of the living structure has been separated from the metaphors that helped us see it.
 
+But waiting does not mean refusing operational tests forever.
+
+At a later engineering stage, at least one simple case should be followed end to end:
+
+```text
+stored relations
+→ actual comparison or tension
+→ splinter
+→ visible reason for STOP
+```
+
+Such a case should test whether the architecture can support the behavior we described.
+
+It should **not** be used to freeze the whole architecture prematurely around the first easy example.
+
 ---
 
 ## 15. The Goal Is Not to Make Everyone Socrates
@@ -670,7 +711,9 @@ The present working definition is:
 
 In a homoiconic field, this includes a further duty: when the map edits its own rules or structures, the Daimonion must keep the transformation accountable to the history that made the edit necessary.
 
-This definition is intentionally incomplete.
+This definition describes an intended capability, not a demonstrated guarantee.
+
+It is intentionally incomplete.
 
 It describes what we currently see.
 
