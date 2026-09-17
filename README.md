@@ -118,6 +118,22 @@ Each such network is itself addressable. Its handle can also be an object in the
 
 Noepedia can therefore describe not only the world, but also the structure by which the world is being described.
 
+### Open Opposites and Formed Unknowns
+
+A relation network does not only group similar things. It may also establish differences, oppositions, poles, and missing positions.
+
+If one pole is known, the structure may legitimately open an address for a possible opposite without asserting that the opposite exists:
+
+```text
+known pole  <──────── relation / tension axis ────────>  OPEN opposite
+```
+
+The empty side is not a fact pretending to be an object. It is a **formed unknown**: a place for a question created by the structure itself.
+
+This can happen at several levels — sign, description, explanation, meta-explanation, and perhaps at higher layers that have not yet been separated.
+
+A question can therefore arise not only from an external prompt, but from a tension, asymmetry, missing pole, or mismatch already present in the field.
+
 ### Homoiconic Matrix: Freedom and Responsibility
 
 This gives Noepedia a **homoiconic** property: the structures used to describe objects can themselves be represented as objects inside the same addressable field.
@@ -151,6 +167,22 @@ What must not disappear is the path that explains **why** the change became nece
 A compact principle is:
 
 > **Homoiconicity gives the map freedom to rewrite itself. The Daimonion preserves honesty across that freedom.**
+
+### Visibility Is Not Detection
+
+Noepedia can make rules, revisions, conflicts, open positions, and earlier states **visible and inspectable**.
+
+That is an architectural property.
+
+It does not by itself guarantee that a Daimonion will correctly detect every mistaken, convenient, or self-deceptive move.
+
+That is a separate research problem.
+
+The current claim is deliberately narrower:
+
+> **Preserve enough explicit structure that detection can be learned, tested, audited, and later replaced by algorithms where stable regularities emerge.**
+
+Noepedia should not claim an epistemic guarantee before such mechanisms are demonstrated.
 
 ---
 
@@ -220,11 +252,13 @@ Language remains extremely important — especially for human interaction — bu
 
 ---
 
-## 5. Noepedia and Socrates Are Different Things
+## 5. Noepedia, Socrates, and the Daimonion Are Different Things
 
 Noepedia is the persistent archive.
 
-**Socrates** is the experimental learned system that works with that archive.
+**Socrates** is the historical human figure whose relation to knowledge motivates part of this project.
+
+**The Socratic Daimonion** is the working name for the experimental companion function that moves through the archive and temporary working structures.
 
 ```text
 NOEPEDIA
@@ -235,30 +269,30 @@ history
 rules
 uncertainty
 
-SOCRATES
+DAIMONION
 reads from the archive
 constructs temporary working structures
 compares and consolidates incoming material
-checks consistency with declared rules
+notices tensions and possible splinters
 helps retrieve relevant structure
 proposes archive edits through an auditable path
 ```
 
-Socrates does **not** need to carry the archive in its neural weights.
+The Daimonion does **not** need to carry the archive in its neural weights.
 
 That is a central design goal.
 
-> **Socrates should not need to know everything. It should know how to place, retrieve, compare, and preserve knowledge without corrupting the archive.**
+> **The Daimonion should not need to know everything. It should know how to place, retrieve, compare, and preserve knowledge without silently corrupting the map.**
 
 ---
 
-## 6. The Mega-Graph Is Socrates' Working Scene
+## 6. The Mega-Graph Is the Daimonion's Working Scene
 
 The **mega-graph is not Noepedia**.
 
-It is Socrates' temporary working space — its desk, scratch field, or scene of imagination.
+It is the Daimonion's temporary working space — its desk, scratch field, garment, or scene of imagination.
 
-For a particular conversation or task, Socrates may temporarily load:
+For a particular conversation or task, the Daimonion may temporarily load:
 
 ```text
 relevant objects
@@ -268,6 +302,7 @@ older claims
 new incoming claims
 conflicts
 possible relations
+open opposites
 context
 provenance
 ```
@@ -276,7 +311,7 @@ It may then think over that temporary structure.
 
 The mega-graph can change rapidly and can be discarded.
 
-The permanent archive should not automatically inherit every temporary association that appeared in Socrates' working scene.
+The permanent archive should not automatically inherit every temporary association that appeared in the working scene.
 
 Only material that survives the archive's insertion process should become persistent Noepedia structure.
 
@@ -307,12 +342,12 @@ RAW / STAGING SPACE
 
         ↓
 
-SOCRATES
+DAIMONION
     identify
     compare
     reconcile
     preserve provenance
-    detect conflict
+    notice tension
     place into appropriate networks
 
         ↓
@@ -329,13 +364,13 @@ Noepedia should distinguish clearly between **stored material** and **integrated
 
 ---
 
-## 8. Socrates as a Consistency-Preserving Archivist
+## 8. The Daimonion as a Consistency-Preserving Companion
 
-Socrates does not decide truth by personality or authority.
+The Daimonion does not decide truth by personality or authority.
 
-Its job is closer to a demanding archivist and mentor.
+Its job is closer to a demanding companion, archivist, and navigator.
 
-If a participant previously established one structure and later proposes another, Socrates should make the change visible rather than silently overwrite the earlier structure.
+If a participant previously established one structure and later proposes another, the Daimonion should make the change visible rather than silently overwrite the earlier structure.
 
 A simple example:
 
@@ -346,7 +381,7 @@ A simple example:
 "It was Jemali."
 ```
 
-Socrates does not need to know who Dato or Jemali are.
+The Daimonion does not need to know who Dato or Jemali are.
 
 It only notices that the participant created a one-person structure and later tried to place two incompatible identities into the same slot.
 
@@ -485,13 +520,13 @@ A useful metaphor is:
 >
 > **Noepedia is closer to an editable map: local structure can be changed locally, while history remains inspectable.**
 
-Socrates acts as the disciplined mentor beside that editable map.
+The Daimonion acts as the disciplined companion beside that editable map.
 
 ---
 
-## 13. Socrates Begins Neural, But Need Not Stay Entirely Neural
+## 13. The Daimonion Begins Neural, But Need Not Stay Entirely Neural
 
-We do not yet know the full technical task of Socrates.
+We do not yet know the full technical task of the Daimonion.
 
 Therefore the first version should be neural enough to discover recurring operations rather than freezing the design too early.
 
@@ -503,6 +538,7 @@ rule interpretation
 object identity reconciliation
 placement
 conflict detection
+tension navigation
 coverage estimation
 retrieval path construction
 revision comparison
@@ -517,7 +553,7 @@ The intended path is:
 neural exploration
 → recurring pattern discovery
 → algorithmic extraction
-→ hybrid Socrates
+→ hybrid Daimonion
 ```
 
 This follows a broader principle:
@@ -537,10 +573,10 @@ HUMAN / LLM / AISocket / instrument
 RAW / STAGING SPACE
     preserve unintegrated material without pretending it is settled knowledge
 
-SOCRATES
+DAIMONION
     temporary reasoning over a mega-graph
     consolidation
-    consistency checking
+    consistency and tension checking
     retrieval assistance
     controlled archive insertion
 
@@ -623,15 +659,18 @@ A useful first test should demonstrate that the system can:
 4. make each network itself addressable;
 5. preserve a network rule and revision history;
 6. ingest raw material into a staging area without treating it as trusted knowledge;
-7. let Socrates construct a temporary mega-graph for one task;
+7. let the Daimonion construct a temporary mega-graph for one task;
 8. reconcile incoming identities with existing objects;
-9. detect contradiction or silent rule change;
+9. make contradiction, tension, or silent rule change structurally visible;
 10. preserve provenance and uncertainty;
 11. promote only consolidated structure into the permanent archive;
 12. retrieve one object through several different semiotic paths;
 13. expose coverage and unresolved boundaries;
-14. revise one local relation without rebuilding the whole field;
-15. discard Socrates' temporary working graph while preserving accepted archive changes.
+14. represent a formed unknown without pretending the missing object already exists;
+15. revise one local relation without rebuilding the whole field;
+16. discard the Daimonion's temporary working graph while preserving accepted archive changes.
+
+The research prototype should eventually include at least one simple end-to-end case in which stored relations are followed through the actual comparison that produces a splinter. This will test the bridge from structure to process without pretending that the full Daimonion has already been specified.
 
 ---
 
@@ -642,11 +681,13 @@ Important open questions include:
 - What physical database structure best represents the object field and relation tables?
 - How should network relevance be discovered efficiently?
 - How should independence between projections be measured?
-- How much of Socrates must remain neural?
-- Which Socratic operations can become deterministic algorithms?
+- How much of the Daimonion must remain neural?
+- Which Daimonion operations can become deterministic algorithms?
 - How should object identity reconciliation work across modalities?
 - How should write authority and revision governance work in a public deployment?
 - How should explanatory boundaries be represented formally?
+- How should formed unknowns and opposite poles be represented without asserting nonexistent objects?
+- How should splinter detection be derived from stored relations rather than from hand-written prose?
 - How many distinct projections are sufficient for useful reconstruction in different domains?
 - How should the temporary mega-graph be constructed, limited, and discarded?
 
@@ -664,10 +705,10 @@ NOEPEDIA
     + triplet relation tables
     + provenance / rules / history
 
-SOCRATES
+DAIMONION
     temporary meta-semiotic reasoning
     + mega-graph workspace
-    + consolidation / retrieval / consistency
+    + navigation / consolidation / retrieval / interruption
 
 LLM
     language
@@ -682,7 +723,7 @@ And even shorter:
 
 > **Noepedia stores the map.**
 >
-> **Socrates keeps the map coherent and usable without carrying it in its head.**
+> **The Daimonion travels with us through it and interrupts when our coordinates no longer fit the structure we are using.**
 >
 > **Language is one way of pointing into the map, not the map itself.**
 
@@ -709,14 +750,18 @@ Noepedia ლინგვისტური მოდელი არ არი�
 
 Noepedia-ს მატრიცა ჰომოიკონურია იმ აზრით, რომ მისი აღწერის საშუალებებიც შეიძლება იმავე ველში გახდეს ობიექტი: ქსელი, წესი, წესის ცვლილება და ამ ცვლილების მიზეზიც მისამართებადი და ერთმანეთთან დაკავშირებადია. ამიტომ რუქას შეუძლია თავისი თავის შეცვლაც. ეს თავისუფლება ზრდის Daimonion-ის პასუხისმგებლობას: მან ცვლილება არ უნდა აკრძალოს, მაგრამ უნდა შეინარჩუნოს, **რატომ გახდა ცვლილება საჭირო და რა შეიცვალა მის შედეგად**.
 
-**Socrates სხვა რამეა.** ის არის Noepedia-სთან მომუშავე ექსპერიმენტული LSM. მისი მეგაგრაფი არის დროებითი სამუშაო სცენა და არა მუდმივი არქივი. Socrates საჭირო ობიექტებსა და კავშირებს დროებით კრებს, ადარებს, ამოწმებს, კონსოლიდირებს და მხოლოდ ამის შემდეგ სთავაზობს მუდმივ არქივს ცვლილებას.
+ქსელი მხოლოდ მსგავსებებს არ აერთიანებს. მას შეუძლია შექმნას განსხვავების ღერძი, საწინააღმდეგო პოლუსი ან ჯერ ცარიელი, მაგრამ მისამართებადი ადგილი — **ფორმირებული უცნობი**. ასეთი ცარიელი ადგილი ჯერ ფაქტი არ არის; ის სტრუქტურიდან დაბადებული კითხვაა.
+
+**Daimonion სხვა რამეა, ვიდრე ისტორიული Socrates.** Socrates არის ადამიანი, რომლის ცოდნასთან დამოკიდებულებამ მოგვცა რეკონსტრუქციის მიმართულება; Daimonion არის ექსპერიმენტული თანამგზავრი ფუნქცია, რომელიც დროებით მეგაგრაფში მოძრაობს, დაძაბულობებს ამჩნევს და საჭიროებისას აჩერებს გზას.
 
 არქივიდან ცოდნის ამოღება შეიძლება ბევრმა სისტემამ შეძლოს. ჩაწერა უფრო მკაცრი ოპერაციაა: დაუმუშავებელი ტექსტი, ვიდეო, სენსორის ნაკადი ან ჰიპოთეზა ჯერ staging სივრცეში უნდა დარჩეს და არ უნდა გამოცხადდეს ავტომატურად Noepedia-ს ცოდნად.
 
+მნიშვნელოვანი საზღვარი: **ხილვადობა ჯერ კიდევ არ არის აღმოჩენა.** Noepedia-ს შეუძლია ცვლილება, კონფლიქტი და ძველი მდგომარეობა ხილული დატოვოს; Daimonion-ის უნარი, სწორად შეამჩნიოს როდის არის საჭირო `STOP`, ჯერ კვლევის ამოცანაა და არა უკვე მიღებული გარანტია.
+
 მოკლე ფორმულა:
 
-> **Noepedia ინახავს.**  
-> **Socrates დროებით ფიქრობს, ალაგებს და იცავს წესრიგს.**  
+> **Noepedia ინახავს რუქას.**  
+> **Daimonion რუქაზე მოძრაობს და დაკარგულ კოორდინატებზე გვაჩერებს.**  
 > **ჰომოიკონურობა რუქას აძლევს თვითრედაქტირების თავისუფლებას; Daimonion იცავს ამ თავისუფლების პატიოსნებას.**  
 > **ენა მხოლოდ ერთ-ერთი გარე მიმთითებელი ფენაა.**
 
