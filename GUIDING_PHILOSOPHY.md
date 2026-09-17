@@ -128,7 +128,7 @@ Later still:
 
 > "It was Jemali."
 
-Socrates does not need special knowledge about Dato, Jemali, roads, or travel.
+The Daimonion does not need special knowledge about Dato, Jemali, roads, or travel.
 
 The speaker created a one-person structure and then tried to place two incompatible identities into it.
 
@@ -145,7 +145,7 @@ Only one thing is not legal:
 
 > **silently behaving as if no change occurred.**
 
-This is the ethical core of Socrates in Noepedia.
+This is the ethical core of the Socratic function in Noepedia.
 
 It is not a large moral theory.
 
@@ -191,9 +191,25 @@ But preserve what existed before, why the change became necessary, what rule was
 
 > **The freedom to edit the map increases the responsibility to preserve the history of the edit.**
 
+### Visibility Is Not Detection
+
+This point needs an explicit limit.
+
+Making an old rule, a new rule, a conflict, a revision, or an open question visible does not automatically mean that the system will correctly recognize every important problem.
+
+**Visibility is a property of the knowledge field. Detection is a behavior of the companion working in that field.**
+
+The first can be designed structurally.
+
+The second must still be discovered, tested, learned, compared, and where possible later made algorithmic.
+
+Noepedia therefore does not yet promise that the Daimonion can guarantee epistemic honesty.
+
+It tries to make dishonesty, inconsistency, and silent revision harder to hide and easier to inspect.
+
 ---
 
-## 5. Socrates Does Not Need to Carry the World
+## 5. The Daimonion Does Not Need to Carry the World
 
 A common image of intelligence is accumulation:
 
@@ -222,7 +238,7 @@ Noepedia aims to make settled knowledge more like an editable map:
 
 A local change can remain local and inspectable.
 
-The Socratic Daimonion is the mentor beside that map.
+The Socratic Daimonion is the companion beside that map.
 
 ---
 
@@ -345,15 +361,15 @@ Language can enter and leave the system without owning the system.
 
 ---
 
-## 9. Socrates Thinks, but Its Thought Is Temporary
+## 9. The Daimonion Thinks, but Its Thought Is Temporary
 
-Socrates is not a passive database index.
+The Daimonion is not a passive database index.
 
 It may think.
 
 But its thought does not automatically become archive content.
 
-For each task, Socrates may construct a temporary **mega-graph**: a working scene containing the currently relevant objects, relations, rules, alternatives, and conflicts.
+For each task, it may construct a temporary **mega-graph**: a working scene containing the currently relevant objects, relations, rules, alternatives, tensions, and conflicts.
 
 This scene is closer to a desk or imagination than to permanent memory.
 
@@ -483,6 +499,26 @@ This is what we call **minimal living knowledge**:
 
 Noepedia should help preserve the external conditions from which such living structures can be reconstructed.
 
+### A Formed Unknown Is Still Part of the Map
+
+A living structure can sometimes create the shape of a question before anyone has phrased the question in language.
+
+If one pole of a relation becomes clear, an opposite place may become structurally meaningful even when nothing is yet known to occupy it:
+
+```text
+known pole  <──────── tension ────────>  OPEN opposite
+```
+
+The open side must not be mistaken for an existing fact.
+
+But it is no longer mere absence either.
+
+It is a **formed unknown**: an address created by the organization of what is already known.
+
+The same can happen between descriptions and counter-descriptions, explanations and counter-explanations, or between different layers of abstraction.
+
+This is one way knowledge can generate its own next questions instead of waiting for every question to arrive from outside.
+
 ---
 
 ## 14. Culture Should Not Need Accidental Socrates Moments
@@ -570,6 +606,7 @@ It tries to preserve:
 - revision;
 - explanatory limits;
 - multiple semiotic projections;
+- formed unknowns and open positions;
 - the ability to return from a result to the path that justified it.
 
 The reason is simple:
@@ -601,6 +638,10 @@ The philosophy can be reduced to a few statements:
 > Do not silently change a rule because the desired answer is attractive.
 >
 > Because the map is homoiconic and can rewrite parts of itself, preserve the reason and history of every structural change.
+>
+> Preserve meaningful empty positions when the structure itself creates a legitimate question.
+>
+> Remember that visibility is not yet detection.
 >
 > Do not hide contradiction.
 >
