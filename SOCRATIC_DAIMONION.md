@@ -427,6 +427,44 @@ This is why the Daimonion can keep its hands free.
 
 It does not need to carry all knowledge as permanent internal memory.
 
+### The Mega-Graph Can Open a Reflective Scene
+
+The mega-graph is not required to observe everything at every level all the time.
+
+That would create an endless and expensive regress:
+
+```text
+process
+observer of process
+observer of observer
+observer of observer of observer
+...
+```
+
+Reflection should instead be **event-driven**.
+
+A sign, contradiction, unresolved `OPEN_SPACE`, unstable predicate, or other tension can cause a lower process to be lifted temporarily onto a working scene.
+
+On that scene, what was previously only happening can become addressable.
+
+A relation can become an object.
+
+A subgraph can be folded into a handle.
+
+A handle can be compared with another handle.
+
+A predicate can be inspected rather than merely used.
+
+When the reason for reflection is resolved, the extra scene can close.
+
+This suggests a practical interpretation of a Socratic interruption:
+
+> **STOP does not always mean "the answer is wrong." Sometimes it means "open a reflective scene around the thing that is currently being taken for granted."**
+
+The depth of reflection should therefore be demanded by the field, not maximized by default.
+
+A new meta-layer is justified when the lower layer has produced a reason to inspect itself.
+
 ---
 
 ## 8. If Knowledge Is Well Placed, It Can Be Forgotten
