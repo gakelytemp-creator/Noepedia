@@ -134,6 +134,69 @@ This can happen at several levels — sign, description, explanation, meta-expla
 
 A question can therefore arise not only from an external prompt, but from a tension, asymmetry, missing pole, or mismatch already present in the field.
 
+### Predicate Fields and Open Spaces
+
+A stored triplet such as:
+
+```text
+A → P → B
+```
+
+should not always be treated as the end of thought.
+
+In a living knowledge field, the relation or **predicate** `P` may itself need to become addressable: challenged, compared, decomposed, revised, conditioned, or placed beside alternatives.
+
+Sometimes the field is not yet entitled to write one settled predicate between two objects or structures.
+
+Instead, it may preserve a structured freedom space:
+
+```text
+A ─── [ OPEN_SPACE: P1?  P2?  P3?  ... ] ─── B
+```
+
+An `OPEN_SPACE` is not empty storage and it does not claim that all candidate predicates are equally valid.
+
+It is a constrained relational region whose possibilities are shaped by what is already known:
+
+```text
+evidence
+counterevidence
+context
+history
+nearby relations
+network rules
+oppositions
+missing distinctions
+```
+
+The important change is that the unknown is no longer only a missing object or a blank answer.
+
+It may be a **structured space of possible relations**.
+
+As constraints accumulate, some possible predicates may disappear, some may become more plausible, and a new predicate may stabilize. But the path by which this happened should remain recoverable.
+
+This creates a further possibility.
+
+A requirement for the next operation need not come only from an external user or from an agent that "wants" something.
+
+It can arise from the structure itself:
+
+```text
+OPEN_SPACE
++ constraints
++ tension
+→ requirement for comparison, observation, experiment,
+  decomposition, retrieval, or meta-inspection
+```
+
+In that sense, a living knowledge field can generate **work to be done** from its own unresolved structure.
+
+This is stronger than retrieval.
+
+A passive archive waits to be queried.
+
+A living field can expose where the map itself is unfinished.
+
 ### Homoiconic Matrix: Freedom and Responsibility
 
 This gives Noepedia a **homoiconic** property: the structures used to describe objects can themselves be represented as objects inside the same addressable field.
@@ -167,6 +230,40 @@ What must not disappear is the path that explains **why** the change became nece
 A compact principle is:
 
 > **Homoiconicity gives the map freedom to rewrite itself. The Daimonion preserves honesty across that freedom.**
+
+### Meta-Layers as Foldable Handles
+
+A meta-layer should not be imagined only as a higher observer standing above a lower one.
+
+A sufficiently coherent lower structure may be **folded into an addressable handle** while preserving the path back to its internal relations.
+
+```text
+lower relational structure
+        ↓ fold
+META_OBJECT
+        ↓ move / compare / relate
+new working context
+        ↓ unfold when needed
+lower relational structure again
+```
+
+The handle is not a summary that destroys detail.
+
+It is a movable representative of a structure whose lower layer remains recoverable.
+
+This allows an entire argument, story, experiment, network, or subgraph to travel through a mega-graph as one object until a tension requires it to be opened again.
+
+Because predicates are themselves addressable in a homoiconic field, lower structures can also be grouped by their **predicate profiles**.
+
+Two structures may be placed into an analogy meta-object when a chosen projection preserves important relational form while weakening the identity of their concrete objects.
+
+They may be placed into an opposition meta-object when the chosen projection requires systematic differences between their predicate structures.
+
+The same lower structure may therefore participate in different meta-objects under different comparison rules.
+
+A meta-layer is not a separate metaphysical world.
+
+It is a new addressable object created from relations among lower structures, with a reversible path back down.
 
 ### Visibility Is Not Detection
 
@@ -628,7 +725,7 @@ The exact grammar is still open, but the present conceptual minimum includes:
 | Object | Purpose |
 |---|---|
 | `OBJECT` | Addressable identity in the field |
-| `RELATION` | Typed connection between objects |
+| `RELATION / PREDICATE` | Typed connection between objects; itself addressable when reflection requires it |
 | `NETWORK` | Addressable relation table / projection |
 | `RULE` | Declared organizing rule of a network |
 | `SOURCE` | Origin of material or knowledge |
@@ -638,6 +735,9 @@ The exact grammar is still open, but the present conceptual minimum includes:
 | `CONTEXT` | Conditions under which a relation is valid |
 | `REVISION` | Explicit change in object, relation, or rule |
 | `OPEN` | Registered unknown or unresolved boundary |
+| `OPEN_SPACE` | Structured relational freedom space containing constrained but unsettled predicates |
+| `META_OBJECT` | Foldable handle for a lower relational structure that can later be reopened |
+| `REQUIREMENT` | Next-operation demand generated by unresolved structure, tension, or missing comparison |
 | `CONFLICT` | Incompatible supported structures |
 | `COVERAGE` | Which relevant projections have or have not been consulted |
 | `LABEL` | External human-readable pointer to an object |
@@ -667,8 +767,12 @@ A useful first test should demonstrate that the system can:
 12. retrieve one object through several different semiotic paths;
 13. expose coverage and unresolved boundaries;
 14. represent a formed unknown without pretending the missing object already exists;
-15. revise one local relation without rebuilding the whole field;
-16. discard the Daimonion's temporary working graph while preserving accepted archive changes.
+15. represent a structured `OPEN_SPACE` between objects or lower structures without prematurely selecting one predicate;
+16. place a relation / predicate itself on the object field and inspect or revise it;
+17. fold a lower relational structure into a `META_OBJECT`, use it in another context, and later unfold it without losing the lower structure;
+18. derive at least one `REQUIREMENT` for a next operation from tension or incompleteness in the field rather than from an external prompt;
+19. revise one local relation without rebuilding the whole field;
+20. discard the Daimonion's temporary working graph while preserving accepted archive changes.
 
 The research prototype should eventually include at least one simple end-to-end case in which stored relations are followed through the actual comparison that produces a splinter. This will test the bridge from structure to process without pretending that the full Daimonion has already been specified.
 
@@ -698,6 +802,9 @@ That is part of the research program.
 ---
 
 ## Short Formula
+
+> **The archive stores stabilized ground. Intelligence works at the edges where relations are still open enough to change.**
+
 
 ```text
 NOEPEDIA
