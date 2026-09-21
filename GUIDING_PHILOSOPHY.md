@@ -633,6 +633,50 @@ In another comparison the same lower structures may be grouped by systematic dif
 
 The rule of the meta-layer must therefore remain visible.
 
+### Artificial Predicate-Network Evolution and Creativity
+
+If objects, predicates, open relational spaces, and reversible meta-layers all belong to one addressable field, then the field has a possibility that a passive knowledge store does not have.
+
+It can change not only **what it contains**, but **how its contents are related**.
+
+We use the working term **artificial predicate-network evolution** for this possibility.
+
+The word *evolution* is used cautiously here.
+
+At this stage it means structural evolution: variation among candidate predicates, constraint, persistence, revision, disappearance, recombination, and recursive formation of higher-order relational objects.
+
+It does not yet assert that every element of biological evolution has a direct computational counterpart.
+
+In this picture, an `OPEN_SPACE` is not a defect waiting for a database administrator to fill it.
+
+It is a place where the field can still become otherwise.
+
+When several existing structures are carried into such a space, the result need not be retrieval.
+
+A new analogy may appear.
+
+A new opposition may become visible.
+
+A predicate may split.
+
+Two distant structures may fold into a new meta-object.
+
+A new requirement may arise that no external user explicitly asked for.
+
+This suggests a further hypothesis about creativity:
+
+> **Creativity may begin where a structured open predicate field produces a relation that was not previously stabilized in the field.**
+
+On this view, creation is not magic added on top of knowledge.
+
+It is one possible mode of motion of living knowledge.
+
+The familiar kaleidoscopic character of creative thought then has a structural interpretation: the same objects can be released from one predicate arrangement, brought into another open relational space, and allowed to form a new stable pattern.
+
+This is not presented as a finished theory of human creativity.
+
+It is a research direction made possible by the architecture described here.
+
 ### A Flag, Not a Claim of Authority
 
 This formulation emerged through a concrete dialogue between one human collaborator and one language model.
