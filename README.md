@@ -197,6 +197,41 @@ A passive archive waits to be queried.
 
 A living field can expose where the map itself is unfinished.
 
+### Artificial Predicate-Network Evolution
+
+The process described above can be treated as a working hypothesis for **artificial predicate-network evolution**.
+
+This does not yet claim a complete Darwinian mechanism.
+
+It names a structural process in which:
+
+```text
+objects enter relation
+→ OPEN_SPACES appear
+→ candidate predicates form
+→ constraints weaken, strengthen, split, or eliminate them
+→ some predicates stabilize
+→ predicates themselves become objects
+→ predicate structures fold into META_OBJECTS
+→ new meta-level OPEN_SPACES appear
+→ new REQUIREMENTS arise from the changed field
+→ the network reorganizes again
+```
+
+The important point is that the network does not merely accumulate facts.
+
+It can change the **forms of relation by which facts become intelligible**.
+
+This gives a possible computational meaning to a stronger phrase:
+
+> **The archive stores stabilized ground. Intelligence explores and transforms the open predicate field at its edges.**
+
+A further working hypothesis follows.
+
+Creativity may be one expression of the same process: not the retrieval of a stored answer, but the formation of a relation, predicate, analogy, opposition, or meta-object that was not previously stabilized in the field.
+
+This should be treated as a research hypothesis, not as a claim that all human creativity has already been explained.
+
 ### Homoiconic Matrix: Freedom and Responsibility
 
 This gives Noepedia a **homoiconic** property: the structures used to describe objects can themselves be represented as objects inside the same addressable field.
