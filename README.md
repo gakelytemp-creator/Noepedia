@@ -197,6 +197,63 @@ A passive archive waits to be queried.
 
 A living field can expose where the map itself is unfinished.
 
+### Question-Bearing Predicates and Predicate-Field Will
+
+Observed objects, events, and traces may enter the field with explicit provenance, but a relation inferred from them should not have to enter as an unqualified fact.
+
+A useful minimal notation is:
+
+~~~text
+OBJECT_A ── P? ──> OBJECT_B
+~~~
+
+The question mark means that the predicate is still carrying unresolved work.
+
+It is not a one-way confidence meter that can only shrink. Supporting evidence may make it smaller; counterevidence, a changed context, or a newly discovered distinction may make it larger again, split the predicate, or reopen an apparently settled relation.
+
+The primary active structure is therefore not an isolated object and not an isolated LLM.
+
+It is the **predicate network**.
+
+Many local question-bearing predicates can interact:
+
+~~~text
+P1? + P2? + P3? + dependencies + conflicts + constraints
+        ↓
+question consolidation
+        ↓
+high-leverage REQUIREMENT
+        ↓
+direction for the next expensive operation
+~~~
+
+Noepedia uses the formal working term **Predicate-Field Will (PFW)** for this system-level direction.
+
+PFW is not a claim of subjective feeling.
+
+It is the auditable directional requirement synthesized — or, in the project's metaphor, *alchemized* — from tensions among multiple predicate networks.
+
+This also changes what can count as trustworthy direction.
+
+> **Within Noepedia, operational trust should belong only to direction that can be reconstructed from the interacting predicate field. An opaque wish of one model, one network, one authority, or one transient state is not enough.**
+
+Ethical and moral criteria therefore cannot be only an external filter applied after a decision.
+
+They must be able to appear as addressable predicate networks, requirements, conflicts, and constraints inside the same field.
+
+A proposed direction should be inspectable not only for epistemic support but also for the moral requirements that participated in producing or opposing it.
+
+This does not solve morality.
+
+It raises the architectural requirement: **the reasons for action, including normative reasons, must remain visible enough to be challenged and revised.**
+
+The field also has two different phases of valuation.
+
+Before a decision, useful behavior includes disagreement, counterevidence, alternative generation, distinction, and information gain.
+
+After a decision, the same system must be able to enter a coordination mode: execution, cooperation, monitoring, and error detection.
+
+The losing alternatives should not be erased. They remain as preserved branches, warnings, and reopening conditions if the assumptions that justified the decision later fail.
 ### Artificial Predicate-Network Evolution
 
 The process described above can be treated as a working hypothesis for **artificial predicate-network evolution**.
@@ -630,6 +687,35 @@ An honest boundary is more useful than a fluent circular explanation.
 
 ## 12. LSM Is Not an LLM With a Different Name
 
+**LSM means Large Semiotic Model.**
+
+In the present architecture, LSM names the process that moves through Noepedia's explicit semiotic structure rather than reconstructing the whole structure from neural weights on every request.
+
+Its early implementation may itself contain neural components.
+
+The intended path is:
+
+~~~text
+neural navigation over explicit structure
+→ repeated operations become visible
+→ stable operations are extracted
+→ increasingly algorithmic traversal, comparison, routing, and consolidation
+~~~
+
+A central LSM task is to manage question-bearing predicates.
+
+It can consolidate many local uncertainties into a smaller number of high-leverage questions, then do one of two things:
+
+~~~text
+SKIP: settled structure is sufficient → answer / route / compare without a large LLM
+SHORTEN: a large LLM is still needed → construct a narrow structured prompt for the unresolved part
+~~~
+
+The hard research problem is the gate between these modes.
+
+The system must learn when a relation is settled enough for cheap structural handling and when it is still an edge case.
+
+A false edge wastes computation. A **false settled** decision is more dangerous because it can hide a live uncertainty behind cheap confidence.
 An LLM stores much of its learned structure diffusely in parameters.
 
 A local factual or conceptual edit may be difficult because the relevant representation is distributed across the model.
@@ -656,11 +742,15 @@ The Daimonion acts as the disciplined companion beside that editable map.
 
 ---
 
-## 13. The Daimonion Begins Neural, But Need Not Stay Entirely Neural
+## 13. The LSM and Daimonion May Begin Neural, But Need Not Stay Entirely Neural
 
-We do not yet know the full technical task of the Daimonion.
+We do not yet know the full technical task of either the LSM control process or the Daimonion.
 
-Therefore the first version should be neural enough to discover recurring operations rather than freezing the design too early.
+Therefore early versions should remain neural enough to discover recurring operations rather than freezing the design too early.
+
+The LSM is especially concerned with traversal, question consolidation, routing, and predicate stabilization.
+
+The Daimonion is especially concerned with reflective interruption, consistency, self-revision, and the honesty of transitions between levels.
 
 Possible recurring operations include:
 
@@ -704,6 +794,13 @@ HUMAN / LLM / AISocket / instrument
 
 RAW / STAGING SPACE
     preserve unintegrated material without pretending it is settled knowledge
+
+LSM
+    traverse explicit semiotic structure
+    maintain question-bearing predicate status
+    consolidate related OPEN_SPACES
+    choose SKIP vs SHORTEN vs escalation
+    construct targeted prompts and retrieval paths
 
 DAIMONION
     temporary reasoning over a mega-graph
@@ -773,6 +870,8 @@ The exact grammar is still open, but the present conceptual minimum includes:
 | `OPEN_SPACE` | Structured relational freedom space containing constrained but unsettled predicates |
 | `META_OBJECT` | Foldable handle for a lower relational structure that can later be reopened |
 | `REQUIREMENT` | Next-operation demand generated by unresolved structure, tension, or missing comparison |
+| `PREDICATE_STATUS` | Revisable state of a predicate: settled, provisional, conflicted, open, reopened, or otherwise question-bearing |
+| `PREDICATE_FIELD_WILL` | Auditable system-level direction synthesized from tensions, dependencies, and requirements among predicate networks |
 | `CONFLICT` | Incompatible supported structures |
 | `COVERAGE` | Which relevant projections have or have not been consulted |
 | `LABEL` | External human-readable pointer to an object |
@@ -808,6 +907,11 @@ A useful first test should demonstrate that the system can:
 18. derive at least one `REQUIREMENT` for a next operation from tension or incompleteness in the field rather than from an external prompt;
 19. revise one local relation without rebuilding the whole field;
 20. discard the Daimonion's temporary working graph while preserving accepted archive changes.
+21. attach a revisable question-bearing status to a predicate and allow later evidence to shrink, enlarge, split, or reopen it;
+22. consolidate several related unresolved predicates into one higher-leverage `REQUIREMENT`;
+23. distinguish a cheap structured `SKIP` path from a narrowed `SHORTEN` path that invokes a large LLM only for the unresolved edge;
+24. preserve minority or losing alternatives after a decision as explicit reopening conditions rather than deleting them;
+25. produce at least one auditable `PREDICATE_FIELD_WILL` whose direction can be traced back to the epistemic and normative predicate networks that generated it.
 
 The research prototype should eventually include at least one simple end-to-end case in which stored relations are followed through the actual comparison that produces a splinter. This will test the bridge from structure to process without pretending that the full Daimonion has already been specified.
 
