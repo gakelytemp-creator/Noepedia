@@ -514,6 +514,50 @@ The Daimonion does not decide morality by fiat.
 
 It protects the requirement that normative predicates, conflicts, affected interests, and reasons remain visible in the formation of action.
 
+### The Guard Must Be Guardable
+
+If the system creates a bounded place for suspected harm, the Daimonion must not become its hidden judge, jailer, and executioner.
+
+The Daimonion does not certify that a person or agent *is evil*.
+
+It can instead open a reflective containment scene around a **harm-bearing relation, action, policy, output, or causal pattern** whose normative status is not yet settled.
+
+~~~text
+candidate action / relation
+        ↓
+      HARM?
+        ↓
+reflective containment scene
+        ↓
+inspect evidence, affected parties, externalities, alternatives
+        ↓
+transform / limit / reject / release-with-marker
+~~~
+
+The release condition is strict:
+
+> **No unresolved harm-bearing structure should leave the reflective scene as though it were morally settled.**
+
+If the system must act before the question is closed, the marker travels with the action.
+
+The unresolved normative cost, the affected parties, the provenance, and the conditions for reopening remain attached to the branch.
+
+This is especially important because mechanisms created to control harm can reproduce the same structure they were meant to contain.
+
+A punitive rule can become coercive.
+
+A safety rule can hide externalities.
+
+A classifier can turn a temporary suspicion into a permanent identity.
+
+Therefore the mechanism that marks, contains, releases, or transforms harm must itself be an object of the map.
+
+> **The guard must be guardable.**
+
+The Daimonion's duty is not to purify the system by authority.
+
+It is to keep the moral transformation visible enough that the system cannot quietly become what it claims to oppose.
+
 ### Before the Decision and After the Decision
 
 The Daimonion also guards a phase change.
