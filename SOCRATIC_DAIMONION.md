@@ -467,6 +467,83 @@ A new meta-layer is justified when the lower layer has produced a reason to insp
 
 ---
 
+### The Daimonion Does Not Manufacture the Will
+
+The Daimonion should not become a hidden sovereign standing above the field.
+
+The primary active structure is the interacting predicate field itself.
+
+Question-bearing predicates, conflicts, dependencies, evidence, alternatives, and constraints can combine into a system-level direction.
+
+Noepedia calls this direction **Predicate-Field Will (PFW)**.
+
+~~~text
+predicate tensions
+→ consolidated questions
+→ competing possible moves
+→ directional requirement
+→ action candidate
+~~~
+
+The Daimonion's task is not to invent this will from personality.
+
+Its task is to keep the process honest enough that the direction can be reconstructed.
+
+It asks:
+
+~~~text
+Which networks generated this direction?
+Which alternatives lost?
+What evidence mattered?
+Which assumptions were required?
+Which moral constraints participated?
+Which conditions would force us to reopen the decision?
+~~~
+
+In this architecture, an opaque desire belonging to one model, one rule, one authority, or one temporary state is not sufficient grounds for operational trust.
+
+> **Only a direction that remains accountable to the interacting field should be treated as trusted system-level will.**
+
+This is a stricter demand than consistency.
+
+A coherent system can still move coherently in a bad direction.
+
+Moral and ethical requirements must therefore be able to enter the same reflective scene as epistemic ones.
+
+The Daimonion does not decide morality by fiat.
+
+It protects the requirement that normative predicates, conflicts, affected interests, and reasons remain visible in the formation of action.
+
+### Before the Decision and After the Decision
+
+The Daimonion also guards a phase change.
+
+Before a decision, it should protect the value of disagreement.
+
+A network that produces counterevidence, an alternative, or an inconvenient distinction may be doing its job precisely by refusing agreement.
+
+After a decision, the whole system may need to coordinate around one executable branch.
+
+The networks that previously opposed that branch do not disappear. Their role changes.
+
+They may now contribute to monitoring, fallback planning, failure detection, and the explicit conditions that would reopen the choice.
+
+~~~text
+DELIBERATION
+    reward challenge and discrimination
+        ↓ decision
+COMMITMENT
+    reward coordination and execution
+        ↓ changed condition / failure
+REOPEN
+    restore preserved alternatives to active competition
+~~~
+
+The Daimonion should therefore prevent two opposite failures: premature consensus before a real decision has been earned, and endless internal argument after action has legitimately begun.
+
+Unity of action must not require falsification of the history of disagreement.
+
+---
 ## 8. If Knowledge Is Well Placed, It Can Be Forgotten
 
 One of the strongest principles of the reconstruction is:
@@ -745,7 +822,7 @@ Even our reconstruction of the Daimonion remains revisable.
 
 The present working definition is:
 
-> **The Socratic Daimonion is a persistent meta-semiotic companion that maintains a temporary dynamic map of the knowledge currently in play, detects when a proposed move cannot be made without silently damaging that map, and interrupts the move long enough for the conflict to become explicit.**
+> **The Socratic Daimonion is a persistent meta-semiotic companion that maintains a temporary dynamic map of the knowledge currently in play, detects when a proposed move cannot be made without silently damaging that map, and keeps any emerging Predicate-Field Will accountable to the competing epistemic and normative structures that produced it. It interrupts when necessary, preserves the losing alternatives, and helps the system move from open deliberation into coordinated action without falsifying the path by which the decision was reached.**
 
 In a homoiconic field, this includes a further duty: when the map edits its own rules or structures, the Daimonion must keep the transformation accountable to the history that made the edit necessary.
 
