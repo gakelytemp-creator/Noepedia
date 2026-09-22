@@ -511,6 +511,54 @@ The desired result is not a world in which a fixed stock of harm has merely been
 It is a world in which harmful structures become **less able to propagate unmarked and less likely to recur unchanged**.
 
 ---
+### Long-Horizon Consequence Tracking
+
+The normative hypothesis fails if the system can mark only immediate harm.
+
+Some important consequences are delayed, displaced, institutional, cumulative, intergenerational, or otherwise temporally remote from the originating action.
+
+Noepedia should therefore preserve addressable consequence chains across long time gaps.
+
+~~~text
+ACTION at t0
+→ immediate effects
+→ intermediate transformations
+→ delayed observation at tN
+→ revision of HARM? / BENEFIT?
+→ possible reopening of the original decision
+~~~
+
+The time gap itself should not weaken the link merely because it is inconvenient to track.
+
+A successful containment architecture must be able to retain enough provenance and causal structure to reconnect later effects to earlier decisions when evidence supports the connection.
+
+This also means that moral success cannot be measured by surface form.
+
+`GOOD?` and `HARM?` should remain revisable until the relevant fruit network is sufficiently observed.
+
+Additional metrics follow:
+
+| Metric | Why it matters |
+|---|---|
+| Delayed-consequence linkage rate | Tests whether later effects can still be traced back to earlier decisions |
+| Moral-reopening rate after delayed evidence | Tests whether old classifications actually remain revisable |
+| Long-horizon externality capture | Tests whether costs appearing far from the original act remain visible |
+| Appearance-vs-fruit disagreement rate | Measures how often initial moral appearance diverges from observed consequence |
+| Participant-transformation tracking | Tests whether the system records how actions change roles, incentives, and future behavior |
+
+### Role Transformation as a System Effect
+
+The field should also record when a requirement changes the participant's role rather than merely returning an answer.
+
+A request for rescue may become a call to contribute.
+
+A dissenter may become a monitor after commitment.
+
+A passive consumer of knowledge may become an investigator who generates the next observation.
+
+These transformations are part of the consequence field and should be measured alongside external outcomes.
+
+---
 ## 12. What Would Falsify the Economic Expectation
 
 The economic promise should be abandoned or revised if experiments show that the settled-vs-edge routing gate cannot be made substantially cheaper than the neural work it is supposed to avoid; its false-settled rate is epistemically unacceptable; structured routing costs nearly as much as neural inference; most useful questions still require the largest model; SHORTEN mode does not materially reduce neural context or computation; consolidation costs erase the savings; the knowledge field cannot remain coherent under local revision; generated REQUIREMENTS do not select useful next observations; specialization creates more coordination cost than it saves; provenance and validation overhead dominate the savings; or the external structure becomes so large and brittle that maintaining it costs more than retraining or inference alternatives.
