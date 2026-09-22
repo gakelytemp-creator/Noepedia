@@ -658,6 +658,87 @@ It establishes a new requirement for an artificial knowledge organism:
 
 > **Its reasons for action must be as inspectable, contestable, and revisable as its reasons for belief.**
 
+### Harm Is Not a Conserved Substance
+
+A dangerous philosophical mistake would be to treat evil or harm as if it were a conserved physical quantity.
+
+Noepedia should not assume that the world contains a fixed stock of evil that can only be transferred from one place to another.
+
+Harm can be created, amplified, hidden, displaced, reduced, prevented, remembered, and transformed by changes in structure.
+
+This means moral reasoning cannot be only the search for the least harmful point on a fixed landscape.
+
+An action changes the landscape itself.
+
+It may alter future options, institutions, expectations, incentives, available distinctions, and the probability that the same harmful pattern will recur.
+
+The relevant question is therefore not only:
+
+> "Which available choice causes less harm now?"
+
+but also:
+
+> **"What kind of future predicate field does this choice help create?"**
+
+This is where a harmful event can become material for future good without being renamed as good.
+
+The transformation is not moral alchemy by declaration.
+
+It is structural:
+
+~~~text
+harm
+→ visible trace
+→ explanation of mechanism
+→ affected parties remain visible
+→ new constraint / distinction / warning / redesign
+→ reduced recurrence or reduced propagation
+~~~
+
+The harm remains part of provenance.
+
+What changes is what the field can do with it.
+
+### Marked Egress
+
+The metaphor of a "reservation" or containment space can be useful only if it is applied to **harm-bearing structures rather than people**.
+
+A person must not become an essentialized `EVIL_OBJECT` in the archive.
+
+Instead the field can carry revisable normative predicates such as:
+
+~~~text
+HARM?
+COERCION?
+UNFAIR_TRANSFER?
+IRREVERSIBLE_DAMAGE?
+UNACCOUNTED_EXTERNALITY?
+~~~
+
+These predicates remain question-bearing until the relevant evidence, context, and affected perspectives have been examined.
+
+A simple rule follows:
+
+> **No unmarked harm may cross the boundary.**
+
+If an unresolved harmful structure must be used, published, executed, or passed onward before full resolution, its uncertainty and known cost must travel with it.
+
+Consent by the receiver does not erase effects on third parties or future states.
+
+This changes the meaning of containment.
+
+It is not a hidden place where unwanted things disappear.
+
+It is an **open, inspectable processing region** in which harmful structures may be decomposed, compared, limited, transformed, or rejected without losing their history.
+
+And because harm can enter the mechanism that claims to control harm, the containment rule itself must remain inside the homoiconic field.
+
+The guard must be guardable.
+
+The classifier must be classifiable.
+
+The moral rule must be revisable without erasing why it was challenged.
+
 ### Deliberation Before Commitment, Coordination After It
 
 A living system should value different behavior before and after a decision.
