@@ -880,6 +880,8 @@ Noepedia currently has two complementary philosophical texts.
 
 In the shortest form: **the first text is about the map and the kind of knowledge-field we want to preserve; the second is about how the Daimonion travels with us through that map without letting us lose our position or silently damage it.**
 
+A separate engineering forecast is kept in **[EXPECTATIONS.md](EXPECTATIONS.md)**. It records the present hypotheses about division of labor between Noepedia, LSM, LLM, and Daimonion; expected interaction, energy, hardware, and training costs; hallucination reduction; specialization; active learning; the measurable benefits we expect; and the conditions that would falsify those expectations. It is deliberately labeled as expectation rather than benchmark so that later results can be compared against what was actually predicted.
+
 ---
 
 ## ქართული მოკლე აღწერა
