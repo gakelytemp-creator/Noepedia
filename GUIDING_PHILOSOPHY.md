@@ -607,6 +607,74 @@ A passive memory waits for attention.
 
 A living knowledge field can help determine where attention is needed.
 
+### Predicate-Field Will
+
+Structural requirements do not have to remain isolated.
+
+Several predicate networks may carry unresolved questions at the same time. Some of those questions may be independent. Others may depend on one another, compete for the same evidence, share a missing distinction, or wait on one experiment.
+
+When these question-bearing networks interact, the field can acquire a direction.
+
+The formal working name for this direction is **Predicate-Field Will (PFW)**.
+
+~~~text
+question-bearing predicate networks
++ dependencies
++ conflicts
++ evidence
++ open alternatives
++ available actions
++ normative constraints
+→ PREDICATE_FIELD_WILL
+~~~
+
+This is not a claim that the field has human feelings.
+
+It is a structural claim.
+
+What we ordinarily call a next thing to do need not be inserted by a miniature agent standing above the knowledge system. It may be synthesized from the unresolved geometry of the field itself.
+
+In the project's more poetic vocabulary, **will is alchemized in the mutual tensions of predicate networks**.
+
+This gives a stronger criterion for trust.
+
+A direction should not be trusted merely because one neural model produced it fluently, one network supports it strongly, or one authority requests it.
+
+> **The only operational will Noepedia should trust is a will whose formation can be reconstructed from the field that generated it.**
+
+That means the supporting networks, opposing networks, missing evidence, unresolved alternatives, and reasons for escalation remain inspectable.
+
+This is also where moral requirements enter at a deeper level.
+
+Ethics cannot be only a final veto attached after cognition has already decided what it wants.
+
+Moral criteria must be able to exist inside the same addressable field as constraints, obligations, affected parties, conflicts, precedents, uncertainty, and requirements.
+
+A direction that is epistemically attractive but normatively unacceptable should therefore encounter real structural opposition before it becomes action.
+
+This does not provide a finished theory of morality.
+
+It establishes a new requirement for an artificial knowledge organism:
+
+> **Its reasons for action must be as inspectable, contestable, and revisable as its reasons for belief.**
+
+### Deliberation Before Commitment, Coordination After It
+
+A living system should value different behavior before and after a decision.
+
+Before commitment, the useful contribution may be the one that resists consensus: challenge, counterexample, alternative, distinction, risk, missing evidence, or information gain.
+
+After a direction has been selected, useful contribution changes toward coordination, execution, monitoring, error detection, and condition checking.
+
+This is not the destruction of dissent.
+
+The rejected or minority branches remain in memory with the conditions under which they should be reopened.
+
+The field therefore needs two different reward regimes:
+
+> **Before decision, reward useful difference. After decision, reward coherent action — while preserving the differences that may later become necessary again.**
+
+This permits a system to act as one without pretending that it always thought as one.
 ### Meta-Layers Are Reversible Folds
 
 Reflection does not require an infinite tower of observers watching observers.
