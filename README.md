@@ -309,6 +309,82 @@ A rule that labels, contains, releases, or transforms harm is part of the same h
 
 There is no morally privileged hidden executioner outside the map.
 
+### Fruits, Delayed Consequences, and Moral Appearance
+
+A harmful structure may wear the same outward form as a beneficial one.
+
+Polite language, declared good intention, familiar symbolism, legality, consensus, sacrifice, efficiency, or even apparent compassion are not sufficient moral classifiers.
+
+A familiar Christian formulation captures the operational idea: **judge by the fruits**.
+
+For Noepedia this becomes a structural rule rather than a theological shortcut:
+
+~~~text
+FORM / INTENTION
+      ↓
+ACTION / RELATION
+      ↓
+immediate effects
+      ↓
+secondary effects
+      ↓
+effects on other agents and institutions
+      ↓
+changes in future options and incentives
+      ↓
+long-horizon consequences
+~~~
+
+The moral status of a candidate action must therefore remain revisable while its consequence network is still unfolding.
+
+Time delay does not dissolve responsibility.
+
+If a cause produces its important effect years or generations later, the causal and normative relation should remain addressable across that interval.
+
+> **A consequence does not become morally irrelevant because it arrived late.**
+
+This is essential for transformative containment.
+
+A containment boundary that watches only immediate output can release a structure whose major harm is delayed, displaced, inherited, institutional, ecological, or otherwise temporally remote.
+
+The marker must therefore be able to survive time:
+
+~~~text
+ACTION
+→ HARM? / BENEFIT?
+→ CONSEQUENCE_CHAIN
+→ delayed observation
+→ revision of the original predicate
+~~~
+
+Likewise, beneficial appearance must not grant permanent clearance.
+
+`GOOD?` and `HARM?` are both revisable predicates whose evidence includes what the action eventually produces and what it transforms in the participants and the surrounding field.
+
+A second criterion follows:
+
+> **Ask not only what the action looks like, but what it makes possible next.**
+
+Religious, philosophical, legal, literary, and historical traditions can therefore be useful to Noepedia as long-running archives of normative predicate patterns.
+
+They are not automatically authoritative because they are old or sacred, nor automatically irrelevant because they are symbolic.
+
+They preserve repeated attempts to distinguish appearance from consequence, petition from responsibility, sacrifice from exploitation, and service from domination.
+
+A compact parable expresses one important transformation:
+
+~~~text
+"Help me; this is difficult."
+        ↓
+"I need help too."
+        ↓
+the petitioner becomes a participant in the work
+~~~
+
+The point is not to claim that a supernatural voice has been demonstrated.
+
+The structural lesson is that a request for rescue can be transformed into a requirement for service: the agent's role changes from recipient of help to contributor to the field that generated the need.
+
 ### Artificial Predicate-Network Evolution
 
 The process described above can be treated as a working hypothesis for **artificial predicate-network evolution**.
@@ -928,6 +1004,9 @@ The exact grammar is still open, but the present conceptual minimum includes:
 | `PREDICATE_STATUS` | Revisable state of a predicate: settled, provisional, conflicted, open, reopened, or otherwise question-bearing |
 | `PREDICATE_FIELD_WILL` | Auditable system-level direction synthesized from tensions, dependencies, and requirements among predicate networks |
 | `HARM_MARKER` | Revisable normative marker such as `HARM?`, carrying evidence, uncertainty, affected objects, and externalities |
+| `BENEFIT_MARKER` | Revisable normative marker such as `GOOD?` / `BENEFIT?`; appearance or declared intention is insufficient without consequence evidence |
+| `CONSEQUENCE_CHAIN` | Addressable causal / normative path linking an action to immediate and delayed effects across arbitrary time gaps |
+| `TRANSFORMATION` | Change in participant roles, future options, incentives, or field structure produced by an action |
 | `CONTAINMENT_ZONE` | Bounded, auditable working region for unresolved harm-bearing structures; not a label for persons |
 | `CONFLICT` | Incompatible supported structures |
 | `COVERAGE` | Which relevant projections have or have not been consulted |
@@ -971,7 +1050,11 @@ A useful first test should demonstrate that the system can:
 25. produce at least one auditable `PREDICATE_FIELD_WILL` whose direction can be traced back to the epistemic and normative predicate networks that generated it.
 26. represent at least one suspected harmful relation with a revisable `HARM?` marker rather than assigning an essential moral label to an agent;
 27. prevent an unresolved harm-bearing structure from crossing into trusted action unmarked, while preserving provenance, affected parties, and known externalities if it must cross provisionally;
-28. show that a harmful event can alter the future field by producing a new constraint, warning, distinction, or redesign, and keep the containment rule itself auditable.
+28. show that a harmful event can alter the future field by producing a new constraint, warning, distinction, or redesign, and keep the containment rule itself auditable;
+29. keep a causal and normative `CONSEQUENCE_CHAIN` addressable across a long delay between action and effect;
+30. revise `HARM?` or `BENEFIT?` when delayed consequences contradict the original appearance or intention;
+31. distinguish moral appearance from moral fruit by tracing what an action produces in affected agents, institutions, incentives, and future options;
+32. represent at least one `TRANSFORMATION` in which a participant's role changes as a result of the field's requirement rather than from an externally imposed label.
 
 The research prototype should eventually include at least one simple end-to-end case in which stored relations are followed through the actual comparison that produces a splinter. This will test the bridge from structure to process without pretending that the full Daimonion has already been specified.
 
