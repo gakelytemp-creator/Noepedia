@@ -558,6 +558,59 @@ The Daimonion's duty is not to purify the system by authority.
 
 It is to keep the moral transformation visible enough that the system cannot quietly become what it claims to oppose.
 
+### The Daimonion Must Follow the Fruit Through Time
+
+The reflective scene cannot close merely because the immediate output looks good.
+
+Some harmful structures imitate beneficial forms, and some consequences appear only after long delays.
+
+The Daimonion should therefore treat moral appearance as provisional and preserve the path from action to later fruit.
+
+~~~text
+action
+→ immediate result
+→ delayed result
+→ displaced result
+→ effect on another agent
+→ effect on future conditions
+~~~
+
+A large time gap between cause and effect does not erase the need for comparison.
+
+If the consequence arrives later, the original branch should still be reopenable.
+
+The system must be able to say:
+
+~~~text
+At t0 this action was accepted under predicates P1, P2, P3.
+At t100 a consequence appeared that changes P2.
+Reopen the earlier moral classification.
+~~~
+
+This is necessary if containment is to be more than a short-lived filter.
+
+A boundary that checks only what leaves now may miss what the released structure produces much later.
+
+> **The Daimonion must be able to follow the fruit beyond the moment of release.**
+
+### Moral Appearance Is Not Moral Identity
+
+The Daimonion should not decide good and evil from costume.
+
+A benevolent phrase, a noble symbol, a legal form, a majority decision, a sacred name, or a declared sacrifice does not settle the normative predicate.
+
+Likewise, an awkward, disruptive, or painful intervention is not automatically harmful.
+
+The question remains:
+
+> **What did this structure produce, whom did it affect, what did it make more likely, and what kind of participant did it create?**
+
+This is one reason religious narratives remain relevant to the reflective field without becoming unquestionable authorities.
+
+They preserve many historical attempts to distinguish appearance from fruit and petition from responsibility.
+
+The Daimonion may compare those patterns, but it must not hide behind them.
+
 ### Before the Decision and After the Decision
 
 The Daimonion also guards a phase change.
