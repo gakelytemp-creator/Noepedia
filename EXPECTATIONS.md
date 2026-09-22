@@ -463,6 +463,54 @@ And a further operational principle:
 > **Before commitment, reward useful disagreement. After commitment, reward coordinated execution. Preserve the losing branches so that changed conditions can make them active again.**
 
 ---
+### Marked Harm as a Measurable Normative Hypothesis
+
+The architecture also carries a normative expectation that should be tested rather than merely declared.
+
+Noepedia does not assume that harm is a fixed conserved quantity.
+
+The stronger hypothesis is that a knowledge system can help **change the future field of possible harms** by preserving harmful events as structured evidence and converting them into new constraints, distinctions, warnings, redesigns, and reopening conditions.
+
+This is different from merely choosing the least harmful option from a fixed menu.
+
+A provisional operational rule is:
+
+> **No unmarked harm may cross the boundary.**
+
+This means that an unresolved harm-bearing relation or action should not enter trusted execution, publication, reuse, or consolidation without carrying its normative status with it.
+
+A provisional release should preserve at least:
+
+~~~text
+HARM? status
+provenance
+affected parties
+known externalities
+uncertainty
+reversibility
+conditions for reopening
+~~~
+
+The marker attaches to the structure or action, not to a person's essence.
+
+The containment and release mechanism must itself be auditable because enforcement can reproduce the harm it is meant to control.
+
+This yields additional measurable questions:
+
+| Metric | Why it matters |
+|---|---|
+| Unmarked-harm egress rate | Tests whether unresolved normative cost escapes into trusted action without status |
+| Downstream externality capture | Tests whether transferred costs remain visible beyond the immediate receiver |
+| Harm-recurrence rate after consolidation | Tests whether processed failures actually alter future behavior |
+| Constraint / redesign yield from harmful events | Tests whether harm produces reusable preventive structure |
+| Enforcement self-audit coverage | Tests whether the rules that mark and contain harm are themselves inspectable |
+| Person-essentialization rate | Tests whether the system wrongly converts revisable harmful predicates into fixed moral identities |
+
+The desired result is not a world in which a fixed stock of harm has merely been moved into a hidden container.
+
+It is a world in which harmful structures become **less able to propagate unmarked and less likely to recur unchanged**.
+
+---
 ## 12. What Would Falsify the Economic Expectation
 
 The economic promise should be abandoned or revised if experiments show that the settled-vs-edge routing gate cannot be made substantially cheaper than the neural work it is supposed to avoid; its false-settled rate is epistemically unacceptable; structured routing costs nearly as much as neural inference; most useful questions still require the largest model; SHORTEN mode does not materially reduce neural context or computation; consolidation costs erase the savings; the knowledge field cannot remain coherent under local revision; generated REQUIREMENTS do not select useful next observations; specialization creates more coordination cost than it saves; provenance and validation overhead dominate the savings; or the external structure becomes so large and brittle that maintaining it costs more than retraining or inference alternatives.
