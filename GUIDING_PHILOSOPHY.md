@@ -739,6 +739,85 @@ The classifier must be classifiable.
 
 The moral rule must be revisable without erasing why it was challenged.
 
+### Judge by Fruits, Not by Form
+
+Harm and benefit cannot be reliably separated by appearance alone.
+
+A harmful process may arrive with the language of care, order, justice, sacrifice, safety, efficiency, or necessity.
+
+A beneficial process may look disruptive, costly, inconvenient, or even initially painful.
+
+Noepedia should therefore distrust moral classification by surface form.
+
+A familiar Christian criterion captures the structural rule well: **judge by the fruits**.
+
+For this project, the phrase means that normative evaluation must remain connected to consequence networks rather than declared intention or symbolic appearance.
+
+~~~text
+declared intention / visible form
+→ action
+→ immediate consequence
+→ indirect consequence
+→ effect on other agents
+→ effect on institutions and incentives
+→ effect on future options
+→ later consequence
+~~~
+
+Time does not sever the relation.
+
+If the important consequence arrives much later than the originating act, the causal and normative path must remain recoverable.
+
+> **A consequence does not become irrelevant because it arrived late.**
+
+This creates a practical demand for long-horizon moral memory.
+
+`GOOD?` and `HARM?` are not permanent stamps.
+
+They are revisable predicates whose status may change as delayed fruits become visible.
+
+An action praised at time `t0` may require moral reopening at `t100` if later effects reveal a hidden transfer of cost.
+
+Likewise, an action initially marked as harmful may later reveal benefits that require a more differentiated predicate rather than a simple reversal.
+
+### Transformation Is Also a Fruit
+
+Consequences are not only external outcomes.
+
+An action can change the participants themselves.
+
+It can turn a spectator into a participant, a recipient into a contributor, an opponent into a monitor, or a protected agent into a responsible collaborator.
+
+A compact parable expresses this transformation:
+
+~~~text
+"Help me; this is difficult."
+        ↓
+"I need help too."
+        ↓
+the petitioner joins the work
+~~~
+
+The point is not a claim about supernatural evidence.
+
+The structural lesson is that the field may answer a request for rescue by changing the requester's role.
+
+This matters for Predicate-Field Will.
+
+A trusted direction should be evaluated not only by what it achieves, but also by **what kind of participant it tends to create** and what future relations become possible because of that transformation.
+
+### Religious Traditions as Normative Pattern Archives
+
+Religious traditions should not be imported into Noepedia as automatically true moral authorities.
+
+But neither should they be discarded as mere decoration.
+
+They contain long-running human attempts to encode recurring predicate patterns around harm, temptation, sacrifice, responsibility, forgiveness, domination, service, hypocrisy, repentance, and transformation.
+
+In that sense, they can be treated as historical semiotic archives of normative patterns.
+
+Their claims remain subject to the same requirements as other structures: provenance, comparison, contradiction, context, consequence, and revision.
+
 ### Deliberation Before Commitment, Coordination After It
 
 A living system should value different behavior before and after a decision.
