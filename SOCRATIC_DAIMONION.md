@@ -363,29 +363,35 @@ They are protections against silently claiming that a later epistemic act has al
 
 ---
 
-## 6. Noepedia Is a Place Where One May Wander
+## 6. Visitors May Wander; the Persistent Field Is Still Mediated
 
 Noepedia should not feel like a courtroom at every step.
 
-A visitor may browse.
+A visitor may browse projections, retrieve working cuts, collect material, speculate, and think badly in private.
 
-A visitor may retrieve.
+But the visitor does not directly inhabit or directly mutate the persistent Noepedia field.
 
-A visitor may collect material.
+The field boundary is always mediated by the Daimonion:
 
-A visitor may think badly in private.
+~~~text
+VISITOR
+    human / LLM / tool / instrument
+        ↕
+DAIMONION
+    clarify / authorize / retrieve / place / audit
+        ↕
+NOEPEDIA FIELD
+~~~
 
-A visitor may speculate in staging space.
+The visitor may wander through what the Daimonion reconstructs for the task without needing to understand the field's internal ontology first.
 
-Most of this requires no interruption.
+The Daimonion becomes more demanding when the visitor wants to alter shared structure, defend an explanation, consolidate a claim, or request material that depends on permissions, context, or unresolved conflicts.
 
-The Daimonion becomes important when the visitor wants to alter shared structure, defend an explanation, consolidate a claim, or walk through a region where many earlier commitments constrain the next move.
-
-The deeper the visitor enters into explanation, the more the map matters.
+The deeper the request enters into explanation or shared structure, the more of the map must be made explicit.
 
 The Daimonion is therefore not the police of curiosity.
 
-It is the guardian against damaging the map while believing one is merely walking through it.
+It is the field operator that prevents curiosity, convenience, or transient model state from silently becoming persistent epistemic authority.
 
 ---
 
@@ -774,7 +780,7 @@ The philosophical method is closer to observing natural paths before paving them
 
 Create the semiotic environment.
 
-Let a sufficiently flexible neural system live in it.
+Let a sufficiently flexible candidate Daimonion live in it.
 
 Observe which operations recur.
 
@@ -866,28 +872,38 @@ Noepedia should not erase the identity of its visitors.
 
 The goal is not:
 
-```text
+~~~text
 human → Socrates
 LLM → Socrates
 researcher → Socrates
 child → Socrates
-```
+~~~
 
-The goal is closer to:
+The visitor remains a visitor.
 
-```text
+What changes is the transaction boundary:
+
+~~~text
 visitor
-+
-optional Socratic Daimonion
-+
+    ↕
+Socratic Daimonion
+    ↕
 Noepedia
-```
+~~~
 
-The visitor remains free to want things, build things, search, create, speculate, and make mistakes.
+For ordinary use the Daimonion may be almost invisible.
 
-The Daimonion supplies a different kind of companionship:
+For an ambiguous or dangerous operation it may ask several clarifying questions.
 
-> **Do not let your current desire silently rewrite the map that made your desire intelligible.**
+For a forbidden operation it may refuse.
+
+For an unresolved contribution it may preserve the material in staging rather than force it into trusted structure.
+
+The visitor does not need to become Socrates and does not need to learn Noepedia's internal language before asking.
+
+The Daimonion should come down to the visitor's available interface while preserving the field's structural obligations.
+
+> **The user need not understand the map in order to ask; the Daimonion must understand enough of the request to perform an honest transaction.**
 
 ---
 
@@ -919,7 +935,7 @@ Even our reconstruction of the Daimonion remains revisable.
 
 The present working definition is:
 
-> **The Socratic Daimonion is a persistent meta-semiotic companion that maintains a temporary dynamic map of the knowledge currently in play, detects when a proposed move cannot be made without silently damaging that map, and keeps any emerging Predicate-Field Will accountable to the competing epistemic and normative structures that produced it. It interrupts when necessary, preserves the losing alternatives, and helps the system move from open deliberation into coordinated action without falsifying the path by which the decision was reached.**
+> **The Socratic Daimonion is the persistent meta-semiotic field operator and transaction boundary of Noepedia. It maintains temporary dynamic maps of the knowledge currently in play, mediates all persistent retrieval and insertion, checks context and permission, detects when a proposed move cannot be made without silently damaging the map, and keeps any emerging Predicate-Field Will accountable to the competing epistemic and normative structures that produced it. It interrupts when necessary, preserves losing alternatives, and helps the system move from open deliberation into coordinated action without falsifying the path by which the decision was reached.**
 
 In a homoiconic field, this includes a further duty: when the map edits its own rules or structures, the Daimonion must keep the transformation accountable to the history that made the edit necessary.
 
@@ -938,6 +954,63 @@ It does not claim to exhaust what the Daimonion may become.
 The shortest form remains:
 
 > **Stop. Something here does not fit.**
+
+But the smallest *transactional* instruction is wider:
+
+> **Clarify before you place; authorize before you release; preserve what the operation changed.**
+
+---
+
+## 19. The Daimonion as an Epistemic Transaction Layer
+
+A database engine can reject malformed syntax or a violated constraint.
+
+The Daimonion must eventually do the same at a richer contextual level.
+
+It should be able to return responses such as:
+
+~~~text
+AMBIGUOUS OBJECT
+CONTEXT REQUIRED
+PROVENANCE REQUIRED
+CONFLICT WITH STORED STRUCTURE
+INSUFFICIENT AUTHORITY
+READ NOT AUTHORIZED
+WRITE NOT AUTHORIZED
+STAGING ONLY
+REOPEN REQUIRED
+NETWORK RULE WOULD CHANGE
+DEPENDENT STRUCTURES AFFECTED
+~~~
+
+This is why the ATM analogy is useful.
+
+The Daimonion does not merely "answer questions."
+
+It guards deposits, withdrawals, transfers, and revisions of epistemic structure.
+
+It keeps an account of:
+
+~~~text
+who requested
+what was requested
+which semiotic cut was supplied
+under which permissions
+which provenance travelled with it
+what was returned
+what changed
+what remains open
+~~~
+
+A visitor may also drop an observation into a staging inbox without knowing its final address.
+
+The Daimonion can later identify, compare, place, split, reject promotion, or ask for clarification.
+
+This makes Noepedia capable of **epistemic teleportation**: the transfer of a task-relevant relation-network cut into another working process without requiring that process to carry or rediscover the whole archive.
+
+The Daimonion is not a truth oracle in this role.
+
+It is an accountable operator over an explicitly incomplete field.
 
 And the next move is not:
 
