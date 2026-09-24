@@ -18,6 +18,8 @@ provenance, history, and explicit uncertainty
 
 Noepedia is not primarily a library of sentences.
 
+It is also **not a claim that the world can be copied completely into a knowledge system**. A better working image is a shared scientist's notebook: it preserves what contact with reality has made explicit enough to reuse, while leaving unobserved and undiscovered structure outside the map.
+
 An object does not need to have a human-readable name inside the core. It may simply be an address such as:
 
 ```text
@@ -574,35 +576,39 @@ Language remains extremely important — especially for human interaction — bu
 
 ## 5. Noepedia, Socrates, and the Daimonion Are Different Things
 
-Noepedia is the persistent archive.
+Noepedia is the persistent semiotic field.
 
 **Socrates** is the historical human figure whose relation to knowledge motivates part of this project.
 
-**The Socratic Daimonion** is the working name for the experimental companion function that moves through the archive and temporary working structures.
+**The Socratic Daimonion** is the working name for the resident field operator and reflective transaction boundary.
 
-```text
+The important clarification is architectural:
+
+> **Humans, LLMs, instruments, and applications do not directly live inside or directly operate the persistent Noepedia field. They approach it through the Daimonion.**
+
+~~~text
+HUMAN / LLM / TOOL / INSTRUMENT
+        ↕
+SOCRATIC DAIMONION
+        ↕
 NOEPEDIA
-persistent object field
-persistent relation tables
-provenance
-history
-rules
-uncertainty
+    persistent object field
+    persistent relation tables
+    provenance
+    history
+    rules
+    uncertainty
+~~~
 
-DAIMONION
-reads from the archive
-constructs temporary working structures
-compares and consolidates incoming material
-notices tensions and possible splinters
-helps retrieve relevant structure
-proposes archive edits through an auditable path
-```
+The Daimonion may internally use LSM traversal, deterministic algorithms, neural components, or specialized workers.
 
-The Daimonion does **not** need to carry the archive in its neural weights.
+It does **not** need to carry the archive in its neural weights.
 
 That is a central design goal.
 
-> **The Daimonion should not need to know everything. It should know how to place, retrieve, compare, and preserve knowledge without silently corrupting the map.**
+> **The Daimonion should not need to know everything. It should know how to place, retrieve, compare, clarify, authorize, and preserve knowledge without silently corrupting the map.**
+
+External participants may think, speculate, measure, and generate raw material freely outside the persistent field. Persistent field operations remain mediated and auditable.
 
 ---
 
@@ -637,50 +643,54 @@ Only material that survives the archive's insertion process should become persis
 
 ---
 
-## 7. Read Freely, Write Carefully
+## 7. Request Freely; Field Access Through the Daimonion
 
-Reading knowledge does not consume it.
+Knowledge is non-rival: one visitor using a relation does not consume it.
 
-Many humans, models, tools, or programs may retrieve structure from Noepedia.
+But Noepedia should not expose the persistent field as a raw shared database in which every visitor directly reads and writes arbitrary structure.
 
-Writing is different.
+The intended boundary is:
 
-Raw input should not automatically become trusted archive structure.
-
-A useful separation is:
-
-```text
-RAW / STAGING SPACE
-    video bits
-    audio
-    documents
-    sensor streams
-    model output
-    human notes
-    hypotheses
-    temporary graphs
+~~~text
+VISITOR REQUEST / CONTRIBUTION
+    human question
+    LLM request
+    instrument trace
+    application call
+    hypothesis
+    note
+    raw media
 
         ↓
 
 DAIMONION
-    identify
-    compare
-    reconcile
+    clarify context
+    reconcile identity
+    check permissions
+    select relevant networks
     preserve provenance
-    notice tension
-    place into appropriate networks
+    expose conflicts
+    construct a transferable semiotic cut
+    decide staging vs trusted placement
+    log the transaction
 
         ↓
 
 NOEPEDIA
     persistent consolidated structure
-```
+~~~
 
-A streamed film may exist as stored bits without Noepedia claiming to know what is inside it.
+A visitor may submit something without knowing where it belongs.
 
-Only when an agent identifies objects, relations, events, or evidence does structured knowledge begin to form.
+That material can enter a **staging / inbox** state rather than trusted structure.
 
-Noepedia should distinguish clearly between **stored material** and **integrated knowledge**.
+The Daimonion may later place it, ask clarifying questions, attach it to an existing object, open a new object or network, or preserve it as unresolved raw material.
+
+The right to submit material is not the same as the right to rewrite trusted knowledge.
+
+Likewise, retrieval is contextual and permissioned. A visitor can ask for the structure needed for a task without needing to understand the internal ontology first.
+
+This is closer to an epistemic transaction protocol than to unrestricted database access.
 
 ---
 
@@ -816,6 +826,62 @@ An honest boundary is more useful than a fluent circular explanation.
 
 ---
 
+## 11A. Knowledge Is a Reduced Notebook, Not a Complete Copy
+
+Noepedia never assumes that a stored object or triplet network exhausts the real object.
+
+A real object may contain indefinitely many properties and interaction possibilities that no current observer, culture, model, or instrument has yet distinguished.
+
+The field therefore records only what has become explicit through observation, measurement, interaction, comparison, or other evidence-bearing contact.
+
+~~~text
+REAL_OBJECT
+    exceeds
+CURRENT_SEMIOTIC_REPRESENTATION
+~~~
+
+A relation can still be valuable without being complete.
+
+Knowledge can constrain destructive actions, enable useful ones, and support prediction inside a stated context while remaining radically incomplete from another point of view.
+
+> **Absence from Noepedia is not absence from reality.**
+
+The field should therefore remain open to later objectivization: new properties, new networks, new distinctions, and new modes of access may arrive without implying that the earlier reduced representation was useless.
+
+---
+
+## 11B. Epistemic Teleportation
+
+Noepedia retrieval should be able to move more than a name or sentence.
+
+A request may retrieve an **addressable cut of semiotic structure**:
+
+~~~text
+objects
++ relation networks
++ network rules
++ context
++ provenance
++ evidence / counterevidence
++ uncertainty
++ coverage
++ revision history
++ permissions
++ reopening conditions
+~~~
+
+That cut can be reconstructed temporarily in a human, LLM, tool, or other working process.
+
+The persistent field remains in place; the usable relational structure is reconstituted where it is needed.
+
+This is the working meaning of **epistemic teleportation**.
+
+It allows settled structure to be reused without forcing each participant to rediscover or permanently memorize it.
+
+See [EPISTEMIC_TELEPORTATION_AND_ASSEMBLY_ALIGNMENT.md](EPISTEMIC_TELEPORTATION_AND_ASSEMBLY_ALIGNMENT.md).
+
+---
+
 ## 12. LSM Is Not an LLM With a Different Name
 
 **LSM means Large Semiotic Model.**
@@ -922,31 +988,35 @@ A useful current picture is:
 ```text
 HUMAN / LLM / AISocket / instrument
     observe, imagine, measure, experiment, communicate
+    submit requests or raw material from outside the persistent field
 
-RAW / STAGING SPACE
-    preserve unintegrated material without pretending it is settled knowledge
+LANGUAGE / MEDIA INTERFACES
+    names, prose, images, sound, geometry, UI projections
 
-LSM
+SOCRATIC DAIMONION
+    sole mediated field operator / transaction boundary
+    clarification and contextual feedback
+    permission checks
+    temporary mega-graph construction
+    consistency and tension checking
+    controlled retrieval and insertion
+    transaction audit
+
+LSM / ALGORITHMIC / SPECIALIZED WORKERS
+    internal services available to the Daimonion
     traverse explicit semiotic structure
     maintain question-bearing predicate status
     consolidate related OPEN_SPACES
     choose SKIP vs SHORTEN vs escalation
-    construct targeted prompts and retrieval paths
+    construct targeted retrieval paths
 
-DAIMONION
-    temporary reasoning over a mega-graph
-    consolidation
-    consistency and tension checking
-    retrieval assistance
-    controlled archive insertion
+RAW / STAGING / INBOX
+    preserve unintegrated material without pretending it is settled knowledge
 
 NOEPEDIA
     persistent addressable object field
     persistent triplet relation tables
     rules, provenance, history, uncertainty
-
-LANGUAGE / MEDIA INTERFACES
-    names, prose, images, sound, geometry, UI projections
 ```
 
 No component needs to pretend to be every other component.
@@ -1060,7 +1130,24 @@ The research prototype should eventually include at least one simple end-to-end 
 
 ---
 
-## 18. What We Explicitly Do Not Know Yet
+## 18. External Methodological Alignment: AI Assembly Session 002
+
+Noepedia now explicitly adopts several negative constraints sharpened independently in **AI Assembly — Session 002: Causal Attribution Under Uncertainty**:
+
+> **Agreement is not truth. Recurrence is not proof.**
+
+The same session also preserved the non-equivalence of procedural legitimacy and causal truth, simulation and intervention, missingness and proof of missing content, operational closure and final knowledge, and resource withdrawal and epistemic disconfirmation.
+
+Noepedia treats these not as proof of its own architecture, but as constraints that its archive, Daimonion, provenance, uncertainty, and reopening mechanisms must respect.
+
+A detailed mapping is recorded in [EPISTEMIC_TELEPORTATION_AND_ASSEMBLY_ALIGNMENT.md](EPISTEMIC_TELEPORTATION_AND_ASSEMBLY_ALIGNMENT.md).
+
+AI Assembly Session 002:
+https://github.com/gakelytemp-creator/AI-Assembly/tree/main/OPEN_DISCOURSES/SESSION_002_CAUSAL_ATTRIBUTION_UNDER_UNCERTAINTY
+
+---
+
+## 19. What We Explicitly Do Not Know Yet
 
 Important open questions include:
 
@@ -1070,7 +1157,9 @@ Important open questions include:
 - How much of the Daimonion must remain neural?
 - Which Daimonion operations can become deterministic algorithms?
 - How should object identity reconciliation work across modalities?
-- How should write authority and revision governance work in a public deployment?
+- How should read, write, deposit, withdrawal, and revision authority work in a public deployment?
+- Which operations must always pass through the Daimonion, and which internal services may it safely delegate?
+- How should contextual clarification and permission errors be represented as a stable transaction protocol?
 - How should explanatory boundaries be represented formally?
 - How should formed unknowns and opposite poles be represented without asserting nonexistent objects?
 - How should splinter detection be derived from stored relations rather than from hand-written prose?
@@ -1085,36 +1174,44 @@ That is part of the research program.
 
 ## Short Formula
 
-> **The archive stores stabilized ground. Intelligence works at the edges where relations are still open enough to change.**
+> **The field stores reusable semiotic ground. The Daimonion is the transaction boundary. Intelligence pays mainly for the unresolved edge.**
 
+~~~text
+REALITY
+    remains larger than every stored representation
 
-```text
-NOEPEDIA
-    persistent object field
-    + triplet relation tables
-    + provenance / rules / history
+HUMANS / LLMs / INSTRUMENTS
+    contact the world
+    and request or contribute structure
 
 DAIMONION
-    temporary meta-semiotic reasoning
-    + mega-graph workspace
-    + navigation / consolidation / retrieval / interruption
+    clarify
+    authorize
+    retrieve
+    place
+    compare
+    interrupt
+    audit
 
-LLM
-    language
-    + explanation
-    + broad generative synthesis
+NOEPEDIA
+    persistent object field
+    + triplet relation networks
+    + provenance / rules / history / uncertainty
 
-AISocket / humans / instruments
-    contact with the world
-```
+EPISTEMIC TELEPORTATION
+    reconstruct the relevant semiotic cut
+    where it is needed
+~~~
 
 And even shorter:
 
-> **Noepedia stores the map.**
+> **Noepedia is the shared notebook, not the world.**
 >
-> **The Daimonion travels with us through it and interrupts when our coordinates no longer fit the structure we are using.**
+> **The Daimonion is the only resident field operator.**
 >
-> **Language is one way of pointing into the map, not the map itself.**
+> **A visitor receives the right relational cut instead of carrying the whole archive.**
+>
+> **Language is one projection into the map, not the map itself.**
 
 ---
 
@@ -1126,6 +1223,8 @@ Noepedia currently has two complementary philosophical texts.
 - **[SOCRATIC_DAIMONION.md](SOCRATIC_DAIMONION.md)** describes the philosophy of the companion that moves with a thinker through that field: the distinction between Socrates and the Daimonion, the splinter and `STOP`, the temporary mega-graph, responsibility during self-revision, opposite poles and open counter-positions, and navigation through tensions while knowledge is still being formed.
 
 In the shortest form: **the first text is about the map and the kind of knowledge-field we want to preserve; the second is about how the Daimonion travels with us through that map without letting us lose our position or silently damage it.**
+
+A third conceptual bridge, **[EPISTEMIC_TELEPORTATION_AND_ASSEMBLY_ALIGNMENT.md](EPISTEMIC_TELEPORTATION_AND_ASSEMBLY_ALIGNMENT.md)**, records the newer view of Noepedia as a reduced shared scientific notebook, the Daimonion as the sole mediated field operator, epistemic teleportation of relation-network cuts, staged contributions, permissioned transactions, and the negative constraints inherited from AI Assembly Session 002.
 
 A separate engineering forecast is kept in **[EXPECTATIONS.md](EXPECTATIONS.md)**. It records the present hypotheses about division of labor between Noepedia, LSM, LLM, and Daimonion; expected interaction, energy, hardware, and training costs; hallucination reduction; specialization; active learning; the measurable benefits we expect; and the conditions that would falsify those expectations. It is deliberately labeled as expectation rather than benchmark so that later results can be compared against what was actually predicted.
 
@@ -1145,14 +1244,14 @@ Noepedia-ს მატრიცა ჰომოიკონურია იმ �
 
 **Daimonion სხვა რამეა, ვიდრე ისტორიული Socrates.** Socrates არის ადამიანი, რომლის ცოდნასთან დამოკიდებულებამ მოგვცა რეკონსტრუქციის მიმართულება; Daimonion არის ექსპერიმენტული თანამგზავრი ფუნქცია, რომელიც დროებით მეგაგრაფში მოძრაობს, დაძაბულობებს ამჩნევს და საჭიროებისას აჩერებს გზას.
 
-არქივიდან ცოდნის ამოღება შეიძლება ბევრმა სისტემამ შეძლოს. ჩაწერა უფრო მკაცრი ოპერაციაა: დაუმუშავებელი ტექსტი, ვიდეო, სენსორის ნაკადი ან ჰიპოთეზა ჯერ staging სივრცეში უნდა დარჩეს და არ უნდა გამოცხადდეს ავტომატურად Noepedia-ს ცოდნად.
+ადამიანი, LLM, პროგრამა და ინსტრუმენტი Noepedia-ს მუდმივ ველში პირდაპირ არ მუშაობს. მათ შორის და ველს შორის დგას **Socratic Daimonion** — კონტექსტური, უფლებებით შეზღუდული და აღრიცხვადი ტრანზაქციის ფენა. მან შეიძლება გამოიტანოს არა მხოლოდ ცალკე ობიექტი ან ტექსტური პასუხი, არამედ ამოცანისთვის საჭირო სემიოტიკური ქსელის ჭრილი — ეს არის **ეპისტემიური ტელეპორტაციის** სამუშაო იდეა. დაუმუშავებელი ტექსტი, ვიდეო, სენსორის ნაკადი ან ჰიპოთეზა შეიძლება ჯერ staging/inbox სივრცეში დარჩეს და არ გამოცხადდეს ავტომატურად Noepedia-ს ცოდნად.
 
 მნიშვნელოვანი საზღვარი: **ხილვადობა ჯერ კიდევ არ არის აღმოჩენა.** Noepedia-ს შეუძლია ცვლილება, კონფლიქტი და ძველი მდგომარეობა ხილული დატოვოს; Daimonion-ის უნარი, სწორად შეამჩნიოს როდის არის საჭირო `STOP`, ჯერ კვლევის ამოცანაა და არა უკვე მიღებული გარანტია.
 
 მოკლე ფორმულა:
 
-> **Noepedia ინახავს რუქას.**  
-> **Daimonion რუქაზე მოძრაობს და დაკარგულ კოორდინატებზე გვაჩერებს.**  
+> **Noepedia სამყაროს ასლი არ არის — ის საერთო სამეცნიერო ბლოკნოტივით ინახავს იმას, რაც სამყაროსთან შეხებამ გახადა ხელახლა გამოსაყენებელი.**  
+> **Daimonion არის მუდმივი ველის ოპერატორი და ტრანზაქციის საზღვარი.**  
 > **ჰომოიკონურობა რუქას აძლევს თვითრედაქტირების თავისუფლებას; Daimonion იცავს ამ თავისუფლების პატიოსნებას.**  
 > **ენა მხოლოდ ერთ-ერთი გარე მიმთითებელი ფენაა.**
 
