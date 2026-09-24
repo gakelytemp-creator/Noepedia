@@ -320,7 +320,7 @@ A specialist can remain connected to the larger object field through shared addr
 
 ## 8. The Honey We Expect From This Bee
 
-The present architecture suggests at least twelve distinct system-level benefits.
+The present architecture suggests at least fourteen distinct system-level benefits.
 
 | # | Expected benefit | Where it comes from |
 |---|---|---|
