@@ -1029,7 +1029,13 @@ AISocket is one way intelligence can obtain structured observations and bounded 
 
 It can produce traces and evidence that may later enter Noepedia through staging and consolidation.
 
-OpenPCB Commons is a natural proving ground because it produces many kinds of semiotic material around the same physical object:
+OpenPCB Commons is a natural proving ground because it produces many kinds of semiotic material around the same physical object.
+
+It is now also the intended **first storage-and-search pilot domain** for Noepedia, while AISocket is the intended first live producer of structured physical traces. The cross-project technical requirements are recorded in [PILOT_AISOCKET_OPENPCB.md](PILOT_AISOCKET_OPENPCB.md).
+
+The pilot is meant to force Noepedia to prove stable identity, provenance, staging, raw-blob handling, relational search, revision, permissioned Daimonion transactions, and task-relevant semiotic-cut retrieval on real hardware evidence rather than only on conceptual examples.
+
+OpenPCB Commons produces many kinds of semiotic material around the same physical object:
 
 ```text
 board image
