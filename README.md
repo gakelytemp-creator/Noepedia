@@ -91,8 +91,16 @@ Knowledge is represented through **triplet relations between objects**.
 A simplified form is:
 
 ```text
-subject → relation → object
+subject → predicate → object
 ```
+
+The important point is that the predicate is not a foreign schema token outside the object field.
+
+**Predicates are objects too.**
+
+A predicate used in the middle position of one triplet may itself appear as the subject or object of other triplets. The same is true for network handles, rules, contexts, revisions, branch identities, times, versions, provenance objects, and other structures.
+
+Noepedia therefore does not add a second metadata grammar above SPO. It keeps using the same relational material.
 
 But Noepedia does not require all relations to be mixed into one undifferentiated graph.
 
@@ -116,7 +124,24 @@ contradiction
 context validity
 ```
 
-Each such network is itself addressable. Its handle can also be an object in the object field, which means the network can have its own provenance, rule, history, context, revisions, and relations to other networks.
+Each such network is itself addressable. Its handle is another object in the same field, which means the network can have its own provenance, rule, history, context, revisions, and relations to other networks — again through ordinary SPO triplets.
+
+For example, one apple object may participate in many different networks:
+
+```text
+APPLE_17
+    → acoustic network → bite-sound samples
+    → surface network  → texture / geometry observations
+    → color network    → color measurements
+    → harvest network  → harvest event / time
+    → provenance paths → instrument / observer / source
+```
+
+These are not extra columns attached to a record.
+
+They are different relational cuts through the same object field.
+
+A request may follow only the acoustic paths, only the harvest history, only the surface measurements, or any other relevant network without changing the underlying SPO format.
 
 Noepedia can therefore describe not only the world, but also the structure by which the world is being described.
 
@@ -424,15 +449,21 @@ This should be treated as a research hypothesis, not as a claim that all human c
 
 ### Homoiconic Matrix: Freedom and Responsibility
 
-This gives Noepedia a **homoiconic** property: the structures used to describe objects can themselves be represented as objects inside the same addressable field.
+This gives Noepedia a **homoiconic** property: the structures used to describe objects are themselves represented as objects inside the same addressable field.
 
-A network can be an object.
+A predicate is an object.
 
-A network rule can be an object.
+A network is an object.
 
-A revision of that rule can be an object.
+A network rule is an object.
 
-Relations among networks, rules, revisions, and the reasons for changing them can themselves be represented through the same relational machinery.
+A revision of that rule is an object.
+
+A context, time interval, branch, world version, provenance record, or consistency rule can also be an object.
+
+Relations among all of these are represented through the **same SPO machinery**.
+
+No special fourth, fifth, or seventh tuple position is introduced when a new dimension appears. A new dimension is represented by another object, predicate, or network in the same matrix.
 
 In this sense, the map can place parts of **itself** on the map.
 
@@ -1059,20 +1090,21 @@ They can remain distinct while still pointing into the same object field.
 
 Its requirements are recorded in [PILOT_EVERETT_PORTAL.md](PILOT_EVERETT_PORTAL.md).
 
-Everett forces validity scope to become explicit:
+Everett forces validity conditions to become explicit **without changing the SPO format**.
+
+For example, an addressable relation-network or relation handle may participate in ordinary triplets such as:
 
 ~~~text
-relation
-+ world
-+ branch
-+ time / interval
-+ world version
-+ ruleset version
-+ epistemic status
-+ provenance
+NETWORK_X → VALID_IN → BRANCH_X
+NETWORK_X → VALID_DURING → INTERVAL_Y
+NETWORK_X → USES_RULESET → RULESET_V4
+NETWORK_X → HAS_PROVENANCE → PROVENANCE_91
+NETWORK_X → HAS_STATUS → CANON
 ~~~
 
-A relation may be canonical inside an Everett branch while remaining explicitly counterfactual relative to our observed world.
+BRANCH_X, INTERVAL_Y, RULESET_V4, PROVENANCE_91, CANON, and the predicates between them are all objects / predicates in the same homoiconic field.
+
+A relation may therefore be canonical inside an Everett branch while remaining explicitly counterfactual relative to our observed world, without inventing an extended tuple or separate metadata envelope.
 
 The Everett **Consistency Gate** is therefore treated as a domain-specific admission service under the Daimonion, not as another name for the Daimonion itself.
 
@@ -1086,23 +1118,26 @@ Everett Portal  → branch scope / time / causality / continuity / identity
 
 ---
 
-## 16. Minimal Working Objects
+## 16. Minimal Working Roles in One Homoiconic Field
 
-The exact grammar is still open, but the present conceptual minimum includes:
+The storage grammar should remain minimal:
 
-| Object | Purpose |
+> **object → predicate → object**
+
+The names below are **roles played by objects and networks**, not separate storage primitives or extra tuple fields.
+
+| Role | Purpose |
 |---|---|
 | `OBJECT` | Addressable identity in the field |
-| `RELATION / PREDICATE` | Typed connection between objects; itself addressable when reflection requires it |
-| `NETWORK` | Addressable relation table / projection |
-| `RULE` | Declared organizing rule of a network |
-| `SOURCE` | Origin of material or knowledge |
-| `PROVENANCE` | History of how a relation entered the archive |
-| `EVIDENCE` | Support for a claim or placement |
-| `COUNTEREVIDENCE` | Evidence against it |
-| `CONTEXT` | Conditions under which a relation is valid |
-| `SCOPE` | Explicit validity envelope for a relation or assertion, including where needed world, branch, time/interval, world version, and ruleset version |
-| `REVISION` | Explicit change in object, relation, or rule |
+| `PREDICATE` | An object used in the middle position of an SPO triplet; it may itself appear as subject or object elsewhere |
+| `NETWORK` | Addressable relation table / projection made from SPO triplets; its handle is itself an object |
+| `RULE` | An object describing an organizing rule of a network |
+| `SOURCE` | An object representing origin of material or knowledge |
+| `PROVENANCE` | An addressable network/object path explaining how knowledge entered the archive |
+| `EVIDENCE` | An object or network supporting a claim or placement |
+| `COUNTEREVIDENCE` | An object or network opposing it |
+| `CONTEXT` | An object/network expressing conditions under which relations apply; not an extra tuple field |
+| `REVISION` | An object/network representing explicit change in object, relation, or rule |
 | `OPEN` | Registered unknown or unresolved boundary |
 | `OPEN_SPACE` | Structured relational freedom space containing constrained but unsettled predicates |
 | `META_OBJECT` | Foldable handle for a lower relational structure that can later be reopened |
@@ -1161,9 +1196,9 @@ A useful first test should demonstrate that the system can:
 30. revise `HARM?` or `BENEFIT?` when delayed consequences contradict the original appearance or intention;
 31. distinguish moral appearance from moral fruit by tracing what an action produces in affected agents, institutions, incentives, and future options;
 32. represent at least one `TRANSFORMATION` in which a participant's role changes as a result of the field's requirement rather than from an externally imposed label;
-33. preserve two mutually incompatible assertions when they belong to explicitly different scopes, without treating scoped difference as a contradiction;
-34. retrieve one task-relevant branch/time/version cut without leaking relations from another branch;
-35. revise a branch canon through a new world version while preserving the previous version, admission provenance, and affected downstream dependencies.
+33. preserve two mutually incompatible relation networks when ordinary SPO paths place them in different branch/time/version contexts, without treating that contextual difference as a contradiction;
+34. retrieve one task-relevant branch/time/version cut by traversing those ordinary relational paths, without leaking relations from another branch;
+35. revise a branch canon through a new world version while preserving the previous version, admission provenance, and affected downstream dependencies — still without changing the SPO storage format.
 
 The research prototype should eventually include at least one simple end-to-end case in which stored relations are followed through the actual comparison that produces a splinter. This will test the bridge from structure to process without pretending that the full Daimonion has already been specified.
 
@@ -1204,8 +1239,8 @@ Important open questions include:
 - How should splinter detection be derived from stored relations rather than from hand-written prose?
 - How many distinct projections are sufficient for useful reconstruction in different domains?
 - How should the temporary mega-graph be constructed, limited, and discarded?
-- How should scope inheritance work across a shared trunk and later divergent branches?
-- Which parts of world/branch/time/version scope belong on assertions, objects, networks, or retrieval transactions?
+- How should branch/time/version context propagate through ordinary triplet networks across a shared trunk and later divergent branches?
+- When should contextual relations attach to an individual relation handle, a network handle, an object, or a retrieval path while keeping one SPO grammar?
 - How should branch leakage be detected cheaply before expensive semantic checking?
 - How should deterministic identity and one-birth rules coexist with revisable admission confidence?
 
