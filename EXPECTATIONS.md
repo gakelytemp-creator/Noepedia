@@ -276,7 +276,29 @@ It can preserve provenance and the path by which a relation became accepted.
 
 The LLM can therefore be asked to work against an explicit map rather than to recreate the map from weights on every turn.
 
-Expected effects include fewer unsupported completions when settled structure already exists, clearer separation between retrieval and invention, visible uncertainty, local correction without global retraining, easier auditing, and explicit detection of missing coverage.
+A further safety expectation is now explicit: **the persistent field should not be directly writable or arbitrarily readable by a transient generative process.**
+
+The intended boundary is:
+
+~~~text
+LLM / HUMAN / TOOL / INSTRUMENT
+        ↕
+SOCRATIC DAIMONION
+        ↕
+NOEPEDIA FIELD
+~~~
+
+The Daimonion checks context, permissions, provenance, conflicts, and whether material belongs in staging or trusted structure.
+
+This separates:
+
+~~~text
+generative possibility
+from
+persistent epistemic authority
+~~~
+
+Expected effects include fewer unsupported completions when settled structure already exists, clearer separation between retrieval and invention, visible uncertainty, local correction without global retraining, easier auditing, explicit detection of missing coverage, and reduced risk that one unstable model state silently rewrites shared knowledge.
 
 These are hypotheses to be measured, not guarantees.
 
@@ -314,6 +336,8 @@ The present architecture suggests at least twelve distinct system-level benefits
 | 10 | Demand-driven training | Operational difficulty selects future learning targets |
 | 11 | Reusable knowledge across models | Settled structure lives outside any one model's weights |
 | 12 | Long-term algorithmic extraction | Repeated neural operations can migrate into cheaper deterministic machinery |
+| 13 | Controlled epistemic transactions | Daimonion-mediated read/write permissions and audit trails |
+| 14 | Epistemic teleportation | Reuse of task-relevant relation-network cuts without rediscovery or full-model retraining |
 
 This list is not intended to be exhaustive.
 
@@ -337,6 +361,11 @@ The architecture becomes interesting only if its expectations are falsifiable.
 | Hallucination / unsupported-claim rate on grounded tasks | Tests knowledge-safety benefit |
 | Conflict-detection rate | Tests structural visibility |
 | Provenance coverage | Tests auditability |
+| Fraction of persistent field mutations performed through audited Daimonion transactions | Tests whether the gateway is actually authoritative |
+| Unauthorized read/write attempts correctly blocked or downgraded to staging | Tests permission enforcement |
+| Clarification rate before ambiguous high-impact transactions | Tests context-sensitive interruption |
+| Average semiotic cut size delivered per task | Tests whether epistemic teleportation avoids shipping the whole field |
+| Reuse rate of previously stabilized relation-network cuts | Tests whether settled knowledge is actually reused instead of rediscovered |
 | Percentage of recurring neural operations extracted into algorithms | Tests the hybridization path |
 | Hardware footprint at fixed workload | Tests the ordinary-server-plus-selective-accelerator expectation |
 | Routing-gate cost | Tests whether deciding settled vs edge is itself cheap |
@@ -398,7 +427,7 @@ If the architecture works, the most important result may not be a faster databas
 
 It may be a different computational organism.
 
-The organism would have a durable external memory, a semiotic body of stabilized relations, a lightweight process that moves through known territory, a generative process summoned by unresolved structure, a reflective process that can inspect the predicates it is using, and a way to generate its next questions from its own unfinished map.
+The organism would have a durable external memory, a semiotic body of stabilized relations, a lightweight process that moves through known territory, a generative process summoned by unresolved structure, a reflective process that can inspect the predicates it is using, **a mediated transaction boundary between visitors and persistent knowledge**, and a way to generate its next questions from its own unfinished map.
 
 Its "will" would not need to be inserted as a mysterious extra module.
 
