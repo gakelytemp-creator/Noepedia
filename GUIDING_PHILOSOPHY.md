@@ -167,6 +167,16 @@ Its networks, rules, revisions, and even the structures used to describe those t
 
 That gives the map a **homoiconic** character: part of the descriptive machinery can itself be described, related, revised, and placed on the map.
 
+The storage grammar does not change when reflection begins.
+
+~~~text
+object → predicate → object
+~~~
+
+The predicate is itself an object. A network is an object. A rule is an object. A time, branch, source, revision, or provenance path can be represented by objects and further SPO relations in the same field.
+
+There is no detached metadata heaven and no need to grow the tuple when a new dimension appears. A new dimension opens another relational network.
+
 This is a profound freedom.
 
 The system is not condemned to preserve an ontology merely because it was once convenient. A rule can change. A network can split. A relation type can be revised. A mistaken distinction can be removed and a missing distinction can be created.
