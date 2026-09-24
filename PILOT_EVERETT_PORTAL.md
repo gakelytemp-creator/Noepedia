@@ -93,38 +93,38 @@ This is an especially useful Noepedia research problem.
 
 ---
 
-## 3. Scope must become first-class
+## 3. Context must remain inside the same SPO matrix
 
-A bare triplet is not enough for Everett.
+Everett does **not** require a new tuple format.
+
+The storage grammar remains:
 
 ~~~text
 SUBJECT ── PREDICATE ──> OBJECT
 ~~~
 
-needs an explicit validity scope.
+What Everett requires is that branch, time, world version, ruleset, provenance, and canon status also become ordinary addressable objects and relation networks.
 
-Conceptually:
+For example:
 
 ~~~text
-ASSERTION
-    relation: SUBJECT ── PREDICATE ──> OBJECT
-    scope:
-        world
-        branch
-        time / interval
-        world_version
-        ruleset_version
-    status
-    provenance
+NETWORK_41 → VALID_IN → EVERETT_BRANCH
+NETWORK_41 → VALID_DURING → INTERVAL_1994
+NETWORK_41 → USES_WORLD_VERSION → WORLD_V7
+NETWORK_41 → USES_RULESET → RULESET_V3
+NETWORK_41 → HAS_STATUS → CANON
+NETWORK_41 → HAS_PROVENANCE → ADMISSION_88
 ~~~
 
-The triplet remains the local relational unit.
+Every line is still an SPO triplet.
 
-The scope tells us **which world gives that relation meaning**.
+No special metadata envelope, fourth field, or branch-aware tuple is introduced.
 
-This should not be implemented by copying every object into every branch when a shared object identity can remain common.
+The homoiconic point is precisely that the network carrying a historical relation can itself be an object of further relations.
 
-Instead, branch-specific assertions and state should carry branch scope.
+If a finer grain is needed, an individual relation or subnetwork can receive an addressable handle and the same method applies.
+
+Shared object identity therefore does not need to be duplicated into every branch. Different branch histories can be represented by different relation networks attached to the same addressable objects.
 
 ---
 
@@ -431,10 +431,10 @@ This is enough to test the fundamental architecture.
 
 The Everett pilot should eventually demonstrate that:
 
-- two incompatible branch assertions can coexist without collision;
+- two incompatible relation networks can coexist without collision when ordinary SPO paths place them in different branches;
 - shared pre-POD history can be reused without duplication;
 - branch-local facts never silently leak into OUR_WORLD;
-- every canon assertion carries world / branch / time / version scope;
+- every canon relation can be traced through ordinary SPO paths to its world / branch / time / version context;
 - canonical commitment and epistemic confidence remain separate;
 - one artifact cannot accidentally acquire two original births;
 - derivatives point back to an original birth;
@@ -461,11 +461,11 @@ OpenPCB asks:
 
 Everett asks:
 
-> Can Noepedia preserve identity, causality, time, and truth-scope when several incompatible worlds occupy the same field?
+> Can Noepedia preserve identity, causality, time, and contextual truth conditions when several incompatible worlds occupy the same field?
 
 That third question forces a major architectural requirement:
 
-> **Truth and canon must be scoped.**
+> **Truth and canon must be contextually located in the same homoiconic field.**
 
 The field must be able to say not merely:
 
@@ -473,7 +473,7 @@ The field must be able to say not merely:
 
 but:
 
-> **"This relation is asserted here, in this world, in this branch, at this time, under this version, with this provenance and this epistemic status."**
+> **"This relation is connected, through ordinary SPO paths, to this world, branch, time, version, provenance, and epistemic status."**
 
 That capability is useful far beyond Everett Portal.
 
@@ -487,4 +487,4 @@ That capability is useful far beyond Everett Portal.
 >
 > **Everett tests continuity across possible worlds.**
 >
-> **Noepedia must survive all three without confusing evidence, knowledge, and scope.**
+> **Noepedia must survive all three without confusing evidence, knowledge, or the relational context in which a claim holds.**
