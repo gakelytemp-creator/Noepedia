@@ -413,27 +413,39 @@ Noepedia should not punish unfinished thought by forcing it immediately into per
 
 ---
 
-## 11. Read Freely; Write With Responsibility
+## 11. Shared Knowledge, Mediated Access
 
-Knowledge is unusual property: reading it does not consume it.
+Knowledge is unusual property: using it does not consume it.
 
-Many users may retrieve from the archive without taking anything away.
+Many visitors may benefit from the same structure.
 
-Writing is different.
+But this does not imply unrestricted direct access to the persistent field.
 
-A public knowledge field becomes useless if every temporary association can permanently rewrite shared structure.
+Noepedia now makes the mediation principle explicit:
 
-Therefore Noepedia imagines a disciplined write path.
+~~~text
+visitor
+    ↕
+Socratic Daimonion
+    ↕
+persistent Noepedia field
+~~~
 
 A visitor can think freely in staging or temporary space.
 
-The Daimonion can help compare that material with the archive.
+A visitor can ask in ordinary language, through an application, through an instrument, or through an LLM.
 
-Only then should a proposed change enter permanent structure with provenance and visible revision.
+The Daimonion is responsible for translating that request into an honest field operation: identifying context, checking authority, selecting the relevant network cut, preserving provenance, and exposing conflicts or missing distinctions when necessary.
+
+Writing is stricter than submission.
+
+A visitor may contribute raw material without already knowing where it belongs.
+
+Only after mediation should a proposed change enter permanent structure with provenance and visible revision.
 
 This is not meant to make knowledge aristocratic.
 
-It is meant to make shared memory durable.
+It is meant to make shared memory durable while allowing very different kinds of visitors to use it.
 
 ---
 
@@ -1062,3 +1074,154 @@ And the Daimonion's smallest instruction is still:
 > **Wait. Does this still fit what we already said?**
 
 If not, change something openly.
+
+---
+
+## 19. Knowledge Is a Reduced Contact Surface
+
+Noepedia should not confuse a semiotic object with the real object.
+
+The real thing always exceeds the current map.
+
+What the field contains is a historically accumulated contact surface:
+
+~~~text
+observation
+measurement
+interaction
+difference
+comparison
+relation
+revision
+~~~
+
+A scientist's notebook does not contain the world.
+
+It contains what the scientist managed to notice, measure, distinguish, test, or preserve.
+
+Noepedia is intended to generalize that notebook across many participants and many semiotic systems.
+
+This means a knowledge object is always reduced.
+
+From above, it may look incomplete.
+
+From below, relative to the task that created it, it may be exactly sufficient.
+
+A child with a plastic iron has access to a reduced object: enough of the action pattern to rehearse ironing, without the dangerous thermal layer.
+
+Later interaction can objectivize the object further.
+
+The earlier reduction was not therefore a complete truth, but neither was it useless.
+
+A compact rule follows:
+
+> **A knowledge object is not complete because it is useful, and it is not useless because it is incomplete.**
+
+---
+
+## 20. Discovery Comes Before the Story About Discovery
+
+Culture often presents knowledge in reverse order.
+
+The learner receives:
+
+~~~text
+name
+definition
+law
+formula
+explanation
+~~~
+
+and may mistake this presentation order for the order in which knowledge became possible.
+
+The deeper order is usually closer to:
+
+~~~text
+contact
+→ distinction
+→ manipulation / observation
+→ difference
+→ comparison
+→ recurring relation
+→ stabilized structure
+→ narration
+~~~
+
+The story comes later.
+
+The name comes later.
+
+Teaching comes later.
+
+This is why a semantic description should not be allowed to replace the semiotic history that gave the relation operational value.
+
+Culture is enormously efficient because it can transmit stabilized results.
+
+But Noepedia should preserve enough structure that transmission does not become mere authority.
+
+---
+
+## 21. Epistemic Teleportation
+
+A shared external field changes what it means to "know" something locally.
+
+A participant need not permanently carry every useful relation.
+
+The Daimonion can reconstruct a task-relevant cut of the field where it is needed:
+
+~~~text
+objects
++ relation networks
++ rules
++ context
++ provenance
++ uncertainty
++ constraints
+~~~
+
+This is **epistemic teleportation**.
+
+The word does not mean that understanding is magically copied.
+
+It means that explicit relational structure can be relocated into a temporary working scene fast enough that the receiving process can act from previously accumulated knowledge instead of rediscovering it.
+
+Different visitors may repeatedly draw different cuts from the same common field.
+
+Noepedia is therefore not one creature's extended memory.
+
+It is a shared external semiotic environment whose value comes partly from the fact that one participant can preserve structure another participant may need much later.
+
+---
+
+## 22. Negative Lessons From AI Assembly Session 002
+
+AI Assembly Session 002 independently sharpened several limits that Noepedia should preserve.
+
+The most compact pair is:
+
+> **Agreement is not truth.**
+>
+> **Recurrence is not proof.**
+
+The session also preserved that:
+
+- procedural legitimacy does not adjudicate causal truth;
+- simulation is not intervention;
+- missingness is not proof of missing content;
+- operational closure is not final knowledge;
+- resource withdrawal is not epistemic disconfirmation;
+- majority and reputation are not truth conditions;
+- causal trace, normative evaluation, and repair must remain separately addressable.
+
+These are valuable precisely because they are mostly negative.
+
+They do not tell Noepedia what truth finally is.
+
+They tell it what must not be allowed to impersonate truth.
+
+Noepedia's positive response is not to install a stronger oracle.
+
+It is to preserve a better field of contact, provenance, contradiction, uncertainty, and revisable relations, and to let the Daimonion mediate honest transactions over that incomplete field.
+
+See [EPISTEMIC_TELEPORTATION_AND_ASSEMBLY_ALIGNMENT.md](EPISTEMIC_TELEPORTATION_AND_ASSEMBLY_ALIGNMENT.md).
