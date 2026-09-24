@@ -123,11 +123,15 @@ The Daimonion guards continuity, not dogma.
 
 The map is unusual because its own descriptive machinery can also appear inside the map.
 
+A predicate is an object.
+
 A relation network can itself be an object.
 
 A rule can be an object.
 
 A revision of that rule can be an object.
+
+The Daimonion does not cross into a second metadata language when it reasons about these structures. It keeps operating over the same homoiconic SPO field: objects, predicates, networks, and relations about those networks are made from the same relational material.
 
 The reason for the revision, the relation between the old and new rule, and even higher-order structures that compare those rules can be represented through the same general relational field.
 
