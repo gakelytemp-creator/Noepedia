@@ -1113,7 +1113,7 @@ Together the three pilots test different structural pressures:
 ~~~text
 AISocket        → contact with reality / trace production
 OpenPCB Commons → heterogeneous shared storage and relational search
-Everett Portal  → branch scope / time / causality / continuity / identity
+Everett Portal  → branch context / time / causality / continuity / identity
 ~~~
 
 ---
