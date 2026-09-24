@@ -1023,7 +1023,7 @@ No component needs to pretend to be every other component.
 
 ---
 
-## 15. Relationship to AISocket and OpenPCB Commons
+## 15. Relationship to AISocket, OpenPCB Commons, and Everett Portal
 
 AISocket is one way intelligence can obtain structured observations and bounded actions from real systems.
 
@@ -1055,6 +1055,35 @@ These materials should not be forced into one textual description.
 
 They can remain distinct while still pointing into the same object field.
 
+**Everett Portal** is the third pilot and tests a different axis: whether Noepedia can preserve several mutually incompatible but internally coherent world-histories without allowing one branch to leak into another.
+
+Its requirements are recorded in [PILOT_EVERETT_PORTAL.md](PILOT_EVERETT_PORTAL.md).
+
+Everett forces validity scope to become explicit:
+
+~~~text
+relation
++ world
++ branch
++ time / interval
++ world version
++ ruleset version
++ epistemic status
++ provenance
+~~~
+
+A relation may be canonical inside an Everett branch while remaining explicitly counterfactual relative to our observed world.
+
+The Everett **Consistency Gate** is therefore treated as a domain-specific admission service under the Daimonion, not as another name for the Daimonion itself.
+
+Together the three pilots test different structural pressures:
+
+~~~text
+AISocket        → contact with reality / trace production
+OpenPCB Commons → heterogeneous shared storage and relational search
+Everett Portal  → branch scope / time / causality / continuity / identity
+~~~
+
 ---
 
 ## 16. Minimal Working Objects
@@ -1072,6 +1101,7 @@ The exact grammar is still open, but the present conceptual minimum includes:
 | `EVIDENCE` | Support for a claim or placement |
 | `COUNTEREVIDENCE` | Evidence against it |
 | `CONTEXT` | Conditions under which a relation is valid |
+| `SCOPE` | Explicit validity envelope for a relation or assertion, including where needed world, branch, time/interval, world version, and ruleset version |
 | `REVISION` | Explicit change in object, relation, or rule |
 | `OPEN` | Registered unknown or unresolved boundary |
 | `OPEN_SPACE` | Structured relational freedom space containing constrained but unsettled predicates |
@@ -1130,7 +1160,10 @@ A useful first test should demonstrate that the system can:
 29. keep a causal and normative `CONSEQUENCE_CHAIN` addressable across a long delay between action and effect;
 30. revise `HARM?` or `BENEFIT?` when delayed consequences contradict the original appearance or intention;
 31. distinguish moral appearance from moral fruit by tracing what an action produces in affected agents, institutions, incentives, and future options;
-32. represent at least one `TRANSFORMATION` in which a participant's role changes as a result of the field's requirement rather than from an externally imposed label.
+32. represent at least one `TRANSFORMATION` in which a participant's role changes as a result of the field's requirement rather than from an externally imposed label;
+33. preserve two mutually incompatible assertions when they belong to explicitly different scopes, without treating scoped difference as a contradiction;
+34. retrieve one task-relevant branch/time/version cut without leaking relations from another branch;
+35. revise a branch canon through a new world version while preserving the previous version, admission provenance, and affected downstream dependencies.
 
 The research prototype should eventually include at least one simple end-to-end case in which stored relations are followed through the actual comparison that produces a splinter. This will test the bridge from structure to process without pretending that the full Daimonion has already been specified.
 
@@ -1171,6 +1204,10 @@ Important open questions include:
 - How should splinter detection be derived from stored relations rather than from hand-written prose?
 - How many distinct projections are sufficient for useful reconstruction in different domains?
 - How should the temporary mega-graph be constructed, limited, and discarded?
+- How should scope inheritance work across a shared trunk and later divergent branches?
+- Which parts of world/branch/time/version scope belong on assertions, objects, networks, or retrieval transactions?
+- How should branch leakage be detected cheaply before expensive semantic checking?
+- How should deterministic identity and one-birth rules coexist with revisable admission confidence?
 
 We do not know these answers yet.
 
