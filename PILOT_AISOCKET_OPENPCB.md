@@ -110,7 +110,7 @@ A label such as a component marking, product name, or board code is a searchable
 
 ### 2.2 Triplet relation networks
 
-The pilot must support typed relations such as:
+The pilot must support domain predicates such as the following. These do not change the storage grammar; every relation remains an ordinary SPO triplet:
 
 ~~~text
 BOARD ── HAS_COMPONENT ──> COMPONENT
@@ -151,7 +151,7 @@ The pilot fails if a useful-looking relation cannot later answer:
 
 ### 2.4 Raw data / blob support
 
-OpenPCB produces material that does not fit naturally into small triplets:
+OpenPCB produces payloads whose **bytes** should not be exploded into triplets:
 
 ~~~text
 photographs
@@ -165,7 +165,7 @@ logs
 firmware dumps where legally shareable
 ~~~
 
-Noepedia therefore needs a RAW_BLOB abstraction with at least:
+The image, waveform, geometry file, or other artifact still appears in Noepedia as an ordinary addressable object connected by SPO relations. Its large byte payload may live outside the triplet matrix. A RAW_BLOB role therefore needs at least:
 
 ~~~text
 stable object ID
