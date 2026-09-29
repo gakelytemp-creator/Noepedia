@@ -233,17 +233,23 @@ relation requirement / OPEN_SPACE
 
 A living knowledge field can therefore expose **work to be done** from its own unfinished structure.
 
-### Networks Are Independent Cuts; the Mega-Graph Makes Them Meet
+### Networks Are Distinct Cuts, but Their Structures Can Become Each Other's Objects
 
 Noepedia should not smuggle a hidden super-network into the architecture.
 
-A hierarchy network does not need to know a causal network.
+A hierarchy network does not become a causal network merely because they share object addresses.
 
-A causal network does not need to know a color network.
+A causal network does not inherit the rule of an analogy network.
 
-A functional network does not need to know a provenance network.
+Each network remains a distinct cut governed by its own rule.
 
-Each network answers only the kind of question declared by its own rule.
+But homoiconicity changes what "distinct" means.
+
+The handle of a network is itself an object. A predicate is itself an object. A pattern of predicates can itself become an object of comparison.
+
+Therefore one network may study the structure produced by another without becoming that network.
+
+An analogy network, for example, may deliberately weaken concrete object identity and compare predicate form. Another network may classify the type, direction, tension, support, or context of a predicate written elsewhere in the field.
 
 For example:
 
@@ -265,25 +271,27 @@ B is the whole containing A
 
 The triplet does not change. The reading direction changes.
 
-Networks may share object addresses, but they do not need to inspect or coordinate with one another directly.
+Networks may share object addresses, and their handles, predicates, and relation patterns remain available as ordinary objects for other networks to inspect.
 
-Their relevant cuts are brought together only when a task requires a temporary construction.
+They still do not require one common rule or one permanent super-graph.
 
-That construction happens in the **mega-graph**.
+For a concrete task, relevant cuts, network handles, predicate structures, and learned transformations are assembled into a **mega-graph**.
 
 This means that a phrase such as "interacting predicate networks" should be read operationally as:
 
-> **predicate-network cuts assembled into one temporary working scene, where their consequences can be compared.**
+> **distinct predicate-network cuts and their addressable structures assembled into a working scene, where relations can be reinterpreted, compared, transformed, and tested.**
 
-The interaction belongs to the working construction, not to permanently talking networks.
+The interaction belongs to the constructed scene and to explicit cross-network relations, not to an invisible permanent super-network.
 
-### Construction as Semantic Decoding
+### Semiotic Reconstruction by Construction
 
-A semantic message arrives as a fragment.
+A semantic message is often only the transport surface of a larger semiotic situation.
 
-The receiver does not directly receive the sender's semiotic reason for producing it.
+The receiver receives words, symbols, measurements, gestures, or traces, but not the complete scene that made those signs useful to the sender.
 
-To understand the message, the Daimonion may need to reconstruct enough of the surrounding scene that the message becomes functionally intelligible:
+The Daimonion should therefore not search only inside the message for an answer.
+
+It may need to reconstruct enough of the originating semiotic field — objects, roles, goals, constraints, actions, expected consequences, and relevant relation networks — that the message becomes functionally intelligible:
 
 ```text
 incoming message
@@ -295,7 +303,15 @@ incoming message
   would make the message coherent
 ```
 
-This is **decoding by construction**.
+This is **semiotic reconstruction by construction**.
+
+The distinction matters.
+
+A semantically fluent interpretation may still fail after the scene is rebuilt.
+
+For example, a request about whether to walk 150 meters to a car wash may trigger familiar language about short walks, fuel, and health. But if the purpose of the trip is to wash the car, reconstructing the scene immediately restores the missing participant-role relation: the car itself must reach the car wash.
+
+The error is not repaired by better wording. It is repaired by rebuilding the situation that the wording came from.
 
 The message "it is cold here" may be a temperature report, a request to close a window, evidence of a broken heater, a request for clothing, or simply a shared observation.
 
@@ -840,11 +856,59 @@ External participants may think, speculate, measure, and generate raw material f
 
 ---
 
-## 6. The Mega-Graph Is the Daimonion's Working Scene
+## 5A. Objects, Predicates, and Epistemic Asymmetry
+
+Noepedia uses one homoiconic object field, but the three positions of a triplet do not carry the same epistemic burden merely because they use the same address space.
+
+A subject, predicate, and object are all addressable objects in the field:
+
+~~~text
+S → P → O
+~~~
+
+Yet an observed object or event may enter primarily as a recorded fact of contact, while the predicate often represents an attempted relation:
+
+~~~text
+observed objects / events
+        ↓
+candidate predicate
+        ↓
+"these are related in this way"
+~~~
+
+The predicate is therefore naturally closer to a theory, hypothesis, classification, or proposed tension than to a raw fact.
+
+Because predicates are themselves objects, the field can investigate them:
+
+~~~text
+P1 → SUPPORTED_BY → EVIDENCE_7
+P1 → ANALOGOUS_TO → P9
+P1 → STRONGER_THAN → P4
+P1 → VALID_IN → CONTEXT_3
+P1 → REVISED_BY → P1_V2
+~~~
+
+Noepedia should therefore preserve not only objects and links, but the difference between **what was encountered** and **what relation was proposed between encountered things**.
+
+This is one reason predicate networks remain revisable and researchable rather than becoming sacred schema.
+
+## 6. Mega-Graphs Are the Daimonion's Learned Working Bodies
 
 The **mega-graph is not Noepedia**.
 
 It is the Daimonion's temporary working space — its desk, scratch field, garment, or scene of imagination.
+
+There is not only one generic mega-graph.
+
+Over time the Daimonion may accumulate many reusable working forms — many "garments" — specialized for different classes of tasks.
+
+A garment may learn which networks to bring into the scene, which predicates to reinterpret as roles or positions, which object identities to preserve strongly or weaken for analogy, which structures to fold into handles, and which tests repeatedly expose useful contradictions.
+
+These garments may be compared, revised, specialized, split, recombined, and retired.
+
+Their successful transformation rules and histories should themselves become addressable objects in Noepedia.
+
+The system therefore preserves not only **what has been learned**, but gradually also **forms of working with what has been learned**.
 
 For a particular conversation or task, the Daimonion may temporarily load:
 
@@ -870,6 +934,30 @@ The permanent archive should not automatically inherit every temporary associati
 Only material that survives the archive's insertion process should become persistent Noepedia structure.
 
 ---
+
+### The Return Path: Use Should Clean the Field
+
+A working scene is not the archive.
+
+But when construction exposes a contradiction, a better predicate, a split identity, a new required role, or a more useful network rule, the result should be able to return through an audited consolidation path.
+
+~~~text
+Noepedia
+→ retrieve / assemble
+→ mega-graph construction
+→ contradiction / new relation / repaired identity
+→ validation
+→ proposed revision
+→ Noepedia
+~~~
+
+The whole mega-graph does not need to become permanent knowledge.
+
+Only the parts that survive consolidation return.
+
+This makes use itself a source of maintenance.
+
+Noepedia is therefore not merely revisable from outside. If the architecture works, repeated honest use should help the field **clean, sharpen, and reorganize itself** over time.
 
 ## 7. Request Freely; Field Access Through the Daimonion
 
