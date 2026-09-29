@@ -145,21 +145,55 @@ A request may follow only the acoustic paths, only the harvest history, only the
 
 Noepedia can therefore describe not only the world, but also the structure by which the world is being described.
 
-### Open Opposites and Formed Unknowns
+### Relation-Required Roles, Objects, and Formed Unknowns
 
-A relation network does not only group similar things. It may also establish differences, oppositions, poles, and missing positions.
+A relation network does not only group things that are already known. A relation may itself create a requirement that is not yet populated.
 
-If one pole is known, the structure may legitimately open an address for a possible opposite without asserting that the opposite exists:
+The important case is not merely an empty geometric place in a graph.
+
+It is stronger:
 
 ```text
-known pole  <──────── relation / tension axis ────────>  OPEN opposite
+A ── R ──> ?
 ```
 
-The empty side is not a fact pretending to be an object. It is a **formed unknown**: a place for a question created by the structure itself.
+If the rule of relation `R` requires a second pole, complement, participant, role, or object, then the field has already learned something before it knows what the missing thing is.
 
-This can happen at several levels — sign, description, explanation, meta-explanation, and perhaps at higher layers that have not yet been separated.
+The unknown is constrained by the relation that demanded it.
 
-A question can therefore arise not only from an external prompt, but from a tension, asymmetry, missing pole, or mismatch already present in the field.
+For example, a network may contain a known functional pole:
+
+```text
+PHASE_DISCRIMINANT
+        │
+        │ complementary / opposing role required by R
+        ▼
+        ?
+```
+
+The field is not yet entitled to invent the properties of the missing side.
+
+A human or model may attach a temporary working label such as `phase integrator`, but that label must not silently donate properties that have not been earned.
+
+The important distinction is:
+
+```text
+OPEN_GAP
+    something is missing
+
+REQUIRED_ROLE
+    the relation requires a participant in a particular role
+
+REQUIRED_OBJECT?
+    a candidate object may satisfy that role,
+    but its identity and properties are still open
+```
+
+This is a **formed unknown** in a stricter sense: not a blank answer, but an unknown whose admissible form is already partially constrained by the relation that generated the demand.
+
+A required role may later be satisfied by one object, several objects, a process, a network, or a structure not yet represented in the current ontology.
+
+The requirement should therefore be preserved before premature objectification.
 
 ### Predicate Fields and Open Spaces
 
@@ -171,116 +205,279 @@ A → P → B
 
 should not always be treated as the end of thought.
 
-In a living knowledge field, the relation or **predicate** `P` may itself need to become addressable: challenged, compared, decomposed, revised, conditioned, or placed beside alternatives.
+The predicate `P` may itself need to become addressable: challenged, decomposed, conditioned, split, revised, or placed beside alternatives.
 
-Sometimes the field is not yet entitled to write one settled predicate between two objects or structures.
+Sometimes the field is not entitled to write one settled predicate between two structures.
 
-Instead, it may preserve a structured freedom space:
+It may then preserve a constrained relational freedom:
 
 ```text
 A ─── [ OPEN_SPACE: P1?  P2?  P3?  ... ] ─── B
 ```
 
-An `OPEN_SPACE` is not empty storage and it does not claim that all candidate predicates are equally valid.
+An `OPEN_SPACE` does not mean that every candidate is equally plausible.
 
-It is a constrained relational region whose possibilities are shaped by what is already known:
+Its shape is constrained by what is already present in the relevant network: evidence, counterevidence, context, history, network rules, oppositions, missing distinctions, and required roles.
 
-```text
-evidence
-counterevidence
-context
-history
-nearby relations
-network rules
-oppositions
-missing distinctions
-```
+As constraints accumulate, some candidates disappear, others split, and a predicate may stabilize. The path by which this happened remains recoverable.
 
-The important change is that the unknown is no longer only a missing object or a blank answer.
-
-It may be a **structured space of possible relations**.
-
-As constraints accumulate, some possible predicates may disappear, some may become more plausible, and a new predicate may stabilize. But the path by which this happened should remain recoverable.
-
-This creates a further possibility.
-
-A requirement for the next operation need not come only from an external user or from an agent that "wants" something.
-
-It can arise from the structure itself:
+The same mechanism can generate work without an external prompt:
 
 ```text
-OPEN_SPACE
-+ constraints
-+ tension
-→ requirement for comparison, observation, experiment,
-  decomposition, retrieval, or meta-inspection
+relation requirement / OPEN_SPACE
++ unresolved constraint
++ expected impact
+→ comparison / observation / experiment /
+  decomposition / retrieval / meta-inspection
 ```
 
-In that sense, a living knowledge field can generate **work to be done** from its own unresolved structure.
+A living knowledge field can therefore expose **work to be done** from its own unfinished structure.
 
-This is stronger than retrieval.
+### Networks Are Independent Cuts; the Mega-Graph Makes Them Meet
 
-A passive archive waits to be queried.
+Noepedia should not smuggle a hidden super-network into the architecture.
 
-A living field can expose where the map itself is unfinished.
+A hierarchy network does not need to know a causal network.
 
-### Question-Bearing Predicates and Predicate-Field Will
+A causal network does not need to know a color network.
 
-Observed objects, events, and traces may enter the field with explicit provenance, but a relation inferred from them should not have to enter as an unqualified fact.
+A functional network does not need to know a provenance network.
 
-A useful minimal notation is:
+Each network answers only the kind of question declared by its own rule.
+
+For example:
+
+```text
+A ── PART_OF ──> B
+```
+
+may be read downward as:
+
+```text
+A is a part of B
+```
+
+and upward as:
+
+```text
+B is the whole containing A
+```
+
+The triplet does not change. The reading direction changes.
+
+Networks may share object addresses, but they do not need to inspect or coordinate with one another directly.
+
+Their relevant cuts are brought together only when a task requires a temporary construction.
+
+That construction happens in the **mega-graph**.
+
+This means that a phrase such as "interacting predicate networks" should be read operationally as:
+
+> **predicate-network cuts assembled into one temporary working scene, where their consequences can be compared.**
+
+The interaction belongs to the working construction, not to permanently talking networks.
+
+### Construction as Semantic Decoding
+
+A semantic message arrives as a fragment.
+
+The receiver does not directly receive the sender's semiotic reason for producing it.
+
+To understand the message, the Daimonion may need to reconstruct enough of the surrounding scene that the message becomes functionally intelligible:
+
+```text
+incoming message
+→ select relevant network cuts
+→ reconstruct context
+→ generate minimal completion candidates
+→ build temporary scene in the mega-graph
+→ test what action / distinction / question
+  would make the message coherent
+```
+
+This is **decoding by construction**.
+
+The message "it is cold here" may be a temperature report, a request to close a window, evidence of a broken heater, a request for clothing, or simply a shared observation.
+
+The words alone do not settle which construction is intended.
+
+A useful discipline is to preserve the boundary between what arrived and what the receiver supplied:
+
+```text
+FROM MESSAGE
+FROM CONTEXT
+FROM PRIOR KNOWLEDGE
+ADDED AS HYPOTHESIS
+```
+
+Understanding should not be confused with unconstrained completion.
+
+The preferred construction is not merely the most fluent one. It is the one that makes the message function with the smallest justified transformation of the available scene while preserving competing constructions when the evidence is insufficient.
+
+This cost is architecture-dependent.
+
+What is cheap for one knowledge structure may be expensive for another.
+
+Two different cognitive architectures may therefore disagree about which interpretation is "simple" without either one being globally irrational.
+
+### Identity Is Tested by Construction
+
+Before a working construction is assembled, parameters can remain distributed across their own networks and described by the rules of those networks.
+
+The mega-graph does not merely collect the already-complete profile of a known object.
+
+It can test whether incoming material can be built into one coherent identity.
+
+```text
+hierarchy cut
+function cut
+causal cut
+spatial cut
+provenance cut
+        ↓
+temporary construction
+        ↓
+can these cuts belong to one object / event / process?
+```
+
+If the construction holds, identity becomes stronger.
+
+If it fails, the result is not automatically "one network is wrong." The material may belong to different objects, different contexts, different times, or an ontology that still needs revision.
+
+Identity is therefore not only a prerequisite for retrieval.
+
+In difficult cases, **identity is one of the things construction tests**.
+
+### Question-Bearing Predicates and Predicate-Field Direction
+
+Observed objects, events, and traces may enter with explicit provenance, while inferred relations remain question-bearing:
 
 ~~~text
 OBJECT_A ── P? ──> OBJECT_B
 ~~~
 
-The question mark means that the predicate is still carrying unresolved work.
+The question mark is revisable.
 
-It is not a one-way confidence meter that can only shrink. Supporting evidence may make it smaller; counterevidence, a changed context, or a newly discovered distinction may make it larger again, split the predicate, or reopen an apparently settled relation.
+Support can strengthen a relation; counterevidence, changed context, or a newly discovered distinction can weaken it, split it, or reopen it.
 
-The primary active structure is therefore not an isolated object and not an isolated LLM.
-
-It is the **predicate network**.
-
-Many local question-bearing predicates can interact:
+Noepedia uses the working term **Predicate-Field Will (PFW)** for a system-level direction that emerges when a task-specific mega-graph assembles relevant unresolved cuts:
 
 ~~~text
-P1? + P2? + P3? + dependencies + conflicts + constraints
+question-bearing cuts
++ dependencies
++ conflicts
++ constraints
++ expected impact
         ↓
-question consolidation
+temporary mega-graph
         ↓
-high-leverage REQUIREMENT
+consolidated requirement
         ↓
-direction for the next expensive operation
+next expensive operation
 ~~~
 
-Noepedia uses the formal working term **Predicate-Field Will (PFW)** for this system-level direction.
+PFW is not a subjective feeling and not a hidden executive above the networks.
 
-PFW is not a claim of subjective feeling.
+It is an auditable directional requirement reconstructed from the temporary scene.
 
-It is the auditable directional requirement synthesized — or, in the project's metaphor, *alchemized* — from tensions among multiple predicate networks.
+Operational trust should therefore belong only to a direction whose contributing cuts, assumptions, alternatives, provenance, and reopening conditions can be inspected.
 
-This also changes what can count as trustworthy direction.
+An opaque wish of one model, one authority, one rule, or one transient state is not enough.
 
-> **Within Noepedia, operational trust should belong only to direction that can be reconstructed from the interacting predicate field. An opaque wish of one model, one network, one authority, or one transient state is not enough.**
+Ethical and moral criteria can participate in the same way: as addressable cuts, constraints, conflicts, affected interests, and requirements brought into the working construction.
 
-Ethical and moral criteria therefore cannot be only an external filter applied after a decision.
+The point is not to make the networks talk to one another permanently.
 
-They must be able to appear as addressable predicate networks, requirements, conflicts, and constraints inside the same field.
+The point is to build a scene in which the consequences of their independently preserved cuts can be compared without erasing where each came from.
 
-A proposed direction should be inspectable not only for epistemic support but also for the moral requirements that participated in producing or opposing it.
+### Two Measures of Epistemic Objectivity
 
-This does not solve morality.
+Noepedia should not force every kind of knowledge through the same measure.
 
-It raises the architectural requirement: **the reasons for action, including normative reasons, must remain visible enough to be challenged and revised.**
+A concrete factual relation can be tested against contact with the world:
 
-The field also has two different phases of valuation.
+```text
+FACTUAL OBJECTIVITY
+≈ quality of correspondence to observed / measured reality
+```
 
-Before a decision, useful behavior includes disagreement, counterevidence, alternative generation, distinction, and information gain.
+A meta-level structure has a different burden.
 
-After a decision, the same system must be able to enter a coordination mode: execution, cooperation, monitoring, and error detection.
+Its strength grows when it reaches many concrete cases **without losing the boundary of where it stops applying**:
 
-The losing alternatives should not be erased. They remain as preserved branches, warnings, and reopening conditions if the assumptions that justified the decision later fail.
+```text
+META OBJECTIVITY
+≈ breadth of valid reach
+  + preservation of failure boundaries
+```
+
+A rule that "explains everything" by refusing to distinguish its failures is weak even if its coverage looks large.
+
+The useful question is not only:
+
+> How many cases does this meta-structure touch?
+
+but also:
+
+> How accurately does it preserve the places where it should not be used?
+
+This gives Noepedia different but compatible ways to weigh factual and meta-level knowledge.
+
+### Identified Burden and Internal Epistemic Maintenance
+
+A relation does not have to be deleted merely because its present support is imperfect.
+
+It can be carried **with the kind and weight of support made explicit**.
+
+For example:
+
+```text
+CLAIM_X
+support:
+    0.73 authority-dependent
+    0.18 direct evidence
+    0.09 unresolved / other
+```
+
+The numbers here are only illustrative; the architectural point is that the provenance of confidence should not remain a decorative label outside the working network.
+
+If a relation is substantially authority-supported, that fact should propagate into the downstream structures that depend on it.
+
+The system may temporarily use such a relation while preserving a debt:
+
+```text
+usable now
+but
+verification debt remains
+```
+
+The Daimonion therefore has an internal maintenance problem that no external contributor can fully solve for it.
+
+External agents can provide evidence, criticism, measurements, or alternatives.
+
+But only the owner/operator of the live knowledge field can see which uncertain internal relation currently has the greatest leverage over its own dependent structure.
+
+A practical maintenance priority may depend on:
+
+```text
+uncertainty
+× downstream reach
+× expected reorganization if revised
+× cost of verification
+```
+
+The exact formula is an experimental matter.
+
+The principle is not:
+
+> purge everything uncertain.
+
+It is:
+
+> **carry uncertainty honestly, and spend scarce verification effort first where a correction would most improve the structure of the field.**
+
+This is part of the Daimonion's internal epistemic metabolism.
+
 ### Marked Harm and Transformative Containment
 
 The normative field needs the same discipline as the epistemic field.
