@@ -427,6 +427,43 @@ This is enough to test the fundamental architecture.
 
 ---
 
+## 13A. Branch-scene reconstruction tests
+
+Everett should test a different Daimonion skill from OpenPCB.
+
+A short semantic coordinate such as:
+
+~~~text
+1994 / Manchester / music / interview
+~~~
+
+must be expanded into a branch-specific semiotic scene before artifact generation.
+
+The reconstruction should make explicit which of the following are required:
+
+~~~text
+branch
+time
+place
+persons
+institutions
+artifact lineage
+causal predecessors
+world-version commitments
+OPEN regions
+identity constraints
+provenance
+~~~
+
+The pilot should compare at least two mega-graph garments:
+
+1. one optimized for chronological / causal continuity;
+2. one optimized for artifact identity / derivation.
+
+It should then test whether a third task requires a mutation or combination of those garments.
+
+Finally, any new causal predicate, identity distinction, or reusable garment discovered during artifact construction should return through the Daimonion as a proposed Noepedia revision rather than silently becoming canon because a generator used it.
+
 ## 14. Acceptance tests
 
 The Everett pilot should eventually demonstrate that:
