@@ -405,37 +405,103 @@ The permanent archive is Noepedia.
 
 The **mega-graph** is not.
 
-The mega-graph is the temporary working field in which the Daimonion holds what matters now.
+The mega-graph is the temporary working scene in which the Daimonion reconstructs what matters now.
+
+A useful image is a garment with many pockets.
+
+Each pocket can hold a cut from a different relation network:
+
+```text
+hierarchy pocket
+causal pocket
+function pocket
+spatial pocket
+evidence pocket
+provenance pocket
+normative pocket
+...
+```
+
+The networks themselves do not need to see one another.
+
+They remain separate cuts, each governed by its own rule.
+
+The mega-graph is where selected cuts are temporarily brought into one constructive scene.
 
 It may contain:
 
 ```text
-current objects
-relevant relation networks
+incoming message fragments
+candidate identities
+relevant relation-network cuts
 active commitments
 possible explanations
+required roles / objects
 conflicts
-open gaps
-alternative paths
+alternative constructions
 context
 provenance
+uncertainty
+reopening conditions
 ```
 
-It is dynamic.
+This scene is dynamic.
 
 It may be assembled for one task and discarded afterward.
 
-A useful image is a garment with pockets.
-
 The Daimonion wears only what the present situation requires.
 
-When the work is done, the garment may be emptied.
+When the work is done, the pockets may be emptied.
 
-The archive remains outside it.
+The archive remains outside the garment.
 
 This is why the Daimonion can keep its hands free.
 
 It does not need to carry all knowledge as permanent internal memory.
+
+### The Mega-Graph Is Also a Decoder
+
+The mega-graph is not only a place to display already-understood objects.
+
+It can be used to understand incoming semiotic material by construction.
+
+A message arrives without the sender's internal semiotic reason attached to it.
+
+The Daimonion therefore tries to rebuild enough surrounding structure to ask:
+
+```text
+What scene would make this message functional?
+What is being requested, distinguished, warned about,
+measured, opposed, or left unfinished?
+Which parts came from the message?
+Which parts did the reconstruction add?
+```
+
+Several constructions may remain alive at once.
+
+The aim is not to force the first fluent interpretation into the archive.
+
+It is to find the least costly justified construction that makes the message work under the available context, while preserving alternatives when the evidence does not yet decide.
+
+The cost of a construction is not universal.
+
+Different cognitive architectures may have different cheap operations, different expensive transformations, and different internal "metabolisms."
+
+The Daimonion should therefore avoid assuming that what is simple for one architecture must be simple for another.
+
+### Identity Can Be an Output of Construction
+
+Before a scene is built, properties may live separately inside their own networks.
+
+The mega-graph can test whether those cuts can coherently belong to one object, one event, one process, or one context.
+
+Identity is therefore not always a given key around which properties are merely collected.
+
+In difficult cases it is a hypothesis tested by construction.
+
+A failed construction does not immediately prove that one network is false.
+
+The material may belong to different identities, times, contexts, or an ontology that still needs repair.
 
 ### The Mega-Graph Can Open a Reflective Scene
 
@@ -481,9 +547,11 @@ A new meta-layer is justified when the lower layer has produced a reason to insp
 
 The Daimonion should not become a hidden sovereign standing above the field.
 
-The primary active structure is the interacting predicate field itself.
+The primary active material is the collection of question-bearing predicate networks, but the networks do not need to communicate with one another directly.
 
-Question-bearing predicates, conflicts, dependencies, evidence, alternatives, and constraints can combine into a system-level direction.
+For a particular task, the Daimonion assembles relevant cuts from those networks into the mega-graph.
+
+Question-bearing predicates, conflicts, dependencies, evidence, alternatives, and constraints can then be compared inside that temporary scene and produce a system-level direction.
 
 Noepedia calls this direction **Predicate-Field Will (PFW)**.
 
@@ -512,7 +580,7 @@ Which conditions would force us to reopen the decision?
 
 In this architecture, an opaque desire belonging to one model, one rule, one authority, or one temporary state is not sufficient grounds for operational trust.
 
-> **Only a direction that remains accountable to the interacting field should be treated as trusted system-level will.**
+> **Only a direction that remains accountable to the network cuts assembled in the working field should be treated as trusted system-level will.**
 
 This is a stricter demand than consistency.
 
@@ -523,6 +591,41 @@ Moral and ethical requirements must therefore be able to enter the same reflecti
 The Daimonion does not decide morality by fiat.
 
 It protects the requirement that normative predicates, conflicts, affected interests, and reasons remain visible in the formation of action.
+
+### The Daimonion Must Maintain Its Own Epistemic Metabolism
+
+The Daimonion does not need to purify the archive before it can use it.
+
+A relation may be carried while its support remains mixed, historical, authority-dependent, weak, or incomplete.
+
+The requirement is that this condition remain visible and operationally meaningful.
+
+A relation whose present confidence comes mostly from authority should not behave downstream as though it had been directly verified.
+
+Its uncertainty and support type should be able to influence dependent structures.
+
+This creates an internal maintenance queue.
+
+Not every epistemic debt has equal urgency.
+
+The Daimonion should be able to ask:
+
+~~~text
+Which unresolved relation reaches the most dependent structure?
+Which verification could cause the largest useful reorganization?
+Which inherited assumption is expensive only because we keep carrying it?
+Which old support is still functioning as authority rather than evidence?
+~~~
+
+External contributors can provide new observations and arguments.
+
+But the priority of this internal work depends on the live shape of the field itself.
+
+The Daimonion therefore performs a kind of epistemic metabolism: it carries identified debt, selects high-leverage verification work, revises local structure, and preserves the history of the change.
+
+The goal is not minimal storage.
+
+The goal is a field whose internal form increasingly matches the reasons by which it claims to know.
 
 ### The Guard Must Be Guardable
 
