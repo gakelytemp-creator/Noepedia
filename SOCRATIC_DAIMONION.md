@@ -83,7 +83,7 @@ Socrates becomes important not because he owned this capacity as private propert
 
 ---
 
-## 3. The Daimonion Is a Guardian of the Map
+## 3. The Daimonion Is a Guardian, Operator, and Scene-Builder
 
 The Daimonion does not need to know the final truth.
 
@@ -459,13 +459,50 @@ This is why the Daimonion can keep its hands free.
 
 It does not need to carry all knowledge as permanent internal memory.
 
-### The Mega-Graph Is Also a Decoder
+### There Are Many Garments
+
+The Daimonion should not be designed as though one universal mega-graph template were enough.
+
+Different task classes may require different working bodies.
+
+One garment may turn hierarchy predicates into positions.
+
+Another may weaken object identity to compare relation patterns by analogy.
+
+Another may strengthen provenance and causal order.
+
+Another may unfold normative consequences across time.
+
+Another may treat network handles and predicates themselves as the principal objects on the stage.
+
+These garments can accumulate experience.
+
+Their selection rules, transformations, successful uses, failures, and mutations can become explicit and addressable.
+
+The Daimonion's craft therefore includes:
+
+~~~text
+choose garment
+→ assemble scene
+→ transform representation
+→ test construction
+→ learn from failure / success
+→ revise garment
+~~~
+
+This is not merely retrieval strategy.
+
+It is a growing repertoire of ways to make knowledge operational.
+
+### The Mega-Graph Performs Semiotic Reconstruction
 
 The mega-graph is not only a place to display already-understood objects.
 
-It can be used to understand incoming semiotic material by construction.
+It can be used to reconstruct the semiotic situation from which an incoming message, measurement, sign, or trace became meaningful.
 
-A message arrives without the sender's internal semiotic reason attached to it.
+A semantic message may be only the transport surface.
+
+A message arrives without the sender's full scene or internal semiotic reason attached to it.
 
 The Daimonion therefore tries to rebuild enough surrounding structure to ask:
 
@@ -481,7 +518,11 @@ Several constructions may remain alive at once.
 
 The aim is not to force the first fluent interpretation into the archive.
 
-It is to find the least costly justified construction that makes the message work under the available context, while preserving alternatives when the evidence does not yet decide.
+It is to rebuild enough of the originating situation that the sign becomes functionally intelligible: which objects were present, which roles mattered, what goal or tension existed, what action was possible, and what consequence would make the message sensible.
+
+It is then possible to test whether a semantically plausible answer actually works in the reconstructed scene.
+
+The preferred construction is the least costly justified one that makes the sign work under the available context, while preserving alternatives when the evidence does not yet decide.
 
 The cost of a construction is not universal.
 
@@ -1013,6 +1054,49 @@ The Daimonion should come down to the visitor's available interface while preser
 > **The user need not understand the map in order to ask; the Daimonion must understand enough of the request to perform an honest transaction.**
 
 ---
+
+## 15A. "I Know That I Know Nothing" as an Operational Architecture
+
+The useful Noepedia reading of the Socratic phrase is not that the Daimonion must be empty or ignorant.
+
+It is that the Daimonion should not need to carry the world's settled content as private internal possession.
+
+Its craft is different:
+
+~~~text
+find
+reconstruct
+compare
+question
+stage
+test
+interrupt
+revise
+return what survives
+~~~
+
+A homoiconic field may legally store almost any triplet-shaped relation, including nonsense, local slang, mistakes, jokes, provisional hypotheses, and misunderstood predicates.
+
+The Daimonion therefore cannot equate syntactic admissibility with knowledge.
+
+It may accept:
+
+~~~text
+DATO ── GALEVANA ──> SANDRO
+~~~
+
+while still saying, operationally:
+
+~~~text
+I can address the objects.
+I can address the predicate.
+I do not yet know what functional relation GALEVANA contributes here.
+Additional reconstruction is required.
+~~~
+
+This is a stronger form of not-knowing: the unknown is addressable without being silently filled.
+
+The Daimonion's competence lies in managing that unknown until useful structure can be recovered or the relation can be left explicitly unresolved.
 
 ## 16. The Daimonion Does Not Own Truth
 
