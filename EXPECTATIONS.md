@@ -67,6 +67,37 @@ neural navigation over explicit structure
 
 This is a central hypothesis of the architecture, not yet a demonstrated result.
 
+The long-term target is stronger than cheaper routing.
+
+When the exhaustive conditions of a recurring operation become explicit enough, that operation should be eligible for **algorithmic compilation**:
+
+~~~text
+expensive neural discovery
+→ repeated successful construction
+→ explicit boundary conditions
+→ explicit failure / UNKNOWN conditions
+→ deterministic or small-model implementation
+→ large LLM reserved for cases outside the compiled boundary
+~~~
+
+The LLM therefore becomes progressively less valuable on stabilized ground and more valuable as a specialist for **new knowledge acquisition, new distinctions, unresolved identity, novel construction, and genuinely open edges**.
+
+A small robot or low-capacity agent should not need to reproduce the full internal intelligence that originally discovered the rule.
+
+If the rule, its scope, its provenance, and its escalation conditions are explicit, the agent can apply the stabilized structure cheaply and escalate only when the boundary is crossed.
+
+The desired replacement for unsupported generative completion is not omniscience.
+
+It is **addressable ignorance**:
+
+~~~text
+KNOWN
+CONDITIONAL
+UNVERIFIED
+UNKNOWN
+ESCALATE
+~~~
+
 **LLM** becomes most valuable where the map is not yet settled.
 
 The LSM may consolidate many small unresolved predicates into one high-leverage request:
@@ -88,7 +119,7 @@ The formal working term for this system-level direction is **Predicate-Field Wil
 
 PFW does not mean subjective feeling.
 
-It means a directional requirement synthesized from the mutual tensions, dependencies, open alternatives, and constraints of interacting predicate networks.
+It means a directional requirement reconstructed when task-relevant cuts from otherwise independent predicate networks are assembled into a temporary mega-graph and their tensions, dependencies, alternatives, and constraints become jointly inspectable.
 
 **Daimonion** is not the source of that will.
 
@@ -255,11 +286,49 @@ DELIBERATE
 
 ---
 
+## 5A. Internal Epistemic Maintenance Cost
+
+Externalized knowledge does not remove maintenance.
+
+It changes the form of maintenance.
+
+A field may contain relations whose present support comes partly from direct evidence, partly from inference, partly from historical authority, and partly from unresolved convention.
+
+Noepedia should preserve those distinctions instead of flattening them into one confidence number.
+
+The support type should matter downstream.
+
+A relation that is 73% authority-dependent is not equivalent to a relation that is 73% supported by independent measurement.
+
+The number is illustrative; the requirement is structural.
+
+The Daimonion should also maintain a queue of epistemic debts.
+
+The priority of a debt should depend not only on uncertainty but on the expected structural consequence of resolving it:
+
+~~~text
+maintenance priority
+≈ uncertainty
+× downstream reach
+× expected reorganization
+÷ verification cost
+~~~
+
+The exact function must be tested.
+
+What matters is that the knowledge field itself can identify where one unit of verification is likely to improve the largest useful region.
+
+This is a cost that a benchmark should measure rather than hide.
+
+It is also work that cannot be fully outsourced to an external critic, because only the live field knows how strongly a local relation currently propagates through its own dependent structures.
+
+---
+
 ## 6. Hallucination and Knowledge Safety
 
 Noepedia does not promise to eliminate hallucination.
 
-The more modest expectation is to reduce the number of situations in which a generative model must invent structure from an undifferentiated internal memory.
+The architectural goal is to reduce the number of situations in which a generative model must invent structure from an undifferentiated internal memory, and to make settled execution increasingly capable of refusing unsupported completion altogether.
 
 The field can explicitly distinguish:
 
@@ -602,7 +671,9 @@ A failed expectation is still useful if it is recorded before the experiment.
 >
 > **LSM should travel cheaply through what is already known.**
 >
-> **LLM should be paid mainly for the frontier.**
+> **LLM should be paid mainly for discovery and the frontier.**
+>
+> **What becomes exhaustively specified should be compiled into cheaper machinery.**
 >
 > **The frontier itself should help decide where the next unit of computation is worth spending.**
 
