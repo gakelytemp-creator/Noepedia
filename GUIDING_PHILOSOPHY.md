@@ -371,7 +371,7 @@ Language can enter and leave the system without owning the system.
 
 ---
 
-## 9. The Daimonion Thinks, but Its Thought Is Temporary
+## 9. The Daimonion Reconstructs, Dresses, and Thinks Temporarily
 
 The Daimonion is not a passive database index.
 
@@ -379,9 +379,23 @@ It may think.
 
 But its thought does not automatically become archive content.
 
-For each task, it may construct a temporary **mega-graph**: a working scene containing the currently relevant objects, relations, rules, alternatives, tensions, and conflicts.
+For each task, it may construct a temporary **mega-graph**: a working scene containing the currently relevant objects, relations, rules, alternatives, tensions, roles, positions, transformations, and conflicts.
 
-This scene is closer to a desk or imagination than to permanent memory.
+But the Daimonion should not be imagined as owning only one universal working scene.
+
+Over time it may accumulate many learned garments: recurring ways of selecting cuts, weakening or strengthening identity, turning predicates into positions or roles, comparing relation forms, opening reflective layers, and testing whether a reconstruction holds.
+
+These garments are provisional cognitive tools.
+
+They may mutate.
+
+They may specialize.
+
+They may fail.
+
+They may themselves become addressable objects whose histories can be inspected and reused.
+
+This scene is closer to a desk, stage, or imagination than to permanent memory.
 
 It may be rich.
 
@@ -397,7 +411,29 @@ The archive keeps what survives consolidation.
 
 The mega-graph keeps what is useful for thinking now.
 
+The learned garment keeps something different again: a reusable form of how to build such a scene.
+
 ---
+
+### Semiotic Reconstruction Comes Before Semantic Convenience
+
+Language is often only the carrier by which a larger situation reaches the system.
+
+A sentence may be semantically interpretable while still being misunderstood at the level of the scene that produced it.
+
+The Daimonion should therefore ask not only:
+
+> What does this sentence mean?
+
+but:
+
+> What arrangement of objects, roles, purposes, constraints, and expected consequences made this sign useful here?
+
+This is why Noepedia is meta-semiotic rather than merely semantic.
+
+A four-year-old child may solve a practical absurdity from one reconstructed scene that a large text model misses after enormous linguistic training, because the child's sample is not only a token sequence. It is embedded in action, objects, goals, feedback, and consequence.
+
+The architectural hope is that explicit semiotic reconstruction can recover some of that sample efficiency.
 
 ## 10. Raw Material Is Not Yet Knowledge
 
@@ -633,9 +669,11 @@ A living knowledge field can help determine where attention is needed.
 
 Structural requirements do not have to remain isolated.
 
-Several predicate networks may carry unresolved questions at the same time. Some of those questions may be independent. Others may depend on one another, compete for the same evidence, share a missing distinction, or wait on one experiment.
+Several predicate networks may carry unresolved questions at the same time. Some questions may be independent. Others may be linked because one network treats another network, predicate, rule, or relation pattern as an addressable object.
 
-When these question-bearing networks interact, the field can acquire a direction.
+For a task, the Daimonion can also assemble selected cuts into a mega-graph and transform their relations into working roles, positions, constraints, analogies, or tensions.
+
+When these explicit cross-network relations and constructed scenes expose dependencies or conflicts, the field can acquire a direction.
 
 The formal working name for this direction is **Predicate-Field Will (PFW)**.
 
@@ -1018,6 +1056,36 @@ If nobody knows, `OPEN` is legal.
 The archive should remain larger than the Daimonion.
 
 ---
+
+## 16A. Knowledge of the World and Knowledge of How to Think With It
+
+If successful, Noepedia should accumulate two different inheritances.
+
+The first is familiar:
+
+~~~text
+what was observed
+what relations survived testing
+what remains uncertain
+~~~
+
+The second is less familiar:
+
+~~~text
+which working scenes exposed useful structure
+which predicate transformations were productive
+which mega-graph garments worked for which task classes
+which mutations improved them
+which failure patterns taught the Daimonion to reconstruct differently
+~~~
+
+These are not the same thing.
+
+A civilization can preserve facts while repeatedly losing methods of seeing.
+
+Noepedia should try to preserve both: **knowledge structures and reusable forms of epistemic work**.
+
+The Daimonion's craft should not remain a private trick hidden inside one transient model if it can be made explicit enough to inspect, inherit, and improve.
 
 ## 17. What Noepedia Tries to Preserve
 
