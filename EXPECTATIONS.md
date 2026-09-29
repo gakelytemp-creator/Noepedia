@@ -242,11 +242,17 @@ The cost of this gate is part of the learning budget and must be measured explic
 
 ---
 
-## 5. The Child-Like Difference
+## 5. The Child-Like Difference: Scene-Rich Samples
 
 A passive training corpus resembles a photographic or holographic plate. An external process chooses what waves reach the plate, and the plate records their interference.
 
-A child is different.
+A child is different not only because the child acts.
+
+A child's sample is usually **scene-rich**.
+
+One practical episode can bind together objects, roles, goals, spatial relations, actions, consequences, correction, and social response.
+
+A four-year-old may reject an absurd practical answer immediately because the whole situation is reconstructed, while a large language model may follow a statistically strong semantic path that ignores one necessary participant or goal.
 
 The child learns something, acts, produces a new situation, notices a discrepancy, asks a new question, and thereby changes what will be learned next.
 
@@ -262,9 +268,10 @@ learn
 → learn again
 ~~~
 
-The important difference is therefore not only better sample efficiency.
+The important difference is therefore twofold:
 
-It is **active control over the next sample**.
+1. **higher structural information per sample**, because the sample is embedded in a semiotic scene rather than arriving only as language; and
+2. **active control over the next sample**.
 
 The knowledge field can participate in constructing its own future curriculum.
 
@@ -324,11 +331,29 @@ It is also work that cannot be fully outsourced to an external critic, because o
 
 ---
 
-## 6. Hallucination and Knowledge Safety
+## 6. From Hallucination Reduction to Removing Generative Paths From Settled Work
 
-Noepedia does not promise to eliminate hallucination.
+Noepedia does not promise that a generative model itself becomes incapable of hallucination.
 
-The architectural goal is to reduce the number of situations in which a generative model must invent structure from an undifferentiated internal memory, and to make settled execution increasingly capable of refusing unsupported completion altogether.
+The stronger architectural goal is different:
+
+> **Where the required conditions are sufficiently settled, remove the generative path from the operational loop.**
+
+For stabilized work, the target is not a very low hallucination rate.
+
+The target is that a large generative model is not asked to improvise the answer at all.
+
+~~~text
+settled semiotic structure
+→ compiled / deterministic / bounded procedure
+→ result
+
+unresolved / novel / anomalous case
+→ Daimonion
+→ reconstruction / LLM / human / tool / experiment
+~~~
+
+In high-cost domains, even one rare unsupported completion may be unacceptable. The architecture therefore tries to convert mature reasoning into bounded machinery rather than merely hoping that statistical generation becomes reliable enough.
 
 The field can explicitly distinguish:
 
@@ -370,6 +395,25 @@ persistent epistemic authority
 Expected effects include fewer unsupported completions when settled structure already exists, clearer separation between retrieval and invention, visible uncertainty, local correction without global retraining, easier auditing, explicit detection of missing coverage, and reduced risk that one unstable model state silently rewrites shared knowledge.
 
 These are hypotheses to be measured, not guarantees.
+
+---
+
+### Learned Mega-Graph Garments as a Measurable Asset
+
+If the Daimonion develops reusable working garments, their value should be measured separately from stored domain knowledge.
+
+Possible measurements include:
+
+| Metric | Why it matters |
+|---|---|
+| Garment reuse rate | Tests whether working forms transfer across similar tasks |
+| Mutation yield | Measures whether revisions improve later reconstruction |
+| Scene reconstruction success | Tests whether semantic inputs are correctly rebuilt into operational situations |
+| Predicate-role transformation accuracy | Tests transformations such as hierarchy→position or relation→constraint |
+| Cross-network structural comparison yield | Measures whether treating predicates/networks as objects produces useful new relations |
+| Knowledge-return yield | Measures how often working scenes produce validated revisions that improve Noepedia |
+
+A successful system should become cheaper not only because it knows more, but because it becomes better at **how to stage what it knows**.
 
 ---
 
