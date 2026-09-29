@@ -384,6 +384,56 @@ The experiment succeeds only if a second participant can retrieve the evidence p
 
 ---
 
+## 5A. Semiotic reconstruction tests
+
+The pilot should not test only storage and retrieval.
+
+It must also test whether the Daimonion can recover a technical scene from a compressed semantic request.
+
+Example:
+
+~~~text
+"Is this regulator bad?"
+~~~
+
+should not be answered from wording alone.
+
+The working scene may need to reconstruct:
+
+~~~text
+board identity
+candidate regulator identity
+expected rail / function
+input and output nodes
+measurement points
+instrument + calibration
+neighboring components
+prior traces
+competing failure predicates
+desired operational result
+~~~
+
+The pilot should record which elements came from the request, which came from Noepedia, and which were added as hypotheses.
+
+A second test should reuse a successful investigation mega-graph garment on another board.
+
+A third should force that garment to fail, then record a mutation that improves later investigation.
+
+A fourth should verify the return path:
+
+~~~text
+Noepedia
+→ task cut
+→ mega-graph reconstruction
+→ tested new relation / repaired identity
+→ consolidation
+→ revised Noepedia
+~~~
+
+The entire temporary scene must not be promoted automatically.
+
+Only validated structure should return.
+
 ## 6. Acceptance tests
 
 The pilot should eventually demonstrate all of the following:
