@@ -952,6 +952,51 @@ Their purpose is to preserve the central distinction:
 
 > **A meta-layer without the ability to interrupt causation is mostly an observer of causation. A meta-layer that can interrupt, reconstruct, and reconnect can become part of the generation of new causes.**
 
+### The Closed Room: King, Jester, and Waiting Ministers
+
+A more visual metaphor for the same mechanism is a temporarily closed council room.
+
+When conceptual work rises into higher meta-structure, lower demands do not necessarily disappear. They may simply stop receiving immediate priority in the active reflective scene.
+
+The room can be imagined like this:
+
+- **the King** — the currently dominant goal, conceptual frame, or governing question;
+- **the Jester / Socratic Daimonion** — the permitted interrupter who can mock, reverse, challenge, or expose the King's hidden assumption;
+- **the Ministers** — lower-level demands, practical requests, bodily signals, incoming tasks, and operational obligations waiting outside;
+- **the Door** — the selective coupling mechanism that decides what enters the active scene and when.
+
+This is a metaphor, not a literal neurophysiological claim.
+
+Its value is architectural: deep reasoning may require a period in which lower-level traffic is not allowed to continuously reset the internal state.
+
+The temporary room therefore protects continuity of a higher-order construction.
+
+But a room that never reopens becomes a trap.
+
+The Daimonion must know not only how to close the door, but how to reopen it.
+
+A healthy cycle is:
+
+close → construct → provoke → inspect → reopen → admit lower / external signals → update → close again if needed
+
+This suggests **rhythmic autonomy** rather than permanent isolation.
+
+The system alternates between two necessary modes:
+
+1. **decoupled construction**, where a higher-order structure is allowed to develop without being constantly overwritten;
+2. **re-integration**, where external and lower-layer signals are admitted again so the internal model can be corrected by reality.
+
+The Daimonion should therefore guard both failure modes:
+
+- too little isolation: the higher layer never becomes more than an indicator of lower causal pressure;
+- too much isolation: the internal scene becomes stale, self-confirming, or detached from the world it must eventually act in.
+
+Operationally, this adds another question:
+
+> **Is the door closed because reflection still needs continuity, or because the room has become afraid of correction?**
+
+That question belongs to the same Socratic physiology as the galvanic break.
+
 ---
 ## 8. If Knowledge Is Well Placed, It Can Be Forgotten
 
