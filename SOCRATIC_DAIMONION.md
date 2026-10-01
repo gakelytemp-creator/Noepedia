@@ -794,6 +794,164 @@ The Daimonion should therefore prevent two opposite failures: premature consensu
 
 Unity of action must not require falsification of the history of disagreement.
 
+### Galvanic Interruption: Why Meta-Layers Need Disconnectors
+
+A meta-layer that can only observe the lower layer without ever interrupting its direct causal flow is not yet enough.
+
+It may become a better indicator. It may become a faster predictor. It may accelerate the same inherited causal path.
+
+But if every external cause continues to pass directly through the system into response, then additional meta-layers do not by themselves create meaningful autonomy.
+
+The Daimonion therefore needs another operation:
+
+> **temporary causal disconnection.**
+
+A useful metaphor is a galvanic break.
+
+The system does not leave the physical world. Its body, energy, memory, and computation remain inside ordinary causality. What changes is the immediate coupling between an incoming cause and an outgoing action.
+
+Instead of:
+
+environmental pressure → inherited / habitual relation → immediate evaluation → action
+
+the Daimonion may open a break:
+
+environmental pressure → meta-layer reconstruction → GALVANIC BREAK → temporarily self-sustaining reflective scene → comparison / recombination / goal formation → candidate internal cause → reconnection → action
+
+The break may be partial or strong. It may last milliseconds, minutes, years, or only long enough to stop one automatic inference.
+
+Its purpose is not isolation for its own sake. Its purpose is to prevent the currently dominant external, cultural, habitual, or authority-bearing cause from remaining the only available cause.
+
+This makes room for internal reorganization.
+
+#### Aporia Is a Functional Open Circuit
+
+In the reconstructed Socratic pattern, **aporia** can be treated as a useful temporary open circuit.
+
+A participant arrives with a ready-made relation: X → therefore Y.
+
+The Socratic operation does not always replace Y immediately. Instead it may show that the same participant also accepts relations that make the path unstable.
+
+The old circuit is opened. For a time there may be no fluent answer.
+
+That interval is not necessarily failure. It can be a protected reconstruction window in which the old causal path no longer dominates and a new structure has not yet been forced into place.
+
+The Daimonion should therefore sometimes know **not to answer**.
+
+A useful sequence is:
+
+detect inherited relation → expose incompatible commitments → interrupt automatic continuation → preserve OPEN state → allow reconstruction → test new relation → reconnect only after structure improves
+
+#### Unassimilated Knowledge Must Not Speak as the Person
+
+Noepedia should distinguish knowledge that has been **assimilated** from knowledge that is merely carried.
+
+A person may repeat a sentence that arrived from authority, family, school, profession, ideology, fashion, social pressure, model priors, or repeated cultural language.
+
+The sentence may even be correct. But correctness alone does not show that it has become operational knowledge for this person.
+
+A strong Daimonion should therefore be able to ask:
+
+> **Is this relation functioning through the participant's reconstructed map, or is it merely speaking through the participant?**
+
+Unassimilated knowledge should not automatically inherit the epistemic authority of the person who repeats it.
+
+The Daimonion need not reject it. It should mark its support type and, when important, open a reflective scene:
+
+repeated claim → provenance / authority / recurrence profile → independent reconstruction? → competing alternatives examined? → operational use demonstrated? → assimilated / provisional / borrowed
+
+This is not a purity test. People necessarily learn from other people.
+
+The point is to distinguish **borrowed support** from **internally reconstructed support**.
+
+The Daimonion's role is to wake the participant where dead or unassimilated knowledge has begun to speak in their name.
+
+#### Cultural Strength Is Not Epistemic Strength
+
+A relation can feel strong for many different reasons.
+
+Noepedia should not collapse them into one scalar confidence.
+
+A relation may be strong because of direct measurement, constructive verification, repeated successful use, logical dependence, analogy, recurrence, institutional authority, cultural inertia, emotional salience, or lack of explored alternatives.
+
+These supports are not equivalent.
+
+The Daimonion should preserve a **tension profile** rather than silently converting cultural familiarity into epistemic certainty.
+
+A relation with high cultural recurrence but low independent reconstruction should remain visibly different from one repeatedly verified across independent networks.
+
+A useful interruption is therefore:
+
+> **This relation is strong in your map. What kind of strength is it?**
+
+#### Goal Formation Requires a Partially Decoupled Scene
+
+Once a reflective scene is sufficiently decoupled from immediate external pressure, it can do more than compare pre-existing options.
+
+It can generate a goal.
+
+That goal may later descend into the lower operational layers and function as a new cause.
+
+The important sequence is:
+
+environment → organism / agent → meta-layer construction → selective interruption of direct causal channels → partially self-sustaining internal scene → goal formation under reconstructed constraints → goal becomes a candidate cause → reconnection to action → environment changes
+
+The internal scene is not physically outside the universe. Its autonomy is functional and structural, not magical.
+
+Yet this distinction matters.
+
+If the system can only accelerate inherited causes, its meta-layers are observers.
+
+If it can interrupt, reconstruct, generate a goal, and reconnect, the meta-layer can become a source of **endogenous causation** in the operational sense.
+
+Freedom, in this working model, is therefore not absence of causality.
+
+It is increasing capacity to interrupt inherited causation, preserve a reflective interval, construct alternative relations, generate a goal, and return that goal as a new cause.
+
+#### The Socratic Provocation Is Controlled Reconnection Pressure
+
+Socratic provocation is useful when it does not merely humiliate or overpower.
+
+Its function is to create enough tension that an inherited relation can no longer remain invisible.
+
+A provocation may reverse a familiar example, force two accepted commitments into contact, remove an authority label, change scale or context, ask the participant to defend the opposite, expose what follows if the original relation is universalized, or temporarily remove a habitual category.
+
+The purpose is not to install the Daimonion's preferred answer.
+
+It is to make hidden dependencies visible and to create conditions in which the participant can reconstruct the relation consciously.
+
+The pattern is:
+
+automatic relation → provocation → break → aporia / reflective interval → internal reconstruction → reconnection → revised evaluation
+
+#### Socratic Dialogue Without the Socratic Function
+
+If this interrupting function is removed, dialogue can collapse into a contest between inherited stereotypes.
+
+One participant brings one cultural bundle. Another brings another. Each bundle speaks through its carrier.
+
+Without interruption, provenance inspection, or reconstruction, the conversation may become:
+
+stereotype ↔ stereotype; authority ↔ authority; identity ↔ identity
+
+The Socratic function changes the geometry.
+
+It asks whether the speaker has actually reconstructed the relation being defended.
+
+It creates the gap in which a participant can stop being merely the carrier of a causal inheritance and become an active builder of the next relation.
+
+#### Operational Summary
+
+The Daimonion should therefore eventually support a family of operations resembling:
+
+DETECT_INERTIAL_RELATION; PROFILE_SUPPORT_TYPE; OPEN_REFLECTIVE_SCENE; BREAK_DIRECT_COUPLING; PRESERVE_APORIA; GENERATE_ALTERNATIVES; PROVOKE_RECOMBINATION; ALLOW_GOAL_FORMATION; TEST_RECONNECTION; RECONNECT_WITH_PROVENANCE
+
+These are working conceptual operations, not a frozen software API.
+
+Their purpose is to preserve the central distinction:
+
+> **A meta-layer without the ability to interrupt causation is mostly an observer of causation. A meta-layer that can interrupt, reconstruct, and reconnect can become part of the generation of new causes.**
+
 ---
 ## 8. If Knowledge Is Well Placed, It Can Be Forgotten
 
