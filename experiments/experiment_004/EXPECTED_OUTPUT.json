@@ -1,0 +1,64 @@
+{
+  "experiment": "NOEPEDIA_EXP_004_MULTI_RULE",
+  "summary": {
+    "rule_count": 3,
+    "event_counts": {
+      "FORMAL_MISMATCH": 2,
+      "CONSISTENT": 3
+    }
+  },
+  "required_events": [
+    {
+      "event": "FORMAL_MISMATCH",
+      "rule": "RULE_TERMINAL_EXPOSE_CONNECT",
+      "subject": "J2_P1",
+      "input_relation": "R03",
+      "conflicting_relation": "R04",
+      "expected_target": "VOUT",
+      "stored_target": "VIN"
+    },
+    {
+      "event": "CONSISTENT",
+      "rule": "RULE_TERMINAL_EXPOSE_CONNECT",
+      "subject": "J2_P2",
+      "input_relation": "R05",
+      "expected_target": "GND",
+      "satisfying_relations": [
+        "R06"
+      ]
+    },
+    {
+      "event": "CONSISTENT",
+      "rule": "RULE_CAPACITOR_STABILIZE_CONNECT",
+      "subject": "C1",
+      "input_relation": "R07",
+      "expected_target": "VIN",
+      "satisfying_relations": [
+        "R08"
+      ]
+    },
+    {
+      "event": "FORMAL_MISMATCH",
+      "rule": "RULE_CAPACITOR_STABILIZE_CONNECT",
+      "subject": "C2",
+      "input_relation": "R09",
+      "conflicting_relation": "R10",
+      "expected_target": "VOUT",
+      "stored_target": "VIN"
+    },
+    {
+      "event": "CONSISTENT",
+      "rule": "RULE_REGULATOR_OUTPUT_CONNECT",
+      "subject": "U1",
+      "input_relation": "R11",
+      "expected_target": "VOUT",
+      "satisfying_relations": [
+        "R12"
+      ]
+    }
+  ],
+  "open_preserved": [
+    "OPEN_01"
+  ],
+  "open_records_unchanged": true
+}
