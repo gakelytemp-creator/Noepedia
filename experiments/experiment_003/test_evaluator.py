@@ -189,5 +189,48 @@ class EvaluatorTests(unittest.TestCase):
         self.assertEqual(event["conflicting_relation"], "LR")
 
 
+    def test_recursive_chain_uses_derived_relation(self):
+        field = {
+            "experiment_id": "CHAIN_TEST",
+            "objects": [
+                {"id": "L", "type": "left"},
+                {"id": "R", "type": "right"},
+                {"id": "X", "type": "join"},
+                {"id": "RULE_D", "type": "consistency_rule"},
+                {"id": "RULE_C", "type": "consistency_rule"},
+            ],
+            "relations": [
+                {"id": "LP", "subject": "L", "predicate": "P", "object": "X", "network": "N", "status": "settled", "provenance": []},
+                {"id": "RQ", "subject": "R", "predicate": "Q", "object": "X", "network": "N", "status": "settled", "provenance": []},
+                {"id": "LC", "subject": "L", "predicate": "CONFIRMED", "object": "R", "network": "N", "status": "settled", "provenance": []},
+            ],
+            "rules": [
+                {"id": "D1", "subject": "RULE_D", "predicate": "RULE_ARITY", "object": "2", "network": "RULE", "status": "settled", "provenance": []},
+                {"id": "D2", "subject": "RULE_D", "predicate": "RULE_PATTERN", "object": "CROSS_SUBJECT_DERIVE_SHARED_OBJECT", "network": "RULE", "status": "settled", "provenance": []},
+                {"id": "D3", "subject": "RULE_D", "predicate": "INPUT_SUBJECT_TYPE_1", "object": "left", "network": "RULE", "status": "settled", "provenance": []},
+                {"id": "D4", "subject": "RULE_D", "predicate": "INPUT_PREDICATE_1", "object": "P", "network": "RULE", "status": "settled", "provenance": []},
+                {"id": "D5", "subject": "RULE_D", "predicate": "INPUT_SUBJECT_TYPE_2", "object": "right", "network": "RULE", "status": "settled", "provenance": []},
+                {"id": "D6", "subject": "RULE_D", "predicate": "INPUT_PREDICATE_2", "object": "Q", "network": "RULE", "status": "settled", "provenance": []},
+                {"id": "D7", "subject": "RULE_D", "predicate": "INPUT_JOIN_CONSTRAINT", "object": "SAME_OBJECT", "network": "RULE", "status": "settled", "provenance": []},
+                {"id": "D8", "subject": "RULE_D", "predicate": "OUTPUT_SUBJECT_SOURCE", "object": "INPUT_1_SUBJECT", "network": "RULE", "status": "settled", "provenance": []},
+                {"id": "D9", "subject": "RULE_D", "predicate": "OUTPUT_PREDICATE", "object": "LINK", "network": "RULE", "status": "settled", "provenance": []},
+                {"id": "D10", "subject": "RULE_D", "predicate": "OUTPUT_TARGET_SOURCE", "object": "INPUT_2_SUBJECT", "network": "RULE", "status": "settled", "provenance": []},
+                {"id": "C1", "subject": "RULE_C", "predicate": "RULE_SCOPE", "object": "left", "network": "RULE", "status": "settled", "provenance": []},
+                {"id": "C2", "subject": "RULE_C", "predicate": "INPUT_PREDICATE", "object": "LINK", "network": "RULE", "status": "settled", "provenance": []},
+                {"id": "C3", "subject": "RULE_C", "predicate": "REQUIRED_PREDICATE", "object": "CONFIRMED", "network": "RULE", "status": "settled", "provenance": []},
+                {"id": "C4", "subject": "RULE_C", "predicate": "TARGET_CONSTRAINT", "object": "SAME_NET", "network": "RULE", "status": "settled", "provenance": []},
+            ],
+            "open": [],
+        }
+        result = evaluate(field)
+        self.assertEqual(result["summary"]["derived_relation_count"], 1)
+        self.assertEqual(result["summary"]["event_counts"].get("DERIVED_RELATION"), 1)
+        self.assertEqual(result["summary"]["event_counts"].get("CONSISTENT"), 1)
+        derived = result["derived_relations"][0]
+        self.assertEqual((derived["subject"], derived["predicate"], derived["object"]), ("L", "LINK", "R"))
+        consistent = [e for e in result["events"] if e["event"] == "CONSISTENT"][0]
+        self.assertTrue(consistent["input_relation"].startswith("DERIVED::RULE_D::"))
+
+
 if __name__ == "__main__":
     unittest.main()
