@@ -28,3 +28,22 @@ scope + input predicate + required predicate + SAME_NET
 ~~~
 
 This experiment therefore tests **generic reuse of one rule grammar**, not arbitrary rule semantics.
+
+
+## Independent verification
+
+For a complete reproduction procedure, see [RUN_INSTRUCTIONS.md](RUN_INSTRUCTIONS.md).
+
+Expected structural output is frozen in [EXPECTED_OUTPUT.json](EXPECTED_OUTPUT.json).
+
+Automatic verification:
+
+~~~bash
+python experiments/experiment_004/verify_output.py
+~~~
+
+Expected result:
+
+~~~text
+Experiment 004 verification: PASS
+~~~
