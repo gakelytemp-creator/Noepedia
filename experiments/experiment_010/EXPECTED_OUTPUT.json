@@ -1,0 +1,133 @@
+{
+  "experiment": "NOEPEDIA_EXP_010_EVIDENCE_BRANCH_DISCRIMINATION",
+  "summary": {
+    "rule_count": 5,
+    "derived_relation_count": 7,
+    "event_counts": {
+      "DERIVED_RELATION": 7,
+      "CANDIDATE_SUPPORTED_BY_EVIDENCE": 3,
+      "CANDIDATE_REJECTED_BY_EVIDENCE": 1,
+      "COMPETING_DERIVATIONS": 3,
+      "UNIQUE_CANDIDATE": 1
+    }
+  },
+  "derived_relations": [
+    {
+      "subject": "L1",
+      "predicate": "CANDIDATE",
+      "object": "A1"
+    },
+    {
+      "subject": "L1",
+      "predicate": "CANDIDATE",
+      "object": "B1"
+    },
+    {
+      "subject": "L2",
+      "predicate": "CANDIDATE",
+      "object": "A2"
+    },
+    {
+      "subject": "L2",
+      "predicate": "CANDIDATE",
+      "object": "B2"
+    },
+    {
+      "subject": "L1",
+      "predicate": "SUPPORTED_CANDIDATE",
+      "object": "A1"
+    },
+    {
+      "subject": "L2",
+      "predicate": "SUPPORTED_CANDIDATE",
+      "object": "A2"
+    },
+    {
+      "subject": "L2",
+      "predicate": "SUPPORTED_CANDIDATE",
+      "object": "B2"
+    }
+  ],
+  "evidence_outcomes": [
+    {
+      "event": "CANDIDATE_SUPPORTED_BY_EVIDENCE",
+      "subject": "L1",
+      "candidate": "A1",
+      "evidence": [
+        "RED"
+      ]
+    },
+    {
+      "event": "CANDIDATE_REJECTED_BY_EVIDENCE",
+      "subject": "L1",
+      "candidate": "B1",
+      "observed": [
+        "RED"
+      ],
+      "candidate_features": [
+        "BLUE"
+      ]
+    },
+    {
+      "event": "CANDIDATE_SUPPORTED_BY_EVIDENCE",
+      "subject": "L2",
+      "candidate": "A2",
+      "evidence": [
+        "GREEN"
+      ]
+    },
+    {
+      "event": "CANDIDATE_SUPPORTED_BY_EVIDENCE",
+      "subject": "L2",
+      "candidate": "B2",
+      "evidence": [
+        "GREEN"
+      ]
+    }
+  ],
+  "cardinality_outcomes": [
+    {
+      "event": "COMPETING_DERIVATIONS",
+      "rule": "RULE_CANDIDATE_CARDINALITY",
+      "subject": "L1",
+      "predicate": "CANDIDATE",
+      "targets": [
+        "A1",
+        "B1"
+      ]
+    },
+    {
+      "event": "COMPETING_DERIVATIONS",
+      "rule": "RULE_CANDIDATE_CARDINALITY",
+      "subject": "L2",
+      "predicate": "CANDIDATE",
+      "targets": [
+        "A2",
+        "B2"
+      ]
+    },
+    {
+      "event": "UNIQUE_CANDIDATE",
+      "rule": "RULE_SUPPORTED_CARDINALITY",
+      "subject": "L1",
+      "predicate": "SUPPORTED_CANDIDATE",
+      "targets": [
+        "A1"
+      ]
+    },
+    {
+      "event": "COMPETING_DERIVATIONS",
+      "rule": "RULE_SUPPORTED_CARDINALITY",
+      "subject": "L2",
+      "predicate": "SUPPORTED_CANDIDATE",
+      "targets": [
+        "A2",
+        "B2"
+      ]
+    }
+  ],
+  "open_preserved": [
+    "OPEN_01"
+  ],
+  "open_records_unchanged": true
+}
