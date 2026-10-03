@@ -819,3 +819,372 @@ The project should not claim validated architecture until at least:
 
 If lower-level work remains difficult for reasons the theory cannot expose, the theory must REOPEN.
 
+
+
+---
+
+# 25. Experiment A — Detailed Protocol
+
+## 25.1 Name
+
+**End-to-End Relational Reconstruction on One Real Object**
+
+## 25.2 Purpose
+
+The first experiment is deliberately minimal.
+
+It is not meant to prove the whole Noepedia architecture.
+
+It asks one narrow question:
+
+> **Can one real object be represented as several explicit relational cuts, reconstructed into a task-specific scene, revised locally, and compared against an LLM-only baseline without forcing the whole context through repeated neural inference?**
+
+The experiment succeeds only if the explicit structure creates measurable operational leverage.
+
+---
+
+## 25.3 Conceptual Briefing Requirement
+
+**No experimental run may begin before a short conceptual briefing.**
+
+The briefing must establish:
+
+1. what exactly the experiment is testing;
+2. which part of the theory is under test;
+3. what is *not* being tested;
+4. what the expected observable consequence is;
+5. what result would count as failure;
+6. which variables are intentionally controlled;
+7. which result would force a theoretical REOPEN;
+8. which measurements must be logged before interpretation begins.
+
+The briefing should be written and frozen before the run.
+
+This prevents the theory from being retrofitted to the result.
+
+---
+
+## 25.4 Object Selection
+
+Choose **one real object** with enough structure to support several independent relation networks, but small enough to understand completely.
+
+Preferred first domain:
+
+**OpenPCB hardware object**
+
+Candidate examples:
+- one PCB;
+- one known subcircuit;
+- one connector region;
+- one power section;
+- one sensor board.
+
+The object should have at least:
+
+- visible physical structure;
+- at least one measured property;
+- at least one part–whole relation;
+- at least one causal or functional relation;
+- provenance for at least part of the evidence;
+- one deliberately unresolved relation.
+
+---
+
+## 25.5 Required Relation Networks
+
+The first object should be represented through a minimum of four networks:
+
+### A. Part–Whole
+
+Example:
+
+~~~text
+COMPONENT_A → PART_OF → BOARD_X
+~~~
+
+### B. Functional
+
+~~~text
+COMPONENT_A → SUPPORTS_FUNCTION → POWER_CONVERSION
+~~~
+
+### C. Evidence / Provenance
+
+~~~text
+CLAIM_17 → SUPPORTED_BY → MEASUREMENT_4
+MEASUREMENT_4 → PRODUCED_BY → INSTRUMENT_2
+~~~
+
+### D. Spatial / Connectivity
+
+~~~text
+PAD_A → CONNECTED_TO → TRACE_B
+~~~
+
+Optional fifth network:
+
+### E. Causal / Operational
+
+~~~text
+INPUT_VOLTAGE → ENABLES → REGULATOR_STAGE
+~~~
+
+---
+
+## 25.6 Required OPEN
+
+At least one relation must be left explicitly unresolved.
+
+Example:
+
+~~~text
+COMPONENT_X → FUNCTION? → OPEN
+~~~
+
+or:
+
+~~~text
+TRACE_Y → CONNECTS_TO? → OPEN_SPACE
+~~~
+
+The OPEN must be genuine enough that the experiment can later ask whether the system generates a useful next requirement.
+
+---
+
+## 25.7 Required Mismatch
+
+After the healthy representation is built, introduce one controlled mismatch.
+
+Examples:
+
+- wrong component identity;
+- wrong connectivity;
+- wrong functional label;
+- wrong part–whole placement;
+- wrong provenance link.
+
+The mismatch must be known to the experiment designer so that localization accuracy can be measured.
+
+---
+
+## 25.8 Experimental Conditions
+
+### Condition 1 — LLM-only baseline
+
+Provide the model with the same raw evidence in ordinary context.
+
+Ask it to reconstruct the relevant scene and answer the target task.
+
+Record:
+- prompt size;
+- token use;
+- latency;
+- answer;
+- uncertainty;
+- any unsupported assumptions.
+
+### Condition 2 — Retrieval + LLM baseline
+
+Retrieve the relevant raw notes/documents, but do not use explicit Noepedia relations.
+
+Record the same metrics.
+
+### Condition 3 — Noepedia condition
+
+Provide:
+- explicit relational field;
+- task-specific cut;
+- OPEN status;
+- provenance;
+- local mismatch indicators.
+
+Use an LLM only if the remaining task crosses an OPEN boundary.
+
+Record:
+- size of retrieved cut;
+- number of relations traversed;
+- number of LLM calls;
+- token use;
+- latency;
+- result;
+- revision path.
+
+---
+
+## 25.9 Target Task
+
+The first task should not be broad.
+
+Use one concrete question such as:
+
+> **Reconstruct the relevant functional scene around COMPONENT_X and identify which relation must be checked next to determine whether the current interpretation is valid.**
+
+The task must require:
+- more than one relation network;
+- at least one provenance path;
+- one unresolved edge;
+- enough context that a flat text answer is not trivial.
+
+---
+
+## 25.10 Local Revision Test
+
+After the first reconstruction:
+
+1. change one known relation;
+2. record which dependent structures are affected;
+3. update only the actual dependency region;
+4. rerun the same target task.
+
+Measure:
+
+- number of changed relations;
+- number of unaffected relations touched;
+- time to repair;
+- whether provenance remains intact.
+
+This tests the claim that explicit structure allows local revision.
+
+---
+
+## 25.11 Metrics
+
+### Correctness
+
+- task answer accuracy;
+- reconstruction accuracy;
+- correct mismatch localization;
+- correct OPEN preservation.
+
+### Epistemic quality
+
+- unsupported closure count;
+- provenance coverage;
+- number of assumptions added without support;
+- number of competing interpretations preserved.
+
+### Computational cost
+
+- tokens;
+- LLM calls;
+- context size;
+- wall-clock time;
+- traversal operations.
+
+### Structural cost
+
+- relations loaded;
+- relations changed during revision;
+- affected dependency radius;
+- coordination overhead.
+
+---
+
+## 25.12 Success Criteria
+
+The experiment counts as a meaningful positive result only if the Noepedia condition provides at least one measurable benefit while preserving or improving correctness.
+
+Acceptable benefits include:
+
+- lower context size;
+- fewer LLM tokens;
+- fewer LLM calls;
+- better provenance;
+- fewer unsupported closures;
+- more local revision;
+- better mismatch localization.
+
+A visually impressive demo without one of these is not enough.
+
+---
+
+## 25.13 Failure Criteria
+
+The experiment fails if:
+
+- explicit relations add no useful information;
+- the mega-graph misses the task-relevant structure;
+- the LLM-only baseline is simpler and equally auditable;
+- local revision becomes effectively global;
+- OPEN is ignored or prematurely closed;
+- provenance overhead dominates the task;
+- mismatch localization does not outperform naive inspection.
+
+Failure is a useful result.
+
+---
+
+## 25.14 REOPEN Triggers
+
+A theoretical REOPEN is required if:
+
+### Trigger A
+The field representation cannot express the real object without repeated ad hoc exceptions.
+
+### Trigger B
+The task-specific cut repeatedly omits essential relations.
+
+### Trigger C
+OPEN does not produce a meaningful distinction from ordinary missing data.
+
+### Trigger D
+Local revision propagates too broadly.
+
+### Trigger E
+The explicit structure does not reduce repeated LLM work.
+
+Each trigger points to a different theoretical layer and should not be collapsed into a generic "implementation problem".
+
+---
+
+## 25.15 Required Artifacts
+
+Before the experiment is considered complete, preserve:
+
+1. object description;
+2. relation tables;
+3. provenance records;
+4. OPEN definition;
+5. injected mismatch;
+6. frozen conceptual briefing;
+7. baseline prompts;
+8. Noepedia task cut;
+9. raw logs;
+10. metrics table;
+11. failure notes;
+12. final interpretation;
+13. any theory changes caused by the result.
+
+---
+
+## 25.16 Recommended Run Sequence
+
+~~~text
+choose object
+→ freeze raw evidence
+→ define relation networks
+→ define genuine OPEN
+→ write conceptual briefing
+→ run LLM-only baseline
+→ run retrieval+LLM baseline
+→ run Noepedia condition
+→ inject controlled mismatch
+→ rerun all conditions
+→ perform local revision test
+→ compare metrics
+→ identify REOPEN if needed
+~~~
+
+---
+
+## 25.17 Pre-Run Rule
+
+Immediately before the actual experiment, hold a short conceptual briefing answering only these questions:
+
+1. **What are we testing today?**
+2. **What result do we expect if the mechanism is real?**
+3. **What result would falsify or weaken the mechanism?**
+4. **What must remain fixed during the run?**
+5. **What are we forbidden to reinterpret after seeing the result?**
+
+Only after those five answers are frozen should the experiment start.
