@@ -443,22 +443,26 @@ def evaluate(field: dict[str, Any]) -> dict[str, Any]:
     for event in events:
         counts[event["event"]] = counts.get(event["event"], 0) + 1
 
-    return {
+    derived_relations = [
+        r for r in working_relations if r.get("status") == "derived"
+    ]
+    summary = {
+        "rule_count": len(rule_objects),
+        "event_counts": counts,
+    }
+    if derived_relations:
+        summary["derived_relation_count"] = len(derived_relations)
+
+    result = {
         "experiment": field.get("experiment_id"),
         "events": events,
-        "summary": {
-            "rule_count": len(rule_objects),
-            "derived_relation_count": sum(
-                1 for r in working_relations if r.get("status") == "derived"
-            ),
-            "event_counts": counts,
-        },
-        "derived_relations": [
-            r for r in working_relations if r.get("status") == "derived"
-        ],
+        "summary": summary,
         "open_preserved": [o["id"] for o in open_records],
         "open_records_unchanged": open_records == field.get("open", []),
     }
+    if derived_relations:
+        result["derived_relations"] = derived_relations
+    return result
 
 def main(argv: list[str]) -> int:
     if len(argv) != 2:
