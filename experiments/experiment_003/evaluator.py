@@ -32,6 +32,13 @@ CROSS_SUBJECT_REQUIRED_RULE_FIELDS = {
     "INPUT_JOIN_CONSTRAINT",
     "REQUIRED_SUBJECT_SOURCE", "REQUIRED_PREDICATE", "REQUIRED_TARGET_SOURCE",
 }
+CROSS_SUBJECT_DERIVE_RULE_FIELDS = {
+    "RULE_ARITY", "RULE_PATTERN",
+    "INPUT_SUBJECT_TYPE_1", "INPUT_PREDICATE_1",
+    "INPUT_SUBJECT_TYPE_2", "INPUT_PREDICATE_2",
+    "INPUT_JOIN_CONSTRAINT",
+    "OUTPUT_SUBJECT_SOURCE", "OUTPUT_PREDICATE", "OUTPUT_TARGET_SOURCE",
+}
 
 def _index_relations(relations: list[dict[str, Any]]):
     by_subject_predicate = defaultdict(list)
@@ -60,6 +67,33 @@ def _rule_spec(rule_id: str, rule_relations: list[dict[str, Any]]) -> dict[str, 
                 fields["RULE_SCOPE"]["id"], fields["INPUT_PREDICATE"]["id"],
                 fields["REQUIRED_PREDICATE"]["id"], fields["TARGET_CONSTRAINT"]["id"],
             ],
+        }
+
+    if arity == "2" and pattern == "CROSS_SUBJECT_DERIVE_SHARED_OBJECT":
+        missing = sorted(CROSS_SUBJECT_DERIVE_RULE_FIELDS - fields.keys())
+        if missing:
+            return {"complete": False, "rule": rule_id, "arity": 2,
+                    "pattern": pattern, "missing_fields": missing,
+                    "rule_path": [r["id"] for r in parts]}
+        ordered = [
+            "RULE_ARITY", "RULE_PATTERN",
+            "INPUT_SUBJECT_TYPE_1", "INPUT_PREDICATE_1",
+            "INPUT_SUBJECT_TYPE_2", "INPUT_PREDICATE_2",
+            "INPUT_JOIN_CONSTRAINT",
+            "OUTPUT_SUBJECT_SOURCE", "OUTPUT_PREDICATE", "OUTPUT_TARGET_SOURCE",
+        ]
+        return {
+            "complete": True, "rule": rule_id, "arity": 2,
+            "pattern": pattern,
+            "input_subject_type_1": fields["INPUT_SUBJECT_TYPE_1"]["object"],
+            "input_predicate_1": fields["INPUT_PREDICATE_1"]["object"],
+            "input_subject_type_2": fields["INPUT_SUBJECT_TYPE_2"]["object"],
+            "input_predicate_2": fields["INPUT_PREDICATE_2"]["object"],
+            "input_join_constraint": fields["INPUT_JOIN_CONSTRAINT"]["object"],
+            "output_subject_source": fields["OUTPUT_SUBJECT_SOURCE"]["object"],
+            "output_predicate": fields["OUTPUT_PREDICATE"]["object"],
+            "output_target_source": fields["OUTPUT_TARGET_SOURCE"]["object"],
+            "rule_path": [fields[name]["id"] for name in ordered],
         }
 
     if arity == "2" and pattern == "CROSS_SUBJECT_SHARED_OBJECT":
@@ -236,9 +270,87 @@ def _evaluate_cross_subject(spec, objects, index):
 
     return events
 
+def _derive_cross_subject(spec, objects, index, existing_triples):
+    if spec["input_join_constraint"] != "SAME_OBJECT":
+        return [], [{"event": "RULE_INCOMPLETE", "rule": spec["rule"],
+                     "missing_fields": ["SUPPORTED_INPUT_JOIN_CONSTRAINT"],
+                     "observed_constraint": spec["input_join_constraint"],
+                     "rule_path": spec["rule_path"]}]
+    if spec["output_subject_source"] != "INPUT_1_SUBJECT":
+        return [], [{"event": "RULE_INCOMPLETE", "rule": spec["rule"],
+                     "missing_fields": ["SUPPORTED_OUTPUT_SUBJECT_SOURCE"],
+                     "observed_subject_source": spec["output_subject_source"],
+                     "rule_path": spec["rule_path"]}]
+    if spec["output_target_source"] != "INPUT_2_SUBJECT":
+        return [], [{"event": "RULE_INCOMPLETE", "rule": spec["rule"],
+                     "missing_fields": ["SUPPORTED_OUTPUT_TARGET_SOURCE"],
+                     "observed_target_source": spec["output_target_source"],
+                     "rule_path": spec["rule_path"]}]
+
+    left_subjects = [o["id"] for o in objects if o.get("type") == spec["input_subject_type_1"]]
+    right_subjects = [o["id"] for o in objects if o.get("type") == spec["input_subject_type_2"]]
+    new_relations = []
+    events = []
+
+    for left_subject in left_subjects:
+        left_rels = index.get((left_subject, spec["input_predicate_1"]), [])
+        matched = False
+
+        for right_subject in right_subjects:
+            right_rels = index.get((right_subject, spec["input_predicate_2"]), [])
+            for a in left_rels:
+                for b in right_rels:
+                    if a["object"] != b["object"]:
+                        continue
+                    matched = True
+                    triple = (left_subject, spec["output_predicate"], right_subject)
+                    if triple in existing_triples:
+                        continue
+                    relation_id = (
+                        "DERIVED::" + spec["rule"] + "::" +
+                        left_subject + "::" + spec["output_predicate"] + "::" + right_subject
+                    )
+                    rel = {
+                        "id": relation_id,
+                        "subject": left_subject,
+                        "predicate": spec["output_predicate"],
+                        "object": right_subject,
+                        "network": "DERIVED",
+                        "status": "derived",
+                        "provenance": [],
+                        "derived_from": [a["id"], b["id"]] + spec["rule_path"],
+                    }
+                    new_relations.append(rel)
+                    existing_triples.add(triple)
+                    events.append({
+                        "event": "DERIVED_RELATION",
+                        "rule": spec["rule"],
+                        "subject": left_subject,
+                        "input_relations": [a["id"], b["id"]],
+                        "derived_relation": {
+                            "id": relation_id,
+                            "predicate": spec["output_predicate"],
+                            "target": right_subject,
+                        },
+                        "rule_path": spec["rule_path"],
+                    })
+
+        if left_rels and not matched:
+            events.append({
+                "event": "ANTECEDENT_NOT_SATISFIED",
+                "rule": spec["rule"],
+                "subject": left_subject,
+                "input_relations_1": [r["id"] for r in left_rels],
+                "constraint": spec["input_join_constraint"],
+                "rule_path": spec["rule_path"],
+            })
+
+    return new_relations, events
+
+
 def evaluate(field: dict[str, Any]) -> dict[str, Any]:
     objects = field.get("objects", [])
-    relations = list(field.get("relations", []))
+    working_relations = list(field.get("relations", []))
     rules = field.get("rules", [])
     open_records = deepcopy(field.get("open", []))
     rule_objects = [o for o in objects if o.get("type") == "consistency_rule"]
@@ -258,10 +370,51 @@ def evaluate(field: dict[str, Any]) -> dict[str, Any]:
                 "rule_path": spec["rule_path"],
             })
 
-    index = _index_relations(relations)
+    derive_specs = [
+        s for s in specs
+        if s.get("complete") and s.get("pattern") == "CROSS_SUBJECT_DERIVE_SHARED_OBJECT"
+    ]
+
+    existing_triples = {
+        (r["subject"], r["predicate"], r["object"])
+        for r in working_relations
+    }
+
+    # Derivation closure: derived relations live only in this working evaluation.
+    while True:
+        index = _index_relations(working_relations)
+        round_new = []
+        round_events = []
+
+        for spec in derive_specs:
+            new_relations, derivation_events = _derive_cross_subject(
+                spec, objects, index, existing_triples
+            )
+            round_new.extend(new_relations)
+            round_events.extend(derivation_events)
+
+        # Keep DERIVED_RELATION events once. ANTECEDENT_NOT_SATISFIED is emitted
+        # only on the final no-growth round below.
+        events.extend(
+            e for e in round_events
+            if e["event"] == "DERIVED_RELATION"
+        )
+
+        if not round_new:
+            events.extend(
+                e for e in round_events
+                if e["event"] != "DERIVED_RELATION"
+            )
+            break
+
+        working_relations.extend(round_new)
+
+    index = _index_relations(working_relations)
 
     for spec in specs:
         if not spec["complete"]:
+            continue
+        if spec.get("pattern") == "CROSS_SUBJECT_DERIVE_SHARED_OBJECT":
             continue
 
         if spec.get("pattern") == "CROSS_SUBJECT_SHARED_OBJECT":
@@ -295,8 +448,14 @@ def evaluate(field: dict[str, Any]) -> dict[str, Any]:
         "events": events,
         "summary": {
             "rule_count": len(rule_objects),
+            "derived_relation_count": sum(
+                1 for r in working_relations if r.get("status") == "derived"
+            ),
             "event_counts": counts,
         },
+        "derived_relations": [
+            r for r in working_relations if r.get("status") == "derived"
+        ],
         "open_preserved": [o["id"] for o in open_records],
         "open_records_unchanged": open_records == field.get("open", []),
     }
