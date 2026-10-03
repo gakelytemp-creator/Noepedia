@@ -1,0 +1,75 @@
+{
+  "experiment": "NOEPEDIA_EXP_009_BRANCH_COMPETITION",
+  "summary": {
+    "rule_count": 3,
+    "derived_relation_count": 3,
+    "event_counts": {
+      "DERIVED_RELATION": 3,
+      "COMPETING_DERIVATIONS": 1,
+      "UNIQUE_CANDIDATE": 1
+    }
+  },
+  "derived_relations": [
+    {
+      "subject": "L1",
+      "predicate": "CANDIDATE",
+      "object": "A1"
+    },
+    {
+      "subject": "L1",
+      "predicate": "CANDIDATE",
+      "object": "B1"
+    },
+    {
+      "subject": "L2",
+      "predicate": "CANDIDATE",
+      "object": "A2"
+    }
+  ],
+  "required_events": [
+    {
+      "event": "DERIVED_RELATION",
+      "rule": "RULE_DERIVE_A",
+      "subject": "L1",
+      "derived_predicate": "CANDIDATE",
+      "derived_target": "A1"
+    },
+    {
+      "event": "DERIVED_RELATION",
+      "rule": "RULE_DERIVE_B",
+      "subject": "L1",
+      "derived_predicate": "CANDIDATE",
+      "derived_target": "B1"
+    },
+    {
+      "event": "DERIVED_RELATION",
+      "rule": "RULE_DERIVE_A",
+      "subject": "L2",
+      "derived_predicate": "CANDIDATE",
+      "derived_target": "A2"
+    },
+    {
+      "event": "COMPETING_DERIVATIONS",
+      "rule": "RULE_CANDIDATE_CARDINALITY",
+      "subject": "L1",
+      "predicate": "CANDIDATE",
+      "targets": [
+        "A1",
+        "B1"
+      ]
+    },
+    {
+      "event": "UNIQUE_CANDIDATE",
+      "rule": "RULE_CANDIDATE_CARDINALITY",
+      "subject": "L2",
+      "predicate": "CANDIDATE",
+      "targets": [
+        "A2"
+      ]
+    }
+  ],
+  "open_preserved": [
+    "OPEN_01"
+  ],
+  "open_records_unchanged": true
+}
