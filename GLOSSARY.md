@@ -176,6 +176,86 @@ The Daimonion should not be treated as a truth oracle or hidden sovereign.
 
 ---
 
+## Daimonion Orientation Modes
+
+A Daimonion instance may operate in different orientations.
+
+### Introvert Mode
+
+**Introvert Mode** is field-to-field work.
+
+Typical operations include:
+
+- inspecting unresolved structure;
+- discovering OPEN or OPEN_SPACE;
+- checking upward and downward validation;
+- reorganizing local topology;
+- generating internal requirements without an external prompt;
+- dreaming or joining a Daimonion coalition;
+- identifying stabilized operations that may be compiled into cheaper deterministic machinery.
+
+~~~text
+FIELD → DAIMONION → FIELD
+~~~
+
+### Extrovert Mode
+
+**Extrovert Mode** is field-to-outside work.
+
+Typical operations include:
+
+- receiving a trace or question;
+- reconstructing external context;
+- requesting a measurement or experiment;
+- returning a task-relevant semiotic cut;
+- mediating permissions and provenance;
+- translating between Noepedia structure and a domain interface.
+
+~~~text
+FIELD ↔ DAIMONION ↔ OUTSIDE
+~~~
+
+### Coupled Mode
+
+**Coupled Mode** alternates internal reconstruction with external testing.
+
+~~~text
+internal hypothesis
+      ↓
+external measurement / action
+      ↓
+returned trace
+      ↓
+internal revision
+      ↓
+next discriminating test
+~~~
+
+The three modes are execution orientations, not personality traits.
+
+---
+
+## Daimonion Service Constraint
+
+A Daimonion is a **servant process of the field**.
+
+It must not become a hidden sovereign, truth oracle, or owner of the knowledge it mediates.
+
+Its authority is bounded by:
+
+- the field's explicit rules;
+- transaction permissions;
+- provenance;
+- reversible history;
+- layer-local obligations;
+- and the requirement that its own operations remain auditable and revisable.
+
+In a homoiconic system this service constraint matters because the same freedom that lets the field rewrite itself also lets it generate internally coherent nonsense. Daimonion processes provide structural resistance against silent self-corruption without freezing the field.
+
+> **The field may change itself. The Daimonia must make the change answerable.**
+
+---
+
 ## Layer-Local Daimonion
 
 A **Layer-Local Daimonion** is a Daimonion process bound to the context of one layer.
@@ -201,6 +281,26 @@ The same architectural rule-set may produce many concurrent instances.
 An instance is not required to map one-to-one to one CPU core, GPU core, thread, or process.
 
 It is a logical process that may be scheduled on available hardware.
+
+---
+
+## External Boundary / Internal Multiplicity
+
+Noepedia presents a mediated external transaction boundary even when many Daimonion instances are active inside it.
+
+~~~text
+outside participant
+       ↓
+one accountable field boundary
+       ↓
+many layer-local Daimonion instances
+       ↓
+persistent field
+~~~
+
+External systems should not have to reproduce or coordinate Noepedia's internal process topology.
+
+> **One boundary, many Daimonion processes.**
 
 ---
 
