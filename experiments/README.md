@@ -34,3 +34,5 @@ frozen input
 Corrections after observing a run must be recorded explicitly rather than silently rewriting history.
 
 - [Experiment 011](experiment_011/) — first external real sensor trace with label-blind deterministic detection
+
+- [Experiment 012](experiment_012/) — label-blind temporal decomposition of real-data mismatches
