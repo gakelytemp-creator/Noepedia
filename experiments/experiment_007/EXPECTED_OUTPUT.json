@@ -1,0 +1,101 @@
+{
+  "experiment": "NOEPEDIA_EXP_007_RECURSIVE_CHAIN",
+  "summary": {
+    "rule_count": 2,
+    "derived_relation_count": 3,
+    "event_counts": {
+      "DERIVED_RELATION": 3,
+      "ANTECEDENT_NOT_SATISFIED": 1,
+      "CONSISTENT": 1,
+      "FORMAL_MISMATCH": 1,
+      "REQUIRED_RELATION_MISSING": 1
+    }
+  },
+  "derived_relations": [
+    {
+      "subject": "L1",
+      "predicate": "LINK",
+      "object": "R1"
+    },
+    {
+      "subject": "L2",
+      "predicate": "LINK",
+      "object": "R2"
+    },
+    {
+      "subject": "L3",
+      "predicate": "LINK",
+      "object": "R3"
+    }
+  ],
+  "required_events": [
+    {
+      "event": "DERIVED_RELATION",
+      "rule": "RULE_DERIVE_LINK",
+      "subject": "L1",
+      "input_relations": [
+        "L1P",
+        "R1Q"
+      ],
+      "derived_predicate": "LINK",
+      "derived_target": "R1"
+    },
+    {
+      "event": "DERIVED_RELATION",
+      "rule": "RULE_DERIVE_LINK",
+      "subject": "L2",
+      "input_relations": [
+        "L2P",
+        "R2Q"
+      ],
+      "derived_predicate": "LINK",
+      "derived_target": "R2"
+    },
+    {
+      "event": "DERIVED_RELATION",
+      "rule": "RULE_DERIVE_LINK",
+      "subject": "L3",
+      "input_relations": [
+        "L3P",
+        "R3Q"
+      ],
+      "derived_predicate": "LINK",
+      "derived_target": "R3"
+    },
+    {
+      "event": "ANTECEDENT_NOT_SATISFIED",
+      "rule": "RULE_DERIVE_LINK",
+      "subject": "L4",
+      "input_relations_1": [
+        "L4P"
+      ]
+    },
+    {
+      "event": "CONSISTENT",
+      "rule": "RULE_CHECK_LINK",
+      "subject": "L1",
+      "expected_target": "R1",
+      "satisfying_relations": [
+        "L1C"
+      ]
+    },
+    {
+      "event": "FORMAL_MISMATCH",
+      "rule": "RULE_CHECK_LINK",
+      "subject": "L2",
+      "expected_target": "R2",
+      "conflicting_relation": "L2C",
+      "stored_target": "R_BAD"
+    },
+    {
+      "event": "REQUIRED_RELATION_MISSING",
+      "rule": "RULE_CHECK_LINK",
+      "subject": "L3",
+      "expected_target": "R3"
+    }
+  ],
+  "open_preserved": [
+    "OPEN_01"
+  ],
+  "open_records_unchanged": true
+}
