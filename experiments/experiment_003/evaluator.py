@@ -42,6 +42,11 @@ CROSS_SUBJECT_DERIVE_RULE_FIELDS = {
 CARDINALITY_RULE_FIELDS = {
     "RULE_PATTERN", "RULE_SCOPE", "INPUT_PREDICATE", "MAX_DISTINCT_TARGETS",
 }
+EVIDENCE_FILTER_RULE_FIELDS = {
+    "RULE_PATTERN", "RULE_SCOPE", "CANDIDATE_PREDICATE",
+    "OBSERVATION_PREDICATE", "CANDIDATE_FEATURE_PREDICATE",
+    "OUTPUT_PREDICATE",
+}
 
 def _index_relations(relations: list[dict[str, Any]]):
     by_subject_predicate = defaultdict(list)
@@ -54,6 +59,28 @@ def _rule_spec(rule_id: str, rule_relations: list[dict[str, Any]]) -> dict[str, 
     fields = {r["predicate"]: r for r in parts}
     arity = str(fields.get("RULE_ARITY", {}).get("object", "1"))
     pattern = fields.get("RULE_PATTERN", {}).get("object")
+
+    if pattern == "EVIDENCE_FILTER_CANDIDATES":
+        missing = sorted(EVIDENCE_FILTER_RULE_FIELDS - fields.keys())
+        if missing:
+            return {"complete": False, "rule": rule_id, "arity": 0,
+                    "pattern": pattern, "missing_fields": missing,
+                    "rule_path": [r["id"] for r in parts]}
+        ordered = [
+            "RULE_PATTERN", "RULE_SCOPE", "CANDIDATE_PREDICATE",
+            "OBSERVATION_PREDICATE", "CANDIDATE_FEATURE_PREDICATE",
+            "OUTPUT_PREDICATE",
+        ]
+        return {
+            "complete": True, "rule": rule_id, "arity": 0,
+            "pattern": pattern,
+            "scope_type": fields["RULE_SCOPE"]["object"],
+            "candidate_predicate": fields["CANDIDATE_PREDICATE"]["object"],
+            "observation_predicate": fields["OBSERVATION_PREDICATE"]["object"],
+            "candidate_feature_predicate": fields["CANDIDATE_FEATURE_PREDICATE"]["object"],
+            "output_predicate": fields["OUTPUT_PREDICATE"]["object"],
+            "rule_path": [fields[name]["id"] for name in ordered],
+        }
 
     if pattern == "TARGET_CARDINALITY_CHECK":
         missing = sorted(CARDINALITY_RULE_FIELDS - fields.keys())
@@ -368,6 +395,112 @@ def _derive_cross_subject(spec, objects, index, existing_triples):
 
 
 
+
+def _derive_evidence_filter(spec, objects, index, existing_triples):
+    subjects = [
+        o["id"] for o in objects
+        if o.get("type") == spec["scope_type"]
+    ]
+    if not subjects:
+        return [], [{
+            "event": "SCOPE_UNRESOLVED",
+            "rule": spec["rule"],
+            "scope_type": spec["scope_type"],
+            "rule_path": spec["rule_path"],
+        }]
+
+    new_relations = []
+    events = []
+
+    for subject in subjects:
+        candidate_rels = index.get((subject, spec["candidate_predicate"]), [])
+        observation_rels = index.get((subject, spec["observation_predicate"]), [])
+        observed = sorted({r["object"] for r in observation_rels})
+
+        if not candidate_rels or not observation_rels:
+            continue
+
+        for candidate_rel in candidate_rels:
+            candidate = candidate_rel["object"]
+            feature_rels = index.get((candidate, spec["candidate_feature_predicate"]), [])
+            features = sorted({r["object"] for r in feature_rels})
+            overlap = sorted(set(observed) & set(features))
+
+            if overlap:
+                triple = (subject, spec["output_predicate"], candidate)
+                relation_id = (
+                    "DERIVED::" + spec["rule"] + "::" +
+                    subject + "::" + spec["output_predicate"] + "::" + candidate
+                )
+
+                if triple not in existing_triples:
+                    evidence_relation_ids = [
+                        r["id"] for r in observation_rels
+                        if r["object"] in overlap
+                    ]
+                    feature_relation_ids = [
+                        r["id"] for r in feature_rels
+                        if r["object"] in overlap
+                    ]
+                    rel = {
+                        "id": relation_id,
+                        "subject": subject,
+                        "predicate": spec["output_predicate"],
+                        "object": candidate,
+                        "network": "DERIVED",
+                        "status": "derived",
+                        "provenance": [],
+                        "derived_from": (
+                            [candidate_rel["id"]]
+                            + evidence_relation_ids
+                            + feature_relation_ids
+                            + spec["rule_path"]
+                        ),
+                    }
+                    new_relations.append(rel)
+                    existing_triples.add(triple)
+                    events.append({
+                        "event": "DERIVED_RELATION",
+                        "rule": spec["rule"],
+                        "subject": subject,
+                        "input_relations": (
+                            [candidate_rel["id"]]
+                            + evidence_relation_ids
+                            + feature_relation_ids
+                        ),
+                        "derived_relation": {
+                            "id": relation_id,
+                            "predicate": spec["output_predicate"],
+                            "target": candidate,
+                        },
+                        "rule_path": spec["rule_path"],
+                    })
+
+                events.append({
+                    "event": "CANDIDATE_SUPPORTED_BY_EVIDENCE",
+                    "rule": spec["rule"],
+                    "subject": subject,
+                    "candidate": candidate,
+                    "candidate_relation": candidate_rel["id"],
+                    "evidence": overlap,
+                    "rule_path": spec["rule_path"],
+                })
+
+            elif features:
+                events.append({
+                    "event": "CANDIDATE_REJECTED_BY_EVIDENCE",
+                    "rule": spec["rule"],
+                    "subject": subject,
+                    "candidate": candidate,
+                    "candidate_relation": candidate_rel["id"],
+                    "observed": observed,
+                    "candidate_features": features,
+                    "rule_path": spec["rule_path"],
+                })
+
+    return new_relations, events
+
+
 def _evaluate_target_cardinality(spec, objects, index):
     subjects = [
         o["id"] for o in objects
@@ -440,7 +573,10 @@ def evaluate(field: dict[str, Any]) -> dict[str, Any]:
 
     derive_specs = [
         s for s in specs
-        if s.get("complete") and s.get("pattern") == "CROSS_SUBJECT_DERIVE_SHARED_OBJECT"
+        if s.get("complete") and s.get("pattern") in {
+            "CROSS_SUBJECT_DERIVE_SHARED_OBJECT",
+            "EVIDENCE_FILTER_CANDIDATES",
+        }
     ]
 
     existing_triples = {
@@ -455,9 +591,17 @@ def evaluate(field: dict[str, Any]) -> dict[str, Any]:
         round_events = []
 
         for spec in derive_specs:
-            new_relations, derivation_events = _derive_cross_subject(
-                spec, objects, index, existing_triples
-            )
+            if spec.get("pattern") == "CROSS_SUBJECT_DERIVE_SHARED_OBJECT":
+                new_relations, derivation_events = _derive_cross_subject(
+                    spec, objects, index, existing_triples
+                )
+            elif spec.get("pattern") == "EVIDENCE_FILTER_CANDIDATES":
+                new_relations, derivation_events = _derive_evidence_filter(
+                    spec, objects, index, existing_triples
+                )
+            else:
+                new_relations, derivation_events = [], []
+
             round_new.extend(new_relations)
             round_events.extend(derivation_events)
 
@@ -482,7 +626,10 @@ def evaluate(field: dict[str, Any]) -> dict[str, Any]:
     for spec in specs:
         if not spec["complete"]:
             continue
-        if spec.get("pattern") == "CROSS_SUBJECT_DERIVE_SHARED_OBJECT":
+        if spec.get("pattern") in {
+            "CROSS_SUBJECT_DERIVE_SHARED_OBJECT",
+            "EVIDENCE_FILTER_CANDIDATES",
+        }:
             continue
 
         if spec.get("pattern") == "CROSS_SUBJECT_SHARED_OBJECT":
