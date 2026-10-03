@@ -1,0 +1,23 @@
+name: Noepedia Experiment Verification
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "experiments/**"
+      - ".github/workflows/noepedia-experiments.yml"
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: python -m unittest discover -s experiments/experiment_003 -p "test_evaluator.py"
+      - run: python experiments/experiment_004/verify_output.py
+      - run: python experiments/experiment_005/verify_output.py
+      - run: python experiments/experiment_006/verify_output.py
+      - run: python experiments/experiment_007/verify_output.py
