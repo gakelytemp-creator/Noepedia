@@ -6,7 +6,8 @@ knowledge, and no mutation of OPEN records.
 
 Supported:
 - one-input SAME_NET rules
-- two-input SAME_OBJECT join rules
+- two-input same-subject SAME_OBJECT joins
+- two-input cross-subject shared-object joins
 """
 
 from __future__ import annotations
@@ -24,6 +25,13 @@ TWO_INPUT_REQUIRED_RULE_FIELDS = {
     "RULE_ARITY", "RULE_SCOPE", "INPUT_PREDICATE_1", "INPUT_PREDICATE_2",
     "INPUT_JOIN_CONSTRAINT", "REQUIRED_PREDICATE", "REQUIRED_TARGET_SOURCE",
 }
+CROSS_SUBJECT_REQUIRED_RULE_FIELDS = {
+    "RULE_ARITY", "RULE_PATTERN",
+    "INPUT_SUBJECT_TYPE_1", "INPUT_PREDICATE_1",
+    "INPUT_SUBJECT_TYPE_2", "INPUT_PREDICATE_2",
+    "INPUT_JOIN_CONSTRAINT",
+    "REQUIRED_SUBJECT_SOURCE", "REQUIRED_PREDICATE", "REQUIRED_TARGET_SOURCE",
+}
 
 def _index_relations(relations: list[dict[str, Any]]):
     by_subject_predicate = defaultdict(list)
@@ -35,6 +43,7 @@ def _rule_spec(rule_id: str, rule_relations: list[dict[str, Any]]) -> dict[str, 
     parts = [r for r in rule_relations if r["subject"] == rule_id]
     fields = {r["predicate"]: r for r in parts}
     arity = str(fields.get("RULE_ARITY", {}).get("object", "1"))
+    pattern = fields.get("RULE_PATTERN", {}).get("object")
 
     if arity == "1":
         missing = sorted(LEGACY_REQUIRED_RULE_FIELDS - fields.keys())
@@ -51,6 +60,33 @@ def _rule_spec(rule_id: str, rule_relations: list[dict[str, Any]]) -> dict[str, 
                 fields["RULE_SCOPE"]["id"], fields["INPUT_PREDICATE"]["id"],
                 fields["REQUIRED_PREDICATE"]["id"], fields["TARGET_CONSTRAINT"]["id"],
             ],
+        }
+
+    if arity == "2" and pattern == "CROSS_SUBJECT_SHARED_OBJECT":
+        missing = sorted(CROSS_SUBJECT_REQUIRED_RULE_FIELDS - fields.keys())
+        if missing:
+            return {"complete": False, "rule": rule_id, "arity": 2,
+                    "pattern": pattern, "missing_fields": missing,
+                    "rule_path": [r["id"] for r in parts]}
+        ordered = [
+            "RULE_ARITY", "RULE_PATTERN",
+            "INPUT_SUBJECT_TYPE_1", "INPUT_PREDICATE_1",
+            "INPUT_SUBJECT_TYPE_2", "INPUT_PREDICATE_2",
+            "INPUT_JOIN_CONSTRAINT", "REQUIRED_SUBJECT_SOURCE",
+            "REQUIRED_PREDICATE", "REQUIRED_TARGET_SOURCE",
+        ]
+        return {
+            "complete": True, "rule": rule_id, "arity": 2,
+            "pattern": pattern,
+            "input_subject_type_1": fields["INPUT_SUBJECT_TYPE_1"]["object"],
+            "input_predicate_1": fields["INPUT_PREDICATE_1"]["object"],
+            "input_subject_type_2": fields["INPUT_SUBJECT_TYPE_2"]["object"],
+            "input_predicate_2": fields["INPUT_PREDICATE_2"]["object"],
+            "input_join_constraint": fields["INPUT_JOIN_CONSTRAINT"]["object"],
+            "required_subject_source": fields["REQUIRED_SUBJECT_SOURCE"]["object"],
+            "required_predicate": fields["REQUIRED_PREDICATE"]["object"],
+            "required_target_source": fields["REQUIRED_TARGET_SOURCE"]["object"],
+            "rule_path": [fields[name]["id"] for name in ordered],
         }
 
     if arity == "2":
@@ -147,6 +183,57 @@ def _evaluate_two_input(spec, subjects, index):
                 spec["rule"], subject, [a["id"], b["id"]],
                 spec["required_predicate"], a["object"],
                 spec["input_join_constraint"], spec["rule_path"], index))
+    return events
+
+
+def _evaluate_cross_subject(spec, objects, index):
+    if spec["input_join_constraint"] != "SAME_OBJECT":
+        return [{"event": "RULE_INCOMPLETE", "rule": spec["rule"],
+                 "missing_fields": ["SUPPORTED_INPUT_JOIN_CONSTRAINT"],
+                 "observed_constraint": spec["input_join_constraint"],
+                 "rule_path": spec["rule_path"]}]
+    if spec["required_subject_source"] != "INPUT_1_SUBJECT":
+        return [{"event": "RULE_INCOMPLETE", "rule": spec["rule"],
+                 "missing_fields": ["SUPPORTED_REQUIRED_SUBJECT_SOURCE"],
+                 "observed_subject_source": spec["required_subject_source"],
+                 "rule_path": spec["rule_path"]}]
+    if spec["required_target_source"] != "INPUT_2_SUBJECT":
+        return [{"event": "RULE_INCOMPLETE", "rule": spec["rule"],
+                 "missing_fields": ["SUPPORTED_REQUIRED_TARGET_SOURCE"],
+                 "observed_target_source": spec["required_target_source"],
+                 "rule_path": spec["rule_path"]}]
+
+    left_subjects = [o["id"] for o in objects if o.get("type") == spec["input_subject_type_1"]]
+    right_subjects = [o["id"] for o in objects if o.get("type") == spec["input_subject_type_2"]]
+    events = []
+
+    for left_subject in left_subjects:
+        left_rels = index.get((left_subject, spec["input_predicate_1"]), [])
+        matched = False
+
+        for right_subject in right_subjects:
+            right_rels = index.get((right_subject, spec["input_predicate_2"]), [])
+            for a in left_rels:
+                for b in right_rels:
+                    if a["object"] != b["object"]:
+                        continue
+                    matched = True
+                    events.extend(_compare_requirement(
+                        spec["rule"], left_subject, [a["id"], b["id"]],
+                        spec["required_predicate"], right_subject,
+                        spec["input_join_constraint"], spec["rule_path"], index
+                    ))
+
+        if left_rels and not matched:
+            events.append({
+                "event": "ANTECEDENT_NOT_SATISFIED",
+                "rule": spec["rule"],
+                "subject": left_subject,
+                "input_relations_1": [r["id"] for r in left_rels],
+                "constraint": spec["input_join_constraint"],
+                "rule_path": spec["rule_path"],
+            })
+
     return events
 
 def evaluate(field: dict[str, Any]) -> dict[str, Any]:
