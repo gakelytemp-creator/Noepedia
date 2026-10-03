@@ -224,7 +224,7 @@ This is a direct stress test for Noepedia object identity.
 
 The Everett **Consistency Gate** and Noepedia **Socratic Daimonion** should not be merged into one concept.
 
-The Daimonion is the general transaction and reflective boundary of the Noepedia field.
+The Daimonion architecture is the general transaction and reflective boundary of the Noepedia field. Internally it may contain multiple layer-local process instances; externally Everett still sees one accountable mediated boundary.
 
 The Everett Consistency Gate is a **domain-specific admission service** used when a candidate event or artifact seeks entry into a branch's canon.
 
