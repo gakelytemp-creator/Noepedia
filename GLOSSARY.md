@@ -139,6 +139,56 @@ An **Exclusion Cascade** is the progressive elimination of candidate causes, par
 
 ---
 
+## Representational Rank
+
+**Representational Rank** is a working measure of how many distinctions in a model remain independently supported rather than being reconstructed redundantly from the same surviving constraints.
+
+It is currently an engineering metaphor, not a fixed linear-algebraic definition.
+
+---
+
+## Axis Withdrawal
+
+**Axis Withdrawal** is the deliberate or accidental loss of one discrimination lens, relation network, or evidence channel in order to observe how the remaining representation deforms.
+
+Controlled axis withdrawal can be used as a self-diagnostic experiment.
+
+---
+
+## Reconstruction Degeneracy
+
+**Reconstruction Degeneracy** occurs when several materially different external states collapse into the same or nearly the same internal reconstruction.
+
+Degeneracy becomes dangerous when the lost alternatives are no longer preserved as OPEN.
+
+---
+
+## Diagnostic Independence
+
+**Diagnostic Independence** is the requirement that a self-check not depend entirely on the same projection or lens family whose integrity it is testing.
+
+It may be supplied by another lens, reciprocal process, lower layer, external measurement, provenance path, or delayed outcome.
+
+---
+
+## Epistemic Degradation Atlas
+
+An **Epistemic Degradation Atlas** is a proposed map from controlled losses of distinctions to their characteristic representational deformations, false closures, prediction failures, and useful discriminating tests.
+
+It diagnoses knowledge-system integrity, not a person's clinical state.
+
+---
+
+## Conceptual Descent Test
+
+The **Conceptual Descent Test** asks whether a supposedly mature abstraction actually makes lower-level implementation, experiment, reconstruction, or control easier.
+
+If conceptual OPEN birth has slowed, the system should descend.
+
+If lower-layer work remains unexpectedly difficult, that friction is evidence to REOPEN the higher abstraction.
+
+---
+
 ## Epistemic Maturity
 
 **Epistemic Maturity** is the declining rate at which ordinary novel contact generates genuinely new structural OPENs in a domain.
