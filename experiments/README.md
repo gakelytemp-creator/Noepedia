@@ -13,6 +13,7 @@ This directory contains the executable and archived experiment sequence.
 - [Experiment 007](experiment_007/) — derived relation consumed by a later rule
 - [Experiment 008](experiment_008/) — multi-round derived-relation closure
 - [Experiment 009](experiment_009/) — branching and explicit competition
+- [Experiment 010](experiment_010/) — evidence-driven branch discrimination without branch deletion
 
 See [Experiments 001–009 — State of Evidence](../EXPERIMENTS_001_009_SUMMARY.md) for the consolidated claim/evidence/limitation view.
 
