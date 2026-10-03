@@ -1242,6 +1242,28 @@ The full mechanism, including partial rendered substitution, part–whole constr
 Scientific neighbors and differences are mapped in [SCIENTIFIC_CONTEXT_AND_REFERENCES.md](SCIENTIFIC_CONTEXT_AND_REFERENCES.md).
 
 ---
+### Self-Diagnosis by Controlled Degradation
+
+Noepedia should eventually be able to test not only what it knows, but **how its own representation deforms when a distinction is removed**.
+
+A controlled axis-withdrawal experiment temporarily withholds one lens, relation network, or evidence channel and measures whether:
+
+- previously distinct states collapse together;
+- other lenses begin compensating;
+- mismatch rises;
+- OPENs are falsely closed;
+- or the Daimonion detects the degradation through an independent check.
+
+This leads to the working ideas of **representational rank**, **reconstruction degeneracy**, **diagnostic independence**, and an **epistemic degradation atlas**.
+
+The aim is not to diagnose people. It is to diagnose the integrity of a knowledge representation.
+
+A related closure rule is practical: when new conceptual OPENs become rare, descend into implementation. If the lower layer does not become easier, REOPEN the abstraction.
+
+See [ACTUALIZATION_AND_RECONSTRUCTION.md](ACTUALIZATION_AND_RECONSTRUCTION.md) for the full mechanism and [EXPECTATIONS.md](EXPECTATIONS.md) for proposed measurements.
+
+---
+
 ## 11B. Epistemic Teleportation
 
 Noepedia retrieval should be able to move more than a name or sentence.
