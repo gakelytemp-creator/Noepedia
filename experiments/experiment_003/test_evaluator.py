@@ -300,5 +300,63 @@ class EvaluatorTests(unittest.TestCase):
         self.assertEqual(competitions[0]["targets"], ["A", "B"])
 
 
+    def test_evidence_discriminates_candidates_without_deleting_branches(self):
+        field = {
+            "experiment_id": "EVIDENCE_FILTER_TEST",
+            "objects": [
+                {"id": "L", "type": "left"},
+                {"id": "A", "type": "option"},
+                {"id": "B", "type": "option"},
+                {"id": "RED", "type": "feature"},
+                {"id": "BLUE", "type": "feature"},
+                {"id": "RULE_F", "type": "consistency_rule"},
+            ],
+            "relations": [
+                {"id": "CA", "subject": "L", "predicate": "CAND", "object": "A", "network": "N", "status": "derived", "provenance": []},
+                {"id": "CB", "subject": "L", "predicate": "CAND", "object": "B", "network": "N", "status": "derived", "provenance": []},
+                {"id": "OBS", "subject": "L", "predicate": "OBS", "object": "RED", "network": "N", "status": "settled", "provenance": []},
+                {"id": "AF", "subject": "A", "predicate": "FEAT", "object": "RED", "network": "N", "status": "settled", "provenance": []},
+                {"id": "BF", "subject": "B", "predicate": "FEAT", "object": "BLUE", "network": "N", "status": "settled", "provenance": []},
+            ],
+            "rules": [
+                {"id": "F1", "subject": "RULE_F", "predicate": "RULE_PATTERN", "object": "EVIDENCE_FILTER_CANDIDATES", "network": "R", "status": "settled", "provenance": []},
+                {"id": "F2", "subject": "RULE_F", "predicate": "RULE_SCOPE", "object": "left", "network": "R", "status": "settled", "provenance": []},
+                {"id": "F3", "subject": "RULE_F", "predicate": "CANDIDATE_PREDICATE", "object": "CAND", "network": "R", "status": "settled", "provenance": []},
+                {"id": "F4", "subject": "RULE_F", "predicate": "OBSERVATION_PREDICATE", "object": "OBS", "network": "R", "status": "settled", "provenance": []},
+                {"id": "F5", "subject": "RULE_F", "predicate": "CANDIDATE_FEATURE_PREDICATE", "object": "FEAT", "network": "R", "status": "settled", "provenance": []},
+                {"id": "F6", "subject": "RULE_F", "predicate": "OUTPUT_PREDICATE", "object": "SUPPORTED", "network": "R", "status": "settled", "provenance": []},
+            ],
+            "open": [],
+        }
+
+        result = evaluate(field)
+        supported = [
+            r for r in result.get("derived_relations", [])
+            if r["predicate"] == "SUPPORTED"
+        ]
+        self.assertEqual(
+            [(r["subject"], r["predicate"], r["object"]) for r in supported],
+            [("L", "SUPPORTED", "A")],
+        )
+        support_events = [
+            e for e in result["events"]
+            if e["event"] == "CANDIDATE_SUPPORTED_BY_EVIDENCE"
+        ]
+        reject_events = [
+            e for e in result["events"]
+            if e["event"] == "CANDIDATE_REJECTED_BY_EVIDENCE"
+        ]
+        self.assertEqual(len(support_events), 1)
+        self.assertEqual(support_events[0]["candidate"], "A")
+        self.assertEqual(len(reject_events), 1)
+        self.assertEqual(reject_events[0]["candidate"], "B")
+        original_candidates = sorted(
+            (r["subject"], r["predicate"], r["object"])
+            for r in field["relations"]
+            if r["predicate"] == "CAND"
+        )
+        self.assertEqual(original_candidates, [("L", "CAND", "A"), ("L", "CAND", "B")])
+
+
 if __name__ == "__main__":
     unittest.main()
