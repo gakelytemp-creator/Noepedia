@@ -276,6 +276,18 @@
       "provenance": [
         "SRC_SYNTH"
       ]
+    },
+    {
+      "id": "R18",
+      "network": "NET_FUNCTION",
+      "subject": "J2",
+      "predicate": "EXPOSES_NET",
+      "object": "VOUT",
+      "status": "settled",
+      "provenance": [
+        "SRC_SYNTH"
+      ],
+      "note": "Added during pre-run schema audit so the task is justified by an explicit relation rather than by the human-readable label."
     }
   ],
   "open": [
