@@ -1725,6 +1725,9 @@ Noepedia currently has several complementary conceptual texts.
 - **[ACTUALIZATION_AND_RECONSTRUCTION.md](ACTUALIZATION_AND_RECONSTRUCTION.md)** records the reconstruction/actualization cycle: progressive relational surrogates, rendered substitution, part–whole constraints, reciprocal reconstruction, mismatch fields, exclusion cascades, layer closure, and cyclic epistemic maturity.
 - **[SCIENTIFIC_CONTEXT_AND_REFERENCES.md](SCIENTIFIC_CONTEXT_AND_REFERENCES.md)** maps Noepedia concepts to earlier scientific theories and papers, stating both overlap and difference so that independent rediscovery is not mistaken for historical priority.
 - **[RESEARCH_EVOLUTION.md](RESEARCH_EVOLUTION.md)** records how the research question itself evolved: external memory → explicit relations → OPEN structures → Daimonion → meta-layers → reconstruction and actualization → lens hierarchies → LLM↔LSM structural exchange → controlled degradation → conceptual descent into implementation.
+- **[ACADEMIC_PAPER_TRACK.md](ACADEMIC_PAPER_TRACK.md)** defines the strict academic-paper spine: claims, related work, experimental evidence, falsification criteria, and publication discipline.
+- **[PUBLIC_DISCOURSE_TRACK.md](PUBLIC_DISCOURSE_TRACK.md)** defines the scientific-popular narrative for public discussion, with strong metaphors but explicit limits on overclaiming.
+- **[WEBSITE_AND_PUBLICATION_PLAN.md](WEBSITE_AND_PUBLICATION_PLAN.md)** specifies the future GitHub Pages structure, safety-audit page, research/public reading paths, and publication sequence.
 
 In the shortest form: **the first text is about the map and the kind of knowledge-field we want to preserve; the second is about how the Daimonion travels with us through that map without letting us lose our position or silently damage it.**
 
