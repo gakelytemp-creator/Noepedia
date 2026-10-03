@@ -1,0 +1,352 @@
+{
+  "experiment_id": "NOEPEDIA_EXP_004_MULTI_RULE",
+  "fixture_status": "synthetic_controlled_fixture",
+  "objects": [
+    {
+      "id": "BOARD_004",
+      "type": "low_voltage_regulator_fixture"
+    },
+    {
+      "id": "J2",
+      "type": "connector"
+    },
+    {
+      "id": "J2_P1",
+      "type": "terminal"
+    },
+    {
+      "id": "J2_P2",
+      "type": "terminal"
+    },
+    {
+      "id": "U1",
+      "type": "regulator"
+    },
+    {
+      "id": "C1",
+      "type": "capacitor"
+    },
+    {
+      "id": "C2",
+      "type": "capacitor"
+    },
+    {
+      "id": "VIN",
+      "type": "net"
+    },
+    {
+      "id": "VOUT",
+      "type": "net"
+    },
+    {
+      "id": "GND",
+      "type": "net"
+    },
+    {
+      "id": "EN_PATH",
+      "type": "unknown_path"
+    },
+    {
+      "id": "SRC_FIXTURE",
+      "type": "source"
+    },
+    {
+      "id": "RULE_TERMINAL_EXPOSE_CONNECT",
+      "type": "consistency_rule"
+    },
+    {
+      "id": "RULE_CAPACITOR_STABILIZE_CONNECT",
+      "type": "consistency_rule"
+    },
+    {
+      "id": "RULE_REGULATOR_OUTPUT_CONNECT",
+      "type": "consistency_rule"
+    }
+  ],
+  "networks": [
+    "NET_PART_WHOLE",
+    "NET_CONNECTIVITY",
+    "NET_FUNCTION",
+    "NET_RULE"
+  ],
+  "relations": [
+    {
+      "id": "R01",
+      "subject": "J2_P1",
+      "predicate": "PART_OF",
+      "object": "J2",
+      "network": "NET_PART_WHOLE",
+      "status": "settled",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    },
+    {
+      "id": "R02",
+      "subject": "J2_P2",
+      "predicate": "PART_OF",
+      "object": "J2",
+      "network": "NET_PART_WHOLE",
+      "status": "settled",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    },
+    {
+      "id": "R03",
+      "subject": "J2_P1",
+      "predicate": "EXPOSES_NET",
+      "object": "VOUT",
+      "network": "NET_FUNCTION",
+      "status": "settled",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    },
+    {
+      "id": "R04",
+      "subject": "J2_P1",
+      "predicate": "CONNECTED_TO",
+      "object": "VIN",
+      "network": "NET_CONNECTIVITY",
+      "status": "provisional",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    },
+    {
+      "id": "R05",
+      "subject": "J2_P2",
+      "predicate": "EXPOSES_NET",
+      "object": "GND",
+      "network": "NET_FUNCTION",
+      "status": "settled",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    },
+    {
+      "id": "R06",
+      "subject": "J2_P2",
+      "predicate": "CONNECTED_TO",
+      "object": "GND",
+      "network": "NET_CONNECTIVITY",
+      "status": "settled",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    },
+    {
+      "id": "R07",
+      "subject": "C1",
+      "predicate": "STABILIZES",
+      "object": "VIN",
+      "network": "NET_FUNCTION",
+      "status": "settled",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    },
+    {
+      "id": "R08",
+      "subject": "C1",
+      "predicate": "CONNECTED_TO",
+      "object": "VIN",
+      "network": "NET_CONNECTIVITY",
+      "status": "settled",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    },
+    {
+      "id": "R09",
+      "subject": "C2",
+      "predicate": "STABILIZES",
+      "object": "VOUT",
+      "network": "NET_FUNCTION",
+      "status": "settled",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    },
+    {
+      "id": "R10",
+      "subject": "C2",
+      "predicate": "CONNECTED_TO",
+      "object": "VIN",
+      "network": "NET_CONNECTIVITY",
+      "status": "provisional",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    },
+    {
+      "id": "R11",
+      "subject": "U1",
+      "predicate": "REGULATES",
+      "object": "VOUT",
+      "network": "NET_FUNCTION",
+      "status": "settled",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    },
+    {
+      "id": "R12",
+      "subject": "U1",
+      "predicate": "CONNECTED_TO",
+      "object": "VOUT",
+      "network": "NET_CONNECTIVITY",
+      "status": "settled",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    }
+  ],
+  "rules": [
+    {
+      "id": "T01",
+      "subject": "RULE_TERMINAL_EXPOSE_CONNECT",
+      "predicate": "RULE_SCOPE",
+      "object": "terminal",
+      "network": "NET_RULE",
+      "status": "settled",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    },
+    {
+      "id": "T02",
+      "subject": "RULE_TERMINAL_EXPOSE_CONNECT",
+      "predicate": "INPUT_PREDICATE",
+      "object": "EXPOSES_NET",
+      "network": "NET_RULE",
+      "status": "settled",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    },
+    {
+      "id": "T03",
+      "subject": "RULE_TERMINAL_EXPOSE_CONNECT",
+      "predicate": "REQUIRED_PREDICATE",
+      "object": "CONNECTED_TO",
+      "network": "NET_RULE",
+      "status": "settled",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    },
+    {
+      "id": "T04",
+      "subject": "RULE_TERMINAL_EXPOSE_CONNECT",
+      "predicate": "TARGET_CONSTRAINT",
+      "object": "SAME_NET",
+      "network": "NET_RULE",
+      "status": "settled",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    },
+    {
+      "id": "C01",
+      "subject": "RULE_CAPACITOR_STABILIZE_CONNECT",
+      "predicate": "RULE_SCOPE",
+      "object": "capacitor",
+      "network": "NET_RULE",
+      "status": "settled",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    },
+    {
+      "id": "C02",
+      "subject": "RULE_CAPACITOR_STABILIZE_CONNECT",
+      "predicate": "INPUT_PREDICATE",
+      "object": "STABILIZES",
+      "network": "NET_RULE",
+      "status": "settled",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    },
+    {
+      "id": "C03",
+      "subject": "RULE_CAPACITOR_STABILIZE_CONNECT",
+      "predicate": "REQUIRED_PREDICATE",
+      "object": "CONNECTED_TO",
+      "network": "NET_RULE",
+      "status": "settled",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    },
+    {
+      "id": "C04",
+      "subject": "RULE_CAPACITOR_STABILIZE_CONNECT",
+      "predicate": "TARGET_CONSTRAINT",
+      "object": "SAME_NET",
+      "network": "NET_RULE",
+      "status": "settled",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    },
+    {
+      "id": "U01",
+      "subject": "RULE_REGULATOR_OUTPUT_CONNECT",
+      "predicate": "RULE_SCOPE",
+      "object": "regulator",
+      "network": "NET_RULE",
+      "status": "settled",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    },
+    {
+      "id": "U02",
+      "subject": "RULE_REGULATOR_OUTPUT_CONNECT",
+      "predicate": "INPUT_PREDICATE",
+      "object": "REGULATES",
+      "network": "NET_RULE",
+      "status": "settled",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    },
+    {
+      "id": "U03",
+      "subject": "RULE_REGULATOR_OUTPUT_CONNECT",
+      "predicate": "REQUIRED_PREDICATE",
+      "object": "CONNECTED_TO",
+      "network": "NET_RULE",
+      "status": "settled",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    },
+    {
+      "id": "U04",
+      "subject": "RULE_REGULATOR_OUTPUT_CONNECT",
+      "predicate": "TARGET_CONSTRAINT",
+      "object": "SAME_NET",
+      "network": "NET_RULE",
+      "status": "settled",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    }
+  ],
+  "open": [
+    {
+      "id": "OPEN_01",
+      "subject": "U1",
+      "predicate": "ENABLE_CONTROLLED_BY",
+      "object": "EN_PATH",
+      "status": "open",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    }
+  ]
+}
