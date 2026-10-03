@@ -526,3 +526,19 @@ It is a proposed mechanism inside the same reversible field.
 ---
 
 > **No mystery is gained by replacing causality with dice. The interesting question is whether a causal system can reorganize where its next cause comes from.**
+
+---
+
+## 22. Scientific Neighbors and Boundaries
+
+This mechanism was developed inside the Noepedia reconstruction, but several parts have clear scientific neighbors.
+
+- **Ashby's ultrastability** is a strong precedent for second-order adaptation, recurrent situations, temporary independence, and local stabilities. The Noepedia mechanism differs by making layer birth, OPEN structures, explicit goal formation, and auditable relational provenance first-class.
+- **Hierarchical reinforcement learning / options** is a precedent for higher-level handles that summarize longer lower-level action sequences. Noepedia meta-objects are broader than policies and can carry explanations, relations, evidence, or analogies.
+- **Perceptual decoupling and mind-wandering research** supports the narrower possibility that internally generated cognition can continue while current perceptual coupling is reduced. This does not establish Noepedia's free-will mechanism.
+- **Dreaming research in predictive-processing/free-energy traditions** is relevant to internally generated model activity during sleep, but Noepedia does not treat dreaming as proof of freedom.
+- **Predictive processing and generative models** are relevant to the idea that higher structures can generate expectations whose mismatch drives revision. Noepedia does not adopt prediction-error minimization as a universal objective.
+
+The detailed citations and differences are maintained in [SCIENTIFIC_CONTEXT_AND_REFERENCES.md](SCIENTIFIC_CONTEXT_AND_REFERENCES.md).
+
+> **Independent reconstruction of a mechanism is provenance, not a claim of historical priority.**
