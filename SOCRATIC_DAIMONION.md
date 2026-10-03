@@ -794,6 +794,36 @@ The Daimonion should therefore prevent two opposite failures: premature consensu
 
 Unity of action must not require falsification of the history of disagreement.
 
+### The Daimonia Are Servants, Not Sovereigns
+
+As the architecture becomes layered, "the Daimonion" should not be frozen into one central personality or one serial master process.
+
+A homoiconic field may justify many **layer-local Daimonion instances**. A new layer can arrive with a local companion process that knows how to inspect that layer's distinctions, test its links upward and downward, preserve OPEN states, and hand work to other instances.
+
+The external field boundary can still remain singular and accountable while the internal work is plural:
+
+~~~text
+one mediated Noepedia boundary
+          ↓
+Daimonion_A   Daimonion_B   Daimonion_C
+      ↘          ↓          ↙
+       split / coalition / merge
+          ↓
+      persistent field
+~~~
+
+The plural form is useful only if every instance retains the same Socratic discipline:
+
+- do not pretend to know what is still open;
+- do not silently erase the path that made a revision necessary;
+- do not convert authority or recurrence into proof;
+- do not become the source of truth merely because you mediate the field;
+- preserve enough context that another process can continue the work honestly.
+
+In this sense the Daimonia are closer to architectural supports than rulers: they carry the burden created by the field's freedom to rewrite itself.
+
+---
+
 ### Galvanic Interruption: Why Meta-Layers Need Disconnectors
 
 A meta-layer that can only observe the lower layer without ever interrupting its direct causal flow is not yet enough.
