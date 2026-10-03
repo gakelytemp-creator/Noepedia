@@ -1,0 +1,116 @@
+{
+  "experiment": "NOEPEDIA_EXP_008_MULTI_ROUND_CLOSURE",
+  "summary": {
+    "rule_count": 3,
+    "derived_relation_count": 6,
+    "event_counts": {
+      "DERIVED_RELATION": 6,
+      "CONSISTENT": 1,
+      "FORMAL_MISMATCH": 1,
+      "REQUIRED_RELATION_MISSING": 1
+    }
+  },
+  "derived_relations": [
+    {
+      "subject": "L1",
+      "predicate": "LINK",
+      "object": "R1"
+    },
+    {
+      "subject": "L2",
+      "predicate": "LINK",
+      "object": "R2"
+    },
+    {
+      "subject": "L3",
+      "predicate": "LINK",
+      "object": "R3"
+    },
+    {
+      "subject": "L1",
+      "predicate": "CHAIN",
+      "object": "M1"
+    },
+    {
+      "subject": "L2",
+      "predicate": "CHAIN",
+      "object": "M2"
+    },
+    {
+      "subject": "L3",
+      "predicate": "CHAIN",
+      "object": "M3"
+    }
+  ],
+  "required_events": [
+    {
+      "event": "DERIVED_RELATION",
+      "rule": "RULE_DERIVE_LINK",
+      "subject": "L1",
+      "derived_predicate": "LINK",
+      "derived_target": "R1"
+    },
+    {
+      "event": "DERIVED_RELATION",
+      "rule": "RULE_DERIVE_LINK",
+      "subject": "L2",
+      "derived_predicate": "LINK",
+      "derived_target": "R2"
+    },
+    {
+      "event": "DERIVED_RELATION",
+      "rule": "RULE_DERIVE_LINK",
+      "subject": "L3",
+      "derived_predicate": "LINK",
+      "derived_target": "R3"
+    },
+    {
+      "event": "DERIVED_RELATION",
+      "rule": "RULE_DERIVE_CHAIN",
+      "subject": "L1",
+      "derived_predicate": "CHAIN",
+      "derived_target": "M1"
+    },
+    {
+      "event": "DERIVED_RELATION",
+      "rule": "RULE_DERIVE_CHAIN",
+      "subject": "L2",
+      "derived_predicate": "CHAIN",
+      "derived_target": "M2"
+    },
+    {
+      "event": "DERIVED_RELATION",
+      "rule": "RULE_DERIVE_CHAIN",
+      "subject": "L3",
+      "derived_predicate": "CHAIN",
+      "derived_target": "M3"
+    },
+    {
+      "event": "CONSISTENT",
+      "rule": "RULE_CHECK_CHAIN",
+      "subject": "L1",
+      "expected_target": "M1",
+      "satisfying_relations": [
+        "L1C"
+      ]
+    },
+    {
+      "event": "FORMAL_MISMATCH",
+      "rule": "RULE_CHECK_CHAIN",
+      "subject": "L2",
+      "expected_target": "M2",
+      "conflicting_relation": "L2C",
+      "stored_target": "M_BAD"
+    },
+    {
+      "event": "REQUIRED_RELATION_MISSING",
+      "rule": "RULE_CHECK_CHAIN",
+      "subject": "L3",
+      "expected_target": "M3"
+    }
+  ],
+  "open_preserved": [
+    "OPEN_01"
+  ],
+  "open_records_unchanged": true
+}
