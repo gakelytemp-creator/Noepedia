@@ -824,11 +824,11 @@ Noepedia is the persistent semiotic field.
 
 **Socrates** is the historical human figure whose relation to knowledge motivates part of this project.
 
-**The Socratic Daimonion** is the working name for the resident field operator and reflective transaction boundary.
+**The Socratic Daimonion** is the working name for the accountable process family that operates inside the field and presents a mediated reflective transaction boundary to the outside.
 
 The important clarification is architectural:
 
-> **Humans, LLMs, instruments, and applications do not directly live inside or directly operate the persistent Noepedia field. They approach it through the Daimonion.**
+> **Humans, LLMs, instruments, and applications do not directly mutate the persistent Noepedia field. They approach it through an accountable Daimonion transaction boundary. Internally, that boundary may be implemented by many layer-local Daimonion processes working in parallel.**
 
 ~~~text
 HUMAN / LLM / TOOL / INSTRUMENT
@@ -891,6 +891,48 @@ P1 → REVISED_BY → P1_V2
 Noepedia should therefore preserve not only objects and links, but the difference between **what was encountered** and **what relation was proposed between encountered things**.
 
 This is one reason predicate networks remain revisable and researchable rather than becoming sacred schema.
+
+### One boundary, many Daimonion processes
+
+The earlier singular picture of "the Daimonion" should not be read as one central serial agent that owns the whole field.
+
+The external rule remains singular:
+
+~~~text
+HUMAN / LLM / TOOL / APPLICATION
+              ↓
+     mediated Noepedia boundary
+              ↓
+       persistent field
+~~~
+
+But inside that boundary, the architecture may contain many **layer-local Daimonion instances**:
+
+~~~text
+Layer_A + Daimonion_A
+Layer_B + Daimonion_B
+Layer_C + Daimonion_C
+        ↓
+split / delegate / dream / coalition / merge
+~~~
+
+This distinction is deliberate:
+
+> **One field boundary, many accountable Daimonion processes.**
+
+The Daimonia are servants of the system, not sovereigns above it. Their job is to keep a homoiconic field from silently tearing its own continuity apart while it remains free to rewrite, branch, fold, reopen, and reorganize itself.
+
+A Daimonion may operate in several orientations:
+
+- **introvert mode** — field-to-field work: internal inspection, OPEN discovery, validation, consolidation, dream scenes, restructuring, and generation of internal requirements;
+- **extrovert mode** — field-to-outside work: receiving traces, answering participants, requesting measurements, returning semiotic cuts, and mediating external transactions;
+- **coupled mode** — alternating internal reconstruction with external tests or measurements in a closed epistemic loop.
+
+These are execution orientations, not personalities.
+
+External projects should not need to know how many Daimonion instances are active internally. They should see a stable transaction contract.
+
+---
 
 ## 6. Mega-Graphs Are the Daimonion's Learned Working Bodies
 
@@ -1339,6 +1381,39 @@ No component needs to pretend to be every other component.
 
 ---
 
+## 15A. Ecosystem Responsibility Boundary
+
+The connected repositories should not duplicate Noepedia's epistemic machinery.
+
+A simple rule is:
+
+> **Noepedia does Noepedia's work. Domain systems expose their world, constraints, tools, traces, and domain-specific checks.**
+
+In particular:
+
+- **AISocket** owns bounded contact with devices, actions, local safety, and trace production. It does not decide which trace has become settled knowledge.
+- **OpenPCB Commons** owns the hardware-investigation domain, artifacts, board identities as domain records, measurements, and human-readable evidence trails. It does not need a second private Noepedia inside itself.
+- **Everett Portal** owns branch rules, canon workflow, and its domain-specific Consistency Gate. Branch-validity checking is not another Daimonion.
+- **3DGabro** owns engineering geometry, CAD operations, manufacturing constraints, and domain-specific constructive tests. Persistent cross-domain knowledge formation belongs to Noepedia.
+- **EtherCAT-CNC-Controller** owns hard real-time motion control. It must not depend on reflective Noepedia processing for servo timing or safety.
+- **3DGabro-Voxel-Analytics** owns voxel/octree computation and derived engineering measurements, not epistemic consolidation.
+- **AI Assembly** owns the protected-room experiment and its frozen public record. Noepedia may later preserve or analyze records, but it must not be inserted into the protected room as an unpreregistered live influence.
+- **Neumann-cellular-automaton** is a hardware/computation research substrate. It may someday host parallel logical processes, but it does not define Noepedia semantics.
+
+The integration contract should therefore remain narrow:
+
+~~~text
+domain system
+  → objects / traces / constraints / questions / domain checks
+  → Noepedia boundary
+  → contextual cut / OPEN requirements / provenance / proposed revisions
+  → domain system
+~~~
+
+Noepedia's internal multiplicity — one Daimonion, many instances, coalitions, dreams, or hardware mappings — is an implementation property of Noepedia unless a domain explicitly needs to inspect it for auditing.
+
+---
+
 ## 15. Relationship to AISocket, OpenPCB Commons, and Everett Portal
 
 AISocket is one way intelligence can obtain structured observations and bounded actions from real systems.
@@ -1570,7 +1645,7 @@ And even shorter:
 
 > **Noepedia is the shared notebook, not the world.**
 >
-> **The Daimonion is the only resident field operator.**
+> **Persistent field operations occur only through accountable Daimonion processes. Externally they present one mediated transaction boundary; internally they may split, cooperate, dream, delegate, and merge.**
 >
 > **A visitor receives the right relational cut instead of carrying the whole archive.**
 >
