@@ -77,6 +77,9 @@
       "expected_target": "R1",
       "satisfying_relations": [
         "L1C"
+      ],
+      "input_relations": [
+        "DERIVED::RULE_DERIVE_LINK::L1::LINK::R1"
       ]
     },
     {
@@ -85,13 +88,19 @@
       "subject": "L2",
       "expected_target": "R2",
       "conflicting_relation": "L2C",
-      "stored_target": "R_BAD"
+      "stored_target": "R_BAD",
+      "input_relations": [
+        "DERIVED::RULE_DERIVE_LINK::L2::LINK::R2"
+      ]
     },
     {
       "event": "REQUIRED_RELATION_MISSING",
       "rule": "RULE_CHECK_LINK",
       "subject": "L3",
-      "expected_target": "R3"
+      "expected_target": "R3",
+      "input_relations": [
+        "DERIVED::RULE_DERIVE_LINK::L3::LINK::R3"
+      ]
     }
   ],
   "open_preserved": [
