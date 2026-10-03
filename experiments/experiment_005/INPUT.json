@@ -1,0 +1,250 @@
+{
+  "experiment_id": "NOEPEDIA_EXP_005_TWO_INPUT_RULE",
+  "fixture_status": "synthetic_controlled_fixture",
+  "objects": [
+    {
+      "id": "A",
+      "type": "pattern_node"
+    },
+    {
+      "id": "B",
+      "type": "pattern_node"
+    },
+    {
+      "id": "C",
+      "type": "pattern_node"
+    },
+    {
+      "id": "D",
+      "type": "pattern_node"
+    },
+    {
+      "id": "X",
+      "type": "target"
+    },
+    {
+      "id": "Y",
+      "type": "target"
+    },
+    {
+      "id": "UNKNOWN_PATH",
+      "type": "unknown_path"
+    },
+    {
+      "id": "SRC_FIXTURE",
+      "type": "source"
+    },
+    {
+      "id": "RULE_TWO_INPUT_JOIN",
+      "type": "consistency_rule"
+    }
+  ],
+  "networks": [
+    "NET_PATTERN",
+    "NET_REQUIRED",
+    "NET_RULE"
+  ],
+  "relations": [
+    {
+      "id": "A1",
+      "subject": "A",
+      "predicate": "P",
+      "object": "X",
+      "network": "NET_PATTERN",
+      "status": "settled",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    },
+    {
+      "id": "A2",
+      "subject": "A",
+      "predicate": "Q",
+      "object": "X",
+      "network": "NET_PATTERN",
+      "status": "settled",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    },
+    {
+      "id": "A3",
+      "subject": "A",
+      "predicate": "R",
+      "object": "Y",
+      "network": "NET_REQUIRED",
+      "status": "provisional",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    },
+    {
+      "id": "B1",
+      "subject": "B",
+      "predicate": "P",
+      "object": "X",
+      "network": "NET_PATTERN",
+      "status": "settled",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    },
+    {
+      "id": "B2",
+      "subject": "B",
+      "predicate": "Q",
+      "object": "X",
+      "network": "NET_PATTERN",
+      "status": "settled",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    },
+    {
+      "id": "B3",
+      "subject": "B",
+      "predicate": "R",
+      "object": "X",
+      "network": "NET_REQUIRED",
+      "status": "settled",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    },
+    {
+      "id": "C1",
+      "subject": "C",
+      "predicate": "P",
+      "object": "X",
+      "network": "NET_PATTERN",
+      "status": "settled",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    },
+    {
+      "id": "C2",
+      "subject": "C",
+      "predicate": "Q",
+      "object": "X",
+      "network": "NET_PATTERN",
+      "status": "settled",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    },
+    {
+      "id": "D1",
+      "subject": "D",
+      "predicate": "P",
+      "object": "X",
+      "network": "NET_PATTERN",
+      "status": "settled",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    },
+    {
+      "id": "D2",
+      "subject": "D",
+      "predicate": "Q",
+      "object": "Y",
+      "network": "NET_PATTERN",
+      "status": "settled",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    }
+  ],
+  "rules": [
+    {
+      "id": "R501",
+      "subject": "RULE_TWO_INPUT_JOIN",
+      "predicate": "RULE_ARITY",
+      "object": "2",
+      "network": "NET_RULE",
+      "status": "settled",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    },
+    {
+      "id": "R502",
+      "subject": "RULE_TWO_INPUT_JOIN",
+      "predicate": "RULE_SCOPE",
+      "object": "pattern_node",
+      "network": "NET_RULE",
+      "status": "settled",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    },
+    {
+      "id": "R503",
+      "subject": "RULE_TWO_INPUT_JOIN",
+      "predicate": "INPUT_PREDICATE_1",
+      "object": "P",
+      "network": "NET_RULE",
+      "status": "settled",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    },
+    {
+      "id": "R504",
+      "subject": "RULE_TWO_INPUT_JOIN",
+      "predicate": "INPUT_PREDICATE_2",
+      "object": "Q",
+      "network": "NET_RULE",
+      "status": "settled",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    },
+    {
+      "id": "R505",
+      "subject": "RULE_TWO_INPUT_JOIN",
+      "predicate": "INPUT_JOIN_CONSTRAINT",
+      "object": "SAME_OBJECT",
+      "network": "NET_RULE",
+      "status": "settled",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    },
+    {
+      "id": "R506",
+      "subject": "RULE_TWO_INPUT_JOIN",
+      "predicate": "REQUIRED_PREDICATE",
+      "object": "R",
+      "network": "NET_RULE",
+      "status": "settled",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    },
+    {
+      "id": "R507",
+      "subject": "RULE_TWO_INPUT_JOIN",
+      "predicate": "REQUIRED_TARGET_SOURCE",
+      "object": "INPUT_1_OBJECT",
+      "network": "NET_RULE",
+      "status": "settled",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    }
+  ],
+  "open": [
+    {
+      "id": "OPEN_01",
+      "subject": "A",
+      "predicate": "UNKNOWN_RELATION",
+      "object": "UNKNOWN_PATH",
+      "status": "open",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    }
+  ]
+}
