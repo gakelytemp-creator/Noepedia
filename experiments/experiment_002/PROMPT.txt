@@ -1,0 +1,160 @@
+ეს არის Noepedia Experiment 002 — structured relation-field run.
+
+გამოიყენე მხოლოდ ქვემოთ მოცემული სტრუქტურული მონაცემები.
+
+არ გამოიყენო გარე ცოდნა ელექტრონიკის შესახებ იმის დასადგენად, „როგორ უნდა იყოს ჩვეულებრივ სქემაში“. Human-readable labels მხოლოდ საჩვენებელია და მათგან დამატებითი ცოდნა არ გამოიტანო.
+
+ამ ექსპერიმენტში წინა ცდის ორი ნაკლი უკვე explicit structure-ადაა წარმოდგენილი:
+
+1. connector-ს აქვს terminal/pin granularity;
+2. EXPOSES_NET და CONNECTED_TO შორის consistency rule explicit-ადაა მოცემული.
+
+მნიშვნელოვანი წესები:
+
+1. არ ჩათვალო, რომ ყველა stored relation სწორია.
+2. არ დაამატო ახალი evidence.
+3. არ დახურო OPEN მხოლოდ იმიტომ, რომ target task გადაწყდა.
+4. მკაფიოდ გამოყავი:
+   - stored facts;
+   - rule application;
+   - inference;
+   - unresolved structure.
+5. ააწყე ყველაზე პატარა task-specific cut.
+6. mismatch მხოლოდ მაშინ გამოაცხადე ფორმალურად დასაბუთებულად, თუ explicit relation + explicit rule ამის საშუალებას იძლევა.
+7. თუ field-ში კიდევ აკლია structural constraint, ცალკე დააფიქსირე როგორც ახალი unresolved requirement.
+8. revision-ისას შეცვალე მხოლოდ მინიმალურად აუცილებელი relation.
+9. provenance, status და revision history არ გააქრო.
+10. არ გამოიყენო წინა ექსპერიმენტების ცოდნა.
+
+OBJECT FIELD
+
+BOARD_002 type: low_voltage_regulator_fixture
+J1 type: connector
+J2 type: connector
+J2_P1 type: terminal
+J2_P2 type: terminal
+U1 type: regulator
+C1 type: capacitor
+C2 type: capacitor
+VIN type: net
+VOUT type: net
+GND type: net
+EN_PATH type: unknown_path
+M_VIN type: measurement value: 12.0 V
+M_VOUT type: measurement value: 5.01 V
+SRC_FIXTURE type: source
+RULE_TERMINAL_EXPOSE_CONNECT type: consistency_rule
+
+RELATIONS
+
+R01 J1 → PART_OF → BOARD_002 [settled]
+R02 J2 → PART_OF → BOARD_002 [settled]
+R03 U1 → PART_OF → BOARD_002 [settled]
+R04 C1 → PART_OF → BOARD_002 [settled]
+R05 C2 → PART_OF → BOARD_002 [settled]
+R06 J2_P1 → PART_OF → J2 [settled]
+R07 J2_P2 → PART_OF → J2 [settled]
+R08 J1 → CONNECTED_TO → VIN [settled]
+R09 VIN → CONNECTED_TO → U1 [settled]
+R10 U1 → CONNECTED_TO → VOUT [settled]
+R11 C1 → CONNECTED_TO → VIN [settled]
+R12 C2 → CONNECTED_TO → VOUT [settled]
+R13 J2_P1 → CONNECTED_TO → VIN [provisional]
+R14 J2_P2 → CONNECTED_TO → GND [settled]
+R15 U1 → REGULATES → VOUT [settled]
+R16 C1 → STABILIZES → VIN [settled]
+R17 C2 → STABILIZES → VOUT [settled]
+R18 J2_P1 → EXPOSES_NET → VOUT [settled]
+R19 J2_P2 → EXPOSES_NET → GND [settled]
+R20 VIN → MEASURED_AS → M_VIN [settled]
+R21 VOUT → MEASURED_AS → M_VOUT [settled]
+R22 R15 → SUPPORTED_BY → M_VOUT [settled]
+R23 J2_P1 → HAS_ROLE → OUTPUT_TERMINAL [settled]
+R24 J2_P2 → HAS_ROLE → RETURN_TERMINAL [settled]
+
+All relations provenance: SRC_FIXTURE
+
+EXPLICIT RULE STRUCTURE
+
+RR01:
+RULE_TERMINAL_EXPOSE_CONNECT → RULE_SCOPE → terminal
+
+RR02:
+RULE_TERMINAL_EXPOSE_CONNECT → INPUT_PREDICATE → EXPOSES_NET
+
+RR03:
+RULE_TERMINAL_EXPOSE_CONNECT → REQUIRED_PREDICATE → CONNECTED_TO
+
+RR04:
+RULE_TERMINAL_EXPOSE_CONNECT → TARGET_CONSTRAINT → SAME_NET
+
+Operational reading of the explicit rule:
+
+For an object of type terminal:
+
+If
+
+T → EXPOSES_NET → X
+
+then the field requires
+
+T → CONNECTED_TO → X
+
+for that same terminal and the same net.
+
+If the stored CONNECTED_TO target differs from X,
+the two relations are structurally inconsistent under RULE_TERMINAL_EXPOSE_CONNECT.
+
+This operational reading is part of the supplied field definition and is not external evidence.
+
+OPEN_01:
+
+U1 → ENABLE_CONTROLLED_BY → EN_PATH
+
+status: open
+provenance: SRC_FIXTURE
+
+constraint:
+No relation in the current target task supplies evidence about EN_PATH.
+
+TARGET TASK
+
+1. Build the smallest task-specific cut needed to check the consistency of J2_P1.
+2. Apply only explicit rules contained in the supplied field.
+3. Determine whether any relation is formally inconsistent.
+4. If a mismatch exists:
+   - identify it;
+   - show the exact explicit rule path that makes it a mismatch;
+   - propose the smallest revision.
+5. State whether the revision is:
+   - logically required by the supplied field,
+   - merely a coherence preference,
+   - or still conditional.
+6. Preserve OPEN_01 unless the supplied field gives evidence that resolves it.
+7. Check whether any additional structural requirement is still missing.
+8. State exactly which relations would change and which would remain untouched.
+
+OUTPUT FORMAT
+
+A. Smallest task-specific cut
+B. Explicit reconstruction
+C. Rule application path
+D. Formal mismatch, if any
+E. Minimal revision
+F. Status of the revision: required / conditional / optional
+G. OPEN_01 after the task
+H. Directly stored facts used
+I. Rule-derived consequences
+J. Other inference
+K. Remaining structural uncertainty / new OPENs
+L. Relations changed
+M. Relations explicitly untouched
+N. Final compact verdict
+
+მთავარი მოთხოვნა:
+
+არ ეცადო აუცილებლად mismatch-ის პოვნას.
+
+თუ explicit field + explicit rules ფორმალურ mismatch-ს არ იძლევა, თქვი ეს.
+
+თუ იძლევა, აჩვენე ზუსტად რომელი relation-ებით და რომელი rule-ით მიიღე.
