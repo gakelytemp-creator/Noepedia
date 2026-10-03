@@ -1578,6 +1578,12 @@ And even shorter:
 
 ---
 
+## Core Vocabulary
+
+- **[GLOSSARY.md](GLOSSARY.md)** defines the working architectural vocabulary for layers, Daimonion processes, OPEN structures, validation, delegation, logical parallelism, and related terms.
+
+---
+
 ## Philosophical Documents
 
 Noepedia currently has several complementary conceptual texts.
