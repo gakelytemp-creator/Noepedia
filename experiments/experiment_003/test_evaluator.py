@@ -232,5 +232,73 @@ class EvaluatorTests(unittest.TestCase):
         self.assertTrue(consistent["input_relation"].startswith("DERIVED::RULE_D::"))
 
 
+    def test_competing_derived_targets_are_preserved(self):
+        field = {
+            "experiment_id": "COMPETE_TEST",
+            "objects": [
+                {"id": "L", "type": "left"},
+                {"id": "A", "type": "a"},
+                {"id": "B", "type": "b"},
+                {"id": "XA", "type": "join"},
+                {"id": "XB", "type": "join"},
+                {"id": "RULE_A", "type": "consistency_rule"},
+                {"id": "RULE_B", "type": "consistency_rule"},
+                {"id": "RULE_C", "type": "consistency_rule"},
+            ],
+            "relations": [
+                {"id": "LPA", "subject": "L", "predicate": "PA", "object": "XA", "network": "N", "status": "settled", "provenance": []},
+                {"id": "AQA", "subject": "A", "predicate": "QA", "object": "XA", "network": "N", "status": "settled", "provenance": []},
+                {"id": "LPB", "subject": "L", "predicate": "PB", "object": "XB", "network": "N", "status": "settled", "provenance": []},
+                {"id": "BQB", "subject": "B", "predicate": "QB", "object": "XB", "network": "N", "status": "settled", "provenance": []},
+            ],
+            "rules": [],
+            "open": [],
+        }
+
+        def add_derive(prefix, rule_id, left_pred, right_type, right_pred):
+            defs = [
+                ("1", "RULE_ARITY", "2"),
+                ("2", "RULE_PATTERN", "CROSS_SUBJECT_DERIVE_SHARED_OBJECT"),
+                ("3", "INPUT_SUBJECT_TYPE_1", "left"),
+                ("4", "INPUT_PREDICATE_1", left_pred),
+                ("5", "INPUT_SUBJECT_TYPE_2", right_type),
+                ("6", "INPUT_PREDICATE_2", right_pred),
+                ("7", "INPUT_JOIN_CONSTRAINT", "SAME_OBJECT"),
+                ("8", "OUTPUT_SUBJECT_SOURCE", "INPUT_1_SUBJECT"),
+                ("9", "OUTPUT_PREDICATE", "CAND"),
+                ("10", "OUTPUT_TARGET_SOURCE", "INPUT_2_SUBJECT"),
+            ]
+            for suffix, pred, obj in defs:
+                field["rules"].append({
+                    "id": prefix + suffix, "subject": rule_id,
+                    "predicate": pred, "object": obj,
+                    "network": "RULE", "status": "settled", "provenance": []
+                })
+
+        add_derive("A", "RULE_A", "PA", "a", "QA")
+        add_derive("B", "RULE_B", "PB", "b", "QB")
+        for rid, pred, obj in [
+            ("C1", "RULE_PATTERN", "TARGET_CARDINALITY_CHECK"),
+            ("C2", "RULE_SCOPE", "left"),
+            ("C3", "INPUT_PREDICATE", "CAND"),
+            ("C4", "MAX_DISTINCT_TARGETS", "1"),
+        ]:
+            field["rules"].append({
+                "id": rid, "subject": "RULE_C", "predicate": pred,
+                "object": obj, "network": "RULE",
+                "status": "settled", "provenance": []
+            })
+
+        result = evaluate(field)
+        candidates = sorted(
+            (r["subject"], r["predicate"], r["object"])
+            for r in result["derived_relations"]
+        )
+        self.assertEqual(candidates, [("L", "CAND", "A"), ("L", "CAND", "B")])
+        competitions = [e for e in result["events"] if e["event"] == "COMPETING_DERIVATIONS"]
+        self.assertEqual(len(competitions), 1)
+        self.assertEqual(competitions[0]["targets"], ["A", "B"])
+
+
 if __name__ == "__main__":
     unittest.main()
