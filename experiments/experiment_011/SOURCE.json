@@ -1,0 +1,22 @@
+{
+  "source_name": "Numenta Anomaly Benchmark",
+  "repository": "numenta/NAB",
+  "repository_commit": "ea702d75cc2258d9d7dd35ca8e5e2539d71f3140",
+  "license": "MIT",
+  "data": {
+    "path": "data/realKnownCause/machine_temperature_system_failure.csv",
+    "git_blob_sha1": "7ac97fb6ef587efaf8770bfe7346e077da58ceb7",
+    "raw_url": "https://raw.githubusercontent.com/numenta/NAB/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realKnownCause/machine_temperature_system_failure.csv"
+  },
+  "labels": {
+    "path": "labels/combined_windows.json",
+    "git_blob_sha1": "2f1be355750a2fefa8d781215d3275fda3d83d23",
+    "raw_url": "https://raw.githubusercontent.com/numenta/NAB/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/labels/combined_windows.json",
+    "dataset_key": "realKnownCause/machine_temperature_system_failure.csv"
+  },
+  "source_notes": [
+    "Dataset is external to Noepedia.",
+    "Raw source is not rewritten by Experiment 011.",
+    "Detector receives only the CSV data file, not the label file."
+  ]
+}
