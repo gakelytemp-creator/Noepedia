@@ -238,28 +238,47 @@ def _evaluate_cross_subject(spec, objects, index):
 
 def evaluate(field: dict[str, Any]) -> dict[str, Any]:
     objects = field.get("objects", [])
-    index = _index_relations(field.get("relations", []))
+    relations = list(field.get("relations", []))
     rules = field.get("rules", [])
     open_records = deepcopy(field.get("open", []))
     rule_objects = [o for o in objects if o.get("type") == "consistency_rule"]
     events = []
 
+    specs = []
     for obj in rule_objects:
         spec = _rule_spec(obj["id"], rules)
+        specs.append(spec)
         if not spec["complete"]:
             events.append({
-                "event": "RULE_INCOMPLETE", "rule": obj["id"],
+                "event": "RULE_INCOMPLETE",
+                "rule": obj["id"],
                 "rule_arity": spec.get("arity"),
+                "rule_pattern": spec.get("pattern"),
                 "missing_fields": spec["missing_fields"],
                 "rule_path": spec["rule_path"],
             })
+
+    index = _index_relations(relations)
+
+    for spec in specs:
+        if not spec["complete"]:
             continue
 
-        subjects = [o["id"] for o in objects if o.get("type") == spec["scope_type"]]
+        if spec.get("pattern") == "CROSS_SUBJECT_SHARED_OBJECT":
+            events.extend(_evaluate_cross_subject(spec, objects, index))
+            continue
+
+        subjects = [
+            o["id"] for o in objects
+            if o.get("type") == spec.get("scope_type")
+        ]
         if not subjects:
-            events.append({"event": "SCOPE_UNRESOLVED", "rule": obj["id"],
-                           "scope_type": spec["scope_type"],
-                           "rule_path": spec["rule_path"]})
+            events.append({
+                "event": "SCOPE_UNRESOLVED",
+                "rule": spec["rule"],
+                "scope_type": spec.get("scope_type"),
+                "rule_path": spec["rule_path"],
+            })
             continue
 
         if spec["arity"] == 1:
@@ -274,7 +293,10 @@ def evaluate(field: dict[str, Any]) -> dict[str, Any]:
     return {
         "experiment": field.get("experiment_id"),
         "events": events,
-        "summary": {"rule_count": len(rule_objects), "event_counts": counts},
+        "summary": {
+            "rule_count": len(rule_objects),
+            "event_counts": counts,
+        },
         "open_preserved": [o["id"] for o in open_records],
         "open_records_unchanged": open_records == field.get("open", []),
     }
