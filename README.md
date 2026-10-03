@@ -1184,13 +1184,17 @@ An honest boundary is more useful than a fluent circular explanation.
 
 ---
 
-## 11A. Knowledge Is a Reduced Notebook, Not a Complete Copy
+## 11A. Knowledge Is a Reduced Notebook and a Progressive Relational Surrogate
 
 Noepedia never assumes that a stored object or triplet network exhausts the real object.
 
 A real object may contain indefinitely many properties and interaction possibilities that no current observer, culture, model, or instrument has yet distinguished.
 
 The field therefore records only what has become explicit through observation, measurement, interaction, comparison, or other evidence-bearing contact.
+
+Within that limit, Noepedia may be treated as a **progressively reconstructed relational surrogate**: it tries to preserve internal relations that are operationally equivalent to the reachable relations of the external object, while keeping the difference between model and world explicit.
+
+The surrogate can be uneven in resolution. One network may contain only an armature-like outline while another contains fine-grained detail.
 
 ~~~text
 REAL_OBJECT
@@ -1208,6 +1212,36 @@ The field should therefore remain open to later objectivization: new properties,
 
 ---
 
+### Actualization by Reconstruction Mismatch
+
+Noepedia should not keep the entire known world equally active.
+
+A working cycle is:
+
+~~~text
+reception
+→ decomposition
+→ internal reconstruction
+→ compare with incoming contact
+→ mismatch
+→ actualize the mismatch
+→ exclude what already fits
+→ reduce the residual search space
+→ test
+→ revise
+~~~
+
+What reconstructs correctly can recede into background.
+
+What fails reconstruction becomes actual.
+
+`OPEN` and `MISMATCH` remain distinct: `OPEN` marks a structurally required but unresolved position; `MISMATCH` marks a failed reconstruction against contact with the world.
+
+The full mechanism, including partial rendered substitution, part–whole constraint propagation, reciprocal reconstruction, exclusion cascades, layer closure, and epistemic maturity, is recorded in [ACTUALIZATION_AND_RECONSTRUCTION.md](ACTUALIZATION_AND_RECONSTRUCTION.md).
+
+Scientific neighbors and differences are mapped in [SCIENTIFIC_CONTEXT_AND_REFERENCES.md](SCIENTIFIC_CONTEXT_AND_REFERENCES.md).
+
+---
 ## 11B. Epistemic Teleportation
 
 Noepedia retrieval should be able to move more than a name or sentence.
@@ -1666,10 +1700,12 @@ Noepedia currently has several complementary conceptual texts.
 - **[GUIDING_PHILOSOPHY.md](GUIDING_PHILOSOPHY.md)** describes the broader philosophy of Noepedia itself: why knowledge should be externalized, addressable, revisable, and meta-semiotic; why names must remain separate from identities; how living knowledge, explanatory honesty, homoiconicity, provenance, and durable external memory fit together.
 - **[SOCRATIC_DAIMONION.md](SOCRATIC_DAIMONION.md)** describes the philosophy of the companion that moves with a thinker through that field: the distinction between Socrates and the Daimonion, the splinter and `STOP`, the temporary mega-graph, responsibility during self-revision, opposite poles and open counter-positions, and navigation through tensions while knowledge is still being formed.
 - **[DETERMINISTIC_FREEDOM_MECHANISM.md](DETERMINISTIC_FREEDOM_MECHANISM.md)** records the working deterministic account of layered freedom: quantitative expansion by higher discrimination, temporary causal decoupling, delegated lower control, traversal of a higher topology, goal formation, and reinjection of that goal as an exogenous task for the lower operational layer.
+- **[ACTUALIZATION_AND_RECONSTRUCTION.md](ACTUALIZATION_AND_RECONSTRUCTION.md)** records the reconstruction/actualization cycle: progressive relational surrogates, rendered substitution, part–whole constraints, reciprocal reconstruction, mismatch fields, exclusion cascades, layer closure, and cyclic epistemic maturity.
+- **[SCIENTIFIC_CONTEXT_AND_REFERENCES.md](SCIENTIFIC_CONTEXT_AND_REFERENCES.md)** maps Noepedia concepts to earlier scientific theories and papers, stating both overlap and difference so that independent rediscovery is not mistaken for historical priority.
 
 In the shortest form: **the first text is about the map and the kind of knowledge-field we want to preserve; the second is about how the Daimonion travels with us through that map without letting us lose our position or silently damage it.**
 
-A third conceptual bridge, **[EPISTEMIC_TELEPORTATION_AND_ASSEMBLY_ALIGNMENT.md](EPISTEMIC_TELEPORTATION_AND_ASSEMBLY_ALIGNMENT.md)**, records the newer view of Noepedia as a reduced shared scientific notebook, the Daimonion as the sole mediated field operator, epistemic teleportation of relation-network cuts, staged contributions, permissioned transactions, and the negative constraints inherited from AI Assembly Session 002.
+A third conceptual bridge, **[EPISTEMIC_TELEPORTATION_AND_ASSEMBLY_ALIGNMENT.md](EPISTEMIC_TELEPORTATION_AND_ASSEMBLY_ALIGNMENT.md)**, records the newer view of Noepedia as a reduced shared scientific notebook, accountable Daimonion-mediated field access, epistemic teleportation of relation-network cuts, staged contributions, permissioned transactions, and the negative constraints inherited from AI Assembly Session 002.
 
 A separate engineering forecast is kept in **[EXPECTATIONS.md](EXPECTATIONS.md)**. It records the present hypotheses about division of labor between Noepedia, LSM, LLM, and Daimonion; expected interaction, energy, hardware, and training costs; hallucination reduction; specialization; active learning; the measurable benefits we expect; and the conditions that would falsify those expectations. It is deliberately labeled as expectation rather than benchmark so that later results can be compared against what was actually predicted.
 
