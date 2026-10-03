@@ -477,3 +477,179 @@ REOPEN WHEN REALITY DISAGREES
 ~~~
 
 > **Noepedia does not need to make the whole world active. It needs to make the unresolved difference active.**
+
+
+---
+
+## 19. Controlled Axis Withdrawal and Epistemic Self-Diagnosis
+
+A knowledge system can lose integrity without merely losing facts.
+
+It may lose an **independent discrimination axis**.
+
+Suppose a working surrogate distinguishes a world through several partially independent lenses:
+
+~~~text
+geometry
+causality
+time
+probability
+part–whole structure
+provenance
+counterfactual structure
+...
+~~~
+
+If one lens becomes unavailable, the system may not simply report "unknown".
+
+The remaining lenses may begin to carry distinctions they were not designed to carry.
+
+This can produce **representational curvature**: several externally different states collapse into the same internal position, while the system continues to generate a single coherent-looking reconstruction.
+
+~~~text
+WORLD_A ─┐
+WORLD_B ─┼─→ same internal point
+WORLD_C ─┘
+~~~
+
+The danger is therefore not only missing information.
+
+It is **loss of discriminability hidden behind apparently complete reconstruction**.
+
+### Controlled axis withdrawal
+
+Noepedia should eventually support deliberate tests in which one or more lenses, relation networks, or evidence channels are temporarily withheld.
+
+The question is then:
+
+> How does the rest of the field deform when this distinction disappears?
+
+A controlled degradation experiment may record:
+
+1. which previously distinct states collapse together;
+2. which other lenses begin compensating;
+3. which mismatches increase;
+4. which OPENs are falsely closed;
+5. which predictions remain stable;
+6. whether the Daimonion detects the loss before external failure becomes obvious.
+
+This produces a **degradation trajectory** rather than a simple correct/incorrect score.
+
+### Representational rank
+
+The term **representational rank** is used here as a working engineering metaphor, not yet as a fixed mathematical definition.
+
+It refers to the number and independence of distinctions that remain genuinely supported by the field.
+
+A system may outwardly produce a rich answer while internally relying on fewer independent constraints than the answer appears to contain.
+
+A useful diagnostic therefore asks:
+
+> Which dimensions are independently grounded, and which are merely reconstructed from the surviving ones?
+
+### Reconstruction degeneracy
+
+A representation becomes **degenerate** when many materially different external states map to the same or nearly the same internal reconstruction.
+
+Degeneracy is especially dangerous when the system no longer represents that multiplicity as OPEN.
+
+~~~text
+many admissible worlds
+        ↓
+one internal reconstruction
+        ↓
+unjustified closure
+~~~
+
+The goal of self-diagnosis is not to prevent all compression.
+
+Compression is necessary.
+
+The goal is to detect when compression has destroyed a distinction that the task still needs.
+
+### The sober Daimonion condition
+
+A Daimonion cannot diagnose a degraded field if all of its checks depend on exactly the same degraded projection.
+
+Self-diagnosis therefore requires some degree of **diagnostic independence**.
+
+Possible independent checks include:
+
+- reciprocal reconstruction through another process;
+- comparison through another lens family;
+- external measurement;
+- provenance diversity;
+- delayed outcome comparison;
+- lower-layer reconstruction;
+- or a preserved reference path that was not altered by the same transformation.
+
+The working rule is:
+
+> **Do not ask a damaged projection to certify itself using only its own coordinates.**
+
+This does not require an infallible observer.
+
+It requires enough partially independent checks that degradation can itself become a MISMATCH.
+
+### Epistemic degradation atlas
+
+If controlled axis withdrawal produces repeatable deformation patterns, Noepedia may build an **epistemic degradation atlas**.
+
+Such an atlas would map:
+
+~~~text
+lost / weakened distinction
+        ↓
+characteristic deformation
+        ↓
+typical false closures
+        ↓
+affected predictions
+        ↓
+best discriminating tests
+~~~
+
+A future system could then compare an unfamiliar knowledge process against known degradation trajectories.
+
+This would be a diagnostic of **representation integrity**, not a clinical diagnosis of a person.
+
+The target is the knowledge system, model, or working field.
+
+---
+
+## 20. Conceptual Closure and the Descent Test
+
+The falling birth-rate of new OPENs can itself be useful information.
+
+A conceptual region may be approaching local maturity when:
+
+- new discussions mostly refine existing structures rather than create new fundamental objects;
+- new metaphors map onto already known mechanisms;
+- new OPENs become rarer and more local;
+- and the remaining uncertainty increasingly belongs to implementation and experiment.
+
+This is not proof that the theory is complete.
+
+It is a signal to **descend**.
+
+~~~text
+conceptual layer
+        ↓ local closure
+implementation / experiment
+        ↓
+works cleanly → remain below
+unexpected friction / mismatch
+        ↓
+REOPEN higher conceptual layer
+~~~
+
+The practical rule is:
+
+> **When conceptual OPEN birth slows, descend and make the lower layer work. If the lower layer does not become easier, rise again and reopen the abstraction that failed to earn operational leverage.**
+
+This gives layer closure an operational test.
+
+A good abstraction should reduce work below it.
+
+If it does not, its closure was premature, misplaced, or merely verbal.
+
