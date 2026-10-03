@@ -222,7 +222,7 @@ A crucial architectural clarification is now explicit:
 
 They approach it through the Socratic Daimonion.
 
-The Daimonion is the resident transaction layer of the field.
+The Daimonion architecture is the resident transaction layer of the field. It may contain multiple layer-local process instances behind one accountable external boundary.
 
 It may use LSM processes, deterministic algorithms, neural components, or specialized workers internally, but the external participant does not directly mutate the persistent graph.
 
@@ -410,7 +410,7 @@ And the shortest form:
 
 > **Noepedia is not the world. It is the shared notebook of what contact with the world has made reusable.**
 >
-> **The Daimonion is the only resident field operator.**
+> **Persistent Noepedia operations occur only through accountable Daimonion processes. Externally they present one mediated transaction boundary; internally they may be multiple and parallel.**
 >
 > **Epistemic teleportation moves usable relational structure, not merely sentences.**
 >
