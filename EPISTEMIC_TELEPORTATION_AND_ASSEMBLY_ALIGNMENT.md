@@ -117,7 +117,7 @@ It can also be measured by how many situations can be navigated correctly becaus
 
 A compact principle is:
 
-> **Knowledge is not a complete copy of the object. It is a growing network of relations that constrains and enables correct interaction with the object under stated conditions.**
+> **Knowledge is not a complete copy of the object. It is a progressively reconstructed, resolution-limited relational surrogate: a growing network of relations that constrains and enables correct interaction with the object under stated conditions.**
 
 ---
 
@@ -214,6 +214,25 @@ It is the rapid relocation of enough explicit semiotic structure that another pr
 
 ---
 
+### Reconstruction mismatch can create the next requirement
+
+A transported semiotic cut can be used generatively: reconstruct what the field expects, compare it with new contact, and preserve the residual mismatch as an addressable problem.
+
+This does not require Noepedia to contain a complete duplicate world.
+
+It requires only enough internal relational equivalence to make a useful comparison.
+
+The resulting mismatch may:
+
+- open a new relation;
+- reopen a settled one;
+- request a measurement;
+- reduce a candidate space;
+- or expose the need for a new meta-layer.
+
+See [ACTUALIZATION_AND_RECONSTRUCTION.md](ACTUALIZATION_AND_RECONSTRUCTION.md) and the scientific comparison in [SCIENTIFIC_CONTEXT_AND_REFERENCES.md](SCIENTIFIC_CONTEXT_AND_REFERENCES.md).
+
+---
 ## 6. The Socratic Daimonion is the field operator
 
 A crucial architectural clarification is now explicit:
