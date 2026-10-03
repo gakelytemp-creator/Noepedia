@@ -42,6 +42,8 @@ relationally equivalent structure in NOEPEDIA
 
 The surrogate is always provisional and resolution-limited.
 
+**Scientific neighbor:** Conant & Ashby's Good Regulator theorem is a strong precedent for the importance of an internal model structurally related to the regulated system. Noepedia differs by allowing uneven, partial, task-relative relational surrogates and by not treating regulation as the field's only purpose. See [SCIENTIFIC_CONTEXT_AND_REFERENCES.md](SCIENTIFIC_CONTEXT_AND_REFERENCES.md).
+
 ---
 
 ## 2. Reconstruction Resolution
@@ -145,6 +147,8 @@ An OPEN on one side can be constrained by the structure already known on the rec
 
 This is **reciprocal reconstruction**.
 
+**Scientific neighbors:** wake–sleep learning provides a precedent for mutually training bottom-up recognition and top-down generation; assembly/disassembly planning provides a precedent for paired process families with shared constraints. Noepedia generalizes the idea to arbitrary operation-duality networks rather than one neural architecture or one manufacturing domain.
+
 ---
 
 ## 6. The Actualization Cycle
@@ -184,6 +188,8 @@ What fails reconstruction becomes figure.
 A compact principle is:
 
 > **What matches becomes background. What fails reconstruction becomes actual.**
+
+**Scientific neighbors:** predictive coding, predictive processing, analysis-by-synthesis, and prediction-error system identification all use discrepancies between model-generated expectations and observations. Noepedia differs by making the residual itself addressable inside a persistent field with OPEN, provenance, revision, and cross-domain relations.
 
 ---
 
@@ -231,6 +237,8 @@ The final step may be brute-force enumeration.
 The intelligence lies partly in making brute force cheap by reducing the residual search space first.
 
 This is the **exclusion cascade**.
+
+**Scientific neighbors:** active learning and version-space reduction similarly spend effort on informative cases that eliminate many hypotheses. Noepedia's candidate space may contain heterogeneous relational, causal, geometric, procedural, or provenance structures rather than one statistical hypothesis class.
 
 ---
 
@@ -318,6 +326,8 @@ AND
 no residual higher-order freedom requires another layer
 ~~~
 
+**Scientific neighbor:** Ashby's ultrastability, temporary independence, and local stabilities are important precedents for adaptation that preserves partial success and reorganizes only where necessary. Noepedia differs by representing closure, OPEN, meta-layer birth, and provenance explicitly.
+
 A three-layer object is therefore possible.
 
 So is a five-layer object.
@@ -353,6 +363,8 @@ new contact
 This suggests a working definition:
 
 > **Epistemic maturity is the declining rate at which ordinary novel contact generates genuinely new structural OPENs.**
+
+**Scientific neighbors:** intrinsic-motivation and developmental-robotics work studies curiosity, learning progress, competence development, and open-ended exploration. Noepedia's maturity measure is different: it is tied to the birth and reopening of explicit relational OPEN structures rather than a scalar reward signal.
 
 Maturity is local and cyclic.
 
