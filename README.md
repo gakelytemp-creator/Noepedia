@@ -1773,3 +1773,9 @@ Licensing for public knowledge data and human-readable content should be specifi
 ---
 
 **Born from AISocket. Expanded through dialogue. Still open to revision.**
+
+---
+
+## Executable experiment series
+
+The current synthetic executable sequence and its limitations are consolidated in [Experiments 001–009 — State of Evidence](EXPERIMENTS_001_009_SUMMARY.md). The experiment directory index is at [experiments/README.md](experiments/README.md).
