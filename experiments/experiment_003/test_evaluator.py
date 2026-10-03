@@ -150,5 +150,44 @@ class EvaluatorTests(unittest.TestCase):
         self.assertEqual(event["conflicting_relation"], "A3")
 
 
+    def test_cross_subject_join_rule(self):
+        field = {
+            "experiment_id": "CROSS_SUBJECT_TEST",
+            "objects": [
+                {"id": "L", "type": "left"},
+                {"id": "R", "type": "right"},
+                {"id": "BAD", "type": "right"},
+                {"id": "X", "type": "join"},
+                {"id": "RULE_X", "type": "consistency_rule"},
+            ],
+            "relations": [
+                {"id": "LP", "subject": "L", "predicate": "P", "object": "X", "network": "N", "status": "settled", "provenance": []},
+                {"id": "RQ", "subject": "R", "predicate": "Q", "object": "X", "network": "N", "status": "settled", "provenance": []},
+                {"id": "LR", "subject": "L", "predicate": "REL", "object": "BAD", "network": "N", "status": "settled", "provenance": []},
+            ],
+            "rules": [
+                {"id": "XR1", "subject": "RULE_X", "predicate": "RULE_ARITY", "object": "2", "network": "RULE", "status": "settled", "provenance": []},
+                {"id": "XR2", "subject": "RULE_X", "predicate": "RULE_PATTERN", "object": "CROSS_SUBJECT_SHARED_OBJECT", "network": "RULE", "status": "settled", "provenance": []},
+                {"id": "XR3", "subject": "RULE_X", "predicate": "INPUT_SUBJECT_TYPE_1", "object": "left", "network": "RULE", "status": "settled", "provenance": []},
+                {"id": "XR4", "subject": "RULE_X", "predicate": "INPUT_PREDICATE_1", "object": "P", "network": "RULE", "status": "settled", "provenance": []},
+                {"id": "XR5", "subject": "RULE_X", "predicate": "INPUT_SUBJECT_TYPE_2", "object": "right", "network": "RULE", "status": "settled", "provenance": []},
+                {"id": "XR6", "subject": "RULE_X", "predicate": "INPUT_PREDICATE_2", "object": "Q", "network": "RULE", "status": "settled", "provenance": []},
+                {"id": "XR7", "subject": "RULE_X", "predicate": "INPUT_JOIN_CONSTRAINT", "object": "SAME_OBJECT", "network": "RULE", "status": "settled", "provenance": []},
+                {"id": "XR8", "subject": "RULE_X", "predicate": "REQUIRED_SUBJECT_SOURCE", "object": "INPUT_1_SUBJECT", "network": "RULE", "status": "settled", "provenance": []},
+                {"id": "XR9", "subject": "RULE_X", "predicate": "REQUIRED_PREDICATE", "object": "REL", "network": "RULE", "status": "settled", "provenance": []},
+                {"id": "XR10", "subject": "RULE_X", "predicate": "REQUIRED_TARGET_SOURCE", "object": "INPUT_2_SUBJECT", "network": "RULE", "status": "settled", "provenance": []},
+            ],
+            "open": [],
+        }
+        result = evaluate(field)
+        mismatches = [e for e in result["events"] if e["event"] == "FORMAL_MISMATCH"]
+        self.assertEqual(len(mismatches), 1)
+        event = mismatches[0]
+        self.assertEqual(event["subject"], "L")
+        self.assertEqual(event["input_relations"], ["LP", "RQ"])
+        self.assertEqual(event["derived_requirement"]["target"], "R")
+        self.assertEqual(event["conflicting_relation"], "LR")
+
+
 if __name__ == "__main__":
     unittest.main()
