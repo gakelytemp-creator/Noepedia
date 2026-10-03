@@ -1,0 +1,486 @@
+{
+  "experiment_id": "NOEPEDIA_EXP_008_MULTI_ROUND_CLOSURE",
+  "fixture_status": "synthetic_controlled_fixture",
+  "objects": [
+    {
+      "id": "L1",
+      "type": "left_node"
+    },
+    {
+      "id": "L2",
+      "type": "left_node"
+    },
+    {
+      "id": "L3",
+      "type": "left_node"
+    },
+    {
+      "id": "R1",
+      "type": "right_node"
+    },
+    {
+      "id": "R2",
+      "type": "right_node"
+    },
+    {
+      "id": "R3",
+      "type": "right_node"
+    },
+    {
+      "id": "M1",
+      "type": "middle_node"
+    },
+    {
+      "id": "M2",
+      "type": "middle_node"
+    },
+    {
+      "id": "M3",
+      "type": "middle_node"
+    },
+    {
+      "id": "M_BAD",
+      "type": "middle_node"
+    },
+    {
+      "id": "X1",
+      "type": "join_object"
+    },
+    {
+      "id": "X2",
+      "type": "join_object"
+    },
+    {
+      "id": "X3",
+      "type": "join_object"
+    },
+    {
+      "id": "UNKNOWN_PATH",
+      "type": "unknown_path"
+    },
+    {
+      "id": "SRC_FIXTURE",
+      "type": "source"
+    },
+    {
+      "id": "RULE_DERIVE_LINK",
+      "type": "consistency_rule"
+    },
+    {
+      "id": "RULE_DERIVE_CHAIN",
+      "type": "consistency_rule"
+    },
+    {
+      "id": "RULE_CHECK_CHAIN",
+      "type": "consistency_rule"
+    }
+  ],
+  "networks": [
+    "NET_LEFT",
+    "NET_RIGHT",
+    "NET_TOUCH",
+    "NET_CONFIRM",
+    "NET_RULE"
+  ],
+  "relations": [
+    {
+      "id": "L1P",
+      "subject": "L1",
+      "predicate": "P",
+      "object": "X1",
+      "network": "NET_LEFT",
+      "status": "settled",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    },
+    {
+      "id": "R1Q",
+      "subject": "R1",
+      "predicate": "Q",
+      "object": "X1",
+      "network": "NET_RIGHT",
+      "status": "settled",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    },
+    {
+      "id": "M1T",
+      "subject": "M1",
+      "predicate": "TOUCHES",
+      "object": "R1",
+      "network": "NET_TOUCH",
+      "status": "settled",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    },
+    {
+      "id": "L1C",
+      "subject": "L1",
+      "predicate": "CONFIRMED_CHAIN",
+      "object": "M1",
+      "network": "NET_CONFIRM",
+      "status": "settled",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    },
+    {
+      "id": "L2P",
+      "subject": "L2",
+      "predicate": "P",
+      "object": "X2",
+      "network": "NET_LEFT",
+      "status": "settled",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    },
+    {
+      "id": "R2Q",
+      "subject": "R2",
+      "predicate": "Q",
+      "object": "X2",
+      "network": "NET_RIGHT",
+      "status": "settled",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    },
+    {
+      "id": "M2T",
+      "subject": "M2",
+      "predicate": "TOUCHES",
+      "object": "R2",
+      "network": "NET_TOUCH",
+      "status": "settled",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    },
+    {
+      "id": "L2C",
+      "subject": "L2",
+      "predicate": "CONFIRMED_CHAIN",
+      "object": "M_BAD",
+      "network": "NET_CONFIRM",
+      "status": "provisional",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    },
+    {
+      "id": "L3P",
+      "subject": "L3",
+      "predicate": "P",
+      "object": "X3",
+      "network": "NET_LEFT",
+      "status": "settled",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    },
+    {
+      "id": "R3Q",
+      "subject": "R3",
+      "predicate": "Q",
+      "object": "X3",
+      "network": "NET_RIGHT",
+      "status": "settled",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    },
+    {
+      "id": "M3T",
+      "subject": "M3",
+      "predicate": "TOUCHES",
+      "object": "R3",
+      "network": "NET_TOUCH",
+      "status": "settled",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    }
+  ],
+  "rules": [
+    {
+      "id": "A801",
+      "subject": "RULE_DERIVE_LINK",
+      "predicate": "RULE_ARITY",
+      "object": "2",
+      "network": "NET_RULE",
+      "status": "settled",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    },
+    {
+      "id": "A802",
+      "subject": "RULE_DERIVE_LINK",
+      "predicate": "RULE_PATTERN",
+      "object": "CROSS_SUBJECT_DERIVE_SHARED_OBJECT",
+      "network": "NET_RULE",
+      "status": "settled",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    },
+    {
+      "id": "A803",
+      "subject": "RULE_DERIVE_LINK",
+      "predicate": "INPUT_SUBJECT_TYPE_1",
+      "object": "left_node",
+      "network": "NET_RULE",
+      "status": "settled",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    },
+    {
+      "id": "A804",
+      "subject": "RULE_DERIVE_LINK",
+      "predicate": "INPUT_PREDICATE_1",
+      "object": "P",
+      "network": "NET_RULE",
+      "status": "settled",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    },
+    {
+      "id": "A805",
+      "subject": "RULE_DERIVE_LINK",
+      "predicate": "INPUT_SUBJECT_TYPE_2",
+      "object": "right_node",
+      "network": "NET_RULE",
+      "status": "settled",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    },
+    {
+      "id": "A806",
+      "subject": "RULE_DERIVE_LINK",
+      "predicate": "INPUT_PREDICATE_2",
+      "object": "Q",
+      "network": "NET_RULE",
+      "status": "settled",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    },
+    {
+      "id": "A807",
+      "subject": "RULE_DERIVE_LINK",
+      "predicate": "INPUT_JOIN_CONSTRAINT",
+      "object": "SAME_OBJECT",
+      "network": "NET_RULE",
+      "status": "settled",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    },
+    {
+      "id": "A808",
+      "subject": "RULE_DERIVE_LINK",
+      "predicate": "OUTPUT_SUBJECT_SOURCE",
+      "object": "INPUT_1_SUBJECT",
+      "network": "NET_RULE",
+      "status": "settled",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    },
+    {
+      "id": "A809",
+      "subject": "RULE_DERIVE_LINK",
+      "predicate": "OUTPUT_PREDICATE",
+      "object": "LINK",
+      "network": "NET_RULE",
+      "status": "settled",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    },
+    {
+      "id": "A810",
+      "subject": "RULE_DERIVE_LINK",
+      "predicate": "OUTPUT_TARGET_SOURCE",
+      "object": "INPUT_2_SUBJECT",
+      "network": "NET_RULE",
+      "status": "settled",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    },
+    {
+      "id": "B801",
+      "subject": "RULE_DERIVE_CHAIN",
+      "predicate": "RULE_ARITY",
+      "object": "2",
+      "network": "NET_RULE",
+      "status": "settled",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    },
+    {
+      "id": "B802",
+      "subject": "RULE_DERIVE_CHAIN",
+      "predicate": "RULE_PATTERN",
+      "object": "CROSS_SUBJECT_DERIVE_SHARED_OBJECT",
+      "network": "NET_RULE",
+      "status": "settled",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    },
+    {
+      "id": "B803",
+      "subject": "RULE_DERIVE_CHAIN",
+      "predicate": "INPUT_SUBJECT_TYPE_1",
+      "object": "left_node",
+      "network": "NET_RULE",
+      "status": "settled",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    },
+    {
+      "id": "B804",
+      "subject": "RULE_DERIVE_CHAIN",
+      "predicate": "INPUT_PREDICATE_1",
+      "object": "LINK",
+      "network": "NET_RULE",
+      "status": "settled",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    },
+    {
+      "id": "B805",
+      "subject": "RULE_DERIVE_CHAIN",
+      "predicate": "INPUT_SUBJECT_TYPE_2",
+      "object": "middle_node",
+      "network": "NET_RULE",
+      "status": "settled",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    },
+    {
+      "id": "B806",
+      "subject": "RULE_DERIVE_CHAIN",
+      "predicate": "INPUT_PREDICATE_2",
+      "object": "TOUCHES",
+      "network": "NET_RULE",
+      "status": "settled",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    },
+    {
+      "id": "B807",
+      "subject": "RULE_DERIVE_CHAIN",
+      "predicate": "INPUT_JOIN_CONSTRAINT",
+      "object": "SAME_OBJECT",
+      "network": "NET_RULE",
+      "status": "settled",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    },
+    {
+      "id": "B808",
+      "subject": "RULE_DERIVE_CHAIN",
+      "predicate": "OUTPUT_SUBJECT_SOURCE",
+      "object": "INPUT_1_SUBJECT",
+      "network": "NET_RULE",
+      "status": "settled",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    },
+    {
+      "id": "B809",
+      "subject": "RULE_DERIVE_CHAIN",
+      "predicate": "OUTPUT_PREDICATE",
+      "object": "CHAIN",
+      "network": "NET_RULE",
+      "status": "settled",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    },
+    {
+      "id": "B810",
+      "subject": "RULE_DERIVE_CHAIN",
+      "predicate": "OUTPUT_TARGET_SOURCE",
+      "object": "INPUT_2_SUBJECT",
+      "network": "NET_RULE",
+      "status": "settled",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    },
+    {
+      "id": "C801",
+      "subject": "RULE_CHECK_CHAIN",
+      "predicate": "RULE_SCOPE",
+      "object": "left_node",
+      "network": "NET_RULE",
+      "status": "settled",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    },
+    {
+      "id": "C802",
+      "subject": "RULE_CHECK_CHAIN",
+      "predicate": "INPUT_PREDICATE",
+      "object": "CHAIN",
+      "network": "NET_RULE",
+      "status": "settled",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    },
+    {
+      "id": "C803",
+      "subject": "RULE_CHECK_CHAIN",
+      "predicate": "REQUIRED_PREDICATE",
+      "object": "CONFIRMED_CHAIN",
+      "network": "NET_RULE",
+      "status": "settled",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    },
+    {
+      "id": "C804",
+      "subject": "RULE_CHECK_CHAIN",
+      "predicate": "TARGET_CONSTRAINT",
+      "object": "SAME_NET",
+      "network": "NET_RULE",
+      "status": "settled",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    }
+  ],
+  "open": [
+    {
+      "id": "OPEN_01",
+      "subject": "L1",
+      "predicate": "UNKNOWN_RELATION",
+      "object": "UNKNOWN_PATH",
+      "status": "open",
+      "provenance": [
+        "SRC_FIXTURE"
+      ]
+    }
+  ]
+}
