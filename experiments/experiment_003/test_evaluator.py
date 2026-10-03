@@ -116,5 +116,39 @@ class EvaluatorTests(unittest.TestCase):
         self.assertEqual(consistent["subject"], "B")
 
 
+    def test_two_input_rule(self):
+        field = {
+            "experiment_id": "TWO_INPUT_TEST",
+            "objects": [
+                {"id": "A", "type": "node"},
+                {"id": "X", "type": "target"},
+                {"id": "Y", "type": "target"},
+                {"id": "RULE", "type": "consistency_rule"},
+            ],
+            "relations": [
+                {"id": "A1", "subject": "A", "predicate": "P", "object": "X", "network": "N", "status": "settled", "provenance": []},
+                {"id": "A2", "subject": "A", "predicate": "Q", "object": "X", "network": "N", "status": "settled", "provenance": []},
+                {"id": "A3", "subject": "A", "predicate": "R", "object": "Y", "network": "N", "status": "settled", "provenance": []},
+            ],
+            "rules": [
+                {"id": "RR1", "subject": "RULE", "predicate": "RULE_ARITY", "object": "2", "network": "RULE", "status": "settled", "provenance": []},
+                {"id": "RR2", "subject": "RULE", "predicate": "RULE_SCOPE", "object": "node", "network": "RULE", "status": "settled", "provenance": []},
+                {"id": "RR3", "subject": "RULE", "predicate": "INPUT_PREDICATE_1", "object": "P", "network": "RULE", "status": "settled", "provenance": []},
+                {"id": "RR4", "subject": "RULE", "predicate": "INPUT_PREDICATE_2", "object": "Q", "network": "RULE", "status": "settled", "provenance": []},
+                {"id": "RR5", "subject": "RULE", "predicate": "INPUT_JOIN_CONSTRAINT", "object": "SAME_OBJECT", "network": "RULE", "status": "settled", "provenance": []},
+                {"id": "RR6", "subject": "RULE", "predicate": "REQUIRED_PREDICATE", "object": "R", "network": "RULE", "status": "settled", "provenance": []},
+                {"id": "RR7", "subject": "RULE", "predicate": "REQUIRED_TARGET_SOURCE", "object": "INPUT_1_OBJECT", "network": "RULE", "status": "settled", "provenance": []},
+            ],
+            "open": [],
+        }
+        result = evaluate(field)
+        self.assertEqual(result["summary"]["event_counts"].get("FORMAL_MISMATCH"), 1)
+        event = result["events"][0]
+        self.assertEqual(event["subject"], "A")
+        self.assertEqual(event["input_relations"], ["A1", "A2"])
+        self.assertEqual(event["derived_requirement"]["target"], "X")
+        self.assertEqual(event["conflicting_relation"], "A3")
+
+
 if __name__ == "__main__":
     unittest.main()
