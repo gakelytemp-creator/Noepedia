@@ -36,3 +36,5 @@ Corrections after observing a run must be recorded explicitly rather than silent
 - [Experiment 011](experiment_011/) — first external real sensor trace with label-blind deterministic detection
 
 - [Experiment 012](experiment_012/) — label-blind temporal decomposition of real-data mismatches
+
+- [Experiment 013](experiment_013/) — label-blind PRE/POST baseline transition test for outside-only COLD episodes
