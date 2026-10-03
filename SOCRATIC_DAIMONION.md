@@ -908,6 +908,8 @@ Freedom, in this working model, is therefore not absence of causality.
 
 It is increasing capacity to interrupt inherited causation, preserve a reflective interval, construct alternative relations, generate a goal, and return that goal as a new cause.
 
+A fuller layered formulation — including the distinction between quantitative and qualitative freedom, delegated lower control, higher-layer topological acceleration, and the difference between endogenous causation for the whole agent and an exogenous task for a lower subsystem — is recorded in [DETERMINISTIC_FREEDOM_MECHANISM.md](DETERMINISTIC_FREEDOM_MECHANISM.md).
+
 #### The Socratic Provocation Is Controlled Reconnection Pressure
 
 Socratic provocation is useful when it does not merely humiliate or overpower.
