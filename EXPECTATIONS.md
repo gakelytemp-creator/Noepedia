@@ -742,3 +742,29 @@ EXPECTATION ≠ RESULT
 DESIGN TARGET ≠ BENCHMARK
 PROMISING STRUCTURE ≠ PROVEN ECONOMICS
 ~~~
+
+---
+
+## Actualization and Maturity Metrics
+
+The newer reconstruction/actualization architecture suggests measurable quantities that should be treated as hypotheses rather than established benchmarks.
+
+| Metric | What it tests |
+|---|---|
+| Reconstruction mismatch rate | How often current relational surrogates fail against new contact |
+| Mismatch localization cost | Cost of identifying the smallest relevant region after a failed reconstruction |
+| Candidate-space reduction ratio | How strongly one observation or test narrows the remaining search space |
+| Residual brute-force cost | Whether actualization reduces the final search enough for direct enumeration |
+| OPEN birth rate per unit novel contact | Working measure of local epistemic maturity |
+| REOPEN rate after previously settled structure | Whether the field remains correctable rather than merely stable |
+| Layer-birth rate | How often unresolved structure genuinely requires a new meta-layer |
+| Layer-closure rate | Whether layers can stabilize without indefinite abstraction growth |
+| Reciprocal-reconstruction gain | Whether paired processes constrain each other's OPENs better than one-sided inference |
+| Equivalent-substitution success rate | Whether rendered partial models survive part–whole validation |
+| Resolution profile stability | Whether local high/low-resolution knowledge remains explicit rather than flattened into one confidence number |
+
+A mature domain should not be defined merely by archive size.
+
+> **Ordinary novel contact should generate fewer genuinely new structural OPENs while the field remains capable of REOPEN under real mismatch.**
+
+The full mechanism is described in [ACTUALIZATION_AND_RECONSTRUCTION.md](ACTUALIZATION_AND_RECONSTRUCTION.md).
