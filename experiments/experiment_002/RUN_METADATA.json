@@ -1,0 +1,11 @@
+{
+  "experiment_id": "NOEPEDIA_EXP_002_STRUCTURED_RELATION_FIELD",
+  "run_type": "fresh_chat",
+  "exact_prompt_preserved": true,
+  "result_preserved_verbatim": true,
+  "model_name": "unknown/not recorded at run time",
+  "model_configuration": "unknown/not recorded at run time",
+  "temperature": "not available/not recorded",
+  "run_timestamp": "not recorded",
+  "operator_note": "Run was performed in a fresh chat and the returned result was copied back into the main working conversation."
+}
