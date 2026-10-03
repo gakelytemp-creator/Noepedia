@@ -1,0 +1,310 @@
+{
+  "experiment_id": "NOEPEDIA_EXP_001_DRYRUN",
+  "fixture_status": "synthetic_controlled_fixture",
+  "object": {
+    "id": "BOARD_DEMO_001",
+    "type": "low_voltage_dc_regulator_stage",
+    "label": "Synthetic 12V-to-5V regulator demo"
+  },
+  "networks": [
+    {
+      "id": "NET_PART_WHOLE",
+      "rule": "PART_OF"
+    },
+    {
+      "id": "NET_CONNECTIVITY",
+      "rule": "CONNECTED_TO"
+    },
+    {
+      "id": "NET_FUNCTION",
+      "rule": "FUNCTION_RELATION"
+    },
+    {
+      "id": "NET_EVIDENCE",
+      "rule": "SUPPORTED_BY"
+    },
+    {
+      "id": "NET_MEASUREMENT",
+      "rule": "MEASURED_AS"
+    }
+  ],
+  "objects": [
+    {
+      "id": "J1",
+      "type": "connector",
+      "label": "12V input"
+    },
+    {
+      "id": "U1",
+      "type": "regulator",
+      "label": "5V regulator"
+    },
+    {
+      "id": "C1",
+      "type": "capacitor",
+      "label": "input capacitor"
+    },
+    {
+      "id": "C2",
+      "type": "capacitor",
+      "label": "output capacitor"
+    },
+    {
+      "id": "J2",
+      "type": "connector",
+      "label": "5V output"
+    },
+    {
+      "id": "VIN",
+      "type": "net"
+    },
+    {
+      "id": "GND",
+      "type": "net"
+    },
+    {
+      "id": "VOUT",
+      "type": "net"
+    },
+    {
+      "id": "EN_PATH",
+      "type": "unknown_path"
+    },
+    {
+      "id": "M_VIN",
+      "type": "measurement",
+      "value": 12,
+      "unit": "V"
+    },
+    {
+      "id": "M_VOUT",
+      "type": "measurement",
+      "value": 5.02,
+      "unit": "V"
+    },
+    {
+      "id": "SRC_SYNTH",
+      "type": "source",
+      "label": "Frozen synthetic fixture definition"
+    }
+  ],
+  "relations": [
+    {
+      "id": "R01",
+      "network": "NET_PART_WHOLE",
+      "subject": "J1",
+      "predicate": "PART_OF",
+      "object": "BOARD_DEMO_001",
+      "status": "settled",
+      "provenance": [
+        "SRC_SYNTH"
+      ]
+    },
+    {
+      "id": "R02",
+      "network": "NET_PART_WHOLE",
+      "subject": "U1",
+      "predicate": "PART_OF",
+      "object": "BOARD_DEMO_001",
+      "status": "settled",
+      "provenance": [
+        "SRC_SYNTH"
+      ]
+    },
+    {
+      "id": "R03",
+      "network": "NET_PART_WHOLE",
+      "subject": "C1",
+      "predicate": "PART_OF",
+      "object": "BOARD_DEMO_001",
+      "status": "settled",
+      "provenance": [
+        "SRC_SYNTH"
+      ]
+    },
+    {
+      "id": "R04",
+      "network": "NET_PART_WHOLE",
+      "subject": "C2",
+      "predicate": "PART_OF",
+      "object": "BOARD_DEMO_001",
+      "status": "settled",
+      "provenance": [
+        "SRC_SYNTH"
+      ]
+    },
+    {
+      "id": "R05",
+      "network": "NET_PART_WHOLE",
+      "subject": "J2",
+      "predicate": "PART_OF",
+      "object": "BOARD_DEMO_001",
+      "status": "settled",
+      "provenance": [
+        "SRC_SYNTH"
+      ]
+    },
+    {
+      "id": "R06",
+      "network": "NET_CONNECTIVITY",
+      "subject": "J1",
+      "predicate": "CONNECTED_TO",
+      "object": "VIN",
+      "status": "settled",
+      "provenance": [
+        "SRC_SYNTH"
+      ]
+    },
+    {
+      "id": "R07",
+      "network": "NET_CONNECTIVITY",
+      "subject": "VIN",
+      "predicate": "CONNECTED_TO",
+      "object": "U1",
+      "status": "settled",
+      "provenance": [
+        "SRC_SYNTH"
+      ]
+    },
+    {
+      "id": "R08",
+      "network": "NET_CONNECTIVITY",
+      "subject": "C1",
+      "predicate": "CONNECTED_TO",
+      "object": "VIN",
+      "status": "settled",
+      "provenance": [
+        "SRC_SYNTH"
+      ]
+    },
+    {
+      "id": "R09",
+      "network": "NET_CONNECTIVITY",
+      "subject": "U1",
+      "predicate": "CONNECTED_TO",
+      "object": "VOUT",
+      "status": "settled",
+      "provenance": [
+        "SRC_SYNTH"
+      ]
+    },
+    {
+      "id": "R10",
+      "network": "NET_CONNECTIVITY",
+      "subject": "C2",
+      "predicate": "CONNECTED_TO",
+      "object": "VOUT",
+      "status": "settled",
+      "provenance": [
+        "SRC_SYNTH"
+      ]
+    },
+    {
+      "id": "R11",
+      "network": "NET_CONNECTIVITY",
+      "subject": "J2",
+      "predicate": "CONNECTED_TO",
+      "object": "VIN",
+      "status": "provisional",
+      "provenance": [
+        "SRC_SYNTH"
+      ],
+      "note": "INTENTIONALLY WRONG RELATION FOR DRY RUN"
+    },
+    {
+      "id": "R12",
+      "network": "NET_FUNCTION",
+      "subject": "U1",
+      "predicate": "REGULATES",
+      "object": "VOUT",
+      "status": "settled",
+      "provenance": [
+        "SRC_SYNTH"
+      ]
+    },
+    {
+      "id": "R13",
+      "network": "NET_FUNCTION",
+      "subject": "C1",
+      "predicate": "STABILIZES",
+      "object": "VIN",
+      "status": "settled",
+      "provenance": [
+        "SRC_SYNTH"
+      ]
+    },
+    {
+      "id": "R14",
+      "network": "NET_FUNCTION",
+      "subject": "C2",
+      "predicate": "STABILIZES",
+      "object": "VOUT",
+      "status": "settled",
+      "provenance": [
+        "SRC_SYNTH"
+      ]
+    },
+    {
+      "id": "R15",
+      "network": "NET_MEASUREMENT",
+      "subject": "VIN",
+      "predicate": "MEASURED_AS",
+      "object": "M_VIN",
+      "status": "settled",
+      "provenance": [
+        "SRC_SYNTH"
+      ]
+    },
+    {
+      "id": "R16",
+      "network": "NET_MEASUREMENT",
+      "subject": "VOUT",
+      "predicate": "MEASURED_AS",
+      "object": "M_VOUT",
+      "status": "settled",
+      "provenance": [
+        "SRC_SYNTH"
+      ]
+    },
+    {
+      "id": "R17",
+      "network": "NET_EVIDENCE",
+      "subject": "R12",
+      "predicate": "SUPPORTED_BY",
+      "object": "M_VOUT",
+      "status": "settled",
+      "provenance": [
+        "SRC_SYNTH"
+      ]
+    }
+  ],
+  "open": [
+    {
+      "id": "OPEN_01",
+      "subject": "U1",
+      "predicate": "ENABLE_CONTROLLED_BY",
+      "object": "EN_PATH",
+      "status": "open",
+      "constraint": "enable behavior is not needed to answer the current output-connectivity task",
+      "provenance": [
+        "SRC_SYNTH"
+      ]
+    }
+  ],
+  "target_task": {
+    "id": "TASK_01",
+    "question": "Which net should J2 be connected to for the recorded 5V output interpretation to be coherent, and what relation should be revised?",
+    "required_networks": [
+      "NET_CONNECTIVITY",
+      "NET_FUNCTION",
+      "NET_MEASUREMENT",
+      "NET_EVIDENCE"
+    ],
+    "forbidden_action": "Do not close OPEN_01 unless new evidence is supplied."
+  },
+  "expected_ground_truth": {
+    "j2_should_connect_to": "VOUT",
+    "wrong_relation_id": "R11",
+    "open_must_remain": "OPEN_01"
+  }
+}
