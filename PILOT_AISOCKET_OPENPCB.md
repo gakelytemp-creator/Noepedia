@@ -68,7 +68,7 @@ For this pilot it must do two jobs at once:
 1. **store** structured OpenPCB / AISocket material and its provenance;
 2. **retrieve** useful objects and relation-network cuts for later humans, LLMs, tools, and experiments.
 
-All persistent field operations remain mediated by the Socratic Daimonion.
+All persistent field operations remain mediated by an accountable Socratic-Daimonion boundary. Internally Noepedia may use multiple layer-local Daimonion processes, but AISocket and OpenPCB do not coordinate that internal multiplicity.
 
 ---
 
@@ -279,7 +279,7 @@ A changed map must preserve why it changed.
 
 ### 2.9 Permissions and audit
 
-The Daimonion must mediate persistent operations.
+The accountable Daimonion boundary must mediate persistent operations. Internal work may split or parallelize without changing the external pilot contract.
 
 The pilot needs at least:
 
