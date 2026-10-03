@@ -1240,6 +1240,42 @@ But Noepedia should preserve enough structure that transmission does not become 
 
 ---
 
+## 20A. Knowledge Becomes Figure Where Reconstruction Fails
+
+The field does not need to treat every known relation as equally active.
+
+A useful working distinction is:
+
+~~~text
+what reconstructs correctly → background
+what fails reconstruction    → figure / actual
+~~~
+
+This creates a different view of ignorance.
+
+Ignorance is not only an empty place.
+
+It can also appear as a **difference between the world contacted now and the world reconstructed from the current field**.
+
+The Daimonion can follow that difference, reduce the candidate causes, request discriminating evidence, and revise the local surrogate.
+
+This is close to scientific traditions built around prediction error, generative reconstruction, active learning, and model-based adaptation, but Noepedia keeps the mismatch inside an explicit addressable field with OPEN structures, provenance, revisions, and layer-local processes. See [SCIENTIFIC_CONTEXT_AND_REFERENCES.md](SCIENTIFIC_CONTEXT_AND_REFERENCES.md).
+
+### Layer closure and epistemic age
+
+More meta-layers do not imply more questions.
+
+A new layer may compress many lower OPENs into a smaller number of higher-order relations.
+
+A domain becomes **epistemically mature** when ordinary new contact generates fewer genuinely new structural OPENs.
+
+Maturity is cyclic rather than final: a strong mismatch can REOPEN an old region and make it locally young again.
+
+A layer should stop generating a higher layer when it can close its own remaining structural freedom honestly and no unresolved higher-order requirement remains.
+
+The detailed mechanism is in [ACTUALIZATION_AND_RECONSTRUCTION.md](ACTUALIZATION_AND_RECONSTRUCTION.md).
+
+---
 ## 21. Epistemic Teleportation
 
 A shared external field changes what it means to "know" something locally.
