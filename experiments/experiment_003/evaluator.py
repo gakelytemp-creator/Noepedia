@@ -39,6 +39,9 @@ CROSS_SUBJECT_DERIVE_RULE_FIELDS = {
     "INPUT_JOIN_CONSTRAINT",
     "OUTPUT_SUBJECT_SOURCE", "OUTPUT_PREDICATE", "OUTPUT_TARGET_SOURCE",
 }
+CARDINALITY_RULE_FIELDS = {
+    "RULE_PATTERN", "RULE_SCOPE", "INPUT_PREDICATE", "MAX_DISTINCT_TARGETS",
+}
 
 def _index_relations(relations: list[dict[str, Any]]):
     by_subject_predicate = defaultdict(list)
@@ -51,6 +54,22 @@ def _rule_spec(rule_id: str, rule_relations: list[dict[str, Any]]) -> dict[str, 
     fields = {r["predicate"]: r for r in parts}
     arity = str(fields.get("RULE_ARITY", {}).get("object", "1"))
     pattern = fields.get("RULE_PATTERN", {}).get("object")
+
+    if pattern == "TARGET_CARDINALITY_CHECK":
+        missing = sorted(CARDINALITY_RULE_FIELDS - fields.keys())
+        if missing:
+            return {"complete": False, "rule": rule_id, "arity": 0,
+                    "pattern": pattern, "missing_fields": missing,
+                    "rule_path": [r["id"] for r in parts]}
+        ordered = ["RULE_PATTERN", "RULE_SCOPE", "INPUT_PREDICATE", "MAX_DISTINCT_TARGETS"]
+        return {
+            "complete": True, "rule": rule_id, "arity": 0,
+            "pattern": pattern,
+            "scope_type": fields["RULE_SCOPE"]["object"],
+            "input_predicate": fields["INPUT_PREDICATE"]["object"],
+            "max_distinct_targets": int(fields["MAX_DISTINCT_TARGETS"]["object"]),
+            "rule_path": [fields[name]["id"] for name in ordered],
+        }
 
     if arity == "1":
         missing = sorted(LEGACY_REQUIRED_RULE_FIELDS - fields.keys())
@@ -348,6 +367,55 @@ def _derive_cross_subject(spec, objects, index, existing_triples):
     return new_relations, events
 
 
+
+def _evaluate_target_cardinality(spec, objects, index):
+    subjects = [
+        o["id"] for o in objects
+        if o.get("type") == spec["scope_type"]
+    ]
+    if not subjects:
+        return [{
+            "event": "SCOPE_UNRESOLVED",
+            "rule": spec["rule"],
+            "scope_type": spec["scope_type"],
+            "rule_path": spec["rule_path"],
+        }]
+
+    events = []
+    for subject in subjects:
+        rels = index.get((subject, spec["input_predicate"]), [])
+        if not rels:
+            continue
+
+        targets = sorted({r["object"] for r in rels})
+        relation_ids = [r["id"] for r in rels]
+
+        if len(targets) > spec["max_distinct_targets"]:
+            events.append({
+                "event": "COMPETING_DERIVATIONS",
+                "rule": spec["rule"],
+                "subject": subject,
+                "predicate": spec["input_predicate"],
+                "targets": targets,
+                "relation_ids": relation_ids,
+                "max_distinct_targets": spec["max_distinct_targets"],
+                "rule_path": spec["rule_path"],
+            })
+        else:
+            events.append({
+                "event": "UNIQUE_CANDIDATE",
+                "rule": spec["rule"],
+                "subject": subject,
+                "predicate": spec["input_predicate"],
+                "targets": targets,
+                "relation_ids": relation_ids,
+                "max_distinct_targets": spec["max_distinct_targets"],
+                "rule_path": spec["rule_path"],
+            })
+
+    return events
+
+
 def evaluate(field: dict[str, Any]) -> dict[str, Any]:
     objects = field.get("objects", [])
     working_relations = list(field.get("relations", []))
@@ -419,6 +487,10 @@ def evaluate(field: dict[str, Any]) -> dict[str, Any]:
 
         if spec.get("pattern") == "CROSS_SUBJECT_SHARED_OBJECT":
             events.extend(_evaluate_cross_subject(spec, objects, index))
+            continue
+
+        if spec.get("pattern") == "TARGET_CARDINALITY_CHECK":
+            events.extend(_evaluate_target_cardinality(spec, objects, index))
             continue
 
         subjects = [
