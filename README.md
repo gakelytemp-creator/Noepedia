@@ -1580,10 +1580,11 @@ And even shorter:
 
 ## Philosophical Documents
 
-Noepedia currently has three complementary conceptual texts.
+Noepedia currently has several complementary conceptual texts.
 
 - **[GUIDING_PHILOSOPHY.md](GUIDING_PHILOSOPHY.md)** describes the broader philosophy of Noepedia itself: why knowledge should be externalized, addressable, revisable, and meta-semiotic; why names must remain separate from identities; how living knowledge, explanatory honesty, homoiconicity, provenance, and durable external memory fit together.
 - **[SOCRATIC_DAIMONION.md](SOCRATIC_DAIMONION.md)** describes the philosophy of the companion that moves with a thinker through that field: the distinction between Socrates and the Daimonion, the splinter and `STOP`, the temporary mega-graph, responsibility during self-revision, opposite poles and open counter-positions, and navigation through tensions while knowledge is still being formed.
+- **[DETERMINISTIC_FREEDOM_MECHANISM.md](DETERMINISTIC_FREEDOM_MECHANISM.md)** records the working deterministic account of layered freedom: quantitative expansion by higher discrimination, temporary causal decoupling, delegated lower control, traversal of a higher topology, goal formation, and reinjection of that goal as an exogenous task for the lower operational layer.
 
 In the shortest form: **the first text is about the map and the kind of knowledge-field we want to preserve; the second is about how the Daimonion travels with us through that map without letting us lose our position or silently damage it.**
 
