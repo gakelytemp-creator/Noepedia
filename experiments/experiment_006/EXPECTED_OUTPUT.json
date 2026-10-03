@@ -1,0 +1,61 @@
+{
+  "experiment": "NOEPEDIA_EXP_006_CROSS_SUBJECT_JOIN",
+  "summary": {
+    "rule_count": 1,
+    "event_counts": {
+      "FORMAL_MISMATCH": 1,
+      "CONSISTENT": 1,
+      "REQUIRED_RELATION_MISSING": 1,
+      "ANTECEDENT_NOT_SATISFIED": 1
+    }
+  },
+  "required_events": [
+    {
+      "event": "FORMAL_MISMATCH",
+      "rule": "RULE_CROSS_SUBJECT_JOIN",
+      "subject": "L1",
+      "input_relations": [
+        "L1P",
+        "R1Q"
+      ],
+      "expected_target": "R1",
+      "conflicting_relation": "L1R",
+      "stored_target": "R_BAD"
+    },
+    {
+      "event": "CONSISTENT",
+      "rule": "RULE_CROSS_SUBJECT_JOIN",
+      "subject": "L2",
+      "input_relations": [
+        "L2P",
+        "R2Q"
+      ],
+      "expected_target": "R2",
+      "satisfying_relations": [
+        "L2R"
+      ]
+    },
+    {
+      "event": "REQUIRED_RELATION_MISSING",
+      "rule": "RULE_CROSS_SUBJECT_JOIN",
+      "subject": "L3",
+      "input_relations": [
+        "L3P",
+        "R3Q"
+      ],
+      "expected_target": "R3"
+    },
+    {
+      "event": "ANTECEDENT_NOT_SATISFIED",
+      "rule": "RULE_CROSS_SUBJECT_JOIN",
+      "subject": "L4",
+      "input_relations_1": [
+        "L4P"
+      ]
+    }
+  ],
+  "open_preserved": [
+    "OPEN_01"
+  ],
+  "open_records_unchanged": true
+}
