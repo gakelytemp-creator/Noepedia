@@ -173,9 +173,17 @@ def evaluate(field: dict[str, Any]) -> dict[str, Any]:
                         "rule_path": spec["rule_path"],
                     })
 
+    counts = {}
+    for event in events:
+        counts[event["event"]] = counts.get(event["event"], 0) + 1
+
     return {
         "experiment": field.get("experiment_id"),
         "events": events,
+        "summary": {
+            "rule_count": len(rule_objects),
+            "event_counts": counts,
+        },
         "open_preserved": [item["id"] for item in open_records],
         "open_records_unchanged": open_records == field.get("open", []),
     }
