@@ -762,9 +762,53 @@ The newer reconstruction/actualization architecture suggests measurable quantiti
 | Reciprocal-reconstruction gain | Whether paired processes constrain each other's OPENs better than one-sided inference |
 | Equivalent-substitution success rate | Whether rendered partial models survive part–whole validation |
 | Resolution profile stability | Whether local high/low-resolution knowledge remains explicit rather than flattened into one confidence number |
+| Representational rank under controlled axis withdrawal | Whether apparently rich output still depends on genuinely independent distinctions |
+| Reconstruction degeneracy | How many materially different external states collapse into one internal reconstruction |
+| False-closure rate after lens removal | Whether missing distinctions are honestly exposed as OPEN rather than silently filled |
+| Daimonion self-detection latency | How quickly the field detects that one of its own discrimination channels has degraded |
+| Diagnostic independence coverage | Whether degradation checks use at least one sufficiently independent path |
+| Degradation-trajectory repeatability | Whether controlled loss of the same lens creates a recognizable deformation pattern |
+| Conceptual descent gain | Whether closing a conceptual layer measurably reduces difficulty in implementation or experiment |
+| Higher-layer REOPEN yield | Whether implementation friction correctly identifies abstractions that need revision |
 
 A mature domain should not be defined merely by archive size.
 
 > **Ordinary novel contact should generate fewer genuinely new structural OPENs while the field remains capable of REOPEN under real mismatch.**
 
 The full mechanism is described in [ACTUALIZATION_AND_RECONSTRUCTION.md](ACTUALIZATION_AND_RECONSTRUCTION.md).
+
+
+### Controlled degradation as a validation method
+
+Noepedia should eventually be tested not only by adding knowledge but by **removing selected discrimination channels under controlled conditions**.
+
+The purpose is to learn the shape of failure.
+
+A useful system should make it possible to distinguish:
+
+~~~text
+ordinary uncertainty
+vs
+missing evidence
+vs
+lost discrimination axis
+vs
+wrong reconstruction
+vs
+premature closure
+~~~
+
+The strongest version of the test asks whether a Daimonion can detect degradation before an external evaluator points it out.
+
+That requires diagnostic independence; otherwise the same damaged representation merely certifies itself.
+
+### Descent criterion for conceptual maturity
+
+A low OPEN-birth rate should trigger implementation rather than celebration.
+
+The operational expectation is:
+
+> **A mature abstraction should make the layer below easier to build, test, or navigate.**
+
+If it does not, the failure should REOPEN the conceptual layer.
+
