@@ -72,5 +72,49 @@ class EvaluatorTests(unittest.TestCase):
         self.assertIn("TARGET_CONSTRAINT", incomplete[0]["missing_fields"])
 
 
+    def test_multiple_rules_are_generic(self):
+        field = {
+            "experiment_id": "MULTI_RULE_TEST",
+            "objects": [
+                {"id": "A", "type": "type_a"},
+                {"id": "B", "type": "type_b"},
+                {"id": "X", "type": "target"},
+                {"id": "Y", "type": "target"},
+                {"id": "RULE_A", "type": "consistency_rule"},
+                {"id": "RULE_B", "type": "consistency_rule"},
+            ],
+            "relations": [
+                {"id": "A1", "subject": "A", "predicate": "P", "object": "X", "network": "N", "status": "settled", "provenance": []},
+                {"id": "A2", "subject": "A", "predicate": "Q", "object": "Y", "network": "N", "status": "settled", "provenance": []},
+                {"id": "B1", "subject": "B", "predicate": "R", "object": "X", "network": "N", "status": "settled", "provenance": []},
+                {"id": "B2", "subject": "B", "predicate": "S", "object": "X", "network": "N", "status": "settled", "provenance": []},
+            ],
+            "rules": [
+                {"id": "RA1", "subject": "RULE_A", "predicate": "RULE_SCOPE", "object": "type_a", "network": "RULE", "status": "settled", "provenance": []},
+                {"id": "RA2", "subject": "RULE_A", "predicate": "INPUT_PREDICATE", "object": "P", "network": "RULE", "status": "settled", "provenance": []},
+                {"id": "RA3", "subject": "RULE_A", "predicate": "REQUIRED_PREDICATE", "object": "Q", "network": "RULE", "status": "settled", "provenance": []},
+                {"id": "RA4", "subject": "RULE_A", "predicate": "TARGET_CONSTRAINT", "object": "SAME_NET", "network": "RULE", "status": "settled", "provenance": []},
+                {"id": "RB1", "subject": "RULE_B", "predicate": "RULE_SCOPE", "object": "type_b", "network": "RULE", "status": "settled", "provenance": []},
+                {"id": "RB2", "subject": "RULE_B", "predicate": "INPUT_PREDICATE", "object": "R", "network": "RULE", "status": "settled", "provenance": []},
+                {"id": "RB3", "subject": "RULE_B", "predicate": "REQUIRED_PREDICATE", "object": "S", "network": "RULE", "status": "settled", "provenance": []},
+                {"id": "RB4", "subject": "RULE_B", "predicate": "TARGET_CONSTRAINT", "object": "SAME_NET", "network": "RULE", "status": "settled", "provenance": []},
+            ],
+            "open": [],
+        }
+
+        result = evaluate(field)
+        self.assertEqual(result["summary"]["rule_count"], 2)
+        self.assertEqual(result["summary"]["event_counts"].get("FORMAL_MISMATCH"), 1)
+        self.assertEqual(result["summary"]["event_counts"].get("CONSISTENT"), 1)
+
+        mismatch = [e for e in result["events"] if e["event"] == "FORMAL_MISMATCH"][0]
+        self.assertEqual(mismatch["rule"], "RULE_A")
+        self.assertEqual(mismatch["subject"], "A")
+
+        consistent = [e for e in result["events"] if e["event"] == "CONSISTENT"][0]
+        self.assertEqual(consistent["rule"], "RULE_B")
+        self.assertEqual(consistent["subject"], "B")
+
+
 if __name__ == "__main__":
     unittest.main()
