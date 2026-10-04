@@ -44,3 +44,7 @@ Corrections after observing a run must be recorded explicitly rather than silent
 - [Experiment 015](experiment_015/) — label-blind time-of-day context test for the two COLD families
 
 - [Experiment 016](experiment_016/) — label-blind pre-onset drift comparison between the two COLD families
+
+- [Experiment 017](experiment_017/) — one-shot held-out NAB replication with exact matched-count null baseline
+
+Methodology note for Experiments 011–016: [Real-Data Instrumentation Track Status](../REAL_DATA_TRACK_STATUS.md).
