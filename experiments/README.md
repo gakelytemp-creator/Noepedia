@@ -48,3 +48,5 @@ Corrections after observing a run must be recorded explicitly rather than silent
 - [Experiment 017](experiment_017/) — one-shot held-out NAB replication with exact matched-count null baseline
 
 Methodology note for Experiments 011–016: [Real-Data Instrumentation Track Status](../REAL_DATA_TRACK_STATUS.md).
+
+- [Experiment 018](experiment_018/) — real observations projected into the relational field and evaluated by the existing Noepedia core evaluator
