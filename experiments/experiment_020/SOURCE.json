@@ -1,0 +1,61 @@
+{
+  "dataset_name": "MetroPT-3",
+  "source_repository": "UCI Machine Learning Repository",
+  "doi": "10.24432/C5VW3R",
+  "archive_url": "https://archive.ics.uci.edu/static/public/791/metropt%2B3%2Bdataset.zip",
+  "archive_sha256": "aab991a970e58210de853bb8078ce0e63abb4d9412fdc5c79792dae3d8e1721a",
+  "csv_member_basename": "MetroPT3(AirCompressor).csv",
+  "paths": {
+    "A": {
+      "channel": "DV_eletric",
+      "kind": "digital",
+      "uses": [
+        "DV_eletric"
+      ]
+    },
+    "B": {
+      "channel": "Motor_current",
+      "kind": "analog",
+      "uses": [
+        "Motor_current"
+      ]
+    },
+    "C": {
+      "channel": "TP2",
+      "kind": "analog",
+      "uses": [
+        "TP2"
+      ]
+    }
+  },
+  "semantics": {
+    "DV_eletric": "Compressor outlet-valve electrical state; active while the compressor operates under load.",
+    "Motor_current": "Electrical current drawn by one phase of the compressor motor.",
+    "TP2": "Pressure on the compressor discharge; published dataset documentation describes it as about zero whenever the unit is not loaded."
+  },
+  "provenance_refs": [
+    {
+      "repository": "firathdr/metroguard-ml",
+      "commit": "967a150f7cea092364707ccf2445e73ad8dc68c0",
+      "path": "configs/default.yaml",
+      "purpose": "UCI archive URL and pinned SHA-256"
+    },
+    {
+      "repository": "Cyan4973/public_datasets_collection",
+      "commit": "dbfb97bdf71892090fc8e943a68b4c41277cc1b5",
+      "path": "datasets/uci_metropt3_digital_states_u8/scripts/metropt.py",
+      "purpose": "MetroPT-3 column header and DV_eletric semantics"
+    },
+    {
+      "repository": "meddle-connect/jev-fault-diagnosis-poc",
+      "commit": "ef603a4ca97f31c25003045ee6f6e537752d9e24",
+      "path": "docs/dataset.md",
+      "purpose": "TP2 discharge-pressure semantics"
+    }
+  ],
+  "no_failure_labels_used": true,
+  "frozen_evaluator": {
+    "path": "experiments/experiment_003/evaluator.py",
+    "git_blob_sha1": "f1dad6fbcaf2f710c50edef331b7d947efdfa423"
+  }
+}
