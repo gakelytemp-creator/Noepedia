@@ -5,6 +5,7 @@ from typing import Any
 from .megagraph_adapter import materialize_state_series, split_series_by_time
 from .scanner import scan_relation_pairs, select_revision_pair
 from .pipeline import run_revision_from_observations
+from .strategies import RevisionStrategy, DEFAULT_REVISION_STRATEGY
 
 
 def run_graph_native_revision(
@@ -92,3 +93,38 @@ def run_graph_native_revision(
         "final_decision":revision["final_decision"],
         "decision_reason":revision["gate_audit"]["decision_reason"],
     }
+
+
+def run_graph_native_revision_with_strategy(
+    *,
+    events:list[dict[str,Any]],
+    parent_rule_id:str,
+    open_id:str,
+    proposed_new_rule_id:str|None=None,
+    strategy:RevisionStrategy|None=None,
+) -> dict[str,Any]:
+    strategy=strategy or DEFAULT_REVISION_STRATEGY
+    resolved=strategy.resolve(events)
+
+    scope=resolved["scope"]
+    split=resolved["split"]
+    search=resolved["search"]
+
+    result=run_graph_native_revision(
+        events=events,
+        relation_ids=scope["relation_ids"],
+        timeline=resolved["timeline"],
+        discovery_end_index=split["discovery_end_index"],
+        confirmation_start_index=split["confirmation_start_index"],
+        parent_rule_id=parent_rule_id,
+        open_id=open_id,
+        proposed_new_rule_id=proposed_new_rule_id,
+        pair_candidates=scope["pair_candidates"],
+        feature_config=search["feature_config"],
+        evaluator_config=search["evaluator_config"],
+        minimum_pair_score=search["minimum_pair_score"],
+        max_forward_fill_steps=search["max_forward_fill_steps"],
+        required_relative_advantage=search["required_relative_advantage"],
+    )
+    result["strategy_resolution"]=resolved
+    return result
