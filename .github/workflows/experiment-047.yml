@@ -1,0 +1,19 @@
+name: Experiment 047 External Transfer
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "experiments/experiment_047/**"
+      - ".github/workflows/experiment-047.yml"
+  workflow_dispatch:
+
+jobs:
+  verify-047:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: python experiments/experiment_047/run_experiment.py
