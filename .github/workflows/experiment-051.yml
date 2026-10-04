@@ -1,0 +1,20 @@
+name: Experiment 051 Remaining Evaluator Plugins
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "core/revision/**"
+      - "experiments/experiment_051/**"
+      - ".github/workflows/experiment-051.yml"
+  workflow_dispatch:
+
+jobs:
+  verify-051:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: python experiments/experiment_051/run_experiment.py
