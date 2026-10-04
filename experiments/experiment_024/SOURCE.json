@@ -1,0 +1,17 @@
+{
+  "dataset_name": "MetroPT-3",
+  "source_repository": "UCI Machine Learning Repository",
+  "doi": "10.24432/C5VW3R",
+  "archive_url": "https://archive.ics.uci.edu/static/public/791/metropt%2B3%2Bdataset.zip",
+  "archive_sha256": "aab991a970e58210de853bb8078ce0e63abb4d9412fdc5c79792dae3d8e1721a",
+  "csv_member_basename": "MetroPT3(AirCompressor).csv",
+  "calibration": {"start": 1, "count": 50000},
+  "threshold_test_window": {"start": 150001, "count": 5000, "future_context_rows": 101},
+  "motor_current_alphas": [0.2,0.3,0.4,0.5,0.6,0.7,0.8],
+  "frozen_temporal_distance_cap": 101,
+  "frozen_evaluator": {
+    "path": "experiments/experiment_003/evaluator.py",
+    "git_blob_sha1": "f1dad6fbcaf2f710c50edef331b7d947efdfa423"
+  },
+  "no_failure_labels_used": true
+}
