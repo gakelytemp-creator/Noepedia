@@ -50,3 +50,5 @@ Corrections after observing a run must be recorded explicitly rather than silent
 Methodology note for Experiments 011–016: [Real-Data Instrumentation Track Status](../REAL_DATA_TRACK_STATUS.md).
 
 - [Experiment 018](experiment_018/) — real observations projected into the relational field and evaluated by the existing Noepedia core evaluator
+
+- [Experiment 019](experiment_019/) — MetroPT-3 two-path real-data consistency inference inside the Noepedia core
