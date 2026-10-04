@@ -7,6 +7,7 @@ from .nulls import select_nulls, build_preregistration_template
 from .evaluator import evaluate_candidate, evaluate_temporal_candidate, evaluate_threshold_candidate, evaluate_orientation_candidate, evaluate_local_exception_candidate, evaluate_simpler_rule_comparator
 from .pipeline import run_revision, build_gate_case, run_revision_from_observations
 from .features import extract_mismatch_features, enrich_context_from_observations
+from .scanner import scan_relation_pairs, select_revision_pair, score_pair
 
 __all__ = [
     "evaluate_case",
@@ -27,4 +28,7 @@ __all__ = [
     "run_revision_from_observations",
     "extract_mismatch_features",
     "enrich_context_from_observations",
+    "scan_relation_pairs",
+    "select_revision_pair",
+    "score_pair",
 ]
