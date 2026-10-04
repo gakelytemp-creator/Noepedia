@@ -28,3 +28,14 @@ Executable provenance:
 - Experiment 047 — external architecture transfer
 
 The files in `experiments/` remain historical records. The reusable implementation now lives here.
+
+## Candidate generation and null selection
+
+The subsystem now also provides:
+- `candidates.py` — conservative structural candidate-template generation from explicit mismatch/Open features;
+- `nulls.py` — null-model selection from candidate family and explicit risk flags;
+- preregistration-template construction before confirmation.
+
+The generator does not invent domain semantics. If supplied structure does not justify a known revision family, it emits `OPEN_DECOMPOSITION` rather than fabricating a rule.
+
+Validated by Experiment 049.
