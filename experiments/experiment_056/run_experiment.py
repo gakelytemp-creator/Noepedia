@@ -69,6 +69,7 @@ def main():
     adapted=materialize_state_series(
         events,
         relation_ids=["A_SOURCE","B_TEMPORAL","C_IDENTICAL"],
+        timeline=list(range(1,len(source)+1)),
         initial_state_policy="DROP_UNTIL_ALL_KNOWN",
         max_forward_fill_steps=8
     )
