@@ -92,3 +92,17 @@ Therefore Experiment 018 does **not** show that Noepedia independently discovers
 > **Can the relational field itself combine two independent real evidence paths and derive a mismatch that neither instrumentation stream asserted directly?**
 
 That would move beyond importing detector classifications and test whether explicit cross-relational structure creates new real-data inference inside the Noepedia core.
+## Plumbing / information-gain status
+
+Experiment 018 is a successful **plumbing / architecture-integration test**.
+
+Its field builder writes `OBSERVED_STATE` directly from the instrumentation adapter while `EXPECTED_STATE` is fixed to the within-expectation token. The evaluator then checks equality between those explicit states.
+
+Therefore:
+
+~~~text
+architecture plumbing integration = PASS
+information-gain test             = NOT PERFORMED
+~~~
+
+The evaluator could not create a substantively new distinction beyond the single adapter verdict in Experiment 018. A stronger test requires at least two independent evidence paths whose disagreement is not asserted by either input path.
