@@ -1,0 +1,20 @@
+name: Experiment 056 Megagraph Series Adapter
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "core/revision/**"
+      - "experiments/experiment_056/**"
+      - ".github/workflows/experiment-056.yml"
+  workflow_dispatch:
+
+jobs:
+  verify-056:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: python experiments/experiment_056/run_experiment.py
