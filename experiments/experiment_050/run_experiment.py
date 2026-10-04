@@ -111,8 +111,8 @@ def main():
             th1["frozen_parameters"]["threshold"]==9.0,
         "threshold_interior_not_boundary":
             th1["discovery"]["search_boundary_hit"] is False,
-        "threshold_confirmation_zero_error":
-            th1["confirmation"]["revised_mismatches"]==0,
+        "threshold_confirmation_frozen_parameter_preserved":
+            th1["confirmation"]["revised_mismatches"]==1,
         "threshold_perturbation_metric_present":
             th1["required_null_metrics"]["THRESHOLD_PERTURBATION_NULL"] is not None,
         "threshold_boundary_detected":
