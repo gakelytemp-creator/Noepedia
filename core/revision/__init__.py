@@ -8,6 +8,7 @@ from .evaluator import evaluate_candidate, evaluate_temporal_candidate, evaluate
 from .pipeline import run_revision, build_gate_case, run_revision_from_observations
 from .features import extract_mismatch_features, enrich_context_from_observations
 from .scanner import scan_relation_pairs, select_revision_pair, score_pair
+from .megagraph_adapter import normalize_history_events, build_common_timeline, materialize_state_series, split_series_by_time
 
 __all__ = [
     "evaluate_case",
@@ -31,4 +32,8 @@ __all__ = [
     "scan_relation_pairs",
     "select_revision_pair",
     "score_pair",
+    "normalize_history_events",
+    "build_common_timeline",
+    "materialize_state_series",
+    "split_series_by_time",
 ]
