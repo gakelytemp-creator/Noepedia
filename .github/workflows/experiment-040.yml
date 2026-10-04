@@ -1,0 +1,19 @@
+name: Experiment 040 Focused Verification
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "experiments/experiment_040/**"
+      - ".github/workflows/experiment-040.yml"
+  workflow_dispatch:
+
+jobs:
+  verify-040:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: python experiments/experiment_040/run_experiment.py
