@@ -38,3 +38,5 @@ Corrections after observing a run must be recorded explicitly rather than silent
 - [Experiment 012](experiment_012/) — label-blind temporal decomposition of real-data mismatches
 
 - [Experiment 013](experiment_013/) — label-blind PRE/POST baseline transition test for outside-only COLD episodes
+
+- [Experiment 014](experiment_014/) — deterministic label-blind clustering of COLD episode structure
