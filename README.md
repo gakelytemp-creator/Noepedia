@@ -1779,3 +1779,32 @@ Licensing for public knowledge data and human-readable content should be specifi
 ## Executable experiment series
 
 The current synthetic executable sequence and its limitations are consolidated in [Experiments 001–009 — State of Evidence](EXPERIMENTS_001_009_SUMMARY.md). The experiment directory index is at [experiments/README.md](experiments/README.md).
+
+---
+
+## Core Revision Subsystem
+
+Noepedia now includes a reusable revision subsystem at:
+
+`core/revision/`
+
+It implements the validated revision lifecycle:
+
+`MISMATCH -> OPEN -> CANDIDATE -> FREEZE -> CONFIRM -> NULLS -> DECIDE -> MATERIALIZE -> REFINE OPEN`
+
+Current reusable core capabilities:
+- promotion-gate auditing;
+- PROMOTE / REJECT / REMAIN_OPEN decision semantics;
+- append-only graph materialization;
+- versioned rule promotion;
+- rejected-candidate preservation;
+- OPEN refinement without history deletion.
+
+Validation lineage:
+- Experiments 042–044 — protocol, data model, promotion gates;
+- Experiment 045 — executable decision harness;
+- Experiment 046 — self-revision graph materialization;
+- Experiment 047 — external architecture transfer;
+- Experiment 048 — migration into `core/revision/` and integration verification.
+
+The experiment folders remain historical provenance. The reusable implementation lives in the core subsystem.
