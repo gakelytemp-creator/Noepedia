@@ -1,0 +1,31 @@
+{
+  "dataset_name": "MetroPT-3",
+  "source_repository": "UCI Machine Learning Repository",
+  "doi": "10.24432/C5VW3R",
+  "archive_url": "https://archive.ics.uci.edu/static/public/791/metropt%2B3%2Bdataset.zip",
+  "archive_sha256": "aab991a970e58210de853bb8078ce0e63abb4d9412fdc5c79792dae3d8e1721a",
+  "csv_member_basename": "MetroPT3(AirCompressor).csv",
+  "paths": {
+    "A": {"channel": "DV_eletric", "kind": "digital", "uses": ["DV_eletric"]},
+    "B": {"channel": "Motor_current", "kind": "analog", "uses": ["Motor_current"]},
+    "C": {"channel": "TP2", "kind": "analog", "uses": ["TP2"]}
+  },
+  "offset_protocol": {
+    "candidate_min": -100,
+    "candidate_max": 100,
+    "selection_rows": 2500,
+    "confirmation_rows": 2500,
+    "edge_margin": 100,
+    "positive_sign_meaning": "compare reference at t with later Motor_current state at t+k"
+  },
+  "continuity_from_experiment_020": {
+    "ab_mismatch": 1165,
+    "pressure_supports_digital": 1163,
+    "pressure_supports_current": 2
+  },
+  "no_failure_labels_used": true,
+  "frozen_evaluator": {
+    "path": "experiments/experiment_003/evaluator.py",
+    "git_blob_sha1": "f1dad6fbcaf2f710c50edef331b7d947efdfa423"
+  }
+}
