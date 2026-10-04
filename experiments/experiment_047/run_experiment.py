@@ -366,11 +366,16 @@ def main():
     out["graph_invariants"]=graph["invariants"]
     out["external_architecture_pass"]=graph["invariants"]["all_pass"]
 
-    expected=(
-        "PROMOTE"
-        if out["scientific_result"]=="EXTERNAL_NULL_PROTECTED_REVISION_CONFIRMED"
-        else "REJECT"
-    )
+    # Decision expectation follows Experiment 044 semantics.
+    # A scientific non-confirmation can be REJECT or REMAIN_OPEN.
+    # Boundary hits or unavailable required nulls are epistemically unresolved.
+    if out["scientific_result"]=="EXTERNAL_NULL_PROTECTED_REVISION_CONFIRMED":
+        expected="PROMOTE"
+    elif out["discovery"]["lag_boundary_hit"] or out["confirmation"]["majority_mismatches"]==0:
+        expected="REMAIN_OPEN"
+    else:
+        expected="REJECT"
+    out["expected_harness_decision"]=expected
     out["decision_matches_scientific_result"]=audit["final_decision"]==expected
 
     RESULT.write_text(json.dumps(out,indent=2,ensure_ascii=False)+"\n",encoding="utf-8")
