@@ -1,0 +1,21 @@
+name: Experiments 033-034 Focused Verification
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "experiments/experiment_033/**"
+      - "experiments/experiment_034/**"
+      - ".github/workflows/experiments-033-034.yml"
+  workflow_dispatch:
+
+jobs:
+  verify-033-034:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: python experiments/experiment_033/run_experiment.py
+      - run: python experiments/experiment_034/run_experiment.py
