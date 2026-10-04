@@ -1,0 +1,19 @@
+name: Experiment 046 Self Revision Materialization
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "experiments/experiment_046/**"
+      - ".github/workflows/experiment-046.yml"
+  workflow_dispatch:
+
+jobs:
+  verify-046:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: python experiments/experiment_046/run_experiment.py
