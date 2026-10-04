@@ -1,0 +1,63 @@
+{
+  "dataset_name": "Condition Monitoring of Hydraulic Systems",
+  "uci_id": 447,
+  "doi": "10.24432/C5CW21",
+  "archive_url": "https://archive.ics.uci.edu/static/public/447/condition+monitoring+of+hydraulic+systems.zip",
+  "calibration": {
+    "start": 1,
+    "count": 800
+  },
+  "discovery": {
+    "start": 801,
+    "count": 600
+  },
+  "buffer": {
+    "start": 1401,
+    "count": 200
+  },
+  "confirmation": {
+    "start": 1601,
+    "count": 600
+  },
+  "lag_search": {
+    "min": 1,
+    "max": 30
+  },
+  "permutation_shifts": [
+    50,
+    100,
+    150,
+    200
+  ],
+  "null_relative_improvement_gate": 0.1,
+  "candidate_families": [
+    {
+      "id": "F1",
+      "profile_col": 0,
+      "healthy_value": 100,
+      "target_file": "CE.txt",
+      "target_name": "CE"
+    },
+    {
+      "id": "F2",
+      "profile_col": 1,
+      "healthy_value": 100,
+      "target_file": "PS2.txt",
+      "target_name": "PS2"
+    },
+    {
+      "id": "F3",
+      "profile_col": 2,
+      "healthy_value": 0,
+      "target_file": "SE.txt",
+      "target_name": "SE"
+    },
+    {
+      "id": "F4",
+      "profile_col": 3,
+      "healthy_value": 130,
+      "target_file": "PS1.txt",
+      "target_name": "PS1"
+    }
+  ]
+}
