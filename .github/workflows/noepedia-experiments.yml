@@ -39,3 +39,5 @@ jobs:
       - run: python experiments/experiment_023/run_experiment.py
       - run: python experiments/experiment_024/run_experiment.py
       - run: python experiments/experiment_025/run_experiment.py
+      - run: python experiments/experiment_026/run_experiment.py
+      - run: python experiments/experiment_027/run_experiment.py
