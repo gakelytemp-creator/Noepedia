@@ -218,6 +218,138 @@ def evaluate_threshold_candidate(
     }
 
 
+
+def invert_states(values:list[str]) -> list[str]:
+    return [HIGH if x==LOW else LOW for x in values]
+
+
+def evaluate_orientation_candidate(
+    source_discovery:list[str],
+    target_discovery:list[str],
+    source_confirmation:list[str],
+    target_confirmation:list[str],
+) -> dict[str,Any]:
+    direct_disc=mismatch_count(source_discovery,target_discovery)
+    inverted_disc_pred=invert_states(source_discovery)
+    inverted_disc=mismatch_count(inverted_disc_pred,target_discovery)
+
+    if direct_disc<=inverted_disc:
+        selected="DIRECT"
+        disc_mm=direct_disc
+    else:
+        selected="INVERTED"
+        disc_mm=inverted_disc
+
+    direct_conf=mismatch_count(source_confirmation,target_confirmation)
+    inverted_conf=mismatch_count(invert_states(source_confirmation),target_confirmation)
+    revised_conf=direct_conf if selected=="DIRECT" else inverted_conf
+
+    maj=majority_state(target_discovery)
+    majority_metric=sum(maj!=x for x in target_confirmation)
+
+    return {
+        "family":"RELATION_ORIENTATION_REVISION",
+        "discovery":{
+            "direct_mismatches":direct_disc,
+            "inverted_mismatches":inverted_disc,
+            "selected_parameters":{"orientation":selected},
+            "selected_mismatches":disc_mm,
+            "search_boundary_hit":False,
+        },
+        "confirmation":{
+            "direct_mismatches":direct_conf,
+            "inverted_mismatches":inverted_conf,
+            "revised_mismatches":revised_conf,
+            "majority_state":maj,
+            "majority_mismatches":majority_metric,
+        },
+        "frozen_parameters":{"orientation":selected},
+        "required_null_metrics":{
+            "MAJORITY_STATE_NULL":majority_metric
+        }
+    }
+
+
+def evaluate_local_exception_candidate(
+    discovery_event_matches:list[bool],
+    confirmation_event_matches:list[bool],
+    *,
+    replication_threshold:float,
+) -> dict[str,Any]:
+    if not discovery_event_matches:
+        raise ValueError("discovery_event_matches must not be empty")
+    if not confirmation_event_matches:
+        raise ValueError("confirmation_event_matches must not be empty")
+    if not 0.0<=replication_threshold<=1.0:
+        raise ValueError("replication_threshold must be between 0 and 1")
+
+    disc_rate=sum(discovery_event_matches)/len(discovery_event_matches)
+    conf_rate=sum(confirmation_event_matches)/len(confirmation_event_matches)
+    replicated=conf_rate>=replication_threshold
+
+    # For the generic gate engine, lower metric is better.
+    # Exception error = non-matching confirmation events.
+    revised_metric=sum(not x for x in confirmation_event_matches)
+    old_metric=len(confirmation_event_matches)
+
+    return {
+        "family":"LOCAL_EXCEPTION_CANDIDATE",
+        "discovery":{
+            "event_count":len(discovery_event_matches),
+            "match_count":sum(discovery_event_matches),
+            "match_fraction":disc_rate,
+            "selected_parameters":{
+                "replication_threshold":replication_threshold
+            },
+            "search_boundary_hit":False,
+        },
+        "confirmation":{
+            "event_count":len(confirmation_event_matches),
+            "match_count":sum(confirmation_event_matches),
+            "match_fraction":conf_rate,
+            "replicated":replicated,
+            "old_mismatches":old_metric,
+            "revised_mismatches":revised_metric,
+        },
+        "frozen_parameters":{
+            "replication_threshold":replication_threshold
+        },
+        "required_null_metrics":{
+            "OUT_OF_CLUSTER_TRANSFER_TEST":revised_metric if replicated else 0
+        }
+    }
+
+
+def evaluate_simpler_rule_comparator(
+    target_discovery:list[str],
+    target_confirmation:list[str],
+    proposed_confirmation:list[str],
+) -> dict[str,Any]:
+    maj=majority_state(target_discovery)
+    majority_metric=sum(maj!=x for x in target_confirmation)
+    proposed_metric=mismatch_count(proposed_confirmation,target_confirmation)
+
+    return {
+        "family":"SIMPLER_RULE_COMPARATOR",
+        "discovery":{
+            "majority_state":maj,
+            "search_boundary_hit":False,
+        },
+        "confirmation":{
+            "proposed_mismatches":proposed_metric,
+            "majority_mismatches":majority_metric,
+            "proposed_beats_majority":proposed_metric<majority_metric,
+        },
+        "frozen_parameters":{
+            "majority_state":maj
+        },
+        "required_null_metrics":{
+            "SIMPLER_RULE_NULL":majority_metric,
+            "MAJORITY_STATE_NULL":majority_metric,
+        }
+    }
+
+
 def evaluate_candidate(candidate:dict[str,Any], data:dict[str,Any], config:dict[str,Any]) -> dict[str,Any]:
     family=candidate["family"]
 
@@ -245,6 +377,28 @@ def evaluate_candidate(candidate:dict[str,Any], data:dict[str,Any], config:dict[
             threshold_grid=list(config["threshold_grid"]),
             old_threshold=float(config["old_threshold"]),
             perturbation_grid=list(config.get("perturbation_grid",[])),
+        )
+
+    if family=="RELATION_ORIENTATION_REVISION":
+        return evaluate_orientation_candidate(
+            data["source_discovery"],
+            data["target_discovery"],
+            data["source_confirmation"],
+            data["target_confirmation"],
+        )
+
+    if family=="LOCAL_EXCEPTION_CANDIDATE":
+        return evaluate_local_exception_candidate(
+            data["discovery_event_matches"],
+            data["confirmation_event_matches"],
+            replication_threshold=float(config["replication_threshold"]),
+        )
+
+    if family=="SIMPLER_RULE_COMPARATOR":
+        return evaluate_simpler_rule_comparator(
+            data["target_discovery"],
+            data["target_confirmation"],
+            data["proposed_confirmation"],
         )
 
     raise NotImplementedError(f"generic evaluator does not support family {family}")
