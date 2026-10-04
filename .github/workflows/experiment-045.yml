@@ -1,0 +1,19 @@
+name: Experiment 045 Automated Revision Harness
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "experiments/experiment_045/**"
+      - ".github/workflows/experiment-045.yml"
+  workflow_dispatch:
+
+jobs:
+  verify-045:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: python experiments/experiment_045/run_experiment.py
