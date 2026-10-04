@@ -42,3 +42,5 @@ Corrections after observing a run must be recorded explicitly rather than silent
 - [Experiment 014](experiment_014/) — deterministic label-blind clustering of COLD episode structure
 
 - [Experiment 015](experiment_015/) — label-blind time-of-day context test for the two COLD families
+
+- [Experiment 016](experiment_016/) — label-blind pre-onset drift comparison between the two COLD families
