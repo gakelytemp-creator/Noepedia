@@ -7,6 +7,7 @@ from .nulls import select_nulls, build_preregistration_template
 from .evaluator import evaluate_candidate
 from .engine import evaluate_case
 from .materializer import materialize, verify_invariants
+from .features import enrich_context_from_observations
 
 NON_METRIC_NULLS={"SEARCH_BOUNDARY_CHECK","OUT_OF_CLUSTER_TRANSFER_TEST"}
 
@@ -102,3 +103,31 @@ def run_revision(context:dict[str,Any],data:dict[str,Any],evaluator_config:dict[
         "graph_invariants":invariants,
         "final_decision":audit["final_decision"]
     }
+
+
+def run_revision_from_observations(
+    context:dict[str,Any],
+    data:dict[str,Any],
+    evaluator_config:dict[str,Any],
+    *,
+    feature_config:dict[str,Any]|None=None,
+    required_relative_advantage:float=0.10,
+):
+    """Extract structural features from discovery observations, then run revision."""
+    feature_config=feature_config or {}
+    if "source_discovery" not in data or "target_discovery" not in data:
+        raise ValueError("source_discovery and target_discovery are required for automatic feature extraction")
+    enriched=enrich_context_from_observations(
+        context,
+        data["source_discovery"],
+        data["target_discovery"],
+        **feature_config
+    )
+    result=run_revision(
+        enriched,
+        data,
+        evaluator_config,
+        required_relative_advantage=required_relative_advantage
+    )
+    result["feature_context"]=enriched
+    return result
