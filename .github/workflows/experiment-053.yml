@@ -1,0 +1,20 @@
+name: Experiment 053 Mismatch Feature Extractor
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "core/revision/**"
+      - "experiments/experiment_053/**"
+      - ".github/workflows/experiment-053.yml"
+  workflow_dispatch:
+
+jobs:
+  verify-053:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: python experiments/experiment_053/run_experiment.py
