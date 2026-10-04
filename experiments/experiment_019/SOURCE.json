@@ -1,0 +1,36 @@
+{
+  "dataset_name": "MetroPT-3",
+  "source_repository": "UCI Machine Learning Repository",
+  "doi": "10.24432/C5VW3R",
+  "archive_url": "https://archive.ics.uci.edu/static/public/791/metropt%2B3%2Bdataset.zip",
+  "archive_sha256": "aab991a970e58210de853bb8078ce0e63abb4d9412fdc5c79792dae3d8e1721a",
+  "csv_member_basename": "MetroPT3(AirCompressor).csv",
+  "expected_columns": [
+    "timestamp",
+    "Motor_current",
+    "DV_eletric"
+  ],
+  "signal_semantics": {
+    "DV_eletric": "Compressor outlet-valve electrical state; active while the compressor operates under load.",
+    "Motor_current": "Electrical current drawn by one phase of the compressor motor."
+  },
+  "provenance_refs": [
+    {
+      "repository": "firathdr/metroguard-ml",
+      "commit": "967a150f7cea092364707ccf2445e73ad8dc68c0",
+      "path": "configs/default.yaml",
+      "purpose": "UCI URL and pinned archive SHA-256"
+    },
+    {
+      "repository": "Cyan4973/public_datasets_collection",
+      "commit": "dbfb97bdf71892090fc8e943a68b4c41277cc1b5",
+      "path": "datasets/uci_metropt3_digital_states_u8/scripts/metropt.py",
+      "purpose": "published column header and DV_eletric operating semantics"
+    }
+  ],
+  "no_failure_labels_used": true,
+  "frozen_evaluator": {
+    "path": "experiments/experiment_003/evaluator.py",
+    "git_blob_sha1": "f1dad6fbcaf2f710c50edef331b7d947efdfa423"
+  }
+}
