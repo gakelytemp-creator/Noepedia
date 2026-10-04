@@ -8,7 +8,7 @@ HERE=Path(__file__).resolve().parent
 ROOT=HERE.parent.parent
 sys.path.insert(0,str(ROOT))
 
-from core.revision import LOW,HIGH
+from core.revision.evaluator import LOW,HIGH
 from core.revision.pipeline import run_revision
 
 
