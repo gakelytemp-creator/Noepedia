@@ -40,3 +40,5 @@ Corrections after observing a run must be recorded explicitly rather than silent
 - [Experiment 013](experiment_013/) — label-blind PRE/POST baseline transition test for outside-only COLD episodes
 
 - [Experiment 014](experiment_014/) — deterministic label-blind clustering of COLD episode structure
+
+- [Experiment 015](experiment_015/) — label-blind time-of-day context test for the two COLD families
