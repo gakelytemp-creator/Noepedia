@@ -39,3 +39,23 @@ The subsystem now also provides:
 The generator does not invent domain semantics. If supplied structure does not justify a known revision family, it emits `OPEN_DECOMPOSITION` rather than fabricating a rule.
 
 Validated by Experiment 049.
+
+
+## Generic candidate evaluator
+
+The subsystem now includes `evaluator.py` for deterministic parameter search and null-metric computation.
+
+Currently supported families:
+- `TEMPORAL_LAG_REVISION`
+- `DIRECTION_SPECIFIC_RULE`
+- `THRESHOLD_REFINEMENT`
+
+The evaluator:
+- searches parameters on discovery data only;
+- freezes the selected parameters;
+- evaluates them unchanged on confirmation data;
+- detects search-boundary optima;
+- computes majority/permutation null metrics for temporal candidates;
+- computes threshold-perturbation null metrics for threshold candidates.
+
+Validated by Experiment 050.
