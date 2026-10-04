@@ -1,0 +1,20 @@
+name: Experiment 054 Observation Driven Revision
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "core/revision/**"
+      - "experiments/experiment_054/**"
+      - ".github/workflows/experiment-054.yml"
+  workflow_dispatch:
+
+jobs:
+  verify-054:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: python experiments/experiment_054/run_experiment.py
