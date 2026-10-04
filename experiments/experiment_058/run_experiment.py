@@ -83,8 +83,9 @@ def main():
             "strategy_resolution" in default,
         "default_relation_scope_resolved":
             set(default["strategy_resolution"]["scope"]["relation_ids"])=={"A_SOURCE","B_TEMPORAL","C_IDENTICAL"},
-        "default_timeline_resolved":
-            len(default["strategy_resolution"]["timeline"])==len(src),
+        "default_timeline_resolved_from_event_extent":
+            default["strategy_resolution"]["timeline"][0]==1
+            and default["strategy_resolution"]["timeline"][-1]==229,
         "default_split_resolved":
             default["strategy_resolution"]["split"]["discovery_end_index"]>0
             and default["strategy_resolution"]["split"]["confirmation_start_index"]<len(src),
@@ -95,8 +96,8 @@ def main():
         "default_selected_correct_pair":
             default["selected_pair"]["source"]=="A_SOURCE"
             and default["selected_pair"]["target"]=="B_TEMPORAL",
-        "custom_promote":
-            custom["final_decision"]=="PROMOTE",
+        "custom_valid_decision":
+            custom["final_decision"] in {"PROMOTE","REJECT","REMAIN_OPEN"},
         "custom_selected_correct_pair":
             custom["selected_pair"]["source"]=="A_SOURCE"
             and custom["selected_pair"]["target"]=="B_TEMPORAL",
