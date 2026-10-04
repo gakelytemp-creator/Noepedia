@@ -1,0 +1,32 @@
+{
+  "dataset_name": "MetroPT-3",
+  "source_repository": "UCI Machine Learning Repository",
+  "doi": "10.24432/C5VW3R",
+  "archive_url": "https://archive.ics.uci.edu/static/public/791/metropt%2B3%2Bdataset.zip",
+  "archive_sha256": "aab991a970e58210de853bb8078ce0e63abb4d9412fdc5c79792dae3d8e1721a",
+  "csv_member_basename": "MetroPT3(AirCompressor).csv",
+  "window": {
+    "start": 450001,
+    "count": 5000,
+    "history_rows": 101
+  },
+  "current_band": {
+    "low": 0.8821033735279131,
+    "high": 3.4159886439831877
+  },
+  "revised_rule": {
+    "load_off_high_through_row": 40,
+    "transition_open_start": 41,
+    "transition_open_end": 52
+  },
+  "provenance": [
+    "EXP027",
+    "EXP030",
+    "EXP031",
+    "EXP032"
+  ],
+  "frozen_evaluator": {
+    "path": "experiments/experiment_003/evaluator.py",
+    "git_blob_sha1": "f1dad6fbcaf2f710c50edef331b7d947efdfa423"
+  }
+}
