@@ -57,7 +57,7 @@ def main(argv):
         {"id":S_LOW,"type":"current_state"},
         {"id":S_MID,"type":"unresolved_current_state"},
         {"id":RULE_OLD,"type":"consistency_rule"},
-        {"id":RULE_NEW,"type":"empirically_supported_rule"},
+        {"id":RULE_NEW,"type":"consistency_rule"},
         {"id":"EXP027","type":"evidence"},
         {"id":"EXP030","type":"evidence"},
         {"id":"EXP031","type":"evidence"},
