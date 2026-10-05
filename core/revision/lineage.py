@@ -38,3 +38,41 @@ def descendants(lineage, policy_id):
         out.append(cur)
         queue.extend(lineage['children'].get(cur,[]))
     return out
+
+def checkout_policy(lineage, policy_id):
+    if policy_id not in lineage['policies']:
+        raise KeyError(policy_id)
+    return {
+        'record_type':'META_POLICY_HISTORICAL_CHECKOUT',
+        'policy_id':policy_id,
+        'policy':dict(lineage['policies'][policy_id]),
+        'ancestors':ancestors(lineage,policy_id),
+        'descendants':descendants(lineage,policy_id),
+        'restore_source':lineage['restore_sources'].get(policy_id),
+        'read_only':True,
+        'live_policy_mutated':False
+    }
+
+def compare_policy_definitions(lineage, left_id, right_id):
+    left=lineage['policies'][left_id].get('definition',{})
+    right=lineage['policies'][right_id].get('definition',{})
+    keys=sorted(set(left)|set(right))
+    changes=[]
+    for k in keys:
+        lv=left.get(k); rv=right.get(k)
+        if lv!=rv:
+            changes.append({'field':k,'left':lv,'right':rv})
+    return {'record_type':'META_POLICY_DIFF','left_id':left_id,'right_id':right_id,'changes':changes,'change_count':len(changes)}
+
+def trace_lineage(lineage, start_id, end_id):
+    path=[end_id]
+    cur=end_id
+    seen=set()
+    while cur!=start_id:
+        if cur in seen or cur not in lineage['parents']:
+            return None
+        seen.add(cur)
+        cur=lineage['parents'][cur]
+        path.append(cur)
+    path.reverse()
+    return path
