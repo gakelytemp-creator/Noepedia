@@ -95,21 +95,22 @@ Must support:
 - OPEN_SPACE;
 - REOPEN.
 
-## 4.2 Minimal Daimonion transaction layer
+## 4.2 Minimal Daimonion operator
 
 Must support:
-- read;
-- stage;
-- compare;
-- propose;
-- validate;
-- commit;
-- reject;
-- reopen.
+- route candidate structure;
+- select placement/network;
+- select retrieval/query procedure;
+- select explicit comparator/test procedure;
+- assemble a minimal task cut;
+- return OPEN / NO_RESULT / ESCALATE;
+- preserve source/procedure provenance.
+
+A Daimonion decision alone must not emit a support token. Tokens must be attributable to source contact or an explicit procedure result.
 
 ## 4.3 Mega-graph constructor
 
-Must be able to assemble a task-specific cut.
+Must assemble the **smallest sufficient** task-specific cut and must support local widening when the first cut is insufficient. The experiment should measure both omitted necessary structure and unnecessarily loaded structure.
 
 ## 4.4 Logging
 
@@ -1190,3 +1191,8 @@ Immediately before the actual experiment, hold a short conceptual briefing answe
 5. **What are we forbidden to reinterpret after seeing the result?**
 
 Only after those five answers are frozen should the experiment start.
+
+
+# Anti-drift experimental gate
+
+Before any new experiment is implemented, it must state which canonical role is under test: FIELD, LLM ADAPTER, DAIMONION, or DETERMINISTIC ALGORITHM. It must also state the minimum knowledge package required. If the experiment changes the role definitions, turns the Daimonion into a fact author, or expands a local subsystem into a new core layer, the run must stop and explicitly REOPEN CURRENT_ARCHITECTURE.md before code is written.
