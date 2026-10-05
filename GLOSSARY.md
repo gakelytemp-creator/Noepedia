@@ -358,9 +358,11 @@ It is an engineering property, not an anthropomorphic moral trait.
 
 ---
 
-## Layer-Local Daimonion
+## Layer-Local Daimonion — DEFERRED / RESEARCH
 
-A **Layer-Local Daimonion** is a Daimonion process bound to the context of one layer.
+> This is not a requirement of the current minimal canonical architecture. The canonical Daimonion is one SLM-type neural operator inside the Noepedia/LSM unless experiments later justify additional instances.
+
+A **Layer-Local Daimonion** is a historical/research proposal for a Daimonion process bound to the context of one layer.
 
 A new layer may be born together with its own Daimonion context.
 
@@ -406,9 +408,11 @@ External systems should not have to reproduce or coordinate Noepedia's internal 
 
 ---
 
-## Daimonion Coalition
+## Daimonion Coalition — DEFERRED / RESEARCH
 
-A **Daimonion Coalition** is a temporary group of Daimonion instances that share or co-author a working scene.
+A **Daimonion Coalition** is a historical/research proposal for a temporary group of Daimonion instances that share a working scene.
+
+It must not be interpreted as co-authoring epistemic facts. Facts/tokens still require source contact or explicit procedure results.
 
 For example, a dream, hypothesis, or reconstruction may be produced jointly by several layer-local processes.
 
@@ -424,9 +428,11 @@ joint result
 
 ---
 
-## Dream / Internal Dream Scene
+## Dream / Internal Dream Scene — DEFERRED / RESEARCH
 
-A **Dream** in this architecture is a temporarily protected internal scene in which one or more Daimonion processes continue structured traversal while ordinary lower sensory-motor coupling is reduced.
+This term is not part of the current minimal implementation target.
+
+A **Dream** in the older architecture is a temporarily protected internal scene in which one or more Daimonion processes continue structured traversal while ordinary lower sensory-motor coupling is reduced.
 
 A dream may be:
 
@@ -438,7 +444,9 @@ This is a working architectural term, not a claim that the model already explain
 
 ---
 
-## Galvanic Break
+## Galvanic Break — DEFERRED / RESEARCH
+
+This mechanism remains a separate research hypothesis and is not part of the canonical Daimonion definition.
 
 A **Galvanic Break** is a temporary selective interruption of direct causal coupling.
 
@@ -592,7 +600,9 @@ The architecture should therefore preserve parallel structure before parallel ha
 
 ---
 
-## Absolute Parallelization Principle
+## Absolute Parallelization Principle — DEFERRED / RESEARCH
+
+This is a scheduling/architecture research proposal, not a requirement of the minimal Noepedia/LSM or SLM-Daimonion.
 
 The **Absolute Parallelization Principle** is the working rule:
 
