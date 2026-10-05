@@ -54,3 +54,66 @@ Methodology note for Experiments 011–016: [Real-Data Instrumentation Track Sta
 - [Experiment 019](experiment_019/) — MetroPT-3 two-path real-data consistency inference inside the Noepedia core
 
 - [Experiment 020](experiment_020/) — third independent MetroPT-3 relation refines core-derived disagreement into structural support subclasses
+
+
+## Sequence continuation — 021–073
+
+The individual experiment directories preserve their own README / briefing / result records. This index intentionally keeps the continuation neutral rather than rewriting historical titles after later reinterpretation.
+
+- [Experiment 021](experiment_021/)
+- [Experiment 022](experiment_022/)
+- [Experiment 023](experiment_023/)
+- [Experiment 024](experiment_024/)
+- [Experiment 025](experiment_025/)
+- [Experiment 026](experiment_026/)
+- [Experiment 027](experiment_027/)
+- [Experiment 028](experiment_028/)
+- [Experiment 029](experiment_029/)
+- [Experiment 030](experiment_030/)
+- [Experiment 031](experiment_031/)
+- [Experiment 032](experiment_032/)
+- [Experiment 033](experiment_033/)
+- [Experiment 034](experiment_034/)
+- [Experiment 035](experiment_035/)
+- [Experiment 036](experiment_036/)
+- [Experiment 037](experiment_037/)
+- [Experiment 038](experiment_038/)
+- [Experiment 039](experiment_039/)
+- [Experiment 040](experiment_040/)
+- [Experiment 041](experiment_041/)
+- [Experiment 042](experiment_042/)
+- [Experiment 043](experiment_043/)
+- [Experiment 044](experiment_044/)
+- [Experiment 045](experiment_045/)
+- [Experiment 046](experiment_046/)
+- [Experiment 047](experiment_047/)
+- [Experiment 048](experiment_048/)
+- [Experiment 049](experiment_049/)
+- [Experiment 050](experiment_050/)
+- [Experiment 051](experiment_051/)
+- [Experiment 052](experiment_052/)
+- [Experiment 053](experiment_053/)
+- [Experiment 054](experiment_054/)
+- [Experiment 055](experiment_055/)
+- [Experiment 056](experiment_056/)
+- [Experiment 057](experiment_057/)
+- [Experiment 058](experiment_058/)
+- [Experiment 059](experiment_059/)
+- [Experiment 060](experiment_060/)
+- [Experiment 061](experiment_061/)
+- [Experiment 062](experiment_062/)
+- [Experiment 063](experiment_063/)
+- [Experiment 064](experiment_064/)
+- [Experiment 065](experiment_065/)
+- [Experiment 066](experiment_066/)
+- [Experiment 067](experiment_067/)
+- [Experiment 068](experiment_068/)
+- [Experiment 069](experiment_069/)
+- [Experiment 070](experiment_070/)
+- [Experiment 071](experiment_071/)
+- [Experiment 072](experiment_072/)
+- [Experiment 073](experiment_073/)
+
+### Current interpretation note
+
+Experiments 042–064 progressively built the reusable revision subsystem. Experiments 067–073 tested later real-data transfer and stopping behavior. Experiment 071 produced real promotions and shuffled promotions in the same comparator family, demonstrating that the blind-mining path was not null-protected. Experiments 072–073 therefore belong to the stopping/repair discipline rather than to a claim of validated autonomous discovery.
