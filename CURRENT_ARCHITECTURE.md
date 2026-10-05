@@ -32,21 +32,22 @@ Noepedia should reduce repeated reconstruction, not create a new permanent layer
 
 ---
 
-## 2. Four roles must remain separate
+## 2. Noepedia is the LSM
+
+**Noepedia as a whole is the LSM — the Large Semiotic Model.**
+
+LSM is not a fifth worker beside the field and Daimonion. It is the name of the whole semiotic knowledge system.
 
 ~~~text
-SEMANTIC WORLD
-        ↕
-LLM ADAPTER
-        ↕
-SOCRATIC DAIMONION
-        ↕
-NOEPEDIA FIELD
-
-stable repeated operations
-        ↓
-DETERMINISTIC ALGORITHMS
+NOEPEDIA / LSM
+│
+├─ persistent homoiconic semiotic field
+├─ semantic boundary adapter(s), including LLMs where useful
+├─ Socratic Daimonion — SLM-type neural network
+└─ deterministic services compiled from stabilized operations
 ~~~
+
+The internal roles must remain separate even though together they constitute one LSM.
 
 ### Noepedia Field
 
@@ -76,7 +77,7 @@ Its fluent completion is not automatically a fact.
 
 ### Socratic Daimonion
 
-The Daimonion is the resident learned operator that manages the logistics of semiotic structure.
+The Daimonion is an **SLM-type neural network** resident inside the LSM. It manages the learned logistics of semiotic structure.
 
 The warehouse analogy is deliberate:
 
@@ -132,9 +133,11 @@ TOKEN
 
 If two description networks are run through a defined comparison procedure and one structurally contains or matches part of the other, the procedure may emit a MATCH token.
 
-If it does not react, there is no invented support token.
+If it does not react, there is no invented support or contradiction token.
 
-> **No reaction → no token.**
+> **No reaction → no epistemic result token.**
+
+However, **execution coverage is still recorded**. `NOT_RUN`, `RUN_NO_RESULT`, `MATCH`, `MISMATCH`, and other procedure outcomes must remain distinguishable. A procedure invocation may therefore create an execution/coverage record even when it emits no epistemic result token.
 
 This is important because objectivization should arise from repeated independent contact and operation, not from the operator narrating its own confidence.
 
@@ -258,7 +261,7 @@ Capabilities, knowledge, interfaces, and authority should be reduced to the mini
 
 ## 7. Daimonion training
 
-The first Daimonion should be trained on a synthetic polygon where the hidden ground truth is known.
+The first Daimonion should be trained on the **smallest possible sealed synthetic polygon** where the hidden ground truth is known. This is the next research step, not permission for another large architecture build.
 
 Training cases should include:
 
@@ -280,6 +283,8 @@ Training cases should include:
 - cases where a procedure should emit MATCH;
 - cases where it should emit MISMATCH;
 - and cases where it should emit nothing.
+
+The first polygon should begin with a deliberately tiny sealed set containing positive cases, negative cases, `CORRECT_OPEN`, `RUN_NO_RESULT`, and `NOT_RUN` cases before any expansion.
 
 The fitness target is not eloquence.
 
@@ -364,18 +369,19 @@ It is:
 
 Future work must not silently replace this architecture with any of the following:
 
-1. revision subsystem = whole Noepedia core;
-2. Daimonion = conversational LLM;
-3. Daimonion = private author of facts;
-4. fluent semantic completion = evidence;
-5. recurrence = independent support;
-6. mega-graph = permanent global working memory;
-7. every agent carries the whole Noepedia;
-8. autonomy = maximal generality;
-9. deterministic algorithms require anthropomorphic moral policing;
-10. every request must end in an answer rather than OPEN / no-result / boundary escalation;
-11. experimental failure justifies adding another architecture layer;
-12. a new implementation path may redefine the goal without explicitly reopening this file.
+1. LSM = a separate traversal worker instead of the whole Noepedia system;
+2. revision subsystem = whole Noepedia core;
+3. Daimonion = conversational LLM;
+4. Daimonion = private author of facts;
+5. fluent semantic completion = evidence;
+6. recurrence = independent support;
+7. mega-graph = permanent global working memory;
+8. every agent carries the whole Noepedia;
+9. autonomy = maximal generality;
+10. deterministic algorithms require anthropomorphic moral policing;
+11. every request must end in an answer rather than OPEN / no-result / boundary escalation;
+12. experimental failure justifies adding another architecture layer;
+13. a new implementation path may redefine the goal without explicitly reopening this file.
 
 If an experiment appears to require one of these changes, the experiment must stop and explicitly propose a conceptual REOPEN before implementation continues.
 
@@ -383,7 +389,7 @@ If an experiment appears to require one of these changes, the experiment must st
 
 ## 12. Canonical compact form
 
-> **Noepedia is the persistent field.**
+> **Noepedia as a whole is the LSM. The persistent field is one structural part of that LSM.**
 >
 > **The LLM translates semantics at the boundary.**
 >
