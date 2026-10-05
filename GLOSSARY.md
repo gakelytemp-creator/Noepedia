@@ -320,6 +320,16 @@ A higher layer may act as an accelerator because movement through a compressed t
 
 ---
 
+## Small Semiotic Model (SLM)
+
+**SLM** means **Small Semiotic Model** in Noepedia.
+
+It does **not** mean Small Language Model.
+
+An SLM is a compact neural model trained to operate on semiotic structure rather than to converse in natural language. The Socratic Daimonion is the canonical SLM-type component inside the Noepedia/LSM.
+
+---
+
 ## Socratic Daimonion
 
 The **Socratic Daimonion** is the learned semiotic warehouse operator over the persistent Noepedia field.
@@ -438,7 +448,7 @@ A dream may be:
 
 - local to one layer;
 - shared across several layers;
-- or co-authored by a Daimonion coalition.
+- or, in the deferred multi-process hypothesis, assembled from contributions of several Daimonion instances.
 
 This is a working architectural term, not a claim that the model already explains biological dreaming.
 
