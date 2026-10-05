@@ -6,7 +6,7 @@ This file governs new experiments after Experiment 072.
 
 ## 0. Architectural boundary
 
-The Noepedia field is persistent semiotic storage and retrieval structure. The LLM is the semantic-to-semiotic language adapter. The Socratic Daimonion is the learned operator over the field. Stable repeated Daimonion operations may be compiled into deterministic subsystems. The revision subsystem is one such organ, not the whole Noepedia core.
+Noepedia as a whole is the **LSM (Large Semiotic Model)**. Inside it, the persistent field stores homoiconic semiotic structure; LLM/media adapters handle semantic boundaries; the Socratic Daimonion is an **SLM-type neural network** for learned semiotic logistics; stable repeated operations may be compiled into deterministic services. The revision subsystem is one such service family, not the whole Noepedia core.
 
 Canonical architectural reference: CURRENT_ARCHITECTURE.md. Historical experiment files remain historical evidence and do not override that boundary.
 
@@ -83,9 +83,9 @@ A null result is allowed.
 
 Before implementation begins, every new experiment must answer:
 
-1. Which role is being tested: FIELD, LLM ADAPTER, DAIMONION, or DETERMINISTIC ALGORITHM?
+1. Which LSM component is being tested: FIELD, SEMANTIC ADAPTER, SLM-DAIMONION, or DETERMINISTIC SERVICE?
 2. What is the smallest sufficient knowledge package for the task?
-3. Which outputs may create tokens, and which are only routing decisions?
+3. Which outputs may create epistemic result tokens, which are only routing decisions, and how is execution coverage recorded even when there is no result token?
 4. What explicit procedure or source contact can justify a stored result?
 5. What result is allowed to be OPEN / NO_RESULT / NOT_EVALUABLE?
 6. What would count as architecture drift rather than experimental failure?
@@ -101,3 +101,16 @@ The following are STOP conditions, not invitations to add another layer:
 - repeated failure is being repaired by changing the goal after seeing outcomes.
 
 > **Failure may change the experiment. It may not silently change the project.**
+
+
+## 9. First post-realignment experiment scale
+
+The next Daimonion-training experiment must begin with the smallest sealed synthetic phantom that can distinguish at least:
+
+- MATCH;
+- MISMATCH;
+- CORRECT_OPEN;
+- RUN_NO_RESULT;
+- NOT_RUN.
+
+No larger training architecture is justified until those states are separated correctly and reproducibly.
