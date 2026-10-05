@@ -212,7 +212,7 @@ A mismatch may indicate:
 - an unrepresented part;
 - or a genuinely new external condition.
 
-The Daimonion should therefore localize the mismatch before deciding what kind of correction is needed.
+The Daimonion should route the mismatch into the appropriate diagnostic/comparison procedures before any correction is written. A routing decision alone is not evidence.
 
 ---
 
@@ -290,7 +290,7 @@ Both can generate REQUIREMENTS.
 
 A layer may begin with substantial structural freedom.
 
-The Daimonion progressively constrains that freedom through evidence, reconstruction, comparison, and validation.
+The field becomes progressively constrained through source contact and explicit reconstruction/comparison/validation procedures selected by the Daimonion.
 
 When the lower layer can no longer express the remaining unresolved freedom honestly, a meta-layer may be born.
 
