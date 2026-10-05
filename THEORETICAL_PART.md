@@ -1,5 +1,7 @@
 # Theoretical Part — Noepedia Academic Framework
 
+> **Architecture precedence:** [CURRENT_ARCHITECTURE.md](CURRENT_ARCHITECTURE.md), [SOCRATIC_DAIMONION.md](SOCRATIC_DAIMONION.md), and [DIRECTION.md](DIRECTION.md) define the current implementation boundary. This paper section preserves broader theory but must not override that boundary.
+
 > **Status:** conceptual / theoretical part of the Noepedia academic paper.
 >
 > This file contains the architecture, terminology, mechanisms, scientific positioning, hypotheses, and limits of Noepedia **before experimental validation**.
@@ -150,62 +152,76 @@ OPEN can generate work.
 
 ## 7. Socratic Daimonion
 
-The Daimonion is an active process operating on the field.
+The Daimonion is the learned semiotic operator over the persistent field.
 
-It may:
+Its architectural role is closer to a warehouse manager / loader than to a conversational reasoner.
 
-- inspect;
-- interrupt;
-- preserve OPEN;
-- reconstruct context;
-- compare alternatives;
-- request evidence;
-- preserve provenance;
-- reopen structure;
-- delegate work;
-- merge returned work without forced consensus.
+It may learn to:
+
+- decompose candidate structure;
+- route material to relation networks;
+- preserve provenance/source tokens;
+- select retrieval paths;
+- select explicit procedures;
+- assemble minimal sufficient task cuts;
+- return OPEN / no-result / escalation;
+- and identify repeated operations that can be compiled.
+
+A Daimonion routing decision is not itself evidence.
+
+Support tokens should arise from source contact or explicit procedure results.
+
+~~~text
+source / measurement / comparator / test
+        ↓
+observable procedure result
+        ↓
+token / relation update
+~~~
+
+If there is no relevant reaction, no positive token is invented.
+
+> **No reaction → no token.**
 
 Core distinction:
 
-\`\`\`text
-FIELD / LAYER / META_OBJECT / OPEN
-        = structure
+~~~text
+FIELD
+    = persistent semiotic structure
 
-DAIMONION INSTANCE
-        = process
-\`\`\`
+LLM ADAPTER
+    = semantic ↔ semiotic boundary translation
 
-### Service constraint
+DAIMONION
+    = learned semiotic logistics
 
-The Daimonion is a servant process of the field, not a hidden truth oracle or sovereign controller.
+DETERMINISTIC ALGORITHM
+    = stabilized operation compiled from repeated logistics
+~~~
 
-Its operations should remain:
-- auditable;
-- revisable;
-- permission-bounded;
-- provenance-preserving.
+For deterministic algorithms, reliability is primarily an engineering property: explicit contracts, isolation, regression tests, and bounded scope.
 
----
+## 8. Mega-Graphs and Minimal Sufficient Knowledge
 
-## 8. Mega-Graphs
+A mega-graph is a temporary task-specific garment built from the smallest sufficient set of field cuts.
 
-A mega-graph is a temporary task-specific working scene built from relevant cuts of the persistent field.
+It is not a permanent global working memory.
 
-It may include:
+~~~text
+task
+→ retrieve minimal relevant cuts
+→ run required procedures
+→ sufficient? use result
+→ insufficient? widen locally / OPEN / escalate
+~~~
 
-- objects;
-- active relations;
-- OPENs;
-- alternatives;
-- provenance;
-- goals;
-- constraints;
-- normative requirements;
-- current mismatch.
+This principle extends to deployed agents.
 
-The full field does not need to remain active.
+A domain specialist should not carry the whole Noepedia. It should receive only the stable knowledge and procedures needed for its function and temporarily load another bounded package when its competence boundary is crossed.
 
----
+The research hypothesis is therefore stronger than retrieval efficiency:
+
+> **Can general diffuse knowledge be progressively reduced into minimal sufficient stable specialist packages without losing provenance, scope, and escalation paths?**
 
 ## 9. Meta-Layers and META_OBJECTS
 
