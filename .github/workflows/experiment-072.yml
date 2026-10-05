@@ -1,0 +1,20 @@
+name: Experiment 072 Simpler Rule False Promotion Repair
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "experiments/experiment_072/**"
+      - ".github/workflows/experiment-072.yml"
+
+jobs:
+  verify-072:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install numpy scipy
+      - run: python experiments/experiment_072/run_experiment.py
