@@ -1,5 +1,7 @@
 # Guiding Philosophy
 
+> **Current-architecture note:** conceptual metaphors in this file are subordinate to [CURRENT_ARCHITECTURE.md](CURRENT_ARCHITECTURE.md), [SOCRATIC_DAIMONION.md](SOCRATIC_DAIMONION.md), and [DIRECTION.md](DIRECTION.md). Where older guardian/agent language conflicts with the current warehouse-operator model, the current architecture governs.
+
 > This document explains the philosophy that guides Noepedia.
 >
 > It is **not** the technical specification.
@@ -110,7 +112,7 @@ First, simply to say:
 
 That word contains much of the philosophy of the Noepedia Socrates.
 
-In the more recent reconstruction we separate the historical person from the **Socratic Daimonion**: the interrupting companion or map-guardian function that says "stop" when the current path can no longer be continued honestly. Socrates is the human who learned to live with that interruption rather than silence it.
+In the current reconstruction we separate the historical person from the **Socratic Daimonion**. The Socratic interrupt remains important, but it is no longer the definition of the Daimonion. The Daimonion is the learned semiotic warehouse operator: it routes, places, retrieves, selects procedures, and assembles minimal task-specific cuts. `STOP` is one operational result when continuation is not earned.
 
 ---
 
@@ -145,11 +147,11 @@ Only one thing is not legal:
 
 > **silently behaving as if no change occurred.**
 
-This is the ethical core of the Socratic function in Noepedia.
+This is a structural continuity rule, not a demand that machinery possess human virtue.
 
-It is not a large moral theory.
+For learned components the rule must be trained and tested. For deterministic components it should be enforced by explicit contracts, isolation, provenance, and regression tests.
 
-It is a refusal to invent the sweetness of a desired result by quietly changing the rules beneath it.
+The system should not create evidence merely because a desired continuation is convenient.
 
 If the rule is bad, change the rule.
 
@@ -189,11 +191,11 @@ The crucial question then becomes:
 
 > **Did we resolve the contradiction, or did we merely rewrite the instrument that revealed it?**
 
-This is why a homoiconic map needs a guardian.
+This is why a homoiconic map needs explicit operational boundaries.
 
-The Socratic Daimonion should not defend a frozen ontology.
+The Socratic Daimonion does not act as a moral guardian above the field. It routes changes through inspectable procedures, while deterministic machinery enforces the parts that have become formal enough to enforce mechanically.
 
-It should defend **honest transformation**.
+The aim is **traceable transformation without silent self-erasure**.
 
 If the map must change, change it.
 
@@ -207,7 +209,7 @@ This point needs an explicit limit.
 
 Making an old rule, a new rule, a conflict, a revision, or an open question visible does not automatically mean that the system will correctly recognize every important problem.
 
-**Visibility is a property of the knowledge field. Detection is a behavior of the companion working in that field.**
+**Visibility is a property of the knowledge field. Detection is an operation performed by a learned or deterministic procedure over that field.**
 
 The first can be designed structurally.
 
@@ -371,69 +373,43 @@ Language can enter and leave the system without owning the system.
 
 ---
 
-## 9. The Daimonion Reconstructs, Dresses, and Thinks Temporarily
+## 9. The Daimonion Routes, Dresses, and Builds Temporary Task Cuts
 
-The Daimonion is not a passive database index.
+The Daimonion is not a passive database index, but neither should it be personified as a private thinker that consumes the field.
 
-It may think.
+Its job is to operate on semiotic structure.
 
-But its thought does not automatically become archive content.
+For each task it may assemble a temporary **mega-graph**: a working package containing only the objects, relations, provenance, constraints, OPENs, and procedures needed now.
 
-For each task, it may construct a temporary **mega-graph**: a working scene containing the currently relevant objects, relations, rules, alternatives, tensions, roles, positions, transformations, and conflicts.
+The garment metaphor is literal at the architectural level: different jobs require different pockets.
 
-But the Daimonion should not be imagined as owning only one universal working scene.
+~~~text
+request
+→ select minimal sufficient pockets
+→ run required procedures
+→ use / return result
+→ if boundary crossed, load another bounded pocket set
+~~~
 
-Over time it may accumulate many learned garments: recurring ways of selecting cuts, weakening or strengthening identity, turning predicates into positions or roles, comparing relation forms, opening reflective layers, and testing whether a reconstruction holds.
+The mega-graph is not permanent memory and not a global mind.
 
-These garments are provisional cognitive tools.
+The same principle applies to autonomous agents. A lawn-mowing robot should receive the minimum stable package needed for mowing, local navigation, required safety, and owner interaction. If a fault occurs, it may temporarily load a diagnostic package rather than carrying the whole Noepedia permanently.
 
-They may mutate.
-
-They may specialize.
-
-They may fail.
-
-They may themselves become addressable objects whose histories can be inspected and reused.
-
-This scene is closer to a desk, stage, or imagination than to permanent memory.
-
-It may be rich.
-
-It may be messy.
-
-It may contain hypotheses that disappear five minutes later.
-
-That is acceptable.
-
-The permanent archive should not be forced to preserve every movement of thought.
-
-The archive keeps what survives consolidation.
-
-The mega-graph keeps what is useful for thinking now.
-
-The learned garment keeps something different again: a reusable form of how to build such a scene.
-
----
+> **Autonomy does not require maximal knowledge. It requires sufficient competence, explicit boundaries, and a clean escalation path.**
 
 ### Semiotic Reconstruction Comes Before Semantic Convenience
 
 Language is often only the carrier by which a larger situation reaches the system.
 
-A sentence may be semantically interpretable while still being misunderstood at the level of the scene that produced it.
+A sentence may be semantically interpretable while still being misplaced semiotically.
 
-The Daimonion should therefore ask not only:
+The LLM adapter can propose a decomposition, but the Daimonion does not promote that proposal merely because it is fluent. It routes the structure through placement, comparison, retrieval, or other procedures.
 
-> What does this sentence mean?
+A token is emitted only when a source contact or explicit procedure produces a result.
 
-but:
+> **No reaction → no token.**
 
-> What arrangement of objects, roles, purposes, constraints, and expected consequences made this sign useful here?
-
-This is why Noepedia is meta-semiotic rather than merely semantic.
-
-A four-year-old child may solve a practical absurdity from one reconstructed scene that a large text model misses after enormous linguistic training, because the child's sample is not only a token sequence. It is embedded in action, objects, goals, feedback, and consequence.
-
-The architectural hope is that explicit semiotic reconstruction can recover some of that sample efficiency.
+This keeps semantic plausibility separate from stored evidence.
 
 ## 10. Raw Material Is Not Yet Knowledge
 
@@ -481,7 +457,7 @@ A visitor can think freely in staging or temporary space.
 
 A visitor can ask in ordinary language, through an application, through an instrument, or through an LLM.
 
-The Daimonion is responsible for translating that request into an honest field operation: identifying context, checking authority, selecting the relevant network cut, preserving provenance, and exposing conflicts or missing distinctions when necessary.
+The LLM adapter translates the semantic request into candidate structural intent. The Daimonion then routes that intent into field operations: selecting the relevant network cut, invoking explicit procedures, preserving provenance, and returning OPEN / no-result / escalation when the available structure does not justify more.
 
 Writing is stricter than submission.
 
