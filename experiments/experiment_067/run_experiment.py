@@ -61,30 +61,27 @@ def flatten_numeric(x):
     return a[np.isfinite(a)]
 
 def extract_runs(mat_path):
-    data=loadmat(mat_path,squeeze_me=True,struct_as_record=False)
-    candidates=[v for k,v in data.items() if not k.startswith("__")]
+    data=loadmat(mat_path,squeeze_me=False,struct_as_record=True)
     mill=data.get("mill")
-    if mill is None:
-        for v in candidates:
-            arr=np.asarray(v,dtype=object).ravel()
-            if arr.size>=150 and hasattr(arr[0],"smcAC"):
-                mill=v
-                break
-    if mill is None:
-        raise RuntimeError("could not identify milling struct")
+    if mill is None or mill.dtype.names is None:
+        raise RuntimeError("could not identify structured milling array")
 
+    fields=set(mill.dtype.names)
+    missing=[ch for ch in CHANNELS if ch not in fields]
+    if missing:
+        raise RuntimeError(f"missing milling fields: {missing}")
+
+    flat=mill.ravel()
     runs=[]
-    for idx,item in enumerate(np.asarray(mill,dtype=object).ravel()):
+    for idx,item in enumerate(flat):
         rec={}
         for ch in CHANNELS:
-            if not hasattr(item,ch):
-                raise RuntimeError(f"run {idx} missing channel {ch}")
-            vals=flatten_numeric(getattr(item,ch))
+            vals=flatten_numeric(item[ch])
             if vals.size==0:
                 raise RuntimeError(f"run {idx} empty channel {ch}")
             rec[ch]=float(np.sqrt(np.mean(vals*vals)))
         for meta in ["case","run","VB","time","DOC","feed","material"]:
-            rec[meta]=scalar(getattr(item,meta)) if hasattr(item,meta) else None
+            rec[meta]=scalar(item[meta]) if meta in fields else None
         rec["_source_index"]=idx
         runs.append(rec)
     return runs
