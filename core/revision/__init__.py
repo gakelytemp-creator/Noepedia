@@ -16,6 +16,7 @@ from .meta_audit import summarize_strategy_outcomes, audit_meta_policy, build_me
 from .meta_application import authorize_application, materialize_version, verify_materialization
 from .meta_regression import summarize_outcomes, watch_regression, authorize_rollback, materialize_rollback, verify_rollback
 from .lineage import build_lineage, ancestors, descendants, checkout_policy, compare_policy_definitions, trace_lineage
+from .branching import create_branch, replay_branch, compare_branches, materialize_branch_comparison
 
 __all__ = [
     "evaluate_case",
@@ -74,4 +75,8 @@ __all__ = [
     "checkout_policy",
     "compare_policy_definitions",
     "trace_lineage",
+    "create_branch",
+    "replay_branch",
+    "compare_branches",
+    "materialize_branch_comparison",
 ]
