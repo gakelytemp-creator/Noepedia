@@ -1,5 +1,7 @@
 # Epistemic Teleportation and AI Assembly Alignment
 
+> **Current architecture precedence:** implementation and new experiments must follow [CURRENT_ARCHITECTURE.md](CURRENT_ARCHITECTURE.md), [SOCRATIC_DAIMONION.md](SOCRATIC_DAIMONION.md), and [DIRECTION.md](DIRECTION.md). Older metaphors in this document are historical/conceptual where they conflict with that boundary.
+
 > **Noepedia does not claim to contain the world.**
 >
 > It preserves selected semiotic structures produced by contact with the world, together with provenance, context, uncertainty, revision history, and the conditions under which those structures may be used.
