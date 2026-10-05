@@ -8,6 +8,8 @@ This file governs new experiments after Experiment 072.
 
 The Noepedia field is persistent semiotic storage and retrieval structure. The LLM is the semantic-to-semiotic language adapter. The Socratic Daimonion is the learned operator over the field. Stable repeated Daimonion operations may be compiled into deterministic subsystems. The revision subsystem is one such organ, not the whole Noepedia core.
 
+Canonical architectural reference: CURRENT_ARCHITECTURE.md. Historical experiment files remain historical evidence and do not override that boundary.
+
 ## 1. Architecture freeze
 
 Do not add new architectural layers merely because an experiment fails.
