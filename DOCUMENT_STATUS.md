@@ -22,6 +22,7 @@ inside the LSM:
 - persistent homoiconic semiotic field
 - semantic adapters, including LLMs where useful
 - Socratic Daimonion = SLM-type neural network
+  - SLM = **Small Semiotic Model**, not Small Language Model
 - deterministic services compiled from stabilized operations
 ~~~
 
@@ -53,6 +54,7 @@ Important historical boundaries include:
 - Experiments 001–009: early synthetic relation/evaluator line.
 - Experiments 011–020: real-data instrumentation and relational projection.
 - Experiments 021–064: progressive mismatch/revision/candidate/null/graph/policy machinery.
+- Experiments 033 + 040: the key positive protected result in that line — about 99.6% and 98.7% mismatch reduction on untouched confirmation data, with an approximately seven-minute directional asymmetry and later null-protected confirmation.
 - Experiment 071: real and shuffled promotions exposed blind-mining overpromotion.
 - Experiments 072–073: stopping/repair discipline; 073 ended NOT_EVALUABLE without post-result rescue.
 
