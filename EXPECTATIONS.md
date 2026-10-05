@@ -154,7 +154,7 @@ ROUTING GATE
     no  → FRONTIER WORK
 
 FRONTIER WORK
-    LSM narrows the unresolved region
+    Noepedia/LSM narrows the unresolved region
         ↓
     SHORTEN prompt or escalate to full neural reasoning
         ↓
@@ -311,7 +311,7 @@ A relation that is 73% authority-dependent is not equivalent to a relation that 
 
 The number is illustrative; the requirement is structural.
 
-The Daimonion should also maintain a queue of epistemic debts.
+The Noepedia/LSM may maintain an explicit queue of epistemic debts through field records and procedures. The Daimonion may route and prioritize access to that queue, but its private state is not the debt record.
 
 The priority of a debt should depend not only on uncertainty but on the expected structural consequence of resolving it:
 
@@ -489,7 +489,7 @@ The architecture becomes interesting only if its expectations are falsifiable.
 | Prompt reduction in SHORTEN mode | Measures how much context the LSM removes before neural invocation |
 | Consolidation cost per accepted or reopened predicate | Tests the cost of the return path |
 | Preserved-alternative reactivation rate | Tests whether losing branches remain usable when conditions change |
-| Traceability of PFW to epistemic and normative networks | Tests whether system-level direction is actually auditable |
+| Traceability of deferred PFW experiments, if reactivated | Research-only metric; not part of the current minimal canonical gate |
 
 All comparisons should be made against an explicit baseline.
 
@@ -715,7 +715,7 @@ A failed expectation is still useful if it is recorded before the experiment.
 
 > **Noepedia should store what no longer deserves to be expensive.**
 >
-> **LSM should travel cheaply through what is already known.**
+> **The Noepedia/LSM should reuse settled structure cheaply and reserve neural work for unresolved boundaries.**
 >
 > **LLM should be paid mainly for discovery and the frontier.**
 >
