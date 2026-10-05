@@ -1285,89 +1285,74 @@ The Daimonion acts as the disciplined companion beside that editable map.
 
 ---
 
-## 13. The LSM and Daimonion May Begin Neural, But Need Not Stay Entirely Neural
+## 13. Noepedia Is the LSM; the Daimonion Is Its SLM-Type Learned Operator
 
-We do not yet know the full technical task of either the LSM control process or the Daimonion.
+**LSM (Large Semiotic Model)** names Noepedia as a whole.
 
-Therefore early versions should remain neural enough to discover recurring operations rather than freezing the design too early.
+It must not be represented as a separate traversal worker beside the Daimonion.
 
-The LSM is especially concerned with traversal, question consolidation, routing, and predicate stabilization.
+~~~text
+NOEPEDIA / LSM
+├─ persistent homoiconic semiotic field
+├─ semantic boundary adapters
+├─ Socratic Daimonion — SLM-type neural network
+└─ deterministic services
+~~~
 
-The Daimonion is especially concerned with reflective interruption, consistency, self-revision, and the honesty of transitions between levels.
+The Daimonion is the learned logistics component inside the LSM. It learns placement, retrieval, procedure selection, minimal-cut assembly, coverage handling, and escalation.
 
-Possible recurring operations include:
+When a recurring operation becomes explicit enough, it should descend into deterministic machinery.
 
-```text
-network selection
-rule interpretation
-object identity reconciliation
-placement
-conflict detection
-tension navigation
-coverage estimation
-retrieval path construction
-revision comparison
-provenance preservation
-```
+~~~text
+SLM-type learned operation
+→ stable repeated pattern
+→ explicit procedure
+→ regression-tested deterministic service
+~~~
 
-If stable patterns emerge, some may later be extracted into deterministic algorithms.
+The distinction is therefore not LSM versus Daimonion.
 
-The intended path is:
+It is **whole semiotic system versus one learned neural operator inside it**.
 
-```text
-neural exploration
-→ recurring pattern discovery
-→ algorithmic extraction
-→ hybrid Daimonion
-```
+### Coverage is not evidence
 
-This follows a broader principle:
+The system must distinguish:
 
-> **When the unknown becomes regular, it no longer needs to remain expensive intelligence.**
+~~~text
+NOT_RUN
+RUN_NO_RESULT
+MATCH
+MISMATCH
+other explicit result
+~~~
 
----
+A procedure invocation is recorded even when no epistemic result token is emitted.
 
-## 14. Division of Labor
+> **No reaction → no epistemic result token, not no record of execution.**
 
-A useful current picture is:
+## 14. Division of Labor Inside the LSM
 
-```text
-HUMAN / LLM / AISocket / instrument
-    observe, imagine, measure, experiment, communicate
-    submit requests or raw material from outside the persistent field
-
-LANGUAGE / MEDIA INTERFACES
-    names, prose, images, sound, geometry, UI projections
-
-SOCRATIC DAIMONION
-    sole mediated field operator / transaction boundary
-    clarification and contextual feedback
-    permission checks
-    temporary mega-graph construction
-    consistency and tension checking
-    controlled retrieval and insertion
-    transaction audit
-
-LSM / ALGORITHMIC / SPECIALIZED WORKERS
-    internal services available to the Daimonion
-    traverse explicit semiotic structure
-    maintain question-bearing predicate status
-    consolidate related OPEN_SPACES
-    choose SKIP vs SHORTEN vs escalation
-    construct targeted retrieval paths
-
-RAW / STAGING / INBOX
-    preserve unintegrated material without pretending it is settled knowledge
-
-NOEPEDIA
-    persistent addressable object field
-    persistent triplet relation tables
-    rules, provenance, history, uncertainty
-```
+~~~text
+NOEPEDIA / LSM
+│
+├─ PERSISTENT FIELD
+│    objects, triplets, provenance, scope, time, OPEN
+│
+├─ LLM / MEDIA ADAPTERS
+│    semantic ↔ semiotic boundary translation
+│
+├─ SOCRATIC DAIMONION
+│    SLM-type neural network
+│    learned semiotic logistics
+│
+├─ DETERMINISTIC SERVICES
+│    compiled stable logistics
+│
+└─ STAGING / RAW INBOX
+     unintegrated material without false promotion
+~~~
 
 No component needs to pretend to be every other component.
-
----
 
 ## 15A. Ecosystem Responsibility Boundary
 
@@ -1536,8 +1521,8 @@ A useful first test should demonstrate that the system can:
 22. consolidate several related unresolved predicates into one higher-leverage `REQUIREMENT`;
 23. distinguish a cheap structured `SKIP` path from a narrowed `SHORTEN` path that invokes a large LLM only for the unresolved edge;
 24. preserve minority or losing alternatives after a decision as explicit reopening conditions rather than deleting them;
-25. produce at least one auditable `PREDICATE_FIELD_WILL` whose direction can be traced back to the epistemic and normative predicate networks that generated it.
-26. represent at least one suspected harmful relation with a revisable `HARM?` marker rather than assigning an essential moral label to an agent;
+25. **DEFERRED / RESEARCH:** `PREDICATE_FIELD_WILL` is not a requirement of the minimal canonical prototype. It remains a research concept.
+26. **DEFERRED / RESEARCH:** normative objects such as `HARM?` are not requirements of the minimal canonical prototype;
 27. prevent an unresolved harm-bearing structure from crossing into trusted action unmarked, while preserving provenance, affected parties, and known externalities if it must cross provisionally;
 28. show that a harmful event can alter the future field by producing a new constraint, warning, distinction, or redesign, and keep the containment rule itself auditable;
 29. keep a causal and normative `CONSEQUENCE_CHAIN` addressable across a long delay between action and effect;
@@ -1633,7 +1618,7 @@ And even shorter:
 
 > **Noepedia is the shared notebook, not the world.**
 >
-> **Persistent field operations occur only through accountable Daimonion processes. Externally they present one mediated transaction boundary; internally they may split, cooperate, dream, delegate, and merge.**
+> **Persistent LSM operations preserve explicit provenance and contracts. The current canonical architecture does not require coalitions, dreams, or many layer-local Daimonion instances; those remain deferred research concepts.**
 >
 > **A visitor receives the right relational cut instead of carrying the whole archive.**
 >
