@@ -1,5 +1,7 @@
 # Noepedia — Expectations and System-Level Consequences
 
+> **Current architecture precedence:** implementation and new experiments must follow [CURRENT_ARCHITECTURE.md](CURRENT_ARCHITECTURE.md), [SOCRATIC_DAIMONION.md](SOCRATIC_DAIMONION.md), and [DIRECTION.md](DIRECTION.md). Older metaphors in this document are historical/conceptual where they conflict with that boundary.
+
 > **This document records expectations, not demonstrated performance.**
 >
 > Its purpose is to preserve what the present architecture appears capable of changing before implementation and benchmarks blur the original hypotheses.
