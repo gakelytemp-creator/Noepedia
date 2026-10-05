@@ -1,5 +1,7 @@
 # Actualization, Reconstruction, and Layer Closure
 
+> **Current architecture precedence:** implementation and new experiments must follow [CURRENT_ARCHITECTURE.md](CURRENT_ARCHITECTURE.md), [SOCRATIC_DAIMONION.md](SOCRATIC_DAIMONION.md), and [DIRECTION.md](DIRECTION.md). Older metaphors in this document are historical/conceptual where they conflict with that boundary.
+
 > **Status: working architecture.**
 >
 > This document records a reconstruction cycle that has emerged inside Noepedia. It is not presented as a finished theory of human cognition. It is an engineering hypothesis about how an addressable homoiconic field may discover what it does not yet know, localize the mismatch, refine a world-equivalent relational surrogate, and stop creating new meta-layers when no further structural demand remains.
