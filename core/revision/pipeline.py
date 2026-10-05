@@ -11,6 +11,50 @@ from .features import enrich_context_from_observations
 
 NON_METRIC_NULLS={"SEARCH_BOUNDARY_CHECK","OUT_OF_CLUSTER_TRANSFER_TEST"}
 
+CANDIDATE_DATA_REQUIREMENTS={
+    "TEMPORAL_LAG_REVISION":{
+        "source_discovery","target_discovery","source_confirmation","target_confirmation"
+    },
+    "DIRECTION_SPECIFIC_RULE":{
+        "source_discovery","target_discovery","source_confirmation","target_confirmation"
+    },
+    "RELATION_ORIENTATION_REVISION":{
+        "source_discovery","target_discovery","source_confirmation","target_confirmation"
+    },
+    "THRESHOLD_REFINEMENT":{
+        "source_discovery","target_values_discovery",
+        "source_confirmation","target_values_confirmation"
+    },
+    "LOCAL_EXCEPTION_CANDIDATE":{
+        "discovery_event_matches","confirmation_event_matches"
+    },
+    "SIMPLER_RULE_COMPARATOR":{
+        "target_discovery","target_confirmation","proposed_confirmation"
+    },
+    "OPEN_DECOMPOSITION":set(),
+}
+
+def candidate_is_compatible(candidate,data):
+    required=CANDIDATE_DATA_REQUIREMENTS.get(candidate["family"])
+    if required is None:
+        return False
+    return required.issubset(set(data))
+
+def compatible_candidates(candidates,data,context):
+    eligible=[c for c in candidates if candidate_is_compatible(c,data)]
+    if eligible:
+        return eligible
+    return [{
+        "candidate_id":context["parent_rule_id"]+"::CAND_DECOMPOSE_OPEN",
+        "family":"OPEN_DECOMPOSITION",
+        "parent_rule_id":context["parent_rule_id"],
+        "open_id":context["open_id"],
+        "rationale":"No generated candidate family is compatible with the supplied evaluator inputs.",
+        "parameters":{"action":"DECOMPOSE_OR_COLLECT_MORE_EVIDENCE"},
+        "prerequisites":[],
+        "status":"PROPOSED"
+    }]
+
 def build_gate_case(context,candidate,evaluation,null_specs,required_relative_advantage=0.10):
     conf=evaluation.get("confirmation",{})
     disc=evaluation.get("discovery",{})
@@ -65,7 +109,8 @@ def build_gate_case(context,candidate,evaluation,null_specs,required_relative_ad
     }
 
 def run_revision(context:dict[str,Any],data:dict[str,Any],evaluator_config:dict[str,Any],required_relative_advantage=0.10):
-    candidates=rank_candidates(generate_candidates(context),context)
+    generated=generate_candidates(context)
+    candidates=rank_candidates(compatible_candidates(generated,data,context),context)
     selected=candidates[0]
     null_specs=select_nulls(selected,context)
     prereg=build_preregistration_template(selected,null_specs,context)
