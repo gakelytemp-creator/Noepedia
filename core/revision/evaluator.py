@@ -133,6 +133,7 @@ def evaluate_temporal_candidate(
         },
         "required_null_metrics":{
             "MAJORITY_STATE_NULL":majority_metric,
+            "SIMPLER_RULE_NULL":majority_metric,
             "TIME_SHIFT_OR_PERMUTATION_NULL":perm_median,
         }
     }
