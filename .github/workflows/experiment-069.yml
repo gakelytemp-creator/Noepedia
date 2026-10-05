@@ -1,0 +1,20 @@
+name: Experiment 069 Promotion Bottleneck Audit
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "experiments/experiment_069/**"
+      - ".github/workflows/experiment-069.yml"
+
+jobs:
+  verify-069:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install numpy scipy
+      - run: python experiments/experiment_069/run_experiment.py
