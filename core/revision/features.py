@@ -145,7 +145,11 @@ def extract_mismatch_features(
 def enrich_context_from_observations(context:dict[str,Any], source:list[str], target:list[str], **kwargs) -> dict[str,Any]:
     extracted=extract_mismatch_features(source,target,**kwargs)
     out=dict(context)
-    out["features"]=extracted["features"]
-    out["risk_flags"]=extracted["risk_flags"]
+    out["features"]=list(dict.fromkeys(
+        list(context.get("features",[])) + extracted["features"]
+    ))
+    out["risk_flags"]=list(dict.fromkeys(
+        list(context.get("risk_flags",[])) + extracted["risk_flags"]
+    ))
     out["feature_diagnostics"]=extracted["diagnostics"]
     return out
