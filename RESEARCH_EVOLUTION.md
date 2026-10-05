@@ -123,41 +123,34 @@ The research question became:
 
 ---
 
-## 4. The Field Needed an Active Companion
+## 4. The Field Needed a Learned Logistics Operator
 
-A static homoiconic field does not inspect itself merely because its structure is rich.
+A static homoiconic field does not place, retrieve, route, or assemble its own structures.
 
-Something must move through it.
+This requirement produced the **Socratic Daimonion**.
 
-The **Socratic Daimonion** emerged as that active process.
-
-The Daimonion was not intended as a truth oracle.
-
-Its role was narrower and more demanding:
-
-- preserve OPEN where closure is not earned;
-- interrupt inertial reasoning;
-- expose contradiction;
-- reconstruct context;
-- preserve provenance;
-- reopen settled structure when evidence fails;
-- and keep self-revision auditable.
-
-A central distinction emerged:
+The earlier project language emphasized guardian, interruption, and self-revision. Those remain historical discoveries, but they are now subordinate to a simpler operational definition:
 
 ~~~text
-FIELD / LAYER / META_OBJECT / OPEN
-        = structure
-
-DAIMONION INSTANCE
-        = process
+FIELD = persistent semiotic warehouse
+LLM ADAPTER = semantic boundary translator
+DAIMONION = learned warehouse operator / loader
+ALGORITHMS = stabilized logistics compiled into explicit procedures
 ~~~
 
-Later, the earlier image of one central Daimonion was replaced by **many layer-local Daimonion processes** under one accountable external transaction boundary.
+A Daimonion operation is not itself evidence. Source contact and explicit procedures emit tokens; no relevant reaction means no positive token.
 
-The architecture became locally active without giving one hidden process sovereign authority.
+The long revision line is retained as a useful historical lesson: one successful local operation family can pull the research objective toward itself unless the role boundary is written explicitly.
 
----
+The corrected development direction is:
+
+~~~text
+train flexible semiotic logistics
+→ observe repeated operations
+→ formalize stable boundary conditions
+→ compile deterministic services
+→ keep the difficult remainder learned
+~~~
 
 ## 5. Temporary Working Worlds — Mega-Graphs
 
@@ -165,7 +158,7 @@ A permanent knowledge field can be enormous.
 
 A task normally needs only a small cut of it.
 
-This led to the **mega-graph**: a temporary working scene assembled from currently relevant objects, networks, OPENs, alternatives, rules, provenance, constraints, and goals.
+This led to the **mega-graph**: a temporary minimal sufficient task garment assembled from only the relevant objects, networks, OPENs, provenance, constraints, and procedures.
 
 The system therefore separated:
 
