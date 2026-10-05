@@ -1,5 +1,7 @@
 # A Deterministic Working Mechanism for Relative Freedom
 
+> **Current architecture precedence:** implementation and new experiments must follow [CURRENT_ARCHITECTURE.md](CURRENT_ARCHITECTURE.md), [SOCRATIC_DAIMONION.md](SOCRATIC_DAIMONION.md), and [DIRECTION.md](DIRECTION.md). Older metaphors in this document are historical/conceptual where they conflict with that boundary.
+
 > **Status: working hypothesis, not an established theory of human free will.**
 >
 > This document records a mechanism that emerged inside the Noepedia / Socratic Daimonion reconstruction. It deliberately avoids treating randomness, quantum indeterminacy, or unexplained noise as freedom. The proposed mechanism remains causal. Its key move is **temporary functional decoupling between layers, followed by goal formation and reconnection**.
