@@ -1,0 +1,20 @@
+name: Experiment 065
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "core/revision/**"
+      - "experiments/experiment_065/**"
+      - ".github/workflows/experiment-065.yml"
+  workflow_dispatch:
+
+jobs:
+  verify-065:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: python experiments/experiment_065/run_experiment.py
