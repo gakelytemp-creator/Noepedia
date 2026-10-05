@@ -3,9 +3,36 @@
 > Status: CURRENT / CANONICAL
 > Date: 2026-10-05
 >
-> When older conceptual documents conflict with this file, this file and DIRECTION.md govern the current architecture. Historical experiment records remain unchanged.
+> This file governs the current architecture together with DIRECTION.md and SOCRATIC_DAIMONION.md.
+> Older conceptual documents remain research history. If an older passage conflicts with this file, this file wins.
 
-## 1. Minimal architecture
+## 1. The central compression
+
+Noepedia is not intended to become a larger thinking machine.
+
+Its purpose is to move useful knowledge toward a more stable, addressable, cheap, inspectable state.
+
+A useful high-level analogy is:
+
+~~~text
+library / literature
+        ↓
+LLM
+distributed neural knowledge, easier to summon than books
+        ↓
+Noepedia
+explicit semiotic structure, cheaper to address, inspect, reuse, and transfer
+~~~
+
+The intended direction is therefore:
+
+> **diffuse knowledge → explicit relations → stable reusable structure → minimal sufficient task package**
+
+Noepedia should reduce repeated reconstruction, not create a new permanent layer of expensive cognition.
+
+---
+
+## 2. Four roles must remain separate
 
 ~~~text
 SEMANTIC WORLD
@@ -16,88 +43,222 @@ SOCRATIC DAIMONION
         ↕
 NOEPEDIA FIELD
 
-repeated stable Daimonion operations
+stable repeated operations
         ↓
 DETERMINISTIC ALGORITHMS
 ~~~
 
 ### Noepedia Field
 
-The field is the persistent semiotic substrate. It stores addressable objects, triplet relation tables, predicates, network handles, provenance/source tokens, status, scope, time/context, versions, OPEN, and other explicit structures.
+The field is the persistent homoiconic semiotic substrate.
 
-Its responsibility is database-like: store well, return well, address cheaply, traverse cheaply, preserve history where required.
+It stores addressable objects, triplet relation tables, predicates, network handles, provenance/source tokens, status, scope, time/context, versions, OPEN, and other explicit structures.
 
-The field is structure. It does not reason by itself.
+Its responsibility is database-like:
+
+- store well;
+- return well;
+- address cheaply;
+- traverse cheaply;
+- preserve provenance and history where required.
+
+> **The field is structure. It does not think by itself.**
 
 ### LLM Adapter
 
-The LLM works at the language boundary. It translates semantic human material into candidate semiotic structure and translates structured retrieval results back into human language.
+The LLM works at the semantic boundary.
 
-The LLM is not the Daimonion and its fluency is not persistent epistemic authority.
+It converts human semantic material into candidate semiotic structures and converts structured results back into human language.
+
+The LLM is not the Daimonion.
+
+Its fluent completion is not automatically a fact.
 
 ### Socratic Daimonion
 
-The Daimonion is a learned semiotic operator over the field. It does not need to speak.
+The Daimonion is the resident learned operator that manages the logistics of semiotic structure.
 
-It learns decomposition, placement, identity handling, provenance/source-token handling, OPEN preservation, retrieval, query construction, task-specific mega-graph assembly, reconstruction, stopping, and view/attention selection.
+The warehouse analogy is deliberate:
 
-### Deterministic algorithms
+> **The Daimonion is the warehouse manager and loader, not the consumer of the warehouse contents.**
 
-When a Daimonion operation repeats reliably enough that its conditions and outputs can be made explicit, it should be extracted and tested as a cheaper deterministic procedure.
+It learns where material belongs, how to retrieve the needed cuts, what procedure should be invoked, how to assemble a temporary task package, and when a case cannot be resolved with the available machinery.
 
-Algorithms are crystallized Daimonion habits.
+It does not need to speak human language.
+
+It does not need to privately "believe" the claims it routes.
+
+It does not author a fact merely by producing an internal interpretation.
+
+### Deterministic Algorithms
+
+When a Daimonion operation becomes stable and repetitive enough, it should be extracted into a deterministic procedure.
+
+Algorithms are crystallized operational habits.
+
+Once compiled, their desired properties are not human morality or vigilance. They are:
+
+- explicit input contract;
+- explicit output contract;
+- isolation from unintended direct mutation;
+- deterministic or otherwise precisely specified behavior;
+- regression testing;
+- versioned scope.
+
+> **For deterministic machinery, trust is primarily sterility and transparency.**
 
 The revision subsystem is one such organ. It is not the whole Noepedia core.
 
-## 2. Ingestion and retrieval
+---
+
+## 3. Tokens come from contact or procedure results
+
+A token is not a decorative confidence sticker and not the Daimonion's opinion.
+
+A token records that something actually happened:
 
 ~~~text
-INGESTION
+source contact
+measurement
+comparison procedure
+reconstruction test
+structural match
+structural mismatch
+transfer test
+other explicit operation
+        ↓
+TOKEN
+~~~
+
+If two description networks are run through a defined comparison procedure and one structurally contains or matches part of the other, the procedure may emit a MATCH token.
+
+If it does not react, there is no invented support token.
+
+> **No reaction → no token.**
+
+This is important because objectivization should arise from repeated independent contact and operation, not from the operator narrating its own confidence.
+
+Tokens themselves may be related:
+
+~~~text
+COPIED_FROM
+INDEPENDENT_OF
+MEASURED_BY
+DERIVED_FROM
+SAME_ORIGIN_AS
+CONFLICTS_WITH
+VALID_IN
+~~~
+
+Ten repetitions copied from one origin may still represent one evidential lineage.
+
+A strong mismatch token can rapidly downgrade or REOPEN a previously stable relation.
+
+---
+
+## 4. Ingestion and retrieval
+
+### Ingestion
+
+~~~text
 semantic material
-→ LLM candidate decomposition
-→ Daimonion placement/testing
-→ field storage + provenance + status + OPEN
-
-RETRIEVAL
-human question
-→ LLM structural intent
-→ Daimonion query / mega-graph
-→ field result
-→ Daimonion sufficiency check
-→ LLM verbalization
+→ LLM proposes candidate semiotic decomposition
+→ Daimonion selects placement/procedures
+→ procedures/source contact emit results and tokens
+→ field stores structure + provenance + status + OPEN
 ~~~
 
-## 3. Mega-graph
-
-The mega-graph is not a permanent super-graph. It is a temporary task-specific assembly of only the field cuts required now: the pocketed garment.
-
-Preferred control loop:
+### Retrieval
 
 ~~~text
-ATTEND
-→ retrieve minimal cut
-→ reconstruct
-→ sufficient? use/return
-→ insufficient? preserve OPEN or missing view
-→ widen locally
-→ reconstruct again
+human request
+→ LLM expresses structural intent
+→ Daimonion selects retrieval/query procedure
+→ field returns task-relevant cuts
+→ temporary mega-graph / task package
+→ LLM verbalizes when human language is needed
 ~~~
 
-Expensive intelligence should be concentrated at unresolved edges rather than used to render the whole field.
+The boundary should preserve the difference between:
 
-## 4. Evidence tokens and objectivization
+~~~text
+SOURCE MATERIAL
+LLM PARSE / TRANSLATION
+DAIMONION ROUTING DECISION
+PROCEDURE RESULT
+PERSISTENT FIELD RECORD
+~~~
 
-A claim is not only a sentence. It can accumulate source/evidence tokens whose own relations record origin, independence, copying, measurement, conflict, time, and context.
+---
 
-Repeated wording is not automatically repeated evidence.
+## 5. Mega-graph = pocketed garment
 
-A high-confidence claim remains revisable. A strong mismatch can downgrade it rapidly, reopen scope, or reveal a missing context rather than simply deleting the claim.
+The mega-graph is not a permanent super-graph.
 
-Current condition and next justified action are more useful than a permanent rank.
+It is a temporary task-specific assembly of only the field cuts required now.
 
-## 5. Daimonion training
+The working metaphor is a coat with pockets.
 
-The first Daimonion should be trained on a synthetic polygon where hidden ground truth is known.
+One task may need hierarchy, time, provenance, and function.
+
+Another may need geometry, diagnostics, and repair history.
+
+The whole field should not be rendered merely because a small cut is needed.
+
+~~~text
+REQUEST
+→ retrieve minimal sufficient cut
+→ perform task
+→ if boundary crossed, load another cut
+→ discard temporary package when finished
+~~~
+
+This is both an epistemic and computational principle:
+
+> **Intelligence is partly the ability to know what not to load.**
+
+---
+
+## 6. Minimal sufficient specialists
+
+A small autonomous machine should not carry the whole Noepedia.
+
+A lawn-mowing robot may receive only:
+
+~~~text
+grass / cutting knowledge
+local map and forbidden zones
+machine-control procedures
+minimal interaction protocol with owner
+required safety constraints
+~~~
+
+If it develops a fault:
+
+~~~text
+FAULT / UNKNOWN
+→ temporarily load self-diagnostic garment
+→ diagnose / identify OPEN
+→ repair or escalate
+→ unload diagnostic garment
+→ return to mowing package
+~~~
+
+The robot does not become a general thinker merely to cut grass.
+
+Autonomy does not require maximum knowledge.
+
+> **A good autonomous specialist carries the minimum sufficient stable knowledge for its job and knows how to request another bounded package when its competence boundary is crossed.**
+
+The same rule applies to other task agents.
+
+Capabilities, knowledge, interfaces, and authority should be reduced to the minimum necessary stable form rather than inflated by default.
+
+---
+
+## 7. Daimonion training
+
+The first Daimonion should be trained on a synthetic polygon where the hidden ground truth is known.
 
 Training cases should include:
 
@@ -115,40 +276,127 @@ Training cases should include:
 - underdetermined cases;
 - inconsistent formulations;
 - cases where OPEN is correct;
-- cases where no solution exists in the current formulation.
+- cases where no solution exists in the current formulation;
+- cases where a procedure should emit MATCH;
+- cases where it should emit MISMATCH;
+- and cases where it should emit nothing.
 
-The fitness target is not eloquence. It is correct semiotic operation.
+The fitness target is not eloquence.
 
-## 6. Reconstruction as fitness
+It is correct semiotic logistics:
 
-New knowledge often begins in a fragile or partially wrong state. Repeated decomposition, reconstruction, comparison, failure localization, alternate-view retrieval, and reconstruction again can move it toward functional assimilation.
+~~~text
+decompose
+route
+place
+retrieve
+select procedure
+assemble minimal cut
+stop
+escalate
+preserve provenance
+~~~
 
-A useful knowledge structure should increasingly support regeneration after partial loss, transfer into new contexts, and recognition of when no justified completion exists.
+---
 
-## 7. Status of the revision line
+## 8. Neural-to-algorithmic descent
 
-Experiments 042 onward produced a substantial, auditable revision subsystem. This work remains valid as one deterministic organ.
+The Daimonion begins where the correct operational mapping is not yet explicit.
 
-Experiments in blind automatic pair mining later showed why that organ must not be mistaken for the whole Daimonion or for a universal discovery engine.
+Repeated stable success should create pressure toward compilation:
 
-The next central research direction is controlled learning of semiotic storage/retrieval behavior and neural-to-algorithmic compilation, not unrestricted correlation mining.
+~~~text
+learned operation
+→ repeated stable behavior
+→ explicit boundary conditions
+→ deterministic procedure
+→ regression tests
+→ cheap reusable service
+~~~
 
-## 8. Supersession rule
+The neural operator should shrink wherever repeated structure earns an algorithm.
 
-Older conceptual documents remain valuable as research history, but passages that imply any of the following are superseded:
+If a deterministic procedure later fails outside its earned scope, preserve the failure, downgrade the scope, and return the unresolved region to learned exploration.
 
-1. the revision subsystem is the whole Noepedia core;
-2. the Daimonion is primarily a conversational LLM;
-3. the persistent field itself should absorb flexible reasoning behavior;
-4. a permanent mega-graph should contain all active knowledge;
-5. fluent semantic completion is equivalent to semiotic grounding;
-6. every request must end in an answer rather than OPEN / stop / underdetermined status.
+This is not punishment or moral supervision.
 
-Canonical current references:
+It is ordinary engineering boundary management.
 
-- CURRENT_ARCHITECTURE.md
-- SOCRATIC_DAIMONION.md
-- DIRECTION.md
-- core/revision/README.md for the bounded revision organ
+---
 
-Historical experiments remain historical and should not be rewritten to imitate the current view.
+## 9. Knowledge condition and objectivization
+
+Noepedia does not need a metaphysical rank of superior and inferior knowledge.
+
+A relation can instead carry its current condition, evidence biography, scope, and next justified action.
+
+Repeated independent tokens may move a relation toward a stable-for-current-scope state.
+
+A strong contradiction may return it rapidly to ordinary unresolved status.
+
+The important question is not:
+
+> "Who believes this?"
+
+but:
+
+> **"What contacts and operations have reacted to this structure, with what independence, under what scope?"**
+
+---
+
+## 10. Status of the revision line
+
+Experiments 042 onward produced a substantial auditable revision subsystem.
+
+That work remains useful as one compiled organ.
+
+Experiments in blind automatic pair mining later showed why one local organ must not redefine the whole architecture by momentum.
+
+The next central research direction is therefore not unrestricted correlation discovery.
+
+It is:
+
+> **train a learned semiotic warehouse operator on controlled input/output and retrieval tasks, then progressively compile repeated operations into sterile deterministic machinery.**
+
+---
+
+## 11. Non-negotiable anti-drift rules
+
+Future work must not silently replace this architecture with any of the following:
+
+1. revision subsystem = whole Noepedia core;
+2. Daimonion = conversational LLM;
+3. Daimonion = private author of facts;
+4. fluent semantic completion = evidence;
+5. recurrence = independent support;
+6. mega-graph = permanent global working memory;
+7. every agent carries the whole Noepedia;
+8. autonomy = maximal generality;
+9. deterministic algorithms require anthropomorphic moral policing;
+10. every request must end in an answer rather than OPEN / no-result / boundary escalation;
+11. experimental failure justifies adding another architecture layer;
+12. a new implementation path may redefine the goal without explicitly reopening this file.
+
+If an experiment appears to require one of these changes, the experiment must stop and explicitly propose a conceptual REOPEN before implementation continues.
+
+---
+
+## 12. Canonical compact form
+
+> **Noepedia is the persistent field.**
+>
+> **The LLM translates semantics at the boundary.**
+>
+> **The Daimonion manages semiotic logistics; it does not consume or invent the warehouse contents.**
+>
+> **Tokens are produced by source contact or explicit procedures, not by narrative confidence.**
+>
+> **The mega-graph is a temporary minimal sufficient garment.**
+>
+> **Stable repeated operations descend into isolated deterministic algorithms.**
+>
+> **Agents receive only the smallest sufficient knowledge package and load extra garments only when needed.**
+>
+> **OPEN, no-result, and escalation are legitimate outcomes.**
+
+That is the current architectural center.
