@@ -1,5 +1,7 @@
 # Noepedia
 
+> **Current architecture:** [CURRENT_ARCHITECTURE.md](CURRENT_ARCHITECTURE.md) is the canonical boundary for implementation and new experiments. Older conceptual sections in this README are subordinate to it.
+
 > **Knowledge should not have to be rediscovered.**
 >
 > **Discovery should become structure.**
@@ -818,43 +820,39 @@ Language remains extremely important — especially for human interaction — bu
 
 ---
 
-## 5. Noepedia, Socrates, and the Daimonion Are Different Things
+## 5. Noepedia, the LLM Adapter, and the Daimonion Are Different Things
 
-Noepedia is the persistent semiotic field.
+Noepedia is the persistent homoiconic semiotic field.
 
-**Socrates** is the historical human figure whose relation to knowledge motivates part of this project.
+The LLM adapter handles the human semantic boundary.
 
-**The Socratic Daimonion** is the working name for the accountable process family that operates inside the field and presents a mediated reflective transaction boundary to the outside.
+The Socratic Daimonion is the learned resident operator that manages the logistics of semiotic structure.
 
-The important clarification is architectural:
-
-> **Humans, LLMs, instruments, and applications do not directly mutate the persistent Noepedia field. They approach it through an accountable Daimonion transaction boundary. Internally, that boundary may be implemented by many layer-local Daimonion processes working in parallel.**
+Deterministic algorithms are stable repeated operations extracted from that learned logistics.
 
 ~~~text
-HUMAN / LLM / TOOL / INSTRUMENT
+HUMAN / DOCUMENT / TOOL
+        ↕
+LLM ADAPTER
         ↕
 SOCRATIC DAIMONION
         ↕
-NOEPEDIA
-    persistent object field
-    persistent relation tables
-    provenance
-    history
-    rules
-    uncertainty
+NOEPEDIA FIELD
+        ↕
+DETERMINISTIC SERVICES
 ~~~
 
-The Daimonion may internally use LSM traversal, deterministic algorithms, neural components, or specialized workers.
+The Daimonion should not be imagined as a conversational sovereign, a truth oracle, or a private consumer of field knowledge.
 
-It does **not** need to carry the archive in its neural weights.
+A useful metaphor is a warehouse manager and loader: it learns where material belongs, what should be retrieved, which procedure should be invoked, and which bounded task package should be assembled.
 
-That is a central design goal.
+Evidence does not appear because the Daimonion prefers a result.
 
-> **The Daimonion should not need to know everything. It should know how to place, retrieve, compare, clarify, authorize, and preserve knowledge without silently corrupting the map.**
+A stored support token should arise from source contact or an explicit procedure result.
 
-External participants may think, speculate, measure, and generate raw material freely outside the persistent field. Persistent field operations remain mediated and auditable.
+> **No reaction → no token.**
 
----
+The persistent field should remain simple and database-like. Flexible learned behavior stays in the operator until repetition makes part of it explicit enough to compile into cheaper deterministic machinery.
 
 ## 5A. Objects, Predicates, and Epistemic Asymmetry
 
@@ -892,116 +890,50 @@ Noepedia should therefore preserve not only objects and links, but the differenc
 
 This is one reason predicate networks remain revisable and researchable rather than becoming sacred schema.
 
-### One boundary, many Daimonion processes
+### One boundary, potentially many operational workers
 
-The earlier singular picture of "the Daimonion" should not be read as one central serial agent that owns the whole field.
-
-The external rule remains singular:
+The external architectural distinction is stable:
 
 ~~~text
-HUMAN / LLM / TOOL / APPLICATION
-              ↓
-     mediated Noepedia boundary
-              ↓
-       persistent field
+semantic boundary
+→ learned semiotic operator
+→ persistent field
 ~~~
 
-But inside that boundary, the architecture may contain many **layer-local Daimonion instances**:
+Implementation may later use several workers or parallel processes, but this is an implementation detail, not a requirement that every layer contain a quasi-agent.
 
-~~~text
-Layer_A + Daimonion_A
-Layer_B + Daimonion_B
-Layer_C + Daimonion_C
-        ↓
-split / delegate / dream / coalition / merge
-~~~
+The invariant is more important than the worker count:
 
-This distinction is deliberate:
-
-> **One field boundary, many accountable Daimonion processes.**
-
-The Daimonia are servants of the system, not sovereigns above it. Their job is to keep a homoiconic field from silently tearing its own continuity apart while it remains free to rewrite, branch, fold, reopen, and reorganize itself.
-
-A Daimonion may operate in several orientations:
-
-- **introvert mode** — field-to-field work: internal inspection, OPEN discovery, validation, consolidation, dream scenes, restructuring, and generation of internal requirements;
-- **extrovert mode** — field-to-outside work: receiving traces, answering participants, requesting measurements, returning semiotic cuts, and mediating external transactions;
-- **coupled mode** — alternating internal reconstruction with external tests or measurements in a closed epistemic loop.
-
-These are execution orientations, not personalities.
-
-External projects should not need to know how many Daimonion instances are active internally. They should see a stable transaction contract.
+> **No learned worker may silently redefine the field contract, and no deterministic service may be used outside its explicit scope without a visible boundary crossing.**
 
 ---
 
-## 6. Mega-Graphs Are the Daimonion's Learned Working Bodies
+## 6. Mega-Graphs Are Minimal Sufficient Task Garments
 
 The **mega-graph is not Noepedia**.
 
-It is the Daimonion's temporary working space — its desk, scratch field, garment, or scene of imagination.
+It is a temporary task-specific package assembled from the smallest sufficient set of relevant field cuts.
 
-There is not only one generic mega-graph.
-
-Over time the Daimonion may accumulate many reusable working forms — many "garments" — specialized for different classes of tasks.
-
-A garment may learn which networks to bring into the scene, which predicates to reinterpret as roles or positions, which object identities to preserve strongly or weaken for analogy, which structures to fold into handles, and which tests repeatedly expose useful contradictions.
-
-These garments may be compared, revised, specialized, split, recombined, and retired.
-
-Their successful transformation rules and histories should themselves become addressable objects in Noepedia.
-
-The system therefore preserves not only **what has been learned**, but gradually also **forms of working with what has been learned**.
-
-For a particular conversation or task, the Daimonion may temporarily load:
-
-```text
-relevant objects
-relevant networks
-network rules
-older claims
-new incoming claims
-conflicts
-possible relations
-open opposites
-context
-provenance
-```
-
-It may then think over that temporary structure.
-
-The mega-graph can change rapidly and can be discarded.
-
-The permanent archive should not automatically inherit every temporary association that appeared in the working scene.
-
-Only material that survives the archive's insertion process should become persistent Noepedia structure.
-
----
-
-### The Return Path: Use Should Clean the Field
-
-A working scene is not the archive.
-
-But when construction exposes a contradiction, a better predicate, a split identity, a new required role, or a more useful network rule, the result should be able to return through an audited consolidation path.
+The pocketed-garment metaphor is preferred:
 
 ~~~text
-Noepedia
-→ retrieve / assemble
-→ mega-graph construction
-→ contradiction / new relation / repaired identity
-→ validation
-→ proposed revision
-→ Noepedia
+task
+→ choose required pockets
+→ load relevant cuts
+→ run explicit procedures
+→ return result
+→ widen only when the boundary is crossed
 ~~~
 
-The whole mega-graph does not need to become permanent knowledge.
+A mega-graph should not become permanent global working memory.
 
-Only the parts that survive consolidation return.
+A small autonomous specialist should not carry the whole Noepedia either. It should carry the minimum stable knowledge needed for its role and temporarily load another bounded garment when it reaches a competence boundary.
 
-This makes use itself a source of maintenance.
+This is a key economic rule:
 
-Noepedia is therefore not merely revisable from outside. If the architecture works, repeated honest use should help the field **clean, sharpen, and reorganize itself** over time.
+> **Do not render, retrieve, or transport knowledge that the task does not need.**
 
-## 7. Request Freely; Field Access Through the Daimonion
+## 7. Request Freely; Semantic Access Through the Adapter, Field Operations Through the Daimonion
 
 Knowledge is non-rival: one visitor using a relation does not consume it.
 
