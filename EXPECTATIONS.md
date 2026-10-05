@@ -52,11 +52,11 @@ OBJECT_A ── P? ──> OBJECT_B
 
 The question mark is revisable. Evidence can shrink it; counterevidence or a changed context can enlarge it again, split the predicate, or reopen a relation that had seemed settled.
 
-**LSM means Large Semiotic Model.**
+**LSM means Large Semiotic Model, and Noepedia as a whole is the LSM.**
 
-In the current architecture, LSM names the explicit semiotic operating regime, not a second conversational mind. The learned Daimonion routes and manipulates field structure; deterministic services perform stabilized operations; an LLM is used at the semantic boundary or unresolved frontier.
+LSM is not a separate traversal process. Its persistent field, semantic adapters, SLM-type Socratic Daimonion, and deterministic services are parts of one Noepedia/LSM system.
 
-The target is not to keep a permanent neural "LSM" active over the whole field.
+The target is not to keep the whole LSM neural. The Daimonion is the learned SLM-type component; stabilized operations progressively move into explicit deterministic services.
 
 The intended development path is:
 
@@ -102,7 +102,7 @@ ESCALATE
 
 **LLM** becomes most valuable where the map is not yet settled.
 
-The LSM may consolidate many small unresolved predicates into one high-leverage request:
+The Noepedia/LSM may assemble many small unresolved predicates into one bounded request through its Daimonion and explicit procedures:
 
 ~~~text
 P1? + P2? + P3?
@@ -117,7 +117,7 @@ targeted LLM prompt / human question / experiment
 
 From the invited LLM's point of view, this structured prompt can look as if a will is speaking to it.
 
-The formal working term for this system-level direction is **Predicate-Field Will (PFW)**.
+**DEFERRED / RESEARCH:** the earlier working term **Predicate-Field Will (PFW)** is retained for historical research, but it is not part of the current canonical minimal architecture.
 
 PFW does not mean subjective feeling.
 
@@ -476,7 +476,7 @@ The architecture becomes interesting only if its expectations are falsifiable.
 | Hallucination / unsupported-claim rate on grounded tasks | Tests knowledge-safety benefit |
 | Conflict-detection rate | Tests structural visibility |
 | Provenance coverage | Tests auditability |
-| Fraction of persistent field mutations performed through audited Daimonion transactions | Tests whether the gateway is actually authoritative |
+| Fraction of persistent field mutations with explicit provenance and contract-valid execution | Tests whether the LSM boundary is transparent and sterile |
 | Unauthorized read/write attempts correctly blocked or downgraded to staging | Tests permission enforcement |
 | Clarification rate before ambiguous high-impact transactions | Tests context-sensitive interruption |
 | Average semiotic cut size delivered per task | Tests whether epistemic teleportation avoids shipping the whole field |
