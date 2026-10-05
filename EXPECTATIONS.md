@@ -1,5 +1,7 @@
 # Noepedia — Expectations and System-Level Consequences
 
+> **Current architecture precedence:** implementation and new experiments must follow [CURRENT_ARCHITECTURE.md](CURRENT_ARCHITECTURE.md), [SOCRATIC_DAIMONION.md](SOCRATIC_DAIMONION.md), and [DIRECTION.md](DIRECTION.md). Older metaphors in this document are historical/conceptual where they conflict with that boundary.
+
 > **This document records expectations, not demonstrated performance.**
 >
 > Its purpose is to preserve what the present architecture appears capable of changing before implementation and benchmarks blur the original hypotheses.
@@ -50,11 +52,11 @@ OBJECT_A ── P? ──> OBJECT_B
 
 The question mark is revisable. Evidence can shrink it; counterevidence or a changed context can enlarge it again, split the predicate, or reopen a relation that had seemed settled.
 
-**LSM means Large Semiotic Model.**
+**LSM means Large Semiotic Model, and Noepedia as a whole is the LSM.**
 
-The LSM is the process that moves through this explicit semiotic field. It is expected to traverse networks, compare predicate profiles, follow provenance, consolidate related questions, estimate whether a region is settled enough for cheap handling, and construct a narrow prompt when expensive neural reasoning is still required.
+LSM is not a separate traversal process. Its persistent field, semantic adapters, SLM-type Socratic Daimonion, and deterministic services are parts of one Noepedia/LSM system.
 
-Its first versions may themselves be partly neural.
+The target is not to keep the whole LSM neural. The Daimonion is the learned SLM-type component; stabilized operations progressively move into explicit deterministic services.
 
 The intended development path is:
 
@@ -100,7 +102,7 @@ ESCALATE
 
 **LLM** becomes most valuable where the map is not yet settled.
 
-The LSM may consolidate many small unresolved predicates into one high-leverage request:
+The Noepedia/LSM may assemble many small unresolved predicates into one bounded request through its Daimonion and explicit procedures:
 
 ~~~text
 P1? + P2? + P3?
@@ -115,15 +117,15 @@ targeted LLM prompt / human question / experiment
 
 From the invited LLM's point of view, this structured prompt can look as if a will is speaking to it.
 
-The formal working term for this system-level direction is **Predicate-Field Will (PFW)**.
+**DEFERRED / RESEARCH:** the earlier working term **Predicate-Field Will (PFW)** is retained for historical research, but it is not part of the current canonical minimal architecture.
 
 PFW does not mean subjective feeling.
 
 It means a directional requirement reconstructed when task-relevant cuts from otherwise independent predicate networks are assembled into a temporary mega-graph and their tensions, dependencies, alternatives, and constraints become jointly inspectable.
 
-**Daimonion** is not the source of that will.
+**Daimonion** is not the source of that direction.
 
-It is the reflective and consistency-preserving companion that keeps the direction auditable: which networks generated it, which alternatives lost, which assumptions and moral constraints mattered, and what conditions would reopen the decision.
+It is the learned semiotic logistics operator that selects the relevant cuts and procedures. Direction must remain reconstructible from explicit field structure and procedure results. The Daimonion's own internal output is not independent evidence.
 
 Within the Noepedia design, operational trust should be granted only to direction that can be reconstructed from this interacting field. An opaque preference of one model, one rule, or one authority is not sufficient by itself.
 
@@ -152,7 +154,7 @@ ROUTING GATE
     no  → FRONTIER WORK
 
 FRONTIER WORK
-    LSM narrows the unresolved region
+    Noepedia/LSM narrows the unresolved region
         ↓
     SHORTEN prompt or escalate to full neural reasoning
         ↓
@@ -309,7 +311,7 @@ A relation that is 73% authority-dependent is not equivalent to a relation that 
 
 The number is illustrative; the requirement is structural.
 
-The Daimonion should also maintain a queue of epistemic debts.
+The Noepedia/LSM may maintain an explicit queue of epistemic debts through field records and procedures. The Daimonion may route and prioritize access to that queue, but its private state is not the debt record.
 
 The priority of a debt should depend not only on uncertainty but on the expected structural consequence of resolving it:
 
@@ -474,7 +476,7 @@ The architecture becomes interesting only if its expectations are falsifiable.
 | Hallucination / unsupported-claim rate on grounded tasks | Tests knowledge-safety benefit |
 | Conflict-detection rate | Tests structural visibility |
 | Provenance coverage | Tests auditability |
-| Fraction of persistent field mutations performed through audited Daimonion transactions | Tests whether the gateway is actually authoritative |
+| Fraction of persistent field mutations with explicit provenance and contract-valid execution | Tests whether the LSM boundary is transparent and sterile |
 | Unauthorized read/write attempts correctly blocked or downgraded to staging | Tests permission enforcement |
 | Clarification rate before ambiguous high-impact transactions | Tests context-sensitive interruption |
 | Average semiotic cut size delivered per task | Tests whether epistemic teleportation avoids shipping the whole field |
@@ -487,7 +489,7 @@ The architecture becomes interesting only if its expectations are falsifiable.
 | Prompt reduction in SHORTEN mode | Measures how much context the LSM removes before neural invocation |
 | Consolidation cost per accepted or reopened predicate | Tests the cost of the return path |
 | Preserved-alternative reactivation rate | Tests whether losing branches remain usable when conditions change |
-| Traceability of PFW to epistemic and normative networks | Tests whether system-level direction is actually auditable |
+| Traceability of deferred PFW experiments, if reactivated | Research-only metric; not part of the current minimal canonical gate |
 
 All comparisons should be made against an explicit baseline.
 
@@ -713,7 +715,7 @@ A failed expectation is still useful if it is recorded before the experiment.
 
 > **Noepedia should store what no longer deserves to be expensive.**
 >
-> **LSM should travel cheaply through what is already known.**
+> **The Noepedia/LSM should reuse settled structure cheaply and reserve neural work for unresolved boundaries.**
 >
 > **LLM should be paid mainly for discovery and the frontier.**
 >
@@ -812,3 +814,8 @@ The operational expectation is:
 
 If it does not, the failure should REOPEN the conceptual layer.
 
+
+
+## Minimal specialist expectation
+
+A deployed agent should not carry the whole Noepedia. It should receive the smallest stable knowledge/procedure package sufficient for its job and load additional bounded garments only when its competence boundary is crossed. The expected economic gain therefore includes not only fewer LLM calls, but also less knowledge transported, less state kept active, and narrower interfaces.

@@ -1,5 +1,7 @@
 # Real-Data Instrumentation Track — Methodology Status after Experiments 011–016
 
+> **Current architecture precedence:** implementation and new experiments must follow [CURRENT_ARCHITECTURE.md](CURRENT_ARCHITECTURE.md), [SOCRATIC_DAIMONION.md](SOCRATIC_DAIMONION.md), and [DIRECTION.md](DIRECTION.md). Older metaphors in this document are historical/conceptual where they conflict with that boundary.
+
 > **Status update:** Experiments 011–016 are retained as an exploratory / instrumentation track, not as validation of the Noepedia core architecture.
 
 ## Why this status changed

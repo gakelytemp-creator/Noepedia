@@ -1,5 +1,7 @@
 # Noepedia Glossary
 
+> **Current architecture precedence:** implementation and new experiments must follow [CURRENT_ARCHITECTURE.md](CURRENT_ARCHITECTURE.md), [SOCRATIC_DAIMONION.md](SOCRATIC_DAIMONION.md), and [DIRECTION.md](DIRECTION.md). Older metaphors in this document are historical/conceptual where they conflict with that boundary.
+
 > **Status: living glossary.**
 >
 > These terms are working architectural vocabulary. They are meant to reduce ambiguity while the system is still being discovered. A term may later split, merge, or be renamed if the architecture demands it.
@@ -318,112 +320,59 @@ A higher layer may act as an accelerator because movement through a compressed t
 
 ---
 
+## Small Semiotic Model (SLM)
+
+**SLM** means **Small Semiotic Model** in Noepedia.
+
+It does **not** mean Small Language Model.
+
+An SLM is a compact neural model trained to operate on semiotic structure rather than to converse in natural language. The Socratic Daimonion is the canonical SLM-type component inside the Noepedia/LSM.
+
+---
+
 ## Socratic Daimonion
 
-The **Socratic Daimonion** is an active field process that accompanies a layer or working scene.
+The **Socratic Daimonion** is the learned semiotic warehouse operator over the persistent Noepedia field.
 
-It can:
+It routes, places, retrieves, selects procedures, assembles minimal task-specific mega-graphs, preserves provenance, and returns OPEN / NO_RESULT / ESCALATE when the available structure is insufficient.
 
-- inspect;
-- interrupt;
-- preserve OPEN;
-- test relations;
-- reconstruct context;
-- compare alternatives;
-- provoke recombination;
-- preserve provenance;
-- validate reconnection;
-- and hand work to another Daimonion process.
+It is not an LLM, not a truth oracle, and not a private author of epistemic facts.
 
-The Daimonion should not be treated as a truth oracle or hidden sovereign.
+> **No reaction → no token.**
 
-> **The Daimonion is process; the field is structure.**
+Support tokens must be attributable to source contact or explicit procedure results.
+
+Repeated stable Daimonion operations may be compiled into deterministic algorithms.
 
 ---
 
-## Daimonion Orientation Modes
+## Daimonion Training Polygon
 
-A Daimonion instance may operate in different orientations.
-
-### Introvert Mode
-
-**Introvert Mode** is field-to-field work.
-
-Typical operations include:
-
-- inspecting unresolved structure;
-- discovering OPEN or OPEN_SPACE;
-- checking upward and downward validation;
-- reorganizing local topology;
-- generating internal requirements without an external prompt;
-- dreaming or joining a Daimonion coalition;
-- identifying stabilized operations that may be compiled into cheaper deterministic machinery.
-
-~~~text
-FIELD → DAIMONION → FIELD
-~~~
-
-### Extrovert Mode
-
-**Extrovert Mode** is field-to-outside work.
-
-Typical operations include:
-
-- receiving a trace or question;
-- reconstructing external context;
-- requesting a measurement or experiment;
-- returning a task-relevant semiotic cut;
-- mediating permissions and provenance;
-- translating between Noepedia structure and a domain interface.
-
-~~~text
-FIELD ↔ DAIMONION ↔ OUTSIDE
-~~~
-
-### Coupled Mode
-
-**Coupled Mode** alternates internal reconstruction with external testing.
-
-~~~text
-internal hypothesis
-      ↓
-external measurement / action
-      ↓
-returned trace
-      ↓
-internal revision
-      ↓
-next discriminating test
-~~~
-
-The three modes are execution orientations, not personality traits.
+A controlled synthetic environment with known ground truth used to train semiotic placement, retrieval, procedure selection, OPEN handling, and stopping.
 
 ---
 
-## Daimonion Service Constraint
+## Minimal Sufficient Garment
 
-A Daimonion is a **servant process of the field**.
+A **Minimal Sufficient Garment** is the smallest temporary set of relation-network cuts, procedures, and context needed for a particular task or deployed specialist.
 
-It must not become a hidden sovereign, truth oracle, or owner of the knowledge it mediates.
-
-Its authority is bounded by:
-
-- the field's explicit rules;
-- transaction permissions;
-- provenance;
-- reversible history;
-- layer-local obligations;
-- and the requirement that its own operations remain auditable and revisable.
-
-In a homoiconic system this service constraint matters because the same freedom that lets the field rewrite itself also lets it generate internally coherent nonsense. Daimonion processes provide structural resistance against silent self-corruption without freezing the field.
-
-> **The field may change itself. The Daimonia must make the change answerable.**
+It may be widened locally when the competence boundary is crossed.
 
 ---
 
-## Layer-Local Daimonion
+## Deterministic Sterility
 
-A **Layer-Local Daimonion** is a Daimonion process bound to the context of one layer.
+**Deterministic Sterility** is the requirement that a compiled procedure operate through explicit contracts, bounded inputs/outputs, isolation from unintended direct mutation, regression tests, and versioned scope.
+
+It is an engineering property, not an anthropomorphic moral trait.
+
+---
+
+## Layer-Local Daimonion — DEFERRED / RESEARCH
+
+> This is not a requirement of the current minimal canonical architecture. The canonical Daimonion is one SLM-type neural operator inside the Noepedia/LSM unless experiments later justify additional instances.
+
+A **Layer-Local Daimonion** is a historical/research proposal for a Daimonion process bound to the context of one layer.
 
 A new layer may be born together with its own Daimonion context.
 
@@ -469,9 +418,11 @@ External systems should not have to reproduce or coordinate Noepedia's internal 
 
 ---
 
-## Daimonion Coalition
+## Daimonion Coalition — DEFERRED / RESEARCH
 
-A **Daimonion Coalition** is a temporary group of Daimonion instances that share or co-author a working scene.
+A **Daimonion Coalition** is a historical/research proposal for a temporary group of Daimonion instances that share a working scene.
+
+It must not be interpreted as co-authoring epistemic facts. Facts/tokens still require source contact or explicit procedure results.
 
 For example, a dream, hypothesis, or reconstruction may be produced jointly by several layer-local processes.
 
@@ -487,21 +438,25 @@ joint result
 
 ---
 
-## Dream / Internal Dream Scene
+## Dream / Internal Dream Scene — DEFERRED / RESEARCH
 
-A **Dream** in this architecture is a temporarily protected internal scene in which one or more Daimonion processes continue structured traversal while ordinary lower sensory-motor coupling is reduced.
+This term is not part of the current minimal implementation target.
+
+A **Dream** in the older architecture is a temporarily protected internal scene in which one or more Daimonion processes continue structured traversal while ordinary lower sensory-motor coupling is reduced.
 
 A dream may be:
 
 - local to one layer;
 - shared across several layers;
-- or co-authored by a Daimonion coalition.
+- or, in the deferred multi-process hypothesis, assembled from contributions of several Daimonion instances.
 
 This is a working architectural term, not a claim that the model already explains biological dreaming.
 
 ---
 
-## Galvanic Break
+## Galvanic Break — DEFERRED / RESEARCH
+
+This mechanism remains a separate research hypothesis and is not part of the canonical Daimonion definition.
 
 A **Galvanic Break** is a temporary selective interruption of direct causal coupling.
 
@@ -655,7 +610,9 @@ The architecture should therefore preserve parallel structure before parallel ha
 
 ---
 
-## Absolute Parallelization Principle
+## Absolute Parallelization Principle — DEFERRED / RESEARCH
+
+This is a scheduling/architecture research proposal, not a requirement of the minimal Noepedia/LSM or SLM-Daimonion.
 
 The **Absolute Parallelization Principle** is the working rule:
 

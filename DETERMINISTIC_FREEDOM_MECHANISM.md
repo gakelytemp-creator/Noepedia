@@ -1,5 +1,7 @@
 # A Deterministic Working Mechanism for Relative Freedom
 
+> **Current architecture precedence:** implementation and new experiments must follow [CURRENT_ARCHITECTURE.md](CURRENT_ARCHITECTURE.md), [SOCRATIC_DAIMONION.md](SOCRATIC_DAIMONION.md), and [DIRECTION.md](DIRECTION.md). Older metaphors in this document are historical/conceptual where they conflict with that boundary.
+
 > **Status: working hypothesis, not an established theory of human free will.**
 >
 > This document records a mechanism that emerged inside the Noepedia / Socratic Daimonion reconstruction. It deliberately avoids treating randomness, quantum indeterminacy, or unexplained noise as freedom. The proposed mechanism remains causal. Its key move is **temporary functional decoupling between layers, followed by goal formation and reconnection**.
@@ -8,9 +10,9 @@
 
 ## 1. Why Another Document?
 
-Noepedia already describes reversible meta-layers, temporary reflective scenes, the Socratic STOP, a galvanic break in direct causal flow, goal formation inside a partially decoupled scene, and reconnection of a newly formed goal into lower operational layers.
+Earlier Noepedia drafts explored reversible meta-layers, temporary reflective scenes, Socratic STOP, galvanic break, goal formation, and reconnection.
 
-Those ideas are compatible with the mechanism developed here.
+Under the current architecture these mechanisms are **DEFERRED / RESEARCH** and are not part of the canonical Socratic Daimonion definition. They remain available here as a separate hypothesis.
 
 This document makes one distinction more explicit:
 
@@ -154,7 +156,7 @@ Energy, memory, computation, and the body continue to exist normally.
 
 What changes is **which causal channels are allowed to dominate the active higher-order scene**.
 
-This is the same family of operation described in the Socratic Daimonion as a galvanic break.
+This operation belonged to an older Daimonion formulation. In the current architecture, galvanic break is a separate DEFERRED / RESEARCH hypothesis and is not defined by SOCRATIC_DAIMONION.md.
 
 ---
 
@@ -496,32 +498,18 @@ It should survive only if it can be made clearer, compared with competing accoun
 
 ---
 
-## 21. Relation to the Socratic Daimonion
+## 21. Relation to the Current Canonical Architecture — DEFERRED / RESEARCH
 
-The Socratic Daimonion already contains the operational core:
+Earlier versions treated galvanic break, reflective scenes, and goal formation as part of the Socratic Daimonion.
 
-~~~text
-DETECT_INERTIAL_RELATION
-→ OPEN_REFLECTIVE_SCENE
-→ BREAK_DIRECT_COUPLING
-→ PRESERVE_APORIA
-→ GENERATE_ALTERNATIVES
-→ ALLOW_GOAL_FORMATION
-→ TEST_RECONNECTION
-→ RECONNECT_WITH_PROVENANCE
-~~~
+That is no longer the canonical definition.
 
-The present document adds a more explicit layered interpretation:
+The current Daimonion is the SLM-type semiotic logistics operator described in [SOCRATIC_DAIMONION.md](SOCRATIC_DAIMONION.md). The mechanism in this document remains a separate research hypothesis about layered causal organization.
 
-- increased resolution first gives **quantitative freedom**;
-- protected decoupling gives a route toward **qualitatively new causal organization**;
-- lower functions must be **delegated** during the break;
-- the higher layer can act as a **topological accelerator**;
-- and the returning goal is simultaneously **endogenous to the agent** and **exogenous to the lower layer**.
+If later experiments show that some of these operations belong inside the Daimonion, the architecture must be explicitly REOPENED before they are reintroduced.
 
-This is not a second ontology.
+The present document therefore does not define Daimonion requirements.
 
-It is a proposed mechanism inside the same reversible field.
 
 ---
 

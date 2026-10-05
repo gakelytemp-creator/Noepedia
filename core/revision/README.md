@@ -1,6 +1,12 @@
-# Noepedia Core — Revision Subsystem
+# Noepedia Revision Subsystem
+
+> Scope note: this directory is one reusable deterministic epistemic organ. It is not the whole Noepedia core and not the whole Socratic Daimonion.
 
 This directory contains the reusable revision subsystem extracted from Experiments 042–047.
+
+In the current architecture, this code is best understood as a crystallized Daimonion habit: a once-flexible revision procedure that became explicit enough to execute deterministically, audit separately, and invoke only when its preconditions are met.
+
+The persistent Noepedia field remains the simpler substrate of addressable objects, relation tables, provenance/source tokens, status, uncertainty, time/version information, and OPEN structure. See CURRENT_ARCHITECTURE.md.
 
 Primary modules:
 - `engine.py` — promotion-gate audit and PROMOTE / REJECT / REMAIN_OPEN decision engine

@@ -1,5 +1,7 @@
 # Scientific Context and References
 
+> **Current architecture precedence:** implementation and new experiments must follow [CURRENT_ARCHITECTURE.md](CURRENT_ARCHITECTURE.md), [SOCRATIC_DAIMONION.md](SOCRATIC_DAIMONION.md), and [DIRECTION.md](DIRECTION.md). Older metaphors in this document are historical/conceptual where they conflict with that boundary.
+
 > **Purpose:** place Noepedia beside earlier scientific and technical work with respect.
 >
 > Noepedia was developed through its own project dialogue and engineering reconstruction. That independent path does **not** imply historical priority. Where a Noepedia mechanism overlaps with earlier theories or papers, this file records the overlap explicitly. Where the mechanism differs, the difference is stated just as explicitly.

@@ -1,5 +1,7 @@
 # Noepedia Pilot: Everett Portal
 
+> **Current architecture precedence:** implementation and new experiments must follow [CURRENT_ARCHITECTURE.md](CURRENT_ARCHITECTURE.md), [SOCRATIC_DAIMONION.md](SOCRATIC_DAIMONION.md), and [DIRECTION.md](DIRECTION.md). Older metaphors in this document are historical/conceptual where they conflict with that boundary.
+
 > **Purpose:** use Everett Portal as the third Noepedia stress test — a test of branch-scoped knowledge, temporal continuity, causal dependency, persistent identity, lazy world expansion, and consistency under multiple mutually incompatible but internally coherent worlds.
 
 AISocket tests contact with new physical experience.

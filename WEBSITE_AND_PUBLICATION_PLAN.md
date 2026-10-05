@@ -1,5 +1,7 @@
 # Noepedia Website and Public-Discourse Plan
 
+> **Current architecture precedence:** implementation and new experiments must follow [CURRENT_ARCHITECTURE.md](CURRENT_ARCHITECTURE.md), [SOCRATIC_DAIMONION.md](SOCRATIC_DAIMONION.md), and [DIRECTION.md](DIRECTION.md). Older metaphors in this document are historical/conceptual where they conflict with that boundary.
+
 > **Status:** content and information-architecture specification.  
 > No site code should be written until this structure is accepted.
 

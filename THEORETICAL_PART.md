@@ -1,5 +1,7 @@
 # Theoretical Part — Noepedia Academic Framework
 
+> **Architecture precedence:** [CURRENT_ARCHITECTURE.md](CURRENT_ARCHITECTURE.md), [SOCRATIC_DAIMONION.md](SOCRATIC_DAIMONION.md), and [DIRECTION.md](DIRECTION.md) define the current implementation boundary. This paper section preserves broader theory but must not override that boundary.
+
 > **Status:** conceptual / theoretical part of the Noepedia academic paper.
 >
 > This file contains the architecture, terminology, mechanisms, scientific positioning, hypotheses, and limits of Noepedia **before experimental validation**.
@@ -150,62 +152,76 @@ OPEN can generate work.
 
 ## 7. Socratic Daimonion
 
-The Daimonion is an active process operating on the field.
+The Daimonion is the learned semiotic operator over the persistent field.
 
-It may:
+Its architectural role is closer to a warehouse manager / loader than to a conversational reasoner.
 
-- inspect;
-- interrupt;
-- preserve OPEN;
-- reconstruct context;
-- compare alternatives;
-- request evidence;
-- preserve provenance;
-- reopen structure;
-- delegate work;
-- merge returned work without forced consensus.
+It may learn to:
+
+- decompose candidate structure;
+- route material to relation networks;
+- preserve provenance/source tokens;
+- select retrieval paths;
+- select explicit procedures;
+- assemble minimal sufficient task cuts;
+- return OPEN / no-result / escalation;
+- and identify repeated operations that can be compiled.
+
+A Daimonion routing decision is not itself evidence.
+
+Support tokens should arise from source contact or explicit procedure results.
+
+~~~text
+source / measurement / comparator / test
+        ↓
+observable procedure result
+        ↓
+token / relation update
+~~~
+
+If there is no relevant reaction, no positive token is invented.
+
+> **No reaction → no token.**
 
 Core distinction:
 
-\`\`\`text
-FIELD / LAYER / META_OBJECT / OPEN
-        = structure
+~~~text
+FIELD
+    = persistent semiotic structure
 
-DAIMONION INSTANCE
-        = process
-\`\`\`
+LLM ADAPTER
+    = semantic ↔ semiotic boundary translation
 
-### Service constraint
+DAIMONION
+    = learned semiotic logistics
 
-The Daimonion is a servant process of the field, not a hidden truth oracle or sovereign controller.
+DETERMINISTIC ALGORITHM
+    = stabilized operation compiled from repeated logistics
+~~~
 
-Its operations should remain:
-- auditable;
-- revisable;
-- permission-bounded;
-- provenance-preserving.
+For deterministic algorithms, reliability is primarily an engineering property: explicit contracts, isolation, regression tests, and bounded scope.
 
----
+## 8. Mega-Graphs and Minimal Sufficient Knowledge
 
-## 8. Mega-Graphs
+A mega-graph is a temporary task-specific garment built from the smallest sufficient set of field cuts.
 
-A mega-graph is a temporary task-specific working scene built from relevant cuts of the persistent field.
+It is not a permanent global working memory.
 
-It may include:
+~~~text
+task
+→ retrieve minimal relevant cuts
+→ run required procedures
+→ sufficient? use result
+→ insufficient? widen locally / OPEN / escalate
+~~~
 
-- objects;
-- active relations;
-- OPENs;
-- alternatives;
-- provenance;
-- goals;
-- constraints;
-- normative requirements;
-- current mismatch.
+This principle extends to deployed agents.
 
-The full field does not need to remain active.
+A domain specialist should not carry the whole Noepedia. It should receive only the stable knowledge and procedures needed for its function and temporarily load another bounded package when its competence boundary is crossed.
 
----
+The research hypothesis is therefore stronger than retrieval efficiency:
+
+> **Can general diffuse knowledge be progressively reduced into minimal sufficient stable specialist packages without losing provenance, scope, and escalation paths?**
 
 ## 9. Meta-Layers and META_OBJECTS
 
@@ -453,39 +469,45 @@ lost distinction
 
 ---
 
-## 23. LLM–LSM Division of Labor
+## 23. LLM–LSM Relation
+
+**Noepedia as a whole is the LSM (Large Semiotic Model).**
+
+The LLM is not the opposite half of a two-worker pair. It is one possible semantic-boundary and frontier component used by the LSM.
+
+~~~text
+NOEPEDIA / LSM
+├─ persistent semiotic field
+├─ LLM/media adapters where semantic translation is needed
+├─ Socratic Daimonion — SLM-type neural network
+└─ deterministic services
+~~~
 
 ### LLM role
 
-- open-edge reasoning;
+- semantic ↔ semiotic translation;
+- open-edge reasoning when requested;
 - flexible synthesis;
-- new distinction formation;
-- candidate lens invention;
-- difficult multimodal interpretation.
+- difficult multimodal interpretation;
+- candidate decomposition that must still be routed/tested.
 
-### LSM / Noepedia role
+### SLM-type Daimonion role
 
-- persistent explicit structure;
-- provenance;
-- traversal;
-- reuse;
-- OPEN management;
-- lens stabilization;
-- revision;
-- routing.
+- learned semiotic logistics;
+- placement and retrieval;
+- procedure selection;
+- minimal garment construction;
+- coverage tracking;
+- OPEN / NO_RESULT / escalation handling;
+- discovery of repeated operational patterns that may later be compiled.
 
-Working cycle:
+### Deterministic service role
 
-\`\`\`text
-semantic interaction
-→ recurring transform
-→ candidate lens
-→ explicit validation
-→ stabilized lens
-→ cheap reuse
-\`\`\`
+- execute stabilized operations under explicit contracts;
+- emit explicit procedure results;
+- preserve versioned scope and regression behavior.
 
----
+The whole LSM owns the architectural objective: convert diffuse knowledge into explicit, stable, cheap, addressable semiotic structure.
 
 ## 24. Structural Exchange Beyond Text
 

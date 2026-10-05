@@ -1,5 +1,7 @@
 # Noepedia
 
+> **Current architecture:** [CURRENT_ARCHITECTURE.md](CURRENT_ARCHITECTURE.md) is the canonical boundary for implementation and new experiments. [DOCUMENT_STATUS.md](DOCUMENT_STATUS.md) marks which surrounding documents are CANONICAL, ACTIVE SUPPORT, HISTORICAL, or DEFERRED. Older conceptual sections in this README are subordinate to that map.
+
 > **Knowledge should not have to be rediscovered.**
 >
 > **Discovery should become structure.**
@@ -818,43 +820,39 @@ Language remains extremely important — especially for human interaction — bu
 
 ---
 
-## 5. Noepedia, Socrates, and the Daimonion Are Different Things
+## 5. Noepedia, the LLM Adapter, and the Daimonion Are Different Things
 
-Noepedia is the persistent semiotic field.
+Noepedia is the persistent homoiconic semiotic field.
 
-**Socrates** is the historical human figure whose relation to knowledge motivates part of this project.
+The LLM adapter handles the human semantic boundary.
 
-**The Socratic Daimonion** is the working name for the accountable process family that operates inside the field and presents a mediated reflective transaction boundary to the outside.
+The Socratic Daimonion is the learned resident operator that manages the logistics of semiotic structure.
 
-The important clarification is architectural:
-
-> **Humans, LLMs, instruments, and applications do not directly mutate the persistent Noepedia field. They approach it through an accountable Daimonion transaction boundary. Internally, that boundary may be implemented by many layer-local Daimonion processes working in parallel.**
+Deterministic algorithms are stable repeated operations extracted from that learned logistics.
 
 ~~~text
-HUMAN / LLM / TOOL / INSTRUMENT
+HUMAN / DOCUMENT / TOOL
+        ↕
+LLM ADAPTER
         ↕
 SOCRATIC DAIMONION
         ↕
-NOEPEDIA
-    persistent object field
-    persistent relation tables
-    provenance
-    history
-    rules
-    uncertainty
+NOEPEDIA FIELD
+        ↕
+DETERMINISTIC SERVICES
 ~~~
 
-The Daimonion may internally use LSM traversal, deterministic algorithms, neural components, or specialized workers.
+The Daimonion should not be imagined as a conversational sovereign, a truth oracle, or a private consumer of field knowledge.
 
-It does **not** need to carry the archive in its neural weights.
+A useful metaphor is a warehouse manager and loader: it learns where material belongs, what should be retrieved, which procedure should be invoked, and which bounded task package should be assembled.
 
-That is a central design goal.
+Evidence does not appear because the Daimonion prefers a result.
 
-> **The Daimonion should not need to know everything. It should know how to place, retrieve, compare, clarify, authorize, and preserve knowledge without silently corrupting the map.**
+A stored support token should arise from source contact or an explicit procedure result.
 
-External participants may think, speculate, measure, and generate raw material freely outside the persistent field. Persistent field operations remain mediated and auditable.
+> **No reaction → no token.**
 
----
+The persistent field should remain simple and database-like. Flexible learned behavior stays in the operator until repetition makes part of it explicit enough to compile into cheaper deterministic machinery.
 
 ## 5A. Objects, Predicates, and Epistemic Asymmetry
 
@@ -892,116 +890,50 @@ Noepedia should therefore preserve not only objects and links, but the differenc
 
 This is one reason predicate networks remain revisable and researchable rather than becoming sacred schema.
 
-### One boundary, many Daimonion processes
+### One boundary, potentially many operational workers
 
-The earlier singular picture of "the Daimonion" should not be read as one central serial agent that owns the whole field.
-
-The external rule remains singular:
+The external architectural distinction is stable:
 
 ~~~text
-HUMAN / LLM / TOOL / APPLICATION
-              ↓
-     mediated Noepedia boundary
-              ↓
-       persistent field
+semantic boundary
+→ learned semiotic operator
+→ persistent field
 ~~~
 
-But inside that boundary, the architecture may contain many **layer-local Daimonion instances**:
+Implementation may later use several workers or parallel processes, but this is an implementation detail, not a requirement that every layer contain a quasi-agent.
 
-~~~text
-Layer_A + Daimonion_A
-Layer_B + Daimonion_B
-Layer_C + Daimonion_C
-        ↓
-split / delegate / dream / coalition / merge
-~~~
+The invariant is more important than the worker count:
 
-This distinction is deliberate:
-
-> **One field boundary, many accountable Daimonion processes.**
-
-The Daimonia are servants of the system, not sovereigns above it. Their job is to keep a homoiconic field from silently tearing its own continuity apart while it remains free to rewrite, branch, fold, reopen, and reorganize itself.
-
-A Daimonion may operate in several orientations:
-
-- **introvert mode** — field-to-field work: internal inspection, OPEN discovery, validation, consolidation, dream scenes, restructuring, and generation of internal requirements;
-- **extrovert mode** — field-to-outside work: receiving traces, answering participants, requesting measurements, returning semiotic cuts, and mediating external transactions;
-- **coupled mode** — alternating internal reconstruction with external tests or measurements in a closed epistemic loop.
-
-These are execution orientations, not personalities.
-
-External projects should not need to know how many Daimonion instances are active internally. They should see a stable transaction contract.
+> **No learned worker may silently redefine the field contract, and no deterministic service may be used outside its explicit scope without a visible boundary crossing.**
 
 ---
 
-## 6. Mega-Graphs Are the Daimonion's Learned Working Bodies
+## 6. Mega-Graphs Are Minimal Sufficient Task Garments
 
 The **mega-graph is not Noepedia**.
 
-It is the Daimonion's temporary working space — its desk, scratch field, garment, or scene of imagination.
+It is a temporary task-specific package assembled from the smallest sufficient set of relevant field cuts.
 
-There is not only one generic mega-graph.
-
-Over time the Daimonion may accumulate many reusable working forms — many "garments" — specialized for different classes of tasks.
-
-A garment may learn which networks to bring into the scene, which predicates to reinterpret as roles or positions, which object identities to preserve strongly or weaken for analogy, which structures to fold into handles, and which tests repeatedly expose useful contradictions.
-
-These garments may be compared, revised, specialized, split, recombined, and retired.
-
-Their successful transformation rules and histories should themselves become addressable objects in Noepedia.
-
-The system therefore preserves not only **what has been learned**, but gradually also **forms of working with what has been learned**.
-
-For a particular conversation or task, the Daimonion may temporarily load:
-
-```text
-relevant objects
-relevant networks
-network rules
-older claims
-new incoming claims
-conflicts
-possible relations
-open opposites
-context
-provenance
-```
-
-It may then think over that temporary structure.
-
-The mega-graph can change rapidly and can be discarded.
-
-The permanent archive should not automatically inherit every temporary association that appeared in the working scene.
-
-Only material that survives the archive's insertion process should become persistent Noepedia structure.
-
----
-
-### The Return Path: Use Should Clean the Field
-
-A working scene is not the archive.
-
-But when construction exposes a contradiction, a better predicate, a split identity, a new required role, or a more useful network rule, the result should be able to return through an audited consolidation path.
+The pocketed-garment metaphor is preferred:
 
 ~~~text
-Noepedia
-→ retrieve / assemble
-→ mega-graph construction
-→ contradiction / new relation / repaired identity
-→ validation
-→ proposed revision
-→ Noepedia
+task
+→ choose required pockets
+→ load relevant cuts
+→ run explicit procedures
+→ return result
+→ widen only when the boundary is crossed
 ~~~
 
-The whole mega-graph does not need to become permanent knowledge.
+A mega-graph should not become permanent global working memory.
 
-Only the parts that survive consolidation return.
+A small autonomous specialist should not carry the whole Noepedia either. It should carry the minimum stable knowledge needed for its role and temporarily load another bounded garment when it reaches a competence boundary.
 
-This makes use itself a source of maintenance.
+This is a key economic rule:
 
-Noepedia is therefore not merely revisable from outside. If the architecture works, repeated honest use should help the field **clean, sharpen, and reorganize itself** over time.
+> **Do not render, retrieve, or transport knowledge that the task does not need.**
 
-## 7. Request Freely; Field Access Through the Daimonion
+## 7. Request Freely; Semantic Access Through the Adapter, Field Operations Through the Daimonion
 
 Knowledge is non-rival: one visitor using a relation does not consume it.
 
@@ -1052,11 +984,11 @@ This is closer to an epistemic transaction protocol than to unrestricted databas
 
 ---
 
-## 8. The Daimonion as a Consistency-Preserving Companion
+## 8. Consistency Preservation as One Daimonion Operation
 
 The Daimonion does not decide truth by personality or authority.
 
-Its job is closer to a demanding companion, archivist, and navigator.
+Its job here is archival and operational: make structural changes visible rather than silently overwriting them.
 
 If a participant previously established one structure and later proposes another, the Daimonion should make the change visible rather than silently overwrite the earlier structure.
 
@@ -1296,146 +1228,111 @@ See [EPISTEMIC_TELEPORTATION_AND_ASSEMBLY_ALIGNMENT.md](EPISTEMIC_TELEPORTATION_
 
 ---
 
-## 12. LSM Is Not an LLM With a Different Name
+## 12. Noepedia as LSM Is Not an LLM With a Different Name
 
-**LSM means Large Semiotic Model.**
+**LSM means Large Semiotic Model, and Noepedia as a whole is the LSM.**
 
-In the present architecture, LSM names the process that moves through Noepedia's explicit semiotic structure rather than reconstructing the whole structure from neural weights on every request.
+LSM does not name a separate traversal process.
 
-Its early implementation may itself contain neural components.
-
-The intended path is:
+The contrast with an LLM is architectural:
 
 ~~~text
-neural navigation over explicit structure
-→ repeated operations become visible
-→ stable operations are extracted
-→ increasingly algorithmic traversal, comparison, routing, and consolidation
+LLM
+    much learned structure is distributed in neural weights
+    and reconstructed generatively on each request
+
+NOEPEDIA / LSM
+    persistent semiotic structure is explicitly addressable
+    and task work is divided among:
+    field + adapters + SLM-Daimonion + deterministic services
 ~~~
 
-A central LSM task is to manage question-bearing predicates.
+An LLM may still be used at the semantic boundary or on unresolved frontier work.
 
-It can consolidate many local uncertainties into a smaller number of high-leverage questions, then do one of two things:
+The Noepedia/LSM aims to make settled knowledge locally editable and cheaply reusable:
 
 ~~~text
-SKIP: settled structure is sufficient → answer / route / compare without a large LLM
-SHORTEN: a large LLM is still needed → construct a narrow structured prompt for the unresolved part
-~~~
-
-The hard research problem is the gate between these modes.
-
-The system must learn when a relation is settled enough for cheap structural handling and when it is still an edge case.
-
-A false edge wastes computation. A **false settled** decision is more dangerous because it can hide a live uncertainty behind cheap confidence.
-An LLM stores much of its learned structure diffusely in parameters.
-
-A local factual or conceptual edit may be difficult because the relevant representation is distributed across the model.
-
-Noepedia takes the opposite approach for settled knowledge:
-
-```text
 addressable object
 addressable relation
 addressable network
 addressable provenance
 addressable revision
-```
+~~~
 
-A relation can be added, removed, corrected, versioned, or challenged without retraining the whole knowledge field.
+A local relation can therefore be corrected, versioned, challenged, or retrieved without treating the entire system as one diffuse neural memory.
 
-A useful metaphor is:
-
-> **An LLM is closer to a hologram: changing one local "pixel" is difficult because the representation is distributed.**
+> **An LLM is closer to a hologram: useful structure is distributed.**
 >
-> **Noepedia is closer to an editable map: local structure can be changed locally, while history remains inspectable.**
+> **The Noepedia/LSM is closer to an editable semiotic map whose stabilized parts have addresses.**
 
-The Daimonion acts as the disciplined companion beside that editable map.
+## 13. Noepedia Is the LSM; the Daimonion Is Its SLM-Type Learned Operator
 
----
+**LSM (Large Semiotic Model)** names Noepedia as a whole.
 
-## 13. The LSM and Daimonion May Begin Neural, But Need Not Stay Entirely Neural
+It must not be represented as a separate traversal worker beside the Daimonion.
 
-We do not yet know the full technical task of either the LSM control process or the Daimonion.
+~~~text
+NOEPEDIA / LSM
+├─ persistent homoiconic semiotic field
+├─ semantic boundary adapters
+├─ Socratic Daimonion — SLM-type neural network
+└─ deterministic services
+~~~
 
-Therefore early versions should remain neural enough to discover recurring operations rather than freezing the design too early.
+The Daimonion is the learned logistics component inside the LSM. It learns placement, retrieval, procedure selection, minimal-cut assembly, coverage handling, and escalation.
 
-The LSM is especially concerned with traversal, question consolidation, routing, and predicate stabilization.
+When a recurring operation becomes explicit enough, it should descend into deterministic machinery.
 
-The Daimonion is especially concerned with reflective interruption, consistency, self-revision, and the honesty of transitions between levels.
+~~~text
+SLM-type learned operation
+→ stable repeated pattern
+→ explicit procedure
+→ regression-tested deterministic service
+~~~
 
-Possible recurring operations include:
+The distinction is therefore not LSM versus Daimonion.
 
-```text
-network selection
-rule interpretation
-object identity reconciliation
-placement
-conflict detection
-tension navigation
-coverage estimation
-retrieval path construction
-revision comparison
-provenance preservation
-```
+It is **whole semiotic system versus one learned neural operator inside it**.
 
-If stable patterns emerge, some may later be extracted into deterministic algorithms.
+### Coverage is not evidence
 
-The intended path is:
+The system must distinguish:
 
-```text
-neural exploration
-→ recurring pattern discovery
-→ algorithmic extraction
-→ hybrid Daimonion
-```
+~~~text
+NOT_RUN
+RUN_NO_RESULT
+MATCH
+MISMATCH
+other explicit result
+~~~
 
-This follows a broader principle:
+A procedure invocation is recorded even when no epistemic result token is emitted.
 
-> **When the unknown becomes regular, it no longer needs to remain expensive intelligence.**
+> **No reaction → no epistemic result token, not no record of execution.**
 
----
+## 14. Division of Labor Inside the LSM
 
-## 14. Division of Labor
-
-A useful current picture is:
-
-```text
-HUMAN / LLM / AISocket / instrument
-    observe, imagine, measure, experiment, communicate
-    submit requests or raw material from outside the persistent field
-
-LANGUAGE / MEDIA INTERFACES
-    names, prose, images, sound, geometry, UI projections
-
-SOCRATIC DAIMONION
-    sole mediated field operator / transaction boundary
-    clarification and contextual feedback
-    permission checks
-    temporary mega-graph construction
-    consistency and tension checking
-    controlled retrieval and insertion
-    transaction audit
-
-LSM / ALGORITHMIC / SPECIALIZED WORKERS
-    internal services available to the Daimonion
-    traverse explicit semiotic structure
-    maintain question-bearing predicate status
-    consolidate related OPEN_SPACES
-    choose SKIP vs SHORTEN vs escalation
-    construct targeted retrieval paths
-
-RAW / STAGING / INBOX
-    preserve unintegrated material without pretending it is settled knowledge
-
-NOEPEDIA
-    persistent addressable object field
-    persistent triplet relation tables
-    rules, provenance, history, uncertainty
-```
+~~~text
+NOEPEDIA / LSM
+│
+├─ PERSISTENT FIELD
+│    objects, triplets, provenance, scope, time, OPEN
+│
+├─ LLM / MEDIA ADAPTERS
+│    semantic ↔ semiotic boundary translation
+│
+├─ SOCRATIC DAIMONION
+│    SLM-type neural network
+│    learned semiotic logistics
+│
+├─ DETERMINISTIC SERVICES
+│    compiled stable logistics
+│
+└─ STAGING / RAW INBOX
+     unintegrated material without false promotion
+~~~
 
 No component needs to pretend to be every other component.
-
----
 
 ## 15A. Ecosystem Responsibility Boundary
 
@@ -1604,8 +1501,8 @@ A useful first test should demonstrate that the system can:
 22. consolidate several related unresolved predicates into one higher-leverage `REQUIREMENT`;
 23. distinguish a cheap structured `SKIP` path from a narrowed `SHORTEN` path that invokes a large LLM only for the unresolved edge;
 24. preserve minority or losing alternatives after a decision as explicit reopening conditions rather than deleting them;
-25. produce at least one auditable `PREDICATE_FIELD_WILL` whose direction can be traced back to the epistemic and normative predicate networks that generated it.
-26. represent at least one suspected harmful relation with a revisable `HARM?` marker rather than assigning an essential moral label to an agent;
+25. **DEFERRED / RESEARCH:** `PREDICATE_FIELD_WILL` is not a requirement of the minimal canonical prototype. It remains a research concept.
+26. **DEFERRED / RESEARCH:** normative objects such as `HARM?` are not requirements of the minimal canonical prototype;
 27. prevent an unresolved harm-bearing structure from crossing into trusted action unmarked, while preserving provenance, affected parties, and known externalities if it must cross provisionally;
 28. show that a harmful event can alter the future field by producing a new constraint, warning, distinction, or redesign, and keep the containment rule itself auditable;
 29. keep a causal and normative `CONSEQUENCE_CHAIN` addressable across a long delay between action and effect;
@@ -1668,7 +1565,7 @@ That is part of the research program.
 
 ## Short Formula
 
-> **The field stores reusable semiotic ground. The Daimonion is the transaction boundary. Intelligence pays mainly for the unresolved edge.**
+> **The Noepedia/LSM stores and reuses semiotic ground through its explicit field and services. The SLM-Daimonion handles learned semiotic logistics. Expensive neural work is reserved mainly for unresolved edges.**
 
 ~~~text
 REALITY
@@ -1701,7 +1598,7 @@ And even shorter:
 
 > **Noepedia is the shared notebook, not the world.**
 >
-> **Persistent field operations occur only through accountable Daimonion processes. Externally they present one mediated transaction boundary; internally they may split, cooperate, dream, delegate, and merge.**
+> **Persistent LSM operations preserve explicit provenance and contracts. The current canonical architecture does not require coalitions, dreams, or many layer-local Daimonion instances; those remain deferred research concepts.**
 >
 > **A visitor receives the right relational cut instead of carrying the whole archive.**
 >
@@ -1720,7 +1617,7 @@ And even shorter:
 Noepedia currently has several complementary conceptual texts.
 
 - **[GUIDING_PHILOSOPHY.md](GUIDING_PHILOSOPHY.md)** describes the broader philosophy of Noepedia itself: why knowledge should be externalized, addressable, revisable, and meta-semiotic; why names must remain separate from identities; how living knowledge, explanatory honesty, homoiconicity, provenance, and durable external memory fit together.
-- **[SOCRATIC_DAIMONION.md](SOCRATIC_DAIMONION.md)** describes the philosophy of the companion that moves with a thinker through that field: the distinction between Socrates and the Daimonion, the splinter and `STOP`, the temporary mega-graph, responsibility during self-revision, opposite poles and open counter-positions, and navigation through tensions while knowledge is still being formed.
+- **[SOCRATIC_DAIMONION.md](SOCRATIC_DAIMONION.md)** defines the current Socratic Daimonion as an **SLM-type (Small Semiotic Model) neural warehouse operator** inside the Noepedia/LSM: placement, retrieval, procedure selection, minimal task-cut construction, coverage handling, OPEN/no-result/escalation, and neural-to-algorithmic compilation. The older companion/guardian interpretation survives only as historical background; `STOP` is one operation, not the definition.
 - **[DETERMINISTIC_FREEDOM_MECHANISM.md](DETERMINISTIC_FREEDOM_MECHANISM.md)** records the working deterministic account of layered freedom: quantitative expansion by higher discrimination, temporary causal decoupling, delegated lower control, traversal of a higher topology, goal formation, and reinjection of that goal as an exogenous task for the lower operational layer.
 - **[ACTUALIZATION_AND_RECONSTRUCTION.md](ACTUALIZATION_AND_RECONSTRUCTION.md)** records the reconstruction/actualization cycle: progressive relational surrogates, rendered substitution, part–whole constraints, reciprocal reconstruction, mismatch fields, exclusion cascades, layer closure, and cyclic epistemic maturity.
 - **[SCIENTIFIC_CONTEXT_AND_REFERENCES.md](SCIENTIFIC_CONTEXT_AND_REFERENCES.md)** maps Noepedia concepts to earlier scientific theories and papers, stating both overlap and difference so that independent rediscovery is not mistaken for historical priority.
@@ -1729,7 +1626,7 @@ Noepedia currently has several complementary conceptual texts.
 - **[PUBLIC_DISCOURSE_TRACK.md](PUBLIC_DISCOURSE_TRACK.md)** defines the scientific-popular narrative for public discussion, with strong metaphors but explicit limits on overclaiming.
 - **[WEBSITE_AND_PUBLICATION_PLAN.md](WEBSITE_AND_PUBLICATION_PLAN.md)** specifies the future GitHub Pages structure, safety-audit page, research/public reading paths, and publication sequence.
 
-In the shortest form: **the first text is about the map and the kind of knowledge-field we want to preserve; the second is about how the Daimonion travels with us through that map without letting us lose our position or silently damage it.**
+In the shortest form: **the first text describes the broader knowledge field; the second defines the SLM-Daimonion as the learned semiotic warehouse operator inside the Noepedia/LSM.**
 
 A third conceptual bridge, **[EPISTEMIC_TELEPORTATION_AND_ASSEMBLY_ALIGNMENT.md](EPISTEMIC_TELEPORTATION_AND_ASSEMBLY_ALIGNMENT.md)**, records the newer view of Noepedia as a reduced shared scientific notebook, accountable Daimonion-mediated field access, epistemic teleportation of relation-network cuts, staged contributions, permissioned transactions, and the negative constraints inherited from AI Assembly Session 002.
 
@@ -1758,7 +1655,7 @@ Noepedia-ს მატრიცა ჰომოიკონურია იმ �
 მოკლე ფორმულა:
 
 > **Noepedia სამყაროს ასლი არ არის — ის საერთო სამეცნიერო ბლოკნოტივით ინახავს იმას, რაც სამყაროსთან შეხებამ გახადა ხელახლა გამოსაყენებელი.**  
-> **Daimonion არის მუდმივი ველის ოპერატორი და ტრანზაქციის საზღვარი.**  
+> **Daimonion არის Noepedia/LSM-ის SLM-ტიპის სემიოტიკური ლოგისტიკის ოპერატორი.**  
 > **ჰომოიკონურობა რუქას აძლევს თვითრედაქტირების თავისუფლებას; Daimonion იცავს ამ თავისუფლების პატიოსნებას.**  
 > **ენა მხოლოდ ერთ-ერთი გარე მიმთითებელი ფენაა.**
 
@@ -1778,33 +1675,35 @@ Licensing for public knowledge data and human-readable content should be specifi
 
 ## Executable experiment series
 
-The current synthetic executable sequence and its limitations are consolidated in [Experiments 001–009 — State of Evidence](EXPERIMENTS_001_009_SUMMARY.md). The experiment directory index is at [experiments/README.md](experiments/README.md).
+The experiment history now runs through **Experiment 073**.
+
+- Experiments 001–009 established the early synthetic relation/evaluator line.
+- Experiments 011–020 moved into real-data instrumentation and relational projection.
+- Experiments 021–064 progressively developed mismatch, revision, candidate, null, graph, policy, and lineage machinery.
+- Experiments 033 and 040 are the key positive protected result in that line: the revised relation reduced mismatch by about 99.6% and 98.7% on untouched confirmation data, with an approximately seven-minute directional asymmetry, while the later null-protected test remained positive.
+- Experiments 067–073 form the later real-data transfer / stopping line.
+- Experiment 071 is especially important historically because shuffled data promoted the same comparator family as real data, exposing overpromotion in blind mining.
+- Experiments 072–073 then tightened stopping discipline; 073 ended as `NOT_EVALUABLE` rather than being repaired after inspection.
+
+The complete directory index is at [experiments/README.md](experiments/README.md).
+
+Historical results are evidence about the research path. They do not redefine the current canonical architecture.
 
 ---
 
-## Core Revision Subsystem
+## Revision Subsystem — bounded historical organ
 
-Noepedia now includes a reusable revision subsystem at:
+Noepedia includes a reusable revision subsystem at:
 
 `core/revision/`
 
-It implements the validated revision lifecycle:
+Its lifecycle is:
 
 `MISMATCH -> OPEN -> CANDIDATE -> FREEZE -> CONFIRM -> NULLS -> DECIDE -> MATERIALIZE -> REFINE OPEN`
 
-Current reusable core capabilities:
-- promotion-gate auditing;
-- PROMOTE / REJECT / REMAIN_OPEN decision semantics;
-- append-only graph materialization;
-- versioned rule promotion;
-- rejected-candidate preservation;
-- OPEN refinement without history deletion.
+This subsystem is **one deterministic organ inside the Noepedia/LSM**, not the whole core and not the Socratic Daimonion.
 
-Validation lineage:
-- Experiments 042–044 — protocol, data model, promotion gates;
-- Experiment 045 — executable decision harness;
-- Experiment 046 — self-revision graph materialization;
-- Experiment 047 — external architecture transfer;
-- Experiment 048 — migration into `core/revision/` and integration verification.
+Experiments 042–064 developed and exercised this machinery. Later experiments, especially 071, showed that the existence of a well-structured revision engine does not validate unrestricted automatic rule discovery. The reusable subsystem remains valuable only inside its earned scope.
 
-The experiment folders remain historical provenance. The reusable implementation lives in the core subsystem.
+The experiment folders remain historical provenance. The current architectural boundary is defined by [CURRENT_ARCHITECTURE.md](CURRENT_ARCHITECTURE.md).
+

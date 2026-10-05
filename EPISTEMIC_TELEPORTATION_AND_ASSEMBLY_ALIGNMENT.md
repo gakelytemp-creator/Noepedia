@@ -1,5 +1,7 @@
 # Epistemic Teleportation and AI Assembly Alignment
 
+> **Current architecture precedence:** implementation and new experiments must follow [CURRENT_ARCHITECTURE.md](CURRENT_ARCHITECTURE.md), [SOCRATIC_DAIMONION.md](SOCRATIC_DAIMONION.md), and [DIRECTION.md](DIRECTION.md). Older metaphors in this document are historical/conceptual where they conflict with that boundary.
+
 > **Noepedia does not claim to contain the world.**
 >
 > It preserves selected semiotic structures produced by contact with the world, together with provenance, context, uncertainty, revision history, and the conditions under which those structures may be used.
@@ -233,68 +235,27 @@ The resulting mismatch may:
 See [ACTUALIZATION_AND_RECONSTRUCTION.md](ACTUALIZATION_AND_RECONSTRUCTION.md) and the scientific comparison in [SCIENTIFIC_CONTEXT_AND_REFERENCES.md](SCIENTIFIC_CONTEXT_AND_REFERENCES.md).
 
 ---
-## 6. The Socratic Daimonion is the field operator
+## 6. The Socratic Daimonion is the semiotic logistics operator
 
-A crucial architectural clarification is now explicit:
+External participants do not need to carry or directly manipulate the whole persistent field.
 
-> **Humans, LLMs, instruments, and applications do not directly live inside or directly operate the persistent Noepedia field.**
-
-They approach it through the Socratic Daimonion.
-
-The Daimonion architecture is the resident transaction layer of the field. It may contain multiple layer-local process instances behind one accountable external boundary.
-
-It may use LSM processes, deterministic algorithms, neural components, or specialized workers internally, but the external participant does not directly mutate the persistent graph.
-
-The interaction boundary is:
+The current interaction is:
 
 ~~~text
-HUMAN / LLM / TOOL / INSTRUMENT
+HUMAN / TOOL / DOCUMENT
+        ↕
+LLM ADAPTER when semantic translation is needed
         ↕
 SOCRATIC DAIMONION
         ↕
-NOEPEDIA FIELD
+NOEPEDIA FIELD / DETERMINISTIC SERVICES
 ~~~
 
-### SQL analogy, extended
+The Daimonion selects addresses, relation cuts, queries, and procedures. It can assemble a bounded transferable package for another process.
 
-A database engine can return syntax errors and constraint violations.
+It does not turn its own internal interpretation into evidence. A durable token must be attributable to source contact or an explicit procedure result.
 
-The Daimonion must eventually return something richer:
-
-~~~text
-the request is structurally ambiguous
-this object has two possible identities in this context
-this proposed write conflicts with an established relation
-this claim lacks provenance
-this query requires a network you are not authorized to access
-this write would alter a rule used by dependent structures
-this request can proceed only after one clarifying distinction
-this material can be stored as raw input but not yet as settled knowledge
-~~~
-
-The user should not need to understand the internal ontology before being allowed to ask.
-
-The Daimonion should descend to the visitor's available interface, ask the minimum clarifying questions needed, and translate the resulting intention into a safe field operation.
-
-### ATM analogy
-
-Noepedia can also be pictured as a common epistemic vault.
-
-The Daimonion behaves like an unusually strict ATM and accountant:
-
-- it does not accept a deposit into trusted structure without the required authority and provenance;
-- it does not release restricted structure without permission;
-- it records who requested what;
-- it records what cut of the field was supplied;
-- it records the purpose/context where policy requires that distinction;
-- it records what was returned after use;
-- it prevents a temporary local interpretation from silently becoming a permanent global edit.
-
-This is not merely access control.
-
-It is **epistemic transaction control**.
-
----
+This makes epistemic teleportation narrower and cheaper: transport the smallest sufficient semiotic package, not a copy of the whole archive and not a permanent general cognitive agent.
 
 ## 7. The inbox: contribution without premature placement
 

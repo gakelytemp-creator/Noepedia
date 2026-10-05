@@ -4,6 +4,12 @@ Status: ACTIVE DIRECTION CONSTRAINT
 
 This file governs new experiments after Experiment 072.
 
+## 0. Architectural boundary
+
+Noepedia as a whole is the **LSM (Large Semiotic Model)**. Inside it, the persistent field stores homoiconic semiotic structure; LLM/media adapters handle semantic boundaries; the Socratic Daimonion is an **SLM-type neural network** for learned semiotic logistics; stable repeated operations may be compiled into deterministic services. The revision subsystem is one such service family, not the whole Noepedia core.
+
+Canonical architectural reference: CURRENT_ARCHITECTURE.md. Historical experiment files remain historical evidence and do not override that boundary.
+
 ## 1. Architecture freeze
 
 Do not add new architectural layers merely because an experiment fails.
@@ -71,3 +77,40 @@ No scientific claim is promoted unless it survives:
 Agreement is not truth.
 Recurrence is not proof.
 A null result is allowed.
+
+
+## 8. Pre-experiment anti-drift gate
+
+Before implementation begins, every new experiment must answer:
+
+1. Which LSM component is being tested: FIELD, SEMANTIC ADAPTER, SLM-DAIMONION, or DETERMINISTIC SERVICE?
+2. What is the smallest sufficient knowledge package for the task?
+3. Which outputs may create epistemic result tokens, which are only routing decisions, and how is execution coverage recorded even when there is no result token?
+4. What explicit procedure or source contact can justify a stored result?
+5. What result is allowed to be OPEN / NO_RESULT / NOT_EVALUABLE?
+6. What would count as architecture drift rather than experimental failure?
+7. What condition would require reopening CURRENT_ARCHITECTURE.md before any more code is written?
+
+The following are STOP conditions, not invitations to add another layer:
+
+- the experiment needs the Daimonion to invent evidence;
+- a local subsystem is being generalized into the whole core;
+- the whole field is loaded where a bounded garment would suffice;
+- an autonomous specialist is being given unrelated knowledge or capabilities;
+- a deterministic service is being treated as a moral or intentional agent;
+- repeated failure is being repaired by changing the goal after seeing outcomes.
+
+> **Failure may change the experiment. It may not silently change the project.**
+
+
+## 9. First post-realignment experiment scale
+
+The next Daimonion-training experiment must begin with the smallest sealed synthetic phantom that can distinguish at least:
+
+- MATCH;
+- MISMATCH;
+- CORRECT_OPEN;
+- RUN_NO_RESULT;
+- NOT_RUN.
+
+No larger training architecture is justified until those states are separated correctly and reproducibly.

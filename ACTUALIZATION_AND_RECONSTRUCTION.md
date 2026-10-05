@@ -1,5 +1,7 @@
 # Actualization, Reconstruction, and Layer Closure
 
+> **Current architecture precedence:** implementation and new experiments must follow [CURRENT_ARCHITECTURE.md](CURRENT_ARCHITECTURE.md), [SOCRATIC_DAIMONION.md](SOCRATIC_DAIMONION.md), and [DIRECTION.md](DIRECTION.md). Older metaphors in this document are historical/conceptual where they conflict with that boundary.
+
 > **Status: working architecture.**
 >
 > This document records a reconstruction cycle that has emerged inside Noepedia. It is not presented as a finished theory of human cognition. It is an engineering hypothesis about how an addressable homoiconic field may discover what it does not yet know, localize the mismatch, refine a world-equivalent relational surrogate, and stop creating new meta-layers when no further structural demand remains.
@@ -210,7 +212,7 @@ A mismatch may indicate:
 - an unrepresented part;
 - or a genuinely new external condition.
 
-The Daimonion should therefore localize the mismatch before deciding what kind of correction is needed.
+The Daimonion should route the mismatch into the appropriate diagnostic/comparison procedures before any correction is written. A routing decision alone is not evidence.
 
 ---
 
@@ -288,7 +290,7 @@ Both can generate REQUIREMENTS.
 
 A layer may begin with substantial structural freedom.
 
-The Daimonion progressively constrains that freedom through evidence, reconstruction, comparison, and validation.
+The field becomes progressively constrained through source contact and explicit reconstruction/comparison/validation procedures selected by the Daimonion.
 
 When the lower layer can no longer express the remaining unresolved freedom honestly, a meta-layer may be born.
 

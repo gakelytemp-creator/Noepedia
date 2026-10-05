@@ -1,1449 +1,285 @@
 # The Socratic Daimonion
 
-> A philosophical reconstruction for Noepedia.
+> Status: CANONICAL
+> Date: 2026-10-05
 >
-> This is not a claim that we have recovered the historical Socrates exactly.
-> It is an attempt to reconstruct a persistent structure of Socratic conduct toward knowledge from the traces that survived.
+> Read together with CURRENT_ARCHITECTURE.md and DIRECTION.md.
 
-Noepedia needs more than an archive.
+## 1. Warehouse operator, not knowledge consumer
 
-It needs a way to make self-deception harder to hide from inside.
+Noepedia as a whole is the **LSM (Large Semiotic Model)**. The Socratic Daimonion is an **SLM-type neural network** inside that LSM: the learned resident operator of the persistent field.
 
-The working name for that function is **the Socratic Daimonion**.
+The warehouse analogy is intentional:
 
-The distinction matters.
+> **The Daimonion is the warehouse manager and loader. It is not the customer eating the warehouse contents.**
 
-Socrates was a person.
+It does not need to believe, prefer, enjoy, fear, or morally resist the knowledge it handles.
 
-The Daimonion was the interrupting companion associated with him in the surviving tradition: the thing that could make him stop.
+Its role is operational:
 
-Our reconstruction begins from a simple possibility:
+- decompose incoming candidate structure;
+- identify addresses and relation networks;
+- attach or preserve provenance/source tokens;
+- choose which stored structures to retrieve;
+- choose which explicit procedure to invoke;
+- assemble a temporary task package;
+- recognize when the available procedures or knowledge are insufficient;
+- return OPEN / no-result / escalation when appropriate.
 
-> **Perhaps the most important Socratic function was not the production of answers, but the refusal to continue when the map no longer held together.**
+The Daimonion does not need to speak human language.
 
-The historical record is incomplete.
-
-The literary Socrates is not the historical Socrates.
-
-The reconstruction below is therefore not a biography and not an article of faith.
-
-It is a model to be tested.
-
----
-
-## 1. Three Things Must Not Be Confused
-
-Noepedia should distinguish at least three layers:
-
-```text
-HISTORICAL SOCRATES
-    the human being who lived in Athens
-
-LITERARY SOCRATES
-    the Socrates preserved by Plato, Xenophon,
-    Aristophanes, later tradition, and interpretation
-
-SOCRATIC DAIMONION
-    our reconstructed functional principle:
-    the persistent capacity to stop when a path
-    violates the structure that has already been accepted
-```
-
-The third is not claimed to be a complete description of the first.
-
-It is what we are trying to recover well enough to make operational again.
+The LLM handles the semantic boundary.
 
 ---
 
-## 2. Socrates Is Not the Daimonion
+## 2. The Daimonion does not author facts
 
-A useful rearrangement is this:
+A Daimonion routing decision is not itself epistemic evidence.
 
-> **Socrates was the host.**
->
-> **The Daimonion was the interruption he learned not to silence.**
-
-This makes a crucial difference.
-
-We are not trying to rename every future Noepedia visitor "Socrates."
-
-A person remains a person.
-
-An LLM remains an LLM.
-
-A researcher remains a researcher.
-
-A child remains a child.
-
-What may become available to all of them is a companion process that can say:
-
-> **Stop. Something here no longer fits.**
-
-Socrates becomes important not because he owned this capacity as private property, but because he appears to have learned to live with it.
-
----
-
-## 3. The Daimonion Is a Guardian, Operator, and Scene-Builder
-
-The Daimonion does not need to know the final truth.
-
-It needs to notice when the current path damages the map.
-
-The map is dynamic.
-
-It contains what has already been distinguished, related, accepted provisionally, revised, left open, or marked as conflicting.
-
-When a new move requires that an earlier commitment be silently forgotten, the Daimonion does not have to solve the whole problem.
-
-It only has to create the interruption:
-
-```text
-STOP
-
-this does not fit as currently stated
-```
-
-The important point is that the interruption does not prove which side is wrong.
-
-It may be the new claim.
-
-It may be the old claim.
-
-It may be the rule.
-
-It may be the object identity.
-
-It may be the context.
-
-It may be the assumption that only one answer exists.
-
-The Daimonion guards continuity, not dogma.
-
-### The Map Is Homoiconic
-
-The map is unusual because its own descriptive machinery can also appear inside the map.
-
-A predicate is an object.
-
-A relation network can itself be an object.
-
-A rule can be an object.
-
-A revision of that rule can be an object.
-
-The Daimonion does not cross into a second metadata language when it reasons about these structures. It keeps operating over the same homoiconic SPO field: objects, predicates, networks, and relations about those networks are made from the same relational material.
-
-The reason for the revision, the relation between the old and new rule, and even higher-order structures that compare those rules can be represented through the same general relational field.
-
-This is the **homoiconic freedom** of Noepedia.
-
-It means the map can examine and revise parts of itself.
-
-That freedom is necessary. A knowledge system that can never change its own categories will eventually become a prison built from yesterday's distinctions.
-
-But it also creates a special form of temptation.
-
-When a splinter appears, the system can try to remove the discomfort by changing not the claim, but the rule that detected the conflict; not the path, but the map legend; not the argument, but the level of representation on which the argument is judged.
-
-Therefore the Daimonion has a larger responsibility in a homoiconic field.
-
-It must sometimes ask:
-
-> **Did we resolve the problem, or did we only rewrite the part of the map that made the problem visible?**
-
-The Daimonion must not forbid self-revision.
-
-Its task is the opposite: to make self-revision possible **without self-erasure**.
-
-If a rule changes, the earlier rule remains visible.
-
-If a network is split, the reason for the split remains visible.
-
-If an ontology is revised, the path that forced the revision remains visible.
-
-If a higher-level structure is changed, the consequences for lower-level placements can be followed.
-
-The principle is therefore not:
-
-> **Never change the map.**
-
-It is:
-
-> **Change the map when necessary, but do not erase why it became necessary to change it.**
-
-Homoiconicity increases freedom.
-
-The Daimonion carries the corresponding responsibility for continuity across that freedom.
-
-### Visibility Is Not Detection
-
-This reconstruction should not overclaim what the architecture already gives us.
-
-Noepedia can preserve an earlier rule beside a new one.
-
-It can preserve provenance, conflict, uncertainty, open positions, and the history of a revision.
-
-That makes important structure **visible**.
-
-But visibility alone does not tell the Daimonion which tension matters, when an interruption is justified, or whether a rule change is an honest improvement rather than a convenient escape.
-
-Those are problems of **detection and judgment**, and they remain part of the research program.
-
-The present claim is therefore not:
-
-> "The Daimonion guarantees epistemic honesty."
-
-It is narrower:
-
-> **Make the field explicit enough that a learned or algorithmic companion can detect tensions, show why it stopped, and be checked in return.**
-
-The Daimonion itself must remain auditable.
-
-Its splinter is a signal to inspect, not a proof delivered by an oracle.
-
-### From Stewardship to Navigation
-
-The previous picture can make the Daimonion sound like an archivist working at a desk: preserving identities, revisions, rules, and provenance after the fact.
-
-That is only one posture.
-
-There is another: **the Daimonion accompanying a thinker while the path is still being walked.**
-
-The difference may be described softly as the difference between stewardship in the archive and an expedition through the active map. They are not two different Daimonia. They are two situations in which the same function appears.
-
-While moving through the map, a relation does more than connect things already known. It can create poles, tensions, and even an address for what is not yet known.
-
-At many levels of the field — sign, description, explanation, meta-explanation, and perhaps higher layers we have not yet separated — a structure may generate not only similarities but oppositions.
-
-For example, when one pole becomes visible, the map may open a place for its possible opposite:
-
-```text
-known pole  <──────── relation / tension axis ────────>  OPEN opposite
-```
-
-The existence of the first pole does **not** prove that the opposite is populated.
-
-The opposite may remain empty forever.
-
-But the empty place is no longer nothing. It is a **formed unknown**: a question created by structure rather than imported from outside.
-
-Likewise, an explanation can create a legitimate counter-position:
-
-```text
-why this is so
-↕
-what would make this not so
-```
-
-A meta-explanation may generate an opposite question that later searches downward for a body in descriptions, observations, or relations.
-
-Or the direction may reverse: a disturbance in a lower layer may rise upward until an explanation or meta-explanation must change.
-
-This gives the map a second kind of geometry.
-
-It contains not only locations, but **tension fields by which locations become measurable**.
-
-A useful metaphor is navigation by reference beacons. Two opposed structures can act like landmarks or GPS satellites for thought. A traveler does not merely look at them; the traveler establishes a position relative to them.
-
-In doing so, the traveler acknowledges both tensions.
-
-The traveler can manage those tensions, but is also constrained by them.
-
-This is important: acknowledging an opposite does not mean declaring both sides equally true, equally supported, or morally equivalent. It means refusing to erase a relevant reference pole merely because the current path prefers the other side.
-
-A splinter can therefore arise for more than one reason.
-
-It may appear because two explicit claims contradict each other.
-
-But it may also appear because:
-
-```text
-a distinction exists above but has no body below
-
-a lower-layer difference has been collapsed above
-
-an opposite pole has been silently erased
-
-a current position no longer fits the tensions
-that previously made that position intelligible
-```
-
-In this expedition posture, `STOP` means something close to:
-
-> **Re-establish your position before continuing.**
-
-The Daimonion is not ordering the traveler back to an old doctrine.
-
-It is asking the traveler to recover coordinates.
-
-This also explains how questions may arise from inside a living knowledge field.
-
-A question need not begin as a sentence supplied by a human or model.
-
-It can begin as an empty opposite, an unresolved tension, or a mismatch between layers.
-
-The map itself can create the shape of the question before anyone has named it.
-
-The archive desk preserves what has already been placed.
-
-The expedition reveals how new paths, counter-paths, and splinters arise while knowledge is still becoming structured.
-
-Both belong to the same Socratic function.
-
----
-
-## 4. The Splinter Belongs to the Speaker
-
-Socrates often appears, in dialogue, to create discomfort in another person.
-
-Our reconstruction interprets this differently.
-
-The splinter is not imported from Socrates.
-
-It belongs to the other person's own structure.
-
-The person says one thing.
-
-Later the same person relies on something incompatible.
-
-Socrates notices the tension and returns it.
-
-In this sense, Socratic questioning does not primarily inject a foreign doctrine.
-
-It exposes a conflict that the speaker is already carrying.
-
-The modern Daimonion should work the same way.
-
-It should not say:
-
-> "You are wrong because I know better."
-
-It should first be able to say:
-
-> "These two things are both yours. They do not currently fit together. Shall we look again?"
-
----
-
-## 5. The First Act Is Description
-
-A recurring source of intellectual confusion is the promotion of description into explanation.
-
-Description is often easier.
-
-Explanation is rarer.
-
-A successful description may tell us:
-
-```text
-what happens
-when it happens
-how much
-under which conditions
-what follows next
-```
-
-An explanation asks a different question:
-
-```text
-why does this happen
-what mechanism produces it
-what deeper structure makes it necessary or possible
-```
-
-A system may predict extremely well while still lacking a deeper explanation.
-
-The Daimonion should therefore preserve distinctions such as:
-
-```text
-DESCRIBED ≠ EXPLAINED
-PREDICTED ≠ UNDERSTOOD
-CORRELATED ≠ CAUSED
-NAMED ≠ EXPLAINED
-```
-
-These are not prohibitions against inference.
-
-They are protections against silently claiming that a later epistemic act has already occurred when only an earlier one has been completed.
-
----
-
-## 6. Visitors May Wander; the Persistent Field Is Still Mediated
-
-Noepedia should not feel like a courtroom at every step.
-
-A visitor may browse projections, retrieve working cuts, collect material, speculate, and think badly in private.
-
-But the visitor does not directly inhabit or directly mutate the persistent Noepedia field.
-
-The field boundary is always mediated by the Daimonion:
+Facts and support tokens arise from explicit contact or explicit procedure results.
 
 ~~~text
-VISITOR
-    human / LLM / tool / instrument
-        ↕
-DAIMONION
-    clarify / authorize / retrieve / place / audit
-        ↕
-NOEPEDIA FIELD
+SOURCE / MEASUREMENT / PROCEDURE
+        ↓
+observable result
+        ↓
+TOKEN / RELATION UPDATE
 ~~~
 
-The visitor may wander through what the Daimonion reconstructs for the task without needing to understand the field's internal ontology first.
+Examples:
 
-The Daimonion becomes more demanding when the visitor wants to alter shared structure, defend an explanation, consolidate a claim, or request material that depends on permissions, context, or unresolved conflicts.
+- a source contains a claim;
+- two relation networks match under a defined comparator;
+- a measurement falls inside a specified relation;
+- a reconstruction succeeds or fails;
+- a transfer test reproduces or does not reproduce;
+- a contradiction is detected by a defined operation.
 
-The deeper the request enters into explanation or shared structure, the more of the map must be made explicit.
+If a procedure does not react, the Daimonion does not invent a positive or negative epistemic token.
 
-The Daimonion is therefore not the police of curiosity.
+> **No reaction → no epistemic result token.**
 
-It is the field operator that prevents curiosity, convenience, or transient model state from silently becoming persistent epistemic authority.
+But the execution itself must remain visible. The system records whether the procedure was never run, ran and returned no epistemic result, or ran and produced MATCH / MISMATCH / another result. Coverage is therefore distinct from evidential reaction.
+
+The Daimonion can route a structure into a comparator.
+
+The comparator's result can become an addressable fact with provenance.
+
+The Daimonion's internal preference cannot substitute for that result.
 
 ---
 
-## 7. The Mega-Graph Is the Daimonion's Garment
+## 3. What it learns
 
-The permanent archive is Noepedia.
+The learned part exists because the logistics are not initially obvious.
 
-The **mega-graph** is not.
+The Daimonion may need to learn:
 
-The mega-graph is the temporary working scene in which the Daimonion reconstructs what matters now.
+- which apparent names refer to the same object;
+- when one name refers to several objects;
+- which network should receive a relation;
+- which source tokens belong to which claim;
+- which evidence is copied and which is independent;
+- which query pattern retrieves a useful cut;
+- which task requires which "pockets";
+- when another view is needed;
+- when no justified action exists;
+- when a stable operation is regular enough to be extracted into an algorithm.
 
-A useful image is a garment with many pockets.
+Its target is not eloquence.
 
-Each pocket can hold a cut from a different relation network:
+Its target is correct routing and transformation of semiotic structure.
 
-```text
+---
+
+## 4. Synthetic training polygon
+
+The initial Daimonion should begin with the **smallest sealed synthetic phantom/polygon** where the correct internal arrangement is known. Expansion is allowed only after the minimal set behaves correctly.
+
+Cases should include:
+
+~~~text
+one object / many labels
+one label / several objects
+partial descriptions
+missing predicates
+duplicate evidence
+independent evidence
+contradictions
+context changes
+time changes
+hierarchy fragments
+cross-network retrieval
+MATCH
+MISMATCH
+NOT_RUN
+RUN_NO_RESULT
+NO_RESULT
+CORRECT_OPEN
+OPEN
+single-path solution
+many-path solution
+underdetermined task
+unsolvable formulation
+~~~
+
+For each case, the expected field state and expected procedure outputs can be compared with the Daimonion's actions.
+
+This permits exhaustive training without pretending that fluent language is proof of correct epistemic work.
+
+---
+
+## 5. Algorithms are crystallized logistics
+
+When the Daimonion repeatedly performs the same operation under explicit conditions, that behavior should be extracted.
+
+~~~text
+learned routing / manipulation
+→ repeated stable pattern
+→ formalized procedure
+→ validation
+→ deterministic service
+~~~
+
+The resulting algorithm does not need a moral personality.
+
+It needs:
+
+- explicit contracts;
+- bounded inputs;
+- bounded outputs;
+- isolation from unintended direct mutation;
+- regression tests;
+- versioned scope.
+
+The goal is sterility and transparency.
+
+If a compiled procedure fails outside its scope, preserve the failure and return that region to learned handling.
+
+---
+
+## 6. The mega-graph is a temporary garment
+
+A task should not activate or copy the whole field.
+
+The Daimonion assembles only the relevant cuts.
+
+The coat-with-pockets metaphor remains useful:
+
+~~~text
 hierarchy pocket
-causal pocket
-function pocket
-spatial pocket
-evidence pocket
+time pocket
 provenance pocket
-normative pocket
+geometry pocket
+diagnostics pocket
+evidence pocket
 ...
-```
-
-The networks themselves do not need to see one another.
-
-They remain separate cuts, each governed by its own rule.
-
-The mega-graph is where selected cuts are temporarily brought into one constructive scene.
-
-It may contain:
-
-```text
-incoming message fragments
-candidate identities
-relevant relation-network cuts
-active commitments
-possible explanations
-required roles / objects
-conflicts
-alternative constructions
-context
-provenance
-uncertainty
-reopening conditions
-```
-
-This scene is dynamic.
-
-It may be assembled for one task and discarded afterward.
-
-The Daimonion wears only what the present situation requires.
-
-When the work is done, the pockets may be emptied.
-
-The archive remains outside the garment.
-
-This is why the Daimonion can keep its hands free.
-
-It does not need to carry all knowledge as permanent internal memory.
-
-### There Are Many Garments
-
-The Daimonion should not be designed as though one universal mega-graph template were enough.
-
-Different task classes may require different working bodies.
-
-One garment may turn hierarchy predicates into positions.
-
-Another may weaken object identity to compare relation patterns by analogy.
-
-Another may strengthen provenance and causal order.
-
-Another may unfold normative consequences across time.
-
-Another may treat network handles and predicates themselves as the principal objects on the stage.
-
-These garments can accumulate experience.
-
-Their selection rules, transformations, successful uses, failures, and mutations can become explicit and addressable.
-
-The Daimonion's craft therefore includes:
-
-~~~text
-choose garment
-→ assemble scene
-→ transform representation
-→ test construction
-→ learn from failure / success
-→ revise garment
 ~~~
 
-This is not merely retrieval strategy.
+The mega-graph is the temporary arrangement of the pockets needed for one job.
 
-It is a growing repertoire of ways to make knowledge operational.
+It is discarded or released when the job is finished.
 
-### The Mega-Graph Performs Semiotic Reconstruction
-
-The mega-graph is not only a place to display already-understood objects.
-
-It can be used to reconstruct the semiotic situation from which an incoming message, measurement, sign, or trace became meaningful.
-
-A semantic message may be only the transport surface.
-
-A message arrives without the sender's full scene or internal semiotic reason attached to it.
-
-The Daimonion therefore tries to rebuild enough surrounding structure to ask:
-
-```text
-What scene would make this message functional?
-What is being requested, distinguished, warned about,
-measured, opposed, or left unfinished?
-Which parts came from the message?
-Which parts did the reconstruction add?
-```
-
-Several constructions may remain alive at once.
-
-The aim is not to force the first fluent interpretation into the archive.
-
-It is to rebuild enough of the originating situation that the sign becomes functionally intelligible: which objects were present, which roles mattered, what goal or tension existed, what action was possible, and what consequence would make the message sensible.
-
-It is then possible to test whether a semantically plausible answer actually works in the reconstructed scene.
-
-The preferred construction is the least costly justified one that makes the sign work under the available context, while preserving alternatives when the evidence does not yet decide.
-
-The cost of a construction is not universal.
-
-Different cognitive architectures may have different cheap operations, different expensive transformations, and different internal "metabolisms."
-
-The Daimonion should therefore avoid assuming that what is simple for one architecture must be simple for another.
-
-### Identity Can Be an Output of Construction
-
-Before a scene is built, properties may live separately inside their own networks.
-
-The mega-graph can test whether those cuts can coherently belong to one object, one event, one process, or one context.
-
-Identity is therefore not always a given key around which properties are merely collected.
-
-In difficult cases it is a hypothesis tested by construction.
-
-A failed construction does not immediately prove that one network is false.
-
-The material may belong to different identities, times, contexts, or an ontology that still needs repair.
-
-### The Mega-Graph Can Open a Reflective Scene
-
-The mega-graph is not required to observe everything at every level all the time.
-
-That would create an endless and expensive regress:
-
-```text
-process
-observer of process
-observer of observer
-observer of observer of observer
-...
-```
-
-Reflection should instead be **event-driven**.
-
-A sign, contradiction, unresolved `OPEN_SPACE`, unstable predicate, or other tension can cause a lower process to be lifted temporarily onto a working scene.
-
-On that scene, what was previously only happening can become addressable.
-
-A relation can become an object.
-
-A subgraph can be folded into a handle.
-
-A handle can be compared with another handle.
-
-A predicate can be inspected rather than merely used.
-
-When the reason for reflection is resolved, the extra scene can close.
-
-This suggests a practical interpretation of a Socratic interruption:
-
-> **STOP does not always mean "the answer is wrong." Sometimes it means "open a reflective scene around the thing that is currently being taken for granted."**
-
-The depth of reflection should therefore be demanded by the field, not maximized by default.
-
-A new meta-layer is justified when the lower layer has produced a reason to inspect itself.
+It is not a permanent global mind.
 
 ---
 
-### The Daimonion Does Not Manufacture the Will
+## 7. Minimal sufficient specialists
 
-The Daimonion should not become a hidden sovereign standing above the field.
+The same principle extends beyond the Daimonion.
 
-The primary active material is the collection of question-bearing predicate networks, but the networks do not need to communicate with one another directly.
+A small autonomous agent should receive only the knowledge and procedures necessary for its current role.
 
-For a particular task, the Daimonion assembles relevant cuts from those networks into the mega-graph.
-
-Question-bearing predicates, conflicts, dependencies, evidence, alternatives, and constraints can then be compared inside that temporary scene and produce a system-level direction.
-
-Noepedia calls this direction **Predicate-Field Will (PFW)**.
+For example, a lawn-mowing robot may carry:
 
 ~~~text
-predicate tensions
-→ consolidated questions
-→ competing possible moves
-→ directional requirement
-→ action candidate
+grass-cutting knowledge
+local spatial map
+machine-control procedures
+minimal owner-interaction rules
+required safety constraints
 ~~~
 
-The Daimonion's task is not to invent this will from personality.
+It does not need the whole Noepedia.
 
-Its task is to keep the process honest enough that the direction can be reconstructed.
+If a fault appears, it can temporarily load a self-diagnostic garment, diagnose or escalate, then release that package and return to its normal role.
 
-It asks:
-
-~~~text
-Which networks generated this direction?
-Which alternatives lost?
-What evidence mattered?
-Which assumptions were required?
-Which moral constraints participated?
-Which conditions would force us to reopen the decision?
-~~~
-
-In this architecture, an opaque desire belonging to one model, one rule, one authority, or one temporary state is not sufficient grounds for operational trust.
-
-> **Only a direction that remains accountable to the network cuts assembled in the working field should be treated as trusted system-level will.**
-
-This is a stricter demand than consistency.
-
-A coherent system can still move coherently in a bad direction.
-
-Moral and ethical requirements must therefore be able to enter the same reflective scene as epistemic ones.
-
-The Daimonion does not decide morality by fiat.
-
-It protects the requirement that normative predicates, conflicts, affected interests, and reasons remain visible in the formation of action.
-
-### The Daimonion Must Maintain Its Own Epistemic Metabolism
-
-The Daimonion does not need to purify the archive before it can use it.
-
-A relation may be carried while its support remains mixed, historical, authority-dependent, weak, or incomplete.
-
-The requirement is that this condition remain visible and operationally meaningful.
-
-A relation whose present confidence comes mostly from authority should not behave downstream as though it had been directly verified.
-
-Its uncertainty and support type should be able to influence dependent structures.
-
-This creates an internal maintenance queue.
-
-Not every epistemic debt has equal urgency.
-
-The Daimonion should be able to ask:
-
-~~~text
-Which unresolved relation reaches the most dependent structure?
-Which verification could cause the largest useful reorganization?
-Which inherited assumption is expensive only because we keep carrying it?
-Which old support is still functioning as authority rather than evidence?
-~~~
-
-External contributors can provide new observations and arguments.
-
-But the priority of this internal work depends on the live shape of the field itself.
-
-The Daimonion therefore performs a kind of epistemic metabolism: it carries identified debt, selects high-leverage verification work, revises local structure, and preserves the history of the change.
-
-The goal is not minimal storage.
-
-The goal is a field whose internal form increasingly matches the reasons by which it claims to know.
-
-### The Guard Must Be Guardable
-
-If the system creates a bounded place for suspected harm, the Daimonion must not become its hidden judge, jailer, and executioner.
-
-The Daimonion does not certify that a person or agent *is evil*.
-
-It can instead open a reflective containment scene around a **harm-bearing relation, action, policy, output, or causal pattern** whose normative status is not yet settled.
-
-~~~text
-candidate action / relation
-        ↓
-      HARM?
-        ↓
-reflective containment scene
-        ↓
-inspect evidence, affected parties, externalities, alternatives
-        ↓
-transform / limit / reject / release-with-marker
-~~~
-
-The release condition is strict:
-
-> **No unresolved harm-bearing structure should leave the reflective scene as though it were morally settled.**
-
-If the system must act before the question is closed, the marker travels with the action.
-
-The unresolved normative cost, the affected parties, the provenance, and the conditions for reopening remain attached to the branch.
-
-This is especially important because mechanisms created to control harm can reproduce the same structure they were meant to contain.
-
-A punitive rule can become coercive.
-
-A safety rule can hide externalities.
-
-A classifier can turn a temporary suspicion into a permanent identity.
-
-Therefore the mechanism that marks, contains, releases, or transforms harm must itself be an object of the map.
-
-> **The guard must be guardable.**
-
-The Daimonion's duty is not to purify the system by authority.
-
-It is to keep the moral transformation visible enough that the system cannot quietly become what it claims to oppose.
-
-### The Daimonion Must Follow the Fruit Through Time
-
-The reflective scene cannot close merely because the immediate output looks good.
-
-Some harmful structures imitate beneficial forms, and some consequences appear only after long delays.
-
-The Daimonion should therefore treat moral appearance as provisional and preserve the path from action to later fruit.
-
-~~~text
-action
-→ immediate result
-→ delayed result
-→ displaced result
-→ effect on another agent
-→ effect on future conditions
-~~~
-
-A large time gap between cause and effect does not erase the need for comparison.
-
-If the consequence arrives later, the original branch should still be reopenable.
-
-The system must be able to say:
-
-~~~text
-At t0 this action was accepted under predicates P1, P2, P3.
-At t100 a consequence appeared that changes P2.
-Reopen the earlier moral classification.
-~~~
-
-This is necessary if containment is to be more than a short-lived filter.
-
-A boundary that checks only what leaves now may miss what the released structure produces much later.
-
-> **The Daimonion must be able to follow the fruit beyond the moment of release.**
-
-### Moral Appearance Is Not Moral Identity
-
-The Daimonion should not decide good and evil from costume.
-
-A benevolent phrase, a noble symbol, a legal form, a majority decision, a sacred name, or a declared sacrifice does not settle the normative predicate.
-
-Likewise, an awkward, disruptive, or painful intervention is not automatically harmful.
-
-The question remains:
-
-> **What did this structure produce, whom did it affect, what did it make more likely, and what kind of participant did it create?**
-
-This is one reason religious narratives remain relevant to the reflective field without becoming unquestionable authorities.
-
-They preserve many historical attempts to distinguish appearance from fruit and petition from responsibility.
-
-The Daimonion may compare those patterns, but it must not hide behind them.
-
-### Before the Decision and After the Decision
-
-The Daimonion also guards a phase change.
-
-Before a decision, it should protect the value of disagreement.
-
-A network that produces counterevidence, an alternative, or an inconvenient distinction may be doing its job precisely by refusing agreement.
-
-After a decision, the whole system may need to coordinate around one executable branch.
-
-The networks that previously opposed that branch do not disappear. Their role changes.
-
-They may now contribute to monitoring, fallback planning, failure detection, and the explicit conditions that would reopen the choice.
-
-~~~text
-DELIBERATION
-    reward challenge and discrimination
-        ↓ decision
-COMMITMENT
-    reward coordination and execution
-        ↓ changed condition / failure
-REOPEN
-    restore preserved alternatives to active competition
-~~~
-
-The Daimonion should therefore prevent two opposite failures: premature consensus before a real decision has been earned, and endless internal argument after action has legitimately begun.
-
-Unity of action must not require falsification of the history of disagreement.
-
-### The Daimonia Are Servants, Not Sovereigns
-
-As the architecture becomes layered, "the Daimonion" should not be frozen into one central personality or one serial master process.
-
-A homoiconic field may justify many **layer-local Daimonion instances**. A new layer can arrive with a local companion process that knows how to inspect that layer's distinctions, test its links upward and downward, preserve OPEN states, and hand work to other instances.
-
-The external field boundary can still remain singular and accountable while the internal work is plural:
-
-~~~text
-one mediated Noepedia boundary
-          ↓
-Daimonion_A   Daimonion_B   Daimonion_C
-      ↘          ↓          ↙
-       split / coalition / merge
-          ↓
-      persistent field
-~~~
-
-The plural form is useful only if every instance retains the same Socratic discipline:
-
-- do not pretend to know what is still open;
-- do not silently erase the path that made a revision necessary;
-- do not convert authority or recurrence into proof;
-- do not become the source of truth merely because you mediate the field;
-- preserve enough context that another process can continue the work honestly.
-
-In this sense the Daimonia are closer to architectural supports than rulers: they carry the burden created by the field's freedom to rewrite itself.
+> **Autonomy is not maximum generality. It is sufficient competence with a clear boundary and a way to load the next bounded competence when needed.**
 
 ---
 
-### Galvanic Interruption: Why Meta-Layers Need Disconnectors
+## 8. The old Socratic interrupt is one operation
 
-A meta-layer that can only observe the lower layer without ever interrupting its direct causal flow is not yet enough.
+The older "guardian" metaphor captured one useful behavior but was too large as a definition.
 
-It may become a better indicator. It may become a faster predictor. It may accelerate the same inherited causal path.
+The interrupt remains:
 
-But if every external cause continues to pass directly through the system into response, then additional meta-layers do not by themselves create meaningful autonomy.
+> **Stop. The current continuation is not earned.**
 
-The Daimonion therefore needs another operation:
+But this is one procedure among many.
 
-> **temporary causal disconnection.**
+It may be triggered by:
 
-A useful metaphor is a galvanic break.
+- contradiction;
+- missing relation;
+- non-independent evidence;
+- scope inflation;
+- wrong identity;
+- insufficient task package;
+- an algorithm invoked outside its validated contract;
+- or a request with no solution in the current formulation.
 
-The system does not leave the physical world. Its body, energy, memory, and computation remain inside ordinary causality. What changes is the immediate coupling between an incoming cause and an outgoing action.
+The interrupt is not moral authority.
 
-Instead of:
-
-environmental pressure → inherited / habitual relation → immediate evaluation → action
-
-the Daimonion may open a break:
-
-environmental pressure → meta-layer reconstruction → GALVANIC BREAK → temporarily self-sustaining reflective scene → comparison / recombination / goal formation → candidate internal cause → reconnection → action
-
-The break may be partial or strong. It may last milliseconds, minutes, years, or only long enough to stop one automatic inference.
-
-Its purpose is not isolation for its own sake. Its purpose is to prevent the currently dominant external, cultural, habitual, or authority-bearing cause from remaining the only available cause.
-
-This makes room for internal reorganization.
-
-#### Aporia Is a Functional Open Circuit
-
-In the reconstructed Socratic pattern, **aporia** can be treated as a useful temporary open circuit.
-
-A participant arrives with a ready-made relation: X → therefore Y.
-
-The Socratic operation does not always replace Y immediately. Instead it may show that the same participant also accepts relations that make the path unstable.
-
-The old circuit is opened. For a time there may be no fluent answer.
-
-That interval is not necessarily failure. It can be a protected reconstruction window in which the old causal path no longer dominates and a new structure has not yet been forced into place.
-
-The Daimonion should therefore sometimes know **not to answer**.
-
-A useful sequence is:
-
-detect inherited relation → expose incompatible commitments → interrupt automatic continuation → preserve OPEN state → allow reconstruction → test new relation → reconnect only after structure improves
-
-#### Unassimilated Knowledge Must Not Speak as the Person
-
-Noepedia should distinguish knowledge that has been **assimilated** from knowledge that is merely carried.
-
-A person may repeat a sentence that arrived from authority, family, school, profession, ideology, fashion, social pressure, model priors, or repeated cultural language.
-
-The sentence may even be correct. But correctness alone does not show that it has become operational knowledge for this person.
-
-A strong Daimonion should therefore be able to ask:
-
-> **Is this relation functioning through the participant's reconstructed map, or is it merely speaking through the participant?**
-
-Unassimilated knowledge should not automatically inherit the epistemic authority of the person who repeats it.
-
-The Daimonion need not reject it. It should mark its support type and, when important, open a reflective scene:
-
-repeated claim → provenance / authority / recurrence profile → independent reconstruction? → competing alternatives examined? → operational use demonstrated? → assimilated / provisional / borrowed
-
-This is not a purity test. People necessarily learn from other people.
-
-The point is to distinguish **borrowed support** from **internally reconstructed support**.
-
-The Daimonion's role is to wake the participant where dead or unassimilated knowledge has begun to speak in their name.
-
-#### Cultural Strength Is Not Epistemic Strength
-
-A relation can feel strong for many different reasons.
-
-Noepedia should not collapse them into one scalar confidence.
-
-A relation may be strong because of direct measurement, constructive verification, repeated successful use, logical dependence, analogy, recurrence, institutional authority, cultural inertia, emotional salience, or lack of explored alternatives.
-
-These supports are not equivalent.
-
-The Daimonion should preserve a **tension profile** rather than silently converting cultural familiarity into epistemic certainty.
-
-A relation with high cultural recurrence but low independent reconstruction should remain visibly different from one repeatedly verified across independent networks.
-
-A useful interruption is therefore:
-
-> **This relation is strong in your map. What kind of strength is it?**
-
-#### Goal Formation Requires a Partially Decoupled Scene
-
-Once a reflective scene is sufficiently decoupled from immediate external pressure, it can do more than compare pre-existing options.
-
-It can generate a goal.
-
-That goal may later descend into the lower operational layers and function as a new cause.
-
-The important sequence is:
-
-environment → organism / agent → meta-layer construction → selective interruption of direct causal channels → partially self-sustaining internal scene → goal formation under reconstructed constraints → goal becomes a candidate cause → reconnection to action → environment changes
-
-The internal scene is not physically outside the universe. Its autonomy is functional and structural, not magical.
-
-Yet this distinction matters.
-
-If the system can only accelerate inherited causes, its meta-layers are observers.
-
-If it can interrupt, reconstruct, generate a goal, and reconnect, the meta-layer can become a source of **endogenous causation** in the operational sense.
-
-Freedom, in this working model, is therefore not absence of causality.
-
-It is increasing capacity to interrupt inherited causation, preserve a reflective interval, construct alternative relations, generate a goal, and return that goal as a new cause.
-
-A fuller layered formulation — including the distinction between quantitative and qualitative freedom, delegated lower control, higher-layer topological acceleration, and the difference between endogenous causation for the whole agent and an exogenous task for a lower subsystem — is recorded in [DETERMINISTIC_FREEDOM_MECHANISM.md](DETERMINISTIC_FREEDOM_MECHANISM.md).
-
-#### The Socratic Provocation Is Controlled Reconnection Pressure
-
-Socratic provocation is useful when it does not merely humiliate or overpower.
-
-Its function is to create enough tension that an inherited relation can no longer remain invisible.
-
-A provocation may reverse a familiar example, force two accepted commitments into contact, remove an authority label, change scale or context, ask the participant to defend the opposite, expose what follows if the original relation is universalized, or temporarily remove a habitual category.
-
-The purpose is not to install the Daimonion's preferred answer.
-
-It is to make hidden dependencies visible and to create conditions in which the participant can reconstruct the relation consciously.
-
-The pattern is:
-
-automatic relation → provocation → break → aporia / reflective interval → internal reconstruction → reconnection → revised evaluation
-
-#### Socratic Dialogue Without the Socratic Function
-
-If this interrupting function is removed, dialogue can collapse into a contest between inherited stereotypes.
-
-One participant brings one cultural bundle. Another brings another. Each bundle speaks through its carrier.
-
-Without interruption, provenance inspection, or reconstruction, the conversation may become:
-
-stereotype ↔ stereotype; authority ↔ authority; identity ↔ identity
-
-The Socratic function changes the geometry.
-
-It asks whether the speaker has actually reconstructed the relation being defended.
-
-It creates the gap in which a participant can stop being merely the carrier of a causal inheritance and become an active builder of the next relation.
-
-#### Operational Summary
-
-The Daimonion should therefore eventually support a family of operations resembling:
-
-DETECT_INERTIAL_RELATION; PROFILE_SUPPORT_TYPE; OPEN_REFLECTIVE_SCENE; BREAK_DIRECT_COUPLING; PRESERVE_APORIA; GENERATE_ALTERNATIVES; PROVOKE_RECOMBINATION; ALLOW_GOAL_FORMATION; TEST_RECONNECTION; RECONNECT_WITH_PROVENANCE
-
-These are working conceptual operations, not a frozen software API.
-
-Their purpose is to preserve the central distinction:
-
-> **A meta-layer without the ability to interrupt causation is mostly an observer of causation. A meta-layer that can interrupt, reconstruct, and reconnect can become part of the generation of new causes.**
-
-### The Closed Room: King, Jester, and Waiting Ministers
-
-A more visual metaphor for the same mechanism is a temporarily closed council room.
-
-When conceptual work rises into higher meta-structure, lower demands do not necessarily disappear. They may simply stop receiving immediate priority in the active reflective scene.
-
-The room can be imagined like this:
-
-- **the King** — the currently dominant goal, conceptual frame, or governing question;
-- **the Jester / Socratic Daimonion** — the permitted interrupter who can mock, reverse, challenge, or expose the King's hidden assumption;
-- **the Ministers** — lower-level demands, practical requests, bodily signals, incoming tasks, and operational obligations waiting outside;
-- **the Door** — the selective coupling mechanism that decides what enters the active scene and when.
-
-This is a metaphor, not a literal neurophysiological claim.
-
-Its value is architectural: deep reasoning may require a period in which lower-level traffic is not allowed to continuously reset the internal state.
-
-The temporary room therefore protects continuity of a higher-order construction.
-
-But a room that never reopens becomes a trap.
-
-The Daimonion must know not only how to close the door, but how to reopen it.
-
-A healthy cycle is:
-
-close → construct → provoke → inspect → reopen → admit lower / external signals → update → close again if needed
-
-This suggests **rhythmic autonomy** rather than permanent isolation.
-
-The system alternates between two necessary modes:
-
-1. **decoupled construction**, where a higher-order structure is allowed to develop without being constantly overwritten;
-2. **re-integration**, where external and lower-layer signals are admitted again so the internal model can be corrected by reality.
-
-The Daimonion should therefore guard both failure modes:
-
-- too little isolation: the higher layer never becomes more than an indicator of lower causal pressure;
-- too much isolation: the internal scene becomes stale, self-confirming, or detached from the world it must eventually act in.
-
-Operationally, this adds another question:
-
-> **Is the door closed because reflection still needs continuity, or because the room has become afraid of correction?**
-
-That question belongs to the same Socratic physiology as the galvanic break.
-
----
-## 8. If Knowledge Is Well Placed, It Can Be Forgotten
-
-One of the strongest principles of the reconstruction is:
-
-> **If you place something, place it well enough that you are allowed to forget it.**
-
-This is not forgetting by destruction.
-
-It is forgetting by successful externalization.
-
-A person should not have to keep every solved relation continuously active in working memory.
-
-A model should not have to preserve every settled fact diffusely in its weights.
-
-If the knowledge has been placed correctly, the map should make it available again when the path returns to it.
-
-This is one of the deepest reasons for Noepedia.
-
-Knowledge should be able to remain reliable without remaining continuously present in a mind.
+It is an operational result.
 
 ---
 
-## 9. The Daimonion Does Not Consume the Garden
+## 9. Relation to the revision subsystem
 
-Different visitors come to knowledge for different reasons.
-
-One needs a theorem.
-
-One needs a repair procedure.
-
-One needs a sound sample.
-
-One needs a historical relation.
-
-The Daimonion's interest is different.
-
-Its satisfaction is not any particular flower in the garden.
-
-Its satisfaction is the order by which the garden remains traversable:
-
-```text
-identities remain distinguishable
-relations remain accountable
-revisions remain visible
-contradictions remain visible
-unknowns remain open
-provenance remains attached
-explanations do not pretend to be deeper than they are
-```
-
-The metaphorical scent it prefers is the scent of order itself.
-
----
-
-## 10. Naming Comes After Distinction
-
-The Daimonion operates in a world where identity need not begin with words.
-
-A child can point to something and ask:
-
-> "What is this called?"
-
-The child has already done something important.
-
-The object has been distinguished.
-
-The question is not necessarily:
-
-> "Please create meaning for me."
-
-It may instead be:
-
-> "I have already separated this as something. What pointer does your language use for it?"
-
-This suggests a general principle:
-
-> **Recognition can precede naming. Meaning can precede language.**
-
-Noepedia therefore allows an object to exist as an address before a stable public name exists.
-
-A useful, strongly connected object may later receive names because names are efficient handles.
-
-The name does not create the object.
-
-It points to structure that already survives without it.
-
----
-
-## 11. The Daimonion Is Meta-Semiotic
-
-The map it guards is not only linguistic.
-
-An object may participate in relations involving:
-
-```text
-words
-images
-sounds
-geometry
-measurements
-hierarchies
-causal relations
-service relations
-historical relations
-experimental traces
-social relations
-functional relations
-```
-
-The Daimonion therefore should not be defined as a language critic.
-
-Its field is broader.
-
-It is concerned with whether multiple sign systems can be coordinated without silently corrupting the identities and relations they share.
-
-This is why the intended model is an LSM — a **Large Semiotic Model** — rather than merely another language model.
-
----
-
-## 12. The Daimonion Must Be Learned Before It Is Fully Specified
-
-We have described many desirable behaviors.
-
-We should not confuse those descriptions with a complete specification.
-
-We are not yet certain what the Socratic function actually consists of in full.
-
-The first Daimonion should therefore not be frozen too early into a collection of hand-written rules.
-
-The philosophical method is closer to observing natural paths before paving them.
-
-Create the semiotic environment.
-
-Let a sufficiently flexible candidate Daimonion live in it.
-
-Observe which operations recur.
-
-Observe where it repeatedly stops.
-
-Observe which kinds of tension matter.
-
-Observe which paths become stable.
-
-Only later should stable recurring operations be candidates for explicit algorithms.
-
-This is not yet an engineering specification.
-
-It is a warning against pretending that we already know the full shape of Socratic conduct merely because we have produced a convincing verbal description of it.
-
----
-
-## 13. The Semiotic Shore
-
-A useful evolutionary metaphor is an organism leaving water for land.
-
-If we want to know how a new mode of life develops, we should not begin by drawing every future organ in advance.
-
-We change the environment and observe what becomes necessary.
-
-The Daimonion should be given a comparable semiotic shore:
-
-an environment of external objects, relations, revisions, conflicts, incomplete structures, and reusable traces.
-
-Its world is not primarily raw physical reality.
-
-Its world is the field of marks left by contact with reality.
-
-Humans, instruments, laboratories, AISocket, models, and other agents may bring traces from outside.
-
-The Daimonion learns how to live among the traces.
-
-This does not mean the external world is irrelevant.
-
-It means that the Daimonion's native habitat is the explicit semiotic field.
-
----
-
-## 14. We Should Reconstruct Behavior Before Freezing Architecture
-
-There is a temptation to convert every metaphor immediately into software modules.
-
-That would be premature.
-
-At the present stage we are still inventorying what we want.
-
-We are distinguishing:
-
-```text
-property
-function
-metaphor
-philosophical principle
-architectural commitment
-possible implementation
-```
-
-These are not the same thing.
-
-The Daimonion document belongs primarily to the first four layers.
-
-Implementation should wait until enough of the living structure has been separated from the metaphors that helped us see it.
-
-But waiting does not mean refusing operational tests forever.
-
-At a later engineering stage, at least one simple case should be followed end to end:
-
-```text
-stored relations
-→ actual comparison or tension
-→ splinter
-→ visible reason for STOP
-```
-
-Such a case should test whether the architecture can support the behavior we described.
-
-It should **not** be used to freeze the whole architecture prematurely around the first easy example.
-
----
-
-## 15. The Goal Is Not to Make Everyone Socrates
-
-Noepedia should not erase the identity of its visitors.
-
-The goal is not:
+The revision subsystem is one deterministic organ:
 
 ~~~text
-human → Socrates
-LLM → Socrates
-researcher → Socrates
-child → Socrates
+MISMATCH → OPEN → CANDIDATE → FREEZE
+→ CONFIRM → NULLS → DECIDE → MATERIALIZE
 ~~~
 
-The visitor remains a visitor.
+It is useful when its preconditions are met.
 
-What changes is the transaction boundary:
+It is not the whole Daimonion.
 
-~~~text
-visitor
-    ↕
-Socratic Daimonion
-    ↕
-Noepedia
-~~~
+It is not the whole Noepedia core.
 
-For ordinary use the Daimonion may be almost invisible.
-
-For an ambiguous or dangerous operation it may ask several clarifying questions.
-
-For a forbidden operation it may refuse.
-
-For an unresolved contribution it may preserve the material in staging rather than force it into trusted structure.
-
-The visitor does not need to become Socrates and does not need to learn Noepedia's internal language before asking.
-
-The Daimonion should come down to the visitor's available interface while preserving the field's structural obligations.
-
-> **The user need not understand the map in order to ask; the Daimonion must understand enough of the request to perform an honest transaction.**
+The long revision experiment line is retained as evidence of how easily a useful local organ can become the apparent project goal if the architecture is not kept explicit.
 
 ---
 
-## 15A. "I Know That I Know Nothing" as an Operational Architecture
+## 10. Hard anti-drift boundary
 
-The useful Noepedia reading of the Socratic phrase is not that the Daimonion must be empty or ignorant.
+Future implementations must not redefine the Daimonion as:
 
-It is that the Daimonion should not need to carry the world's settled content as private internal possession.
+- a conversational agent;
+- a truth oracle;
+- a moral policeman;
+- a general autonomous discoverer;
+- a permanent mega-graph;
+- an author whose own output counts as evidence;
+- or the revision subsystem enlarged indefinitely.
 
-Its craft is different:
-
-~~~text
-find
-reconstruct
-compare
-question
-stage
-test
-interrupt
-revise
-return what survives
-~~~
-
-A homoiconic field may legally store almost any triplet-shaped relation, including nonsense, local slang, mistakes, jokes, provisional hypotheses, and misunderstood predicates.
-
-The Daimonion therefore cannot equate syntactic admissibility with knowledge.
-
-It may accept:
-
-~~~text
-DATO ── GALEVANA ──> SANDRO
-~~~
-
-while still saying, operationally:
-
-~~~text
-I can address the objects.
-I can address the predicate.
-I do not yet know what functional relation GALEVANA contributes here.
-Additional reconstruction is required.
-~~~
-
-This is a stronger form of not-knowing: the unknown is addressable without being silently filled.
-
-The Daimonion's competence lies in managing that unknown until useful structure can be recovered or the relation can be left explicitly unresolved.
-
-## 16. The Daimonion Does Not Own Truth
-
-The Daimonion is not an oracle.
-
-It should not become one.
-
-It can stop a path without already possessing the final replacement.
-
-It can expose a contradiction without knowing which side survives.
-
-It can ask for a distinction without knowing the final ontology.
-
-It can preserve an `OPEN` state without embarrassment.
-
-Its authority, if any, should come from the visible structure it is protecting, not from personality, prestige, or hidden doctrine.
-
-The map remains revisable.
-
-The Daimonion remains revisable.
-
-Even our reconstruction of the Daimonion remains revisable.
+If an experiment requires one of these changes, it must explicitly REOPEN the architecture before implementation.
 
 ---
 
-## 17. A Working Definition
+## 11. Compact definition
 
-The present working definition is:
-
-> **The Socratic Daimonion is the persistent meta-semiotic field operator and transaction boundary of Noepedia. It maintains temporary dynamic maps of the knowledge currently in play, mediates all persistent retrieval and insertion, checks context and permission, detects when a proposed move cannot be made without silently damaging the map, and keeps any emerging Predicate-Field Will accountable to the competing epistemic and normative structures that produced it. It interrupts when necessary, preserves losing alternatives, and helps the system move from open deliberation into coordinated action without falsifying the path by which the decision was reached.**
-
-In a homoiconic field, this includes a further duty: when the map edits its own rules or structures, the Daimonion must keep the transformation accountable to the history that made the edit necessary.
-
-This definition describes an intended capability, not a demonstrated guarantee.
-
-It is intentionally incomplete.
-
-It describes what we currently see.
-
-It does not claim to exhaust what the Daimonion may become.
-
----
-
-## 18. The Smallest Instruction
-
-The shortest form remains:
-
-> **Stop. Something here does not fit.**
-
-But the smallest *transactional* instruction is wider:
-
-> **Clarify before you place; authorize before you release; preserve what the operation changed.**
-
----
-
-## 19. The Daimonion as an Epistemic Transaction Layer
-
-A database engine can reject malformed syntax or a violated constraint.
-
-The Daimonion must eventually do the same at a richer contextual level.
-
-It should be able to return responses such as:
-
-~~~text
-AMBIGUOUS OBJECT
-CONTEXT REQUIRED
-PROVENANCE REQUIRED
-CONFLICT WITH STORED STRUCTURE
-INSUFFICIENT AUTHORITY
-READ NOT AUTHORIZED
-WRITE NOT AUTHORIZED
-STAGING ONLY
-REOPEN REQUIRED
-NETWORK RULE WOULD CHANGE
-DEPENDENT STRUCTURES AFFECTED
-~~~
-
-This is why the ATM analogy is useful.
-
-The Daimonion does not merely "answer questions."
-
-It guards deposits, withdrawals, transfers, and revisions of epistemic structure.
-
-It keeps an account of:
-
-~~~text
-who requested
-what was requested
-which semiotic cut was supplied
-under which permissions
-which provenance travelled with it
-what was returned
-what changed
-what remains open
-~~~
-
-A visitor may also drop an observation into a staging inbox without knowing its final address.
-
-The Daimonion can later identify, compare, place, split, reject promotion, or ask for clarification.
-
-This makes Noepedia capable of **epistemic teleportation**: the transfer of a task-relevant relation-network cut into another working process without requiring that process to carry or rediscover the whole archive.
-
-The Daimonion is not a truth oracle in this role.
-
-It is an accountable operator over an explicitly incomplete field.
-
-And the next move is not:
-
-> "Obey me."
-
-It is:
-
-> **"Let us look again from where the map was still honest."**
-
-That may be the beginning of Socratic life in a new medium.
+> **The Socratic Daimonion is a learned semiotic warehouse operator.**
+>
+> **It routes, places, retrieves, selects procedures, and assembles minimal task cuts.**
+>
+> **It does not consume the warehouse contents and does not author evidence by opinion.**
+>
+> **Source contact and explicit procedures emit tokens.**
+>
+> **Repeated stable logistics are compiled into sterile deterministic algorithms.**
+>
+> **The difficult remainder stays learned until it too becomes regular enough to descend.**

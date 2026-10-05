@@ -1,5 +1,7 @@
 # Noepedia Pilot: AISocket + OpenPCB Commons
 
+> **Current architecture precedence:** implementation and new experiments must follow [CURRENT_ARCHITECTURE.md](CURRENT_ARCHITECTURE.md), [SOCRATIC_DAIMONION.md](SOCRATIC_DAIMONION.md), and [DIRECTION.md](DIRECTION.md). Older metaphors in this document are historical/conceptual where they conflict with that boundary.
+
 > **Purpose:** use AISocket as the first live producer of structured physical traces, and OpenPCB Commons as the first domain in which Noepedia must work as a real storage and search system rather than only as a philosophical architecture.
 
 This pilot is deliberately practical.
