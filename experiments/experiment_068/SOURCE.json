@@ -1,0 +1,57 @@
+{
+  "experiment": "NOEPEDIA_EXP_068_STABLE_WINDOW_BLIND_DISCOVERY",
+  "experiment_class": "SCIENTIFIC_REAL_DATA",
+  "frozen_core_commit": "c2c81a04f3d2fe08fc48b4742cab555f22bf2dfd",
+  "dataset": {
+    "name": "NASA Milling Wear",
+    "official_zip": "https://data.nasa.gov/docs/legacy/mill.zip",
+    "expected_runs": 167,
+    "channels": [
+      "smcAC",
+      "smcDC",
+      "vib_table",
+      "vib_spindle",
+      "AE_table",
+      "AE_spindle"
+    ]
+  },
+  "adapter": {
+    "stable_window_start": 3000,
+    "stable_window_end": 6000,
+    "run_feature": "RMS",
+    "calibration_count": 40,
+    "binarization": "deterministic_1D_kmeans_calibration_only",
+    "minimum_calibration_cluster_size": 4
+  },
+  "split": {
+    "discovery_count": 60,
+    "buffer_count": 20,
+    "confirmation": "remainder",
+    "minimum_total_runs": 150
+  },
+  "temporal_search": {
+    "lag_min": 1,
+    "lag_max": 8,
+    "directions": [
+      "LOW_TO_HIGH",
+      "HIGH_TO_LOW"
+    ],
+    "permutation_shifts": [
+      7,
+      13,
+      19
+    ],
+    "required_relative_advantage": 0.1
+  },
+  "shuffled_control": {
+    "algorithm": "python_random_shuffle",
+    "discovery_seed_base": 68000,
+    "confirmation_seed_base": 68100
+  },
+  "primary_classes": [
+    "REAL_PROMOTION_AND_SHUFFLED_ZERO",
+    "NO_REAL_PROMOTION_AND_SHUFFLED_ZERO",
+    "ANY_SHUFFLED_PROMOTION",
+    "NOT_EVALUABLE_ADAPTER_VALIDATION"
+  ]
+}
