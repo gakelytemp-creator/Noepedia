@@ -1565,7 +1565,7 @@ That is part of the research program.
 
 ## Short Formula
 
-> **The field stores reusable semiotic ground. The Daimonion is the transaction boundary. Intelligence pays mainly for the unresolved edge.**
+> **The Noepedia/LSM stores and reuses semiotic ground through its explicit field and services. The SLM-Daimonion handles learned semiotic logistics. Expensive neural work is reserved mainly for unresolved edges.**
 
 ~~~text
 REALITY
