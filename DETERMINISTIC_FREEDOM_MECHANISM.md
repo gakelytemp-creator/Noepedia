@@ -498,32 +498,18 @@ It should survive only if it can be made clearer, compared with competing accoun
 
 ---
 
-## 21. Relation to the Socratic Daimonion
+## 21. Relation to the Current Canonical Architecture — DEFERRED / RESEARCH
 
-The Socratic Daimonion already contains the operational core:
+Earlier versions treated galvanic break, reflective scenes, and goal formation as part of the Socratic Daimonion.
 
-~~~text
-DETECT_INERTIAL_RELATION
-→ OPEN_REFLECTIVE_SCENE
-→ BREAK_DIRECT_COUPLING
-→ PRESERVE_APORIA
-→ GENERATE_ALTERNATIVES
-→ ALLOW_GOAL_FORMATION
-→ TEST_RECONNECTION
-→ RECONNECT_WITH_PROVENANCE
-~~~
+That is no longer the canonical definition.
 
-The present document adds a more explicit layered interpretation:
+The current Daimonion is the SLM-type semiotic logistics operator described in [SOCRATIC_DAIMONION.md](SOCRATIC_DAIMONION.md). The mechanism in this document remains a separate research hypothesis about layered causal organization.
 
-- increased resolution first gives **quantitative freedom**;
-- protected decoupling gives a route toward **qualitatively new causal organization**;
-- lower functions must be **delegated** during the break;
-- the higher layer can act as a **topological accelerator**;
-- and the returning goal is simultaneously **endogenous to the agent** and **exogenous to the lower layer**.
+If later experiments show that some of these operations belong inside the Daimonion, the architecture must be explicitly REOPENED before they are reintroduced.
 
-This is not a second ontology.
+The present document therefore does not define Daimonion requirements.
 
-It is a proposed mechanism inside the same reversible field.
 
 ---
 
