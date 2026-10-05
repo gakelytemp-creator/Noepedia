@@ -1,145 +1,280 @@
 # The Socratic Daimonion
 
-> Status: canonical architectural statement — 2026-10-05
+> Status: CANONICAL
+> Date: 2026-10-05
 >
-> The name is philosophical; the mechanism is an engineering hypothesis.
+> Read together with CURRENT_ARCHITECTURE.md and DIRECTION.md.
 
-## 1. Four roles must remain separate
+## 1. Warehouse operator, not knowledge consumer
 
-Noepedia now distinguishes four roles:
+The Socratic Daimonion is the learned resident operator of the Noepedia field.
 
-~~~text
-FIELD
-  persistent addressable semiotic structure
-  objects, triplets, provenance/source tokens, status, scope, time, OPEN
+The warehouse analogy is intentional:
 
-LLM ADAPTER
-  semantic ↔ semiotic translation at the human-language boundary
+> **The Daimonion is the warehouse manager and loader. It is not the customer eating the warehouse contents.**
 
-SOCRATIC DAIMONION
-  learned operator over the field
-  decomposition, placement, retrieval, query construction, reconstruction
+It does not need to believe, prefer, enjoy, fear, or morally resist the knowledge it handles.
 
-DETERMINISTIC ALGORITHMS
-  stable Daimonion operations compiled into cheaper explicit procedures
-~~~
+Its role is operational:
 
-The field is intentionally simple. It stores, addresses, returns, indexes, joins, and traverses. It does not become a hidden cognitive executive.
-
-The LLM is not the Daimonion. The LLM speaks human language well; the Daimonion does not need to speak at all.
-
-## 2. What the Daimonion learns
-
-The Daimonion learns the grammar of operating on semiotic knowledge:
-
-- separate object identity from names;
 - decompose incoming candidate structure;
-- choose relation networks;
-- preserve provenance and source tokens;
-- distinguish independent support from copied recurrence;
-- place OPEN when closure is not earned;
-- build efficient retrieval procedures;
-- assemble the smallest sufficient task-specific mega-graph;
-- widen that cut when reconstruction fails;
-- recognize underdetermined, inconsistent, or currently unsolvable requests;
-- and stop rather than fabricate a completion.
+- identify addresses and relation networks;
+- attach or preserve provenance/source tokens;
+- choose which stored structures to retrieve;
+- choose which explicit procedure to invoke;
+- assemble a temporary task package;
+- recognize when the available procedures or knowledge are insufficient;
+- return OPEN / no-result / escalation when appropriate.
 
-Its fitness is correct field operation, not eloquence.
+The Daimonion does not need to speak human language.
 
-## 3. The synthetic training polygon
+The LLM handles the semantic boundary.
 
-The Daimonion should first be trained where the hidden answer is known. Synthetic cases can include one object with many names, one name for many objects, missing predicates, duplicated evidence, independent evidence, contradiction, context/time changes, incomplete hierarchies, multi-network retrieval, valid OPEN, underdetermined questions, and tasks whose correct result is to stop.
+---
 
-For each case the training questions are concrete: what must be stored, what must remain OPEN, which sources are independent, which networks are relevant, what is the smallest sufficient retrieval cut, when should the cut widen, and what must never be silently promoted.
+## 2. The Daimonion does not author facts
 
-## 4. Neural until repetition earns an algorithm
+A Daimonion routing decision is not itself epistemic evidence.
 
-The Daimonion should remain learned/neural only where the operation is still genuinely variable.
+Facts and support tokens arise from explicit contact or explicit procedure results.
 
 ~~~text
-learned operation
-  → repeated stable success
-  → candidate procedure
-  → synthetic and real validation
-  → deterministic algorithm
+SOURCE / MEASUREMENT / PROCEDURE
+        ↓
+observable result
+        ↓
+TOKEN / RELATION UPDATE
 ~~~
 
-Algorithms are therefore crystallized Daimonion habits.
+Examples:
 
-If a compiled procedure later fails outside its earned scope, its status is downgraded, the failure is preserved, and the unresolved region returns to learned exploration.
+- a source contains a claim;
+- two relation networks match under a defined comparator;
+- a measurement falls inside a specified relation;
+- a reconstruction succeeds or fails;
+- a transfer test reproduces or does not reproduce;
+- a contradiction is detected by a defined operation.
 
-## 5. Revision is one organ, not the core
+If a procedure does not react, the Daimonion does not invent a positive token.
 
-The revision line developed a valuable deterministic subsystem:
+> **No reaction → no token.**
+
+The Daimonion can route a structure into a comparator.
+
+The comparator's result can become an addressable fact with provenance.
+
+The Daimonion's internal preference cannot substitute for that result.
+
+---
+
+## 3. What it learns
+
+The learned part exists because the logistics are not initially obvious.
+
+The Daimonion may need to learn:
+
+- which apparent names refer to the same object;
+- when one name refers to several objects;
+- which network should receive a relation;
+- which source tokens belong to which claim;
+- which evidence is copied and which is independent;
+- which query pattern retrieves a useful cut;
+- which task requires which "pockets";
+- when another view is needed;
+- when no justified action exists;
+- when a stable operation is regular enough to be extracted into an algorithm.
+
+Its target is not eloquence.
+
+Its target is correct routing and transformation of semiotic structure.
+
+---
+
+## 4. Synthetic training polygon
+
+The initial Daimonion should be trained in controlled synthetic worlds where the correct internal arrangement is known.
+
+Cases should include:
 
 ~~~text
-MISMATCH → OPEN → CANDIDATE → FREEZE → CONFIRM → NULLS
-→ PROMOTE / REJECT / REMAIN_OPEN → MATERIALIZE
+one object / many labels
+one label / several objects
+partial descriptions
+missing predicates
+duplicate evidence
+independent evidence
+contradictions
+context changes
+time changes
+hierarchy fragments
+cross-network retrieval
+MATCH
+MISMATCH
+NO_RESULT
+OPEN
+single-path solution
+many-path solution
+underdetermined task
+unsolvable formulation
 ~~~
 
-This is not the whole Noepedia core and not the whole Daimonion. It is one operation family that became explicit enough to crystallize.
+For each case, the expected field state and expected procedure outputs can be compared with the Daimonion's actions.
 
-Other future organs may emerge from identity resolution, evidence-token accounting, hierarchy completion, query planning, mega-graph assembly, scope refinement, reconstruction, attention/view selection, or safe forgetting and regeneration.
+This permits exhaustive training without pretending that fluent language is proof of correct epistemic work.
 
-## 6. Mega-graph as the pocketed garment
+---
 
-The persistent field may be enormous. A task normally needs only a small cut.
+## 5. Algorithms are crystallized logistics
 
-The Daimonion should learn to retrieve the smallest sufficient working scene rather than render the whole field.
+When the Daimonion repeatedly performs the same operation under explicit conditions, that behavior should be extracted.
 
 ~~~text
-ATTEND
-→ RETRIEVE MINIMAL CUT
-→ RECONSTRUCT
-→ enough? use it
-→ not enough? OPEN / missing view
-→ widen locally
-→ reconstruct again
+learned routing / manipulation
+→ repeated stable pattern
+→ formalized procedure
+→ validation
+→ deterministic service
 ~~~
 
-The mega-graph is this temporary assembly: a coat whose pockets contain only the hierarchy, causal, temporal, provenance, evidence, identity, analogy, or other cuts needed now. It is not a permanent super-graph.
+The resulting algorithm does not need a moral personality.
 
-## 7. Semantic input and output
+It needs:
 
-On ingestion:
+- explicit contracts;
+- bounded inputs;
+- bounded outputs;
+- isolation from unintended direct mutation;
+- regression tests;
+- versioned scope.
+
+The goal is sterility and transparency.
+
+If a compiled procedure fails outside its scope, preserve the failure and return that region to learned handling.
+
+---
+
+## 6. The mega-graph is a temporary garment
+
+A task should not activate or copy the whole field.
+
+The Daimonion assembles only the relevant cuts.
+
+The coat-with-pockets metaphor remains useful:
 
 ~~~text
-human text → LLM adapter → candidate semiotic structure
-→ Daimonion placement/testing → persistent field
+hierarchy pocket
+time pocket
+provenance pocket
+geometry pocket
+diagnostics pocket
+evidence pocket
+...
 ~~~
 
-On retrieval:
+The mega-graph is the temporary arrangement of the pockets needed for one job.
+
+It is discarded or released when the job is finished.
+
+It is not a permanent global mind.
+
+---
+
+## 7. Minimal sufficient specialists
+
+The same principle extends beyond the Daimonion.
+
+A small autonomous agent should receive only the knowledge and procedures necessary for its current role.
+
+For example, a lawn-mowing robot may carry:
 
 ~~~text
-human question → LLM adapter → structural retrieval intent
-→ Daimonion query/mega-graph → field result
-→ LLM adapter → human-language answer
+grass-cutting knowledge
+local spatial map
+machine-control procedures
+minimal owner-interaction rules
+required safety constraints
 ~~~
 
-The boundary should preserve what came from the source, what the LLM interpreted, what the Daimonion inferred, what the field stored, and what a deterministic routine decided.
+It does not need the whole Noepedia.
 
-## 8. The Socratic interrupt remains
+If a fault appears, it can temporarily load a self-diagnostic garment, diagnose or escalate, then release that package and return to its normal role.
 
-The older guardian image was not wrong; it was incomplete.
+> **Autonomy is not maximum generality. It is sufficient competence with a clear boundary and a way to load the next bounded competence when needed.**
 
-One Daimonion operation is still:
+---
 
-> Stop. The current continuation is not earned.
+## 8. The old Socratic interrupt is one operation
 
-But stopping is one learned skill among many. It may be triggered by contradiction, missing relations, non-independent evidence, scope inflation, an unsolvable formulation, or a compiled algorithm used outside its validated boundary.
+The older "guardian" metaphor captured one useful behavior but was too large as a definition.
 
-## 9. Compact statement
+The interrupt remains:
 
-> Noepedia is the field.
+> **Stop. The current continuation is not earned.**
+
+But this is one procedure among many.
+
+It may be triggered by:
+
+- contradiction;
+- missing relation;
+- non-independent evidence;
+- scope inflation;
+- wrong identity;
+- insufficient task package;
+- an algorithm invoked outside its validated contract;
+- or a request with no solution in the current formulation.
+
+The interrupt is not moral authority.
+
+It is an operational result.
+
+---
+
+## 9. Relation to the revision subsystem
+
+The revision subsystem is one deterministic organ:
+
+~~~text
+MISMATCH → OPEN → CANDIDATE → FREEZE
+→ CONFIRM → NULLS → DECIDE → MATERIALIZE
+~~~
+
+It is useful when its preconditions are met.
+
+It is not the whole Daimonion.
+
+It is not the whole Noepedia core.
+
+The long revision experiment line is retained as evidence of how easily a useful local organ can become the apparent project goal if the architecture is not kept explicit.
+
+---
+
+## 10. Hard anti-drift boundary
+
+Future implementations must not redefine the Daimonion as:
+
+- a conversational agent;
+- a truth oracle;
+- a moral policeman;
+- a general autonomous discoverer;
+- a permanent mega-graph;
+- an author whose own output counts as evidence;
+- or the revision subsystem enlarged indefinitely.
+
+If an experiment requires one of these changes, it must explicitly REOPEN the architecture before implementation.
+
+---
+
+## 11. Compact definition
+
+> **The Socratic Daimonion is a learned semiotic warehouse operator.**
 >
-> The LLM translates between language and the field.
+> **It routes, places, retrieves, selects procedures, and assembles minimal task cuts.**
 >
-> The Socratic Daimonion learns how to operate on the field.
+> **It does not consume the warehouse contents and does not author evidence by opinion.**
 >
-> The mega-graph is the temporary pocketed garment for one task.
+> **Source contact and explicit procedures emit tokens.**
 >
-> Algorithms are repeated Daimonion habits made explicit.
+> **Repeated stable logistics are compiled into sterile deterministic algorithms.**
 >
-> OPEN is the right answer whenever the structure has not earned closure.
-
-This is the current architectural center.
+> **The difficult remainder stays learned until it too becomes regular enough to descend.**
