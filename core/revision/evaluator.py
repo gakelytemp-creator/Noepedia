@@ -332,6 +332,7 @@ def evaluate_simpler_rule_comparator(
 
     return {
         "family":"SIMPLER_RULE_COMPARATOR",
+        "candidate_role":"COMPARATOR_ONLY",
         "discovery":{
             "majority_state":maj,
             "search_boundary_hit":False,
