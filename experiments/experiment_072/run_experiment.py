@@ -93,7 +93,8 @@ def main():
             "parent_rule_id":"RULE072_SHUF_V1",
             "open_id":"OPEN072_SHUF",
             "proposed_new_rule_id":"RULE072_SHUF_V2",
-            "search_is_bounded":False,
+            "lag_search":{"min":1,"max":6},
+            "search_is_bounded":True,
         },
         {
             "source_discovery":source_d,
@@ -102,7 +103,7 @@ def main():
             "target_confirmation":target_c,
             "proposed_confirmation":source_c,
         },
-        {},
+        evaluator_config(),
         feature_config=feature_config(),
     )
 
