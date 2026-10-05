@@ -1,5 +1,7 @@
 # Experimental Part — Requirements, Tasks, and Validation Program
 
+> **Current architecture precedence:** implementation and new experiments must follow [CURRENT_ARCHITECTURE.md](CURRENT_ARCHITECTURE.md), [SOCRATIC_DAIMONION.md](SOCRATIC_DAIMONION.md), and [DIRECTION.md](DIRECTION.md). Older metaphors in this document are historical/conceptual where they conflict with that boundary.
+
 > **Status:** experimental design specification.
 >
 > This file defines what must be built, measured, compared, and falsified before strong scientific claims can be made about Noepedia.
