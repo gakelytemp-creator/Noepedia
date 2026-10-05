@@ -988,7 +988,7 @@ This is closer to an epistemic transaction protocol than to unrestricted databas
 
 The Daimonion does not decide truth by personality or authority.
 
-Its job is closer to a demanding companion, archivist, and navigator.
+Its job here is archival and operational: make structural changes visible rather than silently overwriting them.
 
 If a participant previously established one structure and later proposes another, the Daimonion should make the change visible rather than silently overwrite the earlier structure.
 
