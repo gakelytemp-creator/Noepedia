@@ -10,9 +10,9 @@
 
 ## 1. Why Another Document?
 
-Noepedia already describes reversible meta-layers, temporary reflective scenes, the Socratic STOP, a galvanic break in direct causal flow, goal formation inside a partially decoupled scene, and reconnection of a newly formed goal into lower operational layers.
+Earlier Noepedia drafts explored reversible meta-layers, temporary reflective scenes, Socratic STOP, galvanic break, goal formation, and reconnection.
 
-Those ideas are compatible with the mechanism developed here.
+Under the current architecture these mechanisms are **DEFERRED / RESEARCH** and are not part of the canonical Socratic Daimonion definition. They remain available here as a separate hypothesis.
 
 This document makes one distinction more explicit:
 
@@ -156,7 +156,7 @@ Energy, memory, computation, and the body continue to exist normally.
 
 What changes is **which causal channels are allowed to dominate the active higher-order scene**.
 
-This is the same family of operation described in the Socratic Daimonion as a galvanic break.
+This operation belonged to an older Daimonion formulation. In the current architecture, galvanic break is a separate DEFERRED / RESEARCH hypothesis and is not defined by SOCRATIC_DAIMONION.md.
 
 ---
 
