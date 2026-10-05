@@ -1,0 +1,20 @@
+name: Experiment 070 Gate Coverage Repair
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "experiments/experiment_070/**"
+      - ".github/workflows/experiment-070.yml"
+
+jobs:
+  verify-070:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install numpy scipy
+      - run: python experiments/experiment_070/run_experiment.py
