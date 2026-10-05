@@ -469,39 +469,45 @@ lost distinction
 
 ---
 
-## 23. LLM–LSM Division of Labor
+## 23. LLM–LSM Relation
+
+**Noepedia as a whole is the LSM (Large Semiotic Model).**
+
+The LLM is not the opposite half of a two-worker pair. It is one possible semantic-boundary and frontier component used by the LSM.
+
+~~~text
+NOEPEDIA / LSM
+├─ persistent semiotic field
+├─ LLM/media adapters where semantic translation is needed
+├─ Socratic Daimonion — SLM-type neural network
+└─ deterministic services
+~~~
 
 ### LLM role
 
-- open-edge reasoning;
+- semantic ↔ semiotic translation;
+- open-edge reasoning when requested;
 - flexible synthesis;
-- new distinction formation;
-- candidate lens invention;
-- difficult multimodal interpretation.
+- difficult multimodal interpretation;
+- candidate decomposition that must still be routed/tested.
 
-### LSM / Noepedia role
+### SLM-type Daimonion role
 
-- persistent explicit structure;
-- provenance;
-- traversal;
-- reuse;
-- OPEN management;
-- lens stabilization;
-- revision;
-- routing.
+- learned semiotic logistics;
+- placement and retrieval;
+- procedure selection;
+- minimal garment construction;
+- coverage tracking;
+- OPEN / NO_RESULT / escalation handling;
+- discovery of repeated operational patterns that may later be compiled.
 
-Working cycle:
+### Deterministic service role
 
-\`\`\`text
-semantic interaction
-→ recurring transform
-→ candidate lens
-→ explicit validation
-→ stabilized lens
-→ cheap reuse
-\`\`\`
+- execute stabilized operations under explicit contracts;
+- emit explicit procedure results;
+- preserve versioned scope and regression behavior.
 
----
+The whole LSM owns the architectural objective: convert diffuse knowledge into explicit, stable, cheap, addressable semiotic structure.
 
 ## 24. Structural Exchange Beyond Text
 
