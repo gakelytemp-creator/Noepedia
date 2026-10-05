@@ -49,6 +49,8 @@ NOEPEDIA / LSM
 
 The internal roles must remain separate even though together they constitute one LSM.
 
+**SLM means Small Semiotic Model** in this repository. It does **not** mean Small Language Model. The Socratic Daimonion is SLM-type because it is a compact neural operator trained on semiotic placement, retrieval, procedure selection, and task-cut construction; it is not required to speak or model human language.
+
 ### Noepedia Field
 
 The field is the persistent homoiconic semiotic substrate.
