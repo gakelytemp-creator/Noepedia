@@ -90,6 +90,7 @@ def build_gate_case(context,candidate,evaluation,null_specs,required_relative_ad
         "open_exists":True,
         "provenance_complete":True,
         "candidate_parameters_explicit":evaluation.get("frozen_parameters") is not None,
+        "candidate_promotable":candidate["family"]!="SIMPLER_RULE_COMPARATOR",
         "preregistration_frozen":True,
         "discovery_confirmation_separated":True,
         "confirmation_untouched":True,
