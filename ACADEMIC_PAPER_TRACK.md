@@ -1,5 +1,7 @@
 # Academic Paper Track
 
+> **Current architecture precedence:** implementation and new experiments must follow [CURRENT_ARCHITECTURE.md](CURRENT_ARCHITECTURE.md), [SOCRATIC_DAIMONION.md](SOCRATIC_DAIMONION.md), and [DIRECTION.md](DIRECTION.md). Older metaphors in this document are historical/conceptual where they conflict with that boundary.
+
 > **Status:** paper architecture split into theoretical and experimental parts.
 
 The Noepedia academic work is now separated into two linked documents.
