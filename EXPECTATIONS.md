@@ -54,9 +54,9 @@ The question mark is revisable. Evidence can shrink it; counterevidence or a cha
 
 **LSM means Large Semiotic Model.**
 
-The LSM is the process that moves through this explicit semiotic field. It is expected to traverse networks, compare predicate profiles, follow provenance, consolidate related questions, estimate whether a region is settled enough for cheap handling, and construct a narrow prompt when expensive neural reasoning is still required.
+In the current architecture, LSM names the explicit semiotic operating regime, not a second conversational mind. The learned Daimonion routes and manipulates field structure; deterministic services perform stabilized operations; an LLM is used at the semantic boundary or unresolved frontier.
 
-Its first versions may themselves be partly neural.
+The target is not to keep a permanent neural "LSM" active over the whole field.
 
 The intended development path is:
 
@@ -123,9 +123,9 @@ PFW does not mean subjective feeling.
 
 It means a directional requirement reconstructed when task-relevant cuts from otherwise independent predicate networks are assembled into a temporary mega-graph and their tensions, dependencies, alternatives, and constraints become jointly inspectable.
 
-**Daimonion** is not the source of that will.
+**Daimonion** is not the source of that direction.
 
-It is the reflective and consistency-preserving companion that keeps the direction auditable: which networks generated it, which alternatives lost, which assumptions and moral constraints mattered, and what conditions would reopen the decision.
+It is the learned semiotic logistics operator that selects the relevant cuts and procedures. Direction must remain reconstructible from explicit field structure and procedure results. The Daimonion's own internal output is not independent evidence.
 
 Within the Noepedia design, operational trust should be granted only to direction that can be reconstructed from this interacting field. An opaque preference of one model, one rule, or one authority is not sufficient by itself.
 
@@ -814,3 +814,8 @@ The operational expectation is:
 
 If it does not, the failure should REOPEN the conceptual layer.
 
+
+
+## Minimal specialist expectation
+
+A deployed agent should not carry the whole Noepedia. It should receive the smallest stable knowledge/procedure package sufficient for its job and load additional bounded garments only when its competence boundary is crossed. The expected economic gain therefore includes not only fewer LLM calls, but also less knowledge transported, less state kept active, and narrower interfaces.
