@@ -47,6 +47,19 @@ def evaluate_case(case: dict) -> dict:
         else:
             gates.append(gate(gate_id,"NOT_EVALUABLE",evidence={key:val},reason=reason,failure_decision="REMAIN_OPEN"))
 
+    # Candidate role gate. Absent for historical cases => not applicable.
+    promotable=case.get("candidate_promotable")
+    if promotable is None:
+        gates.append(gate("A6_CANDIDATE_PROMOTABLE","NOT_APPLICABLE"))
+    elif promotable is True:
+        gates.append(gate("A6_CANDIDATE_PROMOTABLE","PASS",
+                          evidence={"candidate_promotable":True}))
+    else:
+        gates.append(gate("A6_CANDIDATE_PROMOTABLE","FAIL",
+                          evidence={"candidate_promotable":False},
+                          reason="COMPARATOR_ONLY_NOT_PROMOTABLE",
+                          failure_decision="REMAIN_OPEN"))
+
     # Scientific metric gate.
     old_metric=case.get("old_metric")
     revised_metric=case.get("revised_metric")
