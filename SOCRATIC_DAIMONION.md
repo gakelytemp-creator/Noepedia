@@ -7,7 +7,7 @@
 
 ## 1. Warehouse operator, not knowledge consumer
 
-The Socratic Daimonion is the learned resident operator of the Noepedia field.
+Noepedia as a whole is the **LSM (Large Semiotic Model)**. The Socratic Daimonion is an **SLM-type neural network** inside that LSM: the learned resident operator of the persistent field.
 
 The warehouse analogy is intentional:
 
@@ -55,9 +55,11 @@ Examples:
 - a transfer test reproduces or does not reproduce;
 - a contradiction is detected by a defined operation.
 
-If a procedure does not react, the Daimonion does not invent a positive token.
+If a procedure does not react, the Daimonion does not invent a positive or negative epistemic token.
 
-> **No reaction → no token.**
+> **No reaction → no epistemic result token.**
+
+But the execution itself must remain visible. The system records whether the procedure was never run, ran and returned no epistemic result, or ran and produced MATCH / MISMATCH / another result. Coverage is therefore distinct from evidential reaction.
 
 The Daimonion can route a structure into a comparator.
 
@@ -92,7 +94,7 @@ Its target is correct routing and transformation of semiotic structure.
 
 ## 4. Synthetic training polygon
 
-The initial Daimonion should be trained in controlled synthetic worlds where the correct internal arrangement is known.
+The initial Daimonion should begin with the **smallest sealed synthetic phantom/polygon** where the correct internal arrangement is known. Expansion is allowed only after the minimal set behaves correctly.
 
 Cases should include:
 
@@ -110,7 +112,10 @@ hierarchy fragments
 cross-network retrieval
 MATCH
 MISMATCH
+NOT_RUN
+RUN_NO_RESULT
 NO_RESULT
+CORRECT_OPEN
 OPEN
 single-path solution
 many-path solution
