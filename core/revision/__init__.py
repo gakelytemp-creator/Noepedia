@@ -12,6 +12,7 @@ from .megagraph_adapter import normalize_history_events, build_common_timeline, 
 from .graph_pipeline import run_graph_native_revision, run_graph_native_revision_with_strategy, run_graph_native_revision_auto_strategy
 from .strategies import RelationScopePolicy, TimelinePolicy, SplitPolicy, SearchPolicy, RevisionStrategy, DEFAULT_REVISION_STRATEGY
 from .meta_policy import profile_history, select_revision_strategy, dense_strategy, sparse_strategy, conservative_strategy
+from .meta_audit import summarize_strategy_outcomes, audit_meta_policy, build_meta_policy_candidate
 
 __all__ = [
     "evaluate_case",
@@ -53,4 +54,7 @@ __all__ = [
     "dense_strategy",
     "sparse_strategy",
     "conservative_strategy",
+    "summarize_strategy_outcomes",
+    "audit_meta_policy",
+    "build_meta_policy_candidate",
 ]
