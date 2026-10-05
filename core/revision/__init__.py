@@ -13,6 +13,7 @@ from .graph_pipeline import run_graph_native_revision, run_graph_native_revision
 from .strategies import RelationScopePolicy, TimelinePolicy, SplitPolicy, SearchPolicy, RevisionStrategy, DEFAULT_REVISION_STRATEGY
 from .meta_policy import profile_history, select_revision_strategy, dense_strategy, sparse_strategy, conservative_strategy
 from .meta_audit import summarize_strategy_outcomes, audit_meta_policy, build_meta_policy_candidate
+from .meta_application import authorize_application, materialize_version, verify_materialization
 
 __all__ = [
     "evaluate_case",
@@ -57,4 +58,7 @@ __all__ = [
     "summarize_strategy_outcomes",
     "audit_meta_policy",
     "build_meta_policy_candidate",
+    "authorize_application",
+    "materialize_version",
+    "verify_materialization",
 ]
