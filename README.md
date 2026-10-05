@@ -984,7 +984,7 @@ This is closer to an epistemic transaction protocol than to unrestricted databas
 
 ---
 
-## 8. The Daimonion as a Consistency-Preserving Companion
+## 8. Consistency Preservation as One Daimonion Operation
 
 The Daimonion does not decide truth by personality or authority.
 
@@ -1228,62 +1228,42 @@ See [EPISTEMIC_TELEPORTATION_AND_ASSEMBLY_ALIGNMENT.md](EPISTEMIC_TELEPORTATION_
 
 ---
 
-## 12. LSM Is Not an LLM With a Different Name
+## 12. Noepedia as LSM Is Not an LLM With a Different Name
 
-**LSM means Large Semiotic Model.**
+**LSM means Large Semiotic Model, and Noepedia as a whole is the LSM.**
 
-In the present architecture, LSM names the process that moves through Noepedia's explicit semiotic structure rather than reconstructing the whole structure from neural weights on every request.
+LSM does not name a separate traversal process.
 
-Its early implementation may itself contain neural components.
-
-The intended path is:
+The contrast with an LLM is architectural:
 
 ~~~text
-neural navigation over explicit structure
-→ repeated operations become visible
-→ stable operations are extracted
-→ increasingly algorithmic traversal, comparison, routing, and consolidation
+LLM
+    much learned structure is distributed in neural weights
+    and reconstructed generatively on each request
+
+NOEPEDIA / LSM
+    persistent semiotic structure is explicitly addressable
+    and task work is divided among:
+    field + adapters + SLM-Daimonion + deterministic services
 ~~~
 
-A central LSM task is to manage question-bearing predicates.
+An LLM may still be used at the semantic boundary or on unresolved frontier work.
 
-It can consolidate many local uncertainties into a smaller number of high-leverage questions, then do one of two things:
+The Noepedia/LSM aims to make settled knowledge locally editable and cheaply reusable:
 
 ~~~text
-SKIP: settled structure is sufficient → answer / route / compare without a large LLM
-SHORTEN: a large LLM is still needed → construct a narrow structured prompt for the unresolved part
-~~~
-
-The hard research problem is the gate between these modes.
-
-The system must learn when a relation is settled enough for cheap structural handling and when it is still an edge case.
-
-A false edge wastes computation. A **false settled** decision is more dangerous because it can hide a live uncertainty behind cheap confidence.
-An LLM stores much of its learned structure diffusely in parameters.
-
-A local factual or conceptual edit may be difficult because the relevant representation is distributed across the model.
-
-Noepedia takes the opposite approach for settled knowledge:
-
-```text
 addressable object
 addressable relation
 addressable network
 addressable provenance
 addressable revision
-```
+~~~
 
-A relation can be added, removed, corrected, versioned, or challenged without retraining the whole knowledge field.
+A local relation can therefore be corrected, versioned, challenged, or retrieved without treating the entire system as one diffuse neural memory.
 
-A useful metaphor is:
-
-> **An LLM is closer to a hologram: changing one local "pixel" is difficult because the representation is distributed.**
+> **An LLM is closer to a hologram: useful structure is distributed.**
 >
-> **Noepedia is closer to an editable map: local structure can be changed locally, while history remains inspectable.**
-
-The Daimonion acts as the disciplined companion beside that editable map.
-
----
+> **The Noepedia/LSM is closer to an editable semiotic map whose stabilized parts have addresses.**
 
 ## 13. Noepedia Is the LSM; the Daimonion Is Its SLM-Type Learned Operator
 
@@ -1637,7 +1617,7 @@ And even shorter:
 Noepedia currently has several complementary conceptual texts.
 
 - **[GUIDING_PHILOSOPHY.md](GUIDING_PHILOSOPHY.md)** describes the broader philosophy of Noepedia itself: why knowledge should be externalized, addressable, revisable, and meta-semiotic; why names must remain separate from identities; how living knowledge, explanatory honesty, homoiconicity, provenance, and durable external memory fit together.
-- **[SOCRATIC_DAIMONION.md](SOCRATIC_DAIMONION.md)** describes the philosophy of the companion that moves with a thinker through that field: the distinction between Socrates and the Daimonion, the splinter and `STOP`, the temporary mega-graph, responsibility during self-revision, opposite poles and open counter-positions, and navigation through tensions while knowledge is still being formed.
+- **[SOCRATIC_DAIMONION.md](SOCRATIC_DAIMONION.md)** defines the current Socratic Daimonion as an **SLM-type (Small Semiotic Model) neural warehouse operator** inside the Noepedia/LSM: placement, retrieval, procedure selection, minimal task-cut construction, coverage handling, OPEN/no-result/escalation, and neural-to-algorithmic compilation. The older companion/guardian interpretation survives only as historical background; `STOP` is one operation, not the definition.
 - **[DETERMINISTIC_FREEDOM_MECHANISM.md](DETERMINISTIC_FREEDOM_MECHANISM.md)** records the working deterministic account of layered freedom: quantitative expansion by higher discrimination, temporary causal decoupling, delegated lower control, traversal of a higher topology, goal formation, and reinjection of that goal as an exogenous task for the lower operational layer.
 - **[ACTUALIZATION_AND_RECONSTRUCTION.md](ACTUALIZATION_AND_RECONSTRUCTION.md)** records the reconstruction/actualization cycle: progressive relational surrogates, rendered substitution, part–whole constraints, reciprocal reconstruction, mismatch fields, exclusion cascades, layer closure, and cyclic epistemic maturity.
 - **[SCIENTIFIC_CONTEXT_AND_REFERENCES.md](SCIENTIFIC_CONTEXT_AND_REFERENCES.md)** maps Noepedia concepts to earlier scientific theories and papers, stating both overlap and difference so that independent rediscovery is not mistaken for historical priority.
@@ -1646,7 +1626,7 @@ Noepedia currently has several complementary conceptual texts.
 - **[PUBLIC_DISCOURSE_TRACK.md](PUBLIC_DISCOURSE_TRACK.md)** defines the scientific-popular narrative for public discussion, with strong metaphors but explicit limits on overclaiming.
 - **[WEBSITE_AND_PUBLICATION_PLAN.md](WEBSITE_AND_PUBLICATION_PLAN.md)** specifies the future GitHub Pages structure, safety-audit page, research/public reading paths, and publication sequence.
 
-In the shortest form: **the first text is about the map and the kind of knowledge-field we want to preserve; the second is about how the Daimonion travels with us through that map without letting us lose our position or silently damage it.**
+In the shortest form: **the first text describes the broader knowledge field; the second defines the SLM-Daimonion as the learned semiotic warehouse operator inside the Noepedia/LSM.**
 
 A third conceptual bridge, **[EPISTEMIC_TELEPORTATION_AND_ASSEMBLY_ALIGNMENT.md](EPISTEMIC_TELEPORTATION_AND_ASSEMBLY_ALIGNMENT.md)**, records the newer view of Noepedia as a reduced shared scientific notebook, accountable Daimonion-mediated field access, epistemic teleportation of relation-network cuts, staged contributions, permissioned transactions, and the negative constraints inherited from AI Assembly Session 002.
 
@@ -1675,7 +1655,7 @@ Noepedia-ს მატრიცა ჰომოიკონურია იმ �
 მოკლე ფორმულა:
 
 > **Noepedia სამყაროს ასლი არ არის — ის საერთო სამეცნიერო ბლოკნოტივით ინახავს იმას, რაც სამყაროსთან შეხებამ გახადა ხელახლა გამოსაყენებელი.**  
-> **Daimonion არის მუდმივი ველის ოპერატორი და ტრანზაქციის საზღვარი.**  
+> **Daimonion არის Noepedia/LSM-ის SLM-ტიპის სემიოტიკური ლოგისტიკის ოპერატორი.**  
 > **ჰომოიკონურობა რუქას აძლევს თვითრედაქტირების თავისუფლებას; Daimonion იცავს ამ თავისუფლების პატიოსნებას.**  
 > **ენა მხოლოდ ერთ-ერთი გარე მიმთითებელი ფენაა.**
 
@@ -1700,6 +1680,7 @@ The experiment history now runs through **Experiment 073**.
 - Experiments 001–009 established the early synthetic relation/evaluator line.
 - Experiments 011–020 moved into real-data instrumentation and relational projection.
 - Experiments 021–064 progressively developed mismatch, revision, candidate, null, graph, policy, and lineage machinery.
+- Experiments 033 and 040 are the key positive protected result in that line: the revised relation reduced mismatch by about 99.6% and 98.7% on untouched confirmation data, with an approximately seven-minute directional asymmetry, while the later null-protected test remained positive.
 - Experiments 067–073 form the later real-data transfer / stopping line.
 - Experiment 071 is especially important historically because shuffled data promoted the same comparator family as real data, exposing overpromotion in blind mining.
 - Experiments 072–073 then tightened stopping discipline; 073 ended as `NOT_EVALUABLE` rather than being repaired after inspection.
