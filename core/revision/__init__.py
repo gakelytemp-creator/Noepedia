@@ -9,8 +9,9 @@ from .pipeline import run_revision, build_gate_case, run_revision_from_observati
 from .features import extract_mismatch_features, enrich_context_from_observations
 from .scanner import scan_relation_pairs, select_revision_pair, score_pair
 from .megagraph_adapter import normalize_history_events, build_common_timeline, materialize_state_series, split_series_by_time
-from .graph_pipeline import run_graph_native_revision, run_graph_native_revision_with_strategy
+from .graph_pipeline import run_graph_native_revision, run_graph_native_revision_with_strategy, run_graph_native_revision_auto_strategy
 from .strategies import RelationScopePolicy, TimelinePolicy, SplitPolicy, SearchPolicy, RevisionStrategy, DEFAULT_REVISION_STRATEGY
+from .meta_policy import profile_history, select_revision_strategy, dense_strategy, sparse_strategy, conservative_strategy
 
 __all__ = [
     "evaluate_case",
@@ -40,10 +41,16 @@ __all__ = [
     "split_series_by_time",
     "run_graph_native_revision",
     "run_graph_native_revision_with_strategy",
+    "run_graph_native_revision_auto_strategy",
     "RelationScopePolicy",
     "TimelinePolicy",
     "SplitPolicy",
     "SearchPolicy",
     "RevisionStrategy",
     "DEFAULT_REVISION_STRATEGY",
+    "profile_history",
+    "select_revision_strategy",
+    "dense_strategy",
+    "sparse_strategy",
+    "conservative_strategy",
 ]
