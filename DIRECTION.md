@@ -77,3 +77,27 @@ No scientific claim is promoted unless it survives:
 Agreement is not truth.
 Recurrence is not proof.
 A null result is allowed.
+
+
+## 8. Pre-experiment anti-drift gate
+
+Before implementation begins, every new experiment must answer:
+
+1. Which role is being tested: FIELD, LLM ADAPTER, DAIMONION, or DETERMINISTIC ALGORITHM?
+2. What is the smallest sufficient knowledge package for the task?
+3. Which outputs may create tokens, and which are only routing decisions?
+4. What explicit procedure or source contact can justify a stored result?
+5. What result is allowed to be OPEN / NO_RESULT / NOT_EVALUABLE?
+6. What would count as architecture drift rather than experimental failure?
+7. What condition would require reopening CURRENT_ARCHITECTURE.md before any more code is written?
+
+The following are STOP conditions, not invitations to add another layer:
+
+- the experiment needs the Daimonion to invent evidence;
+- a local subsystem is being generalized into the whole core;
+- the whole field is loaded where a bounded garment would suffice;
+- an autonomous specialist is being given unrelated knowledge or capabilities;
+- a deterministic service is being treated as a moral or intentional agent;
+- repeated failure is being repaired by changing the goal after seeing outcomes.
+
+> **Failure may change the experiment. It may not silently change the project.**
