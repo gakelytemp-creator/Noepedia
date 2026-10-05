@@ -82,16 +82,6 @@ def generate_candidates(case_context: dict[str, Any]) -> list[dict[str, Any]]:
             prerequisites=["RESIDUAL_GROUPING"]
         ))
 
-    if "CLASS_IMBALANCE" in features:
-        out.append(_candidate(
-            f"{parent}::CAND_SIMPLER_BASELINE",
-            "SIMPLER_RULE_COMPARATOR",
-            parent,open_id,
-            "Observed gain may be explained by target prevalence rather than relation structure.",
-            parameters={"comparator":"MAJORITY_STATE"},
-            prerequisites=[]
-        ))
-
     if not out:
         out.append(_candidate(
             f"{parent}::CAND_DECOMPOSE_OPEN",
