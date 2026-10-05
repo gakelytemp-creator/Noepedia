@@ -1,6 +1,6 @@
 # Noepedia
 
-> **Current architecture:** [CURRENT_ARCHITECTURE.md](CURRENT_ARCHITECTURE.md) is the canonical boundary for implementation and new experiments. Older conceptual sections in this README are subordinate to it.
+> **Current architecture:** [CURRENT_ARCHITECTURE.md](CURRENT_ARCHITECTURE.md) is the canonical boundary for implementation and new experiments. [DOCUMENT_STATUS.md](DOCUMENT_STATUS.md) marks which surrounding documents are CANONICAL, ACTIVE SUPPORT, HISTORICAL, or DEFERRED. Older conceptual sections in this README are subordinate to that map.
 
 > **Knowledge should not have to be rediscovered.**
 >
