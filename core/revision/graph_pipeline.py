@@ -6,6 +6,7 @@ from .megagraph_adapter import materialize_state_series, split_series_by_time
 from .scanner import scan_relation_pairs, select_revision_pair
 from .pipeline import run_revision_from_observations
 from .strategies import RevisionStrategy, DEFAULT_REVISION_STRATEGY
+from .meta_policy import select_revision_strategy
 
 
 def run_graph_native_revision(
@@ -127,4 +128,27 @@ def run_graph_native_revision_with_strategy(
         required_relative_advantage=search["required_relative_advantage"],
     )
     result["strategy_resolution"]=resolved
+    return result
+
+
+def run_graph_native_revision_auto_strategy(
+    *,
+    events:list[dict[str,Any]],
+    parent_rule_id:str,
+    open_id:str,
+    proposed_new_rule_id:str|None=None,
+) -> dict[str,Any]:
+    chosen=select_revision_strategy(events)
+    result=run_graph_native_revision_with_strategy(
+        events=events,
+        parent_rule_id=parent_rule_id,
+        open_id=open_id,
+        proposed_new_rule_id=proposed_new_rule_id,
+        strategy=chosen["strategy"],
+    )
+    result["meta_policy"]={
+        "strategy_name":chosen["strategy_name"],
+        "selection_reason":chosen["selection_reason"],
+        "history_profile":chosen["history_profile"],
+    }
     return result
