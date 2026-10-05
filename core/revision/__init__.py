@@ -15,6 +15,7 @@ from .meta_policy import profile_history, select_revision_strategy, dense_strate
 from .meta_audit import summarize_strategy_outcomes, audit_meta_policy, build_meta_policy_candidate
 from .meta_application import authorize_application, materialize_version, verify_materialization
 from .meta_regression import summarize_outcomes, watch_regression, authorize_rollback, materialize_rollback, verify_rollback
+from .lineage import build_lineage, ancestors, descendants, checkout_policy, compare_policy_definitions, trace_lineage
 
 __all__ = [
     "evaluate_case",
@@ -67,4 +68,10 @@ __all__ = [
     "authorize_rollback",
     "materialize_rollback",
     "verify_rollback",
+    "build_lineage",
+    "ancestors",
+    "descendants",
+    "checkout_policy",
+    "compare_policy_definitions",
+    "trace_lineage",
 ]
