@@ -1,5 +1,7 @@
 # Research Evolution — From External Knowledge to a Living Epistemic Architecture
 
+> **Current architecture precedence:** implementation and new experiments must follow [CURRENT_ARCHITECTURE.md](CURRENT_ARCHITECTURE.md), [SOCRATIC_DAIMONION.md](SOCRATIC_DAIMONION.md), and [DIRECTION.md](DIRECTION.md). Older metaphors in this document are historical/conceptual where they conflict with that boundary.
+
 > **Status: conceptual research history.**
 >
 > This file records how the central research question of Noepedia changed as the project developed.
