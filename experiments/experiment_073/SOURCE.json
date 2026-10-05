@@ -1,0 +1,41 @@
+{
+  "experiment": "NOEPEDIA_EXP_073_MOTOR1_THERMAL_LAG_HYPOTHESIS",
+  "experiment_class": "SCIENTIFIC_HYPOTHESIS_TEST",
+  "direction_file": "DIRECTION.md",
+  "external": {
+    "repository": "efeolgun/robot-predictive-maintenance",
+    "commit": "cec9f8a95d6099201cbf9afb8821696dc0ebd7cd",
+    "sequence": "20240527_100759",
+    "file": "data/testing_data/20240527_100759/data_motor_1.csv",
+    "expected_rows": 3187
+  },
+  "hypothesis": {
+    "source": "voltage",
+    "target": "temperature",
+    "statement": "motor1 temperature state follows motor1 voltage state with a positive fixed lag"
+  },
+  "split": {
+    "calibration_count": 600,
+    "discovery_count": 1200,
+    "buffer_count": 300,
+    "confirmation_count": 1087
+  },
+  "adapter": {
+    "method": "deterministic_1D_kmeans_calibration_only",
+    "minimum_cluster_size": 30
+  },
+  "temporal_search": {
+    "lag_min": 1,
+    "lag_max": 600,
+    "directions": [
+      "LOW_TO_HIGH",
+      "HIGH_TO_LOW"
+    ],
+    "permutation_shifts": [
+      137,
+      281,
+      419
+    ],
+    "required_relative_advantage": 0.1
+  }
+}
