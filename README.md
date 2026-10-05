@@ -1695,33 +1695,34 @@ Licensing for public knowledge data and human-readable content should be specifi
 
 ## Executable experiment series
 
-The current synthetic executable sequence and its limitations are consolidated in [Experiments 001–009 — State of Evidence](EXPERIMENTS_001_009_SUMMARY.md). The experiment directory index is at [experiments/README.md](experiments/README.md).
+The experiment history now runs through **Experiment 073**.
+
+- Experiments 001–009 established the early synthetic relation/evaluator line.
+- Experiments 011–020 moved into real-data instrumentation and relational projection.
+- Experiments 021–064 progressively developed mismatch, revision, candidate, null, graph, policy, and lineage machinery.
+- Experiments 067–073 form the later real-data transfer / stopping line.
+- Experiment 071 is especially important historically because shuffled data promoted the same comparator family as real data, exposing overpromotion in blind mining.
+- Experiments 072–073 then tightened stopping discipline; 073 ended as `NOT_EVALUABLE` rather than being repaired after inspection.
+
+The complete directory index is at [experiments/README.md](experiments/README.md).
+
+Historical results are evidence about the research path. They do not redefine the current canonical architecture.
 
 ---
 
-## Core Revision Subsystem
+## Revision Subsystem — bounded historical organ
 
-Noepedia now includes a reusable revision subsystem at:
+Noepedia includes a reusable revision subsystem at:
 
 `core/revision/`
 
-It implements the validated revision lifecycle:
+Its lifecycle is:
 
 `MISMATCH -> OPEN -> CANDIDATE -> FREEZE -> CONFIRM -> NULLS -> DECIDE -> MATERIALIZE -> REFINE OPEN`
 
-Current reusable core capabilities:
-- promotion-gate auditing;
-- PROMOTE / REJECT / REMAIN_OPEN decision semantics;
-- append-only graph materialization;
-- versioned rule promotion;
-- rejected-candidate preservation;
-- OPEN refinement without history deletion.
+This subsystem is **one deterministic organ inside the Noepedia/LSM**, not the whole core and not the Socratic Daimonion.
 
-Validation lineage:
-- Experiments 042–044 — protocol, data model, promotion gates;
-- Experiment 045 — executable decision harness;
-- Experiment 046 — self-revision graph materialization;
-- Experiment 047 — external architecture transfer;
-- Experiment 048 — migration into `core/revision/` and integration verification.
+Experiments 042–064 developed and exercised this machinery. Later experiments, especially 071, showed that the existence of a well-structured revision engine does not validate unrestricted automatic rule discovery. The reusable subsystem remains valuable only inside its earned scope.
 
-The experiment folders remain historical provenance. The reusable implementation lives in the core subsystem.
+The experiment folders remain historical provenance. The current architectural boundary is defined by [CURRENT_ARCHITECTURE.md](CURRENT_ARCHITECTURE.md).
+
