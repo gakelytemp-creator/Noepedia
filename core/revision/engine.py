@@ -89,10 +89,16 @@ def evaluate_case(case: dict) -> dict:
             metric=n.get("metric")
             required_advantage=n.get("required_relative_advantage",0.0)
             name=n.get("name",f"NULL_{idx}")
-            if metric in (None,0) or revised_metric is None:
+            if metric is None or revised_metric is None:
                 gates.append(gate(f"C4_NULL_{idx}_{name}","NOT_EVALUABLE",
                                   evidence=n,reason="REQUIRED_NULL_UNAVAILABLE",
                                   failure_decision="REMAIN_OPEN"))
+                continue
+            if metric==0:
+                gates.append(gate(f"C4_NULL_{idx}_{name}","FAIL",
+                                  evidence={"null_metric":metric,"revised_metric":revised_metric,
+                                            "relative_advantage":None,"required":required_advantage},
+                                  reason="NULL_NOT_BEATEN",failure_decision="REJECT"))
                 continue
             rel=(metric-revised_metric)/metric
             if rel>=required_advantage:
