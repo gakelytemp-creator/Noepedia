@@ -1,7 +1,7 @@
 # Document Status Map
 
 > Status: CANONICAL NAVIGATION
-> Date: 2026-10-05
+> Date: 2026-10-06
 >
 > Purpose: prevent historical concepts from silently becoming implementation prompts.
 
@@ -60,15 +60,25 @@ Important historical boundaries include:
 
 Historical failure is provenance, not embarrassment.
 
+## CANDIDATE EXPERIMENTAL MECHANISMS
+
+The 2026-10-06 REOPEN moves the following ideas into candidate status for rule-level testing. They are **not** canonical mechanisms and are **not** implementation requirements:
+
+- Dream / internal restructuring without new external facts;
+- interchangeable / parallel Daimonion workers;
+- explicit antipredicate relations and lifecycle rules;
+- orphan-object cleanup;
+- provisional fundamental predicates and predicate decomposition.
+
+They earn promotion only through predeclared RULE OFF / RULE ON tests on a frozen capability bench.
+
 ## DEFERRED / RESEARCH
 
-The following concepts may remain valuable research objects but are not requirements of the current minimal LSM:
+The following remain deferred:
 
-- Layer-Local Daimonion multiplicity;
 - Daimonion Coalitions;
-- Dream / Internal Dream Scene;
 - Galvanic Break as a Daimonion mechanism;
-- Absolute Parallelization Principle;
+- Absolute Parallelization Principle as a universal claim;
 - Predicate-Field Will (PFW);
 - normative HARM / CONTAINMENT machinery as a required core layer;
 - goal-formation mechanisms;
@@ -96,17 +106,25 @@ A procedure invocation is recorded even if it emits no epistemic result token.
 
 ## NEXT RESEARCH STEP
 
-The next SLM-Daimonion experiment must be the smallest sealed synthetic phantom/polygon that can distinguish at least:
+The next step is a **field-rule capability bench**, not SLM-Daimonion training.
 
-- MATCH;
-- MISMATCH;
-- CORRECT_OPEN;
-- RUN_NO_RESULT;
-- NOT_RUN.
+First seal the task set independently of the candidate rules. The bench must contain positive, neutral, and damage-sensitive cases.
 
-The answers must be sealed before training/evaluation.
+Then test each rule on the same frozen world:
 
-No larger Daimonion architecture is justified until this minimal distinction set works reproducibly.
+~~~text
+RULE OFF
+vs
+RULE ON
+→ GAIN
+→ NO_EFFECT
+→ DAMAGE
+→ COST
+~~~
+
+All tried philosophical/rule variants must remain in an attempt registry, including failures.
+
+Daimonion architecture resumes only after the surviving LSM field rules make its required operations clearer.
 
 ## Anti-drift reading order
 
