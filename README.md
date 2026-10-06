@@ -1265,7 +1265,7 @@ A local relation can therefore be corrected, versioned, challenged, or retrieved
 >
 > **The Noepedia/LSM is closer to an editable semiotic map whose stabilized parts have addresses.**
 
-## 13. Noepedia Is the LSM; the Daimonion Is Its SLM-Type Learned Operator
+## 13. Noepedia Is the LSM; the Daimonion Is Its Provisional Field Operator
 
 **LSM (Large Semiotic Model)** names Noepedia as a whole.
 
@@ -1275,7 +1275,7 @@ It must not be represented as a separate traversal worker beside the Daimonion.
 NOEPEDIA / LSM
 ├─ persistent homoiconic semiotic field
 ├─ semantic boundary adapters
-├─ Socratic Daimonion — SLM-type neural network
+├─ Socratic Daimonion — provisional field operator architecture
 └─ deterministic services
 ~~~
 
@@ -1284,7 +1284,7 @@ The Daimonion is the learned logistics component inside the LSM. It learns place
 When a recurring operation becomes explicit enough, it should descend into deterministic machinery.
 
 ~~~text
-SLM-type learned operation
+candidate learned / algorithmic / hybrid operation
 → stable repeated pattern
 → explicit procedure
 → regression-tested deterministic service
@@ -1292,7 +1292,7 @@ SLM-type learned operation
 
 The distinction is therefore not LSM versus Daimonion.
 
-It is **whole semiotic system versus one learned neural operator inside it**.
+It is **the whole semiotic system versus the provisional operator role inside it**; the operator implementation is not fixed in advance.
 
 ### Coverage is not evidence
 
@@ -1322,7 +1322,7 @@ NOEPEDIA / LSM
 │    semantic ↔ semiotic boundary translation
 │
 ├─ SOCRATIC DAIMONION
-│    SLM-type neural network
+│    provisional operator implementation
 │    learned semiotic logistics
 │
 ├─ DETERMINISTIC SERVICES
@@ -1617,7 +1617,7 @@ And even shorter:
 Noepedia currently has several complementary conceptual texts.
 
 - **[GUIDING_PHILOSOPHY.md](GUIDING_PHILOSOPHY.md)** describes the broader philosophy of Noepedia itself: why knowledge should be externalized, addressable, revisable, and meta-semiotic; why names must remain separate from identities; how living knowledge, explanatory honesty, homoiconicity, provenance, and durable external memory fit together.
-- **[SOCRATIC_DAIMONION.md](SOCRATIC_DAIMONION.md)** defines the current Socratic Daimonion as an **SLM-type (Small Semiotic Model) neural warehouse operator** inside the Noepedia/LSM: placement, retrieval, procedure selection, minimal task-cut construction, coverage handling, OPEN/no-result/escalation, and neural-to-algorithmic compilation. The older companion/guardian interpretation survives only as historical background; `STOP` is one operation, not the definition.
+- **[SOCRATIC_DAIMONION.md](SOCRATIC_DAIMONION.md)** defines the current Socratic Daimonion as the **provisional field-operator role** implied by surviving LSM rules. An SLM-type (Small Semiotic Model) neural warehouse operator remains one candidate implementation, alongside algorithmic, hybrid, or distributed forms. Placement, retrieval, procedure selection, minimal task-cut construction, coverage handling, OPEN/no-result/escalation, and compilation are candidate operations to be justified by field requirements rather than assumed in advance.
 - **[DETERMINISTIC_FREEDOM_MECHANISM.md](DETERMINISTIC_FREEDOM_MECHANISM.md)** records the working deterministic account of layered freedom: quantitative expansion by higher discrimination, temporary causal decoupling, delegated lower control, traversal of a higher topology, goal formation, and reinjection of that goal as an exogenous task for the lower operational layer.
 - **[ACTUALIZATION_AND_RECONSTRUCTION.md](ACTUALIZATION_AND_RECONSTRUCTION.md)** records the reconstruction/actualization cycle: progressive relational surrogates, rendered substitution, part–whole constraints, reciprocal reconstruction, mismatch fields, exclusion cascades, layer closure, and cyclic epistemic maturity.
 - **[SCIENTIFIC_CONTEXT_AND_REFERENCES.md](SCIENTIFIC_CONTEXT_AND_REFERENCES.md)** maps Noepedia concepts to earlier scientific theories and papers, stating both overlap and difference so that independent rediscovery is not mistaken for historical priority.
