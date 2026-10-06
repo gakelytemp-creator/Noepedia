@@ -65,3 +65,22 @@ The following are candidates only; each must receive its own versioned entry bef
 - interchangeable parallel Daimonion workers.
 
 A candidate appearing in this queue is not evidence that it works.
+
+## Pre-registered candidate attempts
+
+### RULE-ANTIPREDICATE-v1 — Explicit complementary antipredicate relation
+
+- **Status:** design candidate; not yet tested
+- **Parent:** none
+- **Change:** represent a predicate's direct complementary / contradictory side as an explicit addressable antipredicate relation/object where the rule is applicable.
+- **Motivation:** test whether forcing the opposite structural side to become addressable improves contradiction exposure, OPEN localization, and internal restructuring.
+- **Expected capability:** reveal one-sided closure that is invisible when only the positive predicate is represented.
+- **Bench version:** not yet frozen.
+- **Success signal:** measurable gain on pre-existing contradiction / missing-opposite tasks without degradation on neutral tasks.
+- **Damage signal A — false opposition:** the rule invents a unique meaningful opposite where only a broad logical complement exists, or confuses contradictory, contrary, and converse relations.
+- **Damage signal B — non-termination:** deletion/regeneration or completion rules enter an oscillation or fail to reach a stable state in a finite bounded test.
+- **Damage signal C — useless explosion:** explicit complements multiply structure without producing measurable capability gain.
+- **Result:** PENDING.
+- **Decision:** PENDING.
+
+The exact semantics of contradictory vs contrary vs converse are intentionally not frozen here. They are part of the design question that must be resolved before the first run, without tailoring the frozen capability bench to the chosen answer.
