@@ -129,7 +129,7 @@ one LSM structural rule
 
 The first candidates include name-independent object identity, predicates as objects, predicate hierarchy, provisional fundamental predicates, explicit antipredicate relations, antipredicate lifecycle/regeneration, orphan cleanup, OPEN preservation, DREAM-style internal reprocessing, and interchangeable parallel Daimonion workers.
 
-See [Experimental Phase Reset — LSM Structural Rules Before Daimonion Architecture](PHASE_RESET_LSM_STRUCTURAL_RULES.md).
+See [Experimental Phase Reset — LSM Structural Rules Before Daimonion Architecture](PHASE_RESET_LSM_STRUCTURAL_RULES.md) and the [Philosophy and Rule Attempt Registry](PHILOSOPHY_RULE_ATTEMPT_REGISTRY.md).
 
 The philosophical architecture is explicitly provisional. If it does not produce measurable operational capabilities, it will be replaced as many times as necessary rather than defended.
 
