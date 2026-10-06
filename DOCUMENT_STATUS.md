@@ -107,7 +107,7 @@ A procedure invocation is recorded even if it emits no epistemic result token.
 
 ## NEXT RESEARCH STEP
 
-The next step is a **field-rule capability bench**, not SLM-Daimonion training.
+The next step is a **field-rule capability bench**, not Daimonion/operator training.
 
 First seal the task set independently of the candidate rules. The bench must contain positive, neutral, and damage-sensitive cases.
 
