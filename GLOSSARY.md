@@ -612,7 +612,7 @@ The architecture should therefore preserve parallel structure before parallel ha
 
 ## Absolute Parallelization Principle — DEFERRED / RESEARCH
 
-This is a scheduling/architecture research proposal, not a requirement of the minimal Noepedia/LSM or SLM-Daimonion.
+This is a scheduling/architecture research proposal, not a requirement of the minimal Noepedia/LSM or provisional Daimonion/operator architecture.
 
 The **Absolute Parallelization Principle** is the working rule:
 
