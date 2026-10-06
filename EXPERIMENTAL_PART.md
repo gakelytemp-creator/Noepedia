@@ -14,6 +14,29 @@
 
 ---
 
+# 0. Phase Reset — October 2026
+
+The experimental program is being restarted from a deeper conceptual layer.
+
+Experiments 001–073 remain part of the permanent research record, but their current interpretation is limited: they explored useful mechanisms, real-data behavior, controls, revision, transfer, and failure modes **before the structural requirements of the LSM field were explicit enough**.
+
+The new sequence will not begin by training or optimizing a Daimonion. It will begin by isolating candidate LSM field rules and asking what intellectual capability, if any, each rule adds.
+
+The unit of evidence becomes:
+
+~~~text
+RULE OFF
+vs
+RULE ON
+→ measurable change in structural / intellectual capability
+~~~
+
+The current candidate family includes object identity independent of names; predicates as ordinary addressable objects; predicate hierarchy and decomposition; provisional fundamental status; explicit antipredicate relations; lifecycle rules for missing counterparts and orphaned objects; OPEN preservation; DREAM-style internal reprocessing; and possible interchangeable parallel Daimonion workers.
+
+The project makes no commitment to preserve this philosophy if it fails. A concept that does not create reproducible leverage should be modified or discarded. The architecture may be rebuilt repeatedly until the surviving rules are earned by experiment.
+
+See [experiments/PHASE_RESET_LSM_STRUCTURAL_RULES.md](experiments/PHASE_RESET_LSM_STRUCTURAL_RULES.md).
+
 # 1. Experimental Goal
 
 The experimental program must answer one practical question:
