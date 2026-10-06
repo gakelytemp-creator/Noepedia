@@ -368,9 +368,9 @@ It is an engineering property, not an anthropomorphic moral trait.
 
 ---
 
-## Layer-Local Daimonion — DEFERRED / RESEARCH
+## Layer-Local Daimonion — CANDIDATE / RESEARCH
 
-> This is not a requirement of the current minimal canonical architecture. The canonical Daimonion is one SLM-type neural operator inside the Noepedia/LSM unless experiments later justify additional instances.
+> This is not a requirement of the current minimal canonical architecture. After the 2026-10-06 REOPEN, the Daimonion implementation is provisional. A single SLM-type neural operator is one historical candidate, not the canonical fixed form.
 
 A **Layer-Local Daimonion** is a historical/research proposal for a Daimonion process bound to the context of one layer.
 
@@ -438,9 +438,9 @@ joint result
 
 ---
 
-## Dream / Internal Dream Scene — DEFERRED / RESEARCH
+## Dream / Internal Dream Scene — CANDIDATE / RESEARCH
 
-This term is not part of the current minimal implementation target.
+This term moved from DEFERRED to CANDIDATE on 2026-10-06. It is not yet a canonical mechanism or implementation requirement.
 
 A **Dream** in the older architecture is a temporarily protected internal scene in which one or more Daimonion processes continue structured traversal while ordinary lower sensory-motor coupling is reduced.
 
