@@ -6,7 +6,7 @@ This file governs new experiments after Experiment 073 and the 2026-10-06 archit
 
 ## 0. Architectural boundary
 
-Noepedia as a whole is the **LSM (Large Semiotic Model)**. Inside it, the persistent field stores homoiconic semiotic structure; LLM/media adapters handle semantic boundaries; the Socratic Daimonion is an **SLM-type neural network** for learned semiotic logistics; stable repeated operations may be compiled into deterministic services. The revision subsystem is one such service family, not the whole Noepedia core.
+Noepedia as a whole is the **LSM (Large Semiotic Model)**. Inside it, the persistent field stores homoiconic semiotic structure; LLM/media adapters handle semantic boundaries; the Socratic Daimonion names the **provisional operator role** implied by the field laws; stable repeated operations may be compiled into deterministic services. The revision subsystem is one such service family, not the whole Noepedia core.
 
 Canonical architectural reference: CURRENT_ARCHITECTURE.md. Historical experiment files remain historical evidence and do not override that boundary.
 The 2026-10-06 REOPEN changes the active experimental order: **field rules before Daimonion architecture**. The Daimonion description remains provisional until rule-level experiments establish what invariants and operations the field actually requires.
@@ -85,7 +85,7 @@ A null result is allowed.
 
 Before implementation begins, every new experiment must answer:
 
-1. Which LSM component is being tested: FIELD, SEMANTIC ADAPTER, SLM-DAIMONION, or DETERMINISTIC SERVICE?
+1. Which LSM component is being tested: FIELD, SEMANTIC ADAPTER, DAIMONION / OPERATOR, or DETERMINISTIC SERVICE?
 2. What is the smallest sufficient knowledge package for the task?
 3. Which outputs may create epistemic result tokens, which are only routing decisions, and how is execution coverage recorded even when there is no result token?
 4. What explicit procedure or source contact can justify a stored result?
