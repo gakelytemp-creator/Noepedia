@@ -2,13 +2,15 @@
 
 Status: ACTIVE DIRECTION CONSTRAINT
 
-This file governs new experiments after Experiment 072.
+This file governs new experiments after Experiment 073 and the 2026-10-06 architectural REOPEN.
 
 ## 0. Architectural boundary
 
 Noepedia as a whole is the **LSM (Large Semiotic Model)**. Inside it, the persistent field stores homoiconic semiotic structure; LLM/media adapters handle semantic boundaries; the Socratic Daimonion is an **SLM-type neural network** for learned semiotic logistics; stable repeated operations may be compiled into deterministic services. The revision subsystem is one such service family, not the whole Noepedia core.
 
 Canonical architectural reference: CURRENT_ARCHITECTURE.md. Historical experiment files remain historical evidence and do not override that boundary.
+The 2026-10-06 REOPEN changes the active experimental order: **field rules before Daimonion architecture**. The Daimonion description remains provisional until rule-level experiments establish what invariants and operations the field actually requires.
+
 
 ## 1. Architecture freeze
 
@@ -103,14 +105,49 @@ The following are STOP conditions, not invitations to add another layer:
 > **Failure may change the experiment. It may not silently change the project.**
 
 
-## 9. First post-realignment experiment scale
+## 9. First post-REOPEN experiment scale
 
-The next Daimonion-training experiment must begin with the smallest sealed synthetic phantom that can distinguish at least:
+The next experiment is **not Daimonion training**.
+
+First freeze a small capability bench whose tasks are written independently of the structural rules to be tested. It must include at least:
 
 - MATCH;
 - MISMATCH;
 - CORRECT_OPEN;
 - RUN_NO_RESULT;
-- NOT_RUN.
+- NOT_RUN;
+- synonym / multilingual identity;
+- homonym separation;
+- contradiction;
+- one case where a candidate rule should help;
+- one case where it should have no effect;
+- one case where over-application should cause measurable damage.
 
-No larger training architecture is justified until those states are separated correctly and reproducibly.
+Then test one candidate LSM rule at a time on the same bench:
+
+~~~text
+RULE OFF
+vs
+RULE ON
+→ GAIN / NO_EFFECT / DAMAGE / COST
+~~~
+
+No Daimonion-training architecture is justified until this rule-level stage has established which field laws are worth maintaining.
+
+### Attempt registry
+
+Every tried rule or philosophical variant must be recorded, including rejected variants.
+
+For each attempt preserve:
+
+- identifier / version;
+- exact change;
+- reason for introducing it;
+- predeclared expected capability;
+- bench version used;
+- observed gain;
+- observed damage / cost;
+- failure reason;
+- KEEP / MODIFY / REJECT / REOPEN decision.
+
+The winning rule may not erase the failed search path.
