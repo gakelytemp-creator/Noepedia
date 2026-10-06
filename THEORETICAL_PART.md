@@ -479,7 +479,7 @@ The LLM is not the opposite half of a two-worker pair. It is one possible semant
 NOEPEDIA / LSM
 ├─ persistent semiotic field
 ├─ LLM/media adapters where semantic translation is needed
-├─ Socratic Daimonion — SLM-type neural network
+├─ Socratic Daimonion — provisional field operator architecture
 └─ deterministic services
 ~~~
 
@@ -491,7 +491,7 @@ NOEPEDIA / LSM
 - difficult multimodal interpretation;
 - candidate decomposition that must still be routed/tested.
 
-### SLM-type Daimonion role
+### Provisional Daimonion / operator role
 
 - learned semiotic logistics;
 - placement and retrieval;
