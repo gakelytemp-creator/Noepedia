@@ -1,10 +1,36 @@
 # Current Architecture — Canonical Boundary
 
 > Status: CURRENT / CANONICAL
-> Date: 2026-10-05
+> Date: 2026-10-06
 >
 > This file governs the current architecture together with DIRECTION.md and SOCRATIC_DAIMONION.md.
 > Older conceptual documents remain research history. If an older passage conflicts with this file, this file wins.
+
+## 0. REOPEN — 2026-10-06
+
+The architecture is formally REOPENED at the level of **field-first experimental order**.
+
+The earlier canonical direction treated the next central step as training a Daimonion on a sealed phantom. That is no longer the active order.
+
+The current dependency is:
+
+~~~text
+LSM field requirements
+→ candidate structural rules
+→ rule-level invariants / obligations
+→ measurable intellectual capability
+→ only then Daimonion architecture
+~~~
+
+The Daimonion remains a valid working concept, but its internal form is downstream of the field laws and may shrink, split into interchangeable workers, or be replaced if experiments demand it.
+
+DREAM and parallel/multiple Daimonion workers move from DEFERRED status to **CANDIDATE EXPERIMENTAL MECHANISMS**. They are not canonical mechanisms and are not yet implementation requirements.
+
+This REOPEN does not erase the earlier Daimonion-training plan. It reclassifies it as a historical next-step proposal superseded on 2026-10-06.
+
+See [experiments/PHASE_RESET_LSM_STRUCTURAL_RULES.md](experiments/PHASE_RESET_LSM_STRUCTURAL_RULES.md).
+
+---
 
 ## 1. The central compression
 
@@ -261,48 +287,42 @@ Capabilities, knowledge, interfaces, and authority should be reduced to the mini
 
 ---
 
-## 7. Daimonion training
+## 7. Pre-rule capability bench
 
-The first Daimonion should be trained on the **smallest possible sealed synthetic polygon** where the hidden ground truth is known. This is the next research step, not permission for another large architecture build.
+Before any new LSM rule is tested, the **task bench must be defined and sealed independently of that rule**.
 
-Training cases should include:
+The purpose of the bench is to prevent a rule from being judged on a world designed around that same rule.
+
+The first bench should remain deliberately tiny and include cases such as:
 
 - one object under many names;
 - one name for several objects;
-- missing predicates and missing objects;
-- duplicated evidence copied from one origin;
-- genuinely independent evidence;
-- contradictory sources;
-- time/context dependent relations;
-- incomplete hierarchies;
-- retrieval requiring several networks;
-- narrow single-path solutions;
-- many-path solutions;
-- underdetermined cases;
-- inconsistent formulations;
-- cases where OPEN is correct;
-- cases where no solution exists in the current formulation;
-- cases where a procedure should emit MATCH;
-- cases where it should emit MISMATCH;
-- and cases where it should emit nothing.
+- MATCH;
+- MISMATCH;
+- CORRECT_OPEN;
+- RUN_NO_RESULT;
+- NOT_RUN;
+- contradiction;
+- missing relation;
+- cases where a candidate rule should help;
+- cases where it should have no effect;
+- cases where it could cause damage if over-applied.
 
-The first polygon should begin with a deliberately tiny sealed set containing positive cases, negative cases, `CORRECT_OPEN`, `RUN_NO_RESULT`, and `NOT_RUN` cases before any expansion.
-
-The fitness target is not eloquence.
-
-It is correct semiotic logistics:
+Each structural rule is then evaluated by ablation on the same frozen bench:
 
 ~~~text
-decompose
-route
-place
-retrieve
-select procedure
-assemble minimal cut
-stop
-escalate
-preserve provenance
+same field + RULE OFF
+vs
+same field + RULE ON
+→ GAIN
+→ NO_EFFECT
+→ DAMAGE
+→ COST
 ~~~
+
+The bench is a measuring instrument, not a Daimonion-training curriculum.
+
+A later Daimonion-training stage may reuse or extend it only after enough field rules have earned their place.
 
 ---
 
@@ -359,11 +379,13 @@ That work remains useful as one compiled organ.
 
 Experiments in blind automatic pair mining later showed why one local organ must not redefine the whole architecture by momentum.
 
-The next central research direction is therefore not unrestricted correlation discovery.
+The next central research direction is therefore not unrestricted correlation discovery and not immediate Daimonion training.
 
 It is:
 
-> **train a learned semiotic warehouse operator on controlled input/output and retrieval tasks, then progressively compile repeated operations into sterile deterministic machinery.**
+> **isolate candidate LSM structural rules, test each rule by ablation on a pre-sealed capability bench, measure the capability gained and the damage/cost introduced, and only then derive the operator architecture required to maintain the surviving field laws.**
+
+Repeated stable operations may still later descend into sterile deterministic machinery, but the field rules must be earned first.
 
 ---
 
