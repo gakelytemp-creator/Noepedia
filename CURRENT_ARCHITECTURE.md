@@ -69,13 +69,13 @@ NOEPEDIA / LSM
 │
 ├─ persistent homoiconic semiotic field
 ├─ semantic boundary adapter(s), including LLMs where useful
-├─ Socratic Daimonion — SLM-type neural network
+├─ Socratic Daimonion — provisional field operator architecture
 └─ deterministic services compiled from stabilized operations
 ~~~
 
 The internal roles must remain separate even though together they constitute one LSM.
 
-**SLM means Small Semiotic Model** in this repository. It does **not** mean Small Language Model. The Socratic Daimonion is SLM-type because it is a compact neural operator trained on semiotic placement, retrieval, procedure selection, and task-cut construction; it is not required to speak or model human language.
+**SLM means Small Semiotic Model** in this repository. It does **not** mean Small Language Model. Earlier work treated the Socratic Daimonion as an SLM-type compact neural operator. After the 2026-10-06 REOPEN, that is a candidate implementation rather than a fixed architectural law.
 
 ### Noepedia Field
 
@@ -105,7 +105,7 @@ Its fluent completion is not automatically a fact.
 
 ### Socratic Daimonion
 
-The Daimonion is an **SLM-type neural network** resident inside the LSM. It manages the learned logistics of semiotic structure.
+The Daimonion is the working name for the field-maintenance / semiotic-logistics operator implied by the surviving LSM rules. Its implementation is currently provisional. It may be neural, algorithmic, hybrid, distributed across interchangeable workers, or differently organized if experiments require it.
 
 The warehouse analogy is deliberate:
 
