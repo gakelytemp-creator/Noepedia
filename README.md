@@ -1244,7 +1244,7 @@ LLM
 NOEPEDIA / LSM
     persistent semiotic structure is explicitly addressable
     and task work is divided among:
-    field + adapters + SLM-Daimonion + deterministic services
+    field + adapters + provisional Daimonion/operator + deterministic services
 ~~~
 
 An LLM may still be used at the semantic boundary or on unresolved frontier work.
@@ -1565,7 +1565,7 @@ That is part of the research program.
 
 ## Short Formula
 
-> **The Noepedia/LSM stores and reuses semiotic ground through its explicit field and services. The SLM-Daimonion handles learned semiotic logistics. Expensive neural work is reserved mainly for unresolved edges.**
+> **The Noepedia/LSM stores and reuses semiotic ground through its explicit field and services. The provisional Daimonion/operator handles only the logistics required by surviving field rules; its implementation is not fixed in advance. Expensive neural work is reserved for cases that actually require it.**
 
 ~~~text
 REALITY
@@ -1626,7 +1626,7 @@ Noepedia currently has several complementary conceptual texts.
 - **[PUBLIC_DISCOURSE_TRACK.md](PUBLIC_DISCOURSE_TRACK.md)** defines the scientific-popular narrative for public discussion, with strong metaphors but explicit limits on overclaiming.
 - **[WEBSITE_AND_PUBLICATION_PLAN.md](WEBSITE_AND_PUBLICATION_PLAN.md)** specifies the future GitHub Pages structure, safety-audit page, research/public reading paths, and publication sequence.
 
-In the shortest form: **the first text describes the broader knowledge field; the second defines the SLM-Daimonion as the learned semiotic warehouse operator inside the Noepedia/LSM.**
+In the shortest form: **the first text describes the broader knowledge field; the second defines the provisional Daimonion/operator role inside the Noepedia/LSM, while leaving its implementation open to experiment.**
 
 A third conceptual bridge, **[EPISTEMIC_TELEPORTATION_AND_ASSEMBLY_ALIGNMENT.md](EPISTEMIC_TELEPORTATION_AND_ASSEMBLY_ALIGNMENT.md)**, records the newer view of Noepedia as a reduced shared scientific notebook, accountable Daimonion-mediated field access, epistemic teleportation of relation-network cuts, staged contributions, permissioned transactions, and the negative constraints inherited from AI Assembly Session 002.
 
