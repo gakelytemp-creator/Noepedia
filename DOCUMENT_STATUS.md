@@ -21,7 +21,8 @@ NOEPEDIA = LSM (Large Semiotic Model)
 inside the LSM:
 - persistent homoiconic semiotic field
 - semantic adapters, including LLMs where useful
-- Socratic Daimonion = SLM-type neural network
+- Socratic Daimonion = provisional field operator architecture
+  - earlier SLM-type neural design remains a candidate implementation
   - SLM = **Small Semiotic Model**, not Small Language Model
 - deterministic services compiled from stabilized operations
 ~~~
