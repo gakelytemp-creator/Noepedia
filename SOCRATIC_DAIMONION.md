@@ -1,7 +1,7 @@
 # The Socratic Daimonion
 
 > Status: CANONICAL
-> Date: 2026-10-05
+> Date: 2026-10-06
 >
 > Read together with CURRENT_ARCHITECTURE.md and DIRECTION.md.
 
@@ -24,7 +24,7 @@ See [experiments/PHASE_RESET_LSM_STRUCTURAL_RULES.md](experiments/PHASE_RESET_LS
 
 ## 1. Warehouse operator, not knowledge consumer
 
-Noepedia as a whole is the **LSM (Large Semiotic Model)**. The Socratic Daimonion is an **SLM-type neural network** inside that LSM: the learned resident operator of the persistent field.
+Noepedia as a whole is the **LSM (Large Semiotic Model)**. The Socratic Daimonion is the working name for the operator required to maintain and use the persistent field under the surviving LSM rules. Its implementation is **provisional**: an SLM-type neural operator remains one candidate, alongside algorithmic, hybrid, or distributed forms.
 
 The warehouse analogy is intentional:
 
@@ -86,11 +86,11 @@ The Daimonion's internal preference cannot substitute for that result.
 
 ---
 
-## 3. What it learns
+## 3. What the operator may need to learn or implement
 
-The learned part exists because the logistics are not initially obvious.
+Some field operations may initially require learned behavior because the correct logistics are not yet obvious. Other operations may turn out to be deterministic from the start.
 
-The Daimonion may need to learn:
+The Daimonion/operator may need to learn or implement:
 
 - which apparent names refer to the same object;
 - when one name refers to several objects;
@@ -109,9 +109,9 @@ Its target is correct routing and transformation of semiotic structure.
 
 ---
 
-## 4. Synthetic training polygon
+## 4. Capability bench before operator training
 
-The initial Daimonion should begin with the **smallest sealed synthetic phantom/polygon** where the correct internal arrangement is known. Expansion is allowed only after the minimal set behaves correctly.
+The next research step is **not** operator training. First build a sealed capability bench, independently of the candidate structural rules and independently of a chosen Daimonion implementation. Only after rule-level ablations identify surviving field laws should an operator-training polygon be derived from those requirements.
 
 Cases should include:
 
@@ -289,14 +289,14 @@ If an experiment requires one of these changes, it must explicitly REOPEN the ar
 
 ## 11. Compact definition
 
-> **The Socratic Daimonion is a learned semiotic warehouse operator.**
+> **The Socratic Daimonion is the provisional operator role implied by the surviving LSM field rules.**
 >
-> **It routes, places, retrieves, selects procedures, and assembles minimal task cuts.**
+> **Its implementation is not fixed in advance: neural, algorithmic, hybrid, distributed, or another form may be required.**
+>
+> **It may route, place, retrieve, select procedures, assemble task cuts, and maintain structural obligations where the field laws require those operations.**
 >
 > **It does not consume the warehouse contents and does not author evidence by opinion.**
 >
 > **Source contact and explicit procedures emit tokens.**
 >
-> **Repeated stable logistics are compiled into sterile deterministic algorithms.**
->
-> **The difficult remainder stays learned until it too becomes regular enough to descend.**
+> **The operator architecture must be derived from tested field requirements rather than assumed beforehand.**
