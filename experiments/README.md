@@ -114,6 +114,25 @@ The individual experiment directories preserve their own README / briefing / res
 - [Experiment 072](experiment_072/)
 - [Experiment 073](experiment_073/)
 
+## New experimental phase — structural rules before Daimonion architecture
+
+Experiments 001–073 are preserved unchanged as historical evidence, instrumentation, failures, and local mechanisms, but they are **not treated as sufficient tests of the current LSM philosophy**. Much of that sequence tested operator behavior before the structural requirements of the field itself were explicit enough.
+
+The new program starts with tiny rule-level ablations:
+
+~~~text
+one LSM structural rule
+→ one predicted intellectual capability
+→ same field with rule OFF / ON
+→ keep / modify / reject / REOPEN
+~~~
+
+The first candidates include name-independent object identity, predicates as objects, predicate hierarchy, provisional fundamental predicates, explicit antipredicate relations, antipredicate lifecycle/regeneration, orphan cleanup, OPEN preservation, DREAM-style internal reprocessing, and interchangeable parallel Daimonion workers.
+
+See [Experimental Phase Reset — LSM Structural Rules Before Daimonion Architecture](PHASE_RESET_LSM_STRUCTURAL_RULES.md).
+
+The philosophical architecture is explicitly provisional. If it does not produce measurable operational capabilities, it will be replaced as many times as necessary rather than defended.
+
 ### Current interpretation note
 
 Experiments 042–064 progressively built the reusable revision subsystem. Experiments 067–073 tested later real-data transfer and stopping behavior. Experiment 071 produced real promotions and shuffled promotions in the same comparator family, demonstrating that the blind-mining path was not null-protected. Experiments 072–073 therefore belong to the stopping/repair discipline rather than to a claim of validated autonomous discovery.
