@@ -5,6 +5,23 @@
 >
 > Read together with CURRENT_ARCHITECTURE.md and DIRECTION.md.
 
+## 0. Dependency on the LSM structural laws
+
+This document describes the current working picture of the Daimonion, but the operator architecture is **downstream of the LSM field laws**.
+
+~~~text
+LSM structural requirements
+→ invariants / obligations
+→ allowed transformations
+→ Daimonion architecture
+~~~
+
+The learned warehouse-operator model below is therefore not protected doctrine. It may survive, shrink, split into many indistinguishable workers, or be replaced as rule-level experiments clarify what the field itself requires.
+
+The next priority is not to make the Daimonion more clever. It is to test which structural rules actually give the field new reproducible capabilities.
+
+See [experiments/PHASE_RESET_LSM_STRUCTURAL_RULES.md](experiments/PHASE_RESET_LSM_STRUCTURAL_RULES.md).
+
 ## 1. Warehouse operator, not knowledge consumer
 
 Noepedia as a whole is the **LSM (Large Semiotic Model)**. The Socratic Daimonion is an **SLM-type neural network** inside that LSM: the learned resident operator of the persistent field.
