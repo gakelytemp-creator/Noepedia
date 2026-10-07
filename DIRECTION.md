@@ -14,9 +14,9 @@ The 2026-10-06 REOPEN changes the active experimental order: **field rules befor
 
 ## 0A. Research-phase interpretation
 
-Experiments 001–073 are interpreted as the **operator-first exploratory phase**. They pushed local machinery far enough to reveal a missing dependency: operator behavior cannot by itself establish the structural legitimacy of the field it manipulates.
+Experiments 001–073 are interpreted as the **operator-first exploratory phase**. Their failures and limits motivated the hypothesis that operator behavior alone may be insufficient to establish the structural legitimacy of the distinctions it manipulates.
 
-The 2026-10-06 REOPEN begins the **field-first phase**. This interpretation is a conclusion drawn from the accumulated experimental record, not a retroactive claim about what the earlier experiments had preregistered.
+The 2026-10-06 REOPEN begins the **field-first phase**. This ordering is a candidate architectural hypothesis motivated by reflection on the accumulated experimental record; it was not preregistered or directly tested by Experiments 001–073.
 
 ## 1. Architecture freeze
 
