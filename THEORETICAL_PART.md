@@ -152,7 +152,7 @@ OPEN can generate work.
 
 ## 7. Socratic Daimonion
 
-The Daimonion is the learned semiotic operator over the persistent field.
+The Daimonion is the provisional operator role over the persistent field. Earlier work explored a learned semiotic operator; after the 2026-10-06 REOPEN, learned, deterministic, hybrid, and distributed implementations remain candidates to be derived from field requirements.
 
 Its architectural role is closer to a warehouse manager / loader than to a conversational reasoner.
 
