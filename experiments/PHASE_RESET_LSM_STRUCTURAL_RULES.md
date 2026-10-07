@@ -9,9 +9,9 @@ Experiments 001–073 are preserved as an honest research record. They produced 
 
 In retrospect, this sequence functioned as an **operator-first exploratory program**: we pushed revision, comparison, routing, promotion, transfer, and stopping machinery far enough to learn what such machinery can and cannot establish on its own.
 
-The decisive result of that phase was a dependency discovery. A sophisticated operator can manipulate, compare, promote, reject, or revise relations, yet none of those operations by itself tells us which structural distinctions the field is entitled to contain. Later shuffle/null and transfer failures made this boundary visible.
+The decisive **methodological motivation** from that phase was this: sophisticated operator machinery can still fail through its own comparator, null, distribution-shift, or transfer mechanisms, and those failures do not tell us whether the field's underlying distinctions are structurally justified. This motivated separating the two questions.
 
-The new philosophy therefore did not appear by abandoning experiment. It was produced by experiment:
+The new philosophy therefore did not appear by abandoning experiment. It was **motivated by reflection on the experimental record, but not established by that record**:
 
 > **before fixing the operator, determine which structural obligations belong to the field.**
 
@@ -26,7 +26,7 @@ LSM structural requirements
 → experiment
 ~~~
 
-The old sequence must therefore not be read as validation of the present LSM philosophy. It is the exploratory operator-first phase that revealed the prerequisite from which the present field-first philosophy was born.
+The old sequence must therefore not be read as validation of the present LSM philosophy. It is the exploratory operator-first phase whose accumulated limits motivated PHIL-001: the field-first ordering now to be tested directly.
 
 ## No protected philosophy
 
