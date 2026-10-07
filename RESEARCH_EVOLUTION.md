@@ -123,7 +123,7 @@ The research question became:
 
 ---
 
-## 4A. The Operator-First Phase Exposed a Deeper Dependency
+## 4A. The Operator-First Phase Motivated a Deeper-Dependency Hypothesis
 
 The project then spent a long experimental phase making the operator side increasingly concrete: mismatch detection, revision, comparison, promotion, null controls, transfer, stopping, and reusable deterministic machinery.
 
@@ -131,7 +131,7 @@ This was not wasted motion. It was a stress test of a natural hypothesis:
 
 > perhaps enough disciplined operator machinery would reveal the correct architecture of the knowledge system.
 
-The experiments eventually showed the boundary of that hypothesis. Operator behavior can become increasingly competent while still depending on distinctions whose legitimacy has not yet been established at the field level. Shuffle/null and transfer failures made this especially visible.
+The experiments eventually showed limits of the operator-first program. In particular, shuffle/null and transfer failures demonstrated concrete failure modes in operator-side machinery. Reflection on those limits motivated a broader hypothesis: operator competence may depend on field distinctions whose legitimacy must be tested separately. The experiments did not directly establish that dependency ordering.
 
 That observation produced the 2026-10-06 REOPEN.
 
@@ -151,9 +151,9 @@ field obligations
 → required operator behavior
 ~~~
 
-This is the birth condition of the current field-first philosophy.
+This is the historical motivation for the current field-first candidate philosophy.
 
-It is an experimental result about dependency, not a claim that the earlier operator work should be erased. The earlier mechanisms remain available as instruments and candidate organs once the field rules justify them.
+It is **not** an experimental result about dependency. It is a hypothesis motivated by the earlier operator-first record, and it remains subject to direct rule-level testing. The earlier mechanisms remain available as instruments and candidate organs once the field rules justify them.
 
 ---
 
