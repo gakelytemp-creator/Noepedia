@@ -28,17 +28,17 @@ DREAM and parallel/multiple Daimonion workers move from DEFERRED status to **CAN
 
 This REOPEN does not erase the earlier Daimonion-training plan. It reclassifies it as a historical next-step proposal superseded on 2026-10-06.
 
-### Why this philosophy was born
+### Why this philosophy was adopted
 
 The earlier experimental program functioned as an **operator-first exploratory stress test**. It asked how far useful behavior could be obtained by building revision machinery, comparators, routing logic, transfer tests, and candidate operator behavior before the field laws were fully fixed.
 
 That program was productive: it created reusable instrumentation and exposed real failure boundaries. In particular, later null/shuffle and transfer failures showed that increasingly capable operator machinery could still produce apparently meaningful behavior without establishing that the underlying structural distinctions were justified.
 
-The resulting lesson was not "operator experiments were pointless." It was a dependency discovery:
+The resulting lesson was not "operator experiments were pointless." The operator-first phase **motivated a new architectural hypothesis**:
 
-> **operator behavior is downstream of the structural obligations of the field.**
+> **operator behavior may be downstream of the structural obligations of the field.**
 
-The field-first philosophy was therefore born from the experimental boundary of the operator-first phase.
+This dependency was **not experimentally established by Experiments 001–073**. It was adopted on 2026-10-06 as PHIL-001, a candidate philosophy to be tested by the rule-level program.
 
 See [experiments/PHASE_RESET_LSM_STRUCTURAL_RULES.md](experiments/PHASE_RESET_LSM_STRUCTURAL_RULES.md).
 
