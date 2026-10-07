@@ -28,6 +28,18 @@ DREAM and parallel/multiple Daimonion workers move from DEFERRED status to **CAN
 
 This REOPEN does not erase the earlier Daimonion-training plan. It reclassifies it as a historical next-step proposal superseded on 2026-10-06.
 
+### Why this philosophy was born
+
+The earlier experimental program functioned as an **operator-first exploratory stress test**. It asked how far useful behavior could be obtained by building revision machinery, comparators, routing logic, transfer tests, and candidate operator behavior before the field laws were fully fixed.
+
+That program was productive: it created reusable instrumentation and exposed real failure boundaries. In particular, later null/shuffle and transfer failures showed that increasingly capable operator machinery could still produce apparently meaningful behavior without establishing that the underlying structural distinctions were justified.
+
+The resulting lesson was not "operator experiments were pointless." It was a dependency discovery:
+
+> **operator behavior is downstream of the structural obligations of the field.**
+
+The field-first philosophy was therefore born from the experimental boundary of the operator-first phase.
+
 See [experiments/PHASE_RESET_LSM_STRUCTURAL_RULES.md](experiments/PHASE_RESET_LSM_STRUCTURAL_RULES.md).
 
 ---
@@ -377,7 +389,7 @@ Experiments 042 onward produced a substantial auditable revision subsystem.
 
 That work remains useful as one compiled organ.
 
-Experiments in blind automatic pair mining later showed why one local organ must not redefine the whole architecture by momentum.
+Later blind-mining, shuffle/null, and transfer tests exposed the boundary of the operator-first line: increasingly elaborate local machinery could still act coherently without proving that its structural distinctions were justified.
 
 The next central research direction is therefore not unrestricted correlation discovery and not immediate Daimonion training.
 
