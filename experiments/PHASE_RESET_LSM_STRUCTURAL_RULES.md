@@ -7,7 +7,13 @@
 
 Experiments 001–073 are preserved as an honest research record. They produced useful instrumentation, null controls, revision machinery, transfer tests, failures, and local mechanisms.
 
-However, they were not sufficiently well aimed at the deepest conceptual layer of Noepedia. In retrospect, much of the sequence tried to discover, train, or validate Daimonion behavior before the structural requirements of the LSM field itself had been made explicit enough.
+In retrospect, this sequence functioned as an **operator-first exploratory program**: we pushed revision, comparison, routing, promotion, transfer, and stopping machinery far enough to learn what such machinery can and cannot establish on its own.
+
+The decisive result of that phase was a dependency discovery. A sophisticated operator can manipulate, compare, promote, reject, or revise relations, yet none of those operations by itself tells us which structural distinctions the field is entitled to contain. Later shuffle/null and transfer failures made this boundary visible.
+
+The new philosophy therefore did not appear by abandoning experiment. It was produced by experiment:
+
+> **before fixing the operator, determine which structural obligations belong to the field.**
 
 The new dependency is:
 
@@ -20,7 +26,7 @@ LSM structural requirements
 → experiment
 ~~~
 
-The old sequence must therefore not be read as validation of the present LSM philosophy. It is an exploratory phase that revealed a missing prerequisite.
+The old sequence must therefore not be read as validation of the present LSM philosophy. It is the exploratory operator-first phase that revealed the prerequisite from which the present field-first philosophy was born.
 
 ## No protected philosophy
 
@@ -127,7 +133,7 @@ The old experiments remain valuable as:
 1. historical exploratory evidence;
 2. instrumentation and audit methods;
 3. local mechanisms and failure modes;
-4. evidence that algorithmic activity can look meaningful while being conceptually mis-aimed;
+4. evidence that algorithmic activity can look meaningful even when the structural prerequisite it depends on has not yet been isolated;
 5. a warning against expanding one successful subsystem into the definition of the whole project.
 
 They are not sufficient evidence for the new LSM philosophy. Some may later be reused as lower-level instruments. No result should be retroactively rewritten to pretend that an old experiment tested concepts that had not yet been formulated.
