@@ -46,6 +46,7 @@ A modification creates a new version.
 - **Status:** active candidate philosophy
 - **Change:** derive and test LSM structural rules before fixing Daimonion internals.
 - **Expected capability:** isolate which field rules actually create useful structural/intellectual behavior.
+- **Evidence status:** motivated by reflection on the operator-first phase; **not experimentally established**. Experiments 001–073 did not directly test this dependency ordering.
 - **Bench version:** not yet frozen.
 - **Decision:** PENDING.
 
