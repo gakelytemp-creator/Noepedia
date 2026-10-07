@@ -123,6 +123,40 @@ The research question became:
 
 ---
 
+## 4. The Field Needed a Learned Logistics Operator
+
+> **Historical direction — superseded by the 2026-10-06 REOPEN.** This section records the operator-first architecture as it was understood at that stage. See §4A for the later field-first reinterpretation.
+
+A static homoiconic field does not place, retrieve, route, or assemble its own structures.
+
+This requirement produced the **Socratic Daimonion**.
+
+The earlier project language emphasized guardian, interruption, and self-revision. Those remain historical discoveries, but they are now subordinate to a simpler operational definition:
+
+~~~text
+FIELD = persistent semiotic warehouse
+LLM ADAPTER = semantic boundary translator
+DAIMONION = learned warehouse operator / loader
+ALGORITHMS = stabilized logistics compiled into explicit procedures
+~~~
+
+A Daimonion operation is not itself evidence. Source contact and explicit procedures emit tokens; no relevant reaction means no positive token.
+
+The long revision line is retained as a useful historical lesson: one successful local operation family can pull the research objective toward itself unless the role boundary is written explicitly.
+
+The development direction adopted at that historical stage was:
+
+~~~text
+train flexible semiotic logistics
+→ observe repeated operations
+→ formalize stable boundary conditions
+→ compile deterministic services
+→ keep the difficult remainder learned
+~~~
+
+
+---
+
 ## 4A. The Operator-First Phase Motivated a Deeper-Dependency Hypothesis
 
 The project then spent a long experimental phase making the operator side increasingly concrete: mismatch detection, revision, comparison, promotion, null controls, transfer, stopping, and reusable deterministic machinery.
@@ -156,35 +190,6 @@ This is the historical motivation for the current field-first candidate philosop
 It is **not** an experimental result about dependency. It is a hypothesis motivated by the earlier operator-first record, and it remains subject to direct rule-level testing. The earlier mechanisms remain available as instruments and candidate organs once the field rules justify them.
 
 ---
-
-## 4. The Field Needed a Learned Logistics Operator
-
-A static homoiconic field does not place, retrieve, route, or assemble its own structures.
-
-This requirement produced the **Socratic Daimonion**.
-
-The earlier project language emphasized guardian, interruption, and self-revision. Those remain historical discoveries, but they are now subordinate to a simpler operational definition:
-
-~~~text
-FIELD = persistent semiotic warehouse
-LLM ADAPTER = semantic boundary translator
-DAIMONION = learned warehouse operator / loader
-ALGORITHMS = stabilized logistics compiled into explicit procedures
-~~~
-
-A Daimonion operation is not itself evidence. Source contact and explicit procedures emit tokens; no relevant reaction means no positive token.
-
-The long revision line is retained as a useful historical lesson: one successful local operation family can pull the research objective toward itself unless the role boundary is written explicitly.
-
-The development direction that emerged from this experimental boundary is:
-
-~~~text
-train flexible semiotic logistics
-→ observe repeated operations
-→ formalize stable boundary conditions
-→ compile deterministic services
-→ keep the difficult remainder learned
-~~~
 
 ## 5. Temporary Working Worlds — Mega-Graphs
 
