@@ -123,6 +123,40 @@ The research question became:
 
 ---
 
+## 4A. The Operator-First Phase Exposed a Deeper Dependency
+
+The project then spent a long experimental phase making the operator side increasingly concrete: mismatch detection, revision, comparison, promotion, null controls, transfer, stopping, and reusable deterministic machinery.
+
+This was not wasted motion. It was a stress test of a natural hypothesis:
+
+> perhaps enough disciplined operator machinery would reveal the correct architecture of the knowledge system.
+
+The experiments eventually showed the boundary of that hypothesis. Operator behavior can become increasingly competent while still depending on distinctions whose legitimacy has not yet been established at the field level. Shuffle/null and transfer failures made this especially visible.
+
+That observation produced the 2026-10-06 REOPEN.
+
+The research order changed from:
+
+~~~text
+operator behavior
+→ inferred architecture
+~~~
+
+to:
+
+~~~text
+field obligations
+→ structural rules
+→ measurable capability
+→ required operator behavior
+~~~
+
+This is the birth condition of the current field-first philosophy.
+
+It is an experimental result about dependency, not a claim that the earlier operator work should be erased. The earlier mechanisms remain available as instruments and candidate organs once the field rules justify them.
+
+---
+
 ## 4. The Field Needed a Learned Logistics Operator
 
 A static homoiconic field does not place, retrieve, route, or assemble its own structures.
@@ -142,7 +176,7 @@ A Daimonion operation is not itself evidence. Source contact and explicit proced
 
 The long revision line is retained as a useful historical lesson: one successful local operation family can pull the research objective toward itself unless the role boundary is written explicitly.
 
-The corrected development direction is:
+The development direction that emerged from this experimental boundary is:
 
 ~~~text
 train flexible semiotic logistics
