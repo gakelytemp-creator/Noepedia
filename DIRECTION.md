@@ -12,6 +12,12 @@ Canonical architectural reference: CURRENT_ARCHITECTURE.md. Historical experimen
 The 2026-10-06 REOPEN changes the active experimental order: **field rules before Daimonion architecture**. The Daimonion description remains provisional until rule-level experiments establish what invariants and operations the field actually requires.
 
 
+## 0A. Research-phase interpretation
+
+Experiments 001–073 are interpreted as the **operator-first exploratory phase**. They pushed local machinery far enough to reveal a missing dependency: operator behavior cannot by itself establish the structural legitimacy of the field it manipulates.
+
+The 2026-10-06 REOPEN begins the **field-first phase**. This interpretation is a conclusion drawn from the accumulated experimental record, not a retroactive claim about what the earlier experiments had preregistered.
+
 ## 1. Architecture freeze
 
 Do not add new architectural layers merely because an experiment fails.
