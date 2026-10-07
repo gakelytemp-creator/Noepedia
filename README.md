@@ -42,7 +42,7 @@ Noepedia did not begin with the current field-first order.
 
 Experiments 001–073 progressively developed operator-side machinery: detection, comparison, revision, candidate promotion, null controls, transfer tests, stopping rules, and a reusable deterministic revision subsystem. That exploratory program was deliberately preserved rather than rewritten after later failures.
 
-Its accumulated result was architectural: operator machinery can become increasingly capable without establishing that the distinctions it manipulates are structurally justified.
+Its accumulated record showed that operator-side machinery can fail for reasons internal to the machinery itself, including null/comparator and transfer boundaries. Reflection on that record motivated a broader architectural hypothesis: the structural legitimacy of the field's distinctions may need to be tested separately from operator competence.
 
 The 2026-10-06 REOPEN therefore changed the dependency order:
 
@@ -54,7 +54,7 @@ current:
 field structural rules → measurable capability → required operator architecture
 ~~~
 
-This is not a claim that the earlier phase "did not work." It worked as an experiment strongly enough to expose the prerequisite that the next phase must isolate.
+This is not a claim that the earlier phase "did not work." It produced useful mechanisms and failure evidence. The field-first ordering is a **candidate interpretation motivated by that record**, not a dependency experimentally established by Experiments 001–073.
 
 See [CURRENT_ARCHITECTURE.md](CURRENT_ARCHITECTURE.md) and [experiments/PHASE_RESET_LSM_STRUCTURAL_RULES.md](experiments/PHASE_RESET_LSM_STRUCTURAL_RULES.md).
 
