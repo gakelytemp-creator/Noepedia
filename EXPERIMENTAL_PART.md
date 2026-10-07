@@ -18,9 +18,9 @@
 
 The experimental program is being restarted from a deeper conceptual layer.
 
-Experiments 001–073 remain part of the permanent research record. They now define the **operator-first exploratory phase**: useful mechanisms, real-data behavior, controls, revision, transfer, and failure modes were pushed far enough to expose a prerequisite that had not yet been isolated — the structural obligations of the LSM field itself.
+Experiments 001–073 remain part of the permanent research record. They now define the **operator-first exploratory phase**: useful mechanisms, real-data behavior, controls, revision, transfer, and failure modes were pushed far enough to motivate a new question — whether the structural obligations of the LSM field must be isolated before operator architecture can be fixed.
 
-The field-first phase is therefore a result of the earlier experiments, not a repudiation of them.
+The field-first phase is therefore **motivated by reflection on** the earlier experiments, not experimentally established by them and not a repudiation of them.
 
 The new sequence will not begin by training or optimizing a Daimonion. It will begin by isolating candidate LSM field rules and asking what intellectual capability, if any, each rule adds.
 
