@@ -52,7 +52,7 @@ The repository now recognizes two consecutive research phases:
 001–073
 OPERATOR-FIRST EXPLORATION
 → push revision / comparison / transfer / stopping machinery
-→ expose the structural dependency
+→ motivate a structural-dependency hypothesis
 
 2026-10-06 REOPEN onward
 FIELD-FIRST EXPERIMENTATION
@@ -61,7 +61,7 @@ FIELD-FIRST EXPERIMENTATION
 → derive operator requirements
 ~~~
 
-The second phase does not retroactively redefine what the first experiments tested. It records what their accumulated successes and failures taught us about the dependency order of the architecture.
+The second phase does not retroactively redefine what the first experiments tested. It records the architectural hypothesis motivated by reflection on their accumulated successes and failures. The dependency order remains PHIL-001 / PENDING until directly tested.
 
 ## HISTORICAL EVIDENCE
 
