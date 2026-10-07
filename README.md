@@ -36,6 +36,30 @@ Its usable meaning is increasingly determined by **where it participates across 
 
 ---
 
+## Research turn: from operator-first to field-first
+
+Noepedia did not begin with the current field-first order.
+
+Experiments 001–073 progressively developed operator-side machinery: detection, comparison, revision, candidate promotion, null controls, transfer tests, stopping rules, and a reusable deterministic revision subsystem. That exploratory program was deliberately preserved rather than rewritten after later failures.
+
+Its accumulated result was architectural: operator machinery can become increasingly capable without establishing that the distinctions it manipulates are structurally justified.
+
+The 2026-10-06 REOPEN therefore changed the dependency order:
+
+~~~text
+earlier:
+operator machinery → hope to reveal stable architecture
+
+current:
+field structural rules → measurable capability → required operator architecture
+~~~
+
+This is not a claim that the earlier phase "did not work." It worked as an experiment strongly enough to expose the prerequisite that the next phase must isolate.
+
+See [CURRENT_ARCHITECTURE.md](CURRENT_ARCHITECTURE.md) and [experiments/PHASE_RESET_LSM_STRUCTURAL_RULES.md](experiments/PHASE_RESET_LSM_STRUCTURAL_RULES.md).
+
+---
+
 ## 1. The Object Field
 
 Everything that must be addressable can be represented as an object:
@@ -692,7 +716,7 @@ The question must remain visible:
 
 > **Did we solve the problem, or did we only change the instrument that exposed it?**
 
-The Socratic Daimonion therefore guards not a frozen map, but **honest transformation of the map**.
+The Socratic Daimonion/operator does not confer legitimacy by guardianship; **changes must remain visible and justified by explicit structural procedures**.
 
 Rules may change. Networks may split. Objects may be reidentified. Higher-order structures may be revised.
 
@@ -700,7 +724,7 @@ What must not disappear is the path that explains **why** the change became nece
 
 A compact principle is:
 
-> **Homoiconicity gives the map freedom to rewrite itself. The Daimonion preserves honesty across that freedom.**
+> **Homoiconicity lets the map represent and revise its own structures. The justification for each revision must remain explicit and inspectable.**
 
 ### Meta-Layers as Foldable Handles
 
