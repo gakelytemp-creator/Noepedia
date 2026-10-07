@@ -850,7 +850,7 @@ Noepedia is the persistent homoiconic semiotic field.
 
 The LLM adapter handles the human semantic boundary.
 
-The Socratic Daimonion is the learned resident operator that manages the logistics of semiotic structure.
+The Socratic Daimonion is the working name for the operator role that manages whatever semiotic logistics the surviving field rules require; its implementation remains open.
 
 Deterministic algorithms are stable repeated operations extracted from that learned logistics.
 
@@ -876,7 +876,7 @@ A stored support token should arise from source contact or an explicit procedure
 
 > **No reaction → no token.**
 
-The persistent field should remain simple and database-like. Flexible learned behavior stays in the operator until repetition makes part of it explicit enough to compile into cheaper deterministic machinery.
+The persistent field should remain simple and database-like. Operations may be learned, deterministic, hybrid, or distributed according to what the tested field rules require; repeated stable behavior may later be compiled into cheaper deterministic machinery.
 
 ## 5A. Objects, Predicates, and Epistemic Asymmetry
 
