@@ -116,7 +116,7 @@ The individual experiment directories preserve their own README / briefing / res
 
 ## New experimental phase — structural rules before Daimonion architecture
 
-Experiments 001–073 are preserved unchanged as historical evidence, instrumentation, failures, and local mechanisms, but they are **not treated as sufficient tests of the current LSM philosophy**. Much of that sequence tested operator behavior before the structural requirements of the field itself were explicit enough.
+Experiments 001–073 are preserved unchanged as the **operator-first exploratory phase**: historical evidence, instrumentation, failures, and local mechanisms. They are **not treated as sufficient tests of the current LSM philosophy**. Their accumulated role was to push operator-side behavior far enough that the missing structural prerequisite became experimentally visible.
 
 The new program starts with tiny rule-level ablations:
 
