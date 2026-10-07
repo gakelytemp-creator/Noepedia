@@ -44,6 +44,25 @@ These files may elaborate the canonical architecture but cannot override it:
 
 If any active-support passage conflicts with a canonical file, the canonical file wins and the conflict should be corrected rather than interpreted creatively.
 
+## RESEARCH PHASE INTERPRETATION
+
+The repository now recognizes two consecutive research phases:
+
+~~~text
+001–073
+OPERATOR-FIRST EXPLORATION
+→ push revision / comparison / transfer / stopping machinery
+→ expose the structural dependency
+
+2026-10-06 REOPEN onward
+FIELD-FIRST EXPERIMENTATION
+→ isolate structural rules
+→ measure capability
+→ derive operator requirements
+~~~
+
+The second phase does not retroactively redefine what the first experiments tested. It records what their accumulated successes and failures taught us about the dependency order of the architecture.
+
 ## HISTORICAL EVIDENCE
 
 The experiment directories preserve what was actually attempted and observed.
