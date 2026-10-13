@@ -2,6 +2,7 @@
 
 > Status: CURRENT / CANONICAL
 > Date: 2026-10-06
+> October layer: [notes/ARCHITECTURE_2026-10.md](notes/ARCHITECTURE_2026-10.md)
 >
 > This file governs the current architecture together with DIRECTION.md and SOCRATIC_DAIMONION.md.
 > Older conceptual documents remain research history. If an older passage conflicts with this file, this file wins.
