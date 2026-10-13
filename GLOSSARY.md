@@ -1,5 +1,7 @@
 # Noepedia Glossary
 
+> **Current Georgian terminology:** [GLOSSARY_KA.md](GLOSSARY_KA.md); this file is a historical trace.
+
 > **Current architecture precedence:** implementation and new experiments must follow [CURRENT_ARCHITECTURE.md](CURRENT_ARCHITECTURE.md), [SOCRATIC_DAIMONION.md](SOCRATIC_DAIMONION.md), and [DIRECTION.md](DIRECTION.md). Older metaphors in this document are historical/conceptual where they conflict with that boundary.
 
 > **Status: living glossary.**
