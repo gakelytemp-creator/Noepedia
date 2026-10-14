@@ -1,6 +1,6 @@
 # Noepedia
 
-> **Current architecture:** [CURRENT_ARCHITECTURE.md](CURRENT_ARCHITECTURE.md) is the canonical boundary for implementation and new experiments. [DOCUMENT_STATUS.md](DOCUMENT_STATUS.md) marks which surrounding documents are CANONICAL, ACTIVE SUPPORT, HISTORICAL, or DEFERRED. Older conceptual sections in this README are subordinate to that map.
+> **Current view (2026-10-14 structural break):** start at [current/README.md](current/README.md). [DOCUMENT_STATUS.md](DOCUMENT_STATUS.md) defines precedence. The older architecture and the body of this README are preserved as research history / predecessor material and are not to be silently rewritten into the new view.
 
 > **Knowledge should not have to be rediscovered.**
 >
