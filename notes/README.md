@@ -1,4 +1,7 @@
 # Noepedia — გზა, როგორც ახლა ვხედავთ
+
+> **2026-10-14 structural break:** the active formulation now starts at [../current/README.md](../current/README.md). This document remains a pre-break research trace.
+
 *(README ჩანაწერების საქაღალდისთვის · 2026-10-11 · განახლდა საღამოს — დეტალური შესწორებები: `2026-10-11-corrections.md` · ფილოსოფიური შრე: `PHILOSOPHY_2026-10.md`, ავსებს ძირის `GUIDING_PHILOSOPHY.md`-ს)*
 
 ---
