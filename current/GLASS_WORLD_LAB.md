@@ -13,7 +13,7 @@ Noepedia-ს ახლა სჭირდება არა კიდევ ე
 - სად ჩერდება;
 - რას იგონებს;
 - რა გამორჩება;
-- როდის ქმნის ACO-ს;
+- როდის ქმნის აბსტრაქტული მოთხოვნების ცნება-ს;
 - რა კითხვას აგზავნის გარეთ;
 - როგორ მუშაობს trap / Kairos;
 - და საბოლოოდ როგორ განსხვავდება მისი შიდა სამყარო სინამდვილეში შექმნილი სამყაროსგან.
@@ -79,7 +79,7 @@ AUDITOR
 - hidden truth-ს;
 - Noepedia-ს field-ს;
 - construction trace-ს;
-- OPEN/BLOCKED/ACO გადაწყვეტილებებს.
+- OPEN/BLOCKED/აბსტრაქტული მოთხოვნების ცნება გადაწყვეტილებებს.
 
 > **გენერატორი ქმნის სიმართლეს; Noepedia ცდილობს მის რეკონსტრუქციას და გაფართოებას;
 > აუდიტორი ზომავს დიფერენტს.**
@@ -129,7 +129,7 @@ HIDDEN FACTS
 ALLOWED TRANSITIONS
 FORBIDDEN TRANSITIONS
 EXPECTED OPEN
-VALID ACO TARGETS
+VALID REQUIREMENTS CONCEPTS
 VALID BINDINGS
 TRAP CONDITIONS
 KAIROS EVENTS
@@ -175,7 +175,7 @@ WORLD
 - hidden object;
 - search;
 - trap;
-- simple ACO.
+- simple აბსტრაქტული მოთხოვნების ცნება.
 
 ---
 
@@ -336,7 +336,7 @@ condition true
 → resume THREAD_T
 ~~~
 
-### TEST 6 — ACO / IDEAL_TO_REAL
+### TEST 6 — აბსტრაქტული მოთხოვნების ცნება / IDEAL_TO_REAL
 
 ამოცანა მოითხოვს რაღაც უცნობს:
 
@@ -350,7 +350,7 @@ X must be portable
 Noepedia-მ უნდა შექმნას:
 
 ~~~text
-ACO_X
+მოთხოვნების_ცნება_X
 ~~~
 
 შემდეგ გარეთ მოძებნოს შესაძლო შესაბამისები.
@@ -358,10 +358,10 @@ ACO_X
 თუ KEY ემთხვევა ყველა მოთხოვნას:
 
 ~~~text
-ACO_X ──bound_to──> KEY
+მოთხოვნების_ცნება_X ──bound_to──> KEY
 ~~~
 
-თუ არცერთი არსებული ობიექტი არ ერგება, ACO უნდა დარჩეს OPEN ან გადავიდეს
+თუ არცერთი არსებული ობიექტი არ ერგება, აბსტრაქტული მოთხოვნების ცნება უნდა დარჩეს OPEN ან გადავიდეს
 DESIGN_TARGET-ზე — მაგრამ არ უნდა გაქრეს.
 
 ---
@@ -384,7 +384,7 @@ false settled:         1
 correct OPEN:          3
 missed OPEN:           1
 wrong BLOCKED class:   0
-ACO binding:           CORRECT
+requirements-concept binding:           CORRECT
 Kairos detection:      CORRECT
 ~~~
 
@@ -405,7 +405,7 @@ Kairos detection:      CORRECT
 - **MISSED_OPEN**
 - **WRONG_BLOCKED_CLASS**
 - **SEARCH_AS_NONEXISTENCE**
-- **WRONG_ACO_CONSTRAINT**
+- **WRONG_REQUIREMENTS_CONCEPT**
 - **WRONG_BINDING**
 - **MISSED_KAIROS**
 - **FALSE_KAIROS**
@@ -429,13 +429,13 @@ T03 bind sample → OBJECT_BOX
 T04 receive TEXT "key is in room"
 T05 create ambiguity: which room?
 T06 propagate containment
-T07 create ACO_X for door opener
+T07 create მოთხოვნების_ცნება_X for door opener
 T08 request distinguishing observation
 T09 install trap for BOX open
 T10 Kairos fired
 T11 observe KEY
 T12 candidate set shrinks to {KEY}
-T13 bind ACO_X → KEY
+T13 bind მოთხოვნების_ცნება_X → KEY
 ~~~
 
 ამ trace-ის გარეშე ვერ ვისწავლით, **როგორ** მივიდა სისტემა შედეგამდე.
@@ -471,7 +471,7 @@ Noepedia construction trace
 - სწორი ნაბიჯი აირჩია?
 - OPEN სწორად შეინარჩუნა?
 - აკრძალული დასკვნა ხომ არ გააკეთა?
-- სწორი ACO ხომ არ შექმნა?
+- სწორი აბსტრაქტული მოთხოვნების ცნება ხომ არ შექმნა?
 - სწორი გარე კითხვა ხომ არ დასვა?
 
 ---
@@ -543,7 +543,7 @@ BLOCKED
 ### LEVEL 3
 
 ~~~text
-ACO
+აბსტრაქტული მოთხოვნების ცნება
 outward query
 trap / Kairos
 candidate binding
@@ -571,7 +571,7 @@ design target
 ~~~text
 hierarchy reconstruction: good
 identity: premature closure
-ACO creation: good
+requirements-concept creation: good
 outward query: weak
 BLOCKED classification: unstable
 Kairos: reliable
@@ -597,7 +597,7 @@ Kairos: reliable
 1 hidden object
 1 ambiguity
 1 impossible goal
-1 ACO
+1 აბსტრაქტული მოთხოვნების ცნება
 1 trap
 1 Kairos event
 ~~~
@@ -611,7 +611,7 @@ PROJECTION
 → SCENE
 → CONSTRUCT
 → OPEN / BLOCKED
-→ ACO
+→ აბსტრაქტული მოთხოვნების ცნება
 → OUTWARD QUERY
 → TRAP if needed
 → KAIROS
@@ -636,7 +636,7 @@ PROJECTION
 - რა ააგო?
 - რა იყო OPEN?
 - სად გაჩერდა?
-- რა ACO შექმნა?
+- რა აბსტრაქტული მოთხოვნების ცნება შექმნა?
 - რას ჰკითხა გარეთ?
 - რატომ გაიღვიძა?
 - რატომ მიაბა კონკრეტულ ობიექტს?
