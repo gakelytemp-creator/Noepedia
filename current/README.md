@@ -30,7 +30,7 @@ Daimonion-ის სხვადასხვა ფორმა და ოქტ
 4. [GOALS_AND_TASKS.md](GOALS_AND_TASKS.md) — მიზნები, ამოცანები და არამიზნები.
 5. [EPISTEMIC_RULES.md](EPISTEMIC_RULES.md) — რა როგორ მოწმდება.
 6. [GLOSSARY.md](GLOSSARY.md) — ამ შრის სამუშაო ტერმინები.
-7. [IDEAL_TO_REAL.md](IDEAL_TO_REAL.md) — როცა მოთხოვნა პირდაპირ იდეალურ სამყაროში იბადება და გარეთ მიდის; ACO, ძიება, active learning და დიზაინი.
+7. [IDEAL_TO_REAL.md](IDEAL_TO_REAL.md) — როცა მოთხოვნა პირდაპირ იდეალურ სამყაროში იბადება და გარეთ მიდის; აბსტრაქტული მოთხოვნების ცნება, ძიება, active learning და დიზაინი.
 8. [GLASS_WORLD_LAB.md](GLASS_WORLD_LAB.md) — შუშის ხელოვნური სამყარო სრული answer book-ით, სადაც Noepedia-ს მთლიან მოძრაობას ვაკვირდებით.
 9. [MIGRATION_MAP.md](MIGRATION_MAP.md) — ძველი კომპონენტების ახალი ადგილი.
 10. [OPEN_QUESTIONS.md](OPEN_QUESTIONS.md) — რაც ჯერ არ უნდა დაიხუროს.
