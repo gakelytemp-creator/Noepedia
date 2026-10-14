@@ -1,5 +1,8 @@
 # Noepedia — არქიტექტურა, 2026-10
 
+> **2026-10-14 structural break:** the active formulation now starts at [../current/README.md](../current/README.md). This document remains a pre-break research trace.
+
+
 *(2026-10-13 · მიმდინარე ოქტომბრის შრე · ძველი CURRENT_ARCHITECTURE.md არ იცვლება; ეს ფაილი მასზე დამატებული ახალი ფენაა)*
 
 ## სურათი ძალიან შორიდან
