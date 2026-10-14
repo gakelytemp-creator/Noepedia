@@ -1,5 +1,7 @@
 # The Socratic Daimonion
 
+> **2026-10-14 structural break:** the active current view now starts at [current/README.md](current/README.md). This file is preserved as a pre-break canonical predecessor and research trace. Where it conflicts with `current/`, the current layer wins for new work.
+
 > Status: CANONICAL
 > Date: 2026-10-06
 >
