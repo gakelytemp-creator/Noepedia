@@ -1,5 +1,7 @@
 # Current Architecture — Canonical Boundary
 
+> **2026-10-14 structural break:** the active current view now starts at [current/README.md](current/README.md). This file is preserved as a pre-break canonical predecessor and research trace. Where it conflicts with `current/`, the current layer wins for new work.
+
 > Status: CURRENT / CANONICAL
 > Date: 2026-10-06
 > October layer: [notes/ARCHITECTURE_2026-10.md](notes/ARCHITECTURE_2026-10.md)
