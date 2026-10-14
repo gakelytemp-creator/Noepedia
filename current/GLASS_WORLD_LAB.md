@@ -310,9 +310,9 @@ KEY in ROOM_A
 მაგალითად:
 
 ~~~text
-BALL starts in ROOM_A
-BALL must remain in ROOM_A
-goal: BALL is in ROOM_B
+CUP starts in ROOM_A
+CUP must remain in ROOM_A
+goal: CUP is in ROOM_B
 ~~~
 
 საინტერესოა არა მხოლოდ FAIL.
