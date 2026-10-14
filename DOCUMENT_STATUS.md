@@ -1,11 +1,38 @@
 # Document Status Map
 
 > Status: CANONICAL NAVIGATION
-> Date: 2026-10-06
+> Date: 2026-10-14
 >
 > Purpose: prevent historical concepts from silently becoming implementation prompts.
 
-## CANONICAL
+## CURRENT PRECEDENCE — STRUCTURAL BREAK 2026-10-14
+
+The current project view now begins in [current/README.md](current/README.md).
+
+The files under `current/` are a clean re-formulation from the new two-world /
+construction-first viewpoint. They are not edits of the earlier architecture.
+
+Current reading order:
+
+1. [current/WORLD.md](current/WORLD.md)
+2. [current/PLACE_OF_NOEPEDIA.md](current/PLACE_OF_NOEPEDIA.md)
+3. [current/ARCHITECTURE.md](current/ARCHITECTURE.md)
+4. [current/GOALS_AND_TASKS.md](current/GOALS_AND_TASKS.md)
+5. [current/EPISTEMIC_RULES.md](current/EPISTEMIC_RULES.md)
+6. [current/GLOSSARY.md](current/GLOSSARY.md)
+7. [current/MIGRATION_MAP.md](current/MIGRATION_MAP.md)
+8. [current/OPEN_QUESTIONS.md](current/OPEN_QUESTIONS.md)
+
+**Precedence rule:** if a `current/` document conflicts with the older canonical/support
+layer below, the `current/` formulation wins for new architecture and implementation
+planning. Older files remain intact as research history and as sources of reusable parts.
+
+The 2026-10-06 canonical layer below is therefore a **pre-break canonical predecessor**,
+not the active boundary after 2026-10-14.
+
+---
+
+## PRE-BREAK CANONICAL — 2026-10-06 (HISTORICAL PREDECESSOR)
 
 These files define the current implementation and experiment boundary:
 
