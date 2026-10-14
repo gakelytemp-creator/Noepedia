@@ -1,4 +1,7 @@
 # Noepedia — ტერმინთა გლოსარი (ქართული, v1)
+
+> **2026-10-14 structural break:** current terminology for new work is in [current/GLOSSARY.md](current/GLOSSARY.md). This file remains intact as the 2026-10-13 Georgian glossary and research trace.
+
 *(2026-10-13 · კანონიკური · ინგლისური GLOSSARY.md ძველი კანონის კვალია და არ იშლება ·
 წესი: ტერმინი არ არსებობს ამ ფაილის სტრიქონის გარეშე — სახელი + განმარტება + ღუზა + თარიღი)*
 
