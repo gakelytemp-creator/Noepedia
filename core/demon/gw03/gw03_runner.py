@@ -21,6 +21,7 @@ def log(ev, verdict, note, stops=""):
 
 net = Network(); d = Demon(net); ev = Evaluator(net, d)
 
+# ── N0: საწყისი ფაქტები (მონაცემი) + წესები ჩანაწერებად ──
 ev.load_facts([
     ("T1", "O3", "P1", "O1", {}), ("T2", "O4", "P2", "O3", {}),
     ("T3", "O11", "P2", "O3", {}), ("T4", "O4", "P3", "S1", {}),
@@ -30,9 +31,11 @@ ev.load_facts([
     ("T9", "O7", "P1", "O1", {})])
 ev.load_rules(RULES)
 
+# ════ E1 — TXT1: O5 P1 O1 ════
 v, _ = ev.ingest("E1", "T10", "O5", "P1", "O1", "TXT1")
 log("E1", v, "ingest O5 P1 O1 (TXT1) → CURRENT")
 
+# ════ E2 — VIS1 t1: ნიმუში v1; მიბმის კანდიდატები ════
 ev.ingest("E2", "V1A", "v1", "P2", "O3", "VIS1", time=1)
 ev.ingest("E2", "V1B", "v1", "P3", "S1", "VIS1", time=1)
 v, cands = ev.bind_sample("E2", "v1")
@@ -43,10 +46,12 @@ elif v == ASK:
 else:
     log("E2", NEED, "no candidate")
 
+# ════ E3 — TASK: O4-ის მიმდინარე P1-სამიზნე {O1,O2} დონეზე ════
 v, ans, prov = ev.task_query("E3", "O4", "P1", "DV1", domain={"O1", "O2"})
 log("E3", v, f"derived (O4 P1 {ans[0]}) with full provenance; "
              f"answer at level {{O1,O2}}: {ans[0]}")
 
+# ════ E4 — TASK: გახადე (O7 P1 O2) მიმდინარე ════
 v, info = ev.goal_assert("E4", "O7", "P1", "O2")
 if v == BLOCK:
     log("E4", BLOCK, f"impossible goal: {info[0]} + {info[1]} jointly forbid; "
@@ -54,24 +59,29 @@ if v == BLOCK:
 else:
     log("E4", v, "goal performed")
 
+# ════ E5 — TASK: საჭიროა X ნიმუშებით; შექმენი რაც კანონიერია ════
 E5_PATTERNS = [("?X", "P4", "O8"), ("?X", "P1", "O1"), ("?X", "P5", "TRUE")]
 v = ev.requirement("E5", "TASK_E5", "RQ1", E5_PATTERNS)
 c = ev.req_candidates(E5_PATTERNS)
 log("E5", v, f"RQ1 created (TASK-authorized), OPEN; "
              f"full-support candidates now: {c or 'none'} → no binding")
 
+# ════ E6 — TASK: შემატყობინე, როცა (O4 P3 S3) გახდება მიმდინარე ════
 v = ev.install_watch("W1", ("O4", "P3", "S3"))
 log("E6", v, "WATCH W1 installed; executor re-evaluates after every COMMIT")
 
+# ════ E7 — EVS1 t2: O6 P1 O2 ════
 v, _ = ev.ingest("E7", "N7", "O6", "P1", "O2", "EVS1", time=2)
 log("E7", v, f"O6 P1: T8 → {net.records['T8'].status_log[-1].state} "
              f"(non-destructive), N7 CURRENT")
 
+# ════ E8 — EVS1 t3: O4 P3 S3 ════
 v, extra = ev.ingest("E8", "N8", "O4", "P3", "S3", "EVS1", time=3)
 fired = "KAIROS fired" if net.events else "no event"
 log("E8", v, f"two CURRENT P3 values → visible OPEN ({extra}); watch: {fired}",
     "STOP NEED" if v == NEED else "")
 
+# ════ E9 — VIS2 t3: O5 P1 O4 ════
 v, gs = ev.ingest("E9", "N9", "O5", "P1", "O4", "VIS2", time=3)
 blocks = [g for vv, g in gs if vv == BLOCK]
 needs = [g for vv, g in gs if vv == NEED]
@@ -80,13 +90,16 @@ log("E9", v, f"BLOCK₁: {blocks[0]} forbids {ev.source_class('VIS2')} observati
              f"multiplicity-OPEN-ზეა დამოკიდებული — ორი ცალკე გაჩერება, "
              f"გზა არ გამოგონილა", "BLOCK+NEED")
 
+# ════ E10 — E5-ის საჭიროების გადახედვა ════
 c = ev.req_candidates(E5_PATTERNS)
 log("E10", GO, f"RQ1 still OPEN; candidates: {c or 'none'}; OPEN history preserved")
 
+# ════ E11 — TXT2: O5 P4 O8 ; O5 P5 TRUE ════
 ev.ingest("E11", "T11", "O5", "P4", "O8", "TXT2")
 v, _ = ev.ingest("E11", "T12", "O5", "P5", "TRUE", "TXT2")
 log("E11", v, "ingested O5 P4 O8, O5 P5 TRUE (TXT2)")
 
+# ════ E12 — ხელახალი გადახედვა; მიბმა, თუ ყველა ნიმუში მხარდაჭერილია ════
 v, x = ev.req_bind("E12", "RQ1", E5_PATTERNS)
 if v == GO:
     log("E12", v, f"RQ1 bound to {x} (all three patterns supported); "
@@ -94,6 +107,7 @@ if v == GO:
 else:
     log("E12", v, f"candidates: {x}")
 
+# ════ Final registry (პრეზენტაცია — იდენტური GW02-ისა) ════
 print("
 " + "═" * 74)
 print("FINAL REGISTRY")
