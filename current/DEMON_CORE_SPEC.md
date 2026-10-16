@@ -364,7 +364,24 @@ ROLE
 
 DCT03 + DCT04 არის მიზეზი, რის გამოც `ROLE` შედის ბირთვში როგორც **WORKING**, არა საბოლოო invariant.
 
-## 13. მთავარი ფორმულა
+## 13. OPEN — downstream consequence of dependency status change
+
+DCT05 და DCT06-ში დამოუკიდებლად განმეორდა ერთი და იგივე ახალი NEED:
+
+> **known dependency + upstream status transition + missing downstream consequence law**
+
+DCT05-ში upstream premise შევიდა CONFLICTED მდგომარეობაში; DCT06-ში იგივე ტიპის premise გახდა HISTORICAL.
+ორივე შემთხვევაში dependency path REFERS_TO + ROLE-ით სრულად ჩანს, მაგრამ დემონს არ აქვს უფლება თვითონ განსაზღვროს descendant-ის ახალი სტატუსი.
+
+ამ ეტაპზე უნივერსალური propagation rule არ ემატება.
+
+OPEN კითხვა:
+
+> **აკლია მხოლოდ propagation law, თუ dependency-edge-ს დამატებითი qualification სჭირდება, რათა downstream consequence განისაზღვროს?**
+
+ეს საკითხი უნდა გადაწყდეს შემდეგ probe-ებში და არა წინასწარი ontology design-ით.
+
+## 14. მთავარი ფორმულა
 
 > **დემონი მიდის სადამდეც შეუძლია. სადაც ვერ მიდის — ჩერდება. თუ შეუძლია კითხვა —
 > კითხულობს. თუ კითხვა ჯერ ვერ ყალიბდება — ამბობს რა აკლია. ჩვენ ვამატებთ არა
