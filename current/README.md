@@ -53,8 +53,10 @@ Daimonion-ის სხვადასხვა ფორმა და ოქტ
 27. [experiments/DEMON_DCT18.md](experiments/DEMON_DCT18.md) — finite cycle-free but divergent lawful paths; TERMINATION ≠ CONFLUENCE.
 28. [experiments/DEMON_DCT19.md](experiments/DEMON_DCT19.md) — convergent lawful paths with distinct preserved provenance.
 29. [experiments/DEMON_DCT20.md](experiments/DEMON_DCT20.md) — one convergent path challenged; explicit justification-composition policy required for redundancy semantics.
-30. [MIGRATION_MAP.md](MIGRATION_MAP.md) — ძველი კომპონენტების ახალი ადგილი.
-31. [OPEN_QUESTIONS.md](OPEN_QUESTIONS.md) — რაც ჯერ არ უნდა დაიხუროს.
+30. [experiments/DEMON_DCT21.md](experiments/DEMON_DCT21.md) — composition policy changes over time; historical support remains traceable while current support changes.
+31. [experiments/DEMON_DCT22.md](experiments/DEMON_DCT22.md) — multi-level invalidation wave; propagation is edge-local and may stop when sufficient support survives.
+32. [MIGRATION_MAP.md](MIGRATION_MAP.md) — ძველი კომპონენტების ახალი ადგილი.
+33. [OPEN_QUESTIONS.md](OPEN_QUESTIONS.md) — რაც ჯერ არ უნდა დაიხუროს.
 
 ## სტატუსის წესი
 
