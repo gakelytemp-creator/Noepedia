@@ -36,7 +36,9 @@ class Evaluator:
         self.net, self.d = net, demon
         self._stoprec = 0
 
+    # ── ჩატვირთვა: ფაქტებიც და წესებიც ერთი და იმავე გზით — ჩანაწერებად ──
     def load_facts(self, triples):
+        """triples: [(addr, S, P, O, extra_fields)] — საწყისი ქსელი."""
         for addr, s, p, o, extra in triples:
             r = Record(addr, {"SUBJECT": s, "PREDICATE": p, "OBJECT": o, **extra})
             self.net.records[addr] = r; r.committed = True
@@ -49,6 +51,7 @@ class Evaluator:
             self.net.records[addr] = r; r.committed = True
             self.net.mark(addr, "CURRENT")
 
+    # ── წესებზე წვდომა (მხოლოდ ქსელიდან) ──
     def rules(self, rtype):
         return [r for r in self.net.records.values()
                 if r.f("TYPE") == "RULE" and r.f("RULE_TYPE") == rtype
@@ -61,6 +64,7 @@ class Evaluator:
                 props[r.f("POLICY")] = True
         return props
 
+    # ── ნიმუშების ძრავა ──
     def _unify(self, pat, rec, b):
         b = dict(b)
         for k, t in zip(("SUBJECT", "PREDICATE", "OBJECT"), pat):
@@ -92,6 +96,7 @@ class Evaluator:
     def _ground(self, pat, b):
         return tuple(b.get(t, t) for t in pat)
 
+    # ── გაჩერების ბაზისი ქსელში (EV-3) ──
     def _stop_basis(self, where, rule_addr):
         self._stoprec += 1
         a = f"STOPREC{self._stoprec}"
@@ -100,9 +105,11 @@ class Evaluator:
                                  "OBJECT": rule_addr, "ROLE": "BASIS"})
         self.d.commit(self.d.propose(add=[rec, edge]))
 
+    # ── წყაროს კლასი [EN-2] ──
     def source_class(self, source):
         return source.rstrip("0123456789") if source else None
 
+    # ── INGEST_GUARD შეფასება [EV-2] ──
     def guard_stops(self, ev, s, p, o, source):
         stops = []
         tmp = Record("_tmp", {"SUBJECT": s, "PREDICATE": p, "OBJECT": o})
@@ -132,6 +139,7 @@ class Evaluator:
                     stops.append((NEED, g.addr))
         return stops
 
+    # ── ფაქტის მტკიცება: კარდინალობა + დროითი პოლიტიკა წესებიდან ──
     def assert_fact(self, ev, rec):
         s, p = rec.f("SUBJECT"), rec.f("PREDICATE")
         props = self.pred_props(p)
@@ -148,6 +156,7 @@ class Evaluator:
                     return NEED, old.addr
         return self.d.assert_current(s, p, rec, props)
 
+    # ── ingest: დარაჯები → მტკიცება ──
     def ingest(self, ev, addr, s, p, o, source, time=None):
         gs = self.guard_stops(ev, s, p, o, source)
         if any(v == BLOCK for v, _ in gs):
@@ -159,6 +168,7 @@ class Evaluator:
         v, extra = self.assert_fact(ev, Record(addr, f))
         return v, gs or extra
 
+    # ── TASK-query: პირდაპირი match, თუ არა — goal-directed დერივაცია [EV-1] ──
     def task_query(self, ev, s, p, derived_addr, domain=None):
         direct = self.holds((s, p, "?Z"))
         if direct:
@@ -194,6 +204,7 @@ class Evaluator:
                                        rule.addr)
         return NEED, [], None
 
+    # ── TASK-goal: „გახადე (s p o) მიმდინარე" — ინვარიანტების შემოწმებით ──
     def goal_assert(self, ev, s, p, o):
         demote = []
         if self.pred_props(p).get("SINGLE_CURRENT_TARGET"):
@@ -215,6 +226,7 @@ class Evaluator:
         return self.assert_fact(ev, Record(f"{ev}_GOAL",
                 {"SUBJECT": s, "PREDICATE": p, "OBJECT": o})), None
 
+    # ── REQUIREMENT: ნიმუშები + TASK-ავტორიზებული ცნება ──
     def requirement(self, ev, task_addr, rq_addr, patterns, pat_prefix="RP"):
         adds, pat_addrs = [], []
         for i, (ps, pp, po) in enumerate(patterns, 1):
@@ -239,6 +251,7 @@ class Evaluator:
         return out
 
     def closure_note(self, patterns):
+        """R6-ტიპი: აქვს თუ არა ამ პრედიკატებს closure — თუ არა, ცარიელი ≠ FAILED."""
         preds = {p for _, p, _ in patterns}
         for r in self.rules("CLOSURE_POLICY"):
             if r.f("POLICY") == "NO_CLOSURE" and preds & set(r.f("RULE_PREDICATES")):
@@ -256,6 +269,7 @@ class Evaluator:
             return v, c[0]
         return (NEED if not c else ASK), c
 
+    # ── WATCH: დეკლარაციული ნიმუში → ზოგადი პირობა ──
     def install_watch(self, addr, pattern):
         w = Record(addr, {"TYPE": "WATCH", "FIRED": False,
                           "CONDITION_PATTERN": pattern,
@@ -264,6 +278,7 @@ class Evaluator:
         self.net.active_watches.append(addr)
         return v
 
+    # ── IDENTITY: ნიმუშის მიბმა ერთეულზე (სპეცის ზოგადი იდენტობის წესი) ──
     def bind_sample(self, ev, sample):
         props = [(r.f("PREDICATE"), r.f("OBJECT"))
                  for r, _ in self.holds((sample, "?P", "?O"))]
