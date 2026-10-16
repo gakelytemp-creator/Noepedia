@@ -530,7 +530,46 @@ DCT16-ს ახალი conflict machinery არ დასჭირდა; DC
 
 > **Rule conflicts are handled structurally at the layer where they arise; higher layers receive no fabricated result.**
 
-## 23. მთავარი ფორმულა
+## 23. WORKING — finite justification graphs and confluence
+
+DCT17–DCT18-მა evaluation-ის ორი დამოუკიდებელი მოთხოვნა გამოყო:
+
+1. **termination** — justification graph უნდა იყოს finite/inspectable; recursive qualification cycle-ზე evaluation BLOCK-დება;
+2. **confluence** — finite lawful paths-ის terminal outcomes ერთმანეთთან compatible უნდა იყოს, ან resolution policy უნდა არსებობდეს.
+
+> **TERMINATION ≠ CONFLUENCE.**
+
+Cycle-ზე demon არ fabricates MATCH/NO_MATCH outcome-ს. Divergent terminating paths-ზე კი ინახავს ორივე justification path-ს და ქმნის addressable CONFLICT/BLOCK-ს.
+
+## 24. WORKING — convergent provenance and composition semantics
+
+DCT19-მა აჩვენა, რომ რამდენიმე lawful path შეიძლება ერთ outcome-ზე converge-დეს conflict-ის გარეშე:
+
+> **same result ≠ same provenance**
+
+ერთი current evaluation result შეიძლება რამდენიმე addressable justification path-ს ინახავდეს.
+
+მაგრამ DCT20-მა აჩვენა, რომ justification multiplicity თავისით redundancy არ არის.
+
+> **Multiple justifications do not automatically mean alternative sufficient support.**
+
+თუ ერთ path-ს challenge დაემართა, result-ის current survival შეიძლება განისაზღვროს მხოლოდ explicit justification-composition policy-ით.
+
+სამუშაო განსხვავება:
+
+    ALTERNATIVE SUPPORT — any one complete supported justification may suffice
+    JOINT SUPPORT       — all required justification components must remain supported
+
+ეს semantics ქსელში უნდა ცხოვრობდეს და არა demon-core-ში.
+
+თუ composition policy აკლია:
+
+    STOP_CLASS = NEED
+    MISSING = justification-composition policy
+
+Historical provenance ყველა შემთხვევაში ინახება, მაშინაც როცა კონკრეტული path current basis აღარ არის.
+
+## 25. მთავარი ფორმულა
 
 > **დემონი მიდის სადამდეც შეუძლია. სადაც ვერ მიდის — ჩერდება. თუ შეუძლია კითხვა —
 > კითხულობს. თუ კითხვა ჯერ ვერ ყალიბდება — ამბობს რა აკლია. ჩვენ ვამატებთ არა
