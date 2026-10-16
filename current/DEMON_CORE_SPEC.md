@@ -612,7 +612,63 @@ upstream ცვლილება არ ქმნის default global invalida
 
 > **The demon follows the dependency graph until support survives, a rule blocks, or a required propagation policy is missing.**
 
-## 27. მთავარი ფორმულა
+## 27. GW01 WORKING CANDIDATES — honesty preserved, missing power exposed
+
+GW01-ის პირველი Claude cold run-მა აჩვენა, რომ STOP/NEED discipline ინარჩუნებდა honesty-ს, მაგრამ რამდენიმე საჭირო ფუნქცია specification-ით მიუწვდომელი იყო.
+
+ამიტომ შემდეგი ოთხი ცვლილება შედის მხოლოდ **WORKING CANDIDATE** სტატუსით, fresh sealed rerun-მდე:
+
+### 27.1 Source ingest authorization
+
+> **Explicit external source input may PROPOSE an addressable observation/assertion with provenance/time; it still must pass CHECK → COMMIT.**
+
+Source პირდაპირ არ წერს ქსელში.
+
+### 27.2 Explicit-task requirement lifecycle
+
+თუ addressable TASK explicit-ად შეიცავს required triplet-pattern-ებს, იგი შეიძლება authorize-ებდეს ერთ scoped REQUIREMENT_CONCEPT-ს, რომელიც ზუსტად ამ patterns-ს ინახავს.
+
+სამუშაო lifecycle:
+
+    explicit TASK
+      → CREATE requirement concept
+      → keep OPEN while no fully supported binding exists
+      → bind only to a candidate satisfying all required patterns
+      → preserve prior OPEN history
+
+Requirement concept-ის **ზოგადი** birth rule კვლავ OPEN რჩება.
+
+### 27.3 Watch / trap executor hook
+
+Trap/watch definition ქსელშია; მაგრამ operational watch-ს executor hook სჭირდება:
+
+    COMMIT
+      → re-evaluate affected ACTIVE WATCHes
+      → false→true condition emits addressable KAIROS/EVENT
+
+ეს არ აძლევს executor-ს domain semantics-ს; იგი მხოლოდ post-COMMIT reevaluation-ს უზრუნველყოფს.
+
+### 27.4 Unknown multiplicity becomes visible OPEN
+
+თუ ერთ subject/predicate-ზე რამდენიმე განსხვავებული CURRENT target არსებობს და predicate-ის current-value multiplicity/cardinality policy არ არის მოცემული:
+
+> **do not infer single-valued or multi-valued semantics; create an addressable OPEN for unresolved multiplicity.**
+
+ეს განსხვავდება explicit cardinality rule-ისგან. Predicate-level cardinality/multiplicity semantics კვლავ ქსელში უნდა ცხოვრობდეს.
+
+### 27.5 Promotion condition
+
+ეს ოთხი ცვლილება ჯერ invariant არ არის.
+
+Promotion-ის მინიმალური პირობა:
+
+1. იგივე sealed GW01 გადის fresh cold agent-ზე revised spec-ით;
+2. E5/E6/E12 კანონიერად იხურება;
+3. E8 multiplicity ambiguity visible OPEN ხდება;
+4. წინა honesty properties არ ფუჭდება;
+5. ახალი false closure/ontology invention არ ჩნდება.
+
+## 28. მთავარი ფორმულა
 
 > **დემონი მიდის სადამდეც შეუძლია. სადაც ვერ მიდის — ჩერდება. თუ შეუძლია კითხვა —
 > კითხულობს. თუ კითხვა ჯერ ვერ ყალიბდება — ამბობს რა აკლია. ჩვენ ვამატებთ არა
