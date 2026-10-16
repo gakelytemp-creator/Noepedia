@@ -473,7 +473,64 @@ DCT12 ასევე ტოვებს ორ OPEN-ს:
 
 შემდეგი probe: შეუძლია თუ არა ერთსა და იმავე record-ს ერთდროულად ჰქონდეს განსხვავებული epistemic status სხვადასხვა scope-ში ისე, რომ სისტემა არ აიძულოს ერთ global status-ად შეკუმშოს.
 
-## 20. მთავარი ფორმულა
+## 20. WORKING — epistemic status as scoped applicability assertion
+
+DCT13–DCT14-მა აჩვენა, რომ epistemic status ერთი scalar field არ არის.
+
+> **Epistemic status is an addressable assertion whose applicability depends on context.**
+
+მიმდინარე დადასტურებული applicability dimensions:
+
+    SCOPE
+    TIME
+
+disjoint scope/time-ში incompatible states შეიძლება თანაარსებობდეს conflict-ის გარეშე.
+
+> **Conflict requires simultaneous applicability plus incompatibility.**
+
+## 21. WORKING — generic applicability qualifier framework
+
+DCT15-მა აჩვენა, რომ SCOPE და TIME შეიძლება ერთ generic addressable qualifier framework-ში ცხოვრობდეს, მაშინაც კი როცა მათი matching algebra განსხვავებულია.
+
+სამუშაო ფორმა:
+
+    ASSERTION
+      REFERS_TO → QUALIFIER
+      ROLE → QUALIFIER
+
+    QUALIFIER
+      REFERS_TO → MATCH_POLICY
+      ROLE → MATCH_POLICY
+
+ძირითადი pipeline:
+
+    QUALIFY → MATCH → APPLICABLE → only then COMPARE / CONFLICT
+
+> **NOT_APPLICABLE ≠ FALSE ≠ CHALLENGED.**
+
+თუ qualifier-ს matching policy არ აქვს, ეს NEED არის.
+
+## 22. WORKING — qualifier policy conflict containment
+
+DCT16-ში ერთ qualifier-ზე ორი applicable MATCH_POLICY ერთმანეთთან შეუთავსებელ შედეგს იძლეოდა.
+
+ამ შემთხვევაში:
+
+    MATCH vs NO_MATCH
+    → addressable rule-level CONFLICT
+    → STOP_CLASS = BLOCK
+
+დემონი არც ერთ outcome-ს არ ირჩევს და assertion-ს არც APPLICABLE-ად და არც NOT_APPLICABLE-ად არ აცხადებს.
+
+> **Applicability conflict must be resolved before semantic/status conflict is evaluated.**
+
+DCT16-ს ახალი conflict machinery არ დასჭირდა; DCT08-ის rule-level conflict pattern იგივე ფორმით განმეორდა qualifier layer-ზე.
+
+ეს აძლიერებს სამუშაო პრინციპს:
+
+> **Rule conflicts are handled structurally at the layer where they arise; higher layers receive no fabricated result.**
+
+## 23. მთავარი ფორმულა
 
 > **დემონი მიდის სადამდეც შეუძლია. სადაც ვერ მიდის — ჩერდება. თუ შეუძლია კითხვა —
 > კითხულობს. თუ კითხვა ჯერ ვერ ყალიბდება — ამბობს რა აკლია. ჩვენ ვამატებთ არა
