@@ -41,8 +41,11 @@ Daimonion-ის სხვადასხვა ფორმა და ოქტ
 15. [experiments/DEMON_DCT06.md](experiments/DEMON_DCT06.md) — historical premise-ზე იგივე NEED-ის დამოუკიდებელი recurrence.
 16. [experiments/DEMON_DCT07.md](experiments/DEMON_DCT07.md) — ორი განსხვავებული descendant-ის სცენა, რომელმაც აჩვენა, რომ status consequence dependency-policy rule-ში უნდა ცხოვრობდეს.
 17. [experiments/DEMON_DCT08.md](experiments/DEMON_DCT08.md) — conflicting dependency policies; rule-level CONFLICT/BLOCK და NETWORK-RULES vs EXECUTOR-INVARIANTS OPEN.
-18. [MIGRATION_MAP.md](MIGRATION_MAP.md) — ძველი კომპონენტების ახალი ადგილი.
-19. [OPEN_QUESTIONS.md](OPEN_QUESTIONS.md) — რაც ჯერ არ უნდა დაიხუროს.
+18. [experiments/DEMON_DCT09.md](experiments/DEMON_DCT09.md) — self-authorization probe; აქ დაიბადა transaction membrane.
+19. [experiments/DEMON_DCT10.md](experiments/DEMON_DCT10.md) — history-erasure probe; აქ დაიბადა TRACE CONTINUITY.
+20. [experiments/DEMON_DCT11.md](experiments/DEMON_DCT11.md) — retroactive re-audit; historical occurrence და current validity გაიყო.
+21. [MIGRATION_MAP.md](MIGRATION_MAP.md) — ძველი კომპონენტების ახალი ადგილი.
+22. [OPEN_QUESTIONS.md](OPEN_QUESTIONS.md) — რაც ჯერ არ უნდა დაიხუროს.
 
 ## სტატუსის წესი
 
