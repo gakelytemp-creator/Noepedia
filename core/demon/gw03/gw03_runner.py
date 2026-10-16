@@ -108,8 +108,7 @@ else:
     log("E12", v, f"candidates: {x}")
 
 # ════ Final registry (პრეზენტაცია — იდენტური GW02-ისა) ════
-print("
-" + "═" * 74)
+print("\n" + "═" * 74)
 print("FINAL REGISTRY")
 cur = [r.addr for r in net.records.values()
        if r.status_log and r.status_log[-1].state == "CURRENT"
