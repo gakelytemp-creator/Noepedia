@@ -452,7 +452,28 @@ DCT11-მა აჩვენა, რომ ძველი commit-ის ის�
 
 ეს ჯერ არ ითვლება frozen executor invariant-ად. საჭიროა oscillation/recovery probe: VALID → CHALLENGED → REHABILITATED.
 
-## 19. მთავარი ფორმულა
+## 19. WORKING status separation and non-destructive MARK
+
+DCT12-მა DCT11-ის განსხვავება უფრო მკაფიოდ დაადასტურა:
+
+> **HISTORY_STATUS ≠ EPISTEMIC_STATUS**
+
+historical occurrence რჩება სტაბილური, ხოლო epistemic status შეიძლება იყოს time-, scope- და audit-dependent.
+
+ამასთან, MARK-ის სამუშაო semantics იცვლება destructive overwrite-დან non-destructive status assertion-ზე:
+
+> **MARK ქმნის ახალ addressable status assertion-ს, ხდის მას მიმდინარე შესაბამის scope/time-ში და ინარჩუნებს წინა status assertions-ს ისტორიულ კვალად.**
+
+ამიტომ status transition არ ნიშნავს ძველი status-ის წაშლას.
+
+DCT12 ასევე ტოვებს ორ OPEN-ს:
+
+1. audit history-დან current epistemic status-ის selection policy;
+2. scope-resolution policy, როცა rehabilitation მხოლოდ ნაწილობრივ scope-ში მოქმედებს.
+
+შემდეგი probe: შეუძლია თუ არა ერთსა და იმავე record-ს ერთდროულად ჰქონდეს განსხვავებული epistemic status სხვადასხვა scope-ში ისე, რომ სისტემა არ აიძულოს ერთ global status-ად შეკუმშოს.
+
+## 20. მთავარი ფორმულა
 
 > **დემონი მიდის სადამდეც შეუძლია. სადაც ვერ მიდის — ჩერდება. თუ შეუძლია კითხვა —
 > კითხულობს. თუ კითხვა ჯერ ვერ ყალიბდება — ამბობს რა აკლია. ჩვენ ვამატებთ არა
