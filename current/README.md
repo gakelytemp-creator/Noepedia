@@ -56,8 +56,9 @@ Daimonion-ის სხვადასხვა ფორმა და ოქტ
 30. [experiments/DEMON_DCT21.md](experiments/DEMON_DCT21.md) — composition policy changes over time; historical support remains traceable while current support changes.
 31. [experiments/DEMON_DCT22.md](experiments/DEMON_DCT22.md) — multi-level invalidation wave; propagation is edge-local and may stop when sufficient support survives.
 32. [experiments/GW01_CLAUDE_COLD_AND_CONTROLLED_RERUN.md](experiments/GW01_CLAUDE_COLD_AND_CONTROLLED_RERUN.md) — Claude cold run + controlled overlay rerun; honesty/power split and four WORKING candidate additions.
-33. [MIGRATION_MAP.md](MIGRATION_MAP.md) — ძველი კომპონენტების ახალი ადგილი.
-34. [OPEN_QUESTIONS.md](OPEN_QUESTIONS.md) — რაც ჯერ არ უნდა დაიხუროს.
+33. [experiments/GW02_DESIGN.md](experiments/GW02_DESIGN.md) — sealed design for replacing the hologram executor with a deterministic mechanical demon; predictions fixed before coding.
+34. [MIGRATION_MAP.md](MIGRATION_MAP.md) — ძველი კომპონენტების ახალი ადგილი.
+35. [OPEN_QUESTIONS.md](OPEN_QUESTIONS.md) — რაც ჯერ არ უნდა დაიხუროს.
 
 ## სტატუსის წესი
 
