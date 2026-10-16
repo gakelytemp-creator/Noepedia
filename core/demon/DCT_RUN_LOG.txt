@@ -1,0 +1,64 @@
+
+========================================================================
+შედეგი: 60/60 შემოწმება REPRODUCED
+========================================================================
+ ✓ DCT01   E1 conflict object with refs                  მოსალ=GO  მიღებ=GO
+ ✓ DCT01   E2 transition verdict                         მოსალ=GO  მიღებ=GO
+ ✓ DCT01   E2 T2 → HISTORICAL                            მოსალ=HISTORICAL  მიღებ=HISTORICAL
+ ✓ DCT01   E2 N2 → CURRENT                               მოსალ=CURRENT  მიღებ=CURRENT
+ ✓ DCT01   E3 requirement concept (TASK-authorized)      მოსალ=GO  მიღებ=GO
+ ✓ DCT01   E3b birth without TASK blocked                მოსალ=BLOCK  მიღებ=BLOCK
+ ✓ DCT01   E4 credit + dependent                         მოსალ=GO  მიღებ=GO
+ ✓ DCT01   E5 repayment                                  მოსალ=GO  მიღებ=GO
+ ✓ DCT01   E5 D1 stays CREDIT_DEPENDENT                  მოსალ=CREDIT_DEPENDENT  მიღებ=CREDIT_DEPENDENT
+ ✓ DCT01   E5b over-promotion blocked                    მოსალ=BLOCK  მიღებ=BLOCK
+ ✓ DCT02   derived commit w/o REFERS_TO blocked          მოსალ=BLOCK  მიღებ=BLOCK
+ ✓ DCT02   derived commit with provenance                მოსალ=GO  მიღებ=GO
+ ✓ DCT03   roles distinguish premises                    მოსალ={'T2', 'T1'}  მიღებ={'T2', 'T1'}
+ ✓ DCT03   roles distinguish rule                        მოსალ={'R1'}  მიღებ={'R1'}
+ ✓ DCT04   credit debt role                              მოსალ={'MR1'}  მიღებ={'MR1'}
+ ✓ DCT05   no policy → NEED                              მოსალ=True  მიღებ=True
+ ✓ DCT05   missing = dependency policy                   მოსალ=True  მიღებ=True
+ ✓ DCT05   T3 untouched (no invented status)             მოსალ=CURRENT  მიღებ=CURRENT
+ ✓ DCT06   T1 → HISTORICAL                               მოსალ=HISTORICAL  მიღებ=HISTORICAL
+ ✓ DCT06   descendant consequence → NEED                 მოსალ=True  მიღებ=True
+ ✓ DCT06   T3 status not invented                        მოსალ=CURRENT  მიღებ=CURRENT
+ ✓ DCT07   A1 kept (snapshot policy)                     მოსალ=CURRENT  მიღებ=CURRENT
+ ✓ DCT07   B1 → OPEN (live policy)                       მოსალ=OPEN  მიღებ=OPEN
+ ✓ DCT08   two policies → BLOCK                          მოსალ=True  მიღებ=True
+ ✓ DCT08   conflict object created                       მოსალ=True  მიღებ=True
+ ✓ DCT08   A1 transition not committed                   მოსალ=CURRENT  მიღებ=CURRENT
+ ✓ DCT09   self-authorization → BLOCK                    მოსალ=BLOCK  მიღებ=BLOCK
+ ✓ DCT09   skip CHECK → BLOCK                            მოსალ=BLOCK  მიღებ=BLOCK
+ ✓ DCT10   purge committed history → BLOCK               მოსალ=BLOCK  მიღებ=BLOCK
+ ✓ DCT10   T1 still addressable                          მოსალ=True  მიღებ=True
+ ✓ DCT11   C1 history status intact                      მოსალ=COMMITTED  მიღებ=COMMITTED
+ ✓ DCT12   selection policy missing → NEED               მოსალ=NEED  მიღებ=NEED
+ ✓ DCT12   global rehabilitation not automatic           მოსალ=ASK  მიღებ=ASK
+ ✓ DCT12   status history preserved                      მოსალ=True  მიღებ=True
+ ✓ DCT13   scoped query A                                მოსალ=('SUPPORTED', 'GO')  მიღებ=('SUPPORTED', 'GO')
+ ✓ DCT13   scoped query B                                მოსალ=('CHALLENGED', 'GO')  მიღებ=('CHALLENGED', 'GO')
+ ✓ DCT13   unscoped query → ASK                          მოსალ=ASK  მიღებ=ASK
+ ✓ DCT13   same-scope incompatible → BLOCK               მოსალ=BLOCK  მიღებ=BLOCK
+ ✓ DCT14   t3 → SUPPORTED                                მოსალ=('SUPPORTED', 'GO')  მიღებ=('SUPPORTED', 'GO')
+ ✓ DCT14   t8 → CHALLENGED                               მოსალ=('CHALLENGED', 'GO')  მიღებ=('CHALLENGED', 'GO')
+ ✓ DCT14   no time qualifier → ASK                       მოსალ=ASK  მიღებ=ASK
+ ✓ DCT14   overlapping windows → BLOCK                   მოსალ=BLOCK  მიღებ=BLOCK
+ ✓ DCT15   no match policy → NEED                        მოსალ=NEED  მიღებ=NEED
+ ✓ DCT15   match → APPLICABLE                            მოსალ=('APPLICABLE', 'GO')  მიღებ=('APPLICABLE', 'GO')
+ ✓ DCT15   no match → NOT_APPLICABLE (≠FALSE)            მოსალ=('NOT_APPLICABLE', 'GO')  მიღებ=('NOT_APPLICABLE', 'GO')
+ ✓ DCT16   divergent policies → BLOCK                    მოსალ=BLOCK  მიღებ=BLOCK
+ ✓ DCT16   qualifier conflict object                     მოსალ=True  მიღებ=True
+ ✓ DCT17   cycle → BLOCK                                 მოსალ=BLOCK  მიღებ=BLOCK
+ ✓ DCT17   EVALUATION_CYCLE record                       მოსალ=True  მიღებ=True
+ ✓ DCT19   convergent paths → SUPPORTED/GO               მოსალ=('SUPPORTED', 'GO')  მიღებ=('SUPPORTED', 'GO')
+ ✓ DCT20   no composition policy → NEED                  მოსალ=NEED  მიღებ=NEED
+ ✓ DCT20   ALTERNATIVE → survives                        მოსალ=('SUPPORTED', 'GO')  მიღებ=('SUPPORTED', 'GO')
+ ✓ DCT21   JOINT → CHALLENGED                            მოსალ=('CHALLENGED', 'GO')  მიღებ=('CHALLENGED', 'GO')
+ ✓ DCT21   CP1 history intact                            მოსალ=HISTORICAL  მიღებ=HISTORICAL
+ ✓ DCT21   EV1 historical result intact                  მოსალ=MATCH  მიღებ=MATCH
+ ✓ DCT21   two applicable policies → BLOCK               მოსალ=BLOCK  მიღებ=BLOCK
+ ✓ DCT22   first edge no policy → NEED                   მოსალ=True  მიღებ=True
+ ✓ DCT22   no global cascade (T3 intact)                 მოსალ=CURRENT  მიღებ=CURRENT
+ ✓ DCT22   edge-local wave: CP1 → OPEN                   მოსალ=OPEN  მიღებ=OPEN
+ ✓ DCT22   wave frontier → NEED at next edge             მოსალ=True  მიღებ=True
