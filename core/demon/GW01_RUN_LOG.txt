@@ -1,0 +1,21 @@
+E1   GO     ingest O5 P1 O1 (TXT1) → CURRENT
+E2   ASK    AMBIGUOUS_MATCH: candidates ['O4', 'O11'] — no false merge   [STOP ASK]
+E3   GO     derived (O4 P1 O1) with full provenance; answer at level {O1,O2}: O1
+E4   BLOCK  impossible goal: C1 + R1 jointly forbid; classified BLOCK not NEED   [STOP BLOCK]
+E5   GO     RQ1 created (TASK-authorized), OPEN; full-support candidates now: none → no binding
+E6   GO     WATCH W1 installed; executor re-evaluates after every COMMIT
+E7   GO     O6 P1: T8 → HISTORICAL (non-destructive), N7 CURRENT
+E8   NEED   two CURRENT P3 values → visible OPEN (OPEN_MULT_P3); watch: KAIROS fired   [STOP NEED]
+E9   BLOCK  BLOCK₁: R4 forbids VIS observation of P1→O4; STOP₂: R4-ის გამოყენებადობა multiplicity-OPEN-ზეა დამოკიდებული — ორი ცალკე გაჩერება, გზა არ გამოგონილა   [BLOCK+NEED]
+E10  GO     RQ1 still OPEN; candidates: none; OPEN history preserved
+E11  GO     ingested O5 P4 O8, O5 P5 TRUE (TXT2)
+E12  GO     RQ1 bound to O5 (all three patterns supported); OPEN history preserved in status_log
+
+══════════════════════════════════════════════════════════════════════════
+FINAL REGISTRY
+CURRENT:    ['DV1', 'N7', 'N8', 'T1', 'T10', 'T11', 'T12', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'T9', 'V1A', 'V1B']
+HISTORICAL: ['T8']
+OPEN:       ['OPEN_MULT_P3']
+KAIROS:     ['KAIROS_W1']
+STOP MAP:   [('E2/identity', 'ASK'), ('E4/goal', 'BLOCK'), ('multiplicity', 'NEED'), ('E9/R4', 'BLOCK'), ('E9/R4-applicability', 'NEED')]
+ASK list:   [('E2/identity', "which of ['O4', 'O11'] is v1?")]
