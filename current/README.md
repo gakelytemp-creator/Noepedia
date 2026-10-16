@@ -49,8 +49,12 @@ Daimonion-ის სხვადასხვა ფორმა და ოქტ
 23. [experiments/DEMON_DCT14.md](experiments/DEMON_DCT14.md) — same scope, different time windows; temporal applicability.
 24. [experiments/DEMON_DCT15.md](experiments/DEMON_DCT15.md) — generic applicability qualifier framework და local MATCH_POLICY.
 25. [experiments/DEMON_DCT16.md](experiments/DEMON_DCT16.md) — conflicting qualifier MATCH_POLICY rules; rule-level BLOCK before downstream status comparison.
-26. [MIGRATION_MAP.md](MIGRATION_MAP.md) — ძველი კომპონენტების ახალი ადგილი.
-27. [OPEN_QUESTIONS.md](OPEN_QUESTIONS.md) — რაც ჯერ არ უნდა დაიხუროს.
+26. [experiments/DEMON_DCT17.md](experiments/DEMON_DCT17.md) — recursive qualifier/policy evaluation; cycle detection და finite justification graph.
+27. [experiments/DEMON_DCT18.md](experiments/DEMON_DCT18.md) — finite cycle-free but divergent lawful paths; TERMINATION ≠ CONFLUENCE.
+28. [experiments/DEMON_DCT19.md](experiments/DEMON_DCT19.md) — convergent lawful paths with distinct preserved provenance.
+29. [experiments/DEMON_DCT20.md](experiments/DEMON_DCT20.md) — one convergent path challenged; explicit justification-composition policy required for redundancy semantics.
+30. [MIGRATION_MAP.md](MIGRATION_MAP.md) — ძველი კომპონენტების ახალი ადგილი.
+31. [OPEN_QUESTIONS.md](OPEN_QUESTIONS.md) — რაც ჯერ არ უნდა დაიხუროს.
 
 ## სტატუსის წესი
 
