@@ -37,8 +37,10 @@ Daimonion-ის სხვადასხვა ფორმა და ოქტ
 11. [experiments/DEMON_DCT02.md](experiments/DEMON_DCT02.md) — დამოუკიდებელი provenance სცენა, რომელმაც generic record-reference NEED გაამეორა და REFERS_TO WORKING meta-relation-მდე მიიყვანა.
 12. [experiments/DEMON_DCT03.md](experiments/DEMON_DCT03.md) — REFERS_TO edge-ების როლური ambiguity-ის probe; აქ გაჩნდა relation-record qualification NEED.
 13. [experiments/DEMON_DCT04.md](experiments/DEMON_DCT04.md) — knowledge-credit კონტექსტში იგივე NEED-ის დამოუკიდებელი recurrence; აქედან დაიბადა ROLE როგორც WORKING meta-relation.
-14. [MIGRATION_MAP.md](MIGRATION_MAP.md) — ძველი კომპონენტების ახალი ადგილი.
-15. [OPEN_QUESTIONS.md](OPEN_QUESTIONS.md) — რაც ჯერ არ უნდა დაიხუროს.
+14. [experiments/DEMON_DCT05.md](experiments/DEMON_DCT05.md) — integrated conflict/provenance/credit stress test; აქ გამოჩნდა downstream status consequence NEED.
+15. [experiments/DEMON_DCT06.md](experiments/DEMON_DCT06.md) — historical premise-ზე იგივე NEED-ის დამოუკიდებელი recurrence.
+16. [MIGRATION_MAP.md](MIGRATION_MAP.md) — ძველი კომპონენტების ახალი ადგილი.
+17. [OPEN_QUESTIONS.md](OPEN_QUESTIONS.md) — რაც ჯერ არ უნდა დაიხუროს.
 
 ## სტატუსის წესი
 
