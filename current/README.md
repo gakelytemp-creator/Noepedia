@@ -55,8 +55,9 @@ Daimonion-ის სხვადასხვა ფორმა და ოქტ
 29. [experiments/DEMON_DCT20.md](experiments/DEMON_DCT20.md) — one convergent path challenged; explicit justification-composition policy required for redundancy semantics.
 30. [experiments/DEMON_DCT21.md](experiments/DEMON_DCT21.md) — composition policy changes over time; historical support remains traceable while current support changes.
 31. [experiments/DEMON_DCT22.md](experiments/DEMON_DCT22.md) — multi-level invalidation wave; propagation is edge-local and may stop when sufficient support survives.
-32. [MIGRATION_MAP.md](MIGRATION_MAP.md) — ძველი კომპონენტების ახალი ადგილი.
-33. [OPEN_QUESTIONS.md](OPEN_QUESTIONS.md) — რაც ჯერ არ უნდა დაიხუროს.
+32. [experiments/GW01_CLAUDE_COLD_AND_CONTROLLED_RERUN.md](experiments/GW01_CLAUDE_COLD_AND_CONTROLLED_RERUN.md) — Claude cold run + controlled overlay rerun; honesty/power split and four WORKING candidate additions.
+33. [MIGRATION_MAP.md](MIGRATION_MAP.md) — ძველი კომპონენტების ახალი ადგილი.
+34. [OPEN_QUESTIONS.md](OPEN_QUESTIONS.md) — რაც ჯერ არ უნდა დაიხუროს.
 
 ## სტატუსის წესი
 
