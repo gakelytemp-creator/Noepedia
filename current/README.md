@@ -34,8 +34,9 @@ Daimonion-ის სხვადასხვა ფორმა და ოქტ
 8. [GLASS_WORLD_LAB.md](GLASS_WORLD_LAB.md) — შუშის ხელოვნური სამყარო სრული answer book-ით, სადაც Noepedia-ს მთლიან მოძრაობას ვაკვირდებით.
 9. [DEMON_CORE_SPEC.md](DEMON_CORE_SPEC.md) — არაფრისმცოდნე დემონის სამუშაო ბირთვი: primitive operations, commit gate, STOP/NEED და addressable triplet/pattern invariant.
 10. [experiments/DEMON_DCT01.md](experiments/DEMON_DCT01.md) — DCT01-ის multi-model და ხელით გავლების ისტორიული კვალი; როგორ მივედით მიმდინარე დემონის ბირთვამდე.
-11. [MIGRATION_MAP.md](MIGRATION_MAP.md) — ძველი კომპონენტების ახალი ადგილი.
-12. [OPEN_QUESTIONS.md](OPEN_QUESTIONS.md) — რაც ჯერ არ უნდა დაიხუროს.
+11. [experiments/DEMON_DCT02.md](experiments/DEMON_DCT02.md) — დამოუკიდებელი provenance სცენა, რომელმაც generic record-reference NEED გაამეორა და REFERS_TO WORKING meta-relation-მდე მიიყვანა.
+12. [MIGRATION_MAP.md](MIGRATION_MAP.md) — ძველი კომპონენტების ახალი ადგილი.
+13. [OPEN_QUESTIONS.md](OPEN_QUESTIONS.md) — რაც ჯერ არ უნდა დაიხუროს.
 
 ## სტატუსის წესი
 
