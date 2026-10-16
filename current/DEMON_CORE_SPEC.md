@@ -309,7 +309,62 @@ semantic dependency-ს. უფრო კონკრეტული როლ�
 DCT01 + DCT02 ერთად არის მიზეზი, რის გამოც REFERS_TO აღარ ითვლება conflict-სცენის
 ერთჯერად patch-ად და შედის ბირთვში როგორც **WORKING**, არა საბოლოო invariant.
 
-## 12. მთავარი ფორმულა
+
+## 12. WORKING relation qualifier — ROLE
+
+DCT03-ში გამოჩნდა ახალი NEED:
+
+> **relation-record needs addressable role/qualification**
+
+მიზეზი იყო ის, რომ `REFERS_TO` ინახავდა ზუსტ მისამართიან reference-ს, მაგრამ ვერ არჩევდა,
+რომელი reference იყო premise, context ან applied rule.
+
+DCT04-ში იგივე NEED დამოუკიდებლად განმეორდა knowledge-credit კონტექსტში:
+reference-ებს უნდა განესხვავებინათ debt, authorization/provenance და dependent descendant.
+
+ამიტომ მიმდინარე WORKING meta-relation არის:
+
+```text
+ROLE
+```
+
+მინიმალური მნიშვნელობა:
+
+> **მისამართიან relation-record-ს ამ ადგილობრივ კონსტრუქციაში აქვს კონკრეტული ფუნქციური როლი.**
+
+მაგალითები:
+
+```text
+RF1 = (T3, REFERS_TO, T1)
+RF1 ROLE PREMISE
+
+RF2 = (KC1, REFERS_TO, MR1)
+RF2 ROLE DEBT
+```
+
+`ROLE` თავისით არ ნიშნავს truth, causality, support, priority, ownership ან type-ს.
+
+მნიშვნელოვანი დიზაინის შედეგი:
+
+> **სპეციფიკური semantics არ უნდა ჩაიტვირთოს REFERS_TO-ში და არც ახალი fundamental
+> predicate უნდა შეიქმნას მხოლოდ სახელის მოსახერხებლობისთვის, თუ addressable edge + ROLE
+> უკვე საკმარისია.**
+
+მიმდინარე ჰომოიკონური ძვალი:
+
+```text
+addressable triplet
+    ↓
+REFERS_TO
+    ↓
+addressable reference-edge
+    ↓
+ROLE
+```
+
+DCT03 + DCT04 არის მიზეზი, რის გამოც `ROLE` შედის ბირთვში როგორც **WORKING**, არა საბოლოო invariant.
+
+## 13. მთავარი ფორმულა
 
 > **დემონი მიდის სადამდეც შეუძლია. სადაც ვერ მიდის — ჩერდება. თუ შეუძლია კითხვა —
 > კითხულობს. თუ კითხვა ჯერ ვერ ყალიბდება — ამბობს რა აკლია. ჩვენ ვამატებთ არა
