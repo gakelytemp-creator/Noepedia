@@ -44,8 +44,9 @@ Daimonion-ის სხვადასხვა ფორმა და ოქტ
 18. [experiments/DEMON_DCT09.md](experiments/DEMON_DCT09.md) — self-authorization probe; აქ დაიბადა transaction membrane.
 19. [experiments/DEMON_DCT10.md](experiments/DEMON_DCT10.md) — history-erasure probe; აქ დაიბადა TRACE CONTINUITY.
 20. [experiments/DEMON_DCT11.md](experiments/DEMON_DCT11.md) — retroactive re-audit; historical occurrence და current validity გაიყო.
-21. [MIGRATION_MAP.md](MIGRATION_MAP.md) — ძველი კომპონენტების ახალი ადგილი.
-22. [OPEN_QUESTIONS.md](OPEN_QUESTIONS.md) — რაც ჯერ არ უნდა დაიხუროს.
+21. [experiments/DEMON_DCT12.md](experiments/DEMON_DCT12.md) — VALID → CHALLENGED → SUPPORTED_AGAIN; HISTORY_STATUS/EPISTEMIC_STATUS separation და non-destructive MARK.
+22. [MIGRATION_MAP.md](MIGRATION_MAP.md) — ძველი კომპონენტების ახალი ადგილი.
+23. [OPEN_QUESTIONS.md](OPEN_QUESTIONS.md) — რაც ჯერ არ უნდა დაიხუროს.
 
 ## სტატუსის წესი
 
