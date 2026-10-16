@@ -278,17 +278,36 @@ STOP-ის შემდეგ სისტემა ავტომატურ
 > **თუ ერთი მცირე დამატება მრავალ STOP-ს ხსნის, სავარაუდოდ კარგი აბსტრაქციაა.
 > თუ თითო STOP-ს თავისი პატჩი სჭირდება, ქსელს ვაჯღაპნით.**
 
-## 11. მიმდინარე OPEN
+## 11. WORKING fundamental meta-relation — REFERS_TO
 
-DCT01 rerun-ის შემდეგ დარჩენილი მთავარი NEED:
+DCT01 rerun-ის შემდეგ დარჩენილი მთავარი NEED იყო:
 
 > **generic record-to-record structural reference**
 
-Conflict object-ს შეუძლია შეიქმნას, მაგრამ ჯერ არ არის გაყინული რომელი ზოგადი
-meta-relation-ით მიუთითებს იგი conflicting triplet-record-ებზე.
+ეს NEED ხელმეორედ გამოჩნდა დამოუკიდებელ DCT02 სცენაში, სადაც derived record-ს უნდა
+შეენარჩუნებინა ზუსტი provenance — რომელი premise-record-ები და რომელი rule გამოიყენეს.
 
-სახელი/ფორმა შეგნებულად არ არის მოგონილი. ეს NEED უნდა განმეორდეს სხვა სცენებშიც,
-სანამ ახალ fundamental meta-relation-ს მივიღებთ.
+ამიტომ მიმდინარე WORKING meta-relation არის **REFERS_TO**.
+
+მინიმალური მნიშვნელობა:
+
+> **A-ს აქვს მისამართიანი სტრუქტურული მითითება B-ზე.**
+
+REFERS_TO არ ნიშნავს თავისით part-of, cause, evidence, support, truth, agreement ან
+semantic dependency-ს. უფრო კონკრეტული როლები, თუ ოდესმე დასჭირდება სისტემას,
+ცალკე უნდა გაჩნდეს საკუთარი NEED-იდან და არა REFERS_TO-ს ჩუმი გადატვირთვით.
+
+ამ დროისთვის:
+
+    CF1 REFERS_TO T1
+    CF1 REFERS_TO N1
+
+    T3  REFERS_TO T1
+    T3  REFERS_TO T2
+    T3  REFERS_TO R1
+
+DCT01 + DCT02 ერთად არის მიზეზი, რის გამოც REFERS_TO აღარ ითვლება conflict-სცენის
+ერთჯერად patch-ად და შედის ბირთვში როგორც **WORKING**, არა საბოლოო invariant.
 
 ## 12. მთავარი ფორმულა
 
