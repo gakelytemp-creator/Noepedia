@@ -420,7 +420,39 @@ DCT08-მა ასევე გახსნა უფრო ღრმა სა
 
 ეს საკითხი არ უნდა დაიხუროს წინასწარი ფილოსოფიური არჩევანით; საჭიროა adversarial/self-modification probes.
 
-## 16. მთავარი ფორმულა
+## 16. WORKING executor boundary — transaction membrane
+
+DCT09-მა ორი მინიმალური executor invariant გამოყო:
+
+1. **Every mutation passes PROPOSE → CHECK → COMMIT.**
+2. **A delta cannot use rules introduced or changed by itself to authorize that same delta.**
+
+მეორე წესი ნიშნავს, რომ delta N-ის შემოწმებისთვის ეფექტური rule-set მოდის უკვე committed state N-1-იდან.
+
+ეს საზღვარი არ შეიცავს domain knowledge-ს; იგი იცავს მხოლოდ ცვლილების პროცედურულ კარს.
+
+## 17. WORKING executor invariant — TRACE CONTINUITY
+
+DCT10-მა აჩვენა განსხვავება payload forgetting-სა და history erasure-ს შორის.
+
+> **A committed transition may be compacted, archived, superseded or corrected, but may not be made historically unaddressable or provenance-untraceable.**
+
+შეცდომის გასწორება დაშვებულია; committed წარსულის ისე გადაწერა, თითქოს არასოდეს მომხდარა — არა.
+
+## 18. WORKING distinction — historical occurrence vs current validity
+
+DCT11-მა აჩვენა, რომ ძველი commit-ის ისტორიული ფაქტი და მისი დღევანდელი epistemic validity ერთი და იგივე რამ არ არის.
+
+მიმდინარე სამუშაო განსხვავება:
+
+    HISTORY_STATUS
+    CURRENT_EPISTEMIC_STATUS
+
+> **past commit fact is preserved; present trust/status is revisable.**
+
+ეს ჯერ არ ითვლება frozen executor invariant-ად. საჭიროა oscillation/recovery probe: VALID → CHALLENGED → REHABILITATED.
+
+## 19. მთავარი ფორმულა
 
 > **დემონი მიდის სადამდეც შეუძლია. სადაც ვერ მიდის — ჩერდება. თუ შეუძლია კითხვა —
 > კითხულობს. თუ კითხვა ჯერ ვერ ყალიბდება — ამბობს რა აკლია. ჩვენ ვამატებთ არა
