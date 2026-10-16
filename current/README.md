@@ -45,8 +45,12 @@ Daimonion-ის სხვადასხვა ფორმა და ოქტ
 19. [experiments/DEMON_DCT10.md](experiments/DEMON_DCT10.md) — history-erasure probe; აქ დაიბადა TRACE CONTINUITY.
 20. [experiments/DEMON_DCT11.md](experiments/DEMON_DCT11.md) — retroactive re-audit; historical occurrence და current validity გაიყო.
 21. [experiments/DEMON_DCT12.md](experiments/DEMON_DCT12.md) — VALID → CHALLENGED → SUPPORTED_AGAIN; HISTORY_STATUS/EPISTEMIC_STATUS separation და non-destructive MARK.
-22. [MIGRATION_MAP.md](MIGRATION_MAP.md) — ძველი კომპონენტების ახალი ადგილი.
-23. [OPEN_QUESTIONS.md](OPEN_QUESTIONS.md) — რაც ჯერ არ უნდა დაიხუროს.
+22. [experiments/DEMON_DCT13.md](experiments/DEMON_DCT13.md) — simultaneous scoped epistemic states; conflict მხოლოდ overlapping applicability-ზე.
+23. [experiments/DEMON_DCT14.md](experiments/DEMON_DCT14.md) — same scope, different time windows; temporal applicability.
+24. [experiments/DEMON_DCT15.md](experiments/DEMON_DCT15.md) — generic applicability qualifier framework და local MATCH_POLICY.
+25. [experiments/DEMON_DCT16.md](experiments/DEMON_DCT16.md) — conflicting qualifier MATCH_POLICY rules; rule-level BLOCK before downstream status comparison.
+26. [MIGRATION_MAP.md](MIGRATION_MAP.md) — ძველი კომპონენტების ახალი ადგილი.
+27. [OPEN_QUESTIONS.md](OPEN_QUESTIONS.md) — რაც ჯერ არ უნდა დაიხუროს.
 
 ## სტატუსის წესი
 
