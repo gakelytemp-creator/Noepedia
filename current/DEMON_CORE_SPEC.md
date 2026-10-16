@@ -569,7 +569,50 @@ DCT19-მა აჩვენა, რომ რამდენიმე lawful pa
 
 Historical provenance ყველა შემთხვევაში ინახება, მაშინაც როცა კონკრეტული path current basis აღარ არის.
 
-## 25. მთავარი ფორმულა
+## 25. WORKING — policy temporality and explicit precedence
+
+DCT21-მა აჩვენა, რომ justification-composition semantics თვითონაც time/scope-qualified knowledge არის.
+
+> **Changing a composition policy may change current support without rewriting historical support.**
+
+ახალი policy ძველ result-ს re-audit-ს უკეთებს, მაგრამ ძველ historical support-ს არ შლის.
+
+ასევე:
+
+> **Policy applicability and precedence must be explicit; newest-wins is not implicit.**
+
+თუ policy transition-ის applicability/precedence აკლია — NEED. თუ ორი policy ერთსა და იმავე context-ში ერთდროულად applicableა და incompatible outcomes-ს იძლევა — BLOCK/CONFLICT.
+
+## 26. WORKING — edge-local dependency waves
+
+DCT22-მა multi-level dependency chain-ზე აჩვენა:
+
+    PJ1
+      ↓
+    CP1
+      ↓
+    EV1
+      ↓
+    T3
+
+upstream ცვლილება არ ქმნის default global invalidation cascade-ს.
+
+> **Propagation is edge-local.**
+
+თითოეულ downstream node-ზე ხდება local re-evaluation შესაბამისი dependency policy-ის მიხედვით.
+
+ტალღა შეიძლება:
+
+    continue — თუ local support დაიკარგა და explicit consequence policy არსებობს;
+    stop     — თუ surviving sufficient support დარჩა;
+    NEED     — თუ შემდეგ edge-ზე consequence policy აკლია;
+    BLOCK    — თუ applicable rules/policies ერთმანეთს ეწინააღმდეგება.
+
+> **A change propagates only through explicit dependency edges and their policies.**
+
+> **The demon follows the dependency graph until support survives, a rule blocks, or a required propagation policy is missing.**
+
+## 27. მთავარი ფორმულა
 
 > **დემონი მიდის სადამდეც შეუძლია. სადაც ვერ მიდის — ჩერდება. თუ შეუძლია კითხვა —
 > კითხულობს. თუ კითხვა ჯერ ვერ ყალიბდება — ამბობს რა აკლია. ჩვენ ვამატებთ არა
