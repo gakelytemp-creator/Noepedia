@@ -381,7 +381,46 @@ OPEN კითხვა:
 
 ეს საკითხი უნდა გადაწყდეს შემდეგ probe-ებში და არა წინასწარი ontology design-ით.
 
-## 14. მთავარი ფორმულა
+## 14. WORKING HYPOTHESIS — dependency policy lives in the network
+
+DCT07-მა აჩვენა, რომ იგივე ROLE=PREMISE და იგივე upstream status transition სხვადასხვა descendant-სთვის სხვადასხვა consequence-ს შეიძლება ითხოვდეს.
+
+ამიტომ მიმდინარე WORKING HYPOTHESIS არის:
+
+> **Status propagation არ არის demon-core primitive. Upstream status transition-ის downstream შედეგი განისაზღვრება ქსელში მისამართიანი dependency-policy rule-ით.**
+
+Dependency-edge თვითონ addressable record-ია და policy rule-ს REFERS_TO + ROLE=POLICY-ით უკავშირდება.
+
+თუ applicable policy rule არ არსებობს:
+
+    STOP_CLASS = NEED
+    MISSING = applicable dependency-policy rule
+
+## 15. Rule-level conflict და executor boundary — OPEN
+
+DCT08-ში ერთ dependency-edge-ზე ორი applicable policy ერთმანეთთან შეუთავსებელ შედეგს ითხოვდა.
+
+დემონი არც ერთს არ ირჩევს; policy rules თვითონ addressable records არიან, ამიტომ იქმნება ჩვეულებრივი addressable CONFLICT/OPEN object და downstream transition იბლოკება.
+
+ამ შემთხვევის STOP:
+
+    STOP_CLASS = BLOCK
+
+რადგან პრობლემა დაკარგული სტრუქტურა კი არა, არსებული წესების მიერ unique legal continuation-ის არქონაა.
+
+DCT08-მა ასევე გახსნა უფრო ღრმა საკითხი:
+
+> **რომელი მინიმალური invariants უნდა დარჩეს executor boundary-ში, რათა ჰომოიკონურმა ქსელმა საკუთარი audit machinery ვერ გააუქმოს ან ჩუმად ვერ გადაწეროს?**
+
+მიმდინარე საზღვარი ჯერ OPEN არის:
+
+    NETWORK RULES
+    vs
+    EXECUTOR INVARIANTS
+
+ეს საკითხი არ უნდა დაიხუროს წინასწარი ფილოსოფიური არჩევანით; საჭიროა adversarial/self-modification probes.
+
+## 16. მთავარი ფორმულა
 
 > **დემონი მიდის სადამდეც შეუძლია. სადაც ვერ მიდის — ჩერდება. თუ შეუძლია კითხვა —
 > კითხულობს. თუ კითხვა ჯერ ვერ ყალიბდება — ამბობს რა აკლია. ჩვენ ვამატებთ არა
