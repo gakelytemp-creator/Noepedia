@@ -245,5 +245,103 @@
       "EXECUTABLE_SEMANTICS_CHANGED": "NO",
       "CODE_LOCUS": "core/demon/run_c/audit_run_c.py:BANNED_TOKEN"
     }
+  ],
+  "review_summary": {
+    "REVIEW_FILE": "current/experiments/GW05_RUN_C_INDEPENDENT_REVIEW.md",
+    "REVIEW_FILE_SHA256": "2158c5183cbcf8fb7f0854d3bbdcc171eb1f2c1d82b40378f06b51b0dde45513",
+    "AUTHOR_DECISION_COUNT": 14,
+    "REVIEWER_DECISION_COUNT": 26,
+    "DECISION_UNDERCOUNT": 12
+  },
+  "reviewer_additional_loci": [
+    {
+      "ID": "RV-01",
+      "CHOICE": "current iff last status assertion is literally CURRENT; scope/time ignored",
+      "STATUS": "LOGGED_UNCHANGED"
+    },
+    {
+      "ID": "RV-02",
+      "CHOICE": "numeric iff Python int; bool therefore passes; float/string treated missing",
+      "STATUS": "LOGGED_UNCHANGED"
+    },
+    {
+      "ID": "RV-03",
+      "CHOICE": "lookup with several current values is incomplete, not conflict",
+      "STATUS": "LOGGED_UNCHANGED"
+    },
+    {
+      "ID": "RV-04",
+      "CHOICE": "aggregate member with several current values is treated as missing",
+      "STATUS": "LOGGED_UNCHANGED"
+    },
+    {
+      "ID": "RV-05",
+      "CHOICE": "equality sides are evaluated asymmetrically in current code order",
+      "STATUS": "LOGGED_UNCHANGED"
+    },
+    {
+      "ID": "RV-06",
+      "CHOICE": "specific schema tokens accepted as coded",
+      "STATUS": "LOGGED_UNCHANGED"
+    },
+    {
+      "ID": "RV-07",
+      "CHOICE": "closure is a gate; exact_members are not compared during derivation",
+      "STATUS": "LOGGED_UNCHANGED"
+    },
+    {
+      "ID": "RV-08",
+      "CHOICE": "identical re-assertion counts as duplicate for exact distinct cardinality",
+      "STATUS": "LOGGED_UNCHANGED"
+    },
+    {
+      "ID": "RV-09",
+      "CHOICE": "implication ingest validation checks incoming antecedent direction only",
+      "STATUS": "LOGGED_UNCHANGED"
+    },
+    {
+      "ID": "RV-10",
+      "CHOICE": "implication CHECK without SUBJECT becomes global",
+      "STATUS": "LOGGED_UNCHANGED"
+    },
+    {
+      "ID": "RV-11",
+      "CHOICE": "schema mismatch raised exception",
+      "STATUS": "REPAIRED_POST_REVIEW"
+    },
+    {
+      "ID": "RV-12",
+      "CHOICE": "dictionary omitted handler-read paths/tokens",
+      "STATUS": "REPAIRED_POST_REVIEW"
+    }
+  ],
+  "post_review_entries": [
+    {
+      "DECISION_ID": "PR-D01",
+      "RULE_OR_INTERFACE": "UNCHECKED dependency propagation",
+      "TRIGGER": "Independent review F1",
+      "CHANGE": "Add aggregate incoming-validation path that emits addressable UNCHECKED markers. For an unknown rule type, or for a known family whose schema is too malformed to recover dependency predicates, relevance cannot be ruled out, so the incoming fact is conservatively marked UNCHECKED against that rule.",
+      "RATIONALE": "Restores the written design promise that executor/schema boundaries remain visible rather than silently bypassed.",
+      "CODE_LOCUS": "family_executor.py:FamilyExecutor.validate_incoming",
+      "POST_REVIEW_CHANGE": true
+    },
+    {
+      "DECISION_ID": "PR-D02",
+      "RULE_OR_INTERFACE": "family dictionary completeness",
+      "TRIGGER": "Independent review F2 / RV-12",
+      "CHANGE": "Enumerate every handler-read structural path and literal schema token in the dictionary and add a mechanical schema-vocabulary gate.",
+      "RATIONALE": "Makes the dictionary a complete compiler target, so later encoder compliance can be distinguished from dictionary incompleteness.",
+      "CODE_LOCUS": "GW05_RUN_C_FAMILY_DICTIONARY.json + audit_run_c.py",
+      "POST_REVIEW_CHANGE": true
+    },
+    {
+      "DECISION_ID": "PR-D03",
+      "RULE_OR_INTERFACE": "schema mismatch handling",
+      "TRIGGER": "Independent review RV-11",
+      "CHANGE": "Validate required paths before dispatch and convert schema exceptions into structured SCHEMA_DRIFT HandlerResult values rather than aborting.",
+      "RATIONALE": "Implements the preregistered classification boundary.",
+      "CODE_LOCUS": "family_executor.py:FamilyExecutor.execute",
+      "POST_REVIEW_CHANGE": true
+    }
   ]
 }

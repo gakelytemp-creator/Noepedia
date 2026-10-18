@@ -22,6 +22,7 @@ OPEN = "OPEN"
 @dataclass
 class HandlerResult:
     verdict: str = GO
+    classification: str | None = None
     proposed_delta: list = field(default_factory=list)
     derived_records: list = field(default_factory=list)
     provenance_requirements: list = field(default_factory=list)
@@ -130,6 +131,37 @@ def dependency_predicates(rule, family_spec):
 
 def dependency_match(rule, family_spec, incoming):
     return incoming.f("PREDICATE") in dependency_predicates(rule, family_spec)
+
+
+def _path_present(data, path):
+    """True when a dictionary path exists; [] expands any list element."""
+    parts = path.split(".")
+    vals = [data]
+    for part in parts:
+        expand = part.endswith("[]")
+        key = part[:-2] if expand else part
+        nxt = []
+        for val in vals:
+            if not isinstance(val, dict) or key not in val:
+                continue
+            got = val[key]
+            if expand:
+                if isinstance(got, list):
+                    nxt.extend(got)
+            else:
+                nxt.append(got)
+        if not nxt:
+            return False
+        vals = nxt
+    return True
+
+
+def schema_contract_errors(rule, family_spec):
+    data = rule_dict(rule)
+    return [
+        path for path in family_spec.get("required_paths", family_spec.get("required_fields", []))
+        if not _path_present(data, path)
+    ]
 
 
 def unchecked_marker(addr, dependency, reason):
@@ -530,17 +562,43 @@ class FamilyExecutor:
         if spec is None or rtype not in HANDLERS:
             return HandlerResult(
                 verdict=NEED,
+                classification="EXECUTOR_HOLE",
                 unchecked_dependencies=[{
                     "dependency": rule_addr(rule),
                     "reason": "EXECUTOR_HOLE",
                 }],
             )
+
+        errors = schema_contract_errors(rule, spec)
+        if errors:
+            return HandlerResult(
+                verdict=NEED,
+                classification="SCHEMA_DRIFT",
+                unchecked_dependencies=[{
+                    "dependency": rule_addr(rule),
+                    "reason": "SCHEMA_DRIFT",
+                }],
+                details={"schema_errors": errors},
+            )
+
         if operation_request["OP"] not in spec["operations"]:
             return HandlerResult(
                 verdict=NEED,
                 stops=[{"rule": rule_addr(rule), "missing": f"operation {operation_request['OP']}"}],
             )
-        return HANDLERS[rtype](rule, net, operation_request)
+
+        try:
+            return HANDLERS[rtype](rule, net, operation_request)
+        except (SchemaError, KeyError, TypeError, ValueError) as exc:
+            return HandlerResult(
+                verdict=NEED,
+                classification="SCHEMA_DRIFT",
+                unchecked_dependencies=[{
+                    "dependency": rule_addr(rule),
+                    "reason": "SCHEMA_DRIFT",
+                }],
+                details={"schema_exception": type(exc).__name__, "schema_message": str(exc)},
+            )
 
     def validation_dependencies(self, net, incoming):
         deps = []
@@ -550,3 +608,62 @@ class FamilyExecutor:
             if spec is not None and dependency_match(rule, spec, incoming):
                 deps.append(rule)
         return deps
+
+    def validate_incoming(self, net, incoming, marker_prefix="UNCHECKED"):
+        """Validate an incoming record and make unexecutable checks visible."""
+        results = []
+        markers = []
+        unchecked = []
+        marker_n = 0
+
+        for rule in network_rules(net):
+            rtype = rule_type(rule)
+            spec = self.dictionary["families"].get(rtype)
+
+            if spec is None or rtype not in HANDLERS:
+                reason = "EXECUTOR_HOLE"
+                applicable = True  # dependency relevance cannot be ruled out
+            else:
+                preds = dependency_predicates(rule, spec)
+                if not preds:
+                    reason = "SCHEMA_DRIFT"
+                    applicable = True  # malformed signature cannot rule dependency out
+                else:
+                    reason = None
+                    applicable = incoming.f("PREDICATE") in preds
+
+            if not applicable:
+                continue
+
+            if reason is not None:
+                marker_n += 1
+                marker = unchecked_marker(
+                    f"{marker_prefix}_{marker_n}",
+                    rule_addr(rule),
+                    reason,
+                )
+                markers.append(marker)
+                unchecked.append({"dependency": rule_addr(rule), "reason": reason})
+                continue
+
+            result = self.execute(rule, net, {"OP": "VALIDATE_INCOMING", "INCOMING": incoming})
+            results.append({"rule": rule_addr(rule), "result": result})
+            if result.classification in ("EXECUTOR_HOLE", "SCHEMA_DRIFT"):
+                marker_n += 1
+                marker = unchecked_marker(
+                    f"{marker_prefix}_{marker_n}",
+                    rule_addr(rule),
+                    result.classification,
+                )
+                markers.append(marker)
+                unchecked.append({
+                    "dependency": rule_addr(rule),
+                    "reason": result.classification,
+                })
+
+        return HandlerResult(
+            verdict=NEED if unchecked else GO,
+            proposed_delta=markers,
+            unchecked_dependencies=unchecked,
+            details={"rule_results": results},
+        )

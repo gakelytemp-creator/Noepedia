@@ -12,6 +12,7 @@ TEST_FILE = ROOT / "core/demon/run_c/test_family_executor.py"
 AUDIT_FILE = ROOT / "core/demon/run_c/audit_run_c.py"
 DICTIONARY = ROOT / "current/experiments/GW05_RUN_C_FAMILY_DICTIONARY.json"
 DECISIONS = ROOT / "current/experiments/GW05_RUN_C_DECISION_LOG.json"
+REVIEW = ROOT / "current/experiments/GW05_RUN_C_INDEPENDENT_REVIEW.md"
 OUT = ROOT / "current/experiments/GW05_RUN_C_STATIC_AUDIT.json"
 
 BANNED_TOKEN = re.compile(
@@ -110,6 +111,56 @@ def text_gate(path):
     return [{"token": m.group(0)} for m in BANNED_TOKEN.finditer(path.read_text(encoding="utf-8"))]
 
 
+def schema_vocabulary_literals(path):
+    """String tokens used structurally as keys/get/f fields or compare literals."""
+    tree = ast.parse(path.read_text(encoding="utf-8"))
+    out = set()
+    for node in ast.walk(tree):
+        if isinstance(node, ast.Subscript):
+            sl = node.slice
+            if isinstance(sl, ast.Constant) and isinstance(sl.value, str):
+                out.add(sl.value)
+        if isinstance(node, ast.Call) and isinstance(node.func, ast.Attribute):
+            if node.func.attr in ("get", "f") and node.args:
+                arg = node.args[0]
+                if isinstance(arg, ast.Constant) and isinstance(arg.value, str):
+                    out.add(arg.value)
+        if isinstance(node, ast.Compare):
+            values = []
+            for part in [node.left, *node.comparators]:
+                if isinstance(part, ast.Constant) and isinstance(part.value, str):
+                    values.append(part.value)
+                elif isinstance(part, (ast.Tuple, ast.List)):
+                    values.extend(
+                        elt.value for elt in part.elts
+                        if isinstance(elt, ast.Constant) and isinstance(elt.value, str)
+                    )
+            out.update(values)
+    return out
+
+
+def dictionary_vocabulary(family):
+    out = set(family.get("generic_core_vocabulary", []))
+    for spec in family["families"].values():
+        out.update(spec.get("required_fields", []))
+        out.update(spec.get("required_paths", []))
+        out.update(spec.get("optional_paths", []))
+        out.update(spec.get("literal_tokens", []))
+        out.update(spec.get("operations", []))
+        out.update(spec.get("dependency_signature", []))
+        for key, val in spec.get("constraints", {}).items():
+            out.add(key)
+            if isinstance(val, list):
+                out.update(x for x in val if isinstance(x, str))
+    # path components are valid schema vocabulary too
+    for value in list(out):
+        if isinstance(value, str):
+            for part in value.replace("[]", "").split("."):
+                if part:
+                    out.add(part)
+    return out
+
+
 def main():
     family = json.loads(DICTIONARY.read_text(encoding="utf-8"))
     decisions = json.loads(DECISIONS.read_text(encoding="utf-8"))
@@ -124,12 +175,19 @@ def main():
     dispatcher = dispatcher_core_lines(HANDLER_FILE)
     classified = generic | handlers | dispatcher
 
+    schema_used = schema_vocabulary_literals(HANDLER_FILE)
+    schema_declared = dictionary_vocabulary(family)
+    schema_unknown = sorted(schema_used - schema_declared)
+
     report = {
         "FAMILY_TYPE_COUNT": len(family["families"]),
         "GENERIC_OPERATION_COUNT": len(GENERIC_OPERATION_NAMES),
         "GENERIC_OPERATIONS": GENERIC_OPERATION_NAMES,
         "HANDLER_COUNT": len(HANDLER_FUNCTIONS),
         "AUTHOR_DECISION_COUNT": len(decisions["entries"]),
+        "REVIEWER_DECISION_COUNT": decisions.get("review_summary", {}).get("REVIEWER_DECISION_COUNT"),
+        "DECISION_UNDERCOUNT": decisions.get("review_summary", {}).get("DECISION_UNDERCOUNT"),
+        "POST_REVIEW_DECISION_COUNT": len(decisions.get("post_review_entries", [])),
         "LOC": {
             "family_executor": total_handler,
             "family_executor_breakdown_core": {
@@ -149,7 +207,11 @@ def main():
         },
         "TEXT_GATE_HITS": text_hits,
         "AST_GATE_HITS": ast_hits,
-        "GENERALITY_GATE": "PASS" if not text_hits and not ast_hits else "FAIL"
+        "SCHEMA_VOCAB_USED": sorted(schema_used),
+        "SCHEMA_VOCAB_UNDECLARED": schema_unknown,
+        "SCHEMA_VOCAB_GATE": "PASS" if not schema_unknown else "FAIL",
+        "REVIEW_FILE_PRESENT": REVIEW.exists(),
+        "GENERALITY_GATE": "PASS" if not text_hits and not ast_hits and not schema_unknown else "FAIL"
     }
     OUT.write_text(json.dumps(report, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print(json.dumps(report, indent=2, ensure_ascii=False))

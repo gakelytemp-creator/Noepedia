@@ -150,11 +150,40 @@ def test_closure_and_dependency_signature():
     assert [r.addr for r in deps] == ["rule_close_dep"]
 
 
+def test_schema_drift_and_unchecked():
+    net = Network()
+    malformed = add_rule(net, "rule_drift", {
+        "RULE_TYPE": "CURRENT_VALUE_AT_MOST_ONE",
+        "predicates": ["rel_mark"]
+    })
+    unknown = add_rule(net, "rule_unknown", {
+        "RULE_TYPE": "UNSUPPORTED_FAMILY",
+        "predicate": "rel_other"
+    })
+    ex = FamilyExecutor(DICT)
+    direct = ex.execute(malformed, net, {
+        "OP": "CHECK", "SUBJECT": "obj_a", "PREDICATE": "rel_mark"
+    })
+    assert direct.classification == "SCHEMA_DRIFT"
+    incoming = Record("incoming_check", {
+        "SUBJECT": "obj_a", "PREDICATE": "rel_mark", "OBJECT": "mark_x"
+    })
+    out = ex.validate_incoming(net, incoming)
+    assert out.verdict == "NEED"
+    reasons = {(x["dependency"], x["reason"]) for x in out.unchecked_dependencies}
+    assert ("rule_drift", "SCHEMA_DRIFT") in reasons
+    assert ("rule_unknown", "EXECUTOR_HOLE") in reasons
+    assert len(out.proposed_delta) == 2
+    assert all(r.f("TYPE") == "CHECK_STATUS" and r.f("STATUS") == "UNCHECKED"
+               for r in out.proposed_delta)
+
+
 def main():
     test_cardinality()
     test_balance_lookup_and_derivation()
     test_at_most_one_and_implication()
     test_closure_and_dependency_signature()
+    test_schema_drift_and_unchecked()
     print("RUN C family executor tests: PASS")
 
 

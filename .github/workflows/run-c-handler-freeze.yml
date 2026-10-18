@@ -1,4 +1,4 @@
-name: RUN C handler freeze audit # prereview reseal 2
+name: RUN C handler freeze audit # postreview final freeze 1
 
 on:
   push:
@@ -30,6 +30,7 @@ jobs:
             sha256sum current/experiments/GW05_RUN_C_FAMILY_DICTIONARY.json
             sha256sum core/demon/run_c/family_executor.py
             sha256sum current/experiments/GW05_RUN_C_DECISION_LOG.json
+            sha256sum current/experiments/GW05_RUN_C_INDEPENDENT_REVIEW.md
             sha256sum core/demon/run_c/test_family_executor.py
             sha256sum core/demon/run_c/audit_run_c.py
             sha256sum current/experiments/GW05_RUN_C_STATIC_AUDIT.json
