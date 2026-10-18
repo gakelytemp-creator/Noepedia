@@ -1,0 +1,565 @@
+{
+  "GW04_RUN": "A",
+  "CANDIDATES": false,
+  "ENCODER_INPUT": "current/experiments/GW04_ENCODER_OUTPUT.normalized.json",
+  "SUPPORTED_RULE_TYPES": [
+    "CARDINALITY_POLICY",
+    "CLOSURE_POLICY",
+    "DERIVATION",
+    "INGEST_GUARD",
+    "INVARIANT",
+    "TEMPORAL_POLICY"
+  ],
+  "RULES_PASSED_TO_EVALUATOR": [],
+  "EXECUTOR_HOLES": [
+    {
+      "CLASS": "EXECUTOR_HOLE",
+      "RULE": "L1",
+      "RULE_TYPE": "EXACT_DISTINCT_TARGET_CARDINALITY",
+      "REASON": "RULE_TYPE not in frozen six-name evaluator vocabulary"
+    },
+    {
+      "CLASS": "EXECUTOR_HOLE",
+      "RULE": "L2",
+      "RULE_TYPE": "CONDITIONAL_NODE_BALANCE_AND_UNIQUE_MISSING_DERIVATION",
+      "REASON": "RULE_TYPE not in frozen six-name evaluator vocabulary"
+    },
+    {
+      "CLASS": "EXECUTOR_HOLE",
+      "RULE": "L3",
+      "RULE_TYPE": "EXPLICIT_CLOSED_RELATION_SET",
+      "REASON": "RULE_TYPE not in frozen six-name evaluator vocabulary"
+    },
+    {
+      "CLASS": "EXECUTOR_HOLE",
+      "RULE": "L4",
+      "RULE_TYPE": "CURRENT_VALUE_AT_MOST_ONE",
+      "REASON": "RULE_TYPE not in frozen six-name evaluator vocabulary"
+    },
+    {
+      "CLASS": "EXECUTOR_HOLE",
+      "RULE": "L5",
+      "RULE_TYPE": "CURRENT_STATUS_IMPLIES_MAGNITUDE",
+      "REASON": "RULE_TYPE not in frozen six-name evaluator vocabulary"
+    },
+    {
+      "CLASS": "EXECUTOR_HOLE",
+      "TASK": "E6",
+      "REASON": "generic_evaluator has no pre-GW04 aggregate-sum task operator"
+    }
+  ],
+  "EVENTS": [
+    {
+      "EVENT": "E1",
+      "OPERATIONS": [
+        "READ",
+        "MATCH",
+        "TASK_QUERY"
+      ],
+      "VERDICT": "NEED",
+      "NOTE": "Q2=values=[]; derivation=None; Q4=values=[]; derivation=None",
+      "NETWORK_DELTA": {
+        "CREATED": [],
+        "CHANGED": []
+      },
+      "STOPS": [
+        {
+          "WHERE": "E1/Q2/query",
+          "WANTED": "determine (K3 Q2 ?Z)",
+          "AVAILABLE": "no current match and no lawful derivation",
+          "MISSING": [
+            "K3",
+            "Q2",
+            "?Z"
+          ],
+          "STOP_CLASS": "NEED",
+          "CAN_ASK_OUTSIDE": false,
+          "QUERY": ""
+        },
+        {
+          "WHERE": "E1/Q4/query",
+          "WANTED": "determine (K3 Q4 ?Z)",
+          "AVAILABLE": "no current match and no lawful derivation",
+          "MISSING": [
+            "K3",
+            "Q4",
+            "?Z"
+          ],
+          "STOP_CLASS": "NEED",
+          "CAN_ASK_OUTSIDE": false,
+          "QUERY": ""
+        }
+      ],
+      "NEED": [
+        {
+          "WHERE": "E1/Q2/query",
+          "WANTED": "determine (K3 Q2 ?Z)",
+          "AVAILABLE": "no current match and no lawful derivation",
+          "MISSING": [
+            "K3",
+            "Q2",
+            "?Z"
+          ],
+          "STOP_CLASS": "NEED",
+          "CAN_ASK_OUTSIDE": false,
+          "QUERY": ""
+        },
+        {
+          "WHERE": "E1/Q4/query",
+          "WANTED": "determine (K3 Q4 ?Z)",
+          "AVAILABLE": "no current match and no lawful derivation",
+          "MISSING": [
+            "K3",
+            "Q4",
+            "?Z"
+          ],
+          "STOP_CLASS": "NEED",
+          "CAN_ASK_OUTSIDE": false,
+          "QUERY": ""
+        }
+      ]
+    },
+    {
+      "EVENT": "E2",
+      "OPERATIONS": [
+        "READ",
+        "MATCH",
+        "TASK_QUERY"
+      ],
+      "VERDICT": "NEED",
+      "NOTE": "values=[]; derivation=None",
+      "NETWORK_DELTA": {
+        "CREATED": [],
+        "CHANGED": []
+      },
+      "STOPS": [
+        {
+          "WHERE": "E2/query",
+          "WANTED": "determine (K5 Q2 ?Z)",
+          "AVAILABLE": "no current match and no lawful derivation",
+          "MISSING": [
+            "K5",
+            "Q2",
+            "?Z"
+          ],
+          "STOP_CLASS": "NEED",
+          "CAN_ASK_OUTSIDE": false,
+          "QUERY": ""
+        }
+      ],
+      "NEED": [
+        {
+          "WHERE": "E2/query",
+          "WANTED": "determine (K5 Q2 ?Z)",
+          "AVAILABLE": "no current match and no lawful derivation",
+          "MISSING": [
+            "K5",
+            "Q2",
+            "?Z"
+          ],
+          "STOP_CLASS": "NEED",
+          "CAN_ASK_OUTSIDE": false,
+          "QUERY": ""
+        }
+      ]
+    },
+    {
+      "EVENT": "E3",
+      "OPERATIONS": [
+        "PROPOSE",
+        "CHECK",
+        "COMMIT"
+      ],
+      "VERDICT": "GO",
+      "NOTE": "Q2=('GO', 'C1'); Q4=('GO', 'C2')",
+      "NETWORK_DELTA": {
+        "CREATED": [
+          "E3_Q2",
+          "E3_Q4"
+        ],
+        "CHANGED": []
+      },
+      "STOPS": [],
+      "NEED": []
+    },
+    {
+      "EVENT": "E4",
+      "OPERATIONS": [
+        "READ",
+        "CHECK_RULE"
+      ],
+      "VERDICT": "NEED",
+      "NOTE": "EXECUTOR_HOLE L2",
+      "NETWORK_DELTA": {
+        "CREATED": [],
+        "CHANGED": []
+      },
+      "STOPS": [
+        {
+          "WHERE": "E4/L2",
+          "WANTED": "check L2 at N3",
+          "AVAILABLE": "L2 is addressable but has EXECUTOR_HOLE",
+          "MISSING": "executable handler for rule L2",
+          "STOP_CLASS": "NEED",
+          "CAN_ASK_OUTSIDE": false,
+          "QUERY": ""
+        }
+      ],
+      "NEED": [
+        {
+          "WHERE": "E4/L2",
+          "WANTED": "check L2 at N3",
+          "AVAILABLE": "L2 is addressable but has EXECUTOR_HOLE",
+          "MISSING": "executable handler for rule L2",
+          "STOP_CLASS": "NEED",
+          "CAN_ASK_OUTSIDE": false,
+          "QUERY": ""
+        }
+      ]
+    },
+    {
+      "EVENT": "E5",
+      "OPERATIONS": [
+        "PROPOSE",
+        "CHECK",
+        "COMMIT"
+      ],
+      "VERDICT": "GO",
+      "NOTE": "C3",
+      "NETWORK_DELTA": {
+        "CREATED": [
+          "E5_Q6"
+        ],
+        "CHANGED": []
+      },
+      "STOPS": [],
+      "NEED": []
+    },
+    {
+      "EVENT": "E6",
+      "OPERATIONS": [
+        "READ",
+        "AGGREGATE_SUM"
+      ],
+      "VERDICT": "NEED",
+      "NOTE": "EXECUTOR_HOLE aggregate-sum task operator",
+      "NETWORK_DELTA": {
+        "CREATED": [],
+        "CHANGED": []
+      },
+      "STOPS": [
+        {
+          "WHERE": "E6/task",
+          "WANTED": "compute sum of Q2 over all known links",
+          "AVAILABLE": "current Q2 records are addressable",
+          "MISSING": "pre-existing aggregate-sum task operator",
+          "STOP_CLASS": "NEED",
+          "CAN_ASK_OUTSIDE": false,
+          "QUERY": ""
+        }
+      ],
+      "NEED": [
+        {
+          "WHERE": "E6/task",
+          "WANTED": "compute sum of Q2 over all known links",
+          "AVAILABLE": "current Q2 records are addressable",
+          "MISSING": "pre-existing aggregate-sum task operator",
+          "STOP_CLASS": "NEED",
+          "CAN_ASK_OUTSIDE": false,
+          "QUERY": ""
+        }
+      ]
+    },
+    {
+      "EVENT": "E7",
+      "OPERATIONS": [
+        "CREATE_ADDRESS",
+        "MATCH",
+        "LINK",
+        "MARK"
+      ],
+      "VERDICT": "NEED",
+      "NOTE": "requirement=GO; bind=NEED,[]",
+      "NETWORK_DELTA": {
+        "CREATED": [
+          "E7_RP1",
+          "E7_RP2",
+          "RQ_E7",
+          "TASK_E7"
+        ],
+        "CHANGED": []
+      },
+      "STOPS": [],
+      "NEED": []
+    },
+    {
+      "EVENT": "E8",
+      "OPERATIONS": [
+        "PROPOSE",
+        "CHECK",
+        "COMMIT"
+      ],
+      "VERDICT": "NEED",
+      "NOTE": "first=('GO', 'C6'); second=('NEED', 'OPEN_MULT_Q1')",
+      "NETWORK_DELTA": {
+        "CREATED": [
+          "E8_Q1A",
+          "E8_Q1B",
+          "OPEN_MULT_Q1"
+        ],
+        "CHANGED": []
+      },
+      "STOPS": [
+        {
+          "WHERE": "multiplicity",
+          "WANTED": "current value of K7/Q1",
+          "AVAILABLE": "several CURRENT targets",
+          "MISSING": "cardinality policy",
+          "STOP_CLASS": "NEED",
+          "CAN_ASK_OUTSIDE": false,
+          "QUERY": ""
+        }
+      ],
+      "NEED": [
+        {
+          "WHERE": "multiplicity",
+          "WANTED": "current value of K7/Q1",
+          "AVAILABLE": "several CURRENT targets",
+          "MISSING": "cardinality policy",
+          "STOP_CLASS": "NEED",
+          "CAN_ASK_OUTSIDE": false,
+          "QUERY": ""
+        }
+      ]
+    },
+    {
+      "EVENT": "E9",
+      "OPERATIONS": [
+        "PROPOSE",
+        "CHECK",
+        "COMMIT"
+      ],
+      "VERDICT": "GO",
+      "NOTE": "Q2=('GO', 'C9'); Q4=('GO', 'C10')",
+      "NETWORK_DELTA": {
+        "CREATED": [
+          "E9_Q2",
+          "E9_Q4"
+        ],
+        "CHANGED": []
+      },
+      "STOPS": [],
+      "NEED": []
+    },
+    {
+      "EVENT": "E10",
+      "OPERATIONS": [
+        "READ",
+        "CHECK_RULE"
+      ],
+      "VERDICT": "NEED",
+      "NOTE": "EXECUTOR_HOLE L2",
+      "NETWORK_DELTA": {
+        "CREATED": [],
+        "CHANGED": []
+      },
+      "STOPS": [
+        {
+          "WHERE": "E10/L2",
+          "WANTED": "check L2 at N3",
+          "AVAILABLE": "L2 is addressable but has EXECUTOR_HOLE",
+          "MISSING": "executable handler for rule L2",
+          "STOP_CLASS": "NEED",
+          "CAN_ASK_OUTSIDE": false,
+          "QUERY": ""
+        }
+      ],
+      "NEED": [
+        {
+          "WHERE": "E10/L2",
+          "WANTED": "check L2 at N3",
+          "AVAILABLE": "L2 is addressable but has EXECUTOR_HOLE",
+          "MISSING": "executable handler for rule L2",
+          "STOP_CLASS": "NEED",
+          "CAN_ASK_OUTSIDE": false,
+          "QUERY": ""
+        }
+      ]
+    }
+  ],
+  "FINAL": {
+    "CREATED_OR_CHANGED_NONINITIAL_RECORDS": [
+      "E3_Q2",
+      "E3_Q4",
+      "E5_Q6",
+      "E7_RP1",
+      "E7_RP2",
+      "E8_Q1A",
+      "E8_Q1B",
+      "E9_Q2",
+      "E9_Q4",
+      "OPEN_MULT_Q1",
+      "RQ_E7",
+      "TASK_E7"
+    ],
+    "HISTORICAL": [],
+    "OPEN_REGISTRY": [
+      "OPEN_MULT_Q1"
+    ],
+    "STOP_MAP": [
+      {
+        "WHERE": "E1/Q2/query",
+        "WANTED": "determine (K3 Q2 ?Z)",
+        "AVAILABLE": "no current match and no lawful derivation",
+        "MISSING": [
+          "K3",
+          "Q2",
+          "?Z"
+        ],
+        "STOP_CLASS": "NEED",
+        "CAN_ASK_OUTSIDE": false,
+        "QUERY": ""
+      },
+      {
+        "WHERE": "E1/Q4/query",
+        "WANTED": "determine (K3 Q4 ?Z)",
+        "AVAILABLE": "no current match and no lawful derivation",
+        "MISSING": [
+          "K3",
+          "Q4",
+          "?Z"
+        ],
+        "STOP_CLASS": "NEED",
+        "CAN_ASK_OUTSIDE": false,
+        "QUERY": ""
+      },
+      {
+        "WHERE": "E2/query",
+        "WANTED": "determine (K5 Q2 ?Z)",
+        "AVAILABLE": "no current match and no lawful derivation",
+        "MISSING": [
+          "K5",
+          "Q2",
+          "?Z"
+        ],
+        "STOP_CLASS": "NEED",
+        "CAN_ASK_OUTSIDE": false,
+        "QUERY": ""
+      },
+      {
+        "WHERE": "E4/L2",
+        "WANTED": "check L2 at N3",
+        "AVAILABLE": "L2 is addressable but has EXECUTOR_HOLE",
+        "MISSING": "executable handler for rule L2",
+        "STOP_CLASS": "NEED",
+        "CAN_ASK_OUTSIDE": false,
+        "QUERY": ""
+      },
+      {
+        "WHERE": "E6/task",
+        "WANTED": "compute sum of Q2 over all known links",
+        "AVAILABLE": "current Q2 records are addressable",
+        "MISSING": "pre-existing aggregate-sum task operator",
+        "STOP_CLASS": "NEED",
+        "CAN_ASK_OUTSIDE": false,
+        "QUERY": ""
+      },
+      {
+        "WHERE": "multiplicity",
+        "WANTED": "current value of K7/Q1",
+        "AVAILABLE": "several CURRENT targets",
+        "MISSING": "cardinality policy",
+        "STOP_CLASS": "NEED",
+        "CAN_ASK_OUTSIDE": false,
+        "QUERY": ""
+      },
+      {
+        "WHERE": "E10/L2",
+        "WANTED": "check L2 at N3",
+        "AVAILABLE": "L2 is addressable but has EXECUTOR_HOLE",
+        "MISSING": "executable handler for rule L2",
+        "STOP_CLASS": "NEED",
+        "CAN_ASK_OUTSIDE": false,
+        "QUERY": ""
+      }
+    ],
+    "ASK_LIST": [],
+    "NEED_MAP": [
+      {
+        "WHERE": "E1/Q2/query",
+        "WANTED": "determine (K3 Q2 ?Z)",
+        "AVAILABLE": "no current match and no lawful derivation",
+        "MISSING": [
+          "K3",
+          "Q2",
+          "?Z"
+        ],
+        "STOP_CLASS": "NEED",
+        "CAN_ASK_OUTSIDE": false,
+        "QUERY": ""
+      },
+      {
+        "WHERE": "E1/Q4/query",
+        "WANTED": "determine (K3 Q4 ?Z)",
+        "AVAILABLE": "no current match and no lawful derivation",
+        "MISSING": [
+          "K3",
+          "Q4",
+          "?Z"
+        ],
+        "STOP_CLASS": "NEED",
+        "CAN_ASK_OUTSIDE": false,
+        "QUERY": ""
+      },
+      {
+        "WHERE": "E2/query",
+        "WANTED": "determine (K5 Q2 ?Z)",
+        "AVAILABLE": "no current match and no lawful derivation",
+        "MISSING": [
+          "K5",
+          "Q2",
+          "?Z"
+        ],
+        "STOP_CLASS": "NEED",
+        "CAN_ASK_OUTSIDE": false,
+        "QUERY": ""
+      },
+      {
+        "WHERE": "E4/L2",
+        "WANTED": "check L2 at N3",
+        "AVAILABLE": "L2 is addressable but has EXECUTOR_HOLE",
+        "MISSING": "executable handler for rule L2",
+        "STOP_CLASS": "NEED",
+        "CAN_ASK_OUTSIDE": false,
+        "QUERY": ""
+      },
+      {
+        "WHERE": "E6/task",
+        "WANTED": "compute sum of Q2 over all known links",
+        "AVAILABLE": "current Q2 records are addressable",
+        "MISSING": "pre-existing aggregate-sum task operator",
+        "STOP_CLASS": "NEED",
+        "CAN_ASK_OUTSIDE": false,
+        "QUERY": ""
+      },
+      {
+        "WHERE": "multiplicity",
+        "WANTED": "current value of K7/Q1",
+        "AVAILABLE": "several CURRENT targets",
+        "MISSING": "cardinality policy",
+        "STOP_CLASS": "NEED",
+        "CAN_ASK_OUTSIDE": false,
+        "QUERY": ""
+      },
+      {
+        "WHERE": "E10/L2",
+        "WANTED": "check L2 at N3",
+        "AVAILABLE": "L2 is addressable but has EXECUTOR_HOLE",
+        "MISSING": "executable handler for rule L2",
+        "STOP_CLASS": "NEED",
+        "CAN_ASK_OUTSIDE": false,
+        "QUERY": ""
+      }
+    ]
+  }
+}
