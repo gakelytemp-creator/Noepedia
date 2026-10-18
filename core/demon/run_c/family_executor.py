@@ -359,8 +359,8 @@ def handle_at_most_one(rule, net, request):
     return HandlerResult(details={"applicable": True, "values": sorted(vals, key=repr)})
 
 
-def _pattern_match(net, pattern, subject_binding=None):
-    subject = subject_binding if pattern.get("subject") in ("K", "I", "?S", "scoped_subject") else pattern.get("subject")
+def _pattern_match(net, pattern, bound_subject=None, force_binding=False):
+    subject = bound_subject if force_binding else pattern.get("subject")
     return current_matches(net, subject, pattern["predicate"], pattern["object"])
 
 
@@ -376,7 +376,12 @@ def handle_implication(rule, net, request):
         antecedent_present = True
     else:
         subject = request.get("SUBJECT")
-        antecedent_present = bool(_pattern_match(net, data["antecedent"], subject))
+        antecedent_present = bool(_pattern_match(
+            net,
+            data["antecedent"],
+            bound_subject=subject,
+            force_binding=data.get("subject_binding") in ("same_link", "same_subject"),
+        ))
 
     if not antecedent_present:
         return HandlerResult(details={"applicable": False})
