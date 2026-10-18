@@ -18,8 +18,8 @@
   "AUTHOR_DECISION_COUNT": 13,
   "LOC": {
     "core/demon/run_c/family_executor.py": {
-      "LOC_TOTAL": 547,
-      "LOC_CORE": 458
+      "LOC_TOTAL": 552,
+      "LOC_CORE": 463
     }
   },
   "TEXT_GATE_HITS": [],
