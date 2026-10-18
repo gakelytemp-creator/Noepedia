@@ -1,0 +1,28 @@
+{
+  "FAMILY_TYPE_COUNT": 5,
+  "GENERIC_OPERATION_COUNT": 11,
+  "GENERIC_OPERATIONS": [
+    "current record selection",
+    "current triple matching",
+    "current value projection",
+    "nested structural field access",
+    "dependency-path expansion",
+    "dependency signature matching",
+    "relation-slice subject selection",
+    "numeric expression evaluation",
+    "equality-side evaluation",
+    "closure lookup",
+    "UNCHECKED marker construction"
+  ],
+  "HANDLER_COUNT": 5,
+  "AUTHOR_DECISION_COUNT": 13,
+  "LOC": {
+    "core/demon/run_c/family_executor.py": {
+      "LOC_TOTAL": 547,
+      "LOC_CORE": 458
+    }
+  },
+  "TEXT_GATE_HITS": [],
+  "AST_GATE_HITS": [],
+  "GENERALITY_GATE": "PASS"
+}
