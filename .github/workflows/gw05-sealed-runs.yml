@@ -1,0 +1,47 @@
+name: GW05 sealed runs
+
+on:
+  push:
+    paths:
+      - '.github/workflows/gw05-sealed-runs.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify frozen components
+        run: |
+          sha256sum -c current/experiments/GW05_RUN_C_HANDLER_SEALS.txt
+          sha256sum -c current/experiments/GW05_C1_C3_SEALS.txt
+      - name: Execute four attributed runs
+        run: |
+          python core/demon/run_c/gw05_runner.py --encoder N --c13 off --out current/experiments/GW05_RUN_N_BASE.json
+          python core/demon/run_c/gw05_runner.py --encoder N --c13 on  --out current/experiments/GW05_RUN_N_C13.json
+          python core/demon/run_c/gw05_runner.py --encoder L --c13 off --out current/experiments/GW05_RUN_L_BASE.json
+          python core/demon/run_c/gw05_runner.py --encoder L --c13 on  --out current/experiments/GW05_RUN_L_C13.json
+      - name: Seal logs
+        run: |
+          set -euo pipefail
+          {
+            sha256sum current/experiments/GW05_RUN_N_BASE.json
+            sha256sum current/experiments/GW05_RUN_N_C13.json
+            sha256sum current/experiments/GW05_RUN_L_BASE.json
+            sha256sum current/experiments/GW05_RUN_L_C13.json
+          } > current/experiments/GW05_RUN_LOG_SEALS.txt
+      - name: Commit logs and seals
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add current/experiments/GW05_RUN_N_BASE.json current/experiments/GW05_RUN_N_C13.json current/experiments/GW05_RUN_L_BASE.json current/experiments/GW05_RUN_L_C13.json current/experiments/GW05_RUN_LOG_SEALS.txt
+          git commit -m "Seal GW05 N L run logs"
+          git push

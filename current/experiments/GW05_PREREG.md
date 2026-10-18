@@ -240,3 +240,24 @@ GW05L_GITHUB_APP = suspended during the session
 **REVIEWER EXPOSURE:** the experimenter also pasted the GW05-L raw translation into the reviewer's session before runs. Answer book already sealed. Reviewer made no comment on content.
 
 No GW05 run has been executed at this seal point.
+
+
+## Pre-run normalization and run matrix
+
+The GW05-N raw encoder artifact is preserved byte-for-byte. Its outer bracket syntax is not parseable YAML as emitted. Before execution only, a syntax-only normalization removes the leading flow-sequence bracket before the first list item and the matching trailing bracket after the last scalar, then parses the unchanged mapping/list content and serializes it as JSON.
+
+GW05N_NORMALIZED_FILE = current/experiments/GW05_N_ENCODER_OUTPUT.normalized.json
+GW05N_NORMALIZED_SHA256 = f47aebd3f29d7933436320e5dc41a73b785fc3a2b041a6030d4dd498d7c47f5d
+
+The frozen executor, family dictionary, and C1/C3 files are not changed.
+
+Four attributed logs are planned so C1/C3 effects remain separate:
+
+- GW05_RUN_N_BASE.json
+- GW05_RUN_N_C13.json
+- GW05_RUN_L_BASE.json
+- GW05_RUN_L_C13.json
+
+The run harness is event-stream glue only: it loads the sealed world facts/rules, calls the frozen interfaces, records raw structured results, and materializes their explicit OPEN/CONFLICT/STOP outputs. It is not an adapter or schema alias layer.
+
+Answer book remains sealed and unavailable during execution.
