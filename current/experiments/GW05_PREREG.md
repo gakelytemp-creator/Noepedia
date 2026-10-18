@@ -201,9 +201,13 @@ current/experiments/GW05_RUN_C_FAMILY_DICTIONARY.json
 ```
 
 ```text
-GW05L_ENCODER_MODEL = PENDING
-GW05L_SESSION_ID    = PENDING
-GW05L_MEMORY        = PENDING
+GW05L_SESSION_COMMITMENT = sha256 of session URL: 236028be6ec1e95c30b1a00f970444e5152b1a1316d5e89c642faf5b596f46f2 (URL held privately by the experimenter)
+GW05L_ENCODER_MODEL = same ChatGPT web configuration as the GW04 and GW05-N encoders
+GW05L_ENCODER_EFFORT = Средний
+GW05L_MODE = Чат
+GW05L_PRE_FILE_MESSAGES = "გამარჯობა"
+GW05L_ISOLATION = same isolation checklist as GW05-N; separate new session; GW05-N translation not shown to it; plugin access suspended before files are given; encoder asked whether it sees any repository before receiving files
+GW05L_GATE = OPEN after this commit
 ```
 
 ### Encoder session ordering rule
