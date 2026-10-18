@@ -157,3 +157,53 @@ To limit this known exposure:
 2. C1/C3 tests must use only pre-GW05 training material or hand-built neutral mini-scenes. No GW05 object, fact, law, event, or event ordering may be copied into tests.
 3. The C1/C3 implementation and its hashes must be frozen before either GW05-N or GW05-L translation exists.
 4. This exposure is a known audit risk, not hidden contamination. The sealed answer book remains unavailable to the C1/C3 author.
+
+
+## GW05 encoder input seals
+
+### GW05-N neutral encoder
+
+`GW05_ENCODER_PROMPT_N.md`
+
+`sha256 = ffdbe781582493f448e8f2f2601c3229085155c0f4c337ef13cb1389854e3612`
+
+Exact input set for the GW05-N cold encoder session:
+
+```text
+current/experiments/GW05_ENCODER_PROMPT_N.md
+current/experiments/GW05_WORLD_TEXT.md
+current/experiments/GW04_RULE_RECORD_FORMAT.md
+```
+
+```text
+GW05N_ENCODER_MODEL = PENDING
+GW05N_SESSION_ID    = PENDING
+GW05N_MEMORY        = PENDING
+```
+
+### GW05-L dictionary-targeted encoder
+
+`GW05_ENCODER_PROMPT_L.md`
+
+`sha256 = befc19f3c1260f377a99bedadc36bdc489e56b81237474673575a91a5b4a7318`
+
+Exact input set for the GW05-L cold encoder session:
+
+```text
+current/experiments/GW05_ENCODER_PROMPT_L.md
+current/experiments/GW05_WORLD_TEXT.md
+current/experiments/GW04_RULE_RECORD_FORMAT.md
+current/experiments/GW05_RUN_C_FAMILY_DICTIONARY.json
+```
+
+```text
+GW05L_ENCODER_MODEL = PENDING
+GW05L_SESSION_ID    = PENDING
+GW05L_MEMORY        = PENDING
+```
+
+### Encoder session ordering rule
+
+GW05-N must be completed and its raw translation artifact sealed before the GW05-L cold encoder session is opened.
+
+The two sessions must remain isolated from each other. GW05-L must not see the GW05-N translation or logs.
