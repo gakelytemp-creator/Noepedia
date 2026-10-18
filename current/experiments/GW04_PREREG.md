@@ -65,6 +65,20 @@ GW01 is used here only as already-seen training material, never as fresh evidenc
 
 If the frozen candidate interface proves insufficient for GW04, that insufficiency is an experimental result. It must not be repaired between RUN A and RUN B.
 
+## Cold encoder prompt seal
+
+The instruction text shown to the cold encoder is itself a frozen experimental input.
+
+Prompt file:
+
+`current/experiments/GW04_ENCODER_PROMPT.md`
+
+`sha256 = ccec096300cdc401a89bd8d500dc1e5423952d42641052f627f68d8b8d07848d`
+
+The encoder must receive this prompt **verbatim**, together with the allowed input files. No extra explanatory text, examples, hints, reminders, follow-up corrections, or conversational steering may be added before the translation artifact is produced.
+
+If the encoder asks for clarification, that request is part of the experimental result. Do not answer it by supplying new semantic guidance; stop and record the event unless a response policy was preregistered in advance.
+
 ## Cold encoder identity and isolation gate
 
 The experiment must not start until the cold encoder identity is sealed in a commit.
@@ -76,6 +90,7 @@ ENCODER_MODEL      = TO_BE_FILLED_AND_COMMITTED_BEFORE_TRANSLATION
 ENCODER_SESSION_ID = TO_BE_FILLED_AND_COMMITTED_BEFORE_TRANSLATION
 ENCODER_MEMORY     = OFF | ON   (must be fixed before translation)
 FORMAT_INPUT       = GW04_RULE_RECORD_FORMAT.md
+PROMPT_INPUT       = GW04_ENCODER_PROMPT.md
 GW01_EXAMPLE_GIVEN = YES | NO   (must be fixed before translation)
 ```
 
