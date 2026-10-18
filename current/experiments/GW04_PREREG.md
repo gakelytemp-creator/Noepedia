@@ -172,6 +172,53 @@ Encoder output was copied verbatim from the cold encoder using ChatGPT's copy co
 
 **RUN-A preflight:** the sealed YAML is syntactically structured data, but the repository currently has no preregistered GW04 loader/runner that consumes this YAML and the GW04 event stream. `generic_evaluator.py` loads Python dictionaries supplied by a runner; it is not itself a YAML/world-event loader. Creating a GW04-specific runner after seeing the translation would introduce a new post-translation programmer surface. Therefore RUN A/B are **PAUSED BEFORE EXECUTION** until this loader/runner boundary is resolved explicitly without altering the sealed translation or frozen evaluator/core. No normalization has been performed.
 
+## RUN A/B harness rule — linker gap measured, not repaired
+
+This section is added **after the cold translation was sealed and before either run**. It does not reinterpret or edit the encoder output.
+
+The missing execution harness is split into two parts:
+
+1. **World-data/event loading.** Initial records A1–A20 and events E1–E10 come only from the already sealed `GW04_WORLD_TEXT.md`. Their mechanical transcription into a runner is allowed because it does not depend on the encoder output.
+2. **Rule linking.** The loader may not add logic for any RULE_TYPE name invented by the cold encoder. Its only rule-type decision is exact equality against the evaluator vocabulary that existed before GW04:
+
+```text
+CARDINALITY_POLICY
+DERIVATION
+TEMPORAL_POLICY
+INGEST_GUARD
+CLOSURE_POLICY
+INVARIANT
+```
+
+If an encoder record's `RULE_TYPE` exactly matches one of those six names, the loader may pass that record to the frozen `generic_evaluator.py`. Every other type is recorded automatically as `EXECUTOR_HOLE`; no alias, synonym, adapter, semantic mapping, or type-specific branch may be introduced.
+
+The loader itself must not inspect a translated RULE_TYPE except for membership in that exact six-name set.
+
+### Frozen expected linker result before RUN A
+
+The sealed encoder output contains five rule records and these RULE_TYPE values:
+
+```text
+L1 EXACT_DISTINCT_TARGET_CARDINALITY
+L2 CONDITIONAL_NODE_BALANCE_AND_UNIQUE_MISSING_DERIVATION
+L3 EXPLICIT_CLOSED_RELATION_SET
+L4 CURRENT_VALUE_AT_MOST_ONE
+L5 CURRENT_STATUS_IMPLIES_MAGNITUDE
+```
+
+None exactly matches the pre-existing six-name evaluator vocabulary.
+
+Therefore, before either run, the expected linker result is frozen as:
+
+```text
+5 / 5 rule records → EXECUTOR_HOLE
+0 / 5 rule records → executable by the existing evaluator
+```
+
+This expected result is not a repair target. It is the measured compiler/linker boundary.
+
+RUN A and RUN B must continue with those holes visible. Candidate effects that do not require executable world laws may still be observed. Any later support for these new rule families belongs to a separate RUN C with a separate preregistration.
+
 ## Unsupported evaluator type policy
 
 The generic evaluator is frozen for RUN A and RUN B.
