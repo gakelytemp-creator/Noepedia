@@ -28,7 +28,9 @@ Frozen candidate module:
 
 `core/demon/gw04_candidate_overlay.py`
 
-`sha256 = 0c2d031e847e3d1044c4c73ca5947411bf7d070b475e730c96e119d3d5f6a2de`
+`sha256 = 15cd6afd16d557a8324e40397c6fb436a5b274c3f84a20f6bc790b21ed8dd893`
+
+**Seal correction note (pre-run):** the previously recorded value `0c2d031e…` did not match the repository file at commit `f5f2d67`. The repository bytes hash to `15cd6afd16d557a8324e40397c6fb436a5b274c3f84a20f6bc790b21ed8dd893`. No cold translation or GW04 run occurred before this correction. This commit records the discrepancy rather than hiding it. The candidate code will be resealed again if it changes before the cold-translation gate opens.
 
 Source basis: only `current/experiments/GW02_VS_ANSWER_BOOK.md`.
 
