@@ -1,0 +1,18 @@
+{
+  "C1_C3_AUTHOR_EXPOSURE": "GW05 world text seen (public); answer book not seen",
+  "SPEC_BASIS": [
+    "GW04 audit: one binding for all requirement patterns",
+    "GW04 audit: OPEN by status with resolution transition"
+  ],
+  "CODE": {
+    "TEXT_HITS": [],
+    "AST_HITS": [],
+    "LINES_TOTAL": 169
+  },
+  "TEST": {
+    "TEXT_HITS": [],
+    "AST_HITS": [],
+    "LINES_TOTAL": 112
+  },
+  "ISOLATION_GATE": "PASS"
+}
