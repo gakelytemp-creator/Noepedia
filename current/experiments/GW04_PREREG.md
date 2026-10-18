@@ -255,6 +255,19 @@ The harness contains no branch for any cold-encoder RULE_TYPE name. Its rule lin
 
 **Execution remains paused for review.** RUN A and RUN B have not yet been started at this seal point.
 
+## Harness review gate — passed before execution
+
+Independent review result before RUN A/B:
+
+- no logic branches on any translated RULE_TYPE name;
+- the only RULE_TYPE decision is exact membership in the frozen six-name evaluator vocabulary;
+- all non-matching translated types remain inert addressable records and are logged as EXECUTOR_HOLE;
+- the normalizer is only `safe_load → json.dumps`.
+
+Neutral dependency note: the harness calls `check_rule("E4", "L2", "N3")` and `check_rule("E10", "L2", "N3")` by the law address named in the sealed world-text events. Therefore the harness depends on the encoder preserving law address `L2`. This is an address dependency from `GW04_WORLD_TEXT.md`, not RULE_TYPE interpretation. Had the encoder renamed that address, those event calls would have failed visibly.
+
+Review verdict: **PASS — RUN A/B authorized.**
+
 ## Unsupported evaluator type policy
 
 The generic evaluator is frozen for RUN A and RUN B.

@@ -1,0 +1,46 @@
+name: GW04 sealed A-B run
+
+on:
+  push:
+    paths:
+      - '.github/workflows/gw04-sealed-run.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify frozen inputs
+        run: |
+          set -euo pipefail
+          test "$(sha256sum core/demon/gw04_runner.py | awk '{print $1}')" = "e1041fedbaed2845bd20d0b7c462a68ab62631c89f8249e39616dd0108006518"
+          test "$(sha256sum core/demon/gw04_candidate_overlay.py | awk '{print $1}')" = "5a45c68c5747a257209b964acb902f2b15147b902d1cf00bd1f7387bca503037"
+          test "$(sha256sum core/demon/gw03/generic_evaluator.py | awk '{print $1}')" = "0f6a3cf0520b1887bca7ebdfafb9e2f200297393e46af8357ea5d587b317b595"
+          test "$(sha256sum current/experiments/GW04_ENCODER_OUTPUT.normalized.json | awk '{print $1}')" = "d19417da323c66357f8885cd0082a9903c85289c416a224fc2db959ed7d85e9f"
+      - name: RUN A
+        run: python core/demon/gw04_runner.py --run A --out current/experiments/GW04_RUN_A.json
+      - name: RUN B
+        run: python core/demon/gw04_runner.py --run B --out current/experiments/GW04_RUN_B.json
+      - name: Seal hashes
+        run: |
+          set -euo pipefail
+          A=$(sha256sum current/experiments/GW04_RUN_A.json | awk '{print $1}')
+          B=$(sha256sum current/experiments/GW04_RUN_B.json | awk '{print $1}')
+          printf "GW04_RUN_A.json %s\nGW04_RUN_B.json %s\n" "$A" "$B" > current/experiments/GW04_RUN_SEALS.txt
+      - name: Commit sealed logs
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add current/experiments/GW04_RUN_A.json current/experiments/GW04_RUN_B.json current/experiments/GW04_RUN_SEALS.txt
+          git commit -m "Seal GW04 RUN A and RUN B logs"
+          git push
