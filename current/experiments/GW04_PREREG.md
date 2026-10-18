@@ -268,6 +268,38 @@ Neutral dependency note: the harness calls `check_rule("E4", "L2", "N3")` and `c
 
 Review verdict: **PASS — RUN A/B authorized.**
 
+## RUN A/B sealed execution
+
+Harness review was passed before execution. The two runs were then executed from the same sealed normalized encoder artifact with the same frozen evaluator/core.
+
+Execution infrastructure verified these frozen hashes before running:
+
+```text
+gw04_runner.py                         e1041fedbaed2845bd20d0b7c462a68ab62631c89f8249e39616dd0108006518
+gw04_candidate_overlay.py              5a45c68c5747a257209b964acb902f2b15147b902d1cf00bd1f7387bca503037
+generic_evaluator.py                   0f6a3cf0520b1887bca7ebdfafb9e2f200297393e46af8357ea5d587b317b595
+GW04_ENCODER_OUTPUT.normalized.json    d19417da323c66357f8885cd0082a9903c85289c416a224fc2db959ed7d85e9f
+```
+
+Sealed logs:
+
+```text
+current/experiments/GW04_RUN_A.json
+sha256 = 90802f0cb511f3f665a5e8a7c4ef452dc3a0078601360c64f86fa7f66c43f3bb
+
+current/experiments/GW04_RUN_B.json
+sha256 = 7b3548c83d555ec13ec4636d235856c1f7c815e6a5a1806a46a6c02ac5d9f18b
+```
+
+Seal file:
+
+`current/experiments/GW04_RUN_SEALS.txt`
+
+The logs were committed by the execution workflow in commit
+`ccf0fe6d3e3e8222bbd0e4617199cc1450e9b85b`.
+
+The answer book remains sealed at this point.
+
 ## Unsupported evaluator type policy
 
 The generic evaluator is frozen for RUN A and RUN B.
