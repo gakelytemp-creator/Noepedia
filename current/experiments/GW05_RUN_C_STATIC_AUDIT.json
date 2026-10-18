@@ -16,33 +16,109 @@
   ],
   "HANDLER_COUNT": 5,
   "AUTHOR_DECISION_COUNT": 14,
+  "REVIEWER_DECISION_COUNT": 26,
+  "DECISION_UNDERCOUNT": 12,
+  "POST_REVIEW_DECISION_COUNT": 5,
   "LOC": {
     "family_executor": {
-      "LOC_TOTAL": 552,
-      "LOC_CORE": 463
+      "LOC_TOTAL": 669,
+      "LOC_CORE": 564
     },
     "family_executor_breakdown_core": {
       "GENERIC_OPERATIONS_LOC_CORE": 172,
       "HANDLERS_LOC_CORE": 224,
-      "DISPATCHER_LOC_CORE": 37,
-      "OTHER_INTERFACE_AND_TYPES_LOC_CORE": 30
+      "DISPATCHER_LOC_CORE": 111,
+      "OTHER_INTERFACE_AND_TYPES_LOC_CORE": 57
     },
     "tests": {
-      "LOC_TOTAL": 162,
-      "LOC_CORE": 141
+      "LOC_TOTAL": 191,
+      "LOC_CORE": 168
     },
     "audit_tool": {
-      "LOC_TOTAL": 161,
-      "LOC_CORE": 133
+      "LOC_TOTAL": 224,
+      "LOC_CORE": 189
     },
     "family_dictionary": {
-      "LINES_TOTAL": 64
+      "LINES_TOTAL": 282
     },
     "decision_log": {
-      "LINES_TOTAL": 249
+      "LINES_TOTAL": 365
     }
   },
   "TEXT_GATE_HITS": [],
   "AST_GATE_HITS": [],
+  "SCHEMA_VOCAB_USED": [
+    "CHECK",
+    "CLOSURE",
+    "CURRENT",
+    "DERIVE",
+    "DERIVED_ADDR",
+    "EXECUTOR_HOLE",
+    "EXPLICIT_CLOSED_RELATION_SET",
+    "INCOMING",
+    "OBJECT",
+    "OP",
+    "PREDICATE",
+    "RULE",
+    "RULE_TYPE",
+    "SCHEMA_DRIFT",
+    "SCOPE",
+    "SUBJECT",
+    "TYPE",
+    "VALIDATE_INCOMING",
+    "addr",
+    "adjacent_link_set",
+    "aggregate",
+    "all",
+    "antecedent",
+    "balance",
+    "closed",
+    "closure_declared_by",
+    "closure_scope",
+    "complete",
+    "conditions",
+    "consequent",
+    "dependency_signature",
+    "derivation",
+    "equality",
+    "exact_members",
+    "excluded_nodes",
+    "families",
+    "known_sum",
+    "left",
+    "link_filter",
+    "lookup",
+    "maximum",
+    "missing_subjects",
+    "object",
+    "operations",
+    "other_links_than_left",
+    "other_members_than_other_side",
+    "pairwise_distinct",
+    "predicate",
+    "predicates",
+    "records",
+    "relation",
+    "required_fields",
+    "required_paths",
+    "right",
+    "same_link",
+    "same_subject",
+    "scoped_node",
+    "set_status",
+    "subject",
+    "subject_binding",
+    "subjects",
+    "sum",
+    "target",
+    "target_count",
+    "target_distinctness",
+    "value",
+    "value_cardinality",
+    "value_predicate"
+  ],
+  "SCHEMA_VOCAB_UNDECLARED": [],
+  "SCHEMA_VOCAB_GATE": "PASS",
+  "REVIEW_FILE_PRESENT": true,
   "GENERALITY_GATE": "PASS"
 }
