@@ -141,6 +141,7 @@ def schema_vocabulary_literals(path):
 
 def dictionary_vocabulary(family):
     out = set(family.get("generic_core_vocabulary", []))
+    out.update(family.get("families", {}).keys())
     for spec in family["families"].values():
         out.update(spec.get("required_fields", []))
         out.update(spec.get("required_paths", []))

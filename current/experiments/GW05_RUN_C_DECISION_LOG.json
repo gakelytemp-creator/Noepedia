@@ -351,6 +351,15 @@
       "RATIONALE": "The F2 gate is intended to detect undeclared schema-instance tokens, not internal HandlerResult bookkeeping. No executable handler semantics are changed.",
       "CODE_LOCUS": "GW05_RUN_C_FAMILY_DICTIONARY.json:generic_core_vocabulary",
       "POST_REVIEW_CHANGE": true
+    },
+    {
+      "DECISION_ID": "PR-D05",
+      "RULE_OR_INTERFACE": "schema vocabulary audit",
+      "TRIGGER": "Second post-review audit run flagged a canonical family opcode as undeclared",
+      "CHANGE": "Treat the dictionary's family keys themselves as declared compiler-target vocabulary.",
+      "RATIONALE": "Canonical RULE_TYPE names are explicitly defined by the family dictionary and must not be reported as undeclared schema tokens.",
+      "CODE_LOCUS": "core/demon/run_c/audit_run_c.py:dictionary_vocabulary",
+      "POST_REVIEW_CHANGE": true
     }
   ]
 }
