@@ -157,8 +157,9 @@ cold translation
 Required metadata:
 
 ```text
-ENCODER_OUTPUT_FILE   = TO_BE_FILLED_AFTER_TRANSLATION_BEFORE_RUN_A
-ENCODER_OUTPUT_SHA256 = TO_BE_FILLED_AND_COMMITTED_BEFORE_RUN_A
+ENCODER_OUTPUT_FILE   = current/experiments/GW04_ENCODER_OUTPUT.yaml
+ENCODER_OUTPUT_SHA256 = 2466e65f214b50c2707752527b786a5474a9c926f553210ce21bf27b14e23a8b
+ENCODER_CLARIFICATION = none
 ```
 
 RUN A and RUN B must consume the same exact encoder-output bytes. The translation may not be edited between runs.
@@ -166,6 +167,10 @@ RUN A and RUN B must consume the same exact encoder-output bytes. The translatio
 If deterministic loader normalization is unavoidable, both raw and normalized artifacts must be kept and separately hashed before RUN A.
 
 No mechanical run may begin while `ENCODER_OUTPUT_SHA256` is unset.
+
+Encoder output was copied verbatim from the cold encoder using ChatGPT's copy control and committed without semantic edits.
+
+**RUN-A preflight:** the sealed YAML is syntactically structured data, but the repository currently has no preregistered GW04 loader/runner that consumes this YAML and the GW04 event stream. `generic_evaluator.py` loads Python dictionaries supplied by a runner; it is not itself a YAML/world-event loader. Creating a GW04-specific runner after seeing the translation would introduce a new post-translation programmer surface. Therefore RUN A/B are **PAUSED BEFORE EXECUTION** until this loader/runner boundary is resolved explicitly without altering the sealed translation or frozen evaluator/core. No normalization has been performed.
 
 ## Unsupported evaluator type policy
 
