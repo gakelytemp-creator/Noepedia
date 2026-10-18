@@ -1,0 +1,72 @@
+[- addr: M1
+  RULE_TYPE: EXACT_DISTINCT_TARGET_CARDINALITY
+  QUOTE: "No item may be tied by R7 to fewer than three or more than three agents, and those three agents must all be different from one another."
+  subject_kind: item
+  relation: R7
+  target_kind: agent
+  required_cardinality: 3
+  distinct_targets: true
+  scope: CURRENT
+
+- addr: M2
+  RULE_TYPE: AGGREGATE_EQUALITY_WITH_RESTRICTED_MISSING_VALUE_INFERENCE
+  QUOTE: "For each bin other than B3, the bin's R3 value equals the total of R2 over the items that have that bin as their R1 target. This equality may be used to infer a missing R2 of an item only when the bin's set of items is declared complete by M3 and that item is the single item in the bin lacking an R2 value. An inferred record must cite its premises together with M2 and M3."
+  scope: CURRENT
+  bin_scope:
+    kind: bin
+    exclude: [B3]
+  equality:
+    left:
+      relation: R3
+      subject: bin
+    right:
+      aggregate: SUM
+      value_relation: R2
+      over:
+        kind: item
+        relation: R1
+        target: bin
+  missing_value_inference:
+    relation: R2
+    subject_kind: item
+    conditions:
+      completeness_declared_by: M3
+      missing_R2_item_count_in_bin: 1
+    provenance:
+      include: [premises, M2, M3]
+
+- addr: M3
+  RULE_TYPE: EXACT_RELATION_TARGET_MEMBERSHIP
+  QUOTE: "Completeness declaration: the items having B1 as their R1 target are exactly I1, I2 and I3. No completeness is declared for B2 or B3."
+  scope: CURRENT
+  relation: R1
+  subject_kind: item
+  target: B1
+  exact_subject_set: [I1, I2, I3]
+  completeness_not_declared_for: [B2, B3]
+
+- addr: M4
+  RULE_TYPE: AT_MOST_ONE_CURRENT_RELATION_VALUE
+  QUOTE: "An item has at most one current R5 value."
+  subject_kind: item
+  relation: R5
+  maximum_current_values: 1
+  scope: CURRENT
+
+- addr: M5
+  RULE_TYPE: CURRENT_RELATION_IMPLICATION
+  QUOTE: "Whenever (I R6 S2) is current for an item I, (I R5 V3) must also be current for that same item."
+  scope: CURRENT
+  variable:
+    name: I
+    kind: item
+  antecedent:
+    subject: I
+    relation: R6
+    target: S2
+    status: CURRENT
+  consequent:
+    subject: I
+    relation: R5
+    target: V3
+    required_status: CURRENT]

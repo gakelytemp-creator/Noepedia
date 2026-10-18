@@ -211,3 +211,15 @@ GW05L_MEMORY        = PENDING
 GW05-N must be completed and its raw translation artifact sealed before the GW05-L cold encoder session is opened.
 
 The two sessions must remain isolated from each other. GW05-L must not see the GW05-N translation or logs.
+
+
+## GW05-N raw encoder output seal
+
+GW05N_OUTPUT_FILE = current/experiments/GW05_N_ENCODER_OUTPUT.yaml
+GW05N_OUTPUT_SHA256 = 9f45473977b3e38367c6729f851af43848df28638501625902b846cfc8b41b35
+GW05N_CLARIFICATION = none
+GW05N_REPOSITORY_VISIBILITY_CHECK = encoder answered "no" before receiving files
+
+**REVIEWER EXPOSURE:** the experimenter pasted the GW05-N raw translation into the reviewer's (Claude) session before runs. The GW05 answer book was already sealed (`654ad18d…`). Reviewer made no comment on its content.
+
+No GW05 run has been executed at this seal point. GW05-L preparation follows after this commit.
