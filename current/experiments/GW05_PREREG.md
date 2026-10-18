@@ -261,3 +261,6 @@ Four attributed logs are planned so C1/C3 effects remain separate:
 The run harness is event-stream glue only: it loads the sealed world facts/rules, calls the frozen interfaces, records raw structured results, and materializes their explicit OPEN/CONFLICT/STOP outputs. It is not an adapter or schema alias layer.
 
 Answer book remains sealed and unavailable during execution.
+
+
+TRAILING_NEWLINE_CORRECTION: previous publish commit `30373b62a132b01d28a6c4da57ed8d363c77c0b9` omitted the final newline from `GW05_ANSWER_BOOK.md` and `GW05_POST_UNSEAL_AUDIT.md`; this commit restores exactly one trailing `\n` to each file.
