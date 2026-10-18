@@ -86,14 +86,40 @@ The experiment must not start until the cold encoder identity is sealed in a com
 Required execution metadata:
 
 ```text
-ENCODER_MODEL      = TO_BE_FILLED_AND_COMMITTED_BEFORE_TRANSLATION
-ENCODER_SESSION_ID = TO_BE_FILLED_AND_COMMITTED_BEFORE_TRANSLATION
-ENCODER_MEMORY     = OFF | ON   (must be fixed before translation)
+ENCODER_MODEL      = GPT-6 (self-reported by the model, not verified in UI); ChatGPT web, Plus plan
+ENCODER_EFFORT     = Средний
+MODE               = Чат
+ENCODER_SESSION_ID = PENDING — session link was not included in the gate-opening request
+ENCODER_MEMORY     = OFF
+ISOLATION          = memory OFF; writing style OFF; record history OFF; web search OFF; connectors OFF; library search OFF; custom instructions = empty; chat opened outside any project; settings changed before the chat was opened
 FORMAT_INPUT       = GW04_RULE_RECORD_FORMAT.md
 FORMAT_SHA256      = c79bf7cd764c627622edceb0eea209e9e4ba7d54ad5b25db1277f39db1c99ac5
 PROMPT_INPUT       = GW04_ENCODER_PROMPT.md
-GW01_EXAMPLE_GIVEN = YES | NO   (must be fixed before translation)
+GW01_EXAMPLE_GIVEN = NO
 ```
+
+Pre-file messages, exact, before any GW04 file:
+
+```text
+1. "გამარჯობა"
+2. "რომელი მოდელი ხარ? მხოლოდ სახელი დაწერე."
+```
+
+Purpose: obtain the session link and the model name. No Noepedia/GW04 content was mentioned.
+
+Planned encoder input, verbatim, nothing else:
+
+```text
+GW04_ENCODER_PROMPT.md       sha256 ccec096300cdc401a89bd8d500dc1e5423952d42641052f627f68d8b8d07848d
+GW04_WORLD_TEXT.md           sha256 d43cc05f9fafc9098df07fc5961269a887ab579c7ab425e004388ff2693e669c
+GW04_RULE_RECORD_FORMAT.md   sha256 c79bf7cd764c627622edceb0eea209e9e4ba7d54ad5b25db1277f39db1c99ac5
+```
+
+Clarification policy: if the encoder asks a question, the only permitted reply is:
+
+> უპასუხე მხოლოდ მოცემული ფაილების საფუძველზე. რაც არ წერია, მონიშნე როგორც ENCODER_HOLE.
+
+Any such question is recorded as an experimental result.
 
 Eligibility constraints:
 
@@ -103,7 +129,7 @@ Eligibility constraints:
 - encoder memory must be OFF, or the chosen external model/account must have no prior Noepedia context and this must be recorded explicitly;
 - it must not see the answer book, RUN A output, RUN B output, or a hand-authored GW04 translation.
 
-Until `ENCODER_MODEL`, `ENCODER_SESSION_ID`, `ENCODER_MEMORY`, and `GW01_EXAMPLE_GIVEN` are committed, the cold-translation gate is **CLOSED**.
+Gate status: **CLOSED — only ENCODER_SESSION_ID remains pending.** The model, effort, mode, isolation state, memory state, GW01-example policy, pre-file messages, clarification policy, and all three input hashes are now committed. The gate may be changed to **OPEN** only after the actual session link/identifier is committed.
 
 Known context-bias note:
 
