@@ -176,11 +176,12 @@ current/experiments/GW04_RULE_RECORD_FORMAT.md
 ```
 
 ```text
-GW05N_ENCODER_MODEL = PENDING
+GW05N_SESSION_COMMITMENT = sha256 of session URL: b860fd6fb295b24bfdfc4bd49faf6ebb5cd6a24b3f5fb1aaf79c257a5c4b0108 (URL held privately by the experimenter)
+GW05N_ENCODER_MODEL = same ChatGPT web configuration as the GW04 encoder
+GW05N_ISOLATION = same isolation checklist as GW04, completed by the experimenter before the session; plugin access disconnected before files are given; encoder asked whether it sees any repository before receiving files
+GW05N_GATE = OPEN after this commit
 GW05N_ENCODER_EFFORT = Средний
 GW05N_MODE = Чат
-GW05N_SESSION_ID = PENDING
-GW05N_MEMORY = PENDING
 GW05N_PRE_FILE_MESSAGES = "გამარჯობა"
 ```
 
