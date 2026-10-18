@@ -117,3 +117,27 @@ The experiment order is frozen as follows:
 The GW05 world text and answer-book hash are sealed before RUN C handler implementation.
 
 No RUN C handler code is included in this commit.
+
+
+## RUN C design-freeze amendment
+
+The detailed frozen design is:
+
+`current/experiments/GW05_RUN_C_DESIGN.md`
+
+This amendment adds the pre-translation two-encoder design and transfer taxonomy:
+
+```text
+SCHEMA_DRIFT
+FAMILY_SCHEMA_HOLE
+ENCODER_NONCOMPLIANCE
+ENCODER_HOLE
+EXECUTOR_HOLE
+EXECUTOR_ERROR
+SPEC_HOLE
+```
+
+For post-run classification between FAMILY_SCHEMA_HOLE and ENCODER_NONCOMPLIANCE, the independent reviewer applies exactly one criterion: whether the law can be represented by the frozen family type without losing any condition of the law. Each classification requires a written reviewer justification.
+
+The independent reviewer inspects the family dictionary, handler code, and author decision log before any GW05 translation is produced.
+
