@@ -67,3 +67,8 @@ Legend: ✓ matches book · ≈ acceptable under a preregistered alternative · 
 
 GW04 PASS/FAIL is a synthetic laboratory result. It is not a CONTACT_PASS and creates no bridge certificate.
 Candidates C1 and C3 must not be repaired by rerunning GW04. Their fixes go to a new sealed world.
+
+
+## 7. Isolation note discovered 2026-10-18
+
+**ISOLATION NOTE (discovered 2026-10-18):** GitHub plugin was installed with all tools allowed during the GW04 encoder session; the encoder could potentially read the repository (PREREG, GW01–GW03). The GW04 answer book was not in the repository at that time. No evidence of repository use appears in the translation.
