@@ -129,10 +129,32 @@ def test_at_most_one_and_implication():
     assert out2.verdict == "BLOCK"
 
 
+def test_closure_and_dependency_signature():
+    net = Network()
+    closure = add_rule(net, "rule_close_dep", {
+        "RULE_TYPE": "EXPLICIT_CLOSED_RELATION_SET",
+        "relation": {"subject_class": "thing", "predicate": "rel_group", "target": "scope_x"},
+        "set_status": "closed",
+        "exact_members": ["obj_x", "obj_y"],
+        "closure_scope": "scope_x",
+        "other_nodes_closure_declaration": "none",
+    })
+    add(net, "f_x", "obj_x", "rel_group", "scope_x")
+    add(net, "f_y", "obj_y", "rel_group", "scope_x")
+    ex = FamilyExecutor(DICT)
+    out = ex.execute(closure, net, {"OP": "CLOSURE", "SCOPE": "scope_x"})
+    assert out.verdict == "GO"
+    assert out.details["members"] == ["obj_x", "obj_y"]
+    incoming = Record("incoming_dep", {"SUBJECT": "obj_z", "PREDICATE": "rel_group", "OBJECT": "scope_x"})
+    deps = ex.validation_dependencies(net, incoming)
+    assert [r.addr for r in deps] == ["rule_close_dep"]
+
+
 def main():
     test_cardinality()
     test_balance_lookup_and_derivation()
     test_at_most_one_and_implication()
+    test_closure_and_dependency_signature()
     print("RUN C family executor tests: PASS")
 
 

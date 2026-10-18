@@ -228,6 +228,22 @@
       "RATIONALE": "This is a semantic evaluation judgment and must remain visible rather than hidden in code.",
       "EXECUTABLE_SEMANTICS_CHANGED": "NO",
       "CODE_LOCUS": "current/experiments/GW05_RUN_C_DESIGN.md §9"
+    },
+    {
+      "DECISION_ID": "RC-D14",
+      "RULE_OR_INTERFACE": "generality audit",
+      "RECORD_FIELDS": [
+        "tested-world identifier gate"
+      ],
+      "UNDERSPECIFIED_POINT": "Whether the static gate should ban only numbered identifiers or also bare symbolic category/place-holder tokens.",
+      "ALTERNATIVES": [
+        "ban numbered identifiers only",
+        "ban numbered identifiers plus bare tested-world category tokens"
+      ],
+      "CHOICE": "ban numbered identifiers plus bare tested-world category tokens",
+      "RATIONALE": "The first pre-review seal exposed that a bare symbolic placeholder could encode tested-world knowledge while evading a digit-only regex. The correction is recorded before independent review and before any GW05 translation.",
+      "EXECUTABLE_SEMANTICS_CHANGED": "NO",
+      "CODE_LOCUS": "core/demon/run_c/audit_run_c.py:BANNED_TOKEN"
     }
   ]
 }
