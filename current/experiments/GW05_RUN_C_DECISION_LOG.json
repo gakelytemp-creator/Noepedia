@@ -1,0 +1,149 @@
+{
+  "version": "RUN_C_DECISION_LOG_V0.1",
+  "author": "GPT-5.6 Sol",
+  "entries": [
+    {
+      "DECISION_ID": "RC-D01",
+      "RULE_OR_INTERFACE": "family dictionary",
+      "RECORD_FIELDS": ["RULE_TYPE"],
+      "UNDERSPECIFIED_POINT": "Whether handlers target exact GW04 records or a programmer-defined family instruction set.",
+      "ALTERNATIVES": ["exact GW04 schema only", "handler-side abstract interpreter", "frozen compiler-target family dictionary"],
+      "CHOICE": "frozen compiler-target family dictionary",
+      "RATIONALE": "Separates dictionary cost from handler cost and permits an explicit encoder-alignment test.",
+      "EXECUTABLE_SEMANTICS_CHANGED": "YES",
+      "CODE_LOCUS": "current/experiments/GW05_RUN_C_FAMILY_DICTIONARY.json"
+    },
+    {
+      "DECISION_ID": "RC-D02",
+      "RULE_OR_INTERFACE": "balance expression",
+      "RECORD_FIELDS": ["balance.equality.left", "balance.equality.right"],
+      "UNDERSPECIFIED_POINT": "GW04 shows aggregate expressions only; a family can compare an aggregate to a direct scoped value.",
+      "ALTERNATIVES": ["aggregate-only schema", "general expression AST", "two frozen variants: aggregate and lookup"],
+      "CHOICE": "two frozen variants: aggregate and lookup",
+      "RATIONALE": "Smallest explicit generalization that preserves the GW04 form while allowing a direct structural value without a full expression language.",
+      "EXECUTABLE_SEMANTICS_CHANGED": "YES",
+      "CODE_LOCUS": "family_executor.py:_eval_expression"
+    },
+    {
+      "DECISION_ID": "RC-D03",
+      "RULE_OR_INTERFACE": "balance filter",
+      "RECORD_FIELDS": ["link_filter.all[].relation"],
+      "UNDERSPECIFIED_POINT": "Meaning of other_links_than_left is not executable syntax by itself.",
+      "ALTERNATIVES": ["ignore relation", "subtract subjects selected by the opposite equality side", "domain-specific endpoint reasoning"],
+      "CHOICE": "subtract subjects selected by the opposite equality side",
+      "RATIONALE": "Uses only structural set difference between the two equality sides and no world meaning.",
+      "EXECUTABLE_SEMANTICS_CHANGED": "YES",
+      "CODE_LOCUS": "family_executor.py:_filter_subjects"
+    },
+    {
+      "DECISION_ID": "RC-D04",
+      "RULE_OR_INTERFACE": "balance derivation",
+      "RECORD_FIELDS": ["derivation.missing_fields"],
+      "UNDERSPECIFIED_POINT": "GW04 lists multiple missing fields but only the numeric balance determines a numeric value; no generic rule states how to infer a nonnumeric companion field.",
+      "ALTERNATIVES": ["invent companion-field inference", "derive only the uniquely determined numeric value", "refuse all derivation"],
+      "CHOICE": "derive only the uniquely determined numeric value",
+      "RATIONALE": "Avoids adding unrecorded domain semantics; a requested nonnumeric field remains NEED.",
+      "EXECUTABLE_SEMANTICS_CHANGED": "YES",
+      "CODE_LOCUS": "family_executor.py:handle_balance"
+    },
+    {
+      "DECISION_ID": "RC-D05",
+      "RULE_OR_INTERFACE": "exact cardinality",
+      "RECORD_FIELDS": ["target_count", "target_count_constraint", "target_distinctness"],
+      "UNDERSPECIFIED_POINT": "Whether observing fewer than the exact count proves a violation in an open world.",
+      "ALTERNATIVES": ["BLOCK on undercount", "OPEN on undercount absent closure"],
+      "CHOICE": "OPEN on undercount absent closure",
+      "RATIONALE": "Observed absence is not completeness; overcount or non-distinctness is directly witnessed.",
+      "EXECUTABLE_SEMANTICS_CHANGED": "YES",
+      "CODE_LOCUS": "family_executor.py:handle_exact_cardinality"
+    },
+    {
+      "DECISION_ID": "RC-D06",
+      "RULE_OR_INTERFACE": "at-most-one",
+      "RECORD_FIELDS": ["value_cardinality"],
+      "UNDERSPECIFIED_POINT": "Representation of two incompatible current values.",
+      "ALTERNATIVES": ["overwrite old", "mark historical automatically", "return BLOCK/conflict without deletion"],
+      "CHOICE": "return BLOCK/conflict without deletion",
+      "RATIONALE": "Preserves history and does not fabricate a supersession policy.",
+      "EXECUTABLE_SEMANTICS_CHANGED": "YES",
+      "CODE_LOCUS": "family_executor.py:handle_at_most_one"
+    },
+    {
+      "DECISION_ID": "RC-D07",
+      "RULE_OR_INTERFACE": "conditional implication",
+      "RECORD_FIELDS": ["antecedent", "consequent", "subject_binding"],
+      "UNDERSPECIFIED_POINT": "Whether must_hold creates a new fact or is checked as a constraint.",
+      "ALTERNATIVES": ["auto-create consequent", "constraint check only", "always OPEN"],
+      "CHOICE": "constraint check only",
+      "RATIONALE": "Avoids ontology/fact invention. Exact consequent passes; competing current value blocks; missing consequent remains NEED.",
+      "EXECUTABLE_SEMANTICS_CHANGED": "YES",
+      "CODE_LOCUS": "family_executor.py:handle_implication"
+    },
+    {
+      "DECISION_ID": "RC-D08",
+      "RULE_OR_INTERFACE": "conditional implication",
+      "RECORD_FIELDS": ["antecedent.subject", "consequent.subject", "subject_binding"],
+      "UNDERSPECIFIED_POINT": "GW04 uses a symbolic subject placeholder without a formal variable syntax.",
+      "ALTERNATIVES": ["literal subject", "fixed list of symbolic placeholders bound to incoming subject", "require ?-variable syntax only"],
+      "CHOICE": "recognize a minimal symbolic-placeholder set plus scoped_subject",
+      "RATIONALE": "Needed to execute the sealed GW04 record while keeping binding field-driven; this is explicitly counted programmer interpretation.",
+      "EXECUTABLE_SEMANTICS_CHANGED": "YES",
+      "CODE_LOCUS": "family_executor.py:_pattern_match"
+    },
+    {
+      "DECISION_ID": "RC-D09",
+      "RULE_OR_INTERFACE": "UNCHECKED dependency",
+      "RECORD_FIELDS": ["dependency_signature"],
+      "UNDERSPECIFIED_POINT": "How to know that an incoming fact depends on a rule without scanning arbitrary rule contents.",
+      "ALTERNATIVES": ["scan every field for predicate equality", "mark every incoming fact", "family-declared dependency paths"],
+      "CHOICE": "family-declared dependency paths",
+      "RATIONALE": "Makes applicability explicit and auditable instead of heuristic.",
+      "EXECUTABLE_SEMANTICS_CHANGED": "YES",
+      "CODE_LOCUS": "family_executor.py:dependency_predicates"
+    },
+    {
+      "DECISION_ID": "RC-D10",
+      "RULE_OR_INTERFACE": "balance mismatch",
+      "RECORD_FIELDS": ["derivation.conditions.adjacent_link_set.closure_declared_by"],
+      "UNDERSPECIFIED_POINT": "Whether a numeric mismatch in an open membership universe is a conflict.",
+      "ALTERNATIVES": ["BLOCK on mismatch", "OPEN unless the relevant membership is closed"],
+      "CHOICE": "OPEN unless relevant membership is closed",
+      "RATIONALE": "Prevents closed-world inference from incomplete membership.",
+      "EXECUTABLE_SEMANTICS_CHANGED": "YES",
+      "CODE_LOCUS": "family_executor.py:handle_balance"
+    },
+    {
+      "DECISION_ID": "RC-D11",
+      "RULE_OR_INTERFACE": "closure",
+      "RECORD_FIELDS": ["closure_scope", "exact_members", "other_nodes_closure_declaration"],
+      "UNDERSPECIFIED_POINT": "Whether one closure declaration generalizes to other scopes.",
+      "ALTERNATIVES": ["generalize by relation type", "scope-local exact closure only"],
+      "CHOICE": "scope-local exact closure only",
+      "RATIONALE": "The record names an exact scope and explicitly withholds closure elsewhere.",
+      "EXECUTABLE_SEMANTICS_CHANGED": "NO",
+      "CODE_LOCUS": "family_executor.py:_closed_members"
+    },
+    {
+      "DECISION_ID": "RC-D12",
+      "RULE_OR_INTERFACE": "provenance",
+      "RECORD_FIELDS": ["derived_record_references"],
+      "UNDERSPECIFIED_POINT": "Which records count as premises for aggregate derivation.",
+      "ALTERNATIVES": ["all network records", "only numeric value records", "numeric expression records plus closure rule plus derivation rule"],
+      "CHOICE": "numeric expression records plus closure rule plus derivation rule",
+      "RATIONALE": "These are the addressable records mechanically used by the derivation.",
+      "EXECUTABLE_SEMANTICS_CHANGED": "YES",
+      "CODE_LOCUS": "family_executor.py:handle_balance"
+    },
+    {
+      "DECISION_ID": "RC-D13",
+      "RULE_OR_INTERFACE": "GW05-L classification",
+      "RECORD_FIELDS": ["family schema"],
+      "UNDERSPECIFIED_POINT": "Who decides FAMILY_SCHEMA_HOLE versus ENCODER_NONCOMPLIANCE.",
+      "ALTERNATIVES": ["mechanical classifier", "handler author", "independent reviewer with explicit lossless-fit criterion"],
+      "CHOICE": "independent reviewer with explicit lossless-fit criterion",
+      "RATIONALE": "This is a semantic evaluation judgment and must remain visible rather than hidden in code.",
+      "EXECUTABLE_SEMANTICS_CHANGED": "NO",
+      "CODE_LOCUS": "current/experiments/GW05_RUN_C_DESIGN.md §9"
+    }
+  ]
+}

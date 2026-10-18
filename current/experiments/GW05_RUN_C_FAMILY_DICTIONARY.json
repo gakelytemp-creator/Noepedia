@@ -1,0 +1,64 @@
+{
+  "version": "RUN_C_FAMILY_DICTIONARY_V0.1",
+  "source_basis": "GW04 cold translation only; generalized choices are logged in GW05_RUN_C_DECISION_LOG.json",
+  "operation_contract": ["CHECK", "DERIVE", "VALIDATE_INCOMING", "CLOSURE"],
+  "families": {
+    "EXACT_DISTINCT_TARGET_CARDINALITY": {
+      "required_fields": ["subject_class", "predicate", "target_class", "target_count", "target_count_constraint", "target_distinctness"],
+      "constraints": {
+        "target_count_constraint": ["exactly"],
+        "target_distinctness": ["pairwise_distinct"]
+      },
+      "dependency_signature": ["predicate"],
+      "operations": ["CHECK", "VALIDATE_INCOMING"]
+    },
+    "CONDITIONAL_NODE_BALANCE_AND_UNIQUE_MISSING_DERIVATION": {
+      "required_fields": ["balance", "derivation"],
+      "expression_variants": {
+        "aggregate": ["aggregate", "value_predicate", "link_filter"],
+        "lookup": ["lookup"]
+      },
+      "aggregate_values": ["sum"],
+      "lookup_required_fields": ["subject", "predicate"],
+      "filter_variants": ["predicate_target", "all", "other_members_than_other_side"],
+      "dependency_signature": [
+        "balance.equality.left.value_predicate",
+        "balance.equality.right.value_predicate",
+        "balance.equality.left.link_filter.predicate",
+        "balance.equality.right.link_filter.predicate",
+        "balance.equality.left.link_filter.all[].predicate",
+        "balance.equality.right.link_filter.all[].predicate",
+        "balance.equality.left.lookup.predicate",
+        "balance.equality.right.lookup.predicate"
+      ],
+      "operations": ["CHECK", "DERIVE"]
+    },
+    "EXPLICIT_CLOSED_RELATION_SET": {
+      "required_fields": ["relation", "set_status", "exact_members", "closure_scope"],
+      "constraints": {
+        "set_status": ["closed"]
+      },
+      "dependency_signature": ["relation.predicate"],
+      "operations": ["CLOSURE", "CHECK"]
+    },
+    "CURRENT_VALUE_AT_MOST_ONE": {
+      "required_fields": ["predicates", "value_cardinality"],
+      "constraints": {
+        "value_cardinality.maximum": [1],
+        "value_cardinality.scope": ["current"]
+      },
+      "dependency_signature": ["predicates[]"],
+      "operations": ["CHECK", "VALIDATE_INCOMING"]
+    },
+    "CURRENT_STATUS_IMPLIES_MAGNITUDE": {
+      "required_fields": ["antecedent", "consequent", "subject_binding"],
+      "constraints": {
+        "antecedent.temporal_scope": ["current"],
+        "consequent.modality": ["must_hold"],
+        "subject_binding": ["same_link", "same_subject"]
+      },
+      "dependency_signature": ["antecedent.predicate", "consequent.predicate"],
+      "operations": ["CHECK", "VALIDATE_INCOMING"]
+    }
+  }
+}

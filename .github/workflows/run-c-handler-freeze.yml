@@ -1,0 +1,44 @@
+name: RUN C handler freeze audit
+
+on:
+  push:
+    paths:
+      - '.github/workflows/run-c-handler-freeze.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Tests
+        run: python core/demon/run_c/test_family_executor.py
+      - name: Static audit
+        run: python core/demon/run_c/audit_run_c.py
+      - name: Freeze hashes
+        run: |
+          set -euo pipefail
+          {
+            sha256sum current/experiments/GW05_RUN_C_FAMILY_DICTIONARY.json
+            sha256sum core/demon/run_c/family_executor.py
+            sha256sum current/experiments/GW05_RUN_C_DECISION_LOG.json
+            sha256sum core/demon/run_c/test_family_executor.py
+            sha256sum core/demon/run_c/audit_run_c.py
+            sha256sum current/experiments/GW05_RUN_C_STATIC_AUDIT.json
+          } > current/experiments/GW05_RUN_C_HANDLER_SEALS.txt
+      - name: Commit frozen reports
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add current/experiments/GW05_RUN_C_STATIC_AUDIT.json current/experiments/GW05_RUN_C_HANDLER_SEALS.txt
+          git commit -m "Freeze RUN C handler audit and seals"
+          git push
