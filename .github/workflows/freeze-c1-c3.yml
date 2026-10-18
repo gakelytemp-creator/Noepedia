@@ -1,0 +1,43 @@
+name: Freeze C1 C3 candidates
+
+on:
+  push:
+    paths:
+      - '.github/workflows/freeze-c1-c3.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  freeze:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Neutral tests
+        run: python core/demon/run_c/test_c1_c3_overlay.py
+      - name: Isolation audit
+        run: python core/demon/run_c/audit_c1_c3.py
+      - name: Freeze seals
+        run: |
+          set -euo pipefail
+          {
+            sha256sum current/experiments/GW05_C1_C3_SPEC.md
+            sha256sum core/demon/run_c/c1_c3_overlay.py
+            sha256sum core/demon/run_c/test_c1_c3_overlay.py
+            sha256sum core/demon/run_c/audit_c1_c3.py
+            sha256sum current/experiments/GW05_C1_C3_STATIC_AUDIT.json
+          } > current/experiments/GW05_C1_C3_SEALS.txt
+      - name: Commit audit and seals
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add current/experiments/GW05_C1_C3_STATIC_AUDIT.json current/experiments/GW05_C1_C3_SEALS.txt
+          git commit -m "Freeze GW05 C1 C3 candidate audit and seals"
+          git push

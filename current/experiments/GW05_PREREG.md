@@ -141,3 +141,19 @@ For post-run classification between FAMILY_SCHEMA_HOLE and ENCODER_NONCOMPLIANCE
 
 The independent reviewer inspects the family dictionary, handler code, and author decision log before any GW05 translation is produced.
 
+
+
+## C1/C3 author exposure and isolation amendment
+
+**C1/C3 AUTHOR EXPOSURE: GW05 world text seen (public); answer book not seen.**
+
+The C1/C3 author has seen the public solver-visible GW05 world text because the same author committed it before this gate. Therefore the author knows the visible form of the GW05 scenes, but has not seen the sealed answer book.
+
+To limit this known exposure:
+
+1. C1/C3 specification is derived only from the public GW04 post-unseal audit formulations:
+   - C1: one binding must satisfy all requirement patterns jointly;
+   - C3: the OPEN registry is queried by current OPEN status, with a non-destructive resolution transition when an answer arrives.
+2. C1/C3 tests must use only pre-GW05 training material or hand-built neutral mini-scenes. No GW05 object, fact, law, event, or event ordering may be copied into tests.
+3. The C1/C3 implementation and its hashes must be frozen before either GW05-N or GW05-L translation exists.
+4. This exposure is a known audit risk, not hidden contamination. The sealed answer book remains unavailable to the C1/C3 author.
