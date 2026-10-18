@@ -219,6 +219,42 @@ This expected result is not a repair target. It is the measured compiler/linker 
 
 RUN A and RUN B must continue with those holes visible. Candidate effects that do not require executable world laws may still be observed. Any later support for these new rule families belongs to a separate RUN C with a separate preregistration.
 
+## Harness/normalization seal before RUN A
+
+The raw encoder artifact remains unchanged:
+
+`current/experiments/GW04_ENCODER_OUTPUT.yaml`  
+`sha256 = 2466e65f214b50c2707752527b786a5474a9c926f553210ce21bf27b14e23a8b`
+
+A deterministic, rule-type-blind normalization was required only because the runner consumes Python's standard JSON parser rather than adding a YAML runtime dependency.
+
+Normalization procedure:
+
+```text
+PyYAML safe_load(raw YAML)
+→ json.dumps(ensure_ascii=False, indent=2, separators=(",", ": "))
+→ one trailing newline
+```
+
+Normalizer:
+
+`core/demon/gw04_normalize_encoder_output.py`  
+`sha256 = 10140795a352cf9028d124ebdccea9c408aa8e00a468e8e294198f4c7824b56e`
+
+Normalized artifact:
+
+`current/experiments/GW04_ENCODER_OUTPUT.normalized.json`  
+`sha256 = d19417da323c66357f8885cd0082a9903c85289c416a224fc2db959ed7d85e9f`
+
+GW04 harness:
+
+`core/demon/gw04_runner.py`  
+`sha256 = e1041fedbaed2845bd20d0b7c462a68ab62631c89f8249e39616dd0108006518`
+
+The harness contains no branch for any cold-encoder RULE_TYPE name. Its rule linker uses only exact membership in the frozen six-name set. A1–A20 and E1–E10 are mechanical transcription of the sealed world text.
+
+**Execution remains paused for review.** RUN A and RUN B have not yet been started at this seal point.
+
 ## Unsupported evaluator type policy
 
 The generic evaluator is frozen for RUN A and RUN B.
