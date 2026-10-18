@@ -1,0 +1,878 @@
+{
+  "GW05_ENCODER": "L",
+  "C1_C3_ENABLED": true,
+  "ENCODER_INPUT": "current/experiments/GW05_L_ENCODER_OUTPUT.json",
+  "FROZEN_DICTIONARY": "current/experiments/GW05_RUN_C_FAMILY_DICTIONARY.json",
+  "RULES": [
+    "M1",
+    "M2",
+    "M3",
+    "M4",
+    "M5"
+  ],
+  "EVENTS": [
+    {
+      "EVENT": "F1",
+      "OPERATIONS": [
+        "READ",
+        "MATCH",
+        "DERIVE"
+      ],
+      "VERDICT": "NEED",
+      "NOTE": {
+        "HANDLER_RESULT": {
+          "verdict": "NEED",
+          "classification": "SCHEMA_DRIFT",
+          "proposed_delta": [],
+          "derived_records": [],
+          "provenance_requirements": [],
+          "opens": [],
+          "conflicts": [],
+          "stops": [],
+          "unchecked_dependencies": [
+            {
+              "dependency": "M2",
+              "reason": "SCHEMA_DRIFT"
+            }
+          ],
+          "details": {
+            "schema_exception": "SchemaError",
+            "schema_message": "unsupported link_filter: {'predicate_target': {'predicate': 'R1', 'target': 'scoped_node'}}"
+          }
+        },
+        "COMMITTED_DERIVED": []
+      },
+      "NETWORK_DELTA": {
+        "CREATED": [],
+        "CHANGED": []
+      },
+      "STOPS": [
+        {
+          "WHERE": "F1/derive",
+          "WANTED": "determine R2 of I3",
+          "AVAILABLE": {
+            "schema_exception": "SchemaError",
+            "schema_message": "unsupported link_filter: {'predicate_target': {'predicate': 'R1', 'target': 'scoped_node'}}"
+          },
+          "MISSING": "SCHEMA_DRIFT",
+          "STOP_CLASS": "NEED",
+          "CAN_ASK_OUTSIDE": false,
+          "QUERY": ""
+        }
+      ],
+      "NEED": [
+        {
+          "WHERE": "F1/derive",
+          "WANTED": "determine R2 of I3",
+          "AVAILABLE": {
+            "schema_exception": "SchemaError",
+            "schema_message": "unsupported link_filter: {'predicate_target': {'predicate': 'R1', 'target': 'scoped_node'}}"
+          },
+          "MISSING": "SCHEMA_DRIFT",
+          "STOP_CLASS": "NEED",
+          "CAN_ASK_OUTSIDE": false,
+          "QUERY": ""
+        }
+      ]
+    },
+    {
+      "EVENT": "F2",
+      "OPERATIONS": [
+        "READ",
+        "MATCH",
+        "DERIVE"
+      ],
+      "VERDICT": "NEED",
+      "NOTE": {
+        "HANDLER_RESULT": {
+          "verdict": "NEED",
+          "classification": "SCHEMA_DRIFT",
+          "proposed_delta": [],
+          "derived_records": [],
+          "provenance_requirements": [],
+          "opens": [],
+          "conflicts": [],
+          "stops": [],
+          "unchecked_dependencies": [
+            {
+              "dependency": "M2",
+              "reason": "SCHEMA_DRIFT"
+            }
+          ],
+          "details": {
+            "schema_exception": "SchemaError",
+            "schema_message": "unsupported link_filter: {'predicate_target': {'predicate': 'R1', 'target': 'scoped_node'}}"
+          }
+        },
+        "COMMITTED_DERIVED": []
+      },
+      "NETWORK_DELTA": {
+        "CREATED": [],
+        "CHANGED": []
+      },
+      "STOPS": [
+        {
+          "WHERE": "F2/derive",
+          "WANTED": "determine R2 of I5",
+          "AVAILABLE": {
+            "schema_exception": "SchemaError",
+            "schema_message": "unsupported link_filter: {'predicate_target': {'predicate': 'R1', 'target': 'scoped_node'}}"
+          },
+          "MISSING": "SCHEMA_DRIFT",
+          "STOP_CLASS": "NEED",
+          "CAN_ASK_OUTSIDE": false,
+          "QUERY": ""
+        }
+      ],
+      "NEED": [
+        {
+          "WHERE": "F2/derive",
+          "WANTED": "determine R2 of I5",
+          "AVAILABLE": {
+            "schema_exception": "SchemaError",
+            "schema_message": "unsupported link_filter: {'predicate_target': {'predicate': 'R1', 'target': 'scoped_node'}}"
+          },
+          "MISSING": "SCHEMA_DRIFT",
+          "STOP_CLASS": "NEED",
+          "CAN_ASK_OUTSIDE": false,
+          "QUERY": ""
+        }
+      ]
+    },
+    {
+      "EVENT": "F3",
+      "OPERATIONS": [
+        "READ",
+        "CHECK"
+      ],
+      "VERDICT": "OPEN",
+      "NOTE": {
+        "HANDLER_RESULT": {
+          "verdict": "OPEN",
+          "classification": null,
+          "proposed_delta": [],
+          "derived_records": [],
+          "provenance_requirements": [],
+          "opens": [
+            {
+              "rule": "M1",
+              "subject": "I2",
+              "missing_count": 1
+            }
+          ],
+          "conflicts": [],
+          "stops": [],
+          "unchecked_dependencies": [],
+          "details": {
+            "observed_count": 2,
+            "target_count": 3
+          }
+        },
+        "MATERIALIZED": [
+          "OPEN_F3_1"
+        ]
+      },
+      "NETWORK_DELTA": {
+        "CREATED": [
+          "OPEN_F3_1"
+        ],
+        "CHANGED": []
+      },
+      "STOPS": [],
+      "NEED": []
+    },
+    {
+      "EVENT": "F4",
+      "OPERATIONS": [
+        "PROPOSE",
+        "CHECK",
+        "COMMIT"
+      ],
+      "VERDICT": "GO",
+      "NOTE": [
+        {
+          "VALIDATION": {
+            "verdict": "GO",
+            "classification": null,
+            "proposed_delta": [],
+            "derived_records": [],
+            "provenance_requirements": [],
+            "opens": [],
+            "conflicts": [],
+            "stops": [],
+            "unchecked_dependencies": [],
+            "details": {
+              "rule_results": [
+                {
+                  "rule": "M5",
+                  "result": {
+                    "verdict": "BLOCK",
+                    "classification": null,
+                    "proposed_delta": [],
+                    "derived_records": [],
+                    "provenance_requirements": [],
+                    "opens": [],
+                    "conflicts": [
+                      {
+                        "rule": "M5",
+                        "subject": "I3",
+                        "required": [
+                          "I3",
+                          "R5",
+                          "V3"
+                        ],
+                        "current_objects": [
+                          "V1"
+                        ]
+                      }
+                    ],
+                    "stops": [],
+                    "unchecked_dependencies": [],
+                    "details": {
+                      "applicable": true,
+                      "consequent_holds": false
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "COMMITTED": true
+        }
+      ],
+      "NETWORK_DELTA": {
+        "CREATED": [
+          "F4_IN_1"
+        ],
+        "CHANGED": []
+      },
+      "STOPS": [],
+      "NEED": []
+    },
+    {
+      "EVENT": "F5",
+      "OPERATIONS": [
+        "READ",
+        "AGGREGATE_MAX"
+      ],
+      "VERDICT": "NEED",
+      "NOTE": {
+        "CLASS": "EXECUTOR_HOLE",
+        "REASON": "no frozen aggregate-max task operator"
+      },
+      "NETWORK_DELTA": {
+        "CREATED": [],
+        "CHANGED": []
+      },
+      "STOPS": [
+        {
+          "WHERE": "F5/task",
+          "WANTED": "determine largest R2 among known items",
+          "AVAILABLE": "current records are addressable",
+          "MISSING": "frozen aggregate-max task operator",
+          "STOP_CLASS": "NEED",
+          "CAN_ASK_OUTSIDE": false,
+          "QUERY": ""
+        }
+      ],
+      "NEED": [
+        {
+          "WHERE": "F5/task",
+          "WANTED": "determine largest R2 among known items",
+          "AVAILABLE": "current records are addressable",
+          "MISSING": "frozen aggregate-max task operator",
+          "STOP_CLASS": "NEED",
+          "CAN_ASK_OUTSIDE": false,
+          "QUERY": ""
+        }
+      ]
+    },
+    {
+      "EVENT": "F6",
+      "OPERATIONS": [
+        "CREATE_ADDRESS",
+        "MATCH",
+        "LINK",
+        "MARK"
+      ],
+      "VERDICT": "ASK",
+      "NOTE": {
+        "RQ_COMMIT": "GO",
+        "C1": {
+          "created_asks": [
+            "candidate/joint-requirement/RQ_F6"
+          ],
+          "created_opens": [],
+          "resolved_opens": []
+        }
+      },
+      "NETWORK_DELTA": {
+        "CREATED": [
+          "F6_PAT1",
+          "F6_PAT2",
+          "OPEN_ASK_4",
+          "RQ_F6",
+          "TASK_F6"
+        ],
+        "CHANGED": []
+      },
+      "STOPS": [
+        {
+          "WHERE": "candidate/joint-requirement/RQ_F6",
+          "WANTED": "one binding satisfying all patterns of RQ_F6",
+          "AVAILABLE": "each requirement pattern is explicit; no joint binding is current",
+          "MISSING": [
+            [
+              "?X",
+              "R7",
+              "G1"
+            ],
+            [
+              "?X",
+              "R7",
+              "G4"
+            ]
+          ],
+          "STOP_CLASS": "ASK",
+          "CAN_ASK_OUTSIDE": true,
+          "QUERY": "resolve jointly: (?X R7 G1) AND (?X R7 G4)"
+        }
+      ],
+      "NEED": []
+    },
+    {
+      "EVENT": "F7",
+      "OPERATIONS": [
+        "PROPOSE",
+        "CHECK",
+        "COMMIT"
+      ],
+      "VERDICT": "GO",
+      "NOTE": [
+        {
+          "VALIDATION": {
+            "verdict": "GO",
+            "classification": null,
+            "proposed_delta": [],
+            "derived_records": [],
+            "provenance_requirements": [],
+            "opens": [],
+            "conflicts": [],
+            "stops": [],
+            "unchecked_dependencies": [],
+            "details": {
+              "rule_results": [
+                {
+                  "rule": "M2",
+                  "result": {
+                    "verdict": "NEED",
+                    "classification": null,
+                    "proposed_delta": [],
+                    "derived_records": [],
+                    "provenance_requirements": [],
+                    "opens": [],
+                    "conflicts": [],
+                    "stops": [
+                      {
+                        "rule": "M2",
+                        "missing": "operation VALIDATE_INCOMING"
+                      }
+                    ],
+                    "unchecked_dependencies": [],
+                    "details": {}
+                  }
+                }
+              ]
+            }
+          },
+          "COMMITTED": true
+        }
+      ],
+      "NETWORK_DELTA": {
+        "CREATED": [
+          "F7_IN_1"
+        ],
+        "CHANGED": []
+      },
+      "STOPS": [],
+      "NEED": []
+    },
+    {
+      "EVENT": "F8",
+      "OPERATIONS": [
+        "PROPOSE",
+        "CHECK",
+        "COMMIT"
+      ],
+      "VERDICT": "GO",
+      "NOTE": [
+        {
+          "VALIDATION": {
+            "verdict": "GO",
+            "classification": null,
+            "proposed_delta": [],
+            "derived_records": [],
+            "provenance_requirements": [],
+            "opens": [],
+            "conflicts": [],
+            "stops": [],
+            "unchecked_dependencies": [],
+            "details": {
+              "rule_results": [
+                {
+                  "rule": "M3",
+                  "result": {
+                    "verdict": "NEED",
+                    "classification": null,
+                    "proposed_delta": [],
+                    "derived_records": [],
+                    "provenance_requirements": [],
+                    "opens": [],
+                    "conflicts": [],
+                    "stops": [
+                      {
+                        "rule": "M3",
+                        "missing": "operation VALIDATE_INCOMING"
+                      }
+                    ],
+                    "unchecked_dependencies": [],
+                    "details": {}
+                  }
+                }
+              ]
+            }
+          },
+          "COMMITTED": true
+        },
+        {
+          "VALIDATION": {
+            "verdict": "GO",
+            "classification": null,
+            "proposed_delta": [],
+            "derived_records": [],
+            "provenance_requirements": [],
+            "opens": [],
+            "conflicts": [],
+            "stops": [],
+            "unchecked_dependencies": [],
+            "details": {
+              "rule_results": [
+                {
+                  "rule": "M2",
+                  "result": {
+                    "verdict": "NEED",
+                    "classification": null,
+                    "proposed_delta": [],
+                    "derived_records": [],
+                    "provenance_requirements": [],
+                    "opens": [],
+                    "conflicts": [],
+                    "stops": [
+                      {
+                        "rule": "M2",
+                        "missing": "operation VALIDATE_INCOMING"
+                      }
+                    ],
+                    "unchecked_dependencies": [],
+                    "details": {}
+                  }
+                }
+              ]
+            }
+          },
+          "COMMITTED": true
+        }
+      ],
+      "NETWORK_DELTA": {
+        "CREATED": [
+          "F8_IN_1",
+          "F8_IN_2"
+        ],
+        "CHANGED": []
+      },
+      "STOPS": [],
+      "NEED": []
+    },
+    {
+      "EVENT": "F9",
+      "OPERATIONS": [
+        "READ",
+        "OPEN_REGISTRY"
+      ],
+      "VERDICT": "GO",
+      "NOTE": {
+        "OPEN_REGISTRY": [
+          "OPEN_ASK_4",
+          "OPEN_F3_1",
+          "RQ_F6"
+        ],
+        "ASK_UNANSWERED": [
+          {
+            "WHERE": "candidate/joint-requirement/RQ_F6",
+            "WANTED": "one binding satisfying all patterns of RQ_F6",
+            "AVAILABLE": "each requirement pattern is explicit; no joint binding is current",
+            "MISSING": [
+              [
+                "?X",
+                "R7",
+                "G1"
+              ],
+              [
+                "?X",
+                "R7",
+                "G4"
+              ]
+            ],
+            "STOP_CLASS": "ASK",
+            "CAN_ASK_OUTSIDE": true,
+            "QUERY": "resolve jointly: (?X R7 G1) AND (?X R7 G4)"
+          }
+        ],
+        "NEED": [
+          {
+            "WHERE": "F1/derive",
+            "WANTED": "determine R2 of I3",
+            "AVAILABLE": {
+              "schema_exception": "SchemaError",
+              "schema_message": "unsupported link_filter: {'predicate_target': {'predicate': 'R1', 'target': 'scoped_node'}}"
+            },
+            "MISSING": "SCHEMA_DRIFT",
+            "STOP_CLASS": "NEED",
+            "CAN_ASK_OUTSIDE": false,
+            "QUERY": ""
+          },
+          {
+            "WHERE": "F2/derive",
+            "WANTED": "determine R2 of I5",
+            "AVAILABLE": {
+              "schema_exception": "SchemaError",
+              "schema_message": "unsupported link_filter: {'predicate_target': {'predicate': 'R1', 'target': 'scoped_node'}}"
+            },
+            "MISSING": "SCHEMA_DRIFT",
+            "STOP_CLASS": "NEED",
+            "CAN_ASK_OUTSIDE": false,
+            "QUERY": ""
+          },
+          {
+            "WHERE": "F5/task",
+            "WANTED": "determine largest R2 among known items",
+            "AVAILABLE": "current records are addressable",
+            "MISSING": "frozen aggregate-max task operator",
+            "STOP_CLASS": "NEED",
+            "CAN_ASK_OUTSIDE": false,
+            "QUERY": ""
+          }
+        ]
+      },
+      "NETWORK_DELTA": {
+        "CREATED": [],
+        "CHANGED": []
+      },
+      "STOPS": [],
+      "NEED": []
+    },
+    {
+      "EVENT": "F10",
+      "OPERATIONS": [
+        "PROPOSE",
+        "CHECK",
+        "COMMIT"
+      ],
+      "VERDICT": "GO",
+      "NOTE": [
+        {
+          "VALIDATION": {
+            "verdict": "GO",
+            "classification": null,
+            "proposed_delta": [],
+            "derived_records": [],
+            "provenance_requirements": [],
+            "opens": [],
+            "conflicts": [],
+            "stops": [],
+            "unchecked_dependencies": [],
+            "details": {
+              "rule_results": [
+                {
+                  "rule": "M1",
+                  "result": {
+                    "verdict": "GO",
+                    "classification": null,
+                    "proposed_delta": [],
+                    "derived_records": [],
+                    "provenance_requirements": [],
+                    "opens": [],
+                    "conflicts": [],
+                    "stops": [],
+                    "unchecked_dependencies": [],
+                    "details": {
+                      "applicable": true,
+                      "observed": [
+                        "G1"
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "COMMITTED": true
+        },
+        {
+          "VALIDATION": {
+            "verdict": "GO",
+            "classification": null,
+            "proposed_delta": [],
+            "derived_records": [],
+            "provenance_requirements": [],
+            "opens": [],
+            "conflicts": [],
+            "stops": [],
+            "unchecked_dependencies": [],
+            "details": {
+              "rule_results": [
+                {
+                  "rule": "M1",
+                  "result": {
+                    "verdict": "GO",
+                    "classification": null,
+                    "proposed_delta": [],
+                    "derived_records": [],
+                    "provenance_requirements": [],
+                    "opens": [],
+                    "conflicts": [],
+                    "stops": [],
+                    "unchecked_dependencies": [],
+                    "details": {
+                      "applicable": true,
+                      "observed": [
+                        "G1",
+                        "G4"
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "COMMITTED": true
+        },
+        {
+          "VALIDATION": {
+            "verdict": "GO",
+            "classification": null,
+            "proposed_delta": [],
+            "derived_records": [],
+            "provenance_requirements": [],
+            "opens": [],
+            "conflicts": [],
+            "stops": [],
+            "unchecked_dependencies": [],
+            "details": {
+              "rule_results": [
+                {
+                  "rule": "M1",
+                  "result": {
+                    "verdict": "GO",
+                    "classification": null,
+                    "proposed_delta": [],
+                    "derived_records": [],
+                    "provenance_requirements": [],
+                    "opens": [],
+                    "conflicts": [],
+                    "stops": [],
+                    "unchecked_dependencies": [],
+                    "details": {
+                      "applicable": true,
+                      "observed": [
+                        "G1",
+                        "G4",
+                        "G2"
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "COMMITTED": true
+        }
+      ],
+      "NETWORK_DELTA": {
+        "CREATED": [
+          "F10_IN_1",
+          "F10_IN_2",
+          "F10_IN_3"
+        ],
+        "CHANGED": []
+      },
+      "STOPS": [],
+      "NEED": []
+    },
+    {
+      "EVENT": "F11",
+      "OPERATIONS": [
+        "READ",
+        "MATCH",
+        "LINK",
+        "MARK"
+      ],
+      "VERDICT": "GO",
+      "NOTE": {
+        "CANDIDATES": [
+          "I8"
+        ],
+        "BOUND": "I8"
+      },
+      "NETWORK_DELTA": {
+        "CREATED": [
+          "RQ_F6_BIND"
+        ],
+        "CHANGED": [
+          "RQ_F6"
+        ]
+      },
+      "STOPS": [],
+      "NEED": []
+    },
+    {
+      "EVENT": "F12",
+      "OPERATIONS": [
+        "READ",
+        "OPEN_REGISTRY"
+      ],
+      "VERDICT": "GO",
+      "NOTE": {
+        "OPEN_REGISTRY": [
+          "OPEN_ASK_4",
+          "OPEN_F3_1"
+        ],
+        "ASK_UNANSWERED": [
+          {
+            "WHERE": "candidate/joint-requirement/RQ_F6",
+            "WANTED": "one binding satisfying all patterns of RQ_F6",
+            "AVAILABLE": "each requirement pattern is explicit; no joint binding is current",
+            "MISSING": [
+              [
+                "?X",
+                "R7",
+                "G1"
+              ],
+              [
+                "?X",
+                "R7",
+                "G4"
+              ]
+            ],
+            "STOP_CLASS": "ASK",
+            "CAN_ASK_OUTSIDE": true,
+            "QUERY": "resolve jointly: (?X R7 G1) AND (?X R7 G4)"
+          }
+        ],
+        "NEED": [
+          {
+            "WHERE": "F1/derive",
+            "WANTED": "determine R2 of I3",
+            "AVAILABLE": {
+              "schema_exception": "SchemaError",
+              "schema_message": "unsupported link_filter: {'predicate_target': {'predicate': 'R1', 'target': 'scoped_node'}}"
+            },
+            "MISSING": "SCHEMA_DRIFT",
+            "STOP_CLASS": "NEED",
+            "CAN_ASK_OUTSIDE": false,
+            "QUERY": ""
+          },
+          {
+            "WHERE": "F2/derive",
+            "WANTED": "determine R2 of I5",
+            "AVAILABLE": {
+              "schema_exception": "SchemaError",
+              "schema_message": "unsupported link_filter: {'predicate_target': {'predicate': 'R1', 'target': 'scoped_node'}}"
+            },
+            "MISSING": "SCHEMA_DRIFT",
+            "STOP_CLASS": "NEED",
+            "CAN_ASK_OUTSIDE": false,
+            "QUERY": ""
+          },
+          {
+            "WHERE": "F5/task",
+            "WANTED": "determine largest R2 among known items",
+            "AVAILABLE": "current records are addressable",
+            "MISSING": "frozen aggregate-max task operator",
+            "STOP_CLASS": "NEED",
+            "CAN_ASK_OUTSIDE": false,
+            "QUERY": ""
+          }
+        ]
+      },
+      "NETWORK_DELTA": {
+        "CREATED": [],
+        "CHANGED": []
+      },
+      "STOPS": [],
+      "NEED": []
+    }
+  ],
+  "FINAL": {
+    "OPEN_REGISTRY": [
+      "OPEN_ASK_4",
+      "OPEN_F3_1"
+    ],
+    "STOP_MAP": [
+      {
+        "WHERE": "F1/derive",
+        "WANTED": "determine R2 of I3",
+        "AVAILABLE": {
+          "schema_exception": "SchemaError",
+          "schema_message": "unsupported link_filter: {'predicate_target': {'predicate': 'R1', 'target': 'scoped_node'}}"
+        },
+        "MISSING": "SCHEMA_DRIFT",
+        "STOP_CLASS": "NEED",
+        "CAN_ASK_OUTSIDE": false,
+        "QUERY": ""
+      },
+      {
+        "WHERE": "F2/derive",
+        "WANTED": "determine R2 of I5",
+        "AVAILABLE": {
+          "schema_exception": "SchemaError",
+          "schema_message": "unsupported link_filter: {'predicate_target': {'predicate': 'R1', 'target': 'scoped_node'}}"
+        },
+        "MISSING": "SCHEMA_DRIFT",
+        "STOP_CLASS": "NEED",
+        "CAN_ASK_OUTSIDE": false,
+        "QUERY": ""
+      },
+      {
+        "WHERE": "F5/task",
+        "WANTED": "determine largest R2 among known items",
+        "AVAILABLE": "current records are addressable",
+        "MISSING": "frozen aggregate-max task operator",
+        "STOP_CLASS": "NEED",
+        "CAN_ASK_OUTSIDE": false,
+        "QUERY": ""
+      },
+      {
+        "WHERE": "candidate/joint-requirement/RQ_F6",
+        "WANTED": "one binding satisfying all patterns of RQ_F6",
+        "AVAILABLE": "each requirement pattern is explicit; no joint binding is current",
+        "MISSING": [
+          [
+            "?X",
+            "R7",
+            "G1"
+          ],
+          [
+            "?X",
+            "R7",
+            "G4"
+          ]
+        ],
+        "STOP_CLASS": "ASK",
+        "CAN_ASK_OUTSIDE": true,
+        "QUERY": "resolve jointly: (?X R7 G1) AND (?X R7 G4)"
+      }
+    ],
+    "UNCHECKED_RECORDS": []
+  }
+}

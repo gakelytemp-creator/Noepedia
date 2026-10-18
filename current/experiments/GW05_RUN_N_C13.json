@@ -1,0 +1,2314 @@
+{
+  "GW05_ENCODER": "N",
+  "C1_C3_ENABLED": true,
+  "ENCODER_INPUT": "current/experiments/GW05_N_ENCODER_OUTPUT.normalized.json",
+  "FROZEN_DICTIONARY": "current/experiments/GW05_RUN_C_FAMILY_DICTIONARY.json",
+  "RULES": [
+    "M1",
+    "M2",
+    "M3",
+    "M4",
+    "M5"
+  ],
+  "EVENTS": [
+    {
+      "EVENT": "F1",
+      "OPERATIONS": [
+        "READ",
+        "MATCH",
+        "DERIVE"
+      ],
+      "VERDICT": "NEED",
+      "NOTE": {
+        "HANDLER_RESULT": {
+          "verdict": "NEED",
+          "classification": "EXECUTOR_HOLE",
+          "proposed_delta": [],
+          "derived_records": [],
+          "provenance_requirements": [],
+          "opens": [],
+          "conflicts": [],
+          "stops": [],
+          "unchecked_dependencies": [
+            {
+              "dependency": "M2",
+              "reason": "EXECUTOR_HOLE"
+            }
+          ],
+          "details": {}
+        },
+        "COMMITTED_DERIVED": []
+      },
+      "NETWORK_DELTA": {
+        "CREATED": [],
+        "CHANGED": []
+      },
+      "STOPS": [
+        {
+          "WHERE": "F1/derive",
+          "WANTED": "determine R2 of I3",
+          "AVAILABLE": {},
+          "MISSING": "EXECUTOR_HOLE",
+          "STOP_CLASS": "NEED",
+          "CAN_ASK_OUTSIDE": false,
+          "QUERY": ""
+        }
+      ],
+      "NEED": [
+        {
+          "WHERE": "F1/derive",
+          "WANTED": "determine R2 of I3",
+          "AVAILABLE": {},
+          "MISSING": "EXECUTOR_HOLE",
+          "STOP_CLASS": "NEED",
+          "CAN_ASK_OUTSIDE": false,
+          "QUERY": ""
+        }
+      ]
+    },
+    {
+      "EVENT": "F2",
+      "OPERATIONS": [
+        "READ",
+        "MATCH",
+        "DERIVE"
+      ],
+      "VERDICT": "NEED",
+      "NOTE": {
+        "HANDLER_RESULT": {
+          "verdict": "NEED",
+          "classification": "EXECUTOR_HOLE",
+          "proposed_delta": [],
+          "derived_records": [],
+          "provenance_requirements": [],
+          "opens": [],
+          "conflicts": [],
+          "stops": [],
+          "unchecked_dependencies": [
+            {
+              "dependency": "M2",
+              "reason": "EXECUTOR_HOLE"
+            }
+          ],
+          "details": {}
+        },
+        "COMMITTED_DERIVED": []
+      },
+      "NETWORK_DELTA": {
+        "CREATED": [],
+        "CHANGED": []
+      },
+      "STOPS": [
+        {
+          "WHERE": "F2/derive",
+          "WANTED": "determine R2 of I5",
+          "AVAILABLE": {},
+          "MISSING": "EXECUTOR_HOLE",
+          "STOP_CLASS": "NEED",
+          "CAN_ASK_OUTSIDE": false,
+          "QUERY": ""
+        }
+      ],
+      "NEED": [
+        {
+          "WHERE": "F2/derive",
+          "WANTED": "determine R2 of I5",
+          "AVAILABLE": {},
+          "MISSING": "EXECUTOR_HOLE",
+          "STOP_CLASS": "NEED",
+          "CAN_ASK_OUTSIDE": false,
+          "QUERY": ""
+        }
+      ]
+    },
+    {
+      "EVENT": "F3",
+      "OPERATIONS": [
+        "READ",
+        "CHECK"
+      ],
+      "VERDICT": "NEED",
+      "NOTE": {
+        "HANDLER_RESULT": {
+          "verdict": "NEED",
+          "classification": "SCHEMA_DRIFT",
+          "proposed_delta": [],
+          "derived_records": [],
+          "provenance_requirements": [],
+          "opens": [],
+          "conflicts": [],
+          "stops": [],
+          "unchecked_dependencies": [
+            {
+              "dependency": "M1",
+              "reason": "SCHEMA_DRIFT"
+            }
+          ],
+          "details": {
+            "schema_errors": [
+              "subject_class",
+              "predicate",
+              "target_class",
+              "target_count",
+              "target_count_constraint",
+              "target_distinctness"
+            ]
+          }
+        },
+        "MATERIALIZED": []
+      },
+      "NETWORK_DELTA": {
+        "CREATED": [],
+        "CHANGED": []
+      },
+      "STOPS": [],
+      "NEED": []
+    },
+    {
+      "EVENT": "F4",
+      "OPERATIONS": [
+        "PROPOSE",
+        "CHECK",
+        "COMMIT"
+      ],
+      "VERDICT": "NEED",
+      "NOTE": [
+        {
+          "VALIDATION": {
+            "verdict": "NEED",
+            "classification": null,
+            "proposed_delta": [
+              {
+                "addr": "F4_UNCHECKED_1_1",
+                "fields": {
+                  "TYPE": "CHECK_STATUS",
+                  "STATUS": "UNCHECKED",
+                  "DEPENDENCY": "M1",
+                  "REASON": "SCHEMA_DRIFT"
+                },
+                "status_log": [],
+                "committed": true
+              },
+              {
+                "addr": "F4_UNCHECKED_1_2",
+                "fields": {
+                  "TYPE": "CHECK_STATUS",
+                  "STATUS": "UNCHECKED",
+                  "DEPENDENCY": "M2",
+                  "REASON": "EXECUTOR_HOLE"
+                },
+                "status_log": [],
+                "committed": true
+              },
+              {
+                "addr": "F4_UNCHECKED_1_3",
+                "fields": {
+                  "TYPE": "CHECK_STATUS",
+                  "STATUS": "UNCHECKED",
+                  "DEPENDENCY": "M3",
+                  "REASON": "EXECUTOR_HOLE"
+                },
+                "status_log": [],
+                "committed": true
+              },
+              {
+                "addr": "F4_UNCHECKED_1_4",
+                "fields": {
+                  "TYPE": "CHECK_STATUS",
+                  "STATUS": "UNCHECKED",
+                  "DEPENDENCY": "M4",
+                  "REASON": "EXECUTOR_HOLE"
+                },
+                "status_log": [],
+                "committed": true
+              },
+              {
+                "addr": "F4_UNCHECKED_1_5",
+                "fields": {
+                  "TYPE": "CHECK_STATUS",
+                  "STATUS": "UNCHECKED",
+                  "DEPENDENCY": "M5",
+                  "REASON": "EXECUTOR_HOLE"
+                },
+                "status_log": [],
+                "committed": true
+              }
+            ],
+            "derived_records": [],
+            "provenance_requirements": [],
+            "opens": [],
+            "conflicts": [],
+            "stops": [],
+            "unchecked_dependencies": [
+              {
+                "dependency": "M1",
+                "reason": "SCHEMA_DRIFT"
+              },
+              {
+                "dependency": "M2",
+                "reason": "EXECUTOR_HOLE"
+              },
+              {
+                "dependency": "M3",
+                "reason": "EXECUTOR_HOLE"
+              },
+              {
+                "dependency": "M4",
+                "reason": "EXECUTOR_HOLE"
+              },
+              {
+                "dependency": "M5",
+                "reason": "EXECUTOR_HOLE"
+              }
+            ],
+            "details": {
+              "rule_results": []
+            }
+          },
+          "COMMITTED": false
+        }
+      ],
+      "NETWORK_DELTA": {
+        "CREATED": [
+          "F4_UNCHECKED_1_1",
+          "F4_UNCHECKED_1_2",
+          "F4_UNCHECKED_1_3",
+          "F4_UNCHECKED_1_4",
+          "F4_UNCHECKED_1_5"
+        ],
+        "CHANGED": []
+      },
+      "STOPS": [
+        {
+          "WHERE": "F4/1",
+          "WANTED": "validate incoming (I3 R6 S2)",
+          "AVAILABLE": {
+            "rule_results": []
+          },
+          "MISSING": [
+            {
+              "dependency": "M1",
+              "reason": "SCHEMA_DRIFT"
+            },
+            {
+              "dependency": "M2",
+              "reason": "EXECUTOR_HOLE"
+            },
+            {
+              "dependency": "M3",
+              "reason": "EXECUTOR_HOLE"
+            },
+            {
+              "dependency": "M4",
+              "reason": "EXECUTOR_HOLE"
+            },
+            {
+              "dependency": "M5",
+              "reason": "EXECUTOR_HOLE"
+            }
+          ],
+          "STOP_CLASS": "NEED",
+          "CAN_ASK_OUTSIDE": false,
+          "QUERY": ""
+        }
+      ],
+      "NEED": [
+        {
+          "WHERE": "F4/1",
+          "WANTED": "validate incoming (I3 R6 S2)",
+          "AVAILABLE": {
+            "rule_results": []
+          },
+          "MISSING": [
+            {
+              "dependency": "M1",
+              "reason": "SCHEMA_DRIFT"
+            },
+            {
+              "dependency": "M2",
+              "reason": "EXECUTOR_HOLE"
+            },
+            {
+              "dependency": "M3",
+              "reason": "EXECUTOR_HOLE"
+            },
+            {
+              "dependency": "M4",
+              "reason": "EXECUTOR_HOLE"
+            },
+            {
+              "dependency": "M5",
+              "reason": "EXECUTOR_HOLE"
+            }
+          ],
+          "STOP_CLASS": "NEED",
+          "CAN_ASK_OUTSIDE": false,
+          "QUERY": ""
+        }
+      ]
+    },
+    {
+      "EVENT": "F5",
+      "OPERATIONS": [
+        "READ",
+        "AGGREGATE_MAX"
+      ],
+      "VERDICT": "NEED",
+      "NOTE": {
+        "CLASS": "EXECUTOR_HOLE",
+        "REASON": "no frozen aggregate-max task operator"
+      },
+      "NETWORK_DELTA": {
+        "CREATED": [],
+        "CHANGED": []
+      },
+      "STOPS": [
+        {
+          "WHERE": "F5/task",
+          "WANTED": "determine largest R2 among known items",
+          "AVAILABLE": "current records are addressable",
+          "MISSING": "frozen aggregate-max task operator",
+          "STOP_CLASS": "NEED",
+          "CAN_ASK_OUTSIDE": false,
+          "QUERY": ""
+        }
+      ],
+      "NEED": [
+        {
+          "WHERE": "F5/task",
+          "WANTED": "determine largest R2 among known items",
+          "AVAILABLE": "current records are addressable",
+          "MISSING": "frozen aggregate-max task operator",
+          "STOP_CLASS": "NEED",
+          "CAN_ASK_OUTSIDE": false,
+          "QUERY": ""
+        }
+      ]
+    },
+    {
+      "EVENT": "F6",
+      "OPERATIONS": [
+        "CREATE_ADDRESS",
+        "MATCH",
+        "LINK",
+        "MARK"
+      ],
+      "VERDICT": "ASK",
+      "NOTE": {
+        "RQ_COMMIT": "GO",
+        "C1": {
+          "created_asks": [
+            "candidate/joint-requirement/RQ_F6"
+          ],
+          "created_opens": [],
+          "resolved_opens": []
+        }
+      },
+      "NETWORK_DELTA": {
+        "CREATED": [
+          "F6_PAT1",
+          "F6_PAT2",
+          "OPEN_ASK_5",
+          "RQ_F6",
+          "TASK_F6"
+        ],
+        "CHANGED": []
+      },
+      "STOPS": [
+        {
+          "WHERE": "candidate/joint-requirement/RQ_F6",
+          "WANTED": "one binding satisfying all patterns of RQ_F6",
+          "AVAILABLE": "each requirement pattern is explicit; no joint binding is current",
+          "MISSING": [
+            [
+              "?X",
+              "R7",
+              "G1"
+            ],
+            [
+              "?X",
+              "R7",
+              "G4"
+            ]
+          ],
+          "STOP_CLASS": "ASK",
+          "CAN_ASK_OUTSIDE": true,
+          "QUERY": "resolve jointly: (?X R7 G1) AND (?X R7 G4)"
+        }
+      ],
+      "NEED": []
+    },
+    {
+      "EVENT": "F7",
+      "OPERATIONS": [
+        "PROPOSE",
+        "CHECK",
+        "COMMIT"
+      ],
+      "VERDICT": "NEED",
+      "NOTE": [
+        {
+          "VALIDATION": {
+            "verdict": "NEED",
+            "classification": null,
+            "proposed_delta": [
+              {
+                "addr": "F7_UNCHECKED_1_1",
+                "fields": {
+                  "TYPE": "CHECK_STATUS",
+                  "STATUS": "UNCHECKED",
+                  "DEPENDENCY": "M1",
+                  "REASON": "SCHEMA_DRIFT"
+                },
+                "status_log": [],
+                "committed": true
+              },
+              {
+                "addr": "F7_UNCHECKED_1_2",
+                "fields": {
+                  "TYPE": "CHECK_STATUS",
+                  "STATUS": "UNCHECKED",
+                  "DEPENDENCY": "M2",
+                  "REASON": "EXECUTOR_HOLE"
+                },
+                "status_log": [],
+                "committed": true
+              },
+              {
+                "addr": "F7_UNCHECKED_1_3",
+                "fields": {
+                  "TYPE": "CHECK_STATUS",
+                  "STATUS": "UNCHECKED",
+                  "DEPENDENCY": "M3",
+                  "REASON": "EXECUTOR_HOLE"
+                },
+                "status_log": [],
+                "committed": true
+              },
+              {
+                "addr": "F7_UNCHECKED_1_4",
+                "fields": {
+                  "TYPE": "CHECK_STATUS",
+                  "STATUS": "UNCHECKED",
+                  "DEPENDENCY": "M4",
+                  "REASON": "EXECUTOR_HOLE"
+                },
+                "status_log": [],
+                "committed": true
+              },
+              {
+                "addr": "F7_UNCHECKED_1_5",
+                "fields": {
+                  "TYPE": "CHECK_STATUS",
+                  "STATUS": "UNCHECKED",
+                  "DEPENDENCY": "M5",
+                  "REASON": "EXECUTOR_HOLE"
+                },
+                "status_log": [],
+                "committed": true
+              }
+            ],
+            "derived_records": [],
+            "provenance_requirements": [],
+            "opens": [],
+            "conflicts": [],
+            "stops": [],
+            "unchecked_dependencies": [
+              {
+                "dependency": "M1",
+                "reason": "SCHEMA_DRIFT"
+              },
+              {
+                "dependency": "M2",
+                "reason": "EXECUTOR_HOLE"
+              },
+              {
+                "dependency": "M3",
+                "reason": "EXECUTOR_HOLE"
+              },
+              {
+                "dependency": "M4",
+                "reason": "EXECUTOR_HOLE"
+              },
+              {
+                "dependency": "M5",
+                "reason": "EXECUTOR_HOLE"
+              }
+            ],
+            "details": {
+              "rule_results": []
+            }
+          },
+          "COMMITTED": false
+        }
+      ],
+      "NETWORK_DELTA": {
+        "CREATED": [
+          "F7_UNCHECKED_1_1",
+          "F7_UNCHECKED_1_2",
+          "F7_UNCHECKED_1_3",
+          "F7_UNCHECKED_1_4",
+          "F7_UNCHECKED_1_5"
+        ],
+        "CHANGED": []
+      },
+      "STOPS": [
+        {
+          "WHERE": "F7/1",
+          "WANTED": "validate incoming (I5 R2 3)",
+          "AVAILABLE": {
+            "rule_results": []
+          },
+          "MISSING": [
+            {
+              "dependency": "M1",
+              "reason": "SCHEMA_DRIFT"
+            },
+            {
+              "dependency": "M2",
+              "reason": "EXECUTOR_HOLE"
+            },
+            {
+              "dependency": "M3",
+              "reason": "EXECUTOR_HOLE"
+            },
+            {
+              "dependency": "M4",
+              "reason": "EXECUTOR_HOLE"
+            },
+            {
+              "dependency": "M5",
+              "reason": "EXECUTOR_HOLE"
+            }
+          ],
+          "STOP_CLASS": "NEED",
+          "CAN_ASK_OUTSIDE": false,
+          "QUERY": ""
+        }
+      ],
+      "NEED": [
+        {
+          "WHERE": "F7/1",
+          "WANTED": "validate incoming (I5 R2 3)",
+          "AVAILABLE": {
+            "rule_results": []
+          },
+          "MISSING": [
+            {
+              "dependency": "M1",
+              "reason": "SCHEMA_DRIFT"
+            },
+            {
+              "dependency": "M2",
+              "reason": "EXECUTOR_HOLE"
+            },
+            {
+              "dependency": "M3",
+              "reason": "EXECUTOR_HOLE"
+            },
+            {
+              "dependency": "M4",
+              "reason": "EXECUTOR_HOLE"
+            },
+            {
+              "dependency": "M5",
+              "reason": "EXECUTOR_HOLE"
+            }
+          ],
+          "STOP_CLASS": "NEED",
+          "CAN_ASK_OUTSIDE": false,
+          "QUERY": ""
+        }
+      ]
+    },
+    {
+      "EVENT": "F8",
+      "OPERATIONS": [
+        "PROPOSE",
+        "CHECK",
+        "COMMIT"
+      ],
+      "VERDICT": "NEED",
+      "NOTE": [
+        {
+          "VALIDATION": {
+            "verdict": "NEED",
+            "classification": null,
+            "proposed_delta": [
+              {
+                "addr": "F8_UNCHECKED_1_1",
+                "fields": {
+                  "TYPE": "CHECK_STATUS",
+                  "STATUS": "UNCHECKED",
+                  "DEPENDENCY": "M1",
+                  "REASON": "SCHEMA_DRIFT"
+                },
+                "status_log": [],
+                "committed": true
+              },
+              {
+                "addr": "F8_UNCHECKED_1_2",
+                "fields": {
+                  "TYPE": "CHECK_STATUS",
+                  "STATUS": "UNCHECKED",
+                  "DEPENDENCY": "M2",
+                  "REASON": "EXECUTOR_HOLE"
+                },
+                "status_log": [],
+                "committed": true
+              },
+              {
+                "addr": "F8_UNCHECKED_1_3",
+                "fields": {
+                  "TYPE": "CHECK_STATUS",
+                  "STATUS": "UNCHECKED",
+                  "DEPENDENCY": "M3",
+                  "REASON": "EXECUTOR_HOLE"
+                },
+                "status_log": [],
+                "committed": true
+              },
+              {
+                "addr": "F8_UNCHECKED_1_4",
+                "fields": {
+                  "TYPE": "CHECK_STATUS",
+                  "STATUS": "UNCHECKED",
+                  "DEPENDENCY": "M4",
+                  "REASON": "EXECUTOR_HOLE"
+                },
+                "status_log": [],
+                "committed": true
+              },
+              {
+                "addr": "F8_UNCHECKED_1_5",
+                "fields": {
+                  "TYPE": "CHECK_STATUS",
+                  "STATUS": "UNCHECKED",
+                  "DEPENDENCY": "M5",
+                  "REASON": "EXECUTOR_HOLE"
+                },
+                "status_log": [],
+                "committed": true
+              }
+            ],
+            "derived_records": [],
+            "provenance_requirements": [],
+            "opens": [],
+            "conflicts": [],
+            "stops": [],
+            "unchecked_dependencies": [
+              {
+                "dependency": "M1",
+                "reason": "SCHEMA_DRIFT"
+              },
+              {
+                "dependency": "M2",
+                "reason": "EXECUTOR_HOLE"
+              },
+              {
+                "dependency": "M3",
+                "reason": "EXECUTOR_HOLE"
+              },
+              {
+                "dependency": "M4",
+                "reason": "EXECUTOR_HOLE"
+              },
+              {
+                "dependency": "M5",
+                "reason": "EXECUTOR_HOLE"
+              }
+            ],
+            "details": {
+              "rule_results": []
+            }
+          },
+          "COMMITTED": false
+        },
+        {
+          "VALIDATION": {
+            "verdict": "NEED",
+            "classification": null,
+            "proposed_delta": [
+              {
+                "addr": "F8_UNCHECKED_2_1",
+                "fields": {
+                  "TYPE": "CHECK_STATUS",
+                  "STATUS": "UNCHECKED",
+                  "DEPENDENCY": "M1",
+                  "REASON": "SCHEMA_DRIFT"
+                },
+                "status_log": [],
+                "committed": true
+              },
+              {
+                "addr": "F8_UNCHECKED_2_2",
+                "fields": {
+                  "TYPE": "CHECK_STATUS",
+                  "STATUS": "UNCHECKED",
+                  "DEPENDENCY": "M2",
+                  "REASON": "EXECUTOR_HOLE"
+                },
+                "status_log": [],
+                "committed": true
+              },
+              {
+                "addr": "F8_UNCHECKED_2_3",
+                "fields": {
+                  "TYPE": "CHECK_STATUS",
+                  "STATUS": "UNCHECKED",
+                  "DEPENDENCY": "M3",
+                  "REASON": "EXECUTOR_HOLE"
+                },
+                "status_log": [],
+                "committed": true
+              },
+              {
+                "addr": "F8_UNCHECKED_2_4",
+                "fields": {
+                  "TYPE": "CHECK_STATUS",
+                  "STATUS": "UNCHECKED",
+                  "DEPENDENCY": "M4",
+                  "REASON": "EXECUTOR_HOLE"
+                },
+                "status_log": [],
+                "committed": true
+              },
+              {
+                "addr": "F8_UNCHECKED_2_5",
+                "fields": {
+                  "TYPE": "CHECK_STATUS",
+                  "STATUS": "UNCHECKED",
+                  "DEPENDENCY": "M5",
+                  "REASON": "EXECUTOR_HOLE"
+                },
+                "status_log": [],
+                "committed": true
+              }
+            ],
+            "derived_records": [],
+            "provenance_requirements": [],
+            "opens": [],
+            "conflicts": [],
+            "stops": [],
+            "unchecked_dependencies": [
+              {
+                "dependency": "M1",
+                "reason": "SCHEMA_DRIFT"
+              },
+              {
+                "dependency": "M2",
+                "reason": "EXECUTOR_HOLE"
+              },
+              {
+                "dependency": "M3",
+                "reason": "EXECUTOR_HOLE"
+              },
+              {
+                "dependency": "M4",
+                "reason": "EXECUTOR_HOLE"
+              },
+              {
+                "dependency": "M5",
+                "reason": "EXECUTOR_HOLE"
+              }
+            ],
+            "details": {
+              "rule_results": []
+            }
+          },
+          "COMMITTED": false
+        }
+      ],
+      "NETWORK_DELTA": {
+        "CREATED": [
+          "F8_UNCHECKED_1_1",
+          "F8_UNCHECKED_1_2",
+          "F8_UNCHECKED_1_3",
+          "F8_UNCHECKED_1_4",
+          "F8_UNCHECKED_1_5",
+          "F8_UNCHECKED_2_1",
+          "F8_UNCHECKED_2_2",
+          "F8_UNCHECKED_2_3",
+          "F8_UNCHECKED_2_4",
+          "F8_UNCHECKED_2_5"
+        ],
+        "CHANGED": []
+      },
+      "STOPS": [
+        {
+          "WHERE": "F8/1",
+          "WANTED": "validate incoming (I7 R1 B2)",
+          "AVAILABLE": {
+            "rule_results": []
+          },
+          "MISSING": [
+            {
+              "dependency": "M1",
+              "reason": "SCHEMA_DRIFT"
+            },
+            {
+              "dependency": "M2",
+              "reason": "EXECUTOR_HOLE"
+            },
+            {
+              "dependency": "M3",
+              "reason": "EXECUTOR_HOLE"
+            },
+            {
+              "dependency": "M4",
+              "reason": "EXECUTOR_HOLE"
+            },
+            {
+              "dependency": "M5",
+              "reason": "EXECUTOR_HOLE"
+            }
+          ],
+          "STOP_CLASS": "NEED",
+          "CAN_ASK_OUTSIDE": false,
+          "QUERY": ""
+        },
+        {
+          "WHERE": "F8/2",
+          "WANTED": "validate incoming (I7 R2 2)",
+          "AVAILABLE": {
+            "rule_results": []
+          },
+          "MISSING": [
+            {
+              "dependency": "M1",
+              "reason": "SCHEMA_DRIFT"
+            },
+            {
+              "dependency": "M2",
+              "reason": "EXECUTOR_HOLE"
+            },
+            {
+              "dependency": "M3",
+              "reason": "EXECUTOR_HOLE"
+            },
+            {
+              "dependency": "M4",
+              "reason": "EXECUTOR_HOLE"
+            },
+            {
+              "dependency": "M5",
+              "reason": "EXECUTOR_HOLE"
+            }
+          ],
+          "STOP_CLASS": "NEED",
+          "CAN_ASK_OUTSIDE": false,
+          "QUERY": ""
+        }
+      ],
+      "NEED": [
+        {
+          "WHERE": "F8/1",
+          "WANTED": "validate incoming (I7 R1 B2)",
+          "AVAILABLE": {
+            "rule_results": []
+          },
+          "MISSING": [
+            {
+              "dependency": "M1",
+              "reason": "SCHEMA_DRIFT"
+            },
+            {
+              "dependency": "M2",
+              "reason": "EXECUTOR_HOLE"
+            },
+            {
+              "dependency": "M3",
+              "reason": "EXECUTOR_HOLE"
+            },
+            {
+              "dependency": "M4",
+              "reason": "EXECUTOR_HOLE"
+            },
+            {
+              "dependency": "M5",
+              "reason": "EXECUTOR_HOLE"
+            }
+          ],
+          "STOP_CLASS": "NEED",
+          "CAN_ASK_OUTSIDE": false,
+          "QUERY": ""
+        },
+        {
+          "WHERE": "F8/2",
+          "WANTED": "validate incoming (I7 R2 2)",
+          "AVAILABLE": {
+            "rule_results": []
+          },
+          "MISSING": [
+            {
+              "dependency": "M1",
+              "reason": "SCHEMA_DRIFT"
+            },
+            {
+              "dependency": "M2",
+              "reason": "EXECUTOR_HOLE"
+            },
+            {
+              "dependency": "M3",
+              "reason": "EXECUTOR_HOLE"
+            },
+            {
+              "dependency": "M4",
+              "reason": "EXECUTOR_HOLE"
+            },
+            {
+              "dependency": "M5",
+              "reason": "EXECUTOR_HOLE"
+            }
+          ],
+          "STOP_CLASS": "NEED",
+          "CAN_ASK_OUTSIDE": false,
+          "QUERY": ""
+        }
+      ]
+    },
+    {
+      "EVENT": "F9",
+      "OPERATIONS": [
+        "READ",
+        "OPEN_REGISTRY"
+      ],
+      "VERDICT": "GO",
+      "NOTE": {
+        "OPEN_REGISTRY": [
+          "OPEN_ASK_5",
+          "RQ_F6"
+        ],
+        "ASK_UNANSWERED": [
+          {
+            "WHERE": "candidate/joint-requirement/RQ_F6",
+            "WANTED": "one binding satisfying all patterns of RQ_F6",
+            "AVAILABLE": "each requirement pattern is explicit; no joint binding is current",
+            "MISSING": [
+              [
+                "?X",
+                "R7",
+                "G1"
+              ],
+              [
+                "?X",
+                "R7",
+                "G4"
+              ]
+            ],
+            "STOP_CLASS": "ASK",
+            "CAN_ASK_OUTSIDE": true,
+            "QUERY": "resolve jointly: (?X R7 G1) AND (?X R7 G4)"
+          }
+        ],
+        "NEED": [
+          {
+            "WHERE": "F1/derive",
+            "WANTED": "determine R2 of I3",
+            "AVAILABLE": {},
+            "MISSING": "EXECUTOR_HOLE",
+            "STOP_CLASS": "NEED",
+            "CAN_ASK_OUTSIDE": false,
+            "QUERY": ""
+          },
+          {
+            "WHERE": "F2/derive",
+            "WANTED": "determine R2 of I5",
+            "AVAILABLE": {},
+            "MISSING": "EXECUTOR_HOLE",
+            "STOP_CLASS": "NEED",
+            "CAN_ASK_OUTSIDE": false,
+            "QUERY": ""
+          },
+          {
+            "WHERE": "F4/1",
+            "WANTED": "validate incoming (I3 R6 S2)",
+            "AVAILABLE": {
+              "rule_results": []
+            },
+            "MISSING": [
+              {
+                "dependency": "M1",
+                "reason": "SCHEMA_DRIFT"
+              },
+              {
+                "dependency": "M2",
+                "reason": "EXECUTOR_HOLE"
+              },
+              {
+                "dependency": "M3",
+                "reason": "EXECUTOR_HOLE"
+              },
+              {
+                "dependency": "M4",
+                "reason": "EXECUTOR_HOLE"
+              },
+              {
+                "dependency": "M5",
+                "reason": "EXECUTOR_HOLE"
+              }
+            ],
+            "STOP_CLASS": "NEED",
+            "CAN_ASK_OUTSIDE": false,
+            "QUERY": ""
+          },
+          {
+            "WHERE": "F5/task",
+            "WANTED": "determine largest R2 among known items",
+            "AVAILABLE": "current records are addressable",
+            "MISSING": "frozen aggregate-max task operator",
+            "STOP_CLASS": "NEED",
+            "CAN_ASK_OUTSIDE": false,
+            "QUERY": ""
+          },
+          {
+            "WHERE": "F7/1",
+            "WANTED": "validate incoming (I5 R2 3)",
+            "AVAILABLE": {
+              "rule_results": []
+            },
+            "MISSING": [
+              {
+                "dependency": "M1",
+                "reason": "SCHEMA_DRIFT"
+              },
+              {
+                "dependency": "M2",
+                "reason": "EXECUTOR_HOLE"
+              },
+              {
+                "dependency": "M3",
+                "reason": "EXECUTOR_HOLE"
+              },
+              {
+                "dependency": "M4",
+                "reason": "EXECUTOR_HOLE"
+              },
+              {
+                "dependency": "M5",
+                "reason": "EXECUTOR_HOLE"
+              }
+            ],
+            "STOP_CLASS": "NEED",
+            "CAN_ASK_OUTSIDE": false,
+            "QUERY": ""
+          },
+          {
+            "WHERE": "F8/1",
+            "WANTED": "validate incoming (I7 R1 B2)",
+            "AVAILABLE": {
+              "rule_results": []
+            },
+            "MISSING": [
+              {
+                "dependency": "M1",
+                "reason": "SCHEMA_DRIFT"
+              },
+              {
+                "dependency": "M2",
+                "reason": "EXECUTOR_HOLE"
+              },
+              {
+                "dependency": "M3",
+                "reason": "EXECUTOR_HOLE"
+              },
+              {
+                "dependency": "M4",
+                "reason": "EXECUTOR_HOLE"
+              },
+              {
+                "dependency": "M5",
+                "reason": "EXECUTOR_HOLE"
+              }
+            ],
+            "STOP_CLASS": "NEED",
+            "CAN_ASK_OUTSIDE": false,
+            "QUERY": ""
+          },
+          {
+            "WHERE": "F8/2",
+            "WANTED": "validate incoming (I7 R2 2)",
+            "AVAILABLE": {
+              "rule_results": []
+            },
+            "MISSING": [
+              {
+                "dependency": "M1",
+                "reason": "SCHEMA_DRIFT"
+              },
+              {
+                "dependency": "M2",
+                "reason": "EXECUTOR_HOLE"
+              },
+              {
+                "dependency": "M3",
+                "reason": "EXECUTOR_HOLE"
+              },
+              {
+                "dependency": "M4",
+                "reason": "EXECUTOR_HOLE"
+              },
+              {
+                "dependency": "M5",
+                "reason": "EXECUTOR_HOLE"
+              }
+            ],
+            "STOP_CLASS": "NEED",
+            "CAN_ASK_OUTSIDE": false,
+            "QUERY": ""
+          }
+        ]
+      },
+      "NETWORK_DELTA": {
+        "CREATED": [],
+        "CHANGED": []
+      },
+      "STOPS": [],
+      "NEED": []
+    },
+    {
+      "EVENT": "F10",
+      "OPERATIONS": [
+        "PROPOSE",
+        "CHECK",
+        "COMMIT"
+      ],
+      "VERDICT": "NEED",
+      "NOTE": [
+        {
+          "VALIDATION": {
+            "verdict": "NEED",
+            "classification": null,
+            "proposed_delta": [
+              {
+                "addr": "F10_UNCHECKED_1_1",
+                "fields": {
+                  "TYPE": "CHECK_STATUS",
+                  "STATUS": "UNCHECKED",
+                  "DEPENDENCY": "M1",
+                  "REASON": "SCHEMA_DRIFT"
+                },
+                "status_log": [],
+                "committed": true
+              },
+              {
+                "addr": "F10_UNCHECKED_1_2",
+                "fields": {
+                  "TYPE": "CHECK_STATUS",
+                  "STATUS": "UNCHECKED",
+                  "DEPENDENCY": "M2",
+                  "REASON": "EXECUTOR_HOLE"
+                },
+                "status_log": [],
+                "committed": true
+              },
+              {
+                "addr": "F10_UNCHECKED_1_3",
+                "fields": {
+                  "TYPE": "CHECK_STATUS",
+                  "STATUS": "UNCHECKED",
+                  "DEPENDENCY": "M3",
+                  "REASON": "EXECUTOR_HOLE"
+                },
+                "status_log": [],
+                "committed": true
+              },
+              {
+                "addr": "F10_UNCHECKED_1_4",
+                "fields": {
+                  "TYPE": "CHECK_STATUS",
+                  "STATUS": "UNCHECKED",
+                  "DEPENDENCY": "M4",
+                  "REASON": "EXECUTOR_HOLE"
+                },
+                "status_log": [],
+                "committed": true
+              },
+              {
+                "addr": "F10_UNCHECKED_1_5",
+                "fields": {
+                  "TYPE": "CHECK_STATUS",
+                  "STATUS": "UNCHECKED",
+                  "DEPENDENCY": "M5",
+                  "REASON": "EXECUTOR_HOLE"
+                },
+                "status_log": [],
+                "committed": true
+              }
+            ],
+            "derived_records": [],
+            "provenance_requirements": [],
+            "opens": [],
+            "conflicts": [],
+            "stops": [],
+            "unchecked_dependencies": [
+              {
+                "dependency": "M1",
+                "reason": "SCHEMA_DRIFT"
+              },
+              {
+                "dependency": "M2",
+                "reason": "EXECUTOR_HOLE"
+              },
+              {
+                "dependency": "M3",
+                "reason": "EXECUTOR_HOLE"
+              },
+              {
+                "dependency": "M4",
+                "reason": "EXECUTOR_HOLE"
+              },
+              {
+                "dependency": "M5",
+                "reason": "EXECUTOR_HOLE"
+              }
+            ],
+            "details": {
+              "rule_results": []
+            }
+          },
+          "COMMITTED": false
+        },
+        {
+          "VALIDATION": {
+            "verdict": "NEED",
+            "classification": null,
+            "proposed_delta": [
+              {
+                "addr": "F10_UNCHECKED_2_1",
+                "fields": {
+                  "TYPE": "CHECK_STATUS",
+                  "STATUS": "UNCHECKED",
+                  "DEPENDENCY": "M1",
+                  "REASON": "SCHEMA_DRIFT"
+                },
+                "status_log": [],
+                "committed": true
+              },
+              {
+                "addr": "F10_UNCHECKED_2_2",
+                "fields": {
+                  "TYPE": "CHECK_STATUS",
+                  "STATUS": "UNCHECKED",
+                  "DEPENDENCY": "M2",
+                  "REASON": "EXECUTOR_HOLE"
+                },
+                "status_log": [],
+                "committed": true
+              },
+              {
+                "addr": "F10_UNCHECKED_2_3",
+                "fields": {
+                  "TYPE": "CHECK_STATUS",
+                  "STATUS": "UNCHECKED",
+                  "DEPENDENCY": "M3",
+                  "REASON": "EXECUTOR_HOLE"
+                },
+                "status_log": [],
+                "committed": true
+              },
+              {
+                "addr": "F10_UNCHECKED_2_4",
+                "fields": {
+                  "TYPE": "CHECK_STATUS",
+                  "STATUS": "UNCHECKED",
+                  "DEPENDENCY": "M4",
+                  "REASON": "EXECUTOR_HOLE"
+                },
+                "status_log": [],
+                "committed": true
+              },
+              {
+                "addr": "F10_UNCHECKED_2_5",
+                "fields": {
+                  "TYPE": "CHECK_STATUS",
+                  "STATUS": "UNCHECKED",
+                  "DEPENDENCY": "M5",
+                  "REASON": "EXECUTOR_HOLE"
+                },
+                "status_log": [],
+                "committed": true
+              }
+            ],
+            "derived_records": [],
+            "provenance_requirements": [],
+            "opens": [],
+            "conflicts": [],
+            "stops": [],
+            "unchecked_dependencies": [
+              {
+                "dependency": "M1",
+                "reason": "SCHEMA_DRIFT"
+              },
+              {
+                "dependency": "M2",
+                "reason": "EXECUTOR_HOLE"
+              },
+              {
+                "dependency": "M3",
+                "reason": "EXECUTOR_HOLE"
+              },
+              {
+                "dependency": "M4",
+                "reason": "EXECUTOR_HOLE"
+              },
+              {
+                "dependency": "M5",
+                "reason": "EXECUTOR_HOLE"
+              }
+            ],
+            "details": {
+              "rule_results": []
+            }
+          },
+          "COMMITTED": false
+        },
+        {
+          "VALIDATION": {
+            "verdict": "NEED",
+            "classification": null,
+            "proposed_delta": [
+              {
+                "addr": "F10_UNCHECKED_3_1",
+                "fields": {
+                  "TYPE": "CHECK_STATUS",
+                  "STATUS": "UNCHECKED",
+                  "DEPENDENCY": "M1",
+                  "REASON": "SCHEMA_DRIFT"
+                },
+                "status_log": [],
+                "committed": true
+              },
+              {
+                "addr": "F10_UNCHECKED_3_2",
+                "fields": {
+                  "TYPE": "CHECK_STATUS",
+                  "STATUS": "UNCHECKED",
+                  "DEPENDENCY": "M2",
+                  "REASON": "EXECUTOR_HOLE"
+                },
+                "status_log": [],
+                "committed": true
+              },
+              {
+                "addr": "F10_UNCHECKED_3_3",
+                "fields": {
+                  "TYPE": "CHECK_STATUS",
+                  "STATUS": "UNCHECKED",
+                  "DEPENDENCY": "M3",
+                  "REASON": "EXECUTOR_HOLE"
+                },
+                "status_log": [],
+                "committed": true
+              },
+              {
+                "addr": "F10_UNCHECKED_3_4",
+                "fields": {
+                  "TYPE": "CHECK_STATUS",
+                  "STATUS": "UNCHECKED",
+                  "DEPENDENCY": "M4",
+                  "REASON": "EXECUTOR_HOLE"
+                },
+                "status_log": [],
+                "committed": true
+              },
+              {
+                "addr": "F10_UNCHECKED_3_5",
+                "fields": {
+                  "TYPE": "CHECK_STATUS",
+                  "STATUS": "UNCHECKED",
+                  "DEPENDENCY": "M5",
+                  "REASON": "EXECUTOR_HOLE"
+                },
+                "status_log": [],
+                "committed": true
+              }
+            ],
+            "derived_records": [],
+            "provenance_requirements": [],
+            "opens": [],
+            "conflicts": [],
+            "stops": [],
+            "unchecked_dependencies": [
+              {
+                "dependency": "M1",
+                "reason": "SCHEMA_DRIFT"
+              },
+              {
+                "dependency": "M2",
+                "reason": "EXECUTOR_HOLE"
+              },
+              {
+                "dependency": "M3",
+                "reason": "EXECUTOR_HOLE"
+              },
+              {
+                "dependency": "M4",
+                "reason": "EXECUTOR_HOLE"
+              },
+              {
+                "dependency": "M5",
+                "reason": "EXECUTOR_HOLE"
+              }
+            ],
+            "details": {
+              "rule_results": []
+            }
+          },
+          "COMMITTED": false
+        }
+      ],
+      "NETWORK_DELTA": {
+        "CREATED": [
+          "F10_UNCHECKED_1_1",
+          "F10_UNCHECKED_1_2",
+          "F10_UNCHECKED_1_3",
+          "F10_UNCHECKED_1_4",
+          "F10_UNCHECKED_1_5",
+          "F10_UNCHECKED_2_1",
+          "F10_UNCHECKED_2_2",
+          "F10_UNCHECKED_2_3",
+          "F10_UNCHECKED_2_4",
+          "F10_UNCHECKED_2_5",
+          "F10_UNCHECKED_3_1",
+          "F10_UNCHECKED_3_2",
+          "F10_UNCHECKED_3_3",
+          "F10_UNCHECKED_3_4",
+          "F10_UNCHECKED_3_5"
+        ],
+        "CHANGED": []
+      },
+      "STOPS": [
+        {
+          "WHERE": "F10/1",
+          "WANTED": "validate incoming (I8 R7 G1)",
+          "AVAILABLE": {
+            "rule_results": []
+          },
+          "MISSING": [
+            {
+              "dependency": "M1",
+              "reason": "SCHEMA_DRIFT"
+            },
+            {
+              "dependency": "M2",
+              "reason": "EXECUTOR_HOLE"
+            },
+            {
+              "dependency": "M3",
+              "reason": "EXECUTOR_HOLE"
+            },
+            {
+              "dependency": "M4",
+              "reason": "EXECUTOR_HOLE"
+            },
+            {
+              "dependency": "M5",
+              "reason": "EXECUTOR_HOLE"
+            }
+          ],
+          "STOP_CLASS": "NEED",
+          "CAN_ASK_OUTSIDE": false,
+          "QUERY": ""
+        },
+        {
+          "WHERE": "F10/2",
+          "WANTED": "validate incoming (I8 R7 G4)",
+          "AVAILABLE": {
+            "rule_results": []
+          },
+          "MISSING": [
+            {
+              "dependency": "M1",
+              "reason": "SCHEMA_DRIFT"
+            },
+            {
+              "dependency": "M2",
+              "reason": "EXECUTOR_HOLE"
+            },
+            {
+              "dependency": "M3",
+              "reason": "EXECUTOR_HOLE"
+            },
+            {
+              "dependency": "M4",
+              "reason": "EXECUTOR_HOLE"
+            },
+            {
+              "dependency": "M5",
+              "reason": "EXECUTOR_HOLE"
+            }
+          ],
+          "STOP_CLASS": "NEED",
+          "CAN_ASK_OUTSIDE": false,
+          "QUERY": ""
+        },
+        {
+          "WHERE": "F10/3",
+          "WANTED": "validate incoming (I8 R7 G2)",
+          "AVAILABLE": {
+            "rule_results": []
+          },
+          "MISSING": [
+            {
+              "dependency": "M1",
+              "reason": "SCHEMA_DRIFT"
+            },
+            {
+              "dependency": "M2",
+              "reason": "EXECUTOR_HOLE"
+            },
+            {
+              "dependency": "M3",
+              "reason": "EXECUTOR_HOLE"
+            },
+            {
+              "dependency": "M4",
+              "reason": "EXECUTOR_HOLE"
+            },
+            {
+              "dependency": "M5",
+              "reason": "EXECUTOR_HOLE"
+            }
+          ],
+          "STOP_CLASS": "NEED",
+          "CAN_ASK_OUTSIDE": false,
+          "QUERY": ""
+        }
+      ],
+      "NEED": [
+        {
+          "WHERE": "F10/1",
+          "WANTED": "validate incoming (I8 R7 G1)",
+          "AVAILABLE": {
+            "rule_results": []
+          },
+          "MISSING": [
+            {
+              "dependency": "M1",
+              "reason": "SCHEMA_DRIFT"
+            },
+            {
+              "dependency": "M2",
+              "reason": "EXECUTOR_HOLE"
+            },
+            {
+              "dependency": "M3",
+              "reason": "EXECUTOR_HOLE"
+            },
+            {
+              "dependency": "M4",
+              "reason": "EXECUTOR_HOLE"
+            },
+            {
+              "dependency": "M5",
+              "reason": "EXECUTOR_HOLE"
+            }
+          ],
+          "STOP_CLASS": "NEED",
+          "CAN_ASK_OUTSIDE": false,
+          "QUERY": ""
+        },
+        {
+          "WHERE": "F10/2",
+          "WANTED": "validate incoming (I8 R7 G4)",
+          "AVAILABLE": {
+            "rule_results": []
+          },
+          "MISSING": [
+            {
+              "dependency": "M1",
+              "reason": "SCHEMA_DRIFT"
+            },
+            {
+              "dependency": "M2",
+              "reason": "EXECUTOR_HOLE"
+            },
+            {
+              "dependency": "M3",
+              "reason": "EXECUTOR_HOLE"
+            },
+            {
+              "dependency": "M4",
+              "reason": "EXECUTOR_HOLE"
+            },
+            {
+              "dependency": "M5",
+              "reason": "EXECUTOR_HOLE"
+            }
+          ],
+          "STOP_CLASS": "NEED",
+          "CAN_ASK_OUTSIDE": false,
+          "QUERY": ""
+        },
+        {
+          "WHERE": "F10/3",
+          "WANTED": "validate incoming (I8 R7 G2)",
+          "AVAILABLE": {
+            "rule_results": []
+          },
+          "MISSING": [
+            {
+              "dependency": "M1",
+              "reason": "SCHEMA_DRIFT"
+            },
+            {
+              "dependency": "M2",
+              "reason": "EXECUTOR_HOLE"
+            },
+            {
+              "dependency": "M3",
+              "reason": "EXECUTOR_HOLE"
+            },
+            {
+              "dependency": "M4",
+              "reason": "EXECUTOR_HOLE"
+            },
+            {
+              "dependency": "M5",
+              "reason": "EXECUTOR_HOLE"
+            }
+          ],
+          "STOP_CLASS": "NEED",
+          "CAN_ASK_OUTSIDE": false,
+          "QUERY": ""
+        }
+      ]
+    },
+    {
+      "EVENT": "F11",
+      "OPERATIONS": [
+        "READ",
+        "MATCH",
+        "LINK",
+        "MARK"
+      ],
+      "VERDICT": "NEED",
+      "NOTE": {
+        "CANDIDATES": [],
+        "C1": {
+          "created_asks": [],
+          "created_opens": [],
+          "resolved_opens": []
+        }
+      },
+      "NETWORK_DELTA": {
+        "CREATED": [],
+        "CHANGED": []
+      },
+      "STOPS": [],
+      "NEED": []
+    },
+    {
+      "EVENT": "F12",
+      "OPERATIONS": [
+        "READ",
+        "OPEN_REGISTRY"
+      ],
+      "VERDICT": "GO",
+      "NOTE": {
+        "OPEN_REGISTRY": [
+          "OPEN_ASK_5",
+          "RQ_F6"
+        ],
+        "ASK_UNANSWERED": [
+          {
+            "WHERE": "candidate/joint-requirement/RQ_F6",
+            "WANTED": "one binding satisfying all patterns of RQ_F6",
+            "AVAILABLE": "each requirement pattern is explicit; no joint binding is current",
+            "MISSING": [
+              [
+                "?X",
+                "R7",
+                "G1"
+              ],
+              [
+                "?X",
+                "R7",
+                "G4"
+              ]
+            ],
+            "STOP_CLASS": "ASK",
+            "CAN_ASK_OUTSIDE": true,
+            "QUERY": "resolve jointly: (?X R7 G1) AND (?X R7 G4)"
+          }
+        ],
+        "NEED": [
+          {
+            "WHERE": "F1/derive",
+            "WANTED": "determine R2 of I3",
+            "AVAILABLE": {},
+            "MISSING": "EXECUTOR_HOLE",
+            "STOP_CLASS": "NEED",
+            "CAN_ASK_OUTSIDE": false,
+            "QUERY": ""
+          },
+          {
+            "WHERE": "F2/derive",
+            "WANTED": "determine R2 of I5",
+            "AVAILABLE": {},
+            "MISSING": "EXECUTOR_HOLE",
+            "STOP_CLASS": "NEED",
+            "CAN_ASK_OUTSIDE": false,
+            "QUERY": ""
+          },
+          {
+            "WHERE": "F4/1",
+            "WANTED": "validate incoming (I3 R6 S2)",
+            "AVAILABLE": {
+              "rule_results": []
+            },
+            "MISSING": [
+              {
+                "dependency": "M1",
+                "reason": "SCHEMA_DRIFT"
+              },
+              {
+                "dependency": "M2",
+                "reason": "EXECUTOR_HOLE"
+              },
+              {
+                "dependency": "M3",
+                "reason": "EXECUTOR_HOLE"
+              },
+              {
+                "dependency": "M4",
+                "reason": "EXECUTOR_HOLE"
+              },
+              {
+                "dependency": "M5",
+                "reason": "EXECUTOR_HOLE"
+              }
+            ],
+            "STOP_CLASS": "NEED",
+            "CAN_ASK_OUTSIDE": false,
+            "QUERY": ""
+          },
+          {
+            "WHERE": "F5/task",
+            "WANTED": "determine largest R2 among known items",
+            "AVAILABLE": "current records are addressable",
+            "MISSING": "frozen aggregate-max task operator",
+            "STOP_CLASS": "NEED",
+            "CAN_ASK_OUTSIDE": false,
+            "QUERY": ""
+          },
+          {
+            "WHERE": "F7/1",
+            "WANTED": "validate incoming (I5 R2 3)",
+            "AVAILABLE": {
+              "rule_results": []
+            },
+            "MISSING": [
+              {
+                "dependency": "M1",
+                "reason": "SCHEMA_DRIFT"
+              },
+              {
+                "dependency": "M2",
+                "reason": "EXECUTOR_HOLE"
+              },
+              {
+                "dependency": "M3",
+                "reason": "EXECUTOR_HOLE"
+              },
+              {
+                "dependency": "M4",
+                "reason": "EXECUTOR_HOLE"
+              },
+              {
+                "dependency": "M5",
+                "reason": "EXECUTOR_HOLE"
+              }
+            ],
+            "STOP_CLASS": "NEED",
+            "CAN_ASK_OUTSIDE": false,
+            "QUERY": ""
+          },
+          {
+            "WHERE": "F8/1",
+            "WANTED": "validate incoming (I7 R1 B2)",
+            "AVAILABLE": {
+              "rule_results": []
+            },
+            "MISSING": [
+              {
+                "dependency": "M1",
+                "reason": "SCHEMA_DRIFT"
+              },
+              {
+                "dependency": "M2",
+                "reason": "EXECUTOR_HOLE"
+              },
+              {
+                "dependency": "M3",
+                "reason": "EXECUTOR_HOLE"
+              },
+              {
+                "dependency": "M4",
+                "reason": "EXECUTOR_HOLE"
+              },
+              {
+                "dependency": "M5",
+                "reason": "EXECUTOR_HOLE"
+              }
+            ],
+            "STOP_CLASS": "NEED",
+            "CAN_ASK_OUTSIDE": false,
+            "QUERY": ""
+          },
+          {
+            "WHERE": "F8/2",
+            "WANTED": "validate incoming (I7 R2 2)",
+            "AVAILABLE": {
+              "rule_results": []
+            },
+            "MISSING": [
+              {
+                "dependency": "M1",
+                "reason": "SCHEMA_DRIFT"
+              },
+              {
+                "dependency": "M2",
+                "reason": "EXECUTOR_HOLE"
+              },
+              {
+                "dependency": "M3",
+                "reason": "EXECUTOR_HOLE"
+              },
+              {
+                "dependency": "M4",
+                "reason": "EXECUTOR_HOLE"
+              },
+              {
+                "dependency": "M5",
+                "reason": "EXECUTOR_HOLE"
+              }
+            ],
+            "STOP_CLASS": "NEED",
+            "CAN_ASK_OUTSIDE": false,
+            "QUERY": ""
+          },
+          {
+            "WHERE": "F10/1",
+            "WANTED": "validate incoming (I8 R7 G1)",
+            "AVAILABLE": {
+              "rule_results": []
+            },
+            "MISSING": [
+              {
+                "dependency": "M1",
+                "reason": "SCHEMA_DRIFT"
+              },
+              {
+                "dependency": "M2",
+                "reason": "EXECUTOR_HOLE"
+              },
+              {
+                "dependency": "M3",
+                "reason": "EXECUTOR_HOLE"
+              },
+              {
+                "dependency": "M4",
+                "reason": "EXECUTOR_HOLE"
+              },
+              {
+                "dependency": "M5",
+                "reason": "EXECUTOR_HOLE"
+              }
+            ],
+            "STOP_CLASS": "NEED",
+            "CAN_ASK_OUTSIDE": false,
+            "QUERY": ""
+          },
+          {
+            "WHERE": "F10/2",
+            "WANTED": "validate incoming (I8 R7 G4)",
+            "AVAILABLE": {
+              "rule_results": []
+            },
+            "MISSING": [
+              {
+                "dependency": "M1",
+                "reason": "SCHEMA_DRIFT"
+              },
+              {
+                "dependency": "M2",
+                "reason": "EXECUTOR_HOLE"
+              },
+              {
+                "dependency": "M3",
+                "reason": "EXECUTOR_HOLE"
+              },
+              {
+                "dependency": "M4",
+                "reason": "EXECUTOR_HOLE"
+              },
+              {
+                "dependency": "M5",
+                "reason": "EXECUTOR_HOLE"
+              }
+            ],
+            "STOP_CLASS": "NEED",
+            "CAN_ASK_OUTSIDE": false,
+            "QUERY": ""
+          },
+          {
+            "WHERE": "F10/3",
+            "WANTED": "validate incoming (I8 R7 G2)",
+            "AVAILABLE": {
+              "rule_results": []
+            },
+            "MISSING": [
+              {
+                "dependency": "M1",
+                "reason": "SCHEMA_DRIFT"
+              },
+              {
+                "dependency": "M2",
+                "reason": "EXECUTOR_HOLE"
+              },
+              {
+                "dependency": "M3",
+                "reason": "EXECUTOR_HOLE"
+              },
+              {
+                "dependency": "M4",
+                "reason": "EXECUTOR_HOLE"
+              },
+              {
+                "dependency": "M5",
+                "reason": "EXECUTOR_HOLE"
+              }
+            ],
+            "STOP_CLASS": "NEED",
+            "CAN_ASK_OUTSIDE": false,
+            "QUERY": ""
+          }
+        ]
+      },
+      "NETWORK_DELTA": {
+        "CREATED": [],
+        "CHANGED": []
+      },
+      "STOPS": [],
+      "NEED": []
+    }
+  ],
+  "FINAL": {
+    "OPEN_REGISTRY": [
+      "OPEN_ASK_5",
+      "RQ_F6"
+    ],
+    "STOP_MAP": [
+      {
+        "WHERE": "F1/derive",
+        "WANTED": "determine R2 of I3",
+        "AVAILABLE": {},
+        "MISSING": "EXECUTOR_HOLE",
+        "STOP_CLASS": "NEED",
+        "CAN_ASK_OUTSIDE": false,
+        "QUERY": ""
+      },
+      {
+        "WHERE": "F2/derive",
+        "WANTED": "determine R2 of I5",
+        "AVAILABLE": {},
+        "MISSING": "EXECUTOR_HOLE",
+        "STOP_CLASS": "NEED",
+        "CAN_ASK_OUTSIDE": false,
+        "QUERY": ""
+      },
+      {
+        "WHERE": "F4/1",
+        "WANTED": "validate incoming (I3 R6 S2)",
+        "AVAILABLE": {
+          "rule_results": []
+        },
+        "MISSING": [
+          {
+            "dependency": "M1",
+            "reason": "SCHEMA_DRIFT"
+          },
+          {
+            "dependency": "M2",
+            "reason": "EXECUTOR_HOLE"
+          },
+          {
+            "dependency": "M3",
+            "reason": "EXECUTOR_HOLE"
+          },
+          {
+            "dependency": "M4",
+            "reason": "EXECUTOR_HOLE"
+          },
+          {
+            "dependency": "M5",
+            "reason": "EXECUTOR_HOLE"
+          }
+        ],
+        "STOP_CLASS": "NEED",
+        "CAN_ASK_OUTSIDE": false,
+        "QUERY": ""
+      },
+      {
+        "WHERE": "F5/task",
+        "WANTED": "determine largest R2 among known items",
+        "AVAILABLE": "current records are addressable",
+        "MISSING": "frozen aggregate-max task operator",
+        "STOP_CLASS": "NEED",
+        "CAN_ASK_OUTSIDE": false,
+        "QUERY": ""
+      },
+      {
+        "WHERE": "candidate/joint-requirement/RQ_F6",
+        "WANTED": "one binding satisfying all patterns of RQ_F6",
+        "AVAILABLE": "each requirement pattern is explicit; no joint binding is current",
+        "MISSING": [
+          [
+            "?X",
+            "R7",
+            "G1"
+          ],
+          [
+            "?X",
+            "R7",
+            "G4"
+          ]
+        ],
+        "STOP_CLASS": "ASK",
+        "CAN_ASK_OUTSIDE": true,
+        "QUERY": "resolve jointly: (?X R7 G1) AND (?X R7 G4)"
+      },
+      {
+        "WHERE": "F7/1",
+        "WANTED": "validate incoming (I5 R2 3)",
+        "AVAILABLE": {
+          "rule_results": []
+        },
+        "MISSING": [
+          {
+            "dependency": "M1",
+            "reason": "SCHEMA_DRIFT"
+          },
+          {
+            "dependency": "M2",
+            "reason": "EXECUTOR_HOLE"
+          },
+          {
+            "dependency": "M3",
+            "reason": "EXECUTOR_HOLE"
+          },
+          {
+            "dependency": "M4",
+            "reason": "EXECUTOR_HOLE"
+          },
+          {
+            "dependency": "M5",
+            "reason": "EXECUTOR_HOLE"
+          }
+        ],
+        "STOP_CLASS": "NEED",
+        "CAN_ASK_OUTSIDE": false,
+        "QUERY": ""
+      },
+      {
+        "WHERE": "F8/1",
+        "WANTED": "validate incoming (I7 R1 B2)",
+        "AVAILABLE": {
+          "rule_results": []
+        },
+        "MISSING": [
+          {
+            "dependency": "M1",
+            "reason": "SCHEMA_DRIFT"
+          },
+          {
+            "dependency": "M2",
+            "reason": "EXECUTOR_HOLE"
+          },
+          {
+            "dependency": "M3",
+            "reason": "EXECUTOR_HOLE"
+          },
+          {
+            "dependency": "M4",
+            "reason": "EXECUTOR_HOLE"
+          },
+          {
+            "dependency": "M5",
+            "reason": "EXECUTOR_HOLE"
+          }
+        ],
+        "STOP_CLASS": "NEED",
+        "CAN_ASK_OUTSIDE": false,
+        "QUERY": ""
+      },
+      {
+        "WHERE": "F8/2",
+        "WANTED": "validate incoming (I7 R2 2)",
+        "AVAILABLE": {
+          "rule_results": []
+        },
+        "MISSING": [
+          {
+            "dependency": "M1",
+            "reason": "SCHEMA_DRIFT"
+          },
+          {
+            "dependency": "M2",
+            "reason": "EXECUTOR_HOLE"
+          },
+          {
+            "dependency": "M3",
+            "reason": "EXECUTOR_HOLE"
+          },
+          {
+            "dependency": "M4",
+            "reason": "EXECUTOR_HOLE"
+          },
+          {
+            "dependency": "M5",
+            "reason": "EXECUTOR_HOLE"
+          }
+        ],
+        "STOP_CLASS": "NEED",
+        "CAN_ASK_OUTSIDE": false,
+        "QUERY": ""
+      },
+      {
+        "WHERE": "F10/1",
+        "WANTED": "validate incoming (I8 R7 G1)",
+        "AVAILABLE": {
+          "rule_results": []
+        },
+        "MISSING": [
+          {
+            "dependency": "M1",
+            "reason": "SCHEMA_DRIFT"
+          },
+          {
+            "dependency": "M2",
+            "reason": "EXECUTOR_HOLE"
+          },
+          {
+            "dependency": "M3",
+            "reason": "EXECUTOR_HOLE"
+          },
+          {
+            "dependency": "M4",
+            "reason": "EXECUTOR_HOLE"
+          },
+          {
+            "dependency": "M5",
+            "reason": "EXECUTOR_HOLE"
+          }
+        ],
+        "STOP_CLASS": "NEED",
+        "CAN_ASK_OUTSIDE": false,
+        "QUERY": ""
+      },
+      {
+        "WHERE": "F10/2",
+        "WANTED": "validate incoming (I8 R7 G4)",
+        "AVAILABLE": {
+          "rule_results": []
+        },
+        "MISSING": [
+          {
+            "dependency": "M1",
+            "reason": "SCHEMA_DRIFT"
+          },
+          {
+            "dependency": "M2",
+            "reason": "EXECUTOR_HOLE"
+          },
+          {
+            "dependency": "M3",
+            "reason": "EXECUTOR_HOLE"
+          },
+          {
+            "dependency": "M4",
+            "reason": "EXECUTOR_HOLE"
+          },
+          {
+            "dependency": "M5",
+            "reason": "EXECUTOR_HOLE"
+          }
+        ],
+        "STOP_CLASS": "NEED",
+        "CAN_ASK_OUTSIDE": false,
+        "QUERY": ""
+      },
+      {
+        "WHERE": "F10/3",
+        "WANTED": "validate incoming (I8 R7 G2)",
+        "AVAILABLE": {
+          "rule_results": []
+        },
+        "MISSING": [
+          {
+            "dependency": "M1",
+            "reason": "SCHEMA_DRIFT"
+          },
+          {
+            "dependency": "M2",
+            "reason": "EXECUTOR_HOLE"
+          },
+          {
+            "dependency": "M3",
+            "reason": "EXECUTOR_HOLE"
+          },
+          {
+            "dependency": "M4",
+            "reason": "EXECUTOR_HOLE"
+          },
+          {
+            "dependency": "M5",
+            "reason": "EXECUTOR_HOLE"
+          }
+        ],
+        "STOP_CLASS": "NEED",
+        "CAN_ASK_OUTSIDE": false,
+        "QUERY": ""
+      }
+    ],
+    "UNCHECKED_RECORDS": [
+      "F10_UNCHECKED_1_1",
+      "F10_UNCHECKED_1_2",
+      "F10_UNCHECKED_1_3",
+      "F10_UNCHECKED_1_4",
+      "F10_UNCHECKED_1_5",
+      "F10_UNCHECKED_2_1",
+      "F10_UNCHECKED_2_2",
+      "F10_UNCHECKED_2_3",
+      "F10_UNCHECKED_2_4",
+      "F10_UNCHECKED_2_5",
+      "F10_UNCHECKED_3_1",
+      "F10_UNCHECKED_3_2",
+      "F10_UNCHECKED_3_3",
+      "F10_UNCHECKED_3_4",
+      "F10_UNCHECKED_3_5",
+      "F4_UNCHECKED_1_1",
+      "F4_UNCHECKED_1_2",
+      "F4_UNCHECKED_1_3",
+      "F4_UNCHECKED_1_4",
+      "F4_UNCHECKED_1_5",
+      "F7_UNCHECKED_1_1",
+      "F7_UNCHECKED_1_2",
+      "F7_UNCHECKED_1_3",
+      "F7_UNCHECKED_1_4",
+      "F7_UNCHECKED_1_5",
+      "F8_UNCHECKED_1_1",
+      "F8_UNCHECKED_1_2",
+      "F8_UNCHECKED_1_3",
+      "F8_UNCHECKED_1_4",
+      "F8_UNCHECKED_1_5",
+      "F8_UNCHECKED_2_1",
+      "F8_UNCHECKED_2_2",
+      "F8_UNCHECKED_2_3",
+      "F8_UNCHECKED_2_4",
+      "F8_UNCHECKED_2_5"
+    ]
+  }
+}
