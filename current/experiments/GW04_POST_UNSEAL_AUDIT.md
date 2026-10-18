@@ -1,6 +1,6 @@
 # GW04 — post-unseal audit
 
-**Status: EXPERIMENTAL RECORD / POST-UNSEAL AUDIT**  
+**Status: EXPERIMENTAL RECORD / POST-UNSEAL AUDIT**
 **Date: 2026-10-18 · auditor: Claude (author of GW04 world text and answer book)**
 
 ## 0. Integrity (all verified before reading the logs)
