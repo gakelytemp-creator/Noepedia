@@ -65,8 +65,10 @@ Daimonion-ის სხვადასხვა ფორმა და ოქტ
 32. [experiments/GW01_CLAUDE_COLD_AND_CONTROLLED_RERUN.md](experiments/GW01_CLAUDE_COLD_AND_CONTROLLED_RERUN.md) — Claude cold run + controlled overlay rerun; honesty/power split and four WORKING candidate additions.
 33. [experiments/GW02_DESIGN.md](experiments/GW02_DESIGN.md) — sealed design for replacing the hologram executor with a deterministic mechanical demon; predictions fixed before coding.
 34. [experiments/GW02_VS_ANSWER_BOOK.md](experiments/GW02_VS_ANSWER_BOOK.md) — post-unseal audit: 10 MATCH, 2 PARTIAL, 0 FAIL; exposes missing outward ASK, resolvable OPEN→ASK, and OPEN-registry consistency as fresh-world candidate NEEDs.
-35. [MIGRATION_MAP.md](MIGRATION_MAP.md) — ძველი კომპონენტების ახალი ადგილი.
-36. [OPEN_QUESTIONS.md](OPEN_QUESTIONS.md) — რაც ჯერ არ უნდა დაიხუროს.
+35. [experiments/GW04_WORLD_TEXT.md](experiments/GW04_WORLD_TEXT.md) — sealed solver-visible fresh world for the cold encoder/mechanical executor test.
+36. [experiments/GW04_PREREG.md](experiments/GW04_PREREG.md) — preregistered two-run A/B design: baseline first, then only the three candidate mechanisms, answer book opened afterward.
+37. [MIGRATION_MAP.md](MIGRATION_MAP.md) — ძველი კომპონენტების ახალი ადგილი.
+38. [OPEN_QUESTIONS.md](OPEN_QUESTIONS.md) — რაც ჯერ არ უნდა დაიხუროს.
 
 ## სტატუსის წესი
 
