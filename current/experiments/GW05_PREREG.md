@@ -227,3 +227,16 @@ GW05N_REPOSITORY_VISIBILITY_CHECK = encoder answered "no" before receiving files
 **REVIEWER EXPOSURE:** the experimenter pasted the GW05-N raw translation into the reviewer's (Claude) session before runs. The GW05 answer book was already sealed (`654ad18d…`). Reviewer made no comment on its content.
 
 No GW05 run has been executed at this seal point. GW05-L preparation follows after this commit.
+
+
+## GW05-L raw encoder output seal
+
+GW05L_OUTPUT_FILE = current/experiments/GW05_L_ENCODER_OUTPUT.json
+GW05L_OUTPUT_SHA256 = ca2c60f68ccb32fb410be0bf2ae1a5ae439eaf6356af628576af4a9efeca3ef6
+GW05L_CLARIFICATION = none
+GW05L_REPOSITORY_VISIBILITY_CHECK = encoder answered "no" before receiving files
+GW05L_GITHUB_APP = suspended during the session
+
+**REVIEWER EXPOSURE:** the experimenter also pasted the GW05-L raw translation into the reviewer's session before runs. Answer book already sealed. Reviewer made no comment on content.
+
+No GW05 run has been executed at this seal point.
