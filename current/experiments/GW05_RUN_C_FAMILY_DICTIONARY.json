@@ -263,6 +263,20 @@
     "CHECK",
     "DERIVE",
     "VALIDATE_INCOMING",
-    "CLOSURE"
+    "CLOSURE",
+    "EXECUTOR_HOLE",
+    "SCHEMA_DRIFT",
+    "addr",
+    "complete",
+    "dependency_signature",
+    "families",
+    "known_sum",
+    "missing_subjects",
+    "operations",
+    "records",
+    "required_fields",
+    "required_paths",
+    "subjects",
+    "value"
   ]
 }

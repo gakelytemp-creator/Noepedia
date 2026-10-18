@@ -342,6 +342,15 @@
       "RATIONALE": "Implements the preregistered classification boundary.",
       "CODE_LOCUS": "family_executor.py:FamilyExecutor.execute",
       "POST_REVIEW_CHANGE": true
+    },
+    {
+      "DECISION_ID": "PR-D04",
+      "RULE_OR_INTERFACE": "schema vocabulary audit",
+      "TRIGGER": "First post-review audit run failed on generic executor bookkeeping vocabulary",
+      "CHANGE": "Classify executor-internal bookkeeping/result keys and transfer-class labels as generic core vocabulary rather than compiler-target family vocabulary.",
+      "RATIONALE": "The F2 gate is intended to detect undeclared schema-instance tokens, not internal HandlerResult bookkeeping. No executable handler semantics are changed.",
+      "CODE_LOCUS": "GW05_RUN_C_FAMILY_DICTIONARY.json:generic_core_vocabulary",
+      "POST_REVIEW_CHANGE": true
     }
   ]
 }
