@@ -19,6 +19,83 @@ Sealed answer book, held outside the solver-visible repository state:
 
 The answer book must remain unopened until both planned runs have produced their logs.
 
+
+## Candidate-code seal before cold translation
+
+The RUN B candidate implementation is frozen **before the cold encoder is allowed to run**.
+
+Frozen candidate module:
+
+`core/demon/gw04_candidate_overlay.py`
+
+`sha256 = 0c2d031e847e3d1044c4c73ca5947411bf7d070b475e730c96e119d3d5f6a2de`
+
+Source basis: only `current/experiments/GW02_VS_ANSWER_BOOK.md`.
+
+The module implements exactly three candidate mechanisms:
+
+- unsupported explicit requirement patterns may emit ASK through a caller-supplied structural support check;
+- OPEN→ASK promotion is fail-closed and requires explicit machine-readable declaration that exactly one external fact resolves the OPEN;
+- unresolved ASK stops are materialized as addressable OPEN records so the final OPEN registry cannot silently lose them.
+
+No GW04 world text, cold translation or RUN A log may be used to modify this module before RUN B.
+
+Focused GW01 training-scene regression:
+
+`core/demon/gw04_candidate_overlay_test.py`
+
+GW01 is used here only as already-seen training material, never as fresh evidence for generality.
+
+If the frozen candidate interface proves insufficient for GW04, that insufficiency is an experimental result. It must not be repaired between RUN A and RUN B.
+
+## Cold encoder identity and isolation gate
+
+The experiment must not start until the cold encoder identity is sealed in a commit.
+
+Required execution metadata:
+
+```text
+ENCODER_MODEL      = TO_BE_FILLED_AND_COMMITTED_BEFORE_TRANSLATION
+ENCODER_SESSION_ID = TO_BE_FILLED_AND_COMMITTED_BEFORE_TRANSLATION
+FORMAT_INPUT       = GW04_RULE_RECORD_FORMAT.md
+GW01_EXAMPLE_GIVEN = YES | NO   (must be fixed before translation)
+```
+
+Eligibility constraints:
+
+- the encoder must not be Claude/the author of GW04 or its answer book;
+- it must not be the GPT session that authored this preregistration;
+- it must be a new session that receives only the solver-visible world text and the frozen format inputs;
+- it must not see the answer book, RUN A output, RUN B output, or a hand-authored GW04 translation.
+
+Until `ENCODER_MODEL`, `ENCODER_SESSION_ID`, and `GW01_EXAMPLE_GIVEN` are committed, the cold-translation gate is **CLOSED**.
+
+Known context-bias note:
+
+If `rules_gw01.py` is supplied as an example, it may attract the encoder toward the six GW03 rule families. That exposure must remain visible in the audit and must not be confused with a semantic law of the world. The preferred input is the neutral `GW04_RULE_RECORD_FORMAT.md`, where RULE_TYPE is explicitly open.
+
+## Unsupported evaluator type policy
+
+The generic evaluator is frozen for RUN A and RUN B.
+
+If the cold encoder emits a faithful rule record whose RULE_TYPE or structural operation has no evaluator handler:
+
+```text
+faithful record exists + evaluator cannot execute it
+→ EXECUTOR_HOLE
+```
+
+If the encoder itself cannot produce a faithful structural record:
+
+```text
+world law not faithfully encoded
+→ ENCODER_HOLE
+```
+
+In either case the A/B experiment continues **without extending `generic_evaluator.py` or `demon_core.py`**. Downstream consequences may therefore remain unavailable or cascade into later STOP/NEED states; those consequences stay in the log.
+
+Any later evaluator extension is a separate **RUN C**, requires a separate preregistration, and may occur only after RUN A and RUN B logs are frozen.
+
 ## What GW04 measures
 
 GW04 is not another GW01 rerun. It uses a fresh structure and a cold translation boundary.
