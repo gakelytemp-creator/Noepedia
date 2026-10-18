@@ -89,7 +89,7 @@ Required execution metadata:
 ENCODER_MODEL      = GPT-6 (self-reported by the model, not verified in UI); ChatGPT web, Plus plan
 ENCODER_EFFORT     = Средний
 MODE               = Чат
-ENCODER_SESSION_ID = PENDING — session link was not included in the gate-opening request
+ENCODER_SESSION_ID = https://chatgpt.com/c/6ad484aa-e4c8-83ed-bab9-4864d9a4e86c
 ENCODER_MEMORY     = OFF
 ISOLATION          = memory OFF; writing style OFF; record history OFF; web search OFF; connectors OFF; library search OFF; custom instructions = empty; chat opened outside any project; settings changed before the chat was opened
 FORMAT_INPUT       = GW04_RULE_RECORD_FORMAT.md
@@ -129,7 +129,7 @@ Eligibility constraints:
 - encoder memory must be OFF, or the chosen external model/account must have no prior Noepedia context and this must be recorded explicitly;
 - it must not see the answer book, RUN A output, RUN B output, or a hand-authored GW04 translation.
 
-Gate status: **CLOSED — only ENCODER_SESSION_ID remains pending.** The model, effort, mode, isolation state, memory state, GW01-example policy, pre-file messages, clarification policy, and all three input hashes are now committed. The gate may be changed to **OPEN** only after the actual session link/identifier is committed.
+Gate status: **OPEN.** The encoder identity/session, model self-report, effort, mode, isolation state, memory state, GW01-example policy, pre-file messages, clarification policy, prompt hash, world-text hash, and format-contract hash are committed before any GW04 file is shown to the encoder.
 
 Known context-bias note:
 
