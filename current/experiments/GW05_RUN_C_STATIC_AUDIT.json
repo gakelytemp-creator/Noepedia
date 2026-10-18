@@ -5,21 +5,41 @@
     "current record selection",
     "current triple matching",
     "current value projection",
-    "nested structural field access",
     "dependency-path expansion",
     "dependency signature matching",
     "relation-slice subject selection",
     "numeric expression evaluation",
     "equality-side evaluation",
     "closure lookup",
+    "rule lookup",
     "UNCHECKED marker construction"
   ],
   "HANDLER_COUNT": 5,
-  "AUTHOR_DECISION_COUNT": 13,
+  "AUTHOR_DECISION_COUNT": 14,
   "LOC": {
-    "core/demon/run_c/family_executor.py": {
+    "family_executor": {
       "LOC_TOTAL": 552,
       "LOC_CORE": 463
+    },
+    "family_executor_breakdown_core": {
+      "GENERIC_OPERATIONS_LOC_CORE": 172,
+      "HANDLERS_LOC_CORE": 224,
+      "DISPATCHER_LOC_CORE": 37,
+      "OTHER_INTERFACE_AND_TYPES_LOC_CORE": 30
+    },
+    "tests": {
+      "LOC_TOTAL": 162,
+      "LOC_CORE": 141
+    },
+    "audit_tool": {
+      "LOC_TOTAL": 161,
+      "LOC_CORE": 133
+    },
+    "family_dictionary": {
+      "LINES_TOTAL": 64
+    },
+    "decision_log": {
+      "LINES_TOTAL": 249
     }
   },
   "TEXT_GATE_HITS": [],
