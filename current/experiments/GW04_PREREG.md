@@ -74,6 +74,7 @@ Required execution metadata:
 ```text
 ENCODER_MODEL      = TO_BE_FILLED_AND_COMMITTED_BEFORE_TRANSLATION
 ENCODER_SESSION_ID = TO_BE_FILLED_AND_COMMITTED_BEFORE_TRANSLATION
+ENCODER_MEMORY     = OFF | ON   (must be fixed before translation)
 FORMAT_INPUT       = GW04_RULE_RECORD_FORMAT.md
 GW01_EXAMPLE_GIVEN = YES | NO   (must be fixed before translation)
 ```
@@ -83,13 +84,46 @@ Eligibility constraints:
 - the encoder must not be Claude/the author of GW04 or its answer book;
 - it must not be the GPT session that authored this preregistration;
 - it must be a new session that receives only the solver-visible world text and the frozen format inputs;
+- encoder memory must be OFF, or the chosen external model/account must have no prior Noepedia context and this must be recorded explicitly;
 - it must not see the answer book, RUN A output, RUN B output, or a hand-authored GW04 translation.
 
-Until `ENCODER_MODEL`, `ENCODER_SESSION_ID`, and `GW01_EXAMPLE_GIVEN` are committed, the cold-translation gate is **CLOSED**.
+Until `ENCODER_MODEL`, `ENCODER_SESSION_ID`, `ENCODER_MEMORY`, and `GW01_EXAMPLE_GIVEN` are committed, the cold-translation gate is **CLOSED**.
 
 Known context-bias note:
 
-If `rules_gw01.py` is supplied as an example, it may attract the encoder toward the six GW03 rule families. That exposure must remain visible in the audit and must not be confused with a semantic law of the world. The preferred input is the neutral `GW04_RULE_RECORD_FORMAT.md`, where RULE_TYPE is explicitly open.
+The default cold-encoder input is exactly two files:
+
+```text
+GW04_WORLD_TEXT.md
+GW04_RULE_RECORD_FORMAT.md
+```
+
+`rules_gw01.py` may be added only if `GW01_EXAMPLE_GIVEN = YES` was committed before translation. If supplied, it may attract the encoder toward the six GW03 rule families. That exposure must remain visible in the audit.
+
+## Cold-translation output seal
+
+The encoder output becomes a sealed artifact before either mechanical run starts.
+
+```text
+cold translation
+→ save encoder output verbatim
+→ compute sha256
+→ commit output filename + sha256
+→ only then start RUN A
+```
+
+Required metadata:
+
+```text
+ENCODER_OUTPUT_FILE   = TO_BE_FILLED_AFTER_TRANSLATION_BEFORE_RUN_A
+ENCODER_OUTPUT_SHA256 = TO_BE_FILLED_AND_COMMITTED_BEFORE_RUN_A
+```
+
+RUN A and RUN B must consume the same exact encoder-output bytes. The translation may not be edited between runs.
+
+If deterministic loader normalization is unavoidable, both raw and normalized artifacts must be kept and separately hashed before RUN A.
+
+No mechanical run may begin while `ENCODER_OUTPUT_SHA256` is unset.
 
 ## Unsupported evaluator type policy
 
