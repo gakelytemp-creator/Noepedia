@@ -28,16 +28,31 @@ Frozen candidate module:
 
 `core/demon/gw04_candidate_overlay.py`
 
-`sha256 = 15cd6afd16d557a8324e40397c6fb436a5b274c3f84a20f6bc790b21ed8dd893`
+`sha256 = 5a45c68c5747a257209b964acb902f2b15147b902d1cf00bd1f7387bca503037`
 
 **Seal correction note (pre-run):** the previously recorded value `0c2d031e…` did not match the repository file at commit `f5f2d67`. The repository bytes hash to `15cd6afd16d557a8324e40397c6fb436a5b274c3f84a20f6bc790b21ed8dd893`. No cold translation or GW04 run occurred before this correction. This commit records the discrepancy rather than hiding it. The candidate code will be resealed again if it changes before the cold-translation gate opens.
 
+**C2 structural reseal (pre-translation):** the first overlay expected `RESOLUTION_*` fields but no runtime producer existed. Before any cold translation or GW04 run, option **(b)** was adopted: a generic evaluator-side producer now records a machine-readable MISSING fact-pattern on an unresolved task query; the RUN B overlay may convert only a one-fact pattern (all positions present, at most one `?` variable) into an addressable resolvable OPEN and then ASK. Missing rules, closure, cardinality policies, or other prose/string deficits remain NEED. No natural-language parsing is used.
+
+Frozen files for this A/B boundary:
+
+`core/demon/gw04_candidate_overlay.py`  
+`sha256 = 5a45c68c5747a257209b964acb902f2b15147b902d1cf00bd1f7387bca503037`
+
+`core/demon/gw03/generic_evaluator.py`  
+`sha256 = 0f6a3cf0520b1887bca7ebdfafb9e2f200297393e46af8357ea5d587b317b595`
+
+`core/demon/gw04_candidate_overlay_test.py`  
+`sha256 = 7285621eea8172459a06a038bae6376667983040a901bf3aaaf5a86e62d6e123`
+
+The generic evaluator file is identical in RUN A and RUN B; its candidate hook is inert when `candidate_overlay=None`. RUN B supplies the frozen overlay. The base `demon_core.py` is unchanged.
+
 Source basis: only `current/experiments/GW02_VS_ANSWER_BOOK.md`.
 
-The module implements exactly three candidate mechanisms:
+The frozen RUN B path implements exactly three candidate mechanisms:
 
-- unsupported explicit requirement patterns may emit ASK through a caller-supplied structural support check;
-- OPEN→ASK promotion is fail-closed and requires explicit machine-readable declaration that exactly one external fact resolves the OPEN;
+- unsupported explicit requirement patterns may emit ASK through the evaluator's structural support check;
+- a NEED STOP whose MISSING field is one machine-readable fact-pattern is materialized as a resolvable OPEN; only then may OPEN→ASK promotion occur;
 - unresolved ASK stops are materialized as addressable OPEN records so the final OPEN registry cannot silently lose them.
 
 No GW04 world text, cold translation or RUN A log may be used to modify this module before RUN B.
@@ -181,8 +196,8 @@ The answer book is allowed to be wrong. Its preregistered alternative acceptable
 - The cold encoder must not see the answer book.
 - The encoder must not see a hand-authored translation of GW04 before producing its own translation.
 - RUN A and RUN B must use the same encoder output.
-- `generic_evaluator.py` and the base `demon_core.py` must remain unchanged across the pair.
-- The only A/B difference is whether the three candidate mechanisms are active.
+- the resealed `generic_evaluator.py` and the base `demon_core.py` must remain unchanged across the pair; the evaluator's candidate hook is disabled in RUN A and enabled only by supplying the frozen overlay in RUN B.
+- The only A/B difference is whether the frozen candidate overlay is supplied; no code or translation changes are allowed between the runs.
 - No GW01-specific patch may be introduced.
 - The solver may not infer meaning from N/K/Q/Z names.
 - No object, predicate or law may be invented to make the world balance.

@@ -13,7 +13,8 @@ already supported?" to the evaluator/runner that owns pattern semantics.
 
 Candidates:
   C1 requirement concept -> ASK for each unsupported explicit requirement pattern
-  C2 unresolved OPEN -> ASK only when exactly one external fact is explicitly declared
+  C2 NEED STOP with one machine-readable missing fact-pattern -> addressable OPEN
+     -> ASK; no prose interpretation and no pre-populated resolution metadata required
   C3 final OPEN registry includes every unresolved explicit OPEN and materializes
      unresolved ASK stops as addressable OPEN records
 """
@@ -95,6 +96,53 @@ class CandidateOverlay:
             made.append(where)
         return CandidateResult(created_asks=tuple(made))
 
+    # C2 producer rule — frozen before GW04 cold translation
+    def open_from_stop(self, stop) -> CandidateResult:
+        """
+        Mechanical producer for C2 resolution metadata.
+
+        A STOP is externally resolvable by one fact only when its MISSING field is
+        a machine-readable triplet pattern:
+            (SUBJECT, PREDICATE, OBJECT)
+        with all three positions present and at most one '?'-variable.
+
+        Strings such as "cardinality policy", "closure", or any other structural
+        deficit do not qualify and remain NEED.  No prose parsing is performed.
+        """
+        if stop.stop_class != "NEED":
+            return CandidateResult()
+        pat = stop.missing
+        if not isinstance(pat, (tuple, list)) or len(pat) != 3:
+            return CandidateResult()
+        if any(x is None for x in pat):
+            return CandidateResult()
+        vars_ = [x for x in pat if isinstance(x, str) and x.startswith("?")]
+        if len(vars_) > 1:
+            return CandidateResult()
+
+        try:
+            idx = self.net.stops.index(stop) + 1
+        except ValueError:
+            return CandidateResult()
+
+        addr = f"OPEN_NEED_{idx}"
+        if self.net.read(addr) is None:
+            s, p, o = pat
+            rec = Record(addr, {
+                "TYPE": "OPEN",
+                "OPEN_KIND": "SINGLE_EXTERNAL_FACT",
+                "ORIGIN_WHERE": stop.where,
+                "MISSING_PATTERN": tuple(pat),
+                "RESOLUTION_KIND": "EXTERNAL_FACT",
+                "RESOLUTION_FACT_COUNT": 1,
+                "RESOLUTION_QUERY": f"resolve ({s} {p} {o})",
+            })
+            self.net.records[addr] = rec
+            rec.committed = True
+            self.net.mark(addr, "OPEN")
+            return CandidateResult(created_opens=(addr,))
+        return CandidateResult()
+
     # C2
     def promote_resolvable_opens(self) -> CandidateResult:
         """
@@ -105,8 +153,9 @@ class CandidateOverlay:
           RESOLUTION_FACT_COUNT = 1
           RESOLUTION_QUERY = non-empty string
 
-        If these fields are absent, the OPEN stays OPEN/NEED.  This preserves the
-        negative control and prevents "ask about everything".
+        These fields are normally produced by open_from_stop() from a structured
+        one-fact MISSING pattern. If they are absent, the OPEN stays OPEN/NEED.
+        This preserves the negative control and prevents "ask about everything".
         """
         made = []
         for rec in list(self.net.records.values()):
@@ -173,6 +222,9 @@ class CandidateOverlay:
         for rq_addr, supported in requirements:
             out = self.requirement_asks(rq_addr, supported)
             asks.extend(out.created_asks)
+        for stop in list(self.net.stops):
+            out = self.open_from_stop(stop)
+            opens.extend(out.created_opens)
         out = self.promote_resolvable_opens()
         asks.extend(out.created_asks)
         out = self.materialize_ask_opens()

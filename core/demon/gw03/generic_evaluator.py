@@ -32,8 +32,9 @@ def is_var(t):
 
 
 class Evaluator:
-    def __init__(self, net: Network, demon: Demon):
+    def __init__(self, net: Network, demon: Demon, candidate_overlay=None):
         self.net, self.d = net, demon
+        self.candidates = candidate_overlay
         self._stoprec = 0
 
     # ── ჩატვირთვა: ფაქტებიც და წესებიც ერთი და იმავე გზით — ჩანაწერებად ──
@@ -202,6 +203,24 @@ class Evaluator:
                     mark=[(derived_addr, "CURRENT")]))
                 return v, [concl[2]], (derived_addr, [r.addr for r in recs],
                                        rule.addr)
+        # No lawful derivation found.  Record the missing answer as one
+        # machine-readable fact-pattern.  RUN A stops at NEED.  RUN B may pass
+        # the same STOP through the frozen C2 overlay rule.
+        missing = (s, p, "?Z")
+        stop = self.net.stop(
+            f"{ev}/query",
+            f"determine ({s} {p} ?Z)",
+            "no current match and no lawful derivation",
+            missing,
+            NEED,
+            can_ask=False,
+            query="",
+        )
+        if self.candidates is not None:
+            self.candidates.open_from_stop(stop)
+            out = self.candidates.promote_resolvable_opens()
+            if out.created_asks:
+                return ASK, [], None
         return NEED, [], None
 
     # ── TASK-goal: „გახადე (s p o) მიმდინარე" — ინვარიანტების შემოწმებით ──
@@ -240,6 +259,12 @@ class Evaluator:
                               "REQUIREMENT": pat_addrs})
         v, _ = self.d.commit(self.d.propose(add=[rq], mark=[(rq_addr, "OPEN")],
                                             authorized_by=task_addr))
+        if self.candidates is not None:
+            def _supported(pat):
+                return bool(self.holds((
+                    pat.f("SUBJECT"), pat.f("PREDICATE"), pat.f("OBJECT")
+                )))
+            self.candidates.requirement_asks(rq_addr, _supported)
         return v
 
     def req_candidates(self, patterns):
@@ -268,6 +293,17 @@ class Evaluator:
                                                 mark=[(rq_addr, "BOUND")]))
             return v, c[0]
         return (NEED if not c else ASK), c
+
+    # ── final OPEN registry: C3 is active only when overlay is supplied ──
+    def final_open_registry(self):
+        if self.candidates is not None:
+            return self.candidates.final_open_registry()
+        return tuple(sorted(
+            r.addr for r in self.net.records.values()
+            if r.f("TYPE") == "OPEN"
+            and r.status_log
+            and r.status_log[-1].state == "OPEN"
+        ))
 
     # ── WATCH: დეკლარაციული ნიმუში → ზოგადი პირობა ──
     def install_watch(self, addr, pattern):

@@ -14,7 +14,7 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 
-from demon_core import Network, Record, ASK
+from demon_core import Network, Record, ASK, NEED
 from gw04_candidate_overlay import CandidateOverlay
 
 
@@ -58,23 +58,35 @@ assert {s.query for s in net.stops if s.stop_class == ASK} == {
     "resolve (X P5 TRUE)",
 }
 
-add(net, Record("OPEN_MULT_P3", {
-    "TYPE": "OPEN",
-    "ABOUT": "unresolved multiplicity of P3",
-    "RESOLUTION_KIND": "EXTERNAL_FACT",
-    "RESOLUTION_FACT_COUNT": 1,
-    "RESOLUTION_QUERY": "which P3 value of O4 is current?",
-}), "OPEN")
-
+# C2 positive control: metadata is NOT hand-written on the OPEN.
+# The producer sees one machine-readable missing fact-pattern on a NEED STOP.
+s_fact = net.stop(
+    "E8/multiplicity",
+    "determine current O4/P3 value",
+    "multiplicity unresolved",
+    ("O4", "P3", "?V"),
+    NEED,
+)
+made = overlay.open_from_stop(s_fact)
+assert len(made.created_opens) == 1
 out = overlay.promote_resolvable_opens()
 assert len(out.created_asks) == 1
 assert any(
-    s.query == "which P3 value of O4 is current?" and s.stop_class == ASK
+    s.query == "resolve (O4 P3 ?V)" and s.stop_class == ASK
     for s in net.stops
 )
 
-add(net, Record("OPEN_NEG", {"TYPE": "OPEN"}), "OPEN")
+# Negative control: missing structure/rule is not a single fact-pattern.
 ask_count = len([s for s in net.stops if s.stop_class == ASK])
+s_struct = net.stop(
+    "NEG/structure",
+    "continue construction",
+    "dependency visible",
+    "cardinality policy for P3",
+    NEED,
+)
+made = overlay.open_from_stop(s_struct)
+assert not made.created_opens
 overlay.promote_resolvable_opens()
 assert len([s for s in net.stops if s.stop_class == ASK]) == ask_count
 
@@ -89,8 +101,7 @@ net.stop(
 )
 
 registry = overlay.final_open_registry()
-assert "OPEN_MULT_P3" in registry
-assert "OPEN_NEG" in registry
+assert any(a.startswith("OPEN_NEED_") for a in registry)
 assert any(a.startswith("OPEN_ASK_") for a in registry)
 
 print("PASS — GW01 focused candidate regression")
