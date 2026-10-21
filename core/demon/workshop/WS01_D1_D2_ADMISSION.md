@@ -145,3 +145,42 @@ After that, the lexicon defect.
 **Process note (A0.4).** Commit `2f3af32` broke `gw05_scene.py`: a `"\n"` escape on line 168 became a literal newline during upload, and the file failed with SyntaxError. The by-hand byte check did not catch it. This package includes the correct file and a `SHA256SUMS` file. The committer should run `sha256sum -c SHA256SUMS` and `python3 -m py_compile` instead of comparing by hand.
 
 **Next.** The lexicon defect, which is what blocks M2 in L and with it the B2 mismatch at F8.
+
+---
+
+## WS05 — dictionary contract repair (V0.2 → V0.3)
+
+**Status: WORKSHOP RESULT. The dictionary contract was improved in the workshop. The existing L translation is *not* retroactively evidence that M2 now transfers.** Option "a", chosen by the experimenter; option "c" (a new cold L translation against V0.3) is kept as the only real test, in exam mode.
+
+**Principle (experimenter).** Repairing a contract does not retroactively repair the artifacts compiled against the old contract. The old L output remains a historically correct trace of what the incomplete V0.2 contract produced. A new contract deserves a new compilation. The old L output is therefore not edited, and the handler is not adapted to it (option "b" was rejected).
+
+**Files.**
+- `make_dictionary_v2.py`: derives V0.3 from the frozen V0.2 through named transformations R1–R3. The output records them in `CHANGELOG`. The frozen V0.2 is untouched.
+- `dictionary_v0_3.json`: the generated contract.
+- `dictionary_gate.py`: two gates, run on a dictionary file:
+  - **identifier gate**: every key and string value except the free-text meta fields is scanned for world-identifier-shaped parts (`[A-Z]{1,2}\d+`, as a word or as an underscore-separated part of a token);
+  - **completeness gate**: the RUN C F2 criterion. Every schema literal the frozen handler reads must be declared, including `deprecated_aliases` and the keys of the `*_shapes` templates.
+- `test_dictionary_v0_3.py`: 7 tests.
+- `gw05_scene.py` gains `--dictionary` (default: frozen V0.2).
+
+**Repairs.**
+
+| id | defect (GW05 audit §4) | repair |
+|---|---|---|
+| R1 | `predicate_target` existed only as a name | `filter_variant_shapes`, `expression_variant_shapes` and `condition_shapes` give literal JSON templates with placeholders. The template states that the `predicate_target` object *is* the value of `link_filter` and that there is no `predicate_target` key |
+| R2 | GW04 token `adjacent_links_lacking_Q2_or_Q4` | replaced by the parameterized `members_lacking_value {value_predicate, count, constraint}` in `literal_tokens`, `optional_paths` and `condition_shapes` |
+| R3 | GW04-encoder wording `other_links_than_left` listed as an equal token | moved to `deprecated_aliases → other_members_than_other_side`. The frozen handler still accepts it, so the completeness gate still passes |
+
+**Checks.**
+
+| check | V0.2 (frozen) | V0.3 |
+|---|---|---|
+| identifier gate | **FAIL**, 6 hits (Q2, Q4 in 3 places): it would have caught the leak | PASS |
+| completeness gate | PASS | PASS |
+
+- **Self-consistency.** The documented `predicate_target`, `all` and relation shapes, filled with synthetic world-free identifiers, execute in the frozen `_filter_subjects`. The wrapped reading the L encoder used raises `SchemaError`.
+- **Reproducibility.** Rebuilding V0.3 from V0.2 gives an identical file.
+- **Scene.** Running the scene with `--dictionary V0.3` gives a result identical to V0.2 for both N and L. In L, M2 at F1 is still `SCHEMA_DRIFT` (`unsupported link_filter: {'predicate_target': …}`), which is expected and is the honest result: the old translation was compiled against the old contract.
+- **Regression.** `--admission off` still reproduces the sealed logs. Tests: admission 11/11, resolution 4/4, dictionary 7/7.
+
+**Open for exam mode ("c").** A new cold L translation against V0.3 and the unchanged generic executor, on a fresh sealed world. That run answers the real question: is the target language now complete enough for a foreign translator to produce an executable structure? Until then, F8's B2 mismatch on GW05 stays unobserved by design.

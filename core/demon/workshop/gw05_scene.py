@@ -20,9 +20,10 @@ from c1_c3_overlay import C1C3Overlay
 from admission import admit, install_default_policy, PER_RULE_DEBT, PER_FACT_MARKER
 from resolution import answer_on_bind, unanswered_ask_stops
 
-def execute(encoder,use_c13,admission,resolve_asks=False,debt_shape=PER_FACT_MARKER):
+def execute(encoder,use_c13,admission,resolve_asks=False,debt_shape=PER_FACT_MARKER,dict_path=None):
+    dict_path=Path(dict_path) if dict_path else DICT_PATH
     net=Network(); demon=Demon(net)
-    dictionary=json.loads(DICT_PATH.read_text(encoding="utf-8"))
+    dictionary=json.loads(dict_path.read_text(encoding="utf-8"))
     ex=FamilyExecutor(dictionary)
     c13=C1C3Overlay(net) if use_c13 else None
     load_initial(net); rules=load_rules(net,ENCODERS[encoder])
@@ -149,7 +150,7 @@ def execute(encoder,use_c13,admission,resolve_asks=False,debt_shape=PER_FACT_MAR
 
     return {"GW05_ENCODER":encoder,"C1_C3_ENABLED":use_c13,"ADMISSION_ENABLED":admission,"ASK_RESOLUTION_ENABLED":resolve_asks,"DEBT_SHAPE":debt_shape if admission else None,
             "ENCODER_INPUT":str(ENCODERS[encoder].relative_to(ROOT)),
-            "FROZEN_DICTIONARY":str(DICT_PATH.relative_to(ROOT)),
+            "FROZEN_DICTIONARY":str(dict_path.resolve().relative_to(ROOT)),
             "RULES":rules,"EVENTS":events,
             "FINAL":{"OPEN_REGISTRY":registry()[1]["OPEN_REGISTRY"],
                      "STOP_MAP":[stop_dict(s) for s in net.stops],
@@ -163,10 +164,12 @@ def main():
     ap.add_argument("--admission",choices=["off","on"],required=True)
     ap.add_argument("--resolve-asks",choices=["off","on"],default="off")
     ap.add_argument("--debt-shape",choices=["fact","rule"],default="fact")
+    ap.add_argument("--dictionary",default=None,help="default: frozen GW05 V0.2")
     ap.add_argument("--out",required=True)
     a=ap.parse_args()
     out=execute(a.encoder,a.c13=="on",a.admission=="on",a.resolve_asks=="on",
-              PER_RULE_DEBT if a.debt_shape=="rule" else PER_FACT_MARKER)
+              PER_RULE_DEBT if a.debt_shape=="rule" else PER_FACT_MARKER,
+              a.dictionary)
     Path(a.out).write_text(json.dumps(out,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
 
 if __name__=="__main__": main()

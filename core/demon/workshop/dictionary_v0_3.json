@@ -1,0 +1,372 @@
+{
+  "version": "RUN_C_FAMILY_DICTIONARY_V0.3_WORKSHOP",
+  "source_basis": "V0.2 (GW05 frozen) + workshop repairs R1-R3 after GW05 post-unseal audit §4; not evidence of transfer until a new cold translation is run against it",
+  "operation_contract": [
+    "CHECK",
+    "DERIVE",
+    "VALIDATE_INCOMING",
+    "CLOSURE"
+  ],
+  "families": {
+    "EXACT_DISTINCT_TARGET_CARDINALITY": {
+      "required_fields": [
+        "subject_class",
+        "predicate",
+        "target_class",
+        "target_count",
+        "target_count_constraint",
+        "target_distinctness"
+      ],
+      "constraints": {
+        "target_count_constraint": [
+          "exactly"
+        ],
+        "target_distinctness": [
+          "pairwise_distinct"
+        ]
+      },
+      "dependency_signature": [
+        "predicate"
+      ],
+      "operations": [
+        "CHECK",
+        "VALIDATE_INCOMING"
+      ],
+      "required_paths": [
+        "subject_class",
+        "predicate",
+        "target_class",
+        "target_count",
+        "target_count_constraint",
+        "target_distinctness"
+      ],
+      "literal_tokens": [
+        "exactly",
+        "pairwise_distinct"
+      ]
+    },
+    "CONDITIONAL_NODE_BALANCE_AND_UNIQUE_MISSING_DERIVATION": {
+      "required_fields": [
+        "balance",
+        "derivation"
+      ],
+      "expression_variants": {
+        "aggregate": [
+          "aggregate",
+          "value_predicate",
+          "link_filter"
+        ],
+        "lookup": [
+          "lookup"
+        ]
+      },
+      "aggregate_values": [
+        "sum"
+      ],
+      "lookup_required_fields": [
+        "subject",
+        "predicate"
+      ],
+      "filter_variants": [
+        "predicate_target",
+        "all",
+        "other_members_than_other_side"
+      ],
+      "dependency_signature": [
+        "balance.equality.left.value_predicate",
+        "balance.equality.right.value_predicate",
+        "balance.equality.left.link_filter.predicate",
+        "balance.equality.right.link_filter.predicate",
+        "balance.equality.left.link_filter.all[].predicate",
+        "balance.equality.right.link_filter.all[].predicate",
+        "balance.equality.left.lookup.predicate",
+        "balance.equality.right.lookup.predicate"
+      ],
+      "operations": [
+        "CHECK",
+        "DERIVE"
+      ],
+      "required_paths": [
+        "balance.scope_class",
+        "balance.equality.left",
+        "balance.equality.right",
+        "derivation.missing_fields",
+        "derivation.permission",
+        "derivation.conditions",
+        "derivation.derived_record_references"
+      ],
+      "optional_paths": [
+        "balance.excluded_nodes",
+        "balance.equality.left.aggregate",
+        "balance.equality.left.value_predicate",
+        "balance.equality.left.link_filter",
+        "balance.equality.left.lookup.subject",
+        "balance.equality.left.lookup.predicate",
+        "balance.equality.right.aggregate",
+        "balance.equality.right.value_predicate",
+        "balance.equality.right.link_filter",
+        "balance.equality.right.lookup.subject",
+        "balance.equality.right.lookup.predicate",
+        "derivation.conditions[].adjacent_link_set.relation.predicate",
+        "derivation.conditions[].adjacent_link_set.relation.target",
+        "derivation.conditions[].adjacent_link_set.closure_declared_by",
+        "derivation.conditions[].members_lacking_value.count",
+        "derivation.conditions[].members_lacking_value.constraint",
+        "derivation.conditions[].members_lacking_value.value_predicate"
+      ],
+      "literal_tokens": [
+        "sum",
+        "scoped_node",
+        "other_members_than_other_side",
+        "only_when",
+        "exactly",
+        "adjacent_link_set",
+        "members_lacking_value",
+        "closure_declared_by",
+        "predicate",
+        "target",
+        "all",
+        "relation",
+        "aggregate",
+        "value_predicate",
+        "link_filter",
+        "lookup",
+        "subject"
+      ],
+      "filter_variant_shapes": {
+        "predicate_target": {
+          "shape": {
+            "predicate": "<PREDICATE>",
+            "target": "<TARGET>"
+          },
+          "placement": "the object itself is the value of link_filter; there is no 'predicate_target' key"
+        },
+        "all": {
+          "shape": {
+            "all": [
+              "<FILTER>",
+              "..."
+            ]
+          },
+          "placement": "value of link_filter; members are filter shapes or the relation clause below"
+        },
+        "other_members_than_other_side": {
+          "shape": {
+            "relation": "other_members_than_other_side"
+          },
+          "placement": "only as a member of an 'all' list"
+        }
+      },
+      "expression_variant_shapes": {
+        "aggregate": {
+          "shape": {
+            "aggregate": "sum",
+            "value_predicate": "<PREDICATE>",
+            "link_filter": "<FILTER>"
+          }
+        },
+        "lookup": {
+          "shape": {
+            "lookup": {
+              "subject": "scoped_node",
+              "predicate": "<PREDICATE>"
+            }
+          }
+        }
+      },
+      "condition_shapes": {
+        "adjacent_link_set": {
+          "shape": {
+            "adjacent_link_set": {
+              "relation": {
+                "predicate": "<PREDICATE>",
+                "target": "scoped_node"
+              },
+              "closure_declared_by": "<RULE_ADDR>"
+            }
+          }
+        },
+        "members_lacking_value": {
+          "shape": {
+            "members_lacking_value": {
+              "value_predicate": "<PREDICATE>",
+              "count": "<COUNT>",
+              "constraint": "exactly"
+            }
+          },
+          "meaning": "number of scoped members that lack a current value of value_predicate"
+        }
+      },
+      "deprecated_aliases": {
+        "other_links_than_left": "other_members_than_other_side"
+      }
+    },
+    "EXPLICIT_CLOSED_RELATION_SET": {
+      "required_fields": [
+        "relation",
+        "set_status",
+        "exact_members",
+        "closure_scope"
+      ],
+      "constraints": {
+        "set_status": [
+          "closed"
+        ]
+      },
+      "dependency_signature": [
+        "relation.predicate"
+      ],
+      "operations": [
+        "CLOSURE",
+        "CHECK"
+      ],
+      "required_paths": [
+        "relation.subject_class",
+        "relation.predicate",
+        "relation.target",
+        "set_status",
+        "exact_members",
+        "closure_scope",
+        "other_nodes_closure_declaration"
+      ],
+      "literal_tokens": [
+        "closed",
+        "none"
+      ]
+    },
+    "CURRENT_VALUE_AT_MOST_ONE": {
+      "required_fields": [
+        "predicates",
+        "value_cardinality"
+      ],
+      "constraints": {
+        "value_cardinality.maximum": [
+          1
+        ],
+        "value_cardinality.scope": [
+          "current"
+        ]
+      },
+      "dependency_signature": [
+        "predicates[]"
+      ],
+      "operations": [
+        "CHECK",
+        "VALIDATE_INCOMING"
+      ],
+      "required_paths": [
+        "subject_class",
+        "predicates",
+        "value_cardinality.maximum",
+        "value_cardinality.scope",
+        "value_cardinality.per"
+      ],
+      "literal_tokens": [
+        "current"
+      ]
+    },
+    "CURRENT_STATUS_IMPLIES_MAGNITUDE": {
+      "required_fields": [
+        "antecedent",
+        "consequent",
+        "subject_binding"
+      ],
+      "constraints": {
+        "antecedent.temporal_scope": [
+          "current"
+        ],
+        "consequent.modality": [
+          "must_hold"
+        ],
+        "subject_binding": [
+          "same_link",
+          "same_subject"
+        ]
+      },
+      "dependency_signature": [
+        "antecedent.predicate",
+        "consequent.predicate"
+      ],
+      "operations": [
+        "CHECK",
+        "VALIDATE_INCOMING"
+      ],
+      "required_paths": [
+        "antecedent.subject",
+        "antecedent.predicate",
+        "antecedent.object",
+        "antecedent.temporal_scope",
+        "consequent.subject",
+        "consequent.predicate",
+        "consequent.object",
+        "consequent.modality",
+        "subject_binding"
+      ],
+      "literal_tokens": [
+        "current",
+        "must_hold",
+        "same_link",
+        "same_subject"
+      ]
+    }
+  },
+  "generic_core_vocabulary": [
+    "TYPE",
+    "RULE",
+    "RULE_TYPE",
+    "SUBJECT",
+    "PREDICATE",
+    "OBJECT",
+    "CURRENT",
+    "OPEN",
+    "CHECK_STATUS",
+    "UNCHECKED",
+    "DEPENDENCY",
+    "REASON",
+    "OP",
+    "INCOMING",
+    "SCOPE",
+    "DERIVED_ADDR",
+    "CHECK",
+    "DERIVE",
+    "VALIDATE_INCOMING",
+    "CLOSURE",
+    "EXECUTOR_HOLE",
+    "SCHEMA_DRIFT",
+    "addr",
+    "complete",
+    "dependency_signature",
+    "families",
+    "known_sum",
+    "missing_subjects",
+    "operations",
+    "records",
+    "required_fields",
+    "required_paths",
+    "subjects",
+    "value"
+  ],
+  "placeholder_convention": {
+    "<PREDICATE>": "a predicate identifier of the world being encoded",
+    "<TARGET>": "an object identifier of the world, or the token scoped_node",
+    "<COUNT>": "a non-negative integer",
+    "<FILTER>": "any filter shape listed in filter_variant_shapes"
+  },
+  "CHANGELOG": [
+    {
+      "id": "R1",
+      "family": "CONDITIONAL_NODE_BALANCE_AND_UNIQUE_MISSING_DERIVATION",
+      "change": "added filter_variant_shapes, expression_variant_shapes, condition_shapes"
+    },
+    {
+      "id": "R2",
+      "family": "CONDITIONAL_NODE_BALANCE_AND_UNIQUE_MISSING_DERIVATION",
+      "change": "adjacent_links_lacking_Q2_or_Q4 -> members_lacking_value (parameterized by value_predicate)"
+    },
+    {
+      "id": "R3",
+      "family": "CONDITIONAL_NODE_BALANCE_AND_UNIQUE_MISSING_DERIVATION",
+      "change": "other_links_than_left moved to deprecated_aliases"
+    }
+  ]
+}
