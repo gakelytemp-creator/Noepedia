@@ -44,3 +44,30 @@ One principle, *the signal is recorded; the fact enters with a status*, covers b
 ## Next in the workshop
 
 D3 (an "operation not supported" result on a dependent rule becomes UNCHECKED) is now one branch in `compose_evidence`. D4 (the ASK status transition on bind) and the marker-flood fix come after that.
+
+---
+
+## WS02 — D3: an unsupported operation becomes UNCHECKED
+
+**Status: WORKSHOP RESULT, works on scene GW05.**
+
+**Change.** In `compose_evidence`, a dependent rule's result counts as `UNCHECKED` with reason `OPERATION_UNSUPPORTED` when its verdict is `NEED` and it has a stop of the form `missing: "operation …"`. Any other `NEED` (missing data, missing consequent) is not about whether the rule can check, so it does not count. A test covers this.
+
+**Checks.**
+- `--admission off` still reproduces the sealed N/L C13 logs exactly.
+- `test_admission.py`: 7/7 pass.
+
+**Scene results (L, C1/C3 on).**
+
+| event | WS01 | WS02 |
+|---|---|---|
+| F7 (I5 R2 3) | committed, silent | committed + UNCHECKED by M2 |
+| F8 (I7 R1 B2) | committed, silent | committed + UNCHECKED by M3 |
+| F8 (I7 R2 2) | committed, silent | committed + UNCHECKED by M2 |
+| F12 open signals | 1 (the F4 conflict) | 4 |
+
+N is unchanged, because its rules were already EXECUTOR_HOLE / SCHEMA_DRIFT.
+
+**Honest reading.** The book expected a visible OPEN for the B2 mismatch at F8. That is still not produced: M2 cannot execute in L because of the dictionary defect. What WS02 now makes visible is that the check could not be performed, and that is the correct signal while M2 is unreadable. The B2 mismatch itself needs a working M2, which is the dictionary fix, not D3.
+
+**Next.** D4 (the ASK status transition on bind), then the marker flood (one debt record per unexecutable law).

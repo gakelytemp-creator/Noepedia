@@ -63,6 +63,14 @@ def compose_evidence(validation):
         if res.verdict == BLOCK or res.conflicts:
             for c in (res.conflicts or [{"rule": item["rule"]}]):
                 ev.append({"KIND": "CONFLICT", "RULE": item["rule"], "DETAILS": c})
+        # D3 (WS02): a dependent rule that cannot perform the check is UNCHECKED,
+        # not silence. Only the "operation not supported" stop qualifies; other
+        # NEEDs (e.g. missing data) are not a statement about checkability.
+        elif res.verdict == NEED and any(
+                str(s.get("missing", "")).startswith("operation ") for s in res.stops):
+            ev.append({"KIND": "UNCHECKED", "RULE": item["rule"],
+                       "DETAILS": {"reason": "OPERATION_UNSUPPORTED",
+                                   "missing": [s["missing"] for s in res.stops]}})
     for dep in validation.unchecked_dependencies:
         ev.append({"KIND": "UNCHECKED", "RULE": dep["dependency"], "DETAILS": {"reason": dep["reason"]}})
     return ev

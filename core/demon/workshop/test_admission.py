@@ -65,6 +65,19 @@ class AdmissionTest(unittest.TestCase):
         self.assertFalse(adm.fact_committed)
         self.assertIsNotNone(self.net.read("E4_CONFLICT_1"))       # signal survives refusal
 
+    def test_d3_unsupported_operation_is_unchecked(self):
+        vr = HandlerResult(details={"rule_results": [{"rule": "RULE3", "result": HandlerResult(
+            verdict=NEED, stops=[{"rule": "RULE3", "missing": "operation VALIDATE_INCOMING"}])}]})
+        adm = admit(self.net, self.d, incoming(), vr, prefix="E5")
+        self.assertEqual((adm.verdict, adm.fact_committed), (GO, True))
+        m = self.net.read("E5_UNCHECKED_1")
+        self.assertEqual((m.f("DEPENDENCY"), m.f("REASON")), ("RULE3", "OPERATION_UNSUPPORTED"))
+
+    def test_d3_other_need_is_not_unchecked(self):
+        vr = HandlerResult(details={"rule_results": [{"rule": "RULE4", "result": HandlerResult(
+            verdict=NEED, stops=[{"rule": "RULE4", "missing": "consequent value"}])}]})
+        self.assertEqual(compose_evidence(vr), [])
+
     def test_composition_keeps_every_signal(self):
         both = blocked(); both.unchecked_dependencies = unchecked().unchecked_dependencies
         self.assertEqual([e["KIND"] for e in compose_evidence(both)], ["CONFLICT", "UNCHECKED"])
