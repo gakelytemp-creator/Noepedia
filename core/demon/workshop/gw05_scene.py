@@ -18,9 +18,11 @@ from demon_core import Network, Record, Demon, GO, ASK, BLOCK, NEED
 from family_executor import FamilyExecutor
 from c1_c3_overlay import C1C3Overlay
 from admission import admit, install_default_policy, PER_RULE_DEBT, PER_FACT_MARKER
-from resolution import answer_on_bind, unanswered_ask_stops
+from resolution import answer_on_bind, unanswered_ask_stops, effectively_open_asks
+import watch as W
 
-def execute(encoder,use_c13,admission,resolve_asks=False,debt_shape=PER_FACT_MARKER,dict_path=None):
+def execute(encoder,use_c13,admission,resolve_asks=False,debt_shape=PER_FACT_MARKER,dict_path=None,
+            watch=False,mandate=None,probe_damage=False):
     dict_path=Path(dict_path) if dict_path else DICT_PATH
     net=Network(); demon=Demon(net)
     dictionary=json.loads(dict_path.read_text(encoding="utf-8"))
@@ -49,12 +51,12 @@ def execute(encoder,use_c13,admission,resolve_asks=False,debt_shape=PER_FACT_MAR
     event(events,net,"F3",["READ","CHECK"],f3)
 
     def ingest(ev,rows):
-        results=[]; verdicts=[]
+        results=[]; verdicts=[]; watches=[]
         for idx,(s,p,o,source,time) in enumerate(rows,1):
             incoming=Record(f"{ev}_IN_{idx}",{"SUBJECT":s,"PREDICATE":p,"OBJECT":o,
                                               "TYPE":"OBSERVATION","SOURCE":source,"TIME":time})
             vr=ex.validate_incoming(net,incoming,marker_prefix=f"{ev}_UNCHECKED_{idx}")
-            if not admission:   # frozen GW05 behaviour, kept for A/B
+            if not admission:
                 commit_markers(net,demon,vr); materialize_signals(net,demon,f"{ev}_{idx}",vr)
                 committed=False
                 if vr.verdict==GO:
@@ -65,17 +67,36 @@ def execute(encoder,use_c13,admission,resolve_asks=False,debt_shape=PER_FACT_MAR
                              j(vr.unchecked_dependencies),vr.verdict)
                     verdicts.append(vr.verdict)
                 adm=None
-            else:               # workshop: A3.1 + A3.4
+            else:
                 adm=admit(net,demon,incoming,vr,prefix=f"{ev}_{idx}")
                 committed=adm.fact_committed; verdicts.append(adm.verdict)
                 if adm.verdict!=GO:
                     net.stop(f"{ev}/{idx}",f"admit incoming ({s} {p} {o})",j(adm.evidence),adm.reason,adm.verdict)
             if committed and c13 is not None: c13.resolve_from_fact(incoming)
+            if committed and watch and c13 is not None and net.read("RQ_F6") is not None:
+                watches.append(watch_step())
             results.append({"VALIDATION":j(vr),"COMMITTED":committed,
                             "ADMISSION":None if adm is None else {"VERDICT":adm.verdict,"REASON":adm.reason,
                                 "EVIDENCE":j(adm.evidence),"RECORDS":adm.records,"POLICY":adm.policy}})
         verdict=BLOCK if BLOCK in verdicts else NEED if NEED in verdicts else ASK if ASK in verdicts else GO
+        if watches:
+            results.append({"WATCH":{"WATCH":{"created":[a for w in watches for a in w["WATCH"]["created"]],
+                                              "historical":[a for w in watches for a in w["WATCH"]["historical"]],
+                                              "candidates":watches[-1]["WATCH"]["candidates"]},
+                                     "AUTO_BIND":next((w["AUTO_BIND"] for w in watches if "AUTO_BIND" in w),None),
+                                     "PER_COMMIT":watches}})
         return verdict,results
+
+    def watch_step():
+        w=W.watch_requirement(net,demon,c13,"RQ_F6")
+        out={"WATCH":w}
+        m=W.current_mandate(net,"TASK_F6")
+        cands=W.current_candidacies(net,"RQ_F6")
+        if m and cands and W._latest(net,"RQ_F6")!="BOUND":
+            b=W.bind(net,demon,"RQ_F6",cands[0],authorized_by=m,bind_addr="RQ_F6_BIND")
+            out["AUTO_BIND"]={"BIND":b,"MANDATE":m}
+            if b and resolve_asks: out["ASKS_ANSWERED"]=answer_on_bind(net,demon,"RQ_F6",b)
+        return out
 
     event(events,net,"F4",["PROPOSE","CHECK","COMMIT"],lambda:ingest("F4",[("I3","R6","S2","SRC1","t1")]))
 
@@ -97,6 +118,9 @@ def execute(encoder,use_c13,admission,resolve_asks=False,debt_shape=PER_FACT_MAR
         rq=Record("RQ_F6",{"TYPE":"REQUIREMENT_CONCEPT","REQUIREMENT":p_addrs})
         v,_=demon.commit(demon.propose(add=[rq],mark=[("RQ_F6","OPEN")],authorized_by="TASK_F6"))
         note={"RQ_COMMIT":v}
+        if mandate:
+            note["MANDATE"]=W.issue_mandate(net,demon,"MANDATE_F6","TASK_F6",issuer="UPPER_LAYER",
+                                            lifecycle=mandate,condition={"RECORD":"RQ_F6","STATE_IN":["OPEN"]} if mandate==W.STANDING_WHILE else None)
         if c13 is not None:
             out=c13.requirement_ask("RQ_F6"); note["C1"]=j(out)
             c13.materialize_ask_opens()
@@ -114,6 +138,8 @@ def execute(encoder,use_c13,admission,resolve_asks=False,debt_shape=PER_FACT_MAR
         opens=(c13.current_open_registry() if c13 is not None else tuple(sorted(
             r.addr for r in net.records.values()
             if r.f("TYPE")=="OPEN" and r.status_log and r.status_log[-1].state=="OPEN")))
+        if resolve_asks and c13 is not None:
+            opens=tuple(sorted(set(opens)|set(effectively_open_asks(net))))
         signals=sorted(r.addr for r in net.records.values()
             if r.f("TYPE") in ("CONFLICT","CHECK_STATUS","UNEXECUTABLE_RULE_DEBT") and r.status_log and r.status_log[-1].state=="OPEN")
         asks=([stop_dict(s) for s in unanswered_ask_stops(net)] if resolve_asks
@@ -130,6 +156,17 @@ def execute(encoder,use_c13,admission,resolve_asks=False,debt_shape=PER_FACT_MAR
             net.stop("F11/requirement","revisit F6 need","RQ_F6 remains addressable",
                      "C1 joint-support mechanism disabled in base run",NEED)
             return NEED,{"C1":"disabled"}
+        if watch:
+            if W._latest(net,"RQ_F6")=="BOUND":
+                return GO,{"ALREADY_BOUND":"RQ_F6_BIND","BINDING_STATE":W.binding_state(net,"RQ_F6_BIND")}
+            cands=W.current_candidacies(net,"RQ_F6")
+            if cands:
+                b=W.bind(net,demon,"RQ_F6",cands[0],authorized_by="TASK_F6",bind_addr="RQ_F6_BIND")
+                note={"BOUND":net.read(cands[0]).f("CANDIDATE"),"BASIS":cands[0],"AUTHORIZED_BY":"TASK_F6"}
+                if b and resolve_asks: note["ASKS_ANSWERED"]=answer_on_bind(net,demon,"RQ_F6",b)
+                return GO,note
+            out=c13.requirement_ask("RQ_F6"); c13.materialize_ask_opens()
+            return ASK,{"CANDIDACIES":[],"C1":j(out)}
         branches=c13.joint_bindings(patterns)
         candidates=[]
         for b,_ in branches:
@@ -140,7 +177,7 @@ def execute(encoder,use_c13,admission,resolve_asks=False,debt_shape=PER_FACT_MAR
                                      "OBJECT":candidates[0],"ROLE":"BOUND_CANDIDATE"})
             v,_=demon.commit(demon.propose(add=[edge],mark=[("RQ_F6","BOUND")]))
             note={"CANDIDATES":candidates,"BOUND":candidates[0]}
-            if resolve_asks and v==GO:   # WS03 / D4
+            if resolve_asks and v==GO:
                 note["ASKS_ANSWERED"]=answer_on_bind(net,demon,"RQ_F6","RQ_F6_BIND")
             return v,note
         out=c13.requirement_ask("RQ_F6"); c13.materialize_ask_opens()
@@ -148,7 +185,16 @@ def execute(encoder,use_c13,admission,resolve_asks=False,debt_shape=PER_FACT_MAR
     event(events,net,"F11",["READ","MATCH","LINK","MARK"],f11)
     event(events,net,"F12",["READ","OPEN_REGISTRY"],registry)
 
-    return {"GW05_ENCODER":encoder,"C1_C3_ENABLED":use_c13,"ADMISSION_ENABLED":admission,"ASK_RESOLUTION_ENABLED":resolve_asks,"DEBT_SHAPE":debt_shape if admission else None,
+    if probe_damage and watch:
+        def p1():
+            v,res=ingest("P1",[("I9","R7","G1","SRC_PROBE","t5"),("I9","R7","G4","SRC_PROBE","t5")])
+            lost=W.on_basis_lost(net,demon,"RQ_F6","RQ_F6_BIND") if net.read("RQ_F6_BIND") else None
+            return v,{"INGEST":res,"BINDING_STATE":W.binding_state(net,"RQ_F6_BIND") if net.read("RQ_F6_BIND") else None,
+                      "ON_BASIS_LOST":lost,"MANDATE_CURRENT":W.current_mandate(net,"TASK_F6")}
+        event(events,net,"P1_SYNTHETIC",["PROPOSE","CHECK","COMMIT","WATCH"],p1)
+        event(events,net,"P2_SYNTHETIC",["READ","OPEN_REGISTRY"],registry)
+
+    return {"GW05_ENCODER":encoder,"C1_C3_ENABLED":use_c13,"ADMISSION_ENABLED":admission,"ASK_RESOLUTION_ENABLED":resolve_asks,"DEBT_SHAPE":debt_shape if admission else None,"WATCH":watch,"MANDATE":mandate,"PROBE_DAMAGE":probe_damage,
             "ENCODER_INPUT":str(ENCODERS[encoder].relative_to(ROOT)),
             "FROZEN_DICTIONARY":str(dict_path.resolve().relative_to(ROOT)),
             "RULES":rules,"EVENTS":events,
@@ -165,11 +211,15 @@ def main():
     ap.add_argument("--resolve-asks",choices=["off","on"],default="off")
     ap.add_argument("--debt-shape",choices=["fact","rule"],default="fact")
     ap.add_argument("--dictionary",default=None,help="default: frozen GW05 V0.2")
+    ap.add_argument("--watch",choices=["off","on"],default="off")
+    ap.add_argument("--mandate",choices=["none","one_shot","standing"],default="none")
+    ap.add_argument("--probe-damage",choices=["off","on"],default="off",help="synthetic events after F12")
     ap.add_argument("--out",required=True)
     a=ap.parse_args()
     out=execute(a.encoder,a.c13=="on",a.admission=="on",a.resolve_asks=="on",
               PER_RULE_DEBT if a.debt_shape=="rule" else PER_FACT_MARKER,
-              a.dictionary)
+              a.dictionary,a.watch=="on",
+              {"none":None,"one_shot":W.ONE_SHOT,"standing":W.STANDING_WHILE}[a.mandate],a.probe_damage=="on")
     Path(a.out).write_text(json.dumps(out,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
 
 if __name__=="__main__": main()
