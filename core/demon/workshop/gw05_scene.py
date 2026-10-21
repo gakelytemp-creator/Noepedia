@@ -18,8 +18,9 @@ from demon_core import Network, Record, Demon, GO, ASK, BLOCK, NEED
 from family_executor import FamilyExecutor
 from c1_c3_overlay import C1C3Overlay
 from admission import admit, install_default_policy
+from resolution import answer_on_bind, unanswered_ask_stops
 
-def execute(encoder,use_c13,admission):
+def execute(encoder,use_c13,admission,resolve_asks=False):
     net=Network(); demon=Demon(net)
     dictionary=json.loads(DICT_PATH.read_text(encoding="utf-8"))
     ex=FamilyExecutor(dictionary)
@@ -114,7 +115,8 @@ def execute(encoder,use_c13,admission):
             if r.f("TYPE")=="OPEN" and r.status_log and r.status_log[-1].state=="OPEN")))
         signals=sorted(r.addr for r in net.records.values()
             if r.f("TYPE") in ("CONFLICT","CHECK_STATUS") and r.status_log and r.status_log[-1].state=="OPEN")
-        asks=[stop_dict(s) for s in net.stops if s.stop_class==ASK]
+        asks=([stop_dict(s) for s in unanswered_ask_stops(net)] if resolve_asks
+              else [stop_dict(s) for s in net.stops if s.stop_class==ASK])
         needs=[stop_dict(s) for s in net.stops if s.stop_class==NEED]
         return GO,{"OPEN_REGISTRY":list(opens),"OPEN_SIGNALS":signals,"ASK_UNANSWERED":asks,"NEED":needs}
     event(events,net,"F9",["READ","OPEN_REGISTRY"],registry)
@@ -136,13 +138,16 @@ def execute(encoder,use_c13,admission):
             edge=Record("RQ_F6_BIND",{"SUBJECT":"RQ_F6","PREDICATE":"REFERS_TO",
                                      "OBJECT":candidates[0],"ROLE":"BOUND_CANDIDATE"})
             v,_=demon.commit(demon.propose(add=[edge],mark=[("RQ_F6","BOUND")]))
-            return v,{"CANDIDATES":candidates,"BOUND":candidates[0]}
+            note={"CANDIDATES":candidates,"BOUND":candidates[0]}
+            if resolve_asks and v==GO:   # WS03 / D4
+                note["ASKS_ANSWERED"]=answer_on_bind(net,demon,"RQ_F6","RQ_F6_BIND")
+            return v,note
         out=c13.requirement_ask("RQ_F6"); c13.materialize_ask_opens()
         return (ASK if candidates or out.created_asks else NEED),{"CANDIDATES":candidates,"C1":j(out)}
     event(events,net,"F11",["READ","MATCH","LINK","MARK"],f11)
     event(events,net,"F12",["READ","OPEN_REGISTRY"],registry)
 
-    return {"GW05_ENCODER":encoder,"C1_C3_ENABLED":use_c13,"ADMISSION_ENABLED":admission,
+    return {"GW05_ENCODER":encoder,"C1_C3_ENABLED":use_c13,"ADMISSION_ENABLED":admission,"ASK_RESOLUTION_ENABLED":resolve_asks,
             "ENCODER_INPUT":str(ENCODERS[encoder].relative_to(ROOT)),
             "FROZEN_DICTIONARY":str(DICT_PATH.relative_to(ROOT)),
             "RULES":rules,"EVENTS":events,
@@ -156,9 +161,11 @@ def main():
     ap.add_argument("--encoder",choices=["N","L"],required=True)
     ap.add_argument("--c13",choices=["off","on"],required=True)
     ap.add_argument("--admission",choices=["off","on"],required=True)
+    ap.add_argument("--resolve-asks",choices=["off","on"],default="off")
     ap.add_argument("--out",required=True)
     a=ap.parse_args()
-    out=execute(a.encoder,a.c13=="on",a.admission=="on")
-    Path(a.out).write_text(json.dumps(out,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+    out=execute(a.encoder,a.c13=="on",a.admission=="on",a.resolve_asks=="on")
+    Path(a.out).write_text(json.dumps(out,ensure_ascii=False,indent=2)+"
+",encoding="utf-8")
 
 if __name__=="__main__": main()

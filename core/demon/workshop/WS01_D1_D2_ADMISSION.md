@@ -71,3 +71,43 @@ N is unchanged, because its rules were already EXECUTOR_HOLE / SCHEMA_DRIFT.
 **Honest reading.** The book expected a visible OPEN for the B2 mismatch at F8. That is still not produced: M2 cannot execute in L because of the dictionary defect. What WS02 now makes visible is that the check could not be performed, and that is the correct signal while M2 is unreadable. The B2 mismatch itself needs a working M2, which is the dictionary fix, not D3.
 
 **Next.** D4 (the ASK status transition on bind), then the marker flood (one debt record per unexecutable law).
+
+---
+
+## WS03 — D4: the requirement's ASK is answered on bind
+
+**Status: WORKSHOP RESULT, works on scene GW05.** New files: `resolution.py`, `test_resolution.py`. `gw05_scene.py` gains `--resolve-asks off|on` (default off).
+
+**Root cause.** The frozen C3 overlay materializes the C1 joint ASK as `OPEN_ASK_n` with `ORIGIN_WHERE = candidate/joint-requirement/RQ_F6`. Its `missing` holds two patterns, not one triplet, so it gets no `RESOLUTION_PATTERN`. As a result, `resolve_from_fact()` can never close it. Binding changed the RQ, but nothing told its ASK. A test pins this down.
+
+**Change.**
+- After a committed bind, `answer_on_bind()` performs a non-destructive transition `OPEN → ANSWERED`. The transition has basis = the bind edge and an addressable edge `OPEN_ASK_n_ANSWERED_BY → RQ_F6_BIND`.
+- The stop card, the OPEN record's history and the binding all stay readable.
+- The registry's `ASK_UNANSWERED` list becomes a view that skips answered ASKs. Stop cards themselves are never removed.
+
+**Checks.**
+- `--admission off` still reproduces the sealed N/L C13 logs.
+- `test_admission.py`: 7/7 pass.
+- `test_resolution.py`: 4/4 pass. The four tests cover the root cause, answering without deletion, no bind meaning no answer, and idempotence.
+
+**Scene results (C1/C3 on, admission on, resolve-asks on).**
+
+| | sealed GW05 | WS01–WS03 |
+|---|---|---|
+| L · F12 registry | `OPEN_ASK_4`, `OPEN_F3_1` | `F4_1_CONFLICT_1`, `OPEN_F3_1`, plus 3 UNCHECKED (F7, F8×2) |
+| L · F12 unanswered ASKs | joint ASK still listed | none; `OPEN_ASK_4` is ANSWERED by `RQ_F6_BIND` |
+| N · F11 / F12 | nothing bound; ASK open | RQ_F6 → I8; ASK answered; 35 UNCHECKED |
+
+**Against the answer book (F12, L).** The book expects F3, F4, F5 and F8 in the final registry, and expects RQ/F6 *not* to be there.
+- Now matching: F3 (OPEN), F4 (CONFLICT), RQ/F6 absent.
+- F5 is in the NEED list (accepted under W4).
+- F8 appears as UNCHECKED rather than as the B2 mismatch. That is the dictionary defect again, not D4.
+
+**Not done.** Binding happens only on the explicit TASK revisit (F11). Automatic re-evaluation on commit is still ATTIC 01 O7.
+
+**Next.** The marker-flood refactor, with the shape agreed by the experimenter and GPT:
+- one `UNEXECUTABLE_RULE_DEBT(rule)` record;
+- per-fact `DEPENDS_ON` edges, each stating which check of which fact depended on that rule;
+- a direct graph path from fact to debt.
+
+After that, the lexicon defect.
