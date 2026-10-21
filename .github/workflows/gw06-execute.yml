@@ -1,0 +1,42 @@
+name: GW06 Four-Cell Execution
+
+on:
+  push:
+    paths:
+      - '.github/workflows/gw06-execute.yml'
+  workflow_dispatch:
+
+jobs:
+  execute:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify frozen inputs
+        run: |
+          sha256sum current/experiments/GW06_N_TRANSLATION.json
+          sha256sum current/experiments/GW06_L_TRANSLATION.json
+          sha256sum core/demon/run_c/gw06_runner.py
+          sha256sum core/demon/workshop/dictionary_v0_3.json
+      - name: Run N baseline
+        run: |
+          python core/demon/run_c/gw06_runner.py             --encoder-output current/experiments/GW06_N_TRANSLATION.json             --dictionary core/demon/workshop/dictionary_v0_3.json             --mode baseline             --out GW06_N_BASELINE_LOG.json
+      - name: Run N workshop
+        run: |
+          python core/demon/run_c/gw06_runner.py             --encoder-output current/experiments/GW06_N_TRANSLATION.json             --dictionary core/demon/workshop/dictionary_v0_3.json             --mode workshop             --out GW06_N_WORKSHOP_LOG.json
+      - name: Run L baseline
+        run: |
+          python core/demon/run_c/gw06_runner.py             --encoder-output current/experiments/GW06_L_TRANSLATION.json             --dictionary core/demon/workshop/dictionary_v0_3.json             --mode baseline             --out GW06_L_BASELINE_LOG.json
+      - name: Run L workshop
+        run: |
+          python core/demon/run_c/gw06_runner.py             --encoder-output current/experiments/GW06_L_TRANSLATION.json             --dictionary core/demon/workshop/dictionary_v0_3.json             --mode workshop             --out GW06_L_WORKSHOP_LOG.json
+      - name: Seal log hashes
+        run: sha256sum GW06_*_LOG.json
+      - name: Upload logs
+        uses: actions/upload-artifact@v4
+        with:
+          name: gw06-four-cell-logs
+          path: GW06_*_LOG.json
+          if-no-files-found: error
