@@ -49,8 +49,55 @@ def answer_on_bind(net, demon, rq_addr, bind_edge_addr):
     return answered
 
 
+def _latest(net, addr):
+    r = net.read(addr)
+    return r.status_log[-1].state if r is not None and r.status_log else None
+
+
+def effective_ask_state(net, ask_addr):
+    """WS08: an ASK's state is read through its support, not only its last stored status.
+
+    ANSWERED holds only while what answered it still stands:
+      * answered by a binding  -> the binding's support graph must be SUPPORTED;
+      * answered by a candidacy or another record -> that record must be CURRENT.
+    A binding with no recorded SUPPORTED_BY edges (pre-WS07 shape) keeps the
+    stored status: there is no support graph to read.
+    """
+    stored = _latest(net, ask_addr)
+    from watch import binding_state, supersession_holds   # local import: watch does not import us
+    for r in net.records.values():                     # superseded while the supersession's own basis holds
+        if r.f("OBJECT") == ask_addr and r.f("ROLE") == "SUPERSEDES" and supersession_holds(net, r):
+            return "SUPERSEDED"
+    rec = net.read(ask_addr)
+    origin = rec.f("ORIGIN_WHERE", "") if rec is not None else ""
+    if stored == "OPEN" and origin.startswith("candidate/ambiguity/"):
+        basis = origin.split("/", 2)[2]               # the ambiguity record that raised this ASK
+        if _latest(net, basis) != "OPEN":
+            return "OBSOLETE"                          # its question no longer exists
+    if stored != ANSWERED:
+        return stored
+    answers = [r.f("OBJECT") for r in net.records.values()
+               if r.f("SUBJECT") == ask_addr and r.f("ROLE") == "ANSWERED_BY"]
+    for a in answers:
+        rec = net.read(a)
+        if rec is not None and rec.f("ROLE") == "BOUND_CANDIDATE":
+            st = binding_state(net, a)
+            if st in ("SUPPORTED", "UNSUPPORTED"):
+                return ANSWERED
+        elif _latest(net, a) == "CURRENT":
+            return ANSWERED
+    return "OPEN_BY_SUPPORT_LOSS" if answers else ANSWERED
+
+
+def effectively_open_asks(net):
+    """ASKs whose effective state is open (OPEN or OPEN_BY_SUPPORT_LOSS); SUPERSEDED ones excluded."""
+    return sorted(r.addr for r in net.records.values()
+                  if r.f("TYPE") == "OPEN" and r.f("OPEN_KIND") == "ASK"
+                  and effective_ask_state(net, r.addr) in ("OPEN", "OPEN_BY_SUPPORT_LOSS"))
+
+
 def unanswered_ask_stops(net):
-    """ASK stop cards whose materialized OPEN_ASK_<idx> is not answered/resolved.
+    """ASK stop cards whose materialized OPEN_ASK_<idx> is effectively open.
 
     Stop cards are history and are never removed; this is only a view.
     """
@@ -59,7 +106,7 @@ def unanswered_ask_stops(net):
         if s.stop_class != "ASK":
             continue
         rec = net.read(f"OPEN_ASK_{idx}")
-        if rec is not None and rec.status_log and rec.status_log[-1].state != "OPEN":
+        if rec is not None and effective_ask_state(net, rec.addr) not in ("OPEN", "OPEN_BY_SUPPORT_LOSS"):
             continue
         out.append(s)
     return out

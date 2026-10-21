@@ -164,7 +164,7 @@ Promotion rule: an item moves into `DEMON_CORE` / `DCT` only after it has been b
 - **O4.** Where do weights over candidate interpretations come from in a content-blind demon? The honest default is structural counting (uniform over candidate bindings). Are real probabilities only an upper-layer concern?
 - **O5.** What exact status semantics does HYPOTHESIS need before dreams (idle layer 4) may touch the core?
 - **O6.** Who signs a selection? The demon by a structural score, the upper layer (programmer / requirement carrier), or both through the demand/offer triplet rule?
-- **O7.** Should requirement concepts re-evaluate on every relevant commit (watch semantics)? This was a SPEC_HOLE carried over from the GW04 audit §4.4.
+- ~~**O7.**~~ **CLOSED → §12.** Should requirement concepts re-evaluate on every relevant commit (watch semantics)? This was a SPEC_HOLE carried over from the GW04 audit §4.4.
 - **O8.** When multiple methods compete for the same task, who selects the winner? If selection follows a structural score, is it anonymous-core scheduling; if it follows taste, does it require a signature under A7.4?
 
 ## 11. Workshop backlog (bridge to code, not a spec)
@@ -181,5 +181,31 @@ Promotion rule: an item moves into `DEMON_CORE` / `DCT` only after it has been b
 | Edge typing by operation | A9.7 | USED_BY / RISKED_BY / GROUNDING / SUPPORT / CONFLICT |
 | Verdict composition / admission split | A3.4, A3.5 | compose evidence, materialize it, then apply an addressable admission policy; verdict never replaces evidence |
 | Method objects and taxonomy | A9.12, A9.13 | fundamental / composed methods; reliability from performance across varied data, with provenance and scope |
+| Watch → candidacy → mandate → bind | §12 | WS06: incremental watch on commit; `SOLE_KNOWN_CANDIDATE_ON` record; `MANDATE` record (ONE_SHOT default); bind with `SUPPORTED_BY` basis |
+| Method ablation on GW05 | A12.11–A12.13 | toggle matrix over workshop switches; scope = GW05 only |
 
 Each item is done when it "works on scene S" in the workshop. Demonstration claims wait for exam mode.
+
+## 12. Watch, candidacy, binding, mandate (closes O7)
+
+*Section numbered 12 to avoid a clash with §10–§11; earlier conversation called it "A10".*
+
+- **A12.1 · AGREED.** O7 splits into **discovery** and **decision**: `COMMIT → incremental WATCH → candidate-condition record → policy/authorization check → optional BIND`. This is the A3.4 joint in another place: an observation must not substitute for an action.
+- **A12.2 · AGREED.** **Discovery is automatic.** On every commit, a requirement concept re-checks whether the new fact unifies with any of its patterns. This is monotone (class 1, A2.2) and incremental. Prior art: Rete-style matching (Forgy 1982).
+- **A12.3 · AGREED (GPT wording).** **Candidacy is a snapshot-dependent claim, not a property of the candidate.** The record is `SOLE_KNOWN_CANDIDATE_ON(N, scope, method)`: "on this network state, in this search scope, by this method, no other candidate was found". It is class 2 and carries its N.
+- **A12.4 · AGREED (Claude refinement).** A stronger `UNIQUE_CANDIDATE` exists only relative to an explicit closure of the candidate space. Closure is itself class 2. So uniqueness is never unconditional; it is always *uniqueness relative to what it rests on* (ATMS label, A9.4).
+- **A12.5 · AGREED.** **Binding is a separate, authorized action.** It records its basis as an edge: `BIND —SUPPORTED_BY→ SOLE_KNOWN_CANDIDATE_ON(…)`, plus any other support.
+- **A12.6 · AGREED.** **Damage hits the basis, not the binding.** When a second candidate appears, the candidacy record becomes HISTORICAL. The binding's state is then *read from its support graph* (A9.1). If uniqueness was its only support, it reads as REVIEW_REQUIRED / AMBIGUOUS_CURRENTLY. If it has another independent support, it stays in force. No special rule is needed beyond recording the basis.
+- **A12.7 · AGREED.** **The task record is permanent; its authority is not.** Authority is a separate `MANDATE` record that names the task, the operation it permits (e.g. `AUTO_BIND`), the scope, and a lifecycle. Automatic binding is permitted only if a CURRENT mandate covers this task, operation and scope.
+- **A12.8 · AGREED.** **Who issues a mandate.** The issuer is the task's author (the upper layer), never the operation the mandate authorizes. AUTO_BIND cannot write or widen its own mandate. This is DCT09 (no self-authorization) applied to authority, and it ends the authorization regress.
+- **A12.9 · AGREED.** **Mandate lifecycle is declared at issue, never derived later.**
+  - **`ONE_SHOT` (default).** It closes after a successful bind. If the binding later loses its basis and the requirement reopens, the old mandate stays historical and grants nothing. The network raises an ASK to the issuer: "the binding lost its basis; renew the automatic-action authority?"
+  - **`STANDING_WHILE(condition)`.** Issued explicitly. It stays in force while its declared condition holds, so on reopening nothing is "revived": it never stopped.
+  - Optional time expiry is allowed on either kind.
+- **A12.10 · AGREED (GPT).** Idle layer 1 (A5.1) is not a special process. It is a wider **revalidation pass over snapshot-dependent claims**: uniqueness, independence, unresolved debt, stale bindings, and the other class-2 claims.
+
+### Method anatomy (from the same conversation)
+
+- **A12.11 · AGREED (experimenter, refined).** "A working, tested method is never bad", within its tested scope. A method with RISKED_BY history in scope S is kept permanently, together with S. Outside S it may be exactly what misleads (A9.13).
+- **A12.12 · AGREED (GPT).** A method moves through **AVAILABLE → APPLICABLE → SELECTED → EXECUTED → RESULT / FAILURE / BLOCK / NEED**. A method's mere existence never forces its use. A large library is good only if storing it is cheap and it does not pollute selection. Selection is a separate capability (O8).
+- **A12.13 · PROPOSED (GPT/Claude).** **Functional anatomy by ablation.** The same scenes are run under masks that disable single methods, pairs and groups, and the resulting network states are compared: ASK / NEED / OPEN / CONFLICT counts, bindings, and which events changed. A method's contribution is the difference it makes *in a task class, against the background of the other methods*. It is not a scalar. Interactions are named as in functional genomics: redundancy (synthetic-lethal pairs), synergy, masking and dependency are all forms of epistasis. A contribution measured on one scene is the anatomy *of that scene's task class* only.
