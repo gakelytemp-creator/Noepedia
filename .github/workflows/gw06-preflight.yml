@@ -1,0 +1,70 @@
+name: GW06 pre-translation preflight
+
+on:
+  push:
+    paths:
+      - 'core/demon/run_c/gw06_runner.py'
+      - 'current/experiments/GW06_ENCODER_PROMPT_N.md'
+      - 'current/experiments/GW06_ENCODER_PROMPT_L.md'
+      - '.github/workflows/gw06-preflight.yml'
+  workflow_dispatch:
+
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Syntax gate
+        run: python -m py_compile core/demon/run_c/gw06_runner.py
+      - name: Build smoke fixtures
+        run: |
+          cat > /tmp/gw06_unknown.json <<'EOF'
+          [
+            {"addr":"YL1","RULE_TYPE":"UNKNOWN_1","QUOTE":"smoke"},
+            {"addr":"YL2","RULE_TYPE":"UNKNOWN_2","QUOTE":"smoke"},
+            {"addr":"YL3","RULE_TYPE":"UNKNOWN_3","QUOTE":"smoke"},
+            {"addr":"YL4","RULE_TYPE":"UNKNOWN_4","QUOTE":"smoke"},
+            {"addr":"YL5","RULE_TYPE":"UNKNOWN_5","QUOTE":"smoke"},
+            {"addr":"YL6","RULE_TYPE":"UNKNOWN_6","QUOTE":"smoke"}
+          ]
+          EOF
+          cat > /tmp/gw06_absent.json <<'EOF'
+          [
+            {"addr":"OTHER1","RULE_TYPE":"UNKNOWN_1","QUOTE":"smoke"},
+            {"addr":"OTHER2","RULE_TYPE":"UNKNOWN_2","QUOTE":"smoke"},
+            {"addr":"YL1","RULE_TYPE":"UNKNOWN_3","QUOTE":"smoke"},
+            {"addr":"YL4","RULE_TYPE":"UNKNOWN_4","QUOTE":"smoke"},
+            {"addr":"YL5","RULE_TYPE":"UNKNOWN_5","QUOTE":"smoke"},
+            {"addr":"YL6","RULE_TYPE":"UNKNOWN_6","QUOTE":"smoke"}
+          ]
+          EOF
+      - name: Unknown-family smoke, both modes
+        run: |
+          set -euo pipefail
+          D=core/demon/workshop/dictionary_v0_3.json
+          python core/demon/run_c/gw06_runner.py --encoder-output /tmp/gw06_unknown.json --dictionary "$D" --mode baseline --out /tmp/u-base.json
+          python core/demon/run_c/gw06_runner.py --encoder-output /tmp/gw06_unknown.json --dictionary "$D" --mode workshop --out /tmp/u-workshop.json
+          python - <<'PY'
+          import json
+          for p in ("/tmp/u-base.json","/tmp/u-workshop.json"):
+              x=json.load(open(p))
+              assert len(x["EVENTS"]) == 14, (p, len(x["EVENTS"]))
+          PY
+      - name: RULE_ABSENT guard smoke, both modes
+        run: |
+          set -euo pipefail
+          D=core/demon/workshop/dictionary_v0_3.json
+          python core/demon/run_c/gw06_runner.py --encoder-output /tmp/gw06_absent.json --dictionary "$D" --mode baseline --out /tmp/a-base.json
+          python core/demon/run_c/gw06_runner.py --encoder-output /tmp/gw06_absent.json --dictionary "$D" --mode workshop --out /tmp/a-workshop.json
+          python - <<'PY'
+          import json
+          for p in ("/tmp/a-base.json","/tmp/a-workshop.json"):
+              x=json.load(open(p))
+              assert len(x["EVENTS"]) == 14, (p, len(x["EVENTS"]))
+              first3=x["EVENTS"][:3]
+              assert all(e["VERDICT"] == "NEED" for e in first3)
+              assert sum(any(st.get("MISSING") == "RULE_ABSENT" for st in e["STOPS"]) for e in first3) == 3
+          PY
