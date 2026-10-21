@@ -111,3 +111,37 @@ N is unchanged, because its rules were already EXECUTOR_HOLE / SCHEMA_DRIFT.
 - a direct graph path from fact to debt.
 
 After that, the lexicon defect.
+
+---
+
+## WS04 — marker flood: one debt per unexecutable rule
+
+**Status: WORKSHOP RESULT, works on scene GW05.** The shape was agreed by the experimenter and GPT.
+
+**Change.** The admission policy record gets a new field, `UNCHECKED_SHAPE`. The debt shape is therefore network data (A3.5), not code.
+
+- `PER_RULE_DEBT` (new):
+  - one content-addressed record `DEBT_<rule>` (`TYPE = UNEXECUTABLE_RULE_DEBT`, status OPEN) per rule (A1.3);
+  - per fact, one edge `<fact>_DEPENDS_ON_DEBT_<rule>` (`PREDICATE = DEPENDS_ON`) carrying `CHECK`, `RULE` and `REASON`, with status `UNCHECKED`;
+  - the debt record says only "this rule could not perform some checks". Each edge says which check of which fact depended on the rule, so a future fix to the rule re-checks only those edges.
+- `PER_FACT_MARKER`: the WS01–WS03 shape, kept for A/B comparison.
+- Two views: `debts_of(fact)` (fact → debt, the direct path) and `dependents_of(debt)` (debt → facts, for targeted re-checking).
+
+**Checks.**
+- `--admission off` still reproduces the sealed N/L C13 logs.
+- `--debt-shape fact` reproduces the WS03 output exactly.
+- `test_admission.py`: 11/11 pass (4 new). `test_resolution.py`: 4/4 pass.
+
+**Scene results (C1/C3 on, admission on, resolve-asks on).**
+
+| | `--debt-shape fact` (WS03) | `--debt-shape rule` (WS04) |
+|---|---|---|
+| N · F12 registry | 35 UNCHECKED markers | **5**: `DEBT_M1` … `DEBT_M5` |
+| L · F12 registry | F4 conflict, F3 OPEN, 3 UNCHECKED markers | **4**: `DEBT_M2`, `DEBT_M3`, `F4_1_CONFLICT_1`, `OPEN_F3_1` |
+| F11 bind / ASK answered | I8 / `OPEN_ASK_4` | unchanged |
+
+**Reading.** The registry is readable again. In N it now says exactly what the GW05 audit found: five laws cannot be executed. In L it now says that M2 and M3 could not check some incoming facts. Nothing about any individual fact was lost; it moved onto that fact's edges.
+
+**Process note (A0.4).** Commit `2f3af32` broke `gw05_scene.py`: a `"\n"` escape on line 168 became a literal newline during upload, and the file failed with SyntaxError. The by-hand byte check did not catch it. This package includes the correct file and a `SHA256SUMS` file. The committer should run `sha256sum -c SHA256SUMS` and `python3 -m py_compile` instead of comparing by hand.
+
+**Next.** The lexicon defect, which is what blocks M2 in L and with it the B2 mismatch at F8.

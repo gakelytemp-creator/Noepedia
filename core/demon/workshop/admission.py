@@ -32,9 +32,12 @@ from demon_core import Record, GO, BLOCK, NEED
 POLICY_ADDR = "ADMISSION_POLICY_1"
 ADMIT_WITH_RECORD = "ADMIT_WITH_RECORD"
 REFUSE = "REFUSE"
+# WS04 — shape of UNCHECKED debt (A6.8):
+PER_RULE_DEBT = "PER_RULE_DEBT"        # one debt record per unexecutable rule + per-fact DEPENDS_ON edges
+PER_FACT_MARKER = "PER_FACT_MARKER"    # WS01-WS03 shape: one OPEN marker per (fact x rule)
 
 
-def install_default_policy(net, demon, addr=POLICY_ADDR):
+def install_default_policy(net, demon, addr=POLICY_ADDR, debt_shape=PER_RULE_DEBT):
     """Commit the workshop default policy as an ordinary network record."""
     if net.read(addr) is not None:
         return addr
@@ -42,6 +45,7 @@ def install_default_policy(net, demon, addr=POLICY_ADDR):
         "TYPE": "ADMISSION_POLICY",
         "ON_CONFLICT": ADMIT_WITH_RECORD,
         "ON_UNCHECKED": ADMIT_WITH_RECORD,
+        "UNCHECKED_SHAPE": debt_shape,
     })
     demon.commit(demon.propose(add=[rec], mark=[(addr, "CURRENT")]))
     return addr
@@ -51,7 +55,47 @@ def read_policy(net, addr=POLICY_ADDR):
     rec = net.read(addr)
     if rec is None or rec.f("TYPE") != "ADMISSION_POLICY":
         raise LookupError(f"no admission policy at {addr}")
-    return {"ON_CONFLICT": rec.f("ON_CONFLICT"), "ON_UNCHECKED": rec.f("ON_UNCHECKED"), "ADDR": addr}
+    return {"ON_CONFLICT": rec.f("ON_CONFLICT"), "ON_UNCHECKED": rec.f("ON_UNCHECKED"),
+            "UNCHECKED_SHAPE": rec.f("UNCHECKED_SHAPE", PER_FACT_MARKER), "ADDR": addr}
+
+
+def debt_addr(rule):
+    """Content-addressed (A1.3): the same rule always maps to the same debt record."""
+    return f"DEBT_{rule}"
+
+
+def _materialize_rule_debt(net, demon, incoming, e, policy):
+    """One OPEN debt per rule; the fact gets a DEPENDS_ON edge naming its own check."""
+    d = debt_addr(e["RULE"])
+    add, mark = [], []
+    if net.read(d) is None:
+        add.append(Record(d, {"TYPE": "UNEXECUTABLE_RULE_DEBT", "RULE": e["RULE"],
+                              "MEANING": "this rule could not perform some checks; see DEPENDS_ON edges",
+                              "POLICY": policy["ADDR"]}))
+        mark.append((d, "OPEN"))
+    edge = f"{incoming.addr}_DEPENDS_ON_{d}"
+    if net.read(edge) is None:
+        add.append(Record(edge, {"SUBJECT": incoming.addr, "PREDICATE": "DEPENDS_ON", "OBJECT": d,
+                                 "ROLE": "UNCHECKED_CHECK", "CHECK": "VALIDATE_INCOMING",
+                                 "RULE": e["RULE"], "REASON": e["DETAILS"]["reason"]}))
+        mark.append((edge, "UNCHECKED"))     # per-edge state: re-checkable later, not OPEN
+    if add:
+        v, _ = demon.commit(demon.propose(add=add, mark=mark))
+        if v != GO:
+            return None
+    return edge
+
+
+def debts_of(net, fact_addr):
+    """Fact -> debt view: every rule debt this fact's checks depend on."""
+    return sorted(r.f("OBJECT") for r in net.records.values()
+                  if r.f("SUBJECT") == fact_addr and r.f("PREDICATE") == "DEPENDS_ON")
+
+
+def dependents_of(net, debt):
+    """Debt -> facts view (for re-checking only the affected edges when the rule is fixed)."""
+    return sorted(r.f("SUBJECT") for r in net.records.values()
+                  if r.f("OBJECT") == debt and r.f("PREDICATE") == "DEPENDS_ON")
 
 
 # ── 1. composition: turn raw handler output into a flat evidence list ──
@@ -125,6 +169,11 @@ def admit(net, demon, incoming, validation, prefix, policy_addr=POLICY_ADDR):
             edges.append(Record(f"{a}_RULE", {"SUBJECT": a, "PREDICATE": "REFERS_TO",
                                               "OBJECT": e["RULE"], "ROLE": "VIOLATED_RULE"}))
             state = "OPEN"
+        elif policy["UNCHECKED_SHAPE"] == PER_RULE_DEBT:
+            got = _materialize_rule_debt(net, demon, incoming, e, policy)
+            if got is not None:
+                made.append(got)
+            continue
         else:
             rec = Record(a, {"TYPE": "CHECK_STATUS", "STATUS": "UNCHECKED",
                              "DEPENDENCY": e["RULE"], "REASON": e["DETAILS"]["reason"],

@@ -8,7 +8,8 @@ sys.path[:0] = [str(HERE.parent), str(HERE.parent / "run_c"), str(HERE)]
 
 from demon_core import Network, Demon, Record, GO, BLOCK, NEED
 from family_executor import HandlerResult
-from admission import admit, install_default_policy, compose_evidence, POLICY_ADDR
+from admission import (admit, install_default_policy, compose_evidence, POLICY_ADDR,
+                       PER_FACT_MARKER, PER_RULE_DEBT, debt_addr, debts_of, dependents_of)
 
 
 def fact(net, addr, s, p, o):
@@ -33,7 +34,7 @@ class AdmissionTest(unittest.TestCase):
     def setUp(self):
         self.net = Network(); self.d = Demon(self.net)
         fact(self.net, "F0", "A", "P", "X")
-        install_default_policy(self.net, self.d)
+        install_default_policy(self.net, self.d, debt_shape=PER_FACT_MARKER)   # WS01-WS03 shape
 
     def test_d1_conflict_is_materialized_not_swallowed(self):
         adm = admit(self.net, self.d, incoming(), blocked(), prefix="E1")
@@ -81,6 +82,43 @@ class AdmissionTest(unittest.TestCase):
     def test_composition_keeps_every_signal(self):
         both = blocked(); both.unchecked_dependencies = unchecked().unchecked_dependencies
         self.assertEqual([e["KIND"] for e in compose_evidence(both)], ["CONFLICT", "UNCHECKED"])
+
+
+class RuleDebtTest(unittest.TestCase):
+    """WS04 — one debt per unexecutable rule, per-fact DEPENDS_ON edges."""
+    def setUp(self):
+        self.net = Network(); self.d = Demon(self.net)
+        install_default_policy(self.net, self.d, debt_shape=PER_RULE_DEBT)
+
+    def two_rules(self):
+        return HandlerResult(verdict=NEED, unchecked_dependencies=[
+            {"dependency": "RULE2", "reason": "EXECUTOR_HOLE"},
+            {"dependency": "RULE5", "reason": "SCHEMA_DRIFT"}])
+
+    def test_one_debt_per_rule_not_per_fact(self):
+        for i in (1, 2, 3):
+            adm = admit(self.net, self.d, incoming(f"IN{i}"), self.two_rules(), prefix=f"E{i}")
+            self.assertEqual((adm.verdict, adm.fact_committed), (GO, True))
+        debts = sorted(r.addr for r in self.net.records.values() if r.f("TYPE") == "UNEXECUTABLE_RULE_DEBT")
+        self.assertEqual(debts, ["DEBT_RULE2", "DEBT_RULE5"])                 # 2, not 6
+        opens = [r.addr for r in self.net.records.values() if r.status_log and r.status_log[-1].state == "OPEN"]
+        self.assertEqual(sorted(opens), debts)                                 # registry sees 2
+
+    def test_fact_still_sees_its_debt(self):
+        admit(self.net, self.d, incoming("IN1"), self.two_rules(), prefix="E1")
+        self.assertEqual(debts_of(self.net, "IN1"), ["DEBT_RULE2", "DEBT_RULE5"])
+
+    def test_edge_carries_the_specific_check(self):
+        admit(self.net, self.d, incoming("IN1"), self.two_rules(), prefix="E1")
+        e = self.net.read("IN1_DEPENDS_ON_DEBT_RULE5")
+        self.assertEqual((e.f("CHECK"), e.f("RULE"), e.f("REASON")), ("VALIDATE_INCOMING", "RULE5", "SCHEMA_DRIFT"))
+        self.assertEqual(e.status_log[-1].state, "UNCHECKED")
+
+    def test_debt_to_dependents_for_targeted_recheck(self):
+        for i in (1, 2):
+            admit(self.net, self.d, incoming(f"IN{i}"), self.two_rules(), prefix=f"E{i}")
+        admit(self.net, self.d, incoming("IN3"), HandlerResult(), prefix="E3")
+        self.assertEqual(dependents_of(self.net, debt_addr("RULE2")), ["IN1", "IN2"])
 
 
 if __name__ == "__main__":

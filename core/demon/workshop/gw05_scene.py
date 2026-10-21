@@ -17,16 +17,16 @@ from gw05_runner import (j, stop_dict, snapshot, delta, add_fact, load_initial, 
 from demon_core import Network, Record, Demon, GO, ASK, BLOCK, NEED
 from family_executor import FamilyExecutor
 from c1_c3_overlay import C1C3Overlay
-from admission import admit, install_default_policy
+from admission import admit, install_default_policy, PER_RULE_DEBT, PER_FACT_MARKER
 from resolution import answer_on_bind, unanswered_ask_stops
 
-def execute(encoder,use_c13,admission,resolve_asks=False):
+def execute(encoder,use_c13,admission,resolve_asks=False,debt_shape=PER_FACT_MARKER):
     net=Network(); demon=Demon(net)
     dictionary=json.loads(DICT_PATH.read_text(encoding="utf-8"))
     ex=FamilyExecutor(dictionary)
     c13=C1C3Overlay(net) if use_c13 else None
     load_initial(net); rules=load_rules(net,ENCODERS[encoder])
-    if admission: install_default_policy(net,demon)
+    if admission: install_default_policy(net,demon,debt_shape=debt_shape)
     events=[]
 
     def derive(ev,subject,pred):
@@ -114,7 +114,7 @@ def execute(encoder,use_c13,admission,resolve_asks=False):
             r.addr for r in net.records.values()
             if r.f("TYPE")=="OPEN" and r.status_log and r.status_log[-1].state=="OPEN")))
         signals=sorted(r.addr for r in net.records.values()
-            if r.f("TYPE") in ("CONFLICT","CHECK_STATUS") and r.status_log and r.status_log[-1].state=="OPEN")
+            if r.f("TYPE") in ("CONFLICT","CHECK_STATUS","UNEXECUTABLE_RULE_DEBT") and r.status_log and r.status_log[-1].state=="OPEN")
         asks=([stop_dict(s) for s in unanswered_ask_stops(net)] if resolve_asks
               else [stop_dict(s) for s in net.stops if s.stop_class==ASK])
         needs=[stop_dict(s) for s in net.stops if s.stop_class==NEED]
@@ -147,7 +147,7 @@ def execute(encoder,use_c13,admission,resolve_asks=False):
     event(events,net,"F11",["READ","MATCH","LINK","MARK"],f11)
     event(events,net,"F12",["READ","OPEN_REGISTRY"],registry)
 
-    return {"GW05_ENCODER":encoder,"C1_C3_ENABLED":use_c13,"ADMISSION_ENABLED":admission,"ASK_RESOLUTION_ENABLED":resolve_asks,
+    return {"GW05_ENCODER":encoder,"C1_C3_ENABLED":use_c13,"ADMISSION_ENABLED":admission,"ASK_RESOLUTION_ENABLED":resolve_asks,"DEBT_SHAPE":debt_shape if admission else None,
             "ENCODER_INPUT":str(ENCODERS[encoder].relative_to(ROOT)),
             "FROZEN_DICTIONARY":str(DICT_PATH.relative_to(ROOT)),
             "RULES":rules,"EVENTS":events,
@@ -162,10 +162,11 @@ def main():
     ap.add_argument("--c13",choices=["off","on"],required=True)
     ap.add_argument("--admission",choices=["off","on"],required=True)
     ap.add_argument("--resolve-asks",choices=["off","on"],default="off")
+    ap.add_argument("--debt-shape",choices=["fact","rule"],default="fact")
     ap.add_argument("--out",required=True)
     a=ap.parse_args()
-    out=execute(a.encoder,a.c13=="on",a.admission=="on",a.resolve_asks=="on")
-    Path(a.out).write_text(json.dumps(out,ensure_ascii=False,indent=2)+"
-",encoding="utf-8")
+    out=execute(a.encoder,a.c13=="on",a.admission=="on",a.resolve_asks=="on",
+              PER_RULE_DEBT if a.debt_shape=="rule" else PER_FACT_MARKER)
+    Path(a.out).write_text(json.dumps(out,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
 
 if __name__=="__main__": main()
