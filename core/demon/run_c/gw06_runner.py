@@ -186,15 +186,25 @@ def execute(encoder_output, dictionary_path, mode):
         vals = sorted({r.f("OBJECT") for r in rs}, key=repr)
         return vals[0] if len(vals) == 1 else None
 
+    def require_rule(ev, addr, wanted):
+        r = rule(net, addr)
+        if r is not None:
+            return r
+        net.stop(f"{ev}/rule", wanted, {"RULE_ADDR": addr}, "RULE_ABSENT", NEED)
+        return None
+
     def derive_y2(ev, subject):
         scope = unique_scope(subject)
         if scope is None:
             net.stop(f"{ev}/scope", f"determine Y2 of {subject}", "current Y1 records",
                      "unique current Y1 target", NEED)
             return NEED, {"SCOPE": None}
-        res = ex.execute(rule(net, "YL3"), net, {"OP": "DERIVE", "SCOPE": scope,
-                                                 "SUBJECT": subject, "PREDICATE": "Y2",
-                                                 "DERIVED_ADDR": f"{ev}_DERIVED"})
+        r = require_rule(ev, "YL3", f"determine Y2 of {subject}")
+        if r is None:
+            return NEED, {"SCOPE": scope, "RULE": "YL3", "CLASS": "RULE_ABSENT"}
+        res = ex.execute(r, net, {"OP": "DERIVE", "SCOPE": scope,
+                                  "SUBJECT": subject, "PREDICATE": "Y2",
+                                  "DERIVED_ADDR": f"{ev}_DERIVED"})
         commit_markers(net, demon, res)
         materialize_signals(net, demon, ev, res)
         committed = commit_derivation(net, demon, res)
@@ -204,10 +214,13 @@ def execute(encoder_output, dictionary_path, mode):
         return res.verdict, {"SCOPE": scope, "HANDLER_RESULT": j(res), "COMMITTED_DERIVED": committed}
 
     def check_rule(ev, rule_addr, subject=None):
+        r = require_rule(ev, rule_addr, f"check {rule_addr}" + (f" for {subject}" if subject is not None else ""))
+        if r is None:
+            return NEED, {"RULE": rule_addr, "CLASS": "RULE_ABSENT"}
         req = {"OP": "CHECK"}
         if subject is not None:
             req["SUBJECT"] = subject
-        res = ex.execute(rule(net, rule_addr), net, req)
+        res = ex.execute(r, net, req)
         commit_markers(net, demon, res)
         materialize_signals(net, demon, ev, res)
         return res.verdict, {"HANDLER_RESULT": j(res)}
@@ -402,8 +415,7 @@ def main():
     ap.add_argument("--out", required=True)
     a = ap.parse_args()
     out = execute(a.encoder_output, a.dictionary, a.mode)
-    Path(a.out).write_text(json.dumps(out, ensure_ascii=False, indent=2) + "
-", encoding="utf-8")
+    Path(a.out).write_text(json.dumps(out, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
 if __name__ == "__main__":
