@@ -1,0 +1,134 @@
+
+[
+  {
+    "addr": "YL1",
+    "RULE_TYPE": "CURRENT_VALUE_AT_MOST_ONE",
+    "QUOTE": "A unit has at most one current Y4 value.",
+    "subject_class": "unit",
+    "predicates": ["Y4"],
+    "value_cardinality": {
+      "maximum": 1,
+      "scope": "current",
+      "per": "subject"
+    }
+  },
+  {
+    "addr": "YL2",
+    "RULE_TYPE": "EXACT_DISTINCT_TARGET_CARDINALITY",
+    "QUOTE": "Every unit is tied by Y5 to exactly two carriers, and the two must be different from each other.",
+    "subject_class": "unit",
+    "predicate": "Y5",
+    "target_class": "carrier",
+    "target_count": 2,
+    "target_count_constraint": "exactly",
+    "target_distinctness": "pairwise_distinct"
+  },
+  {
+    "addr": "YL3",
+    "RULE_TYPE": "CONDITIONAL_NODE_BALANCE_AND_UNIQUE_MISSING_DERIVATION",
+    "QUOTE": "Apart from hub H3, every hub's Y3 value is equal to the sum of Y2 over the units whose Y1 target is that hub. This equality may be used to infer a missing Y2 of a unit only when YL4 declares that hub's set of units complete and that unit is the only unit of the hub without a Y2 value. An inferred record must cite its premises together with YL3 and YL4.",
+    "balance": {
+      "scope_class": "hub",
+      "excluded_nodes": ["H3"],
+      "equality": {
+        "left": {
+          "lookup": {
+            "subject": "scoped_node",
+            "predicate": "Y3"
+          }
+        },
+        "right": {
+          "aggregate": "sum",
+          "value_predicate": "Y2",
+          "link_filter": {
+            "predicate": "Y1",
+            "target": "scoped_node"
+          }
+        }
+      }
+    },
+    "derivation": {
+      "missing_fields": ["Y2"],
+      "permission": "only_when",
+      "conditions": [
+        {
+          "adjacent_link_set": {
+            "relation": {
+              "predicate": "Y1",
+              "target": "scoped_node"
+            },
+            "closure_declared_by": "YL4"
+          }
+        },
+        {
+          "members_lacking_value": {
+            "value_predicate": "Y2",
+            "count": 1,
+            "constraint": "exactly"
+          }
+        }
+      ],
+      "derived_record_references": {
+        "premises": "all premises used for the inference",
+        "rules": ["YL3", "YL4"]
+      }
+    }
+  },
+  {
+    "addr": "YL4",
+    "RULE_TYPE": "EXPLICIT_CLOSED_RELATION_SET",
+    "QUOTE": "Completeness declaration: the units having H1 as their Y1 target are exactly U1, U2, U3 and U4. No completeness is declared for H2 or H3.",
+    "relation": {
+      "subject_class": "unit",
+      "predicate": "Y1",
+      "target": "H1"
+    },
+    "set_status": "closed",
+    "exact_members": ["U1", "U2", "U3", "U4"],
+    "closure_scope": "current",
+    "other_nodes_closure_declaration": {
+      "H2": "none",
+      "H3": "none"
+    }
+  },
+  {
+    "addr": "YL5",
+    "RULE_TYPE": "CURRENT_STATUS_IMPLIES_MAGNITUDE",
+    "QUOTE": "Whenever (U Y6 XS2) is current for a unit U, (U Y4 XT3) must also be current for that same unit.",
+    "antecedent": {
+      "subject": "U",
+      "predicate": "Y6",
+      "object": "XS2",
+      "temporal_scope": "current"
+    },
+    "consequent": {
+      "subject": "U",
+      "predicate": "Y4",
+      "object": "XT3",
+      "modality": "must_hold"
+    },
+    "subject_binding": "same_subject"
+  },
+  {
+    "addr": "YL6",
+    "RULE_TYPE": "INVERSE_RELATION_COUNT_BOUNDED_BY_TARGET_VALUE",
+    "FAMILY_SCHEMA_HOLE": true,
+    "QUOTE": "For every hub, the number of units whose Y1 target is that hub must not be greater than the hub's Y7 value.",
+    "scope_class": "hub",
+    "count_expression": {
+      "aggregate": "count",
+      "subject_class": "unit",
+      "link_filter": {
+        "predicate": "Y1",
+        "target": "scoped_node"
+      }
+    },
+    "upper_bound": {
+      "lookup": {
+        "subject": "scoped_node",
+        "predicate": "Y7"
+      }
+    },
+    "comparison": "less_than_or_equal"
+  }
+]
