@@ -43,7 +43,7 @@ Promotion rule: an item moves into `DEMON_CORE` / `DCT` only after it has been b
 - **A3.2 · PROPOSED.** Verdict aggregation is asymmetric: a negative signal never disappears from the aggregate. It can be outweighed, but it always leaves a record.
 - **A3.3 · PROPOSED.** Under A3.1, BLOCK becomes a monotone addition, and that is what makes A2 achievable. Epistemic correctness and parallelism come from the same design decision.
 - **A3.4 · PROPOSED (GPT).** Keep **epistemic composition** separate from **admission / commit policy**. The working pipeline is: `handler evidence → evidence composition → materialization → admission policy → commit verdict`. A verdict may decide transaction legality, but it must never substitute for, or erase, the evidence that produced it.
-- **A3.5 · PROPOSED (Claude/GPT).** Handler-verdict aggregation and admission policy are candidates to become **addressable network composition-policy records**, rather than hard-coded executor heuristics. This would continue the GW03 / DCT19–21 direction: move another hand-written choice out of code and into the network.
+- **A3.5 · PROPOSED (GPT).** Handler-verdict aggregation and admission policy are candidates to become **addressable network composition-policy records**, rather than hard-coded executor heuristics. This would continue the GW03 / DCT19–21 direction: move another hand-written choice out of code and into the network.
 
 ## 4. Concept and name
 
@@ -153,7 +153,7 @@ Promotion rule: an item moves into `DEMON_CORE` / `DCT` only after it has been b
 - **A9.9 · AGREED.** The demon's job stays modest. It attaches each new support, conflict, grounding check or method result with its type and provenance, and it never hides a dependency. Quality then shows in the shape of the network.
 - **A9.10 · AGREED.** **Conversation is itself the growth of the network.** A confirmed question adds one edge, a rejected one adds another, an unanswered one leaves an OPEN.
 - **A9.11 · AGREED (GPT).** The quality of that growth is measured not by the number of edges but by how visible their provenance, independence, risk and dependency are.
-- **A9.12 · PROPOSED (experimenter/GPT).** **Data reliability** grows through cross-checking by different sources. **Method reliability** grows through successful operation across different data. These are different provenance structures and should not be collapsed into one primary score.
+- **A9.12 · PROPOSED (experimenter/GPT).** **Data reliability** grows through cross-checking by different sources. **Method reliability** grows through successful operation across different data. These are different provenance structures and should not be collapsed into one primary score. Mutual confirmation between a method and data counts as independent only when their provenance labels have no common ancestor (A9.4–A9.5).
 - **A9.13 · PROPOSED (experimenter/GPT).** Methods should themselves be addressable network objects and may be organized analogously to concepts: a **fundamental method** is a method treated as undecomposed at the current compilation boundary; a **composed method** is built from fundamental and/or other composed methods. "Fundamental" is therefore a current decomposition floor, not a metaphysical primitive. Methods may accumulate provenance, scope, reliability history, and may compete on the same task.
 
 ## 10. Open questions
@@ -165,6 +165,7 @@ Promotion rule: an item moves into `DEMON_CORE` / `DCT` only after it has been b
 - **O5.** What exact status semantics does HYPOTHESIS need before dreams (idle layer 4) may touch the core?
 - **O6.** Who signs a selection? The demon by a structural score, the upper layer (programmer / requirement carrier), or both through the demand/offer triplet rule?
 - **O7.** Should requirement concepts re-evaluate on every relevant commit (watch semantics)? This was a SPEC_HOLE carried over from the GW04 audit §4.4.
+- **O8.** When multiple methods compete for the same task, who selects the winner? If selection follows a structural score, is it anonymous-core scheduling; if it follows taste, does it require a signature under A7.4?
 
 ## 11. Workshop backlog (bridge to code, not a spec)
 
