@@ -1,0 +1,84 @@
+[
+  {
+    "addr": "YL1",
+    "RULE_TYPE": "MAX_CARDINALITY",
+    "QUOTE": "A unit has at most one current Y4 value.",
+    "subject_kind": "unit",
+    "relation": "Y4",
+    "scope": "current",
+    "max_values": 1
+  },
+  {
+    "addr": "YL2",
+    "RULE_TYPE": "EXACT_CARDINALITY_DISTINCT",
+    "QUOTE": "Every unit is tied by Y5 to exactly two carriers, and the two must be different from each other.",
+    "subject_kind": "unit",
+    "relation": "Y5",
+    "object_kind": "carrier",
+    "exact_count": 2,
+    "distinct_objects": true
+  },
+  {
+    "addr": "YL3",
+    "RULE_TYPE": "CONDITIONAL_AGGREGATE_EQUALITY_WITH_INFERENCE",
+    "QUOTE": "Apart from hub H3, every hub's Y3 value is equal to the sum of Y2 over the units whose Y1 target is that hub. This equality may be used to infer a missing Y2 of a unit only when YL4 declares that hub's set of units complete and that unit is the only unit of the hub without a Y2 value. An inferred record must cite its premises together with YL3 and YL4.",
+    "hub_kind": "hub",
+    "excluded_hub": "H3",
+    "target_relation": "Y3",
+    "aggregate": "sum",
+    "aggregate_relation": "Y2",
+    "member_kind": "unit",
+    "membership_relation": "Y1",
+    "membership_target": "hub",
+    "equality": true,
+    "inference": {
+      "inferred_relation": "Y2",
+      "requires_complete_membership_declared_by": "YL4",
+      "requires_exactly_one_member_without_Y2": true,
+      "provenance": {
+        "cite_premises": true,
+        "cite_laws": ["YL3", "YL4"]
+      }
+    }
+  },
+  {
+    "addr": "YL4",
+    "RULE_TYPE": "EXACT_MEMBERSHIP_COMPLETENESS",
+    "QUOTE": "Completeness declaration: the units having H1 as their Y1 target are exactly U1, U2, U3 and U4. No completeness is declared for H2 or H3.",
+    "relation": "Y1",
+    "target": "H1",
+    "complete_member_set": ["U1", "U2", "U3", "U4"],
+    "no_completeness_declared_for": ["H2", "H3"]
+  },
+  {
+    "addr": "YL5",
+    "RULE_TYPE": "CURRENT_RECORD_IMPLICATION",
+    "QUOTE": "Whenever (U Y6 XS2) is current for a unit U, (U Y4 XT3) must also be current for that same unit.",
+    "subject_kind": "unit",
+    "subject_variable": "U",
+    "antecedent": {
+      "subject": "U",
+      "relation": "Y6",
+      "object": "XS2",
+      "status": "current"
+    },
+    "consequent": {
+      "subject": "U",
+      "relation": "Y4",
+      "object": "XT3",
+      "status": "current"
+    }
+  },
+  {
+    "addr": "YL6",
+    "RULE_TYPE": "AGGREGATE_COUNT_UPPER_BOUND",
+    "QUOTE": "For every hub, the number of units whose Y1 target is that hub must not be greater than the hub's Y7 value.",
+    "hub_kind": "hub",
+    "member_kind": "unit",
+    "membership_relation": "Y1",
+    "membership_target": "hub",
+    "aggregate": "count",
+    "upper_bound_relation": "Y7",
+    "comparison": "<="
+  }
+]
