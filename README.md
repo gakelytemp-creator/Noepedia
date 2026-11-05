@@ -1372,7 +1372,7 @@ In particular:
 - **OpenPCB Commons** owns the hardware-investigation domain, artifacts, board identities as domain records, measurements, and human-readable evidence trails. It does not need a second private Noepedia inside itself.
 - **Everett Portal** owns branch rules, canon workflow, and its domain-specific Consistency Gate. Branch-validity checking is not another Daimonion.
 - **3DGabro** owns engineering geometry, CAD operations, manufacturing constraints, and domain-specific constructive tests. Persistent cross-domain knowledge formation belongs to Noepedia.
-- **EtherCAT-CNC-Controller** owns hard real-time motion control. It must not depend on reflective Noepedia processing for servo timing or safety.
+- **Gabro-CNC-Controller** (formerly EtherCAT-CNC-Controller) owns hard real-time motion control: a compiler that turns a 3DGabro plan and an AISocket machine passport into a precomputed stream, and a simple executor that plays it. It must not depend on reflective Noepedia processing for servo timing or safety. Per-part traces (stream, tool, parameter level, events) reach Noepedia only through AISocket.
 - **3DGabro-Voxel-Analytics** owns voxel/octree computation and derived engineering measurements, not epistemic consolidation.
 - **AI Assembly** owns the protected-room experiment and its frozen public record. Noepedia may later preserve or analyze records, but it must not be inserted into the protected room as an unpreregistered live influence.
 - **Neumann-cellular-automaton** is a hardware/computation research substrate. It may someday host parallel logical processes, but it does not define Noepedia semantics.
