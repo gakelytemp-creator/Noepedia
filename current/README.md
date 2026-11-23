@@ -14,6 +14,12 @@ Daimonion-ის სხვადასხვა ფორმა და ოქტ
 
 ხარაჩო არ არის სახლი; მაგრამ სახლი ხარაჩოს გარეშე ვერ აშენდებოდა.
 
+## ახალი კვლევითი სურათი — 2026-11-23 (ანკეტური ნავიგაცია)
+
+[CONCEPTUAL_SNAPSHOT_2026-11-23_ANKETA_NAVIGATION.md](CONCEPTUAL_SNAPSHOT_2026-11-23_ANKETA_NAVIGATION.md) — დათარიღებული **WORKING HYPOTHESIS**: ანკეტური ჭრილები, ურთიერთობების თვითორგანიზება, Noepedia როგორც მთავარი ველი და [3DGabro](https://github.com/gakelytemp-creator/3DGabro) როგორც გეომეტრიული პოლიგონი. დეტალური ინტელექტუალური ქრონიკა: [საუბრის ატლასი](../research/ANKETA_DIALOGUE_ATLAS_2026-11-23.md); [პროექტთაშორისი გზამკვლევი](../research/ANKETA_CROSS_REPO_HANDOFF.md).
+
+**ეს ჩანაწერი არ ცვლის 2026-10-14-ის `CURRENT` კანონებს ან ისტორიულ შედეგებს; განსახილველი ახალი ხედვაა.**
+
 ## მეტა-ფიქსაცია — 2026-10-18
 
 [CONCEPTUAL_SNAPSHOT_2026-10-18.md](CONCEPTUAL_SNAPSHOT_2026-10-18.md) — „სხვენიდან ხედი“:
